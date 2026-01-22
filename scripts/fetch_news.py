@@ -27,6 +27,12 @@ HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 }
 
+try:
+    from src.x_sources import X_ACCOUNTS, NITTER_INSTANCES
+except ImportError:
+    X_ACCOUNTS = []
+    NITTER_INSTANCES = []
+
 def filter_items(items, keyword=None):
     """Filter items by keywords. Supports both English and Chinese keywords."""
     if not keyword:
@@ -353,7 +359,108 @@ def fetch_producthunt(limit=20, keyword=None):
         return filter_items(items, keyword)[:limit]
     except: return []
 
-# --- Main Logic ---
+# --- X (Twitter) Fetcher ---
+
+def fetch_x_rss(username, instance):
+    """Fetch RSS for a single user from a specific Nitter instance"""
+    url = f"https://{instance}/{username}/rss"
+    try:
+        response = requests.get(url, headers=HEADERS, timeout=8)
+        if response.status_code == 200:
+            return response.text
+    except:
+        return None
+    return None
+
+def parse_x_rss(xml_content, username, category):
+    """Parse Nitter RSS content"""
+    items = []
+    try:
+        soup = BeautifulSoup(xml_content, 'xml')
+        if not soup.find('item'): return []
+        
+        for entry in soup.find_all('item')[:5]: # Take top 5 recent from each user
+            desc = entry.find('description').get_text(strip=True)
+            # Basic cleanup of Nitter HTML in description if needed
+            # For now, keep it raw or simple text
+            
+            # Extract image if exists
+            img = ""
+            if '<img src="' in desc:
+                # Simple regex or split to find image
+                try:
+                    img = desc.split('<img src="')[1].split('"')[0]
+                except: pass
+
+            text_content = BeautifulSoup(desc, "html.parser").get_text(strip=True)
+            
+            pub = entry.find('pubDate').get_text(strip=True)
+            link = entry.find('link').get_text(strip=True)
+            
+            # Convert Nitter link to X.com link for better UX
+            # Link format: https://nitter.net/user/status/id
+            if '/status/' in link:
+                tweet_id = link.split('/status/')[1].split('#')[0]
+                link = f"https://x.com/{username}/status/{tweet_id}"
+            
+            items.append({
+                "source": "X (Twitter)",
+                "author": username,
+                "category": category,
+                "title": f"@{username}: {text_content[:100]}...", # Title for card
+                "summary": text_content, # Full text in summary
+                "url": link,
+                "time": pub,
+                "image": img,
+                "heat": "New" # No heat metric in RSS usually
+            })
+    except: pass
+    return items
+
+def fetch_x_social(limit=15, keyword=None):
+    """Fetch tweets from curated list using Nitter rotation"""
+    if not X_ACCOUNTS or not NITTER_INSTANCES:
+        return []
+    
+    sys.stderr.write(f"Fetching X feeds for {len(X_ACCOUNTS)} users...\n")
+    
+    all_tweets = []
+    
+    # 1. Randomized Instance Selection Strategy
+    # We will try to fetch each user. For each user, pick a random instance.
+    # If it fails, try 1 more backup instance.
+    import random
+    
+    def fetch_single_user(user_tuple):
+        username, category = user_tuple
+        # Try all instances until one works (randomized order)
+        instances = list(NITTER_INSTANCES)
+        random.shuffle(instances)
+        
+        for instance in instances:
+            xml = fetch_x_rss(username, instance)
+            if xml:
+                items = parse_x_rss(xml, username, category)
+                if items: return items
+        return []
+
+    # Parallel fetch
+    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+        future_to_user = {executor.submit(fetch_single_user, u): u for u in X_ACCOUNTS}
+        for future in concurrent.futures.as_completed(future_to_user):
+            try:
+                tweets = future.result()
+                if tweets:
+                    all_tweets.extend(tweets)
+            except: pass
+            
+    # Sort by time (hacky parsing or just random shuffle for 'discovery')
+    # RSS pubDate is usually: "Wed, 22 Jan 2026 12:00:00 GMT"
+    # Let's just shuffle to give everyone a chance, or leave as is (grouped by user)
+    # Better: Shuffle to make it look like a feed
+    random.shuffle(all_tweets)
+    
+    return all_tweets[:limit] # Return top N random tweets from recent pool
 
 def fetch_data_for_scenario(scenario_key, limit=20, deep=False, no_translate=False):
     """Fetch data for a specific scenario"""
@@ -370,7 +477,8 @@ def fetch_data_for_scenario(scenario_key, limit=20, deep=False, no_translate=Fal
     sources_map = {
         'hackernews': fetch_hackernews, 'weibo': fetch_weibo, 'github': fetch_github,
         '36kr': fetch_36kr, 'v2ex': fetch_v2ex, 'tencent': fetch_tencent,
-        'wallstreetcn': fetch_wallstreetcn, 'producthunt': fetch_producthunt
+        'wallstreetcn': fetch_wallstreetcn, 'producthunt': fetch_producthunt,
+        'x_social': fetch_x_social
     }
     
     to_run = []
@@ -411,7 +519,8 @@ def fetch_data_for_scenario(scenario_key, limit=20, deep=False, no_translate=Fal
     # Sort descending by heat_score
     results.sort(key=lambda x: x['heat_score'], reverse=True)
 
-    return results
+    # Enforce global limit per scenario
+    return results[:limit]
 
 def calculate_heat_score(heat_str):
     """Normalize heat string to an integer score"""
@@ -459,7 +568,7 @@ def main():
     parser.add_argument('--deep', action='store_true', help='Download article content')
     parser.add_argument('--output', default='html', choices=['json', 'html', 'all'], 
                       help='Output format. "xhs" and "image" are deprecated in V2.')
-    parser.add_argument('--category', default='all', choices=['ai', 'china', 'github', 'global', 'all'],
+    parser.add_argument('--category', default='all', choices=['ai', 'china', 'github', 'global', 'x_social', 'all'],
                       help='Scenario category to fetch. Default "all" fetches all categories for Dashboard.')
     parser.add_argument('--no-translate', action='store_true', help='Disable auto-translation')
     
@@ -470,7 +579,7 @@ def main():
     if not args.source:
         scenarios_to_fetch = []
         if args.category == 'all':
-            scenarios_to_fetch = ['ai', 'china', 'github', 'global']
+            scenarios_to_fetch = ['china', 'ai', 'x_social', 'github', 'global'] # Explicit order including x_social
         elif args.category in SCENARIO_MAP:
             scenarios_to_fetch = [args.category]
             

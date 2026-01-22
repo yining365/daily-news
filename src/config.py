@@ -139,11 +139,17 @@ SCENARIO_MAP = {
         "sources": ["github"],
         "keywords": []
     },
+    "x_social": {
+        "name": "🐦 X 动态",
+        "description": "X (Twitter) 每日精选",
+        "sources": ["x_social"],  # Special source key handled in fetch_news.py
+        "keywords": []
+    },
     "global": {
-        "name": "🌐 全网扫描",
-        "description": "全网关键词扫描 (Agent + LLM)",
-        "sources": ["all"],
-        "keywords": ["Agent", "LLM", "RAG", "AI", "Startup", "SaaS", "Open Source"]
+        "name": "🌍 全网",
+        "description": "Global Tech & Startup News",
+        "sources": ["hackernews", "producthunt", "wallstreetcn"],
+        "keywords": ["AI", "LLM", "RAG", "Agent", "Startup", "SaaS", "Open Source"] 
     }
 }
 
