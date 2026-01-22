@@ -98,8 +98,8 @@ class HTMLGenerator:
         # 构建所有场景的内容（垂直排列）
         sections_html = ""
         
-        # 排序：AI -> China -> GitHub -> Global
-        scenario_order = ["ai", "china", "github", "global"]
+        # 排序：China -> AI -> GitHub -> Global (科技优先)
+        scenario_order = ["china", "ai", "github", "global"]
         
         total_count = 0
         for key in scenario_order:
@@ -424,15 +424,34 @@ class HTMLGenerator:
             except:
                 pass
         
-        # 简单重建索引页逻辑 (每次都重新扫描文件夹)
+        # 创建 index.html - 自动跳转到今日新闻
+        today_file = f"{date}.html"
+        index_html = f"""<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0; url={today_file}">
+    <title>{SITE_META['title']}</title>
+    <script>window.location.href = "{today_file}";</script>
+</head>
+<body>
+    <p>正在跳转到今日新闻... <a href="{today_file}">点击这里</a></p>
+</body>
+</html>"""
+        with open(index_path, "w", encoding="utf-8") as f:
+            f.write(index_html)
+        
+        # 生成历史链接列表
         files = sorted(self.output_dir.glob("*.html"), reverse=True)
         html_links = ""
         for f in files:
-            if f.name == "index.html": continue
+            if f.name in ["index.html", "history.html"]: continue
             name = f.stem
             html_links += f'<li><a href="{f.name}">{name}</a></li>'
-
-        home_html = f"""<!DOCTYPE html>
+        
+        # 创建 history.html - 历史归档页面
+        history_path = self.output_dir / "history.html"
+        history_html = f"""<!DOCTYPE html>
 <html>
 <head>
     <title>History - {SITE_META['title']}</title>
@@ -445,17 +464,19 @@ class HTMLGenerator:
         li {{ background: white; margin-bottom: 1rem; padding: 1rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }}
         a {{ text-decoration: none; color: #0066cc; font-weight: 500; font-size: 1.1rem; }}
         a:hover {{ text-decoration: underline; }}
+        .back {{ margin-bottom: 1.5rem; display: inline-block; }}
     </style>
 </head>
 <body>
-    <h1>📚 History Archives</h1>
+    <a href="index.html" class="back">← 返回今日新闻</a>
+    <h1>📚 历史归档</h1>
     <ul>
         {html_links}
     </ul>
 </body>
 </html>"""
-        with open(index_path, "w", encoding="utf-8") as f:
-            f.write(home_html)
+        with open(history_path, "w", encoding="utf-8") as f:
+            f.write(history_html)
 
     def generate_css(self):
         """生成 CSS 文件"""
