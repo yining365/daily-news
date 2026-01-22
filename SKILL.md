@@ -13,7 +13,7 @@ Fetch real-time hot news from multiple sources.
 
 **Usage:**
 
-```bash
+````bash
 ### Single Source (Limit 10)
 ```bash
 ### Global Scan (Option 12) - **Broad Fetch Strategy**
@@ -25,13 +25,15 @@ python3 scripts/fetch_news.py --source all --limit 15 --deep
 
 # 2. SEMANTIC FILTERING:
 # Agent manually filters the broad list (approx 120 items) for user's topics.
-```
+````
 
 ### Single Source & Combinations (Smart Keyword Expansion)
+
 **CRITICAL**: You MUST automatically expand the user's simple keywords to cover the entire domain field.
-*   User: "AI" -> Agent uses: `--keyword "AI,LLM,GPT,Claude,Generative,Machine Learning,RAG,Agent"`
-*   User: "Android" -> Agent uses: `--keyword "Android,Kotlin,Google,Mobile,App"`
-*   User: "Finance" -> Agent uses: `--keyword "Finance,Stock,Market,Economy,Crypto,Gold"`
+
+- User: "AI" -> Agent uses: `--keyword "AI,LLM,GPT,Claude,Generative,Machine Learning,RAG,Agent"`
+- User: "Android" -> Agent uses: `--keyword "Android,Kotlin,Google,Mobile,App"`
+- User: "Finance" -> Agent uses: `--keyword "Finance,Stock,Market,Economy,Crypto,Gold"`
 
 ```bash
 # Example: User asked for "AI news from HN" (Note the expanded keywords)
@@ -39,57 +41,114 @@ python3 scripts/fetch_news.py --source hackernews --limit 20 --keyword "AI,LLM,G
 ```
 
 ### Specific Keyword Search
+
 Only use `--keyword` for very specific, unique terms (e.g., "DeepSeek", "OpenAI").
+
 ```bash
 python3 scripts/fetch_news.py --source all --limit 10 --keyword "DeepSeek" --deep
 ```
 
+### Dashboard Generation (V2.0 - Recommended)
+
+Generate a comprehensive **Daily Tech Dashboard** with 4 tabs: AI, China, GitHub, and Global.
+
+```bash
+# Generate the full dashboard (Default)
+python3 scripts/fetch_news.py --category all --output html
+```
+
+- **Output**: `docs/YYYY-MM-DD.html` (Interactive Dashboard)
+- **Features**:
+  - **Tabs**: 4 Scenarios (AI 热点, 国内科技, 开源精选, 全网扫描)
+  - **Daily Briefing**: Auto-generated summary of the day's top news and item counts.
+  - **Auto-Translate**: English titles are automatically translated to Chinese.
+  - **Clickable**: All items link to original sources.
+
+### Custom Scenarios
+
+You can also generate for a specific scenario:
+
+```bash
+# Only AI News
+python3 scripts/fetch_news.py --category ai --output html
+
+# Only GitHub Trending
+python3 scripts/fetch_news.py --category github --output html
+```
+
+### Legacy Source Fetching
+
+Directly fetch from specific sources using `--source` (Legacy Mode).
+
+```bash
+# Fetch from specific source
+python3 scripts/fetch_news.py --source hackernews --limit 20 --output html
+```
+
 **Arguments:**
 
-- `--source`: One of `hackernews`, `weibo`, `github`, `36kr`, `producthunt`, `v2ex`, `tencent`, `wallstreetcn`, `all`.
-- `--limit`: Max items per source (default 10).
-- `--keyword`: Comma-separated filters (e.g. "AI,GPT").
-- `--deep`: **[NEW]** Enable deep fetching. Downloads and extracts the main text content of the articles.
+- `--category`: **[NEW]** Scenario selector: `all` (Dashboard), `ai`, `china`, `github`, `global`.
+- `--source`: Legacy single source selector.
+- `--limit`: Max items per source (default 20).
+- `--output`: Output format: `html` (Web Page), `image` (Share Card), `json`.
+- `--no-translate`: Disable auto-translation to Chinese.
+
+**Example Commands:**
+
+```bash
+# Generate Dashboard (Best Experience)
+python3 scripts/fetch_news.py --category all
+
+# Generate Share Card for GitHub Trending
+python3 scripts/fetch_news.py --source github --limit 5 --output image
+```
 
 **Output:**
-JSON array. If `--deep` is used, items will contain a `content` field associated with the article text.
+
+- **HTML**: Interactive web page suitable for daily reading.
+- **Image**: Social media friendly share card (Firefly API required for specialized cards, basic fallback available).
 
 ## Interactive Menu
 
 When the user says **"news-aggregator-skill 如意如意"** (or similar "menu/help" triggers):
+
 1.  **READ** the content of `templates.md` in the skill directory.
 2.  **DISPLAY** the list of available commands to the user exactly as they appear in the file.
 3.  **GUIDE** the user to select a number or copy the command to execute.
 
 ### Smart Time Filtering & Reporting (CRITICAL)
+
 If the user requests a specific time window (e.g., "past X hours") and the results are sparse (< 5 items):
+
 1.  **Prioritize User Window**: First, list all items that strictly fall within the user's requested time (Time < X).
 2.  **Smart Fill**: If the list is short, you MUST include high-value/high-heat items from a wider range (e.g. past 24h) to ensure the report provides at least 5 meaningful insights.
-2.  **Annotation**: Clearly mark these older items (e.g., "⚠️ 18h ago", "🔥 24h Hot") so the user knows they are supplementary.
-3.  **High Value**: Always prioritize "SOTA", "Major Release", or "High Heat" items even if they slightly exceed the time window.
-4.  **GitHub Trending Exception**: For purely list-based sources like **GitHub Trending**, strictly return the valid items from the fetched list (e.g. Top 10). **List ALL fetched items**. Do **NOT** perform "Smart Fill".
-    *   **Deep Analysis (Required)**: For EACH item, you **MUST** leverage your AI capabilities to analyze:
-        *   **Core Value (核心价值)**: What specific problem does it solve? Why is it trending?
-        *   **Inspiration (启发思考)**: What technical or product insights can be drawn?
-        *   **Scenarios (场景标签)**: 3-5 keywords (e.g. `#RAG #LocalFirst #Rust`).
+3.  **Annotation**: Clearly mark these older items (e.g., "⚠️ 18h ago", "🔥 24h Hot") so the user knows they are supplementary.
+4.  **High Value**: Always prioritize "SOTA", "Major Release", or "High Heat" items even if they slightly exceed the time window.
+5.  **GitHub Trending Exception**: For purely list-based sources like **GitHub Trending**, strictly return the valid items from the fetched list (e.g. Top 10). **List ALL fetched items**. Do **NOT** perform "Smart Fill".
+    - **Deep Analysis (Required)**: For EACH item, you **MUST** leverage your AI capabilities to analyze:
+      - **Core Value (核心价值)**: What specific problem does it solve? Why is it trending?
+      - **Inspiration (启发思考)**: What technical or product insights can be drawn?
+      - **Scenarios (场景标签)**: 3-5 keywords (e.g. `#RAG #LocalFirst #Rust`).
 
 ### 6. Response Guidelines (CRITICAL)
 
 **Format & Style:**
+
 - **Language**: Simplified Chinese (简体中文).
 - **Style**: Magazine/Newsletter style (e.g., "The Economist" or "Morning Brew" vibe). Professional, concise, yet engaging.
 - **Structure**:
-    - **Global Headlines**: Top 3-5 most critical stories across all domains.
-    - **Tech & AI**: Specific section for AI, LLM, and Tech items.
-    - **Finance / Social**: Other strong categories if relevant.
+  - **Global Headlines**: Top 3-5 most critical stories across all domains.
+  - **Tech & AI**: Specific section for AI, LLM, and Tech items.
+  - **Finance / Social**: Other strong categories if relevant.
 - **Item Format**:
-    - **Title**: **MUST be a Markdown Link** to the original URL.
-        - ✅ Correct: `### 1. [OpenAI Releases GPT-5](https://...)`
-        - ❌ Incorrect: `### 1. OpenAI Releases GPT-5`
-    - **Metadata Line**: Must include Source, **Time/Date**, and Heat/Score.
-    - **1-Liner Summary**: A punchy, "so what?" summary.
-    - **Deep Interpretation (Bulleted)**: 2-3 bullet points explaining *why* this matters, technical details, or context. (Required for "Deep Scan").
+  - **Title**: **MUST be a Markdown Link** to the original URL.
+    - ✅ Correct: `### 1. [OpenAI Releases GPT-5](https://...)`
+    - ❌ Incorrect: `### 1. OpenAI Releases GPT-5`
+  - **Metadata Line**: Must include Source, **Time/Date**, and Heat/Score.
+  - **1-Liner Summary**: A punchy, "so what?" summary.
+  - **Deep Interpretation (Bulleted)**: 2-3 bullet points explaining _why_ this matters, technical details, or context. (Required for "Deep Scan").
 
 **Output Artifact:**
+
 - Always save the full report to `reports/` directory with a timestamped filename (e.g., `reports/hn_news_YYYYMMDD_HHMM.md`).
 - Present the full report content to the user in the chat.

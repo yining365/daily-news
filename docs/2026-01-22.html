@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026-01-22 全网新闻聚合 - News Aggregator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --glow-start: #0A1929;
+            --glow-end: #1A3A52;
+            --text-primary: #E3F2FD;
+            --accent-color: #42A5F5;
+            --secondary-color: #B0BEC5;
+            --bg-gradient: linear-gradient(135deg, #0A1929 0%, #1A3A52 100%);
+        }
+        
+        /* 快速导航 */
+        .quick-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            background: rgba(15, 23, 42, 0.95);
+            padding: 1rem;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .quick-nav-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .quick-nav-item:hover {
+            background: var(--accent-color);
+            color: #fff;
+        }
+        .quick-nav-item span {
+            background: rgba(0,0,0,0.2);
+            padding: 2px 6px;
+            border-radius: 8px;
+            font-size: 0.75rem;
+        }
+        
+        /* 场景区块 */
+        .scenario-section {
+            margin-bottom: 4rem;
+            scroll-margin-top: 80px;
+        }
+        .scenario-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--accent-color);
+            flex-wrap: wrap;
+        }
+        .scenario-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+        }
+        .scenario-count {
+            background: var(--accent-color);
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+        .scenario-desc {
+            opacity: 0.6;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <header class="main-header">
+            <div class="header-content">
+                <div class="logo-area">
+                    <div class="logo-icon">🤖</div>
+                    <div class="logo-text">
+                        <h1>News Aggregator</h1>
+                        <p class="subtitle">全网新闻聚合</p>
+                    </div>
+                </div>
+                <div class="date-display">
+                    <span class="date-icon">📅</span>
+                    <span>1月22日 周四</span>
+                </div>
+            </div>
+        </header>
+
+        
+            <div class="daily-summary">
+                <div class="summary-content">
+                    <span class="summary-icon">💡</span>
+                    <p>今日共追踪到 <strong>71</strong> 条前沿资讯，覆盖 AI, CHINA, GITHUB, GLOBAL 等领域。<br>🔥 热门关注：克劳德的新宪法、等待搜索黎明：搜索索引、谷歌裁决以及对 Kagi 的影响、🛠️ twitter/the-algorithm - X 推荐算法的源代码...</p>
+                </div>
+            </div>
+            
+
+
+
+        <main class="main-content">
+            
+            <section class="scenario-section" id="ai">
+                <div class="scenario-header">
+                    <h2 class="scenario-name">🔥 AI 热点</h2>
+                    <span class="scenario-count">16 条</span>
+                    <span class="scenario-desc">硅谷前沿：Hacker News + Product Hunt</span>
+                </div>
+                
+            <div class="category-section">
+                <div class="category-header">
+                    <span class="category-icon">🔶</span>
+                    <h2 class="category-title">Hacker News</h2>
+                    <span class="category-count">10</span>
+                </div>
+                <div class="cards-grid">
+            
+                    <div class="card is-hot " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://www.anthropic.com/news/claude-new-constitution" target="_blank" class="card-title-link">
+                                <h3 class="card-title">克劳德的新宪法</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>18 hours ago</span><span class="meta-item"><span class="meta-icon">🔥</span>454 points</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card is-hot " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://blog.kagi.com/waiting-dawn-search" target="_blank" class="card-title-link">
+                                <h3 class="card-title">等待搜索黎明：搜索索引、谷歌裁决以及对 Kagi 的影响</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>17 hours ago</span><span class="meta-item"><span class="meta-icon">🔥</span>326 points</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card is-hot " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://huggingface.co/sweepai/sweep-next-edit-1.5B" target="_blank" class="card-title-link">
+                                <h3 class="card-title">显示 HN：扫描、开放权重 1.5B 模型以供下次编辑自动完成</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>7 hours ago</span><span class="meta-item"><span class="meta-icon">🔥</span>298 points</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card is-hot " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://www.media.mit.edu/publications/your-brain-on-chatgpt/" target="_blank" class="card-title-link">
+                                <h3 class="card-title">ChatGPT 上的你的大脑：使用人工智能助手时认知债务的积累</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>11 hours ago</span><span class="meta-item"><span class="meta-icon">🔥</span>214 points</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://karllorey.com/posts/without-benchmarking-llms-youre-overpaying" target="_blank" class="card-title-link">
+                                <h3 class="card-title">如果没有对法学硕士进行基准测试，你可能会付出过高的代价</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>1 day ago</span><span class="meta-item"><span class="meta-icon">🔥</span>174 points</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://railsui.com/" target="_blank" class="card-title-link">
+                                <h3 class="card-title">显示 HN：Rails UI</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>15 hours ago</span><span class="meta-item"><span class="meta-icon">🔥</span>172 points</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://github.com/davidbeesley/claude-chill" target="_blank" class="card-title-link">
+                                <h3 class="card-title">Claude Chill: Fix Claude Code's flickering in terminal</h3>
+                            </a>
+                             <div class="badges"><span class="badge badge-tool">Tool</span></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>1 day ago</span><span class="meta-item"><span class="meta-icon">🔥</span>164 points</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://www.valueaddedresource.net/ebay-bans-ai-agents-updates-arbitration-user-agreement-feb-2026/" target="_blank" class="card-title-link">
+                                <h3 class="card-title">eBay在用户协议更新中明确禁止人工智能“替我买”代理</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>13 hours ago</span><span class="meta-item"><span class="meta-icon">🔥</span>139 points</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://borretti.me/article/letting-claude-play-text-adventures" target="_blank" class="card-title-link">
+                                <h3 class="card-title">让克劳德玩文字冒险</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>15 hours ago</span><span class="meta-item"><span class="meta-icon">🔥</span>120 points</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://www.jsoftware.com/papers/perlis77.htm" target="_blank" class="card-title-link">
+                                <h3 class="card-title">赞美 APL (1977)</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>1 hour ago</span><span class="meta-item"><span class="meta-icon">🔥</span>13 points</span>
+                            </div>
+                        </div>
+                    </div>
+                </div></div>
+            <div class="category-section">
+                <div class="category-header">
+                    <span class="category-icon">🚀</span>
+                    <h2 class="category-title">Product Hunt</h2>
+                    <span class="category-count">6</span>
+                </div>
+                <div class="cards-grid">
+            
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://www.producthunt.com/products/storychief-io" target="_blank" class="card-title-link">
+                                <h3 class="card-title">StoryChief AI 画布</h3>
+                            </a>
+                             <div class="badges"><span class="badge badge-tool">Tool</span></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>2026-01-21T07:14:05-08:00</span><span class="meta-item"><span class="meta-icon">🔥</span>Top Product</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://www.producthunt.com/products/ada-2" target="_blank" class="card-title-link">
+                                <h3 class="card-title">图表生成器人工智能</h3>
+                            </a>
+                             <div class="badges"><span class="badge badge-tool">Tool</span></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>2026-01-02T18:33:12-08:00</span><span class="meta-item"><span class="meta-icon">🔥</span>Top Product</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://www.producthunt.com/products/blink-21" target="_blank" class="card-title-link">
+                                <h3 class="card-title">闪烁代理生成器</h3>
+                            </a>
+                             <div class="badges"><span class="badge badge-tool">Tool</span></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>2026-01-14T20:28:29-08:00</span><span class="meta-item"><span class="meta-icon">🔥</span>Top Product</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://www.producthunt.com/products/filo-mail" target="_blank" class="card-title-link">
+                                <h3 class="card-title">Android 版 FiloMail</h3>
+                            </a>
+                             <div class="badges"><span class="badge badge-tool">Tool</span></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>2026-01-04T02:59:40-08:00</span><span class="meta-item"><span class="meta-icon">🔥</span>Top Product</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://www.producthunt.com/products/figy-ai" target="_blank" class="card-title-link">
+                                <h3 class="card-title">Figy.ai</h3>
+                            </a>
+                             <div class="badges"><span class="badge badge-tool">Tool</span></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>2026-01-19T21:34:13-08:00</span><span class="meta-item"><span class="meta-icon">🔥</span>Top Product</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://www.producthunt.com/products/daily-dev" target="_blank" class="card-title-link">
+                                <h3 class="card-title">daily.dev 招聘人员</h3>
+                            </a>
+                             <div class="badges"><span class="badge badge-tool">Tool</span></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>2026-01-01T00:46:59-08:00</span><span class="meta-item"><span class="meta-icon">🔥</span>Top Product</span>
+                            </div>
+                        </div>
+                    </div>
+                </div></div>
+            </section>
+            
+            <section class="scenario-section" id="china">
+                <div class="scenario-header">
+                    <h2 class="scenario-name">🇨🇳 科技</h2>
+                    <span class="scenario-count">20 条</span>
+                    <span class="scenario-desc">国内大厂与创投：36Kr + 腾讯新闻</span>
+                </div>
+                
+            <div class="category-section">
+                <div class="category-header">
+                    <span class="category-icon">📰</span>
+                    <h2 class="category-title">36Kr</h2>
+                    <span class="category-count">10</span>
+                </div>
+                <div class="cards-grid">
+            
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://36kr.com/newsflashes/3650452620238984" target="_blank" class="card-title-link">
+                                <h3 class="card-title">瑞华泰：股东拟减持不超3%公司股份</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>35秒前</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://36kr.com/newsflashes/3650448454001030" target="_blank" class="card-title-link">
+                                <h3 class="card-title">机构今日买入湖南白银等19股，卖出金太阳1.12亿元</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>4分钟前</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://36kr.com/newsflashes/3650443310522499" target="_blank" class="card-title-link">
+                                <h3 class="card-title">小米集团宣布最高25亿港元的自动股份回购计划</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>10分钟前</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://36kr.com/newsflashes/3650436040384903" target="_blank" class="card-title-link">
+                                <h3 class="card-title">圣元环保：2025年净利同比预增31.79%—59.24%</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>17分钟前</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://36kr.com/newsflashes/3650431465742725" target="_blank" class="card-title-link">
+                                <h3 class="card-title">奥迪A6L裸车价低至25.8万元？经销商：仅面向大客户销售</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>22分钟前</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://36kr.com/newsflashes/3650425972990086" target="_blank" class="card-title-link">
+                                <h3 class="card-title">市场监管总局首次对公用事业领域企业并购亮红牌</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>27分钟前</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://36kr.com/newsflashes/3650424779809156" target="_blank" class="card-title-link">
+                                <h3 class="card-title">苹果首款AI穿戴设备最早可能在2027年发布</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>28分钟前</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://36kr.com/newsflashes/3650421532811394" target="_blank" class="card-title-link">
+                                <h3 class="card-title">华电科工：部分高管拟合计减持不超2.97万股公司股份</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>32分钟前</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://36kr.com/newsflashes/3650418935849353" target="_blank" class="card-title-link">
+                                <h3 class="card-title">华康洁净：预中标医院扩建项目</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>34分钟前</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://36kr.com/newsflashes/3650409096896905" target="_blank" class="card-title-link">
+                                <h3 class="card-title">曹操出行计划2030年投放10万辆完全定制Robotaxi</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>44分钟前</span>
+                            </div>
+                        </div>
+                    </div>
+                </div></div>
+            <div class="category-section">
+                <div class="category-header">
+                    <span class="category-icon">📄</span>
+                    <h2 class="category-title">Tencent News</h2>
+                    <span class="category-count">10</span>
+                </div>
+                <div class="cards-grid">
+            
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://view.inews.qq.com/a/20260121A07K5T00" target="_blank" class="card-title-link">
+                                <h3 class="card-title">特朗普：不会武力夺取格陵兰岛</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>2026-01-21 22:12:50</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://view.inews.qq.com/a/20260121A05FJX00" target="_blank" class="card-title-link">
+                                <h3 class="card-title">中国建设银行原副行长章更生一审获刑18年</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>2026-01-21 17:00:00</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://view.inews.qq.com/a/20260121A06JDD00" target="_blank" class="card-title-link">
+                                <h3 class="card-title">内蒙古包钢板材厂爆炸事故已致10死84伤</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>2026-01-21 18:59:34</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://view.inews.qq.com/a/20260121A057KI00" target="_blank" class="card-title-link">
+                                <h3 class="card-title">嫣然天使儿童医院：正推进新址寻找，将公布捐赠情况</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>2026-01-21 16:39:09</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://view.inews.qq.com/a/20260121A03U5500" target="_blank" class="card-title-link">
+                                <h3 class="card-title">特朗普改口：“希望马查多参与管理委内瑞拉”</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>2026-01-21 14:05:14</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://view.inews.qq.com/a/20260121A05NRG00" target="_blank" class="card-title-link">
+                                <h3 class="card-title">蓝营2026提名争议多，郑丽文表态</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>2026-01-21 17:17:14</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://view.inews.qq.com/a/20260121A07HLO00" target="_blank" class="card-title-link">
+                                <h3 class="card-title">河南安阳14岁少年被曝遭生父继母虐待离世，官方通报</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>2026-01-21 21:53:31</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://view.inews.qq.com/a/20260121A04TK800" target="_blank" class="card-title-link">
+                                <h3 class="card-title">男子强奸大嫂又刺死见义勇为者案再审开庭</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>2026-01-21 16:03:19</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://view.inews.qq.com/a/20260121A07S2M00" target="_blank" class="card-title-link">
+                                <h3 class="card-title">网传中国人免门票看U23亚洲杯决赛，中国驻吉达总领馆发文辟谣</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>2026-01-21 23:42:18</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://view.inews.qq.com/a/20260121A073Z400" target="_blank" class="card-title-link">
+                                <h3 class="card-title">“老朋友”张勇、胡晓明等“火线救援” 西贝获新融资</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>2026-01-21 20:23:12</span>
+                            </div>
+                        </div>
+                    </div>
+                </div></div>
+            </section>
+            
+            <section class="scenario-section" id="github">
+                <div class="scenario-header">
+                    <h2 class="scenario-name">🐙 开源精选</h2>
+                    <span class="scenario-count">8 条</span>
+                    <span class="scenario-desc">GitHub Trending 热门项目</span>
+                </div>
+                
+            <div class="category-section">
+                <div class="category-header">
+                    <span class="category-icon">🐙</span>
+                    <h2 class="category-title">GitHub Trending</h2>
+                    <span class="category-count">8</span>
+                </div>
+                <div class="cards-grid">
+            
+                    <div class="card  rank-gold" tabindex="0">
+                        <div class="card-content">
+                            <a href="https://github.com/twitter/the-algorithm" target="_blank" class="card-title-link">
+                                <h3 class="card-title">twitter/the-algorithm - X 推荐算法的源代码</h3>
+                            </a>
+                             <div class="badges"><span class="badge badge-tool">Tool</span></div>
+                            <p class="card-summary">Source code for the X Recommendation Algorithm</p>
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>Today</span><span class="meta-item"><span class="meta-icon">🔥</span>71,591 stars</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  rank-gold" tabindex="0">
+                        <div class="card-content">
+                            <a href="https://github.com/xai-org/grok-1" target="_blank" class="card-title-link">
+                                <h3 class="card-title">xai-org/grok-1 - Grok 开放版本</h3>
+                            </a>
+                             <div class="badges"><span class="badge badge-tool">Tool</span></div>
+                            <p class="card-summary">Grok open release</p>
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>Today</span><span class="meta-item"><span class="meta-icon">🔥</span>51,115 stars</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  rank-gold" tabindex="0">
+                        <div class="card-content">
+                            <a href="https://github.com/microsoft/Data-Science-For-Beginners" target="_blank" class="card-title-link">
+                                <h3 class="card-title">microsoft/Data-Science-For-Beginners - 10 周，20 节课，适合所有人的数据科学！</h3>
+                            </a>
+                             <div class="badges"><span class="badge badge-tool">Tool</span></div>
+                            <p class="card-summary">10 Weeks, 20 Lessons, Data Science for All!</p>
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>Today</span><span class="meta-item"><span class="meta-icon">🔥</span>32,556 stars</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  rank-gold" tabindex="0">
+                        <div class="card-content">
+                            <a href="https://github.com/microsoft/agent-lightning" target="_blank" class="card-title-link">
+                                <h3 class="card-title">microsoft/agent-lightning - 点亮 AI 代理的绝对训练器。</h3>
+                            </a>
+                             <div class="badges"><span class="badge badge-tool">Tool</span></div>
+                            <p class="card-summary">The absolute trainer to light up AI agents.</p>
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>Today</span><span class="meta-item"><span class="meta-icon">🔥</span>11,348 stars</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  rank-gold" tabindex="0">
+                        <div class="card-content">
+                            <a href="https://github.com/VectifyAI/PageIndex" target="_blank" class="card-title-link">
+                                <h3 class="card-title">VectifyAI/PageIndex - 📑 PageIndex：无矢量、基于推理的 RAG 的文档索引</h3>
+                            </a>
+                             <div class="badges"><span class="badge badge-tool">Tool</span></div>
+                            <p class="card-summary">📑 PageIndex: Document Index for Vectorless, Reasoning-based RAG</p>
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>Today</span><span class="meta-item"><span class="meta-icon">🔥</span>6,286 stars</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  rank-gold" tabindex="0">
+                        <div class="card-content">
+                            <a href="https://github.com/EveryInc/compound-engineering-plugin" target="_blank" class="card-title-link">
+                                <h3 class="card-title">EveryInc/compound-engineering-plugin - 官方 Claude Code 复合工程插件</h3>
+                            </a>
+                             <div class="badges"><span class="badge badge-tool">Tool</span></div>
+                            <p class="card-summary">Official Claude Code compound engineering plugin</p>
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>Today</span><span class="meta-item"><span class="meta-icon">🔥</span>5,933 stars</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  rank-gold" tabindex="0">
+                        <div class="card-content">
+                            <a href="https://github.com/tambo-ai/tambo" target="_blank" class="card-title-link">
+                                <h3 class="card-title">tambo-ai/tambo - Generative UI SDK for React</h3>
+                            </a>
+                             <div class="badges"><span class="badge badge-tool">Tool</span></div>
+                            <p class="card-summary">Generative UI SDK for React</p>
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>Today</span><span class="meta-item"><span class="meta-icon">🔥</span>3,588 stars</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  rank-gold" tabindex="0">
+                        <div class="card-content">
+                            <a href="https://github.com/tobi/try" target="_blank" class="card-title-link">
+                                <h3 class="card-title">tobi/try - 适合每种氛围的新鲜目录</h3>
+                            </a>
+                             <div class="badges"><span class="badge badge-tool">Tool</span></div>
+                            <p class="card-summary">fresh directories for every vibe</p>
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>Today</span><span class="meta-item"><span class="meta-icon">🔥</span>3,225 stars</span>
+                            </div>
+                        </div>
+                    </div>
+                </div></div>
+            </section>
+            
+            <section class="scenario-section" id="global">
+                <div class="scenario-header">
+                    <h2 class="scenario-name">🌐 全网扫描</h2>
+                    <span class="scenario-count">27 条</span>
+                    <span class="scenario-desc">全网关键词扫描 (Agent + LLM)</span>
+                </div>
+                
+            <div class="category-section">
+                <div class="category-header">
+                    <span class="category-icon">📰</span>
+                    <h2 class="category-title">36Kr</h2>
+                    <span class="category-count">1</span>
+                </div>
+                <div class="cards-grid">
+            
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://36kr.com/newsflashes/3650424779809156" target="_blank" class="card-title-link">
+                                <h3 class="card-title">苹果首款AI穿戴设备最早可能在2027年发布</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>28分钟前</span>
+                            </div>
+                        </div>
+                    </div>
+                </div></div>
+            <div class="category-section">
+                <div class="category-header">
+                    <span class="category-icon">🐙</span>
+                    <h2 class="category-title">GitHub Trending</h2>
+                    <span class="category-count">4</span>
+                </div>
+                <div class="cards-grid">
+            
+                    <div class="card  rank-gold" tabindex="0">
+                        <div class="card-content">
+                            <a href="https://github.com/xai-org/grok-1" target="_blank" class="card-title-link">
+                                <h3 class="card-title">xai-org/grok-1 - Grok 开放版本</h3>
+                            </a>
+                             <div class="badges"><span class="badge badge-tool">Tool</span></div>
+                            <p class="card-summary">Grok open release</p>
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>Today</span><span class="meta-item"><span class="meta-icon">🔥</span>51,115 stars</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  rank-gold" tabindex="0">
+                        <div class="card-content">
+                            <a href="https://github.com/microsoft/agent-lightning" target="_blank" class="card-title-link">
+                                <h3 class="card-title">microsoft/agent-lightning - The absolute trainer to light up AI agents.</h3>
+                            </a>
+                             <div class="badges"><span class="badge badge-tool">Tool</span></div>
+                            <p class="card-summary">The absolute trainer to light up AI agents.</p>
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>Today</span><span class="meta-item"><span class="meta-icon">🔥</span>11,348 stars</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  rank-gold" tabindex="0">
+                        <div class="card-content">
+                            <a href="https://github.com/VectifyAI/PageIndex" target="_blank" class="card-title-link">
+                                <h3 class="card-title">VectifyAI/PageIndex - 📑 PageIndex：无矢量、基于推理的 RAG 的文档索引</h3>
+                            </a>
+                             <div class="badges"><span class="badge badge-tool">Tool</span></div>
+                            <p class="card-summary">📑 PageIndex: Document Index for Vectorless, Reasoning-based RAG</p>
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>Today</span><span class="meta-item"><span class="meta-icon">🔥</span>6,286 stars</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  rank-gold" tabindex="0">
+                        <div class="card-content">
+                            <a href="https://github.com/tambo-ai/tambo" target="_blank" class="card-title-link">
+                                <h3 class="card-title">tambo-ai/tambo - 用于 React 的生成 UI SDK</h3>
+                            </a>
+                             <div class="badges"><span class="badge badge-tool">Tool</span></div>
+                            <p class="card-summary">Generative UI SDK for React</p>
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>Today</span><span class="meta-item"><span class="meta-icon">🔥</span>3,588 stars</span>
+                            </div>
+                        </div>
+                    </div>
+                </div></div>
+            <div class="category-section">
+                <div class="category-header">
+                    <span class="category-icon">🔶</span>
+                    <h2 class="category-title">Hacker News</h2>
+                    <span class="category-count">10</span>
+                </div>
+                <div class="cards-grid">
+            
+                    <div class="card is-hot " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://skip.dev/blog/skip-is-free/" target="_blank" class="card-title-link">
+                                <h3 class="card-title">Skip 现在是免费且开源的</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>19 hours ago</span><span class="meta-item"><span class="meta-icon">🔥</span>405 points</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card is-hot " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://news.ycombinator.com/item?id=46707699" target="_blank" class="card-title-link">
+                                <h3 class="card-title">告诉 HN：Bending Spoons 昨天解雇了 Vimeo 的几乎所有人</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>18 hours ago</span><span class="meta-item"><span class="meta-icon">🔥</span>385 points</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card is-hot " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://blog.kagi.com/waiting-dawn-search" target="_blank" class="card-title-link">
+                                <h3 class="card-title">等待搜索黎明：搜索索引、谷歌裁决以及对 Kagi 的影响</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>17 hours ago</span><span class="meta-item"><span class="meta-icon">🔥</span>326 points</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card is-hot " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://www.media.mit.edu/publications/your-brain-on-chatgpt/" target="_blank" class="card-title-link">
+                                <h3 class="card-title">ChatGPT 上的你的大脑：使用人工智能助手时认知债务的积累</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>11 hours ago</span><span class="meta-item"><span class="meta-icon">🔥</span>214 points</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://karllorey.com/posts/without-benchmarking-llms-youre-overpaying" target="_blank" class="card-title-link">
+                                <h3 class="card-title">如果没有对法学硕士进行基准测试，你可能会付出过高的代价</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>1 day ago</span><span class="meta-item"><span class="meta-icon">🔥</span>174 points</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://railsui.com/" target="_blank" class="card-title-link">
+                                <h3 class="card-title">显示 HN：Rails UI</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>15 hours ago</span><span class="meta-item"><span class="meta-icon">🔥</span>172 points</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://www.valueaddedresource.net/ebay-bans-ai-agents-updates-arbitration-user-agreement-feb-2026/" target="_blank" class="card-title-link">
+                                <h3 class="card-title">eBay在用户协议更新中明确禁止人工智能“替我买”代理</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>13 hours ago</span><span class="meta-item"><span class="meta-icon">🔥</span>139 points</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://modal.com/llm-almanac/workloads" target="_blank" class="card-title-link">
+                                <h3 class="card-title">三种类型的 LLM 工作负载以及如何服务它们</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>13 hours ago</span><span class="meta-item"><span class="meta-icon">🔥</span>68 points</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://github.com/borenstein/yolo-cage" target="_blank" class="card-title-link">
+                                <h3 class="card-title">Show HN：yolo-cage – 无法泄露秘密的人工智能编码代理</h3>
+                            </a>
+                             <div class="badges"><span class="badge badge-tool">Tool</span></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>19 hours ago</span><span class="meta-item"><span class="meta-icon">🔥</span>53 points</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://www.jsoftware.com/papers/perlis77.htm" target="_blank" class="card-title-link">
+                                <h3 class="card-title">赞美 APL (1977)</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>1 hour ago</span><span class="meta-item"><span class="meta-icon">🔥</span>13 points</span>
+                            </div>
+                        </div>
+                    </div>
+                </div></div>
+            <div class="category-section">
+                <div class="category-header">
+                    <span class="category-icon">🚀</span>
+                    <h2 class="category-title">Product Hunt</h2>
+                    <span class="category-count">6</span>
+                </div>
+                <div class="cards-grid">
+            
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://www.producthunt.com/products/storychief-io" target="_blank" class="card-title-link">
+                                <h3 class="card-title">StoryChief AI 画布</h3>
+                            </a>
+                             <div class="badges"><span class="badge badge-tool">Tool</span></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>2026-01-21T07:14:05-08:00</span><span class="meta-item"><span class="meta-icon">🔥</span>Top Product</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://www.producthunt.com/products/ada-2" target="_blank" class="card-title-link">
+                                <h3 class="card-title">图表生成器人工智能</h3>
+                            </a>
+                             <div class="badges"><span class="badge badge-tool">Tool</span></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>2026-01-02T18:33:12-08:00</span><span class="meta-item"><span class="meta-icon">🔥</span>Top Product</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://www.producthunt.com/products/blink-21" target="_blank" class="card-title-link">
+                                <h3 class="card-title">闪烁代理生成器</h3>
+                            </a>
+                             <div class="badges"><span class="badge badge-tool">Tool</span></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>2026-01-14T20:28:29-08:00</span><span class="meta-item"><span class="meta-icon">🔥</span>Top Product</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://www.producthunt.com/products/filo-mail" target="_blank" class="card-title-link">
+                                <h3 class="card-title">Android 版 FiloMail</h3>
+                            </a>
+                             <div class="badges"><span class="badge badge-tool">Tool</span></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>2026-01-04T02:59:40-08:00</span><span class="meta-item"><span class="meta-icon">🔥</span>Top Product</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://www.producthunt.com/products/figy-ai" target="_blank" class="card-title-link">
+                                <h3 class="card-title">Figy.ai</h3>
+                            </a>
+                             <div class="badges"><span class="badge badge-tool">Tool</span></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>2026-01-19T21:34:13-08:00</span><span class="meta-item"><span class="meta-icon">🔥</span>Top Product</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://www.producthunt.com/products/daily-dev" target="_blank" class="card-title-link">
+                                <h3 class="card-title">daily.dev 招聘人员</h3>
+                            </a>
+                             <div class="badges"><span class="badge badge-tool">Tool</span></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>2026-01-01T00:46:59-08:00</span><span class="meta-item"><span class="meta-icon">🔥</span>Top Product</span>
+                            </div>
+                        </div>
+                    </div>
+                </div></div>
+            <div class="category-section">
+                <div class="category-header">
+                    <span class="category-icon">📄</span>
+                    <h2 class="category-title">Tencent News</h2>
+                    <span class="category-count">1</span>
+                </div>
+                <div class="cards-grid">
+            
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://view.inews.qq.com/a/20260121A077S700" target="_blank" class="card-title-link">
+                                <h3 class="card-title">黄仁勋达沃斯对话：五层蛋糕、三大突破、万亿基建重塑AI未来</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>2026-01-21 20:43:03</span>
+                            </div>
+                        </div>
+                    </div>
+                </div></div>
+            <div class="category-section">
+                <div class="category-header">
+                    <span class="category-icon">💹</span>
+                    <h2 class="category-title">Wall Street CN</h2>
+                    <span class="category-count">5</span>
+                </div>
+                <div class="cards-grid">
+            
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://wallstreetcn.com/member/articles/3763917" target="_blank" class="card-title-link">
+                                <h3 class="card-title">进击的核能！AI竞赛关键环节，产业全球加速复兴</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>17:40</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://wallstreetcn.com/member/articles/3763897" target="_blank" class="card-title-link">
+                                <h3 class="card-title">PCB行业展望：AI浪潮激发产业需求，材料升级带动量价齐升</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>17:01</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://wallstreetcn.com/articles/3763918" target="_blank" class="card-title-link">
+                                <h3 class="card-title">决定谁能赢得AI竞赛？或许是：燃气轮机</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>16:17</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://wallstreetcn.com/charts/41958475" target="_blank" class="card-title-link">
+                                <h3 class="card-title">AI时代，什么工作最好？黄仁勋给你答案</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>15:05</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://wallstreetcn.com/themes/1008381" target="_blank" class="card-title-link">
+                                <h3 class="card-title">中国AI独角兽的进阶之路</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div></div>
+            </section>
+            
+        </main>
+
+        <footer class="main-footer">
+            <p>Generated by News Aggregator Skill • <a href="index.html">History</a></p>
+        </footer>
+    </div>
+    
+    <script>
+    // Keyboard Navigation
+    document.addEventListener('keydown', function(e) {
+        if (['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
+
+        const cards = Array.from(document.querySelectorAll('.card'));
+        if (!cards.length) return;
+        
+        let activeIndex = cards.findIndex(c => c === document.activeElement || c.classList.contains('active-card'));
+        
+        if (e.key === 'j' || e.key === 'J' || e.key === 'ArrowDown') {
+             activeIndex = (activeIndex + 1) % cards.length;
+             e.preventDefault();
+        } else if (e.key === 'k' || e.key === 'K' || e.key === 'ArrowUp') {
+             if (activeIndex === -1) activeIndex = 0;
+             else activeIndex = (activeIndex - 1 + cards.length) % cards.length;
+             e.preventDefault();
+        } else if (e.key === 'Enter') {
+             if (activeIndex >= 0) {
+                const link = cards[activeIndex].querySelector('a');
+                if(link) window.open(link.href, '_blank');
+             }
+             return;
+        } else {
+             return;
+        }
+        
+        cards.forEach(c => c.classList.remove('active-card'));
+        if (activeIndex >= 0) {
+            cards[activeIndex].classList.add('active-card');
+            cards[activeIndex].focus();
+            cards[activeIndex].scrollIntoView({behavior: 'smooth', block: 'center'});
+        }
+    });
+    </script>
+</body>
+</html>
