@@ -622,6 +622,7 @@ def main():
             
             generator = HTMLGenerator()
             html_path = generator.generate_dashboard(date_str, all_scenario_data, summary=summary_text)
+            generator.update_index(date_str) # Critical: Update index.html to point to new file
             print(f"Dashboard generated: {html_path}")
             
     # Case 2: Legacy/Direct Source Mode (if --source is provided)
