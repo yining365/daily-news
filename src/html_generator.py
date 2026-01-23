@@ -108,7 +108,12 @@ class HTMLGenerator:
             info = SCENARIO_MAP[key]
             items = scenarios_data.get(key, [])
             count = len(items)
+            # Skip empty sections
+            if count == 0:
+                continue
+            
             total_count += count
+
             
             # 构建每个场景的内容区块
             section_html = self._build_section_content(items)
