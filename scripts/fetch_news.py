@@ -615,8 +615,12 @@ def main():
 
         # Generate Dashboard HTML
         if args.output in ['html', 'all']:
+            from datetime import timedelta, timezone
+            # Force Beijing Time (UTC+8)
+            beijing_time = datetime.now(timezone.utc) + timedelta(hours=8)
+            date_str = beijing_time.strftime("%Y-%m-%d")
+            
             generator = HTMLGenerator()
-            date_str = datetime.now().strftime("%Y-%m-%d")
             html_path = generator.generate_dashboard(date_str, all_scenario_data, summary=summary_text)
             print(f"Dashboard generated: {html_path}")
             
