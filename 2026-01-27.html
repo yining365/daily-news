@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026-01-27 全网新闻聚合 - News Aggregator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --glow-start: #0A1929;
+            --glow-end: #1A3A52;
+            --text-primary: #E3F2FD;
+            --accent-color: #42A5F5;
+            --secondary-color: #B0BEC5;
+            --bg-gradient: linear-gradient(135deg, #0A1929 0%, #1A3A52 100%);
+        }
+        
+        /* 快速导航 */
+        .quick-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            background: rgba(15, 23, 42, 0.95);
+            padding: 1rem;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .quick-nav-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .quick-nav-item:hover {
+            background: var(--accent-color);
+            color: #fff;
+        }
+        .quick-nav-item span {
+            background: rgba(0,0,0,0.2);
+            padding: 2px 6px;
+            border-radius: 8px;
+            font-size: 0.75rem;
+        }
+        
+        /* 场景区块 */
+        .scenario-section {
+            margin-bottom: 4rem;
+            scroll-margin-top: 80px;
+        }
+        .scenario-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--accent-color);
+            flex-wrap: wrap;
+        }
+        .scenario-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+        }
+        .scenario-count {
+            background: var(--accent-color);
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+        .scenario-desc {
+            opacity: 0.6;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <header class="main-header">
+            <div class="header-content">
+                <div class="logo-area">
+                    <div class="logo-icon">🤖</div>
+                    <div class="logo-text">
+                        <h1>News Aggregator</h1>
+                        <p class="subtitle">全网新闻聚合</p>
+                    </div>
+                </div>
+                <div class="date-display">
+                    <span class="date-icon">📅</span>
+                    <span>1月27日 周二</span>
+                </div>
+            </div>
+        </header>
+
+        
+            <div class="daily-summary">
+                <div class="summary-content">
+                    <span class="summary-icon">💡</span>
+                    <p>今日共追踪到 <strong>32</strong> 条前沿资讯，覆盖 CHINA, AI, GITHUB, GLOBAL 等领域。<br>🔥 热门关注：法国旨在取代 Zoom、Google Meet、Microsoft Teams 等、Google AI 概述在进行健康查询时引用 YouTube 的次数超过任何医疗网站、🛠️ VectifyAI/PageIndex - 📑 PageIndex：无矢量、基于推理的 RAG 的文档索引...</p>
+                </div>
+            </div>
+            
+
+
+
+        <main class="main-content">
+            
+            <section class="scenario-section" id="china">
+                <div class="scenario-header">
+                    <h2 class="scenario-name">🇨🇳 科技</h2>
+                    <span class="scenario-count">10 条</span>
+                    <span class="scenario-desc">国内大厂与创投：36Kr + 腾讯新闻</span>
+                </div>
+                
+            <div class="category-section">
+                <div class="category-header">
+                    <span class="category-icon">📄</span>
+                    <h2 class="category-title">Tencent News</h2>
+                    <span class="category-count">10</span>
+                </div>
+                <div class="cards-grid">
+            
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://view.inews.qq.com/a/20260126A05DD900" target="_blank" class="card-title-link">
+                                <h3 class="card-title">外交部提醒中国公民春节期间避免前往日本</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>2026-01-26 17:08:39</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://view.inews.qq.com/a/20260126A06IJ100" target="_blank" class="card-title-link">
+                                <h3 class="card-title">著名计算机科学家、北京航空航天大学原校长李未院士逝世</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>2026-01-26 19:48:26</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://view.inews.qq.com/a/20260126A06ORI00" target="_blank" class="card-title-link">
+                                <h3 class="card-title">央行：前瞻性研判系统性金融风险隐患，维护金融市场稳健运行</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>2026-01-26 20:12:09</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://view.inews.qq.com/a/20260126A06G3R00" target="_blank" class="card-title-link">
+                                <h3 class="card-title">王健已任辽宁省政协党组副书记，此前任省委常委、常务副省长</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>2026-01-26 19:40:26</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://view.inews.qq.com/a/20260126A064CN00" target="_blank" class="card-title-link">
+                                <h3 class="card-title">韩国前总理韩德洙就一审判决提起上诉</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>2026-01-26 18:48:16</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://view.inews.qq.com/a/20260126A06CO300" target="_blank" class="card-title-link">
+                                <h3 class="card-title">菲律宾客船倾覆事故幸存者：没收到任何预警信号</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>2026-01-26 19:26:29</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://view.inews.qq.com/a/20260126A075M800" target="_blank" class="card-title-link">
+                                <h3 class="card-title">李湘前夫王岳伦发声：王诗龄休学、缅北诈骗系谣言，此前李湘账号被禁止关注</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>2026-01-26 21:57:08</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://view.inews.qq.com/a/20260126A06BRQ00" target="_blank" class="card-title-link">
+                                <h3 class="card-title">今年商务领域工作重点有这些</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>2026-01-26 19:22:16</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://view.inews.qq.com/a/20260126A072C400" target="_blank" class="card-title-link">
+                                <h3 class="card-title">黄金价格冲破5100美元，全球“氪金”热潮能否持续</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>2026-01-26 21:28:10</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://view.inews.qq.com/a/20260126A05XU300" target="_blank" class="card-title-link">
+                                <h3 class="card-title">国产半导体测试机，夹缝求生</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>2026-01-26 20:03:40</span>
+                            </div>
+                        </div>
+                    </div>
+                </div></div>
+            </section>
+            
+            <section class="scenario-section" id="ai">
+                <div class="scenario-header">
+                    <h2 class="scenario-name">🔥 AI 热点</h2>
+                    <span class="scenario-count">10 条</span>
+                    <span class="scenario-desc">硅谷前沿：Hacker News + Product Hunt</span>
+                </div>
+                
+            <div class="category-section">
+                <div class="category-header">
+                    <span class="category-icon">🔶</span>
+                    <h2 class="category-title">Hacker News</h2>
+                    <span class="category-count">10</span>
+                </div>
+                <div class="cards-grid">
+            
+                    <div class="card is-hot " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://twitter.com/lellouchenico/status/2015775970330882319" target="_blank" class="card-title-link">
+                                <h3 class="card-title">法国旨在取代 Zoom、Google Meet、Microsoft Teams 等</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>9 hours ago</span><span class="meta-item"><span class="meta-icon">🔥</span>525 points</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card is-hot " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://www.theguardian.com/technology/2026/jan/24/google-ai-overviews-youtube-medical-citations-study" target="_blank" class="card-title-link">
+                                <h3 class="card-title">Google AI 概述在进行健康查询时引用 YouTube 的次数超过任何医疗网站</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>11 hours ago</span><span class="meta-item"><span class="meta-icon">🔥</span>357 points</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card is-hot " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://www.apple.com/newsroom/2026/01/apple-introduces-new-airtag-with-expanded-range-and-improved-findability/" target="_blank" class="card-title-link">
+                                <h3 class="card-title">苹果推出新的 AirTag，具有更远的射程和更高的可发现性</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>12 hours ago</span><span class="meta-item"><span class="meta-icon">🔥</span>268 points</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://simonwillison.net/2026/Jan/26/chatgpt-containers/" target="_blank" class="card-title-link">
+                                <h3 class="card-title">ChatGPT 容器现在可以运行 bash、pip/npm 安装包并下载文件</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>6 hours ago</span><span class="meta-item"><span class="meta-icon">🔥</span>172 points</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://www.greptile.com/blog/ai-code-review-bubble" target="_blank" class="card-title-link">
+                                <h3 class="card-title">存在人工智能代码审查泡沫</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>8 hours ago</span><span class="meta-item"><span class="meta-icon">🔥</span>169 points</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://blog.vjeux.com/2026/analysis/porting-100k-lines-from-typescript-to-rust-using-claude-code-in-a-month.html" target="_blank" class="card-title-link">
+                                <h3 class="card-title">使用 Claude Code 在一个月内将 10 万行从 TypeScript 移植到 Rust</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>12 hours ago</span><span class="meta-item"><span class="meta-icon">🔥</span>158 points</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://github.com/kxzk/snapbench" target="_blank" class="card-title-link">
+                                <h3 class="card-title">Show HN：只有 1 名法学硕士可以驾驶无人机</h3>
+                            </a>
+                             <div class="badges"><span class="badge badge-tool">Tool</span></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>15 hours ago</span><span class="meta-item"><span class="meta-icon">🔥</span>142 points</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://alexwennerberg.com/blog/2026-01-25-slop.html" target="_blank" class="card-title-link">
+                                <h3 class="card-title">AI代码和软件工艺</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>4 hours ago</span><span class="meta-item"><span class="meta-icon">🔥</span>81 points</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://tetrisbench.com/tetrisbench/" target="_blank" class="card-title-link">
+                                <h3 class="card-title">Show HN：TetrisBench – Gemini Flash 在 Tetris 上对 Opus 的胜率达到 66%</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>7 hours ago</span><span class="meta-item"><span class="meta-icon">🔥</span>70 points</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://www.msn.com/en-us/news/technology/i-let-chatgpt-analyze-a-decade-of-my-apple-watch-data-then-i-called-my-doctor/ar-AA1UZxip" target="_blank" class="card-title-link">
+                                <h3 class="card-title">我让 ChatGPT 分析了我十年来的 Apple Watch 数据，然后我打电话给我的医生</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>3 hours ago</span><span class="meta-item"><span class="meta-icon">🔥</span>39 points</span>
+                            </div>
+                        </div>
+                    </div>
+                </div></div>
+            </section>
+            
+            <section class="scenario-section" id="global">
+                <div class="scenario-header">
+                    <h2 class="scenario-name">🌍 全网</h2>
+                    <span class="scenario-count">10 条</span>
+                    <span class="scenario-desc">Global Tech & Startup News</span>
+                </div>
+                
+            <div class="category-section">
+                <div class="category-header">
+                    <span class="category-icon">🔶</span>
+                    <h2 class="category-title">Hacker News</h2>
+                    <span class="category-count">10</span>
+                </div>
+                <div class="cards-grid">
+            
+                    <div class="card is-hot " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://twitter.com/lellouchenico/status/2015775970330882319" target="_blank" class="card-title-link">
+                                <h3 class="card-title">法国旨在取代 Zoom、Google Meet、Microsoft Teams 等</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>9 hours ago</span><span class="meta-item"><span class="meta-icon">🔥</span>525 points</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card is-hot " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://www.theguardian.com/technology/2026/jan/24/google-ai-overviews-youtube-medical-citations-study" target="_blank" class="card-title-link">
+                                <h3 class="card-title">Google AI 概述在进行健康查询时引用 YouTube 的次数超过任何医疗网站</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>11 hours ago</span><span class="meta-item"><span class="meta-icon">🔥</span>357 points</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card is-hot " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://www.apple.com/newsroom/2026/01/apple-introduces-new-airtag-with-expanded-range-and-improved-findability/" target="_blank" class="card-title-link">
+                                <h3 class="card-title">苹果推出新的 AirTag，具有更远的射程和更高的可发现性</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>12 hours ago</span><span class="meta-item"><span class="meta-icon">🔥</span>269 points</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://simonwillison.net/2026/Jan/26/chatgpt-containers/" target="_blank" class="card-title-link">
+                                <h3 class="card-title">ChatGPT 容器现在可以运行 bash、pip/npm 安装包并下载文件</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>6 hours ago</span><span class="meta-item"><span class="meta-icon">🔥</span>173 points</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://www.greptile.com/blog/ai-code-review-bubble" target="_blank" class="card-title-link">
+                                <h3 class="card-title">存在人工智能代码审查泡沫</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>8 hours ago</span><span class="meta-item"><span class="meta-icon">🔥</span>169 points</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://github.com/kxzk/snapbench" target="_blank" class="card-title-link">
+                                <h3 class="card-title">Show HN：只有 1 名法学硕士可以驾驶无人机</h3>
+                            </a>
+                             <div class="badges"><span class="badge badge-tool">Tool</span></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>15 hours ago</span><span class="meta-item"><span class="meta-icon">🔥</span>142 points</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://llmspy.org/docs/v3" target="_blank" class="card-title-link">
+                                <h3 class="card-title">OSS ChatGPT WebUI – 530 模型、MCP、工具、Gemini RAG、图像/音频生成</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>11 hours ago</span><span class="meta-item"><span class="meta-icon">🔥</span>116 points</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://signoregalilei.com/2026/01/18/the-mountain-that-weighed-the-earth/" target="_blank" class="card-title-link">
+                                <h3 class="card-title">称得上地球重的山</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>9 hours ago</span><span class="meta-item"><span class="meta-icon">🔥</span>84 points</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://alexwennerberg.com/blog/2026-01-25-slop.html" target="_blank" class="card-title-link">
+                                <h3 class="card-title">AI代码和软件工艺</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>4 hours ago</span><span class="meta-item"><span class="meta-icon">🔥</span>82 points</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  " tabindex="0">
+                        <div class="card-content">
+                            <a href="https://tetrisbench.com/tetrisbench/" target="_blank" class="card-title-link">
+                                <h3 class="card-title">Show HN：TetrisBench – Gemini Flash 在 Tetris 上对 Opus 的胜率达到 66%</h3>
+                            </a>
+                             <div class="badges"></div>
+                            
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>7 hours ago</span><span class="meta-item"><span class="meta-icon">🔥</span>70 points</span>
+                            </div>
+                        </div>
+                    </div>
+                </div></div>
+            </section>
+            
+            <section class="scenario-section" id="github">
+                <div class="scenario-header">
+                    <h2 class="scenario-name">🐙 开源精选</h2>
+                    <span class="scenario-count">2 条</span>
+                    <span class="scenario-desc">GitHub Trending 热门项目</span>
+                </div>
+                
+            <div class="category-section">
+                <div class="category-header">
+                    <span class="category-icon">🐙</span>
+                    <h2 class="category-title">GitHub Trending</h2>
+                    <span class="category-count">2</span>
+                </div>
+                <div class="cards-grid">
+            
+                    <div class="card  rank-gold" tabindex="0">
+                        <div class="card-content">
+                            <a href="https://github.com/VectifyAI/PageIndex" target="_blank" class="card-title-link">
+                                <h3 class="card-title">VectifyAI/PageIndex - 📑 PageIndex：无矢量、基于推理的 RAG 的文档索引</h3>
+                            </a>
+                             <div class="badges"><span class="badge badge-tool">Tool</span></div>
+                            <p class="card-summary">📑 PageIndex: Document Index for Vectorless, Reasoning-based RAG</p>
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>Today</span><span class="meta-item"><span class="meta-icon">🔥</span>9,805 stars</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card  rank-gold" tabindex="0">
+                        <div class="card-content">
+                            <a href="https://github.com/Blaizzy/mlx-audio" target="_blank" class="card-title-link">
+                                <h3 class="card-title">Blaizzy/mlx-audio - 基于 Apple MLX 框架构建的文本转语音 (TTS)、语音转文本 (STT) 和语音转语音 (STS) 库，可在 Apple Silicon 上提供高效的语音分析。</h3>
+                            </a>
+                             <div class="badges"><span class="badge badge-tool">Tool</span></div>
+                            <p class="card-summary">A text-to-speech (TTS), speech-to-text (STT) and speech-to-speech (STS) library built on Apple's MLX framework, providing efficient speech analysis on Apple Silicon.</p>
+                            <div class="card-meta">
+                                <span class="meta-item"><span class="meta-icon">🕒</span>Today</span><span class="meta-item"><span class="meta-icon">🔥</span>5,121 stars</span>
+                            </div>
+                        </div>
+                    </div>
+                </div></div>
+            </section>
+            
+        </main>
+
+        <footer class="main-footer">
+            <p>Generated by News Aggregator Skill • <a href="index.html">History</a></p>
+        </footer>
+    </div>
+    
+    <script>
+    // Keyboard Navigation
+    document.addEventListener('keydown', function(e) {
+        if (['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
+
+        const cards = Array.from(document.querySelectorAll('.card'));
+        if (!cards.length) return;
+        
+        let activeIndex = cards.findIndex(c => c === document.activeElement || c.classList.contains('active-card'));
+        
+        if (e.key === 'j' || e.key === 'J' || e.key === 'ArrowDown') {
+             activeIndex = (activeIndex + 1) % cards.length;
+             e.preventDefault();
+        } else if (e.key === 'k' || e.key === 'K' || e.key === 'ArrowUp') {
+             if (activeIndex === -1) activeIndex = 0;
+             else activeIndex = (activeIndex - 1 + cards.length) % cards.length;
+             e.preventDefault();
+        } else if (e.key === 'Enter') {
+             if (activeIndex >= 0) {
+                const link = cards[activeIndex].querySelector('a');
+                if(link) window.open(link.href, '_blank');
+             }
+             return;
+        } else {
+             return;
+        }
+        
+        cards.forEach(c => c.classList.remove('active-card'));
+        if (activeIndex >= 0) {
+            cards[activeIndex].classList.add('active-card');
+            cards[activeIndex].focus();
+            cards[activeIndex].scrollIntoView({behavior: 'smooth', block: 'center'});
+        }
+    });
+    </script>
+</body>
+</html>
