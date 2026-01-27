@@ -587,8 +587,12 @@ def main():
         
         all_scenario_data = {}
         for key in scenarios_to_fetch:
-            sys.stderr.write(f"--- Fetching {key} ---\n")
-            data = fetch_data_for_scenario(key, args.limit, args.deep, args.no_translate)
+            current_limit = args.limit
+            if key == 'github':
+                current_limit = 2
+                
+            sys.stderr.write(f"--- Fetching {key} (limit={current_limit}) ---\n")
+            data = fetch_data_for_scenario(key, current_limit, args.deep, args.no_translate)
             all_scenario_data[key] = data
             
             

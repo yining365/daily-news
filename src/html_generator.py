@@ -98,8 +98,8 @@ class HTMLGenerator:
         # 构建所有场景的内容（垂直排列）
         sections_html = ""
         
-        # 排序：China -> X Social -> AI -> GitHub -> Global (科技优先)
-        scenario_order = ["china", "x_social", "ai", "github", "global"]
+        # 排序：China -> X Social -> AI -> Global -> GitHub (开源放在最后)
+        scenario_order = ["china", "x_social", "ai", "global", "github"]
         
         total_count = 0
         for key in scenario_order:
