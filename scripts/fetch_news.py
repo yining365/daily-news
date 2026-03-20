@@ -911,13 +911,31 @@ def _tg_escape(text):
     return text
 
 
+def _md_to_tg_html(text):
+    text = _tg_escape(text)
+    text = re.sub(r'\*\*(.+?)\*\*', r'<b>\1</b>', text)
+    text = re.sub(r'\*(.+?)\*', r'<i>\1</i>', text)
+    return text
+
+
+def _make_short_title(item):
+    conclusion = item.get("conclusion", "")
+    if conclusion:
+        t = re.split(r'[。；;，]', conclusion)[0].strip()
+        if len(t) >= 8:
+            return t[:60]
+    title = re.sub(r'^\s*\[\d+\]\s*', '', item.get("title", ""))
+    title = re.sub(r'^@\w+:\s*', '', title)
+    return title[:60]
+
+
 def send_telegram(date, main_theme, items, commentary, watchpoint_reviews):
     parts = [f"<b>📰 阿宁日报 {_tg_escape(date)}</b>"]
 
     if main_theme:
         parts.append("")
         parts.append(f"<b>📌 今日主线</b>")
-        parts.append(f"<i>{_tg_escape(main_theme[:500])}</i>")
+        parts.append(_md_to_tg_html(main_theme[:500]))
 
     if items:
         parts.append("")
@@ -926,32 +944,32 @@ def send_telegram(date, main_theme, items, commentary, watchpoint_reviews):
             source = item.get("source", "")
             icon = {"Hacker News": "🔶", "Polymarket": "📊", "GitHub Trending": "🐙",
                     "华尔街见闻": "💹", "X (Twitter)": "𝕏"}.get(source, "📡")
-            title = re.sub(r'^\s*\[\d+\]\s*', '', item.get("title", ""))
+            title = _make_short_title(item)
             url = item.get("url", "")
             if url:
-                parts.append(f"{icon} <b>{i}.</b> <a href=\"{_tg_escape(url)}\">{_tg_escape(title[:80])}</a>")
+                parts.append(f"{icon} <a href=\"{_tg_escape(url)}\">{_tg_escape(title)}</a>")
             else:
-                parts.append(f"{icon} <b>{i}.</b> {_tg_escape(title[:80])}")
+                parts.append(f"{icon} {_tg_escape(title)}")
             conclusion = item.get("conclusion", "")
             if conclusion:
-                parts.append(f"    {_tg_escape(conclusion[:120])}")
+                parts.append(f"  <i>{_tg_escape(conclusion[:120])}</i>")
             parts.append("")
 
     if commentary:
         parts.append("─────────────────")
         parts.append(f"<b>✍️ 阿宁点评</b>")
-        parts.append(_tg_escape(commentary[:600]))
+        parts.append(_md_to_tg_html(commentary[:800]))
         parts.append("")
 
     if watchpoint_reviews:
         parts.append(f"<b>🔍 观察点回顾</b>")
         for wp in watchpoint_reviews[:5]:
-            label = _tg_escape(wp.get("status_label", "⏳"))
+            label = wp.get("status_label", "⏳")
             watch = _tg_escape(wp.get("watch", ""))
-            parts.append(f"  {label} {watch}")
+            parts.append(f"{label} {watch}")
             review = wp.get("review", "")
             if review:
-                parts.append(f"    <i>{_tg_escape(review[:80])}</i>")
+                parts.append(f"  <i>{_tg_escape(review[:80])}</i>")
         parts.append("")
 
     parts.append(f"<a href=\"https://yining365.github.io/daily-news/\">🔗 完整版</a>")
