@@ -13,6 +13,11 @@ from datetime import datetime, timezone, timedelta
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from src.config import OUTPUT_DIR, AI_BASE_URL, AI_API_KEY, AI_MODEL, SITE_META, X_AUTH_TOKEN, X_CT0, RSS_FEEDS
+
+# 服务器模式：读本地 X 缓存而非 API
+X_CACHE_FILE = os.getenv("X_CACHE_FILE", "")
+TG_BOT_TOKEN = os.getenv("TG_BOT_TOKEN", "")
+TG_CHAT_ID = os.getenv("TG_CHAT_ID", "")
 from src.html_generator import HTMLGenerator
 
 HEADERS = {
@@ -156,6 +161,49 @@ def fetch_wallstreetcn(limit=20):
             })
     except Exception as e:
         sys.stderr.write(f"[WallStreetCN] Error: {e}\n")
+    return items
+
+
+def fetch_x_from_cache(limit=20):
+    """从服务器本地 x_raw_cache.jsonl 读取精选账号数据"""
+    if not X_CACHE_FILE or not os.path.exists(X_CACHE_FILE):
+        sys.stderr.write(f"[X] Cache file not found: {X_CACHE_FILE}\n")
+        return fetch_x_timeline(limit)
+
+    items = []
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=36)
+    try:
+        with open(X_CACHE_FILE, encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                tweet = json.loads(line)
+                fetched = tweet.get("fetched_at", "")
+                if fetched:
+                    try:
+                        dt = datetime.fromisoformat(fetched.replace("Z", "+00:00"))
+                        if dt < cutoff:
+                            continue
+                    except Exception:
+                        pass
+                author = tweet.get("author", "")
+                title = tweet.get("title", "") or tweet.get("raw_text", "")[:150]
+                url = tweet.get("url", "")
+                heat = int(tweet.get("heat", 0) or 0)
+                bucket = tweet.get("bucket", "")
+                items.append({
+                    "source": "X (Twitter)",
+                    "title": f"@{author}: {title}",
+                    "url": url,
+                    "engagement": f"热度{heat}",
+                    "x_bucket": bucket,
+                    "x_heat": heat,
+                })
+        items.sort(key=lambda x: x.get("x_heat", 0), reverse=True)
+        items = items[:limit]
+    except Exception as e:
+        sys.stderr.write(f"[X] Cache read error: {e}\n")
     return items
 
 
@@ -769,7 +817,7 @@ def main():
         ("Polymarket", fetch_polymarket),
         ("GitHub", fetch_github),
         ("华尔街见闻", fetch_wallstreetcn),
-        ("X", fetch_x_timeline),
+        ("X", fetch_x_from_cache if X_CACHE_FILE else fetch_x_timeline),
         ("RSS", fetch_rss),
     ]
 
@@ -846,6 +894,71 @@ def main():
     generator.update_index(today)
     sys.stderr.write(f"Output: {html_path}\n")
     print(f"Daily brief generated: {html_path}")
+
+    # Step 6: Telegram 推送
+    if TG_BOT_TOKEN and TG_CHAT_ID:
+        sys.stderr.write("Step 6: 发送 Telegram...\n")
+        try:
+            send_telegram(today, main_theme, analyzed_items, commentary, watchpoint_reviews)
+            sys.stderr.write("  Telegram sent.\n")
+        except Exception as e:
+            sys.stderr.write(f"  Telegram failed: {e}\n")
+
+
+def send_telegram(date, main_theme, items, commentary, watchpoint_reviews):
+    lines = [f"📰 阿宁日报 {date}", ""]
+
+    if main_theme:
+        lines.append("📌 今日主线")
+        lines.append(main_theme[:500])
+        lines.append("")
+
+    lines.append("━━━━━━━━━━━━━━━")
+    for item in items[:8]:
+        source = item.get("source", "")
+        icon = {"Hacker News": "🔶", "Polymarket": "📊", "GitHub Trending": "🐙",
+                "华尔街见闻": "💹", "X (Twitter)": "𝕏"}.get(source, "📡")
+        title = re.sub(r'^\s*\[\d+\]\s*', '', item.get("title", ""))
+        lines.append(f"{icon} {title}")
+        if item.get("conclusion"):
+            lines.append(f"  {item['conclusion'][:100]}")
+        url = item.get("url", "")
+        if url:
+            lines.append(f"  {url}")
+        lines.append("")
+
+    if commentary:
+        lines.append("━━━━━━━━━━━━━━━")
+        lines.append("✍️ 阿宁点评")
+        lines.append(commentary[:600])
+        lines.append("")
+
+    if watchpoint_reviews:
+        lines.append("🔍 观察点回顾")
+        for wp in watchpoint_reviews[:5]:
+            lines.append(f"  {wp.get('status_label', '⏳')} {wp.get('watch', '')}")
+            if wp.get("review"):
+                lines.append(f"    {wp['review'][:80]}")
+        lines.append("")
+
+    lines.append("🔗 完整版: https://yining365.github.io/daily-news/")
+
+    message = "\n".join(lines)
+    if len(message) > 4000:
+        message = message[:3990] + "\n..."
+
+    import urllib.request, urllib.parse
+    url = f"https://api.telegram.org/bot{TG_BOT_TOKEN}/sendMessage"
+    payload = urllib.parse.urlencode({
+        "chat_id": TG_CHAT_ID,
+        "text": message,
+        "disable_web_page_preview": "true",
+    }).encode("utf-8")
+    req = urllib.request.Request(url, data=payload, method="POST")
+    with urllib.request.urlopen(req, timeout=20) as resp:
+        result = json.loads(resp.read().decode("utf-8"))
+        if not result.get("ok"):
+            raise RuntimeError(f"Telegram API error: {result}")
 
 
 if __name__ == "__main__":
