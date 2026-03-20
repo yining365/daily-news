@@ -15,7 +15,7 @@ class HTMLGenerator:
         self.output_dir = Path(output_dir or OUTPUT_DIR)
         self.output_dir.mkdir(parents=True, exist_ok=True)
 
-    def generate_daily_brief(self, date, analyzed_items, main_theme, commentary, raw_content=""):
+    def generate_daily_brief(self, date, analyzed_items, main_theme, commentary, raw_content="", watchpoint_reviews=None):
         items_html = ""
         for i, item in enumerate(analyzed_items, 1):
             source = item.get("source", "")
@@ -75,6 +75,28 @@ class HTMLGenerator:
             </section>
             """
 
+        watchpoint_html = ""
+        if watchpoint_reviews:
+            wp_items = ""
+            for rev in watchpoint_reviews:
+                status_class = {"verified": "wp-verified", "invalidated": "wp-invalidated"}.get(rev.get("status"), "wp-progress")
+                wp_items += f"""
+                <div class="wp-item {status_class}">
+                    <div class="wp-header">
+                        <span class="wp-status">{rev.get('status_label', '⏳')}</span>
+                        <span class="wp-date">{rev.get('date', '')}</span>
+                    </div>
+                    <p class="wp-watch">{rev.get('watch', '')}</p>
+                    <p class="wp-review">{rev.get('review', '')}</p>
+                </div>
+                """
+            watchpoint_html = f"""
+            <section class="watchpoints">
+                <h2>观察点回顾 <span class="count">{len(watchpoint_reviews)} 条更新</span></h2>
+                {wp_items}
+            </section>
+            """
+
         degraded_html = ""
         if not analyzed_items and raw_content:
             degraded_html = f"""
@@ -103,6 +125,8 @@ class HTMLGenerator:
         </header>
 
         {theme_html}
+
+        {watchpoint_html}
 
         <section class="items-section">
             <h2>今日精选 <span class="count">{len(analyzed_items)} 条</span></h2>
@@ -373,6 +397,54 @@ hr {
 }
 .analysis-row.watch p {
     color: #e5a23c;
+}
+
+/* 观察点回顾 */
+.watchpoints {
+    background: rgba(16, 185, 129, 0.06);
+    border: 1px solid rgba(16, 185, 129, 0.15);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+.watchpoints h2 {
+    font-size: 1.1rem;
+    color: #10b981;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+.watchpoints .count {
+    font-size: 0.85rem;
+    color: #64748b;
+    font-weight: 400;
+}
+.wp-item {
+    padding: 1rem;
+    margin-bottom: 0.8rem;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.03);
+    border-left: 3px solid #64748b;
+}
+.wp-item.wp-verified { border-left-color: #10b981; }
+.wp-item.wp-invalidated { border-left-color: #ef4444; }
+.wp-item.wp-progress { border-left-color: #f59e0b; }
+.wp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+.wp-status { font-size: 0.85rem; }
+.wp-date { font-size: 0.75rem; color: #64748b; }
+.wp-watch {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin-bottom: 0.4rem;
+    font-style: italic;
+}
+.wp-review {
+    font-size: 0.9rem;
+    color: #e2e8f0;
 }
 
 /* 阿宁点评 */

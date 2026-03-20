@@ -585,6 +585,149 @@ def parse_round2(round2_text):
 
 
 # ============================================================================
+# 观察点追踪
+# ============================================================================
+
+WATCHPOINTS_FILE = os.path.join(OUTPUT_DIR, "watchpoints.json")
+
+
+def load_watchpoints(days=14):
+    if not os.path.exists(WATCHPOINTS_FILE):
+        return []
+    try:
+        all_wp = json.loads(open(WATCHPOINTS_FILE, encoding="utf-8").read())
+        cutoff = (datetime.now(timezone(timedelta(hours=8))) - timedelta(days=days)).strftime("%Y-%m-%d")
+        return [wp for wp in all_wp if wp.get("date", "") >= cutoff and wp.get("status") == "open"]
+    except Exception:
+        return []
+
+
+def save_watchpoints(date, analyzed_items):
+    existing = []
+    if os.path.exists(WATCHPOINTS_FILE):
+        try:
+            existing = json.loads(open(WATCHPOINTS_FILE, encoding="utf-8").read())
+        except Exception:
+            existing = []
+
+    for item in analyzed_items:
+        watch = item.get("watch", "")
+        if not watch:
+            continue
+        existing.append({
+            "date": date,
+            "title": re.sub(r'^\s*\[\d+\]\s*', '', item.get("title", "")),
+            "watch": watch,
+            "source": item.get("source", ""),
+            "status": "open",
+        })
+
+    # 只保留最近 30 天
+    cutoff = (datetime.now(timezone(timedelta(hours=8))) - timedelta(days=30)).strftime("%Y-%m-%d")
+    existing = [wp for wp in existing if wp.get("date", "") >= cutoff]
+
+    open(WATCHPOINTS_FILE, "w", encoding="utf-8").write(json.dumps(existing, ensure_ascii=False, indent=2))
+
+
+def ai_round3_review_watchpoints(open_watchpoints, all_items):
+    if not open_watchpoints:
+        return None
+
+    wp_text = ""
+    for i, wp in enumerate(open_watchpoints):
+        wp_text += f"[W{i}] ({wp['date']}) {wp['title']}\n  观察点：{wp['watch']}\n\n"
+
+    items_summary = ""
+    for item in all_items[:50]:
+        items_summary += f"- [{item['source']}] {item['title']}\n"
+
+    prompt = f"""你面前有两组数据：
+
+## 过去的观察点（之前日报说"接下来盯什么"）
+{wp_text}
+
+## 今天的原始信息
+{items_summary}
+
+对照今天的信息，判断哪些观察点已经有了结果。对每个有结果的观察点，输出：
+
+```
+### [W序号] 原始观察点标题
+状态：✅ 验证 / ❌ 推翻 / ⏳ 进展中
+回顾：1-2 句话说明发生了什么，与原始观察点的预测对比
+```
+
+规则：
+- 只输出有明确结果或明显进展的观察点，没有新信息的跳过
+- "验证"= 观察点预测的事情发生了或趋势确认
+- "推翻"= 观察点预测的方向错了
+- "进展中"= 有相关新信息但尚未最终确认
+- 如果今天的数据跟所有观察点都无关，输出"无更新"
+"""
+
+    messages = [
+        {"role": "system", "content": "你是阿宁日报的追踪编辑。你的工作是诚实地回顾过去的判断——对了就说对了，错了就说错了，不要找借口。"},
+        {"role": "user", "content": prompt},
+    ]
+    return call_ai(messages, temperature=0.2)
+
+
+def parse_watchpoint_reviews(review_text, open_watchpoints):
+    if not review_text or "无更新" in review_text:
+        return []
+
+    reviews = []
+    current = {}
+    for line in review_text.split("\n"):
+        line = line.strip()
+        if line.startswith("### [W"):
+            if current and current.get("review"):
+                reviews.append(current)
+            idx_match = re.match(r'###\s*\[W(\d+)\]', line)
+            idx = int(idx_match.group(1)) if idx_match else -1
+            wp = open_watchpoints[idx] if 0 <= idx < len(open_watchpoints) else {}
+            current = {"title": wp.get("title", ""), "date": wp.get("date", ""), "watch": wp.get("watch", ""), "idx": idx}
+        elif line.startswith("状态"):
+            status_text = line.split("：", 1)[-1].split(":", 1)[-1].strip()
+            if "验证" in status_text or "✅" in status_text:
+                current["status"] = "verified"
+                current["status_label"] = "✅ 验证"
+            elif "推翻" in status_text or "❌" in status_text:
+                current["status"] = "invalidated"
+                current["status_label"] = "❌ 推翻"
+            else:
+                current["status"] = "progress"
+                current["status_label"] = "⏳ 进展中"
+        elif line.startswith("回顾"):
+            current["review"] = line.split("：", 1)[-1].split(":", 1)[-1].strip()
+
+    if current and current.get("review"):
+        reviews.append(current)
+    return reviews
+
+
+def update_watchpoint_status(reviews, open_watchpoints):
+    if not os.path.exists(WATCHPOINTS_FILE):
+        return
+    try:
+        all_wp = json.loads(open(WATCHPOINTS_FILE, encoding="utf-8").read())
+    except Exception:
+        return
+
+    for rev in reviews:
+        idx = rev.get("idx", -1)
+        if 0 <= idx < len(open_watchpoints):
+            wp = open_watchpoints[idx]
+            for stored in all_wp:
+                if stored.get("date") == wp.get("date") and stored.get("watch") == wp.get("watch") and stored.get("status") == "open":
+                    if rev["status"] in ("verified", "invalidated"):
+                        stored["status"] = rev["status"]
+                    break
+
+    open(WATCHPOINTS_FILE, "w", encoding="utf-8").write(json.dumps(all_wp, ensure_ascii=False, indent=2))
+
+
+# ============================================================================
 # 主流程
 # ============================================================================
 
@@ -650,8 +793,22 @@ def main():
 
     sys.stderr.write(f"Selected items: {len(analyzed_items)}\n")
 
-    # Step 4: 生成 HTML
-    sys.stderr.write("Step 4: 生成 HTML...\n")
+    # Step 4: 观察点追踪
+    watchpoint_reviews = []
+    open_watchpoints = load_watchpoints()
+    if open_watchpoints and AI_API_KEY:
+        sys.stderr.write(f"Step 4: 观察点回顾 ({len(open_watchpoints)} open)...\n")
+        review_output = ai_round3_review_watchpoints(open_watchpoints, all_items)
+        if review_output:
+            watchpoint_reviews = parse_watchpoint_reviews(review_output, open_watchpoints)
+            update_watchpoint_status(watchpoint_reviews, open_watchpoints)
+            sys.stderr.write(f"  Watchpoint updates: {len(watchpoint_reviews)}\n")
+
+    if analyzed_items:
+        save_watchpoints(today, analyzed_items)
+
+    # Step 5: 生成 HTML
+    sys.stderr.write("Step 5: 生成 HTML...\n")
     generator = HTMLGenerator()
     html_path = generator.generate_daily_brief(
         date=today,
@@ -659,6 +816,7 @@ def main():
         main_theme=main_theme,
         commentary=commentary,
         raw_content=content,
+        watchpoint_reviews=watchpoint_reviews,
     )
     generator.update_index(today)
     sys.stderr.write(f"Output: {html_path}\n")
