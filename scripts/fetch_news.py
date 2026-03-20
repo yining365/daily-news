@@ -368,6 +368,27 @@ FEW_SHOT_BAD = """### 不合格的分析（不要写成这样）
 观察点：值得持续关注。  ← 废话"""
 
 
+def _load_recent_titles(days=3):
+    try:
+        if not os.path.exists(WATCHPOINTS_FILE):
+            return []
+        all_wp = json.loads(open(WATCHPOINTS_FILE, encoding="utf-8").read())
+        cutoff = (datetime.now(timezone(timedelta(hours=8))) - timedelta(days=days)).strftime("%Y-%m-%d")
+        return [wp["title"] for wp in all_wp if wp.get("date", "") >= cutoff]
+    except Exception:
+        return []
+
+
+def _recent_titles_block():
+    titles = _load_recent_titles()
+    if not titles:
+        return ""
+    titles_list = "\n".join(f"- {t}" for t in titles)
+    return f"""## 去重要求（重要！）
+以下是最近 3 天已经分析过的条目，不要重复选择相同话题，除非今天有重大新进展：
+{titles_list}"""
+
+
 def ai_round1_filter_and_analyze(all_items):
     items_text = _format_items_text(all_items)
 
@@ -422,6 +443,8 @@ def ai_round1_filter_and_analyze(all_items):
 
 ## 原始数据
 {items_text}
+
+{_recent_titles_block()}
 
 选 7-8 条，宁缺毋滥。每条分析至少 3 句话，要有真正的洞察。"""
 
@@ -610,10 +633,12 @@ def save_watchpoints(date, analyzed_items):
         except Exception:
             existing = []
 
+    existing_watches = {wp.get("watch", "") for wp in existing}
     for item in analyzed_items:
         watch = item.get("watch", "")
-        if not watch:
+        if not watch or watch in existing_watches:
             continue
+        existing_watches.add(watch)
         existing.append({
             "date": date,
             "title": re.sub(r'^\s*\[\d+\]\s*', '', item.get("title", "")),
