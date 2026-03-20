@@ -1,146 +1,88 @@
 """
-HTML 生成模块
-根据新闻数据生成精美的 HTML 页面
+阿宁日报 V2 - HTML 生成器
+编辑部式日报，支持 AI 分析模式和降级模式
 """
 import os
-import json
+import re
 from datetime import datetime
-from typing import Dict, Any, List
 from pathlib import Path
 
-from src.config import (
-    OUTPUT_DIR,
-    THEMES,
-    SITE_META,
-    SCENARIO_MAP,
-    get_theme,
-    get_source_info
-)
+from src.config import OUTPUT_DIR, SITE_META
+
 
 class HTMLGenerator:
-    """HTML 页面生成器"""
-    
-    def __init__(self, output_dir: str = None):
+    def __init__(self, output_dir=None):
         self.output_dir = Path(output_dir or OUTPUT_DIR)
         self.output_dir.mkdir(parents=True, exist_ok=True)
-        self._setup_css()
 
-    def _setup_css(self):
-        """确保 CSS 文件存在"""
-        self.generate_css()
+    def generate_daily_brief(self, date, analyzed_items, main_theme, commentary, raw_content=""):
+        items_html = ""
+        for i, item in enumerate(analyzed_items, 1):
+            source = item.get("source", "")
+            url = item.get("url", "#")
+            title = re.sub(r'^\s*\[\d+\]\s*', '', item.get("title", ""))
+            title = title.lstrip("0123456789. ")
+            conclusion = item.get("conclusion", "")
+            signal = item.get("signal", "")
+            why = item.get("why", "")
+            watch = item.get("watch", "")
 
-    def generate_daily(self, news_items: List[Dict[str, Any]]) -> str:
-        """
-        生成日报 HTML 页面
-        
-        Args:
-            news_items: 新闻列表
-            
-        Returns:
-            生成的 HTML 文件路径
-        """
-        if not news_items:
-            return self.generate_empty(datetime.now().strftime("%Y-%m-%d"))
+            source_badge = f'<span class="source-badge">{source}</span>' if source else ""
 
-        date_str = datetime.now().strftime("%Y-%m-%d")
-        theme = get_theme("blue")  # 默认使用科技蓝
-        
-        # 按源分类整理数据
-        # news_items 结构: [{"source": "Hacker News", "title": "...", "url": "...", "time": "...", "heat": "..."}]
-        
-        html = self._build_daily_html(date_str, news_items, theme)
-        
-        output_path = self.output_dir / f"{date_str}.html"
-        with open(output_path, "w", encoding="utf-8") as f:
-            f.write(html)
-            
-        # 更新 index.html
-        self.update_index(date_str, news_items)
-            
-        return str(output_path)
-
-    def generate_empty(self, date: str, reason: str = "今日暂无资讯") -> str:
-        """生成空状态页面"""
-        theme = get_theme("gray")
-        
-        html = f"""<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{reason} - {SITE_META['title']}</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body class="theme-{theme}">
-    <div class="container empty-state">
-        <div class="header">
-            <div class="logo">Daily News</div>
-            <div class="date">{date}</div>
-        </div>
-        <div class="empty-content">
-            <div class="empty-icon">📭</div>
-            <h1>{reason}</h1>
-            <p>请稍后再试，或检查网络连接。</p>
-        </div>
-    </div>
-</body>
-</html>"""
-        
-        output_path = self.output_dir / f"{date}.html"
-        with open(output_path, "w", encoding="utf-8") as f:
-            f.write(html)
-        return str(output_path)
-
-    def generate_dashboard(self, date: str, scenarios_data: Dict[str, List[Dict[str, Any]]], summary: str = None) -> str:
-        """生成 Dashboard HTML 页面 - 滚动布局版本"""
-        theme = get_theme("blue")
-        
-        # 构建所有场景的内容（垂直排列）
-        sections_html = ""
-        
-        # 排序：China -> X Social -> AI -> Global -> GitHub (开源放在最后)
-        scenario_order = ["china", "x_social", "ai", "global", "github"]
-        
-        total_count = 0
-        for key in scenario_order:
-            if key not in SCENARIO_MAP: continue
-            
-            info = SCENARIO_MAP[key]
-            items = scenarios_data.get(key, [])
-            count = len(items)
-            # Skip empty sections
-            if count == 0:
-                continue
-            
-            total_count += count
-
-            
-            # 构建每个场景的内容区块
-            section_html = self._build_section_content(items)
-            sections_html += f"""
-            <section class="scenario-section" id="{key}">
-                <div class="scenario-header">
-                    <h2 class="scenario-name">{info['name']}</h2>
-                    <span class="scenario-count">{count} 条</span>
-                    <span class="scenario-desc">{info['description']}</span>
+            items_html += f"""
+            <article class="brief-item">
+                <div class="item-header">
+                    <span class="item-number">{i:02d}</span>
+                    {source_badge}
                 </div>
-                {section_html}
+                <h3 class="item-title"><a href="{url}" target="_blank">{title}</a></h3>
+                <div class="item-analysis">
+                    <div class="analysis-row">
+                        <span class="label">结论</span>
+                        <p>{conclusion}</p>
+                    </div>
+                    <div class="analysis-row">
+                        <span class="label">信号</span>
+                        <p>{signal}</p>
+                    </div>
+                    <div class="analysis-row">
+                        <span class="label">重要性</span>
+                        <p>{why}</p>
+                    </div>
+                    <div class="analysis-row watch">
+                        <span class="label">观察点</span>
+                        <p>{watch}</p>
+                    </div>
+                </div>
+            </article>
+            """
+
+        theme_html = ""
+        if main_theme:
+            theme_html = f"""
+            <section class="main-theme">
+                <h2>今日主线</h2>
+                <div class="theme-content">{self._md_to_html(main_theme)}</div>
             </section>
             """
 
-        # Build Summary HTML if provided
-        summary_html = ""
-        if summary:
-            summary_html = f"""
-            <div class="daily-summary">
-                <div class="summary-content">
-                    <span class="summary-icon">💡</span>
-                    <p>{summary}</p>
-                </div>
-            </div>
+        commentary_html = ""
+        if commentary:
+            commentary_html = f"""
+            <section class="commentary">
+                <h2>阿宁点评</h2>
+                <div class="commentary-content">{self._md_to_html(commentary)}</div>
+            </section>
             """
 
-
+        degraded_html = ""
+        if not analyzed_items and raw_content:
+            degraded_html = f"""
+            <section class="degraded">
+                <div class="degraded-notice">AI 分析暂不可用，以下为原始信息</div>
+                <div class="degraded-content">{self._md_to_html(raw_content)}</div>
+            </section>
+            """
 
         html = f"""<!DOCTYPE html>
 <html lang="zh-CN">
@@ -148,793 +90,377 @@ class HTMLGenerator:
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{date} {SITE_META['subtitle']} - {SITE_META['title']}</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root {{
-            --glow-start: {theme['glow_start']};
-            --glow-end: {theme['glow_end']};
-            --text-primary: {theme['text']};
-            --accent-color: {theme['accent']};
-            --secondary-color: {theme['secondary']};
-            --bg-gradient: {theme['gradient']};
-        }}
-        
-        /* 快速导航 */
-        .quick-nav {{
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-            position: sticky;
-            top: 0;
-            background: rgba(15, 23, 42, 0.95);
-            padding: 1rem;
-            z-index: 100;
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }}
-        .quick-nav-item {{
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            color: var(--text-primary);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: all 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }}
-        .quick-nav-item:hover {{
-            background: var(--accent-color);
-            color: #fff;
-        }}
-        .quick-nav-item span {{
-            background: rgba(0,0,0,0.2);
-            padding: 2px 6px;
-            border-radius: 8px;
-            font-size: 0.75rem;
-        }}
-        
-        /* 场景区块 */
-        .scenario-section {{
-            margin-bottom: 4rem;
-            scroll-margin-top: 80px;
-        }}
-        .scenario-header {{
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 2px solid var(--accent-color);
-            flex-wrap: wrap;
-        }}
-        .scenario-name {{
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #fff;
-        }}
-        .scenario-count {{
-            background: var(--accent-color);
-            color: #fff;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-        }}
-        .scenario-desc {{
-            opacity: 0.6;
-            font-size: 0.9rem;
-        }}
-    </style>
+    <style>{self._get_css()}</style>
 </head>
 <body>
-    <div class="app-container">
-        <header class="main-header">
-            <div class="header-content">
-                <div class="logo-area">
-                    <div class="logo-icon">🤖</div>
-                    <div class="logo-text">
-                        <h1>{SITE_META['title']}</h1>
-                        <p class="subtitle">{SITE_META['subtitle']}</p>
-                    </div>
-                </div>
-                <div class="date-display">
-                    <span class="date-icon">📅</span>
-                    <span>{self._format_date(date)}</span>
-                </div>
+    <div class="container">
+        <header>
+            <div class="header-top">
+                <h1>{SITE_META['title']}</h1>
+                <time>{self._format_date(date)}</time>
             </div>
+            <p class="tagline">{SITE_META['subtitle']}</p>
         </header>
 
-        {summary_html}
+        {theme_html}
 
+        <section class="items-section">
+            <h2>今日精选 <span class="count">{len(analyzed_items)} 条</span></h2>
+            {items_html}
+        </section>
 
+        {degraded_html}
+        {commentary_html}
 
-        <main class="main-content">
-            {sections_html}
-        </main>
-
-        <footer class="main-footer">
-            <p>Generated by {SITE_META['author']} • <a href="index.html">History</a></p>
+        <footer>
+            <p>Generated by {SITE_META['author']} | <a href="history.html">历史归档</a></p>
         </footer>
     </div>
-    
-    <script>
-    // Keyboard Navigation
-    document.addEventListener('keydown', function(e) {{
-        if (['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
-
-        const cards = Array.from(document.querySelectorAll('.card'));
-        if (!cards.length) return;
-        
-        let activeIndex = cards.findIndex(c => c === document.activeElement || c.classList.contains('active-card'));
-        
-        if (e.key === 'j' || e.key === 'J' || e.key === 'ArrowDown') {{
-             activeIndex = (activeIndex + 1) % cards.length;
-             e.preventDefault();
-        }} else if (e.key === 'k' || e.key === 'K' || e.key === 'ArrowUp') {{
-             if (activeIndex === -1) activeIndex = 0;
-             else activeIndex = (activeIndex - 1 + cards.length) % cards.length;
-             e.preventDefault();
-        }} else if (e.key === 'Enter') {{
-             if (activeIndex >= 0) {{
-                const link = cards[activeIndex].querySelector('a');
-                if(link) window.open(link.href, '_blank');
-             }}
-             return;
-        }} else {{
-             return;
-        }}
-        
-        cards.forEach(c => c.classList.remove('active-card'));
-        if (activeIndex >= 0) {{
-            cards[activeIndex].classList.add('active-card');
-            cards[activeIndex].focus();
-            cards[activeIndex].scrollIntoView({{behavior: 'smooth', block: 'center'}});
-        }}
-    }});
-    </script>
 </body>
 </html>"""
-        
+
         output_path = self.output_dir / f"{date}.html"
-        with open(output_path, "w", encoding="utf-8") as f:
-            f.write(html)
-            
+        output_path.write_text(html, encoding="utf-8")
         return str(output_path)
 
-    def _build_section_content(self, items: List[Dict[str, Any]]) -> str:
-        """构建单个 Tab 的内容"""
-        if not items:
-            return '<div class="empty-tab">暂无内容，请稍候再试。</div>'
-            
-        grouped_items = {}
-        for item in items:
-            source = item.get('source', 'Other')
-            if source not in grouped_items:
-                grouped_items[source] = []
-            grouped_items[source].append(item)
-            
-        html = ""
-        # 简单排序源
-        for source in sorted(grouped_items.keys()):
-            source_items = grouped_items[source]
-            info = get_source_info(source.lower().replace(" ", "").replace("hotsearch", "").replace("trending", "")) # heuristic key matching
-            
-            html += f"""
-            <div class="category-section">
-                <div class="category-header">
-                    <span class="category-icon">{info.get('icon', '📰')}</span>
-                    <h2 class="category-title">{source}</h2>
-                    <span class="category-count">{len(source_items)}</span>
-                </div>
-                <div class="cards-grid">
-            """
-            
-            # Sort items by heat_score within source (as fallback if not global sort)
-            # Actually fetch_news.py sorts globally, but here we group by source. 
-            # If we want "Top 3 Must Read" at the top of the TAB, we should change the layout logic.
-            # But per current "group by source" layout, we can just highlight the high heat ones.
-            # Let's keep existing group layout but highlight heat.
-            
-            for i, item in enumerate(source_items):
-                title = item.get('title', '')
-                url = item.get('url', '#')
-                time_str = item.get('time', '')
-                heat = item.get('heat', '')
-                
-                meta_html = ""
-                if time_str:
-                    meta_html += f'<span class="meta-item"><span class="meta-icon">🕒</span>{time_str}</span>'
-                if heat:
-                     meta_html += f'<span class="meta-item"><span class="meta-icon">🔥</span>{heat}</span>'
+    def generate_empty(self, date, reason="今日暂无资讯"):
+        html = f"""<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{reason} - {SITE_META['title']}</title>
+    <style>{self._get_css()}</style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>{SITE_META['title']}</h1>
+            <time>{date}</time>
+        </header>
+        <div class="empty">
+            <p>{reason}</p>
+        </div>
+    </div>
+</body>
+</html>"""
+        output_path = self.output_dir / f"{date}.html"
+        output_path.write_text(html, encoding="utf-8")
+        return str(output_path)
 
-                summary_text = item.get('summary', '')
-                summary_html = ""
-                if summary_text:
-                    summary_html = f'<p class="card-summary">{summary_text}</p>'
+    def update_index(self, date):
+        today_file = f"{date}.html"
 
-                # Determine if item is "Hot"
-                is_hot = False
-                heat_str = str(heat).lower()
-                if '万' in heat_str or 'w' in heat_str or 'k' in heat_str:
-                    is_hot = True
-                elif 'points' in heat_str:
-                    try:
-                        if int(heat_str.split()[0]) >= 200: is_hot = True
-                    except: pass
-                elif 'reply' in heat_str or 'replies' in heat_str:
-                    try:
-                         if int(heat_str.split()[0]) >= 50: is_hot = True
-                    except: pass
+        index_html = f"""<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<meta http-equiv="refresh" content="0; url={today_file}">
+<title>{SITE_META['title']}</title>
+<script>window.location.href="{today_file}";</script>
+</head><body><a href="{today_file}">跳转</a></body></html>"""
+        (self.output_dir / "index.html").write_text(index_html, encoding="utf-8")
 
-                # Determine Rank (Gold/Silver/Bronze) based on heat_score if available
-                rank_class = ""
-                if item.get('heat_score', 0) > 1000: # Super high heat
-                    rank_class = "rank-gold"
-                
-                hot_class = "is-hot" if is_hot else ""
-                
-                # Check for practicality tags in title to add badge
-                badge_html = ""
-                if "🛠️" in title:
-                    badge_html += '<span class="badge badge-tool">Tool</span>'
-                    title = title.replace("🛠️", "").strip()
-                if "📖" in title:
-                    badge_html += '<span class="badge badge-tutorial">Tutorial</span>'
-                    title = title.replace("📖", "").strip()
+        files = sorted(self.output_dir.glob("*.html"), reverse=True)
+        links = ""
+        for f in files:
+            if f.name in ("index.html", "history.html", "style.css"):
+                continue
+            links += f'<li><a href="{f.name}">{f.stem}</a></li>\n'
 
-                html += f"""
-                    <div class="card {hot_class} {rank_class}" tabindex="0">
-                        <div class="card-content">
-                            <a href="{url}" target="_blank" class="card-title-link">
-                                <h3 class="card-title">{title}</h3>
-                            </a>
-                             <div class="badges">{badge_html}</div>
-                            {summary_html}
-                            <div class="card-meta">
-                                {meta_html}
-                            </div>
-                        </div>
-                    </div>
-                """
-            html += "</div></div>"
-        return html
+        history_html = f"""<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>历史归档 - {SITE_META['title']}</title>
+<style>
+body {{ font-family: system-ui, sans-serif; max-width: 600px; margin: 2rem auto; padding: 1rem; background: #0f172a; color: #e2e8f0; }}
+a {{ color: #60a5fa; text-decoration: none; }}
+a:hover {{ text-decoration: underline; }}
+li {{ margin: 0.5rem 0; }}
+</style></head><body>
+<p><a href="index.html">&larr; 返回今日</a></p>
+<h1>历史归档</h1>
+<ul>{links}</ul>
+</body></html>"""
+        (self.output_dir / "history.html").write_text(history_html, encoding="utf-8")
 
-
-    def _format_date(self, date_str: str) -> str:
-        """格式化日期显示"""
+    def _format_date(self, date_str):
         try:
             dt = datetime.strptime(date_str, "%Y-%m-%d")
             weekdays = ["周一", "周二", "周三", "周四", "周五", "周六", "周日"]
-            return f"{dt.month}月{dt.day}日 {weekdays[dt.weekday()]}"
-        except:
+            return f"{dt.year}年{dt.month}月{dt.day}日 {weekdays[dt.weekday()]}"
+        except Exception:
             return date_str
 
-    def update_index(self, date: str, items: List[Dict[str, Any]] = None):
-        """更新索引页"""
-        index_path = self.output_dir / "index.html"
-        entries = []
-        
-        # 读取现有索引
-        if index_path.exists():
-            try:
-                content = index_path.read_text(encoding='utf-8')
-                # 这里是个简化处理，实际应该用 soup 解析或存 json 数据文件
-                # 为了简单起见，我们暂不实现复杂的历史记录解析，而是追加生成的
-                pass 
-            except:
-                pass
-        
-        # 创建 index.html - 自动跳转到今日新闻
-        today_file = f"{date}.html"
-        index_html = f"""<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url={today_file}">
-    <title>{SITE_META['title']}</title>
-    <script>window.location.href = "{today_file}";</script>
-</head>
-<body>
-    <p>正在跳转到今日新闻... <a href="{today_file}">点击这里</a></p>
-</body>
-</html>"""
-        with open(index_path, "w", encoding="utf-8") as f:
-            f.write(index_html)
-        
-        # 生成历史链接列表
-        files = sorted(self.output_dir.glob("*.html"), reverse=True)
-        html_links = ""
-        for f in files:
-            if f.name in ["index.html", "history.html"]: continue
-            name = f.stem
-            html_links += f'<li><a href="{f.name}">{name}</a></li>'
-        
-        # 创建 history.html - 历史归档页面
-        history_path = self.output_dir / "history.html"
-        history_html = f"""<!DOCTYPE html>
-<html>
-<head>
-    <title>History - {SITE_META['title']}</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {{ font-family: system-ui, -apple-system, sans-serif; max-width: 800px; margin: 0 auto; padding: 2rem; line-height: 1.6; background: #f5f5f5; }}
-        h1 {{ color: #333; }}
-        ul {{ list-style: none; padding: 0; }}
-        li {{ background: white; margin-bottom: 1rem; padding: 1rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }}
-        a {{ text-decoration: none; color: #0066cc; font-weight: 500; font-size: 1.1rem; }}
-        a:hover {{ text-decoration: underline; }}
-        .back {{ margin-bottom: 1.5rem; display: inline-block; }}
-    </style>
-</head>
-<body>
-    <a href="index.html" class="back">← 返回今日新闻</a>
-    <h1>📚 历史归档</h1>
-    <ul>
-        {html_links}
-    </ul>
-</body>
-</html>"""
-        with open(history_path, "w", encoding="utf-8") as f:
-            f.write(history_html)
+    def _md_to_html(self, text):
+        lines = text.split("\n")
+        result = []
+        for line in lines:
+            stripped = line.strip()
+            if not stripped:
+                continue
+            elif stripped == "---":
+                result.append("<hr>")
+            elif stripped.startswith("### "):
+                result.append(f"<h4>{self._inline_md(stripped[4:])}</h4>")
+            elif stripped.startswith("## "):
+                result.append(f"<h3>{self._inline_md(stripped[3:])}</h3>")
+            elif stripped.startswith("- "):
+                result.append(f"<li>{self._inline_md(stripped[2:])}</li>")
+            else:
+                result.append(f"<p>{self._inline_md(stripped)}</p>")
+        return "\n".join(result)
 
-    def generate_css(self):
-        """生成 CSS 文件"""
-        css_content = self._get_css_content()
-        css_path = self.output_dir / "style.css"
-        with open(css_path, "w", encoding="utf-8") as f:
-            f.write(css_content)
+    def _inline_md(self, text):
+        text = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', r'<a href="\2" target="_blank">\1</a>', text)
+        text = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', text)
+        text = re.sub(r'\*(.+?)\*', r'<em>\1</em>', text)
+        return text
 
-    def _get_css_content(self) -> str:
+    def _get_css(self):
         return """
-/* 基础重置 */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background: #0f172a; /* Fallback */
-    background: var(--bg-gradient);
-    color: var(--text-primary);
-    min-height: 100vh;
-    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+    line-height: 1.7;
 }
-
-/* 布局容器 */
-.app-container {
-    max-width: 1200px;
+.container {
+    max-width: 800px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 2rem 1.5rem;
 }
 
-/* 头部样式 */
-.main-header {
-    margin-bottom: 1.5rem; /* Reduced bottom margin to fit summary */
+/* Header */
+header {
+    margin-bottom: 2.5rem;
     padding-bottom: 1.5rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
-.header-content {
+.header-top {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
 }
-.logo-area {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-.logo-icon {
-    font-size: 2.5rem;
-    background: rgba(255, 255, 255, 0.1);
-    width: 60px;
-    height: 60px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.logo-text h1 {
-    font-size: 1.5rem;
+header h1 {
+    font-size: 1.8rem;
     font-weight: 700;
-    color: var(--title-color);
-    margin-bottom: 0.2rem;
+    color: #f8fafc;
 }
-.subtitle {
+header time {
     font-size: 0.9rem;
-    opacity: 0.7;
+    color: #94a3b8;
+}
+.tagline {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-top: 0.3rem;
+}
+
+/* 今日主线 */
+.main-theme {
+    background: rgba(59, 130, 246, 0.08);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+.main-theme h2 {
+    font-size: 1.1rem;
+    color: #60a5fa;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+.theme-content p {
+    color: #cbd5e1;
+    margin-bottom: 0.5rem;
+}
+.theme-content strong {
+    color: #93c5fd;
+    font-weight: 600;
+}
+hr {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    margin: 1rem 0;
+}
+
+/* 条目 */
+.items-section h2 {
+    font-size: 1.2rem;
+    color: #f8fafc;
+    margin-bottom: 1.5rem;
+}
+.items-section .count {
+    font-size: 0.85rem;
+    color: #64748b;
     font-weight: 400;
 }
-.date-display {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    backdrop-filter: blur(5px);
-}
 
-/* Daily Summary */
-.daily-summary {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+.brief-item {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
     border-radius: 12px;
-    padding: 1rem 1.5rem;
-    margin-bottom: 2.5rem;
-    backdrop-filter: blur(5px);
+    padding: 1.5rem;
+    margin-bottom: 1.2rem;
+    transition: border-color 0.2s;
 }
-.summary-content {
-    display: flex;
-    gap: 1rem;
-    align-items: flex-start;
-}
-.summary-icon {
-    font-size: 1.5rem;
-    margin-top: 0.2rem;
-}
-.daily-summary p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #eceff4;
-    margin: 0;
-    max-width: 800px;
+.brief-item:hover {
+    border-color: rgba(59, 130, 246, 0.3);
 }
 
-/* 分类部分 */
-.category-section {
-    margin-bottom: 2.5rem;
-}
-.category-header {
+.item-header {
     display: flex;
     align-items: center;
     gap: 0.8rem;
-    margin-bottom: 1.2rem;
-    padding-left: 0.5rem;
-    border-left: 4px solid var(--accent-color);
+    margin-bottom: 0.8rem;
 }
-.category-icon { font-size: 1.4rem; }
-.category-title {
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: #fff;
-}
-.category-count {
-    background: rgba(255,255,255,0.1);
-    padding: 2px 8px;
-    border-radius: 10px;
+.item-number {
     font-size: 0.75rem;
-    opacity: 0.8;
-}
-
-/* Tabs 导航 */
-.tabs-nav {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 2.5rem;
-    flex-wrap: wrap;
-}
-.tab-btn {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 0.8rem 1.5rem;
-    border-radius: 2rem;
-    color: var(--text-primary);
-    cursor: pointer;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-.tab-btn:hover {
-    background: rgba(255, 255, 255, 0.1);
-    transform: translateY(-2px);
-}
-.tab-btn.active {
-    background: var(--accent-color);
-    border-color: var(--accent-color);
-    color: #fff;
-    box-shadow: 0 4px 15px rgba(66, 165, 245, 0.4);
-}
-.tab-count {
-    background: rgba(0, 0, 0, 0.2);
-    padding: 2px 8px;
-    border-radius: 10px;
-    font-size: 0.8rem;
-}
-
-/* Tab 内容显隐 */
-.tab-content {
-    display: none;
-    animation: fadeIn 0.5s ease;
-}
-.tab-content.active {
-    display: block;
-}
-.scenario-desc {
-    text-align: center;
-    opacity: 0.6;
-    margin-bottom: 2rem;
-    font-size: 0.95rem;
-}
-
-/* 卡片网格 */
-.cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 1.5rem;
-}
-
-/* 卡片样式 */
-.card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 16px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    overflow: hidden;
-    position: relative;
-    backdrop-filter: blur(10px);
-}
-.card:hover {
-    transform: translateY(-4px) scale(1.02);
-    background: rgba(255, 255, 255, 0.08);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
-    border-color: var(--accent-color);
-    z-index: 10;
-}
-.card-content {
-    padding: 1.5rem;
-}
-/* 链接颜色 */
-.card-title-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-}
-.card-title-link:visited .card-title {
-    color: rgba(255, 255, 255, 0.4);
-}
-
-.card:focus {
-    outline: none;
-    border-color: var(--accent-color);
-    box-shadow: 0 0 0 2px rgba(66, 165, 245, 0.5);
-}
-.card.active-card {
-    border-color: var(--accent-color);
-    box-shadow: 0 0 20px rgba(66, 165, 245, 0.3);
-    transform: scale(1.02);
-    z-index: 5;
-}
-.card.is-hot {
-    border-color: rgba(255, 167, 38, 0.6); /* Orange border for hot */
-    background: linear-gradient(to bottom right, rgba(255, 167, 38, 0.05), rgba(255, 255, 255, 0.03));
-}
-.card.is-hot::after {
-    content: "🔥";
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-    font-size: 1rem;
-    opacity: 0.8;
-}
-
-.card-title {
-    font-size: 1.1rem;
+    color: #64748b;
     font-weight: 600;
-    line-height: 1.5;
-    margin-bottom: 1rem;
-    color: #eceff4;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    font-family: monospace;
 }
-.card-title-link:hover .card-title {
-    color: var(--accent-color);
-}
-.card-summary {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.7);
-    margin-bottom: 1rem;
-    line-height: 1.5;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-.card-meta {
-    display: flex;
-    gap: 1rem;
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.5);
-    align-items: center;
-}
-.meta-item {
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-}
-.meta-icon { opacity: 0.7; font-size: 0.9em; }
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Badges */
-.badges {
-    display: flex;
-    gap: 0.5rem;
-    margin-bottom: 0.5rem;
-}
-.badge {
-    font-size: 0.75rem;
+.source-badge {
+    font-size: 0.7rem;
     padding: 2px 8px;
     border-radius: 4px;
+    background: rgba(255,255,255,0.06);
+    color: #94a3b8;
+}
+
+.item-title {
+    font-size: 1.05rem;
     font-weight: 600;
-    text-transform: uppercase;
+    margin-bottom: 1rem;
+    line-height: 1.5;
 }
-.badge-tool {
-    background: rgba(66, 165, 245, 0.2);
-    color: #42A5F5;
-    border: 1px solid rgba(66, 165, 245, 0.3);
+.item-title a {
+    color: #f1f5f9;
+    text-decoration: none;
 }
-.badge-tutorial {
-    background: rgba(102, 187, 106, 0.2);
-    color: #66BB6A;
-    border: 1px solid rgba(102, 187, 106, 0.3);
+.item-title a:hover {
+    color: #60a5fa;
 }
-
-.card.rank-gold {
-   border: 1px solid rgba(255, 215, 0, 0.5);
-   box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+.item-title a:visited {
+    color: #94a3b8;
 }
 
-/* 响应式调整 - 手机适配 */
-@media (max-width: 768px) {
-    .app-container { 
-        padding: 0.75rem; 
-    }
-    
-    /* 头部 */
-    .main-header {
-        margin-bottom: 1rem;
-        padding-bottom: 1rem;
-    }
-    .header-content { 
-        flex-direction: column; 
-        align-items: flex-start; 
-        gap: 0.75rem; 
-    }
-    .logo-icon {
-        width: 48px;
-        height: 48px;
-        font-size: 1.8rem;
-    }
-    .logo-text h1 {
-        font-size: 1.2rem;
-    }
-    .date-display { 
-        align-self: flex-start;
-        font-size: 0.8rem;
-        padding: 0.4rem 0.8rem;
-    }
-    
-    /* 每日摘要 */
-    .daily-summary {
-        padding: 0.75rem 1rem;
-        margin-bottom: 1rem;
-    }
-    .summary-content {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-    .daily-summary p {
-        font-size: 0.9rem;
-    }
-    
-    /* 快速导航 - 手机版 */
-    .quick-nav {
-        gap: 0.5rem;
-        padding: 0.75rem 0.5rem;
-    }
-    .quick-nav-item {
-        padding: 0.4rem 0.75rem;
-        font-size: 0.8rem;
-    }
-    .quick-nav-item span {
-        padding: 1px 5px;
-        font-size: 0.7rem;
-    }
-    
-    /* 场景区块 */
-    .scenario-section {
-        margin-bottom: 2.5rem;
-        scroll-margin-top: 70px;
-    }
-    .scenario-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-        margin-bottom: 1rem;
-        padding-bottom: 0.75rem;
-    }
-    .scenario-name {
-        font-size: 1.3rem;
-    }
-    .scenario-count {
-        padding: 2px 10px;
-        font-size: 0.75rem;
-    }
-    .scenario-desc {
-        font-size: 0.8rem;
-    }
-    
-    /* 分类区块 */
-    .category-section {
-        margin-bottom: 1.5rem;
-    }
-    .category-header {
-        margin-bottom: 0.8rem;
-        padding-left: 0.4rem;
-    }
-    .category-icon { font-size: 1.1rem; }
-    .category-title { font-size: 1.1rem; }
-    
-    /* 卡片网格 - 单列 */
-    .cards-grid { 
-        grid-template-columns: 1fr; 
-        gap: 1rem;
-    }
-    
-    /* 卡片 */
-    .card-content {
-        padding: 1rem;
-    }
-    .card-title {
-        font-size: 1rem;
-        margin-bottom: 0.75rem;
-    }
-    .card-summary {
-        font-size: 0.85rem;
-        -webkit-line-clamp: 2;
-        margin-bottom: 0.75rem;
-    }
-    .card-meta {
-        gap: 0.75rem;
-        font-size: 0.75rem;
-    }
-    
-    /* 底部 */
-    .main-footer {
-        margin-top: 2rem;
-        font-size: 0.8rem;
-    }
+.item-analysis {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
-
-/* 底部 */
-
-.main-footer {
-    text-align: center;
-    margin-top: 5rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+.analysis-row {
+    display: flex;
+    gap: 0.8rem;
+    align-items: baseline;
+}
+.analysis-row .label {
+    font-size: 0.75rem;
+    color: #64748b;
+    min-width: 3.5rem;
+    font-weight: 500;
+    flex-shrink: 0;
+}
+.analysis-row p {
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.3);
+    color: #cbd5e1;
 }
-.main-footer a { color: inherit; text-decoration: none; opacity: 0.7; }
-.main-footer a:hover { opacity: 1; }
-"""
+.analysis-row.watch .label {
+    color: #f59e0b;
+}
+.analysis-row.watch p {
+    color: #fbbf24;
+}
 
-def generate_daily_html(news_items: List[Dict[str, Any]]) -> str:
-    """便捷函数：生成日报 HTML"""
-    generator = HTMLGenerator()
-    return generator.generate_daily(news_items)
+/* 阿宁点评 */
+.commentary {
+    background: rgba(139, 92, 246, 0.06);
+    border: 1px solid rgba(139, 92, 246, 0.15);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 2.5rem;
+}
+.commentary h2 {
+    font-size: 1.1rem;
+    color: #a78bfa;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+.commentary-content p {
+    color: #cbd5e1;
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+.commentary-content strong {
+    color: #e2e8f0;
+    font-weight: 600;
+}
+
+/* 降级 */
+.degraded {
+    margin-top: 1.5rem;
+}
+.degraded-notice {
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    color: #fbbf24;
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+}
+.degraded-content h3 {
+    color: #f8fafc;
+    margin: 1.5rem 0 0.8rem;
+    font-size: 1rem;
+}
+.degraded-content h4 {
+    color: #cbd5e1;
+    margin: 1rem 0 0.5rem;
+    font-size: 0.95rem;
+}
+.degraded-content li {
+    margin: 0.3rem 0 0.3rem 1.5rem;
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+.degraded-content a {
+    color: #60a5fa;
+    text-decoration: none;
+}
+.degraded-content a:hover {
+    text-decoration: underline;
+}
+
+/* Empty */
+.empty {
+    text-align: center;
+    padding: 4rem 0;
+    color: #64748b;
+    font-size: 1.1rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    font-size: 0.8rem;
+    color: #475569;
+}
+footer a { color: #64748b; text-decoration: none; }
+footer a:hover { color: #94a3b8; }
+
+/* 响应式 */
+@media (max-width: 640px) {
+    .container { padding: 1rem; }
+    header h1 { font-size: 1.4rem; }
+    .header-top { flex-direction: column; gap: 0.3rem; }
+    .brief-item { padding: 1.2rem; }
+    .item-title { font-size: 0.95rem; }
+    .analysis-row { flex-direction: column; gap: 0.2rem; }
+    .analysis-row .label { min-width: auto; }
+}
+"""

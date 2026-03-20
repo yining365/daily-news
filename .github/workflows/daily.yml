@@ -1,13 +1,12 @@
-name: Daily News Aggregator
+name: 阿宁日报 V2
 
 on:
   schedule:
-    # 每天北京时间早上 8:15 (UTC 0:15) - 避开 0 点高峰期
     - cron: "15 0 * * *"
   push:
     branches:
       - main
-  workflow_dispatch: # 支持手动触发
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -32,19 +31,31 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Fetch news and generate dashboard
+      - name: Fetch news and generate daily brief
         run: |
-          python scripts/fetch_news.py --category all --output html
+          python scripts/fetch_news.py
         env:
           TZ: Asia/Shanghai
+          AI_API_KEY: ${{ secrets.AI_API_KEY }}
+          AI_BASE_URL: ${{ secrets.AI_BASE_URL }}
+          AI_MODEL: ${{ secrets.AI_MODEL }}
+          X_AUTH_TOKEN: ${{ secrets.X_AUTH_TOKEN }}
+          X_CT0: ${{ secrets.X_CT0 }}
 
       - name: Send Bark notification
         if: success()
+        continue-on-error: true
         run: |
           python scripts/notify_bark.py
         env:
           BARK_KEY: ${{ secrets.BARK_KEY }}
           GITHUB_PAGES_URL: ${{ github.event.repository.html_url }}
+
+      - name: Alert on failure
+        if: failure()
+        continue-on-error: true
+        run: |
+          curl -s "https://api.day.app/${{ secrets.BARK_KEY }}/阿宁日报生成失败/请检查GitHub Actions日志" || true
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
