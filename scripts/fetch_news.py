@@ -440,7 +440,7 @@ def _recent_titles_block():
 def ai_round1_filter_and_analyze(all_items):
     items_text = _format_items_text(all_items)
 
-    prompt = f"""你是阿宁日报的编辑。从以下 {len(all_items)} 条原始信息中，选出 7-8 条最有价值的，并为每条写深度分析。
+    prompt = f"""你是阿宁日报的编辑。从以下 {len(all_items)} 条原始信息中，选出 5 条最有价值的，并为每条写深度分析。
 
 ## 你的工作不是摘要，是判断
 
@@ -463,13 +463,13 @@ def ai_round1_filter_and_analyze(all_items):
 - 融资新闻（除非金额或估值本身是信号）
 
 ## 源多样性要求（重要！）
-每个源最多选 2 条。确保至少覆盖 4 个不同的源。分布参考：
-- Hacker News: 1-2 条
-- Polymarket: 1-2 条
-- GitHub Trending: 1 条
-- 华尔街见闻: 1-2 条
+每个源最多选 1 条。确保覆盖至少 4 个不同的源。分布参考：
+- Hacker News: 0-1 条
+- Polymarket: 0-1 条
+- GitHub Trending: 0-1 条
+- 华尔街见闻: 0-1 条
 - X (Twitter): 1-2 条（如果有数据）
-- RSS 博客: 1 条（如果有数据）
+- RSS 博客: 0-1 条（如果有数据）
 
 ## 分析格式
 对每条选中的信息，输出：
@@ -494,7 +494,7 @@ def ai_round1_filter_and_analyze(all_items):
 
 {_recent_titles_block()}
 
-选 7-8 条，宁缺毋滥。每条分析至少 3 句话，要有真正的洞察。"""
+选 5 条，宁缺毋滥。每条分析至少 3 句话，要有真正的洞察。"""
 
     messages = [
         {"role": "system", "content": "你是一个顶级信息分析师。规则：1) 每句话有信息增量，废话删掉；2) 只引用原始数据中已有的数字，绝不编造数据；3) 每个字段 1-2 句话，简洁有力；4) 分析像对冲基金晨会纪要，不像新闻摘要。"},
@@ -560,7 +560,7 @@ def generate_degraded_output(all_items):
     lines = ["## 今日主线\n（AI 分析暂不可用，以下为原始信息）\n"]
     for source, items in sections.items():
         lines.append(f"\n### {source}")
-        for item in items[:8]:
+        for item in items[:5]:
             title = item["title"]
             url = item.get("url", "")
             extra = ""
@@ -940,7 +940,7 @@ def send_telegram(date, main_theme, items, commentary, watchpoint_reviews):
     if items:
         parts.append("")
         parts.append("─────────────────")
-        for i, item in enumerate(items[:8], 1):
+        for i, item in enumerate(items[:5], 1):
             source = item.get("source", "")
             icon = {"Hacker News": "🔶", "Polymarket": "📊", "GitHub Trending": "🐙",
                     "华尔街见闻": "💹", "X (Twitter)": "𝕏"}.get(source, "📡")
