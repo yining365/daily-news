@@ -956,7 +956,16 @@ def send_telegram(date, main_theme, items, commentary, watchpoint_reviews):
             parts.append(f"   {_tg_escape(short)}")
         parts.append("")
 
-    parts.append(f"<a href=\"https://yining365.github.io/daily-news/\">→ 深度分析 + 阿宁点评</a>")
+    if commentary:
+        first_line = commentary.strip().split("\n")[0].strip()
+        first_line = re.sub(r'^\*\*.*?\*\*\s*', '', first_line).strip()
+        if len(first_line) > 100:
+            first_line = first_line[:97] + "..."
+        if first_line:
+            parts.append(f"✍️ {_md_to_tg_html(first_line)}")
+            parts.append("")
+
+    parts.append(f"<a href=\"https://yining365.github.io/daily-news/\">→ 完整版</a>")
 
     message = "\n".join(parts)
     if len(message) > 4000:
