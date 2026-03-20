@@ -930,49 +930,21 @@ def _make_short_title(item):
 
 
 def send_telegram(date, main_theme, items, commentary, watchpoint_reviews):
-    parts = [f"<b>📰 阿宁日报 {_tg_escape(date)}</b>"]
+    parts = [f"<b>📰 阿宁日报 {_tg_escape(date)}</b>", ""]
 
-    if main_theme:
-        parts.append("")
-        parts.append(f"<b>📌 今日主线</b>")
-        parts.append(_md_to_tg_html(main_theme[:500]))
+    for item in items[:5]:
+        source = item.get("source", "")
+        icon = {"Hacker News": "🔶", "Polymarket": "📊", "GitHub Trending": "🐙",
+                "华尔街见闻": "💹", "X (Twitter)": "𝕏"}.get(source, "📡")
+        title = _make_short_title(item)
+        url = item.get("url", "")
+        if url:
+            parts.append(f"{icon} <a href=\"{_tg_escape(url)}\">{_tg_escape(title)}</a>")
+        else:
+            parts.append(f"{icon} {_tg_escape(title)}")
 
-    if items:
-        parts.append("")
-        parts.append("─────────────────")
-        for i, item in enumerate(items[:5], 1):
-            source = item.get("source", "")
-            icon = {"Hacker News": "🔶", "Polymarket": "📊", "GitHub Trending": "🐙",
-                    "华尔街见闻": "💹", "X (Twitter)": "𝕏"}.get(source, "📡")
-            title = _make_short_title(item)
-            url = item.get("url", "")
-            if url:
-                parts.append(f"{icon} <a href=\"{_tg_escape(url)}\">{_tg_escape(title)}</a>")
-            else:
-                parts.append(f"{icon} {_tg_escape(title)}")
-            conclusion = item.get("conclusion", "")
-            if conclusion:
-                parts.append(f"  <i>{_tg_escape(conclusion[:120])}</i>")
-            parts.append("")
-
-    if commentary:
-        parts.append("─────────────────")
-        parts.append(f"<b>✍️ 阿宁点评</b>")
-        parts.append(_md_to_tg_html(commentary[:800]))
-        parts.append("")
-
-    if watchpoint_reviews:
-        parts.append(f"<b>🔍 观察点回顾</b>")
-        for wp in watchpoint_reviews[:5]:
-            label = wp.get("status_label", "⏳")
-            watch = _tg_escape(wp.get("watch", ""))
-            parts.append(f"{label} {watch}")
-            review = wp.get("review", "")
-            if review:
-                parts.append(f"  <i>{_tg_escape(review[:80])}</i>")
-        parts.append("")
-
-    parts.append(f"<a href=\"https://yining365.github.io/daily-news/\">🔗 完整版</a>")
+    parts.append("")
+    parts.append(f"<a href=\"https://yining365.github.io/daily-news/\">→ 完整分析</a>")
 
     message = "\n".join(parts)
     if len(message) > 4000:
