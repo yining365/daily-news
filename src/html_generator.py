@@ -272,7 +272,9 @@ header time {
 }
 .theme-content p {
     color: #cbd5e1;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.9;
+    text-align: justify;
 }
 .theme-content strong {
     color: #93c5fd;
@@ -367,10 +369,10 @@ hr {
     color: #cbd5e1;
 }
 .analysis-row.watch .label {
-    color: #f59e0b;
+    color: #d97706;
 }
 .analysis-row.watch p {
-    color: #fbbf24;
+    color: #e5a23c;
 }
 
 /* 阿宁点评 */
@@ -389,8 +391,15 @@ hr {
 }
 .commentary-content p {
     color: #cbd5e1;
-    margin-bottom: 1rem;
-    line-height: 1.8;
+    margin-bottom: 1.2rem;
+    line-height: 1.9;
+    text-align: justify;
+}
+.commentary-content h3,
+.commentary-content h4 {
+    color: #c4b5fd;
+    margin: 1.5rem 0 0.6rem;
+    font-size: 0.95rem;
 }
 .commentary-content strong {
     color: #e2e8f0;
