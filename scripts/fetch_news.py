@@ -12,7 +12,7 @@ from bs4 import BeautifulSoup
 from datetime import datetime, timezone, timedelta
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from src.config import OUTPUT_DIR, AI_BASE_URL, AI_API_KEY, AI_MODEL, SITE_META, X_AUTH_TOKEN, X_CT0
+from src.config import OUTPUT_DIR, AI_BASE_URL, AI_API_KEY, AI_MODEL, SITE_META, X_AUTH_TOKEN, X_CT0, RSS_FEEDS
 from src.html_generator import HTMLGenerator
 
 HEADERS = {
@@ -229,6 +229,77 @@ def fetch_x_timeline(limit=20):
     except Exception as e:
         sys.stderr.write(f"[X] Error: {e}\n")
     return items
+
+
+def fetch_rss(limit=10):
+    """抓取 RSS 订阅源，取最近 24h 内的文章"""
+    items = []
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=48)
+
+    def fetch_single_feed(feed):
+        feed_items = []
+        try:
+            resp = requests.get(feed["url"], headers=HEADERS, timeout=10)
+            soup = BeautifulSoup(resp.content, "xml")
+            if not soup.find(["item", "entry"]):
+                soup = BeautifulSoup(resp.content, "html.parser")
+
+            for entry in soup.find_all(["item", "entry"])[:5]:
+                title_el = entry.find("title")
+                if not title_el:
+                    continue
+                title = title_el.get_text(strip=True)
+
+                link_el = entry.find("link")
+                if link_el:
+                    url = link_el.get("href") or link_el.get_text(strip=True)
+                else:
+                    url = ""
+
+                # 解析发布时间
+                pub_el = entry.find(["pubDate", "published", "updated"])
+                if pub_el:
+                    from email.utils import parsedate_to_datetime
+                    try:
+                        pub_text = pub_el.get_text(strip=True)
+                        if "T" in pub_text:
+                            dt = datetime.fromisoformat(pub_text.replace("Z", "+00:00"))
+                        else:
+                            dt = parsedate_to_datetime(pub_text)
+                        if dt.tzinfo is None:
+                            dt = dt.replace(tzinfo=timezone.utc)
+                        if dt < cutoff:
+                            continue
+                    except Exception:
+                        pass
+
+                # 摘要
+                desc_el = entry.find(["description", "summary", "content"])
+                desc = ""
+                if desc_el:
+                    desc_text = desc_el.get_text(strip=True)
+                    desc = desc_text[:200] if desc_text else ""
+
+                feed_items.append({
+                    "source": f"RSS:{feed['name']}",
+                    "title": f"[{feed['name']}] {title}",
+                    "url": url,
+                    "summary": desc,
+                })
+        except Exception as e:
+            sys.stderr.write(f"[RSS:{feed['name']}] Error: {e}\n")
+        return feed_items
+
+    with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
+        futures = {executor.submit(fetch_single_feed, f): f for f in RSS_FEEDS}
+        for future in concurrent.futures.as_completed(futures):
+            try:
+                feed_items = future.result()
+                items.extend(feed_items)
+            except Exception:
+                pass
+
+    return items[:limit]
 
 
 # ============================================================================
@@ -475,9 +546,10 @@ def main():
         ("GitHub", fetch_github),
         ("华尔街见闻", fetch_wallstreetcn),
         ("X", fetch_x_timeline),
+        ("RSS", fetch_rss),
     ]
 
-    with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=6) as executor:
         future_map = {executor.submit(fn): name for name, fn in fetchers}
         for future in concurrent.futures.as_completed(future_map):
             name = future_map[future]
