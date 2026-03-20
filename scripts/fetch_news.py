@@ -905,45 +905,58 @@ def main():
             sys.stderr.write(f"  Telegram failed: {e}\n")
 
 
+def _tg_escape(text):
+    for ch in ("&", "<", ">"):
+        text = text.replace(ch, {"&": "&amp;", "<": "&lt;", ">": "&gt;"}[ch])
+    return text
+
+
 def send_telegram(date, main_theme, items, commentary, watchpoint_reviews):
-    lines = [f"📰 阿宁日报 {date}", ""]
+    parts = [f"<b>📰 阿宁日报 {_tg_escape(date)}</b>"]
 
     if main_theme:
-        lines.append("📌 今日主线")
-        lines.append(main_theme[:500])
-        lines.append("")
+        parts.append("")
+        parts.append(f"<b>📌 今日主线</b>")
+        parts.append(f"<i>{_tg_escape(main_theme[:500])}</i>")
 
-    lines.append("━━━━━━━━━━━━━━━")
-    for item in items[:8]:
-        source = item.get("source", "")
-        icon = {"Hacker News": "🔶", "Polymarket": "📊", "GitHub Trending": "🐙",
-                "华尔街见闻": "💹", "X (Twitter)": "𝕏"}.get(source, "📡")
-        title = re.sub(r'^\s*\[\d+\]\s*', '', item.get("title", ""))
-        lines.append(f"{icon} {title}")
-        if item.get("conclusion"):
-            lines.append(f"  {item['conclusion'][:100]}")
-        url = item.get("url", "")
-        if url:
-            lines.append(f"  {url}")
-        lines.append("")
+    if items:
+        parts.append("")
+        parts.append("─────────────────")
+        for i, item in enumerate(items[:8], 1):
+            source = item.get("source", "")
+            icon = {"Hacker News": "🔶", "Polymarket": "📊", "GitHub Trending": "🐙",
+                    "华尔街见闻": "💹", "X (Twitter)": "𝕏"}.get(source, "📡")
+            title = re.sub(r'^\s*\[\d+\]\s*', '', item.get("title", ""))
+            url = item.get("url", "")
+            if url:
+                parts.append(f"{icon} <b>{i}.</b> <a href=\"{_tg_escape(url)}\">{_tg_escape(title[:80])}</a>")
+            else:
+                parts.append(f"{icon} <b>{i}.</b> {_tg_escape(title[:80])}")
+            conclusion = item.get("conclusion", "")
+            if conclusion:
+                parts.append(f"    {_tg_escape(conclusion[:120])}")
+            parts.append("")
 
     if commentary:
-        lines.append("━━━━━━━━━━━━━━━")
-        lines.append("✍️ 阿宁点评")
-        lines.append(commentary[:600])
-        lines.append("")
+        parts.append("─────────────────")
+        parts.append(f"<b>✍️ 阿宁点评</b>")
+        parts.append(_tg_escape(commentary[:600]))
+        parts.append("")
 
     if watchpoint_reviews:
-        lines.append("🔍 观察点回顾")
+        parts.append(f"<b>🔍 观察点回顾</b>")
         for wp in watchpoint_reviews[:5]:
-            lines.append(f"  {wp.get('status_label', '⏳')} {wp.get('watch', '')}")
-            if wp.get("review"):
-                lines.append(f"    {wp['review'][:80]}")
-        lines.append("")
+            label = _tg_escape(wp.get("status_label", "⏳"))
+            watch = _tg_escape(wp.get("watch", ""))
+            parts.append(f"  {label} {watch}")
+            review = wp.get("review", "")
+            if review:
+                parts.append(f"    <i>{_tg_escape(review[:80])}</i>")
+        parts.append("")
 
-    lines.append("🔗 完整版: https://yining365.github.io/daily-news/")
+    parts.append(f"<a href=\"https://yining365.github.io/daily-news/\">🔗 完整版</a>")
 
-    message = "\n".join(lines)
+    message = "\n".join(parts)
     if len(message) > 4000:
         message = message[:3990] + "\n..."
 
@@ -952,6 +965,7 @@ def send_telegram(date, main_theme, items, commentary, watchpoint_reviews):
     payload = urllib.parse.urlencode({
         "chat_id": TG_CHAT_ID,
         "text": message,
+        "parse_mode": "HTML",
         "disable_web_page_preview": "true",
     }).encode("utf-8")
     req = urllib.request.Request(url, data=payload, method="POST")
