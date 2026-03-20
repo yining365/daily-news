@@ -381,7 +381,7 @@ def generate_degraded_output(all_items):
 # 解析 AI 输出
 # ============================================================================
 
-def parse_round1_items(round1_text):
+def parse_round1_items(round1_text, all_items=None):
     # 去掉 ``` 代码块包裹
     text = re.sub(r'^```\w*\s*\n?', '', round1_text.strip())
     text = re.sub(r'\n?```\s*$', '', text)
@@ -400,7 +400,17 @@ def parse_round1_items(round1_text):
         if line.startswith("### "):
             if current and current.get("title"):
                 items.append(current)
-            current = {"title": line.replace("### ", "").strip()}
+            title = line.replace("### ", "").strip()
+            # 从标题的 [序号] 回溯原始 item 的 source
+            idx_match = re.match(r'\[(\d+)\]', title)
+            original_source = ""
+            original_url = ""
+            if idx_match and all_items:
+                idx = int(idx_match.group(1))
+                if 0 <= idx < len(all_items):
+                    original_source = all_items[idx].get("source", "")
+                    original_url = all_items[idx].get("url", "")
+            current = {"title": title, "source": original_source, "url": original_url}
         elif line.startswith("结论"):
             current["conclusion"] = extract_value(line)
         elif line.startswith("信号"):
@@ -410,9 +420,13 @@ def parse_round1_items(round1_text):
         elif line.startswith("观察点"):
             current["watch"] = extract_value(line)
         elif line.startswith("来源"):
-            current["source"] = extract_value(line)
+            # AI 返回的来源只做备选，不覆盖原始 source
+            if not current.get("source"):
+                current["source"] = extract_value(line)
         elif line.startswith("链接"):
-            current["url"] = extract_value(line)
+            # AI 返回的链接只做备选，不覆盖原始 url
+            if not current.get("url"):
+                current["url"] = extract_value(line)
     if current and current.get("title"):
         items.append(current)
     return items
@@ -497,7 +511,7 @@ def main():
         sys.stderr.write("Step 3: AI Round 2 (归纳+点评)...\n")
         round2_output = ai_round2_synthesize(round1_output, all_items)
 
-        analyzed_items = parse_round1_items(round1_output)
+        analyzed_items = parse_round1_items(round1_output, all_items)
         if round2_output:
             main_theme, commentary = parse_round2(round2_output)
         else:
