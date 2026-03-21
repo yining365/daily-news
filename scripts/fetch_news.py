@@ -930,15 +930,7 @@ def _make_short_title(item):
 
 
 def send_telegram(date, main_theme, items, commentary, watchpoint_reviews):
-    parts = [f"<b>📰 阿宁日报 {_tg_escape(date)}</b>"]
-
-    if main_theme:
-        first_para = main_theme.strip().split("\n\n")[0].strip()
-        if len(first_para) > 150:
-            first_para = first_para[:147] + "..."
-        parts.append(f"<i>{_md_to_tg_html(first_para)}</i>")
-
-    parts.append("")
+    parts = [f"<b>📰 阿宁日报 {_tg_escape(date)}</b>", ""]
 
     for item in items[:5]:
         source = item.get("source", "")
@@ -946,15 +938,10 @@ def send_telegram(date, main_theme, items, commentary, watchpoint_reviews):
                 "华尔街见闻": "💹", "X (Twitter)": "𝕏"}.get(source, "📡")
         title = _make_short_title(item)
         url = item.get("url", "")
-        conclusion = item.get("conclusion", "")
         if url:
             parts.append(f"{icon} <a href=\"{_tg_escape(url)}\">{_tg_escape(title)}</a>")
         else:
             parts.append(f"{icon} {_tg_escape(title)}")
-        if conclusion:
-            short = conclusion[:80] + ("..." if len(conclusion) > 80 else "")
-            parts.append(f"   {_tg_escape(short)}")
-        parts.append("")
 
     if commentary:
         first_line = commentary.strip().split("\n")[0].strip()
@@ -962,9 +949,10 @@ def send_telegram(date, main_theme, items, commentary, watchpoint_reviews):
         if len(first_line) > 100:
             first_line = first_line[:97] + "..."
         if first_line:
-            parts.append(f"✍️ {_md_to_tg_html(first_line)}")
             parts.append("")
+            parts.append(f"✍️ {_md_to_tg_html(first_line)}")
 
+    parts.append("")
     parts.append(f"<a href=\"https://yining365.github.io/daily-news/\">→ 完整版</a>")
 
     message = "\n".join(parts)
