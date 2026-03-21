@@ -321,63 +321,200 @@ footer a:hover { color: #94a3b8; }
         </header>
 
         
+            <section class="main-theme">
+                <h2>今日主线</h2>
+                <div class="theme-content"><p>市场开始从“AI 能做什么”转向“谁能把它真正跑起来”。200 亿中国光伏订单说明，下一阶段卡脖子的不是模型，也不只是 GPU，而是电力、并网和长期能源合同；没有这些，数据中心扩张就是空话。</p>
+<p>同一条线在软件里也成立：TypeScript 反杀 Rust+WASM、Turbo Pascal 被重新拆解，信号都一样——行业不再为技术姿态买单，只为可落地、可维护、可集成的系统买单。能少一层边界、少一次重写、把旧资产接进新能力的人，开始比“再造一个新栈”的人更值钱。</p>
+<p>连情绪和资本定价都在往这个方向收缩。Sam Altman 高调致敬复杂软件作者，不是鸡汤，是行业承认底层工程稀缺；Polymarket 上 2028 大选合约 4.337 亿美元成交，则说明长期叙事已经被提前金融化，市场在抢先给“未来约束”标价。</p></div>
+            </section>
+            
 
         
+            <section class="watchpoints">
+                <h2>观察点回顾 <span class="count">3 条更新</span></h2>
+                
+                <div class="wp-item wp-progress">
+                    <div class="wp-header">
+                        <span class="wp-status">⏳ 进展中</span>
+                        <span class="wp-date">2026-03-20</span>
+                    </div>
+                    <p class="wp-watch">盯双方后续是否公布具体模型、许可证和部署路径；没有这些，合作还是 PR，有这些才是生态重组。</p>
+                    <p class="wp-review">今天除了合作声明外，Mistral 还发布了面向企业私有知识建模的 Forge，说明“部署路径”这件事开始有实物，不再只停留在 PR 层。</p>
+                </div>
+                
+                <div class="wp-item wp-progress">
+                    <div class="wp-header">
+                        <span class="wp-status">⏳ 进展中</span>
+                        <span class="wp-date">2026-03-20</span>
+                    </div>
+                    <p class="wp-watch">盯后续是否出现关于 Composer 2 的使用时长、任务完成率或企业渗透数据；只有工作流粘性数据，才能证明它不是一次性话题热度。</p>
+                    <p class="wp-review">Cursor 今天除了继续推 Composer 2，还公开了一个新界面的 early alpha，说明团队在把它往更完整的工作流产品上推进。</p>
+                </div>
+                
+                <div class="wp-item wp-progress">
+                    <div class="wp-header">
+                        <span class="wp-status">⏳ 进展中</span>
+                        <span class="wp-date">2026-03-21</span>
+                    </div>
+                    <p class="wp-watch">盯 Foundry 上线后的企业定价、可调用范围以及是否与 Copilot 工作流深度绑定；一旦绑定，独立图像模型厂商的获客成本会继续上升。</p>
+                    <p class="wp-review">今天再次确认这条线正在进入产品化：先落 Copilot，再往 Foundry 企业侧走，和当初“是否与 Copilot 工作流深度绑定”这个观察方向一致。</p>
+                </div>
+                
+            </section>
+            
 
         <section class="items-section">
-            <h2>今日精选 <span class="count">0 条</span></h2>
+            <h2>今日精选 <span class="count">5 条</span></h2>
+            
+            <article class="brief-item">
+                <div class="item-header">
+                    <span class="item-number">01</span>
+                    <span class="source-badge">华尔街见闻</span>
+                </div>
+                <h3 class="item-title"><a href="https://wallstreetcn.com/articles/3768044" target="_blank">马斯克出手引爆行情：200亿中国光伏订单，究竟买的是什么？</a></h3>
+                <div class="item-analysis">
+                    <div class="analysis-row">
+                        <span class="label">结论</span>
+                        <p>这不是一笔普通设备订单，而是“电力比芯片更稀缺”开始被市场定价。谁先锁定长期清洁电力，谁才有资格谈 AI、制造业和数据中心扩张。</p>
+                    </div>
+                    <div class="analysis-row">
+                        <span class="label">信号</span>
+                        <p>标题里直接给出 **200亿** 中国光伏订单，这是足以穿透产业链的规模信号。订单本身比股价反应更重要，因为它意味着未来几年负荷侧已经有人在提前卡位。</p>
+                    </div>
+                    <div class="analysis-row">
+                        <span class="label">重要性</span>
+                        <p>过去两年大家盯的是 GPU capex，现在更关键的是 power capex；光伏、储能、变压器和并网能力会从“配套”变成主约束。对中国制造链，这类大单的意义不只是出口，而是把新能源从周期品重新拉回基础设施资产。</p>
+                    </div>
+                    <div class="analysis-row watch">
+                        <span class="label">观察点</span>
+                        <p>盯后续是否出现配套的 **储能、逆变器、变压器、长期 PPA** 订单；如果只有光伏没有配储，这笔订单的真实含金量要打折。</p>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="brief-item">
+                <div class="item-header">
+                    <span class="item-number">02</span>
+                    <span class="source-badge">Hacker News</span>
+                </div>
+                <h3 class="item-title"><a href="https://www.openui.com/blog/rust-wasm-parser" target="_blank">We rewrote our Rust WASM parser in TypeScript and it got faster</a></h3>
+                <div class="item-analysis">
+                    <div class="analysis-row">
+                        <span class="label">结论</span>
+                        <p>这条最该改变工程团队判断：在前端/边缘场景里，“Rust + WASM 天然更快”已经不是默认成立。真正决定性能的，越来越是边界开销、宿主集成和工程复杂度，而不是语言神话。</p>
+                    </div>
+                    <div class="analysis-row">
+                        <span class="label">信号</span>
+                        <p>这条内容在 Hacker News 拿到 **123 points**，热度不算顶级，但标题本身的信息密度极高：**Rust WASM** 重写成 **TypeScript** 之后反而更快。它直接挑战了过去几年工具链升级的核心叙事。</p>
+                    </div>
+                    <div class="analysis-row">
+                        <span class="label">重要性</span>
+                        <p>如果 TypeScript 在实际产品路径里胜出，很多团队会重新评估 WASM 的 ROI——不是不用，而是只在真正算力密集、边界稳定的地方用。二阶影响是：前端基础设施、IDE 插件、浏览器内 AI 工具会更偏向“少跨边界、少异构栈”的方案。</p>
+                    </div>
+                    <div class="analysis-row watch">
+                        <span class="label">观察点</span>
+                        <p>盯更多团队是否公开类似迁移案例；如果这种案例从 parser 扩展到 linter、formatter、editor tooling，WASM 在应用层会从“默认选项”退回“特种选项”。</p>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="brief-item">
+                <div class="item-header">
+                    <span class="item-number">03</span>
+                    <span class="source-badge">Polymarket</span>
+                </div>
+                <h3 class="item-title"><a href="https://polymarket.com/event/presidential-election-winner-2028" target="_blank">Presidential Election Winner 2028</a></h3>
+                <div class="item-analysis">
+                    <div class="analysis-row">
+                        <span class="label">结论</span>
+                        <p>**$433.7M** 的交易量说明一件事：预测市场已经不是围观政治，它正在变成长期宏观预期的流动性池。对投资者而言，这类市场的价值不在“猜谁赢”，而在观察叙事何时开始被资金固化。</p>
+                    </div>
+                    <div class="analysis-row">
+                        <span class="label">信号</span>
+                        <p>这张 **2028** 总统大选赢家合约，距离兑现还很远，却已有 **$433.7M** 成交。时间这么长、流动性这么深，本身就是市场结构变化的信号。</p>
+                    </div>
+                    <div class="analysis-row">
+                        <span class="label">重要性</span>
+                        <p>远期政治合约一旦形成高流动性，就会反向影响媒体议程、捐款节奏、政策游说和企业情景规划。三阶效应是：更多宏观参与者会把 prediction market 当作补充性的“实时概率终端”，而不是娱乐市场。</p>
+                    </div>
+                    <div class="analysis-row watch">
+                        <span class="label">观察点</span>
+                        <p>盯后续成交量是否继续向更远期限扩散，以及候选人一旦正式入场后，赔率调整是否先于传统民调。</p>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="brief-item">
+                <div class="item-header">
+                    <span class="item-number">04</span>
+                    <span class="source-badge">RSS:Simon Willison</span>
+                </div>
+                <h3 class="item-title"><a href="https://simonwillison.net/2026/Mar/20/turbo-pascal/#atom-everything" target="_blank">Turbo Pascal 3.02A, deconstructed</a></h3>
+                <div class="item-analysis">
+                    <div class="analysis-row">
+                        <span class="label">结论</span>
+                        <p>这不是怀旧内容，而是一个被低估的现实：AI 时代正在把“代码考古”变成生产力工具。旧软件资产过去难以重用，是因为人读不动；现在开始变成机器可解析、可解释、可迁移的库存。</p>
+                    </div>
+                    <div class="analysis-row">
+                        <span class="label">信号</span>
+                        <p>对象不是模糊的“老代码”，而是具体到 **Turbo Pascal 3.02A**。这种版本级 deconstruction 的意义在于，它展示了遗留系统可以被精细拆解，而不只是被粗暴重写。</p>
+                    </div>
+                    <div class="analysis-row">
+                        <span class="label">重要性</span>
+                        <p>全球仍有大量关键业务跑在古老栈上，真正的 AI 机会不只是在写新代码，而是在接管维护、迁移和验证旧代码。对企业软件和咨询行业，这意味着“替换式 modernization”会逐步变成“机器辅助审计 + 渐进式迁移”。</p>
+                    </div>
+                    <div class="analysis-row watch">
+                        <span class="label">观察点</span>
+                        <p>盯类似方法是否从单个历史版本扩展到企业遗留系统、二进制分析和自动测试生成；一旦落地到商业工具，维护市场会比生成市场更先出现金流。</p>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="brief-item">
+                <div class="item-header">
+                    <span class="item-number">05</span>
+                    <span class="source-badge">X (Twitter)</span>
+                </div>
+                <h3 class="item-title"><a href="https://x.com/sama/status/2033935276079510011" target="_blank">@sama: I have so much gratitude to people who wrote extremely complex software character-by-character...</a></h3>
+                <div class="item-analysis">
+                    <div class="analysis-row">
+                        <span class="label">结论</span>
+                        <p>Sam Altman 这条看似抒情，实则是一个行业情绪拐点：当生成式 AI 进入平台期，顶层叙事开始从“替代程序员”转向“重新给底层工程定价”。这对基础软件、开发工具和系统工程人才是偏多信号。</p>
+                    </div>
+                    <div class="analysis-row">
+                        <span class="label">信号</span>
+                        <p>这条推文热度 **35610**，远高于大多数普通感慨帖。高传播不是因为内容新，而是因为它击中了当前行业最真实的张力：AI 让写代码更快，但也让高质量复杂软件显得更稀缺。</p>
+                    </div>
+                    <div class="analysis-row">
+                        <span class="label">重要性</span>
+                        <p>如果连最激进的 AI 受益者都在强调手工构建复杂系统的价值，市场就该重新审视“应用层泡沫、基础层稀缺”的结构。二阶影响是，能把 AI 接进现有复杂系统的人，会比只会调用模型 API 的人更值钱。</p>
+                    </div>
+                    <div class="analysis-row watch">
+                        <span class="label">观察点</span>
+                        <p>盯头部 AI 公司接下来的人才和收购动作；如果继续加码编译器、运行时、infra 和开发者工具，这条情绪信号就会变成资本配置。</p>
+                    </div>
+                </div>
+            </article>
             
         </section>
 
         
-            <section class="degraded">
-                <div class="degraded-notice">AI 分析暂不可用，以下为原始信息</div>
-                <div class="degraded-content"><h3>今日主线</h3>
-<p>（AI 分析暂不可用，以下为原始信息）</p>
-<h4>X (Twitter)</h4>
-<li><a href="https://x.com/sama/status/2033935276079510011" target="_blank">@sama: I have so much gratitude to people who wrote extremely complex software character-by-character. It already feels difficult to remember how much effort it really took. Thank you for getting us to this point.</a></li>
-<li><a href="https://x.com/satyanadella/status/2033187856370557379" target="_blank">@satyanadella: We’ve trained a multimodal AI model to turn routine pathology slides into spatial proteomics, with the potential to reduce time and cost while expanding access to cancer care.</a></li>
-<li><a href="https://x.com/cursor_ai/status/2034668943676244133" target="_blank">@cursor_ai: Composer 2 is now available in Cursor.</a></li>
-<li><a href="https://x.com/demishassabis/status/2033010713413754987" target="_blank">@demishassabis: Cool use case of AlphaFold, this is just the beginning of digital biology!</a></li>
-<li><a href="https://x.com/karpathy/status/2034865693544604001" target="_blank">@karpathy: Had to go see Project Hail Mary right away (it's based on the book of Andy Weir, of also The Martian fame). Both very pleased and relieved to say that 1) the movie sticks very close to the book in both content and tone and 2) is really well</a></li>
-<h4>Hacker News</h4>
-<li><a href="https://opencode.ai/" target="_blank">OpenCode – The open source AI coding agent</a> (298 points)</li>
-<li><a href="https://blogs.windows.com/windows-insider/2026/03/20/our-commitment-to-windows-quality/" target="_blank">Our commitment to Windows quality</a> (317 points)</li>
-<li><a href="https://nautil.us/whiplash-heart-attack-and-stroke-risk-jumps-when-people-stop-taking-glp-1s-1279029" target="_blank">Discontinuation and reinitiation of dual-labeled GLP-1 receptor agonists</a> (45 points)</li>
-<li><a href="https://www.openui.com/blog/rust-wasm-parser" target="_blank">We rewrote our Rust WASM Parser in TypeScript – and it got 3x Faster</a> (60 points)</li>
-<li><a href="https://www.lemonde.fr/en/international/article/2026/03/20/stravaleaks-france-s-aircraft-carrier-located-in-real-time-by-le-monde-through-fitness-app_6751640_4.html" target="_blank">France's aircraft carrier located in real time by Le Monde through fitness app</a> (444 points)</li>
-<h4>GitHub Trending</h4>
-<li><a href="https://github.com/jarrodwatts/claude-hud" target="_blank">jarrodwatts/claude-hud: A Claude Code plugin that shows what's happening - context usage, active tools, running agents, and todo progress</a> (9,513 stars)</li>
-<li><a href="https://github.com/langchain-ai/open-swe" target="_blank">langchain-ai/open-swe: An Open-Source Asynchronous Coding Agent</a> (7,623 stars)</li>
-<li><a href="https://github.com/obra/superpowers" target="_blank">obra/superpowers: An agentic skills framework & software development methodology that works.</a> (101,490 stars)</li>
-<li><a href="https://github.com/opendataloader-project/opendataloader-pdf" target="_blank">opendataloader-project/opendataloader-pdf: PDF Parser for AI-ready data. Automate PDF accessibility. Open-source.</a> (7,017 stars)</li>
-<li><a href="https://github.com/louis-e/arnis" target="_blank">louis-e/arnis: Generate any location from the real world in Minecraft with a high level of detail.</a> (11,562 stars)</li>
-<h4>RSS:Daring Fireball</h4>
-<li>[[Daring Fireball] Google Search Is Now Using AI to Rewrite Headlines](https://www.theverge.com/tech/896490/google-replace-news-headlines-in-search-canary-coal-mine-experiment?view_token=eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjI0Q05IV0dlS3EiLCJwIjoiL3RlY2gvODk2NDkwL2dvb2dsZS1yZXBsYWNlLW5ld3MtaGVhZGxpbmVzLWluLXNlYXJjaC1jYW5hcnktY29hbC1taW5lLWV4cGVyaW1lbnQiLCJleHAiOjE3NzQ0NzIwOTAsImlhdCI6MTc3NDA0MDA5MH0.3exwHWG6qdR5YeFLjzS1qvUy3tgfASQhbFZDTbHrkKE&utm_medium=gift-link)</li>
-<li>[[Daring Fireball] Perhaps Bluesky’s Revelation of an 11-Month Ago $100 Million Investment Was, in Fact, an Act of Transparency](https://bsky.app/profile/flooey.org/post/3mhiznh4d7c2j)</li>
-<li>[[Daring Fireball] Bluesky Raised $100M a Year Ago but for Some Reason Only Disclosed It Now](https://bsky.social/about/blog/03-19-2026-series-b)</li>
-<li>[[Daring Fireball] Quiche Browser](https://quiche.industries/browser/)</li>
-<li>[[Daring Fireball] StopTheMadness Pro and StopTheScript Extensions for Safari](https://mastodon.social/@lapcatsoftware/116252960395480568)</li>
-<h4>RSS:阮一峰周刊</h4>
-<li>[[阮一峰周刊] 科技爱好者周刊（第 389 期）：未来如何招聘程序员](http://www.ruanyifeng.com/blog/2026/03/weekly-issue-389.html)</li>
-<h4>RSS:Simon Willison</h4>
-<li>[[Simon Willison] Quoting Kimi.ai @Kimi_Moonshot](https://simonwillison.net/2026/Mar/20/cursor-on-kimi/#atom-everything)</li>
-<li>[[Simon Willison] Thoughts on OpenAI acquiring Astral and uv/ruff/ty](https://simonwillison.net/2026/Mar/19/openai-acquiring-astral/#atom-everything)</li>
-<h4>华尔街见闻</h4>
-<li><a href="https://wallstreetcn.com/articles/3768040" target="_blank">美国临时豁免滞留海上伊朗石油制裁，财长称可迅速供油1.4亿桶，美超亿油储释放首批4500万桶</a></li>
-<li><a href="https://wallstreetcn.com/articles/3768042" target="_blank">华尔街见闻早餐FM-Radio | 2026年3月21日</a></li>
-<li><a href="https://wallstreetcn.com/livenews/3074382" target="_blank">美国允许出售目前滞留海上的伊朗石油，贝森特：可迅速提供约1.4亿桶石油</a></li>
-<li><a href="https://wallstreetcn.com/articles/3767994" target="_blank">中东局势叠加美联储加息预期，美股连跌四周，全球债市遭遇“血洗”，黄金创43年最大单周跌幅</a></li>
-<li><a href="https://wallstreetcn.com/articles/3768039" target="_blank">特朗普称考虑逐步减少对伊朗的军事行动，美股盘后转涨</a></li>
-<h4>Polymarket</h4>
-<li><a href="https://polymarket.com/event/democratic-presidential-nominee-2028" target="_blank">Democratic Presidential Nominee 2028</a></li>
-<li><a href="https://polymarket.com/event/republican-presidential-nominee-2028" target="_blank">Republican Presidential Nominee 2028</a> (Will J.D. Vance win the 2028 Republican presidential nomination?: Yes 37%)</li>
-<li><a href="https://polymarket.com/event/presidential-election-winner-2028" target="_blank">Presidential Election Winner 2028</a></li>
-<li><a href="https://polymarket.com/event/venezuela-leader-end-of-2026" target="_blank">Venezuela leader end of 2026?</a> (Will María Corina Machado be the leader of Venezuela end of 2026?: Yes 14%)</li>
-<li><a href="https://polymarket.com/event/what-price-will-bitcoin-hit-in-march-2026" target="_blank">What price will Bitcoin hit in March?</a></li></div>
+        
+            <section class="commentary">
+                <h2>阿宁点评</h2>
+                <div class="commentary-content"><p><strong>今天真正值得看的：</strong></p>
+<p>第一条是那笔 200 亿光伏订单。别被“马斯克”“光伏概念股”这种标题党带跑，真正要看的是后续有没有储能、逆变器、变压器和长期 PPA 跟上；如果有，这不是一张采购单，而是有人在提前锁未来 3-5 年的工业电力配额。现在还把 AI 投资只理解成买卡的人，已经慢一拍了。</p>
+<p>第二条是 TypeScript 比 Rust+WASM 更快。这条会得罪很多工具链信徒，但事实就是：过去几年“上 WASM 就先进、上 Rust 就高性能”的偷懒判断，开始大面积失效。接下来谁还在前端、编辑器、边缘工具里默认堆异构栈，大概率是在给自己制造维护债，不是在追求性能。</p>
+<p>第三条是 Turbo Pascal 3.02A 的拆解。很多人会把它当技术怀旧，我不这么看；这背后是一个真钱机会：遗留系统维护、审计、迁移，可能比“再做一个 AI 编程助手”更快出现金流。新代码生成已经卷烂了，旧系统接管才是没人愿意下场、但客户肯付钱的苦活。</p>
+<p><strong>噪音：</strong></p>
+<p>Sam Altman 那条“感谢一字符一字符写复杂软件的人”，可以看，但别过度解读。这条有情绪价值，没有信息增量；它证明不了 OpenAI 的任何新动作，也不能直接推出基础软件公司就该重估。真正有用的不是 CEO 发了什么感慨，而是他下周招什么人、买什么团队、把钱投到编译器还是应用壳子里。</p>
+<p>如果非要再点一个半噪音，就是 2028 总统大选的赔率截图本身。成交量大是信号，但“谁领先了 2 个点”这种日内波动基本都是媒体拿来凑热闹的材料，不值得追。这个市场值得看的是流动性结构，不是今天谁红谁绿。</p>
+<p><strong>接下来一周盯什么：</strong></p>
+<p>第一，盯那笔光伏订单有没有配套订单落地，尤其是储能、变压器、并网和长期 PPA。只买板子不锁配储，这单子的战略意义要打七折；如果一周内产业链开始出现连续跟单，新能源就不是反弹题材，而是“AI 基础设施”主线。</p>
+<p>第二，盯 Hacker News 和开发者博客里，未来一周有没有第二、第三个“从 Rust/WASM 回退到 TypeScript/原生实现”的案例，特别是 linter、formatter、IDE 插件这几类工具。一旦案例扩散到 parser 之外，WASM 在应用层就会从“默认选项”退回“特种兵工具”。</p>
+<p>第三，盯头部 AI 公司的人才和并购动作，不是听他们怎么夸工程师。看他们是继续买应用层流量，还是补编译器、运行时、infra、开发者工具；如果接下来几天出现相关招聘或收购消息，Sam 那条推文才算从姿态变成资本配置。</p></div>
             </section>
             
-        
 
         <footer>
             <p>Generated by Daily News V2 | <a href="history.html">历史归档</a></p>
