@@ -446,5 +446,40 @@
     "watch": "盯头部 AI 公司接下来的人才和收购动作；如果继续加码编译器、运行时、infra 和开发者工具，这条情绪信号就会变成资本配置。",
     "source": "X (Twitter)",
     "status": "open"
+  },
+  {
+    "date": "2026-03-21",
+    "title": "中东局势叠加美联储加息预期，美股连跌四周，全球债市遭遇“血洗”，黄金创43年最大单周跌幅",
+    "watch": "盯下周长端美债收益率和黄金是否继续同跌；如果延续，市场交易的就不是事件，而是融资条件收紧。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-21",
+    "title": "Next Prime Minister of Hungary",
+    "watch": "盯该市场后续是否出现更明确的候选人定价；一旦从“有量无价差”转向“有量有方向”，区域资产会更快跟。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-21",
+    "title": "Our commitment to Windows quality",
+    "watch": "盯后续是否出现更具体的更新节奏、回滚机制和遥测披露；如果只有口号没有流程改造，这波“质量叙事”持续不了。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-21",
+    "title": "@satyanadella: Great to see our new image model from our Superintelligence team rolling out in Copilot and coming soon to Foundry for enterprise customers.",
+    "watch": "盯 Foundry 上线后的定价和权限边界；如果默认打包进现有企业合同，独立图像AI公司的获客成本会再上一个台阶。",
+    "source": "X (Twitter)",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-21",
+    "title": "obra/superpowers: An agentic skills framework & software development methodology that works.",
+    "watch": "盯它是否从“高星项目”继续演化成被 IDE、代码托管或企业开发平台原生集成；一旦进入主工作流，agent 开发会开始标准化。",
+    "source": "GitHub Trending",
+    "status": "open"
   }
 ]
