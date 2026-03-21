@@ -944,17 +944,18 @@ def send_telegram(date, main_theme, items, commentary, watchpoint_reviews):
             parts.append(f"{icon} {_tg_escape(title)}")
 
     if commentary:
+        skip_headers = {"今天真正值得看", "噪音", "接下来"}
         for line in commentary.strip().split("\n"):
-            line = line.strip()
             line = re.sub(r'\*\*', '', line).strip()
-            if not line or line.startswith("今天真正值得看") or line.startswith("噪音") or line.startswith("接下来"):
+            if not line:
                 continue
-            if len(line) > 15:
-                if len(line) > 100:
-                    line = line[:97] + "..."
-                parts.append("")
-                parts.append(f"✍️ {_tg_escape(line)}")
-                break
+            if any(line.startswith(h) for h in skip_headers):
+                continue
+            if len(line) > 100:
+                line = line[:97] + "..."
+            parts.append("")
+            parts.append(f"✍️ {_tg_escape(line)}")
+            break
 
     parts.append("")
     parts.append(f"<a href=\"https://yining365.github.io/daily-news/\">→ 完整版</a>")
