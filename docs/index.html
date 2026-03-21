@@ -1,6 +1,104 @@
 <!DOCTYPE html>
-<html><head><meta charset="UTF-8">
-<meta http-equiv="refresh" content="0; url=2026-03-21.html">
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>阿宁日报</title>
-<script>window.location.href="2026-03-21.html";</script>
-</head><body><a href="2026-03-21.html">跳转</a></body></html>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, "PingFang SC", "Helvetica Neue", sans-serif; background: #0a0a0a; color: #e0e0e0; line-height: 1.7; }
+.container { max-width: 680px; margin: 0 auto; padding: 20px 16px; }
+.day-nav { display: flex; gap: 8px; margin-bottom: 24px; overflow-x: auto; padding-bottom: 8px; }
+.day-btn { background: #1a1a1a; border: 1px solid #333; color: #999; padding: 6px 14px; border-radius: 6px; cursor: pointer; font-size: 13px; white-space: nowrap; }
+.day-btn.active { background: #1e3a2f; border-color: #10b981; color: #10b981; }
+.theme { color: #999; font-size: 15px; margin-bottom: 28px; line-height: 1.8; }
+.item { margin-bottom: 24px; }
+.item-header { display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px; }
+.item-icon { font-size: 14px; }
+.item-title a { color: #e0e0e0; text-decoration: none; font-weight: 600; font-size: 16px; }
+.item-title a:hover { color: #10b981; }
+.item-source { font-size: 12px; color: #666; background: #1a1a1a; padding: 2px 8px; border-radius: 4px; }
+.item-body { margin-left: 24px; }
+.item-body p { font-size: 14px; color: #aaa; margin-bottom: 4px; }
+.item-body .label { color: #10b981; font-size: 12px; font-weight: 600; margin-right: 6px; }
+.commentary { margin-top: 32px; padding-top: 24px; border-top: 1px solid #222; }
+.commentary h3 { color: #10b981; font-size: 15px; margin-bottom: 12px; }
+.commentary p { color: #bbb; font-size: 14px; margin-bottom: 10px; line-height: 1.8; }
+.watchpoints { margin-top: 24px; padding-top: 20px; border-top: 1px solid #222; }
+.watchpoints h3 { color: #f59e0b; font-size: 15px; margin-bottom: 12px; }
+.wp-item { font-size: 14px; color: #aaa; margin-bottom: 8px; }
+.empty { text-align: center; color: #666; padding: 60px 0; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="day-nav" id="nav"></div>
+  <div id="content"><div class="empty">加载中...</div></div>
+</div>
+<script>
+const ICONS = {"Hacker News":"🔶","Polymarket":"📊","GitHub Trending":"🐙","华尔街见闻":"💹","X (Twitter)":"𝕏"};
+let DATA = [];
+
+function icon(source) { return ICONS[source] || "📡"; }
+function esc(s) { return s ? s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;") : ""; }
+function mdBold(s) { return s ? esc(s).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>") : ""; }
+
+function render(idx) {
+  document.querySelectorAll(".day-btn").forEach((b,i) => b.classList.toggle("active", i===idx));
+  const d = DATA[idx];
+  if (!d) { document.getElementById("content").innerHTML = '<div class="empty">暂无数据</div>'; return; }
+
+  let h = "";
+  if (d.main_theme) h += '<div class="theme">' + mdBold(d.main_theme) + "</div>";
+
+  for (const item of (d.items||[])) {
+    const src = item.source || "";
+    h += '<div class="item"><div class="item-header">';
+    h += '<span class="item-icon">' + icon(src) + "</span>";
+    h += '<span class="item-title"><a href="' + esc(item.url||"#") + '" target="_blank">' + esc(item.title) + "</a></span>";
+    h += '<span class="item-source">' + esc(src) + "</span>";
+    h += "</div><div class='item-body'>";
+    if (item.conclusion) h += "<p><span class='label'>结论</span>" + esc(item.conclusion) + "</p>";
+    if (item.signal) h += "<p><span class='label'>信号</span>" + esc(item.signal) + "</p>";
+    if (item.why) h += "<p><span class='label'>重要性</span>" + esc(item.why) + "</p>";
+    if (item.watch) h += "<p><span class='label'>观察点</span>" + esc(item.watch) + "</p>";
+    h += "</div></div>";
+  }
+
+  if (d.commentary) {
+    h += '<div class="commentary"><h3>✍️ 阿宁点评</h3>';
+    for (const p of d.commentary.split("\n\n")) { if (p.trim()) h += "<p>" + mdBold(p.trim()) + "</p>"; }
+    h += "</div>";
+  }
+
+  if (d.watchpoint_reviews && d.watchpoint_reviews.length) {
+    h += '<div class="watchpoints"><h3>🔍 观察点回顾</h3>';
+    for (const wp of d.watchpoint_reviews) {
+      h += '<div class="wp-item">' + esc(wp.status_label) + " " + esc(wp.watch);
+      if (wp.review) h += " — " + esc(wp.review);
+      h += "</div>";
+    }
+    h += "</div>";
+  }
+
+  document.getElementById("content").innerHTML = h;
+}
+
+fetch("data.json?" + Date.now()).then(r => r.json()).then(data => {
+  DATA = data;
+  const nav = document.getElementById("nav");
+  data.forEach((d, i) => {
+    const btn = document.createElement("button");
+    btn.className = "day-btn";
+    btn.textContent = d.date.slice(5);
+    btn.onclick = () => render(i);
+    nav.appendChild(btn);
+  });
+  if (data.length) render(0);
+  else document.getElementById("content").innerHTML = '<div class="empty">暂无数据</div>';
+}).catch(() => {
+  document.getElementById("content").innerHTML = '<div class="empty">加载失败</div>';
+});
+</script>
+</body>
+</html>

@@ -18,7 +18,6 @@ from src.config import OUTPUT_DIR, AI_BASE_URL, AI_API_KEY, AI_MODEL, SITE_META,
 X_CACHE_FILE = os.getenv("X_CACHE_FILE", "")
 TG_BOT_TOKEN = os.getenv("TG_BOT_TOKEN", "")
 TG_CHAT_ID = os.getenv("TG_CHAT_ID", "")
-from src.html_generator import HTMLGenerator
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"
@@ -836,9 +835,6 @@ def main():
 
     if not all_items:
         sys.stderr.write("No data fetched.\n")
-        generator = HTMLGenerator()
-        generator.generate_empty(today, "今日数据抓取失败")
-        generator.update_index(today)
         sys.exit(1)
 
     # Step 2: AI Round 1
@@ -880,20 +876,11 @@ def main():
     if analyzed_items:
         save_watchpoints(today, analyzed_items)
 
-    # Step 5: 生成 HTML
-    sys.stderr.write("Step 5: 生成 HTML...\n")
-    generator = HTMLGenerator()
-    html_path = generator.generate_daily_brief(
-        date=today,
-        analyzed_items=analyzed_items,
-        main_theme=main_theme,
-        commentary=commentary,
-        raw_content=content,
-        watchpoint_reviews=watchpoint_reviews,
-    )
-    generator.update_index(today)
-    sys.stderr.write(f"Output: {html_path}\n")
-    print(f"Daily brief generated: {html_path}")
+    # Step 5: 更新 JSON
+    sys.stderr.write("Step 5: 更新 data.json...\n")
+    data_path = save_daily_json(today, analyzed_items, main_theme, commentary, watchpoint_reviews)
+    sys.stderr.write(f"Output: {data_path}\n")
+    print(f"Daily brief saved: {data_path}")
 
     # Step 6: Telegram 推送
     if TG_BOT_TOKEN and TG_CHAT_ID:
@@ -903,6 +890,52 @@ def main():
             sys.stderr.write("  Telegram sent.\n")
         except Exception as e:
             sys.stderr.write(f"  Telegram failed: {e}\n")
+
+
+DATA_JSON = os.path.join(OUTPUT_DIR, "data.json")
+
+
+def save_daily_json(date, items, main_theme, commentary, watchpoint_reviews):
+    entry = {
+        "date": date,
+        "main_theme": main_theme,
+        "commentary": commentary,
+        "items": [
+            {
+                "title": re.sub(r'^\s*\[\d+\]\s*', '', item.get("title", "")),
+                "source": item.get("source", ""),
+                "url": item.get("url", ""),
+                "conclusion": item.get("conclusion", ""),
+                "signal": item.get("signal", ""),
+                "why": item.get("why", ""),
+                "watch": item.get("watch", ""),
+            }
+            for item in items
+        ],
+        "watchpoint_reviews": [
+            {
+                "watch": wp.get("watch", ""),
+                "status_label": wp.get("status_label", ""),
+                "review": wp.get("review", ""),
+                "date": wp.get("date", ""),
+            }
+            for wp in (watchpoint_reviews or [])
+        ],
+    }
+
+    data = []
+    if os.path.exists(DATA_JSON):
+        try:
+            data = json.loads(open(DATA_JSON, encoding="utf-8").read())
+        except Exception:
+            data = []
+
+    data = [d for d in data if d.get("date") != date]
+    data.insert(0, entry)
+    data = data[:90]
+
+    open(DATA_JSON, "w", encoding="utf-8").write(json.dumps(data, ensure_ascii=False, indent=2))
+    return DATA_JSON
 
 
 def _tg_escape(text):
