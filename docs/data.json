@@ -14,7 +14,7 @@
         "watch": "盯下周长端美债收益率和黄金是否继续同跌；如果延续，市场交易的就不是事件，而是融资条件收紧。"
       },
       {
-        "title": "Next Prime Minister of Hungary",
+        "title": "匈牙利下任总理预测市场",
         "source": "Polymarket",
         "url": "https://polymarket.com/event/next-prime-minister-of-hungary",
         "conclusion": "一个匈牙利总理市场能打到$33.5M交易量，本身就是信号：东欧政治风险已经从“研究题”变成了“可交易资产”。这说明资金在把欧洲内部政治分裂当成持续变量，而不是噪音。",
@@ -23,7 +23,7 @@
         "watch": "盯该市场后续是否出现更明确的候选人定价；一旦从“有量无价差”转向“有量有方向”，区域资产会更快跟。"
       },
       {
-        "title": "Our commitment to Windows quality",
+        "title": "微软公开承诺提升 Windows 质量",
         "source": "Hacker News",
         "url": "https://blogs.windows.com/windows-insider/2026/03/20/our-commitment-to-windows-quality/",
         "conclusion": "微软把“Windows质量”重新抬到台前，说明终端稳定性已经从后台工程问题，升级成前台商业问题。平台巨头公开谈质量，通常不是锦上添花，而是债务到了不能再滚的时候。",
@@ -32,7 +32,7 @@
         "watch": "盯后续是否出现更具体的更新节奏、回滚机制和遥测披露；如果只有口号没有流程改造，这波“质量叙事”持续不了。"
       },
       {
-        "title": "@satyanadella: Great to see our new image model from our Superintelligence team rolling out in Copilot and coming soon to Foundry for enterprise customers.",
+        "title": "纳德拉：微软超级智能团队新图像模型已接入 Copilot，即将上线企业版 Foundry",
         "source": "X (Twitter)",
         "url": "https://x.com/satyanadella/status/2034682749240713260",
         "conclusion": "微软最值得看的不是再发一个模型，而是把“Superintelligence team”产出的模型直接塞进 Copilot 和 Foundry——研究、分发、企业交付在同一条管线上闭环了。真正的护城河不是模型名，而是把新模型变成企业默认能力的速度。",
@@ -41,7 +41,7 @@
         "watch": "盯 Foundry 上线后的定价和权限边界；如果默认打包进现有企业合同，独立图像AI公司的获客成本会再上一个台阶。"
       },
       {
-        "title": "obra/superpowers: An agentic skills framework & software development methodology that works.",
+        "title": "Agent 技能框架 superpowers 冲上 10 万星",
         "source": "GitHub Trending",
         "url": "https://github.com/obra/superpowers",
         "conclusion": "一个“方法论+框架”仓库能到101,749 stars，说明开发者关注点正在从“哪个模型更强”转向“怎么把代理稳定地用起来”。这对行业是个重要拐点：模型层的优势在收敛，流程层的优势在放大。",
