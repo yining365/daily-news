@@ -932,32 +932,26 @@ def _make_short_title(item):
 def send_telegram(date, main_theme, items, commentary, watchpoint_reviews):
     parts = []
 
+    if main_theme:
+        parts.append(_md_to_tg_html(main_theme.strip()))
+        parts.append("")
+
     for item in items[:5]:
         source = item.get("source", "")
         icon = {"Hacker News": "🔶", "Polymarket": "📊", "GitHub Trending": "🐙",
                 "华尔街见闻": "💹", "X (Twitter)": "𝕏"}.get(source, "📡")
         title = _make_short_title(item)
         url = item.get("url", "")
+        conclusion = item.get("conclusion", "")
         if url:
             parts.append(f"{icon} <a href=\"{_tg_escape(url)}\">{_tg_escape(title)}</a>")
         else:
             parts.append(f"{icon} {_tg_escape(title)}")
+        if conclusion:
+            short = conclusion[:120] + ("..." if len(conclusion) > 120 else "")
+            parts.append(f"   {_tg_escape(short)}")
+        parts.append("")
 
-    if commentary:
-        skip_headers = {"今天真正值得看", "噪音", "接下来"}
-        for line in commentary.strip().split("\n"):
-            line = re.sub(r'\*\*', '', line).strip()
-            if not line:
-                continue
-            if any(line.startswith(h) for h in skip_headers):
-                continue
-            if len(line) > 100:
-                line = line[:97] + "..."
-            parts.append("")
-            parts.append(f"✍️ {_tg_escape(line)}")
-            break
-
-    parts.append("")
     parts.append(f"<a href=\"https://yining365.github.io/daily-news/\">→ 完整版</a>")
 
     message = "\n".join(parts)
