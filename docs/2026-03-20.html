@@ -163,6 +163,54 @@ hr {
     color: #e5a23c;
 }
 
+/* 观察点回顾 */
+.watchpoints {
+    background: rgba(16, 185, 129, 0.06);
+    border: 1px solid rgba(16, 185, 129, 0.15);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+.watchpoints h2 {
+    font-size: 1.1rem;
+    color: #10b981;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+.watchpoints .count {
+    font-size: 0.85rem;
+    color: #64748b;
+    font-weight: 400;
+}
+.wp-item {
+    padding: 1rem;
+    margin-bottom: 0.8rem;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.03);
+    border-left: 3px solid #64748b;
+}
+.wp-item.wp-verified { border-left-color: #10b981; }
+.wp-item.wp-invalidated { border-left-color: #ef4444; }
+.wp-item.wp-progress { border-left-color: #f59e0b; }
+.wp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+.wp-status { font-size: 0.85rem; }
+.wp-date { font-size: 0.75rem; color: #64748b; }
+.wp-watch {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin-bottom: 0.4rem;
+    font-style: italic;
+}
+.wp-review {
+    font-size: 0.9rem;
+    color: #e2e8f0;
+}
+
 /* 阿宁点评 */
 .commentary {
     background: rgba(139, 92, 246, 0.06);
@@ -275,37 +323,39 @@ footer a:hover { color: #94a3b8; }
         
             <section class="main-theme">
                 <h2>今日主线</h2>
-                <div class="theme-content"><p>Token正在从AI的技术概念升级为宏观经济单位，黄仁勋的"算力=GDP"叙事与OpenAI收购Astral形成闭环——前者定义价值度量，后者锁定生产工具，AI基础设施的"铸币权+铸币厂"格局初现。</p>
-<p>同一时间在能源市场，旧范式正被双向证伪：石油与美元的负相关关系逆转，但预测市场却用期限结构暗示"高油价不可持续"，宏观交易者被迫在"新规则"与"旧套利"之间重新校准仓位。</p>
-<p>更深层的共振发生在开发者生态：当Claude HUD将AI编码黑箱可视化、GSD框架把提示工程方法论化，AI正从"替代程序员"转向"重构软件工程本身"——这与Token经济形成呼应，因为两者都在争夺"下一代生产关系的定义权"。</p></div>
+                <div class="theme-content"><p>市场今天在做一件事：把“短期冲击”改价成“长期摩擦”。IEA 说海湾油气供应恢复可能要六个月，这不是能源小波动，而是把通胀、利率和企业成本一起往后拖了一个财报季；与此同时，Polymarket 上伊朗政权风险已经被做成有深度的交易市场，说明地缘政治不再停留在新闻标题里，而是直接进入资产定价。</p>
+<p>企业端的反应也很一致：一边接受更高的现实成本，一边在基础设施层拼命找替代。OpenBSD 的 PF queues 突破 4 Gbps，本质是开源网络栈重新摸到商用门槛；Vercel 把 agent 一次性塞进 Slack、Teams、GitHub、Linear 等 7 个入口，说明 AI 的战场已经从“谁模型更聪明”转向“谁先占住工作流分发”。</p>
+<p>更有意思的是，开发者社区也在补“环境层”而不是继续卷故事。那个把真实世界地点高精度生成到 Minecraft 的项目火起来，不是因为大家突然爱玩像素，而是低成本世界建模开始大众化，数字孪生、机器人仿真、训练环境这条线在往下掉价。今天的共同方向很清楚：风险在被更硬地定价，基础设施在被更狠地软件化，AI 也在从炫技回到入口和成本。</p></div>
             </section>
             
 
+        
+
         <section class="items-section">
-            <h2>今日精选 <span class="count">7 条</span></h2>
+            <h2>今日精选 <span class="count">5 条</span></h2>
             
             <article class="brief-item">
                 <div class="item-header">
                     <span class="item-number">01</span>
                     <span class="source-badge">华尔街见闻</span>
                 </div>
-                <h3 class="item-title"><a href="https://wallstreetcn.com/charts/41958762" target="_blank">黄仁勋："Token经济"下，"算力 = 收入" 且 "算力 = GDP"</a></h3>
+                <h3 class="item-title"><a href="https://wallstreetcn.com/articles/3768021" target="_blank">IEA：恢复来自海湾地区的石油和天然气供应可能需要六个月时间</a></h3>
                 <div class="item-analysis">
                     <div class="analysis-row">
                         <span class="label">结论</span>
-                        <p></p>
+                        <p>这条不是能源新闻，而是通胀和利率路径的重定价新闻；“六个月”意味着市场不能再把中东供给冲击当成一次性噪音。短期油价波动会过去，但中游和终端企业的成本传导会被拉长。</p>
                     </div>
                     <div class="analysis-row">
                         <span class="label">信号</span>
-                        <p></p>
+                        <p>IEA给出的时间不是几天或几周，而是六个月；对能源市场来说，这个量级足以跨过一个财报季。时间长度本身就是定价信号，因为它直接改变库存、套保和资本开支决策。</p>
                     </div>
                     <div class="analysis-row">
                         <span class="label">重要性</span>
-                        <p></p>
+                        <p>如果供给恢复窗口真按六个月走，宏观交易就会从“避险资产受益”转向“滞胀资产受益”，债券、航空、化工和航运会同时被重估。对科技行业，这也意味着数据中心、电力和物流成本的下限抬高，AI基础设施的单位经济性会继续承压。</p>
                     </div>
                     <div class="analysis-row watch">
                         <span class="label">观察点</span>
-                        <p></p>
+                        <p>盯海湾原油与天然气实际出货恢复节奏，以及未来一个财报季里高能耗行业对成本指引的调整。</p>
                     </div>
                 </div>
             </article>
@@ -313,25 +363,25 @@ footer a:hover { color: #94a3b8; }
             <article class="brief-item">
                 <div class="item-header">
                     <span class="item-number">02</span>
-                    <span class="source-badge">华尔街见闻</span>
+                    <span class="source-badge">Hacker News</span>
                 </div>
-                <h3 class="item-title"><a href="https://wallstreetcn.com/articles/3767980" target="_blank">市场定价正从"战争快速结束"转向"不确定性蔓延"</a></h3>
+                <h3 class="item-title"><a href="https://undeadly.org/cgi?action=article;sid=20260319125859" target="_blank">OpenBSD: PF queues break the 4 Gbps barrier</a></h3>
                 <div class="item-analysis">
                     <div class="analysis-row">
                         <span class="label">结论</span>
-                        <p></p>
+                        <p>4 Gbps 不是性能花边，而是开源网络栈重新进入“可商用替代”区间的门槛信号。过去很多人默认高性能流量治理必须上专有设备，这条信息在改这个前提。</p>
                     </div>
                     <div class="analysis-row">
                         <span class="label">信号</span>
-                        <p></p>
+                        <p>标题里的核心数字只有一个：PF queues 突破 4 Gbps。对一个以稳健和审计友好著称的系统来说，性能突破比新特性更重要，因为它决定了能不能从实验环境走向生产主链路。</p>
                     </div>
                     <div class="analysis-row">
                         <span class="label">重要性</span>
-                        <p></p>
+                        <p>如果通用硬件加开源防火墙/队列管理能吃到这个吞吐量，企业边缘网络、云原生出口和小型运营商的采购逻辑都会变，硬件毛利会继续被软件侵蚀。更深一层看，这和AI时代的成本压力一致：企业在算力上被迫重资本开支，就会在网络和安全层更积极地寻找软件化替代。</p>
                     </div>
                     <div class="analysis-row watch">
                         <span class="label">观察点</span>
-                        <p></p>
+                        <p>看后续是否出现更多基准测试、真实生产案例，以及其他BSD/Linux网络项目是否跟进公布同量级吞吐数据。</p>
                     </div>
                 </div>
             </article>
@@ -339,25 +389,25 @@ footer a:hover { color: #94a3b8; }
             <article class="brief-item">
                 <div class="item-header">
                     <span class="item-number">03</span>
-                    <span class="source-badge">华尔街见闻</span>
+                    <span class="source-badge">GitHub Trending</span>
                 </div>
-                <h3 class="item-title"><a href="https://wallstreetcn.com/articles/3767971" target="_blank">中金：石油冲击与美元汇率，关系已逆转</a></h3>
+                <h3 class="item-title"><a href="https://github.com/louis-e/arnis" target="_blank">louis-e/arnis: Generate any location from the real world in Minecraft with a high level of detail.</a></h3>
                 <div class="item-analysis">
                     <div class="analysis-row">
                         <span class="label">结论</span>
-                        <p></p>
+                        <p>这不是“把地图做进游戏”的玩具项目，而是低成本世界建模开始走向大众化的信号。11,216 stars 说明开发者对“现实世界 → 可交互数字空间”的兴趣已经远超小众爱好者层面。</p>
                     </div>
                     <div class="analysis-row">
                         <span class="label">信号</span>
-                        <p></p>
+                        <p>GitHub Trending 给出的量化信号很直接：11,216 stars。这个数字放在一个看似娱乐化的项目上，说明吸引力不只来自 Minecraft，而来自底层能力——把真实地理信息自动转成可操作环境。</p>
                     </div>
                     <div class="analysis-row">
                         <span class="label">重要性</span>
-                        <p></p>
+                        <p>消费级社区先跑通的世界重建工具，往往会外溢到机器人仿真、数字孪生、地产可视化和训练数据生成。AI行业现在缺的不是模型故事，而是高质量、低成本、可反复迭代的环境层；这类项目在补这个短板。</p>
                     </div>
                     <div class="analysis-row watch">
                         <span class="label">观察点</span>
-                        <p></p>
+                        <p>盯它后续是否加入更精细的语义层、道路/建筑属性映射，或者被机器人、GIS、仿真团队直接 fork 到非游戏场景。</p>
                     </div>
                 </div>
             </article>
@@ -365,25 +415,25 @@ footer a:hover { color: #94a3b8; }
             <article class="brief-item">
                 <div class="item-header">
                     <span class="item-number">04</span>
-                    <span class="source-badge">Hacker News</span>
+                    <span class="source-badge">Polymarket</span>
                 </div>
-                <h3 class="item-title"><a href="https://astral.sh/blog/openai" target="_blank">Astral to Join OpenAI</a></h3>
+                <h3 class="item-title"><a href="https://polymarket.com/event/will-the-iranian-regime-fall-by-march-31" target="_blank">Will the Iranian regime fall by March 31?</a></h3>
                 <div class="item-analysis">
                     <div class="analysis-row">
                         <span class="label">结论</span>
-                        <p></p>
+                        <p>真正值得看的是“这件事已经被做成可交易市场”，不是你是否认同结局判断。$42.7M 的交易量说明地缘政治尾部风险，正在从叙事层迁移到资产定价层。</p>
                     </div>
                     <div class="analysis-row">
                         <span class="label">信号</span>
-                        <p></p>
+                        <p>原始数据给出的硬数字是交易量 $42.7M，时间截止到 March 31。对一个高度极端、结果离散的政治事件来说，这个量级意味着市场参与者不再满足于通过油价、黄金等间接代理表达观点，而是在买卖更纯粹的事件概率。</p>
                     </div>
                     <div class="analysis-row">
                         <span class="label">重要性</span>
-                        <p></p>
+                        <p>当尾部事件有了深一点的流动性，传统市场的“二手定价”会更快被校准，原油、航运、军工和中东相关风险资产的反应会更敏感。更广义地看，这也说明预测市场正在成为情绪、信息和风险偏好的前置读数，而不只是博彩噪音。</p>
                     </div>
                     <div class="analysis-row watch">
                         <span class="label">观察点</span>
-                        <p></p>
+                        <p>盯这个市场在 March 31 临近前的成交放量和赔率跳变，看是否领先于原油与避险资产波动。</p>
                     </div>
                 </div>
             </article>
@@ -391,77 +441,25 @@ footer a:hover { color: #94a3b8; }
             <article class="brief-item">
                 <div class="item-header">
                     <span class="item-number">05</span>
-                    <span class="source-badge">GitHub Trending</span>
+                    <span class="source-badge">X (Twitter)</span>
                 </div>
-                <h3 class="item-title"><a href="https://github.com/jarrodwatts/claude-hud" target="_blank">jarrodwatts/claude-hud: A Claude Code plugin that shows what's happening</a></h3>
+                <h3 class="item-title"><a href="https://x.com/vercel/status/2034716745802346659" target="_blank">@vercel: Your users are on Slack, Discord, Teams, WhatsApp, Telegram, GitHub, Linear, and more. Your agents should be too.</a></h3>
                 <div class="item-analysis">
                     <div class="analysis-row">
                         <span class="label">结论</span>
-                        <p></p>
+                        <p>Agent 的竞争重心正在从“模型能力”转向“分发入口”；谁能一次接入更多工作流表面，谁就更接近企业预算。Vercel这条信息的价值，不在SDK本身，而在它定义了下一轮 agent 基础设施的控制点。</p>
                     </div>
                     <div class="analysis-row">
                         <span class="label">信号</span>
-                        <p></p>
+                        <p>原帖明确列出了 Slack、Discord、Teams、WhatsApp、Telegram、GitHub、Linear 这 7 个平台。单一代码库覆盖 7 个工作入口，意味着开发者不再围绕单个聊天窗口做 agent，而是围绕组织的消息流和任务流做 agent。</p>
                     </div>
                     <div class="analysis-row">
                         <span class="label">重要性</span>
-                        <p></p>
+                        <p>这会让“应用层 AI”更像 Twilio 和 Stripe 式的渠道基础设施生意，而不只是模型 API 生意。对 SaaS 公司也一样，未来护城河未必是自研模型，而是能否把 agent 深嵌进现有协作栈，把触达和执行都拿住。</p>
                     </div>
                     <div class="analysis-row watch">
                         <span class="label">观察点</span>
-                        <p></p>
-                    </div>
-                </div>
-            </article>
-            
-            <article class="brief-item">
-                <div class="item-header">
-                    <span class="item-number">06</span>
-                    <span class="source-badge">GitHub Trending</span>
-                </div>
-                <h3 class="item-title"><a href="https://github.com/gsd-build/get-shit-done" target="_blank">gsd-build/get-shit-done: meta-prompting, context engineering and spec-driven development system for Claude Code</a></h3>
-                <div class="item-analysis">
-                    <div class="analysis-row">
-                        <span class="label">结论</span>
-                        <p></p>
-                    </div>
-                    <div class="analysis-row">
-                        <span class="label">信号</span>
-                        <p></p>
-                    </div>
-                    <div class="analysis-row">
-                        <span class="label">重要性</span>
-                        <p></p>
-                    </div>
-                    <div class="analysis-row watch">
-                        <span class="label">观察点</span>
-                        <p></p>
-                    </div>
-                </div>
-            </article>
-            
-            <article class="brief-item">
-                <div class="item-header">
-                    <span class="item-number">07</span>
-                    <span class="source-badge">Polymarket</span>
-                </div>
-                <h3 class="item-title"><a href="https://polymarket.com/event/will-crude-oil-cl-hit-by-end-of-march" target="_blank">Will Crude Oil (CL) hit__ by end of March?</a></h3>
-                <div class="item-analysis">
-                    <div class="analysis-row">
-                        <span class="label">结论</span>
-                        <p></p>
-                    </div>
-                    <div class="analysis-row">
-                        <span class="label">信号</span>
-                        <p></p>
-                    </div>
-                    <div class="analysis-row">
-                        <span class="label">重要性</span>
-                        <p></p>
-                    </div>
-                    <div class="analysis-row watch">
-                        <span class="label">观察点</span>
-                        <p></p>
+                        <p>看后续是否出现基于这类跨平台框架的企业级 agent 爆款，以及 GitHub、Linear、Teams 这类高价值工作入口的调用数据是否先起量。</p>
                     </div>
                 </div>
             </article>
@@ -473,11 +471,12 @@ footer a:hover { color: #94a3b8; }
             <section class="commentary">
                 <h2>阿宁点评</h2>
                 <div class="commentary-content"><p><strong>今天真正值得看的：</strong></p>
-<p>黄仁勋的Token经济叙事。不是因为他喊得多响，而是这解释了英伟达为什么能容忍毛利率下滑——它在赌一个比"卖芯片"大100倍的估值框架。如果各国央行真的开始统计"Token产出"，英伟达就不是科技股了，是数字时代的布雷顿森林体系承包商。盯着下次GTC有没有"Token标准化"的实质动作，比看任何财报都重要。</p>
+<p>第一条是 IEA 那个“六个月”。多数人会把它当成又一条中东新闻，这是懒。真正该看的不是油价今天涨几个点，而是这个恢复周期已经长到足以穿透一个完整财报季，航空、化工、数据中心、电力密集型服务都会改指引。谁还在把这当一次性扰动，后面会被成本传导教育。第二条是 OpenBSD 的 4 Gbps。它不性感，但很值钱：一旦开源网络栈在通用硬件上跨过这个坎，企业采购会更理直气壮地削专有设备预算。现在大家嘴上都在聊 AI 降本，真正动刀子的地方反而是网络和安全层。</p>
+<p>第三条我会给那个 Minecraft 世界生成项目。很多人看到游戏外壳就自动降级处理，这很外行。开发者给它 1.1 万星，不是在给娱乐项目打赏，而是在投票“现实世界到可交互环境”的低成本管线。机器人、GIS、仿真、数字孪生缺的不是再来一个大模型，而是更便宜、可复用、可迭代的环境层，这类项目才是以后真正会溢出的底座。</p>
 <p><strong>噪音：</strong></p>
-<p>中东冲突的"不确定性蔓延"表述。市场从"押注结束"转向"为未知付费"这种话，听起来深刻实则废话——波动率抬升的时候机构当然会这么说，关键是期限结构平坦化之后有没有真的减仓。更无聊的是那些复读"能源安全"的宏观评论，2022年俄乌冲突后这套话术已经折旧了，现在需要的是区分"脉冲定价"和"结构性短缺"的具体交易结构，而不是再讲一遍美国页岩油的故事。</p>
+<p>最容易被聊成噪音的，是“伊朗政权会不会在某日前倒台”这个二元结果本身。结论党最爱这个，因为站队最省脑子。真正有信息量的不是你押 Yes 还是 No，而是这件事已经有了 4270 万美元交易量，且赔率会不会领先原油、航运和黄金动。只盯标题争论政局走向，是把预测市场当八卦池；那条你可以跳过，盘口和成交才值得看。另一个容易被吹过头的是 Vercel 这类 agent 多平台接入宣传，如果接下来没有真实企业调用和留存，这就只是“把 webhook 包装成叙事”。入口重要，但没有使用密度，入口就是空门牌。</p>
 <p><strong>接下来一周盯什么：</strong></p>
-<p>三件事。第一，uv会不会在下次更新里"优先支持"OpenAI的API格式——这是检验Astral收购是否开始收割生态的最早信号。第二，油价如果真的破100，看DXY能不能同步破105，这是验证"石油美元关系逆转"是否成立的关键实验。第三，GitHub Copilot对Claude HUD和GSD框架的回应速度，如果两周内没有同类功能放出，说明微软在AI原生开发范式上至少落后6个月，这个窗口期足够Anthropic在企业市场撕开一道口子。</p></div>
+<p>第一，盯原油和 LNG 的实际出货恢复节奏，不是看嘴炮，看船运、装货和保险恢复有没有连续信号；只要恢复仍卡住，市场就会继续往“滞胀不是假摔”上加码。第二，盯 March 31 前 Polymarket 这单的成交放量和赔率跳变，尤其看它是否先于布油、黄金、航运股异动；如果预测市场先走，传统市场还没反应，那就是可交易的信息差。第三，盯未来一周有没有更多 PF queues 的复现测试和生产案例，以及有没有云边缘、托管服务商公开跟进；没有跟进，这还是实验室成绩，出现真实部署，专有网络设备那帮高毛利生意就该紧张了。</p></div>
             </section>
             
 

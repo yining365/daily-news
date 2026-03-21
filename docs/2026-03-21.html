@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026-03-21 每日信息编辑部 - 阿宁日报</title>
+    <style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+    line-height: 1.7;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+/* Header */
+header {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+header h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #f8fafc;
+}
+header time {
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+.tagline {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-top: 0.3rem;
+}
+
+/* 今日主线 */
+.main-theme {
+    background: rgba(59, 130, 246, 0.08);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+.main-theme h2 {
+    font-size: 1.1rem;
+    color: #60a5fa;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+.theme-content p {
+    color: #cbd5e1;
+    margin-bottom: 0.8rem;
+    line-height: 1.9;
+    text-align: justify;
+}
+.theme-content strong {
+    color: #93c5fd;
+    font-weight: 600;
+}
+hr {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    margin: 1rem 0;
+}
+
+/* 条目 */
+.items-section h2 {
+    font-size: 1.2rem;
+    color: #f8fafc;
+    margin-bottom: 1.5rem;
+}
+.items-section .count {
+    font-size: 0.85rem;
+    color: #64748b;
+    font-weight: 400;
+}
+
+.brief-item {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.2rem;
+    transition: border-color 0.2s;
+}
+.brief-item:hover {
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+.item-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+.item-number {
+    font-size: 0.75rem;
+    color: #64748b;
+    font-weight: 600;
+    font-family: monospace;
+}
+.source-badge {
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.06);
+    color: #94a3b8;
+}
+
+.item-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+.item-title a {
+    color: #f1f5f9;
+    text-decoration: none;
+}
+.item-title a:hover {
+    color: #60a5fa;
+}
+.item-title a:visited {
+    color: #94a3b8;
+}
+
+.item-analysis {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.analysis-row {
+    display: flex;
+    gap: 0.8rem;
+    align-items: baseline;
+}
+.analysis-row .label {
+    font-size: 0.75rem;
+    color: #64748b;
+    min-width: 3.5rem;
+    font-weight: 500;
+    flex-shrink: 0;
+}
+.analysis-row p {
+    font-size: 0.9rem;
+    color: #cbd5e1;
+}
+.analysis-row.watch .label {
+    color: #d97706;
+}
+.analysis-row.watch p {
+    color: #e5a23c;
+}
+
+/* 观察点回顾 */
+.watchpoints {
+    background: rgba(16, 185, 129, 0.06);
+    border: 1px solid rgba(16, 185, 129, 0.15);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+.watchpoints h2 {
+    font-size: 1.1rem;
+    color: #10b981;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+.watchpoints .count {
+    font-size: 0.85rem;
+    color: #64748b;
+    font-weight: 400;
+}
+.wp-item {
+    padding: 1rem;
+    margin-bottom: 0.8rem;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.03);
+    border-left: 3px solid #64748b;
+}
+.wp-item.wp-verified { border-left-color: #10b981; }
+.wp-item.wp-invalidated { border-left-color: #ef4444; }
+.wp-item.wp-progress { border-left-color: #f59e0b; }
+.wp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+.wp-status { font-size: 0.85rem; }
+.wp-date { font-size: 0.75rem; color: #64748b; }
+.wp-watch {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin-bottom: 0.4rem;
+    font-style: italic;
+}
+.wp-review {
+    font-size: 0.9rem;
+    color: #e2e8f0;
+}
+
+/* 阿宁点评 */
+.commentary {
+    background: rgba(139, 92, 246, 0.06);
+    border: 1px solid rgba(139, 92, 246, 0.15);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 2.5rem;
+}
+.commentary h2 {
+    font-size: 1.1rem;
+    color: #a78bfa;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+.commentary-content p {
+    color: #cbd5e1;
+    margin-bottom: 1.2rem;
+    line-height: 1.9;
+    text-align: justify;
+}
+.commentary-content h3,
+.commentary-content h4 {
+    color: #c4b5fd;
+    margin: 1.5rem 0 0.6rem;
+    font-size: 0.95rem;
+}
+.commentary-content strong {
+    color: #e2e8f0;
+    font-weight: 600;
+}
+
+/* 降级 */
+.degraded {
+    margin-top: 1.5rem;
+}
+.degraded-notice {
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    color: #fbbf24;
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+}
+.degraded-content h3 {
+    color: #f8fafc;
+    margin: 1.5rem 0 0.8rem;
+    font-size: 1rem;
+}
+.degraded-content h4 {
+    color: #cbd5e1;
+    margin: 1rem 0 0.5rem;
+    font-size: 0.95rem;
+}
+.degraded-content li {
+    margin: 0.3rem 0 0.3rem 1.5rem;
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+.degraded-content a {
+    color: #60a5fa;
+    text-decoration: none;
+}
+.degraded-content a:hover {
+    text-decoration: underline;
+}
+
+/* Empty */
+.empty {
+    text-align: center;
+    padding: 4rem 0;
+    color: #64748b;
+    font-size: 1.1rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    font-size: 0.8rem;
+    color: #475569;
+}
+footer a { color: #64748b; text-decoration: none; }
+footer a:hover { color: #94a3b8; }
+
+/* 响应式 */
+@media (max-width: 640px) {
+    .container { padding: 1rem; }
+    header h1 { font-size: 1.4rem; }
+    .header-top { flex-direction: column; gap: 0.3rem; }
+    .brief-item { padding: 1.2rem; }
+    .item-title { font-size: 0.95rem; }
+    .analysis-row { flex-direction: column; gap: 0.2rem; }
+    .analysis-row .label { min-width: auto; }
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-top">
+                <h1>阿宁日报</h1>
+                <time>2026年3月21日 周六</time>
+            </div>
+            <p class="tagline">每日信息编辑部</p>
+        </header>
+
+        
+
+        
+
+        <section class="items-section">
+            <h2>今日精选 <span class="count">0 条</span></h2>
+            
+        </section>
+
+        
+            <section class="degraded">
+                <div class="degraded-notice">AI 分析暂不可用，以下为原始信息</div>
+                <div class="degraded-content"><h3>今日主线</h3>
+<p>（AI 分析暂不可用，以下为原始信息）</p>
+<h4>X (Twitter)</h4>
+<li><a href="https://x.com/sama/status/2033935276079510011" target="_blank">@sama: I have so much gratitude to people who wrote extremely complex software character-by-character. It already feels difficult to remember how much effort it really took. Thank you for getting us to this point.</a></li>
+<li><a href="https://x.com/satyanadella/status/2033187856370557379" target="_blank">@satyanadella: We’ve trained a multimodal AI model to turn routine pathology slides into spatial proteomics, with the potential to reduce time and cost while expanding access to cancer care.</a></li>
+<li><a href="https://x.com/cursor_ai/status/2034668943676244133" target="_blank">@cursor_ai: Composer 2 is now available in Cursor.</a></li>
+<li><a href="https://x.com/demishassabis/status/2033010713413754987" target="_blank">@demishassabis: Cool use case of AlphaFold, this is just the beginning of digital biology!</a></li>
+<li><a href="https://x.com/karpathy/status/2034865693544604001" target="_blank">@karpathy: Had to go see Project Hail Mary right away (it's based on the book of Andy Weir, of also The Martian fame). Both very pleased and relieved to say that 1) the movie sticks very close to the book in both content and tone and 2) is really well</a></li>
+<h4>Hacker News</h4>
+<li><a href="https://opencode.ai/" target="_blank">OpenCode – The open source AI coding agent</a> (298 points)</li>
+<li><a href="https://blogs.windows.com/windows-insider/2026/03/20/our-commitment-to-windows-quality/" target="_blank">Our commitment to Windows quality</a> (317 points)</li>
+<li><a href="https://nautil.us/whiplash-heart-attack-and-stroke-risk-jumps-when-people-stop-taking-glp-1s-1279029" target="_blank">Discontinuation and reinitiation of dual-labeled GLP-1 receptor agonists</a> (45 points)</li>
+<li><a href="https://www.openui.com/blog/rust-wasm-parser" target="_blank">We rewrote our Rust WASM Parser in TypeScript – and it got 3x Faster</a> (60 points)</li>
+<li><a href="https://www.lemonde.fr/en/international/article/2026/03/20/stravaleaks-france-s-aircraft-carrier-located-in-real-time-by-le-monde-through-fitness-app_6751640_4.html" target="_blank">France's aircraft carrier located in real time by Le Monde through fitness app</a> (444 points)</li>
+<h4>GitHub Trending</h4>
+<li><a href="https://github.com/jarrodwatts/claude-hud" target="_blank">jarrodwatts/claude-hud: A Claude Code plugin that shows what's happening - context usage, active tools, running agents, and todo progress</a> (9,513 stars)</li>
+<li><a href="https://github.com/langchain-ai/open-swe" target="_blank">langchain-ai/open-swe: An Open-Source Asynchronous Coding Agent</a> (7,623 stars)</li>
+<li><a href="https://github.com/obra/superpowers" target="_blank">obra/superpowers: An agentic skills framework & software development methodology that works.</a> (101,490 stars)</li>
+<li><a href="https://github.com/opendataloader-project/opendataloader-pdf" target="_blank">opendataloader-project/opendataloader-pdf: PDF Parser for AI-ready data. Automate PDF accessibility. Open-source.</a> (7,017 stars)</li>
+<li><a href="https://github.com/louis-e/arnis" target="_blank">louis-e/arnis: Generate any location from the real world in Minecraft with a high level of detail.</a> (11,562 stars)</li>
+<h4>RSS:Daring Fireball</h4>
+<li>[[Daring Fireball] Google Search Is Now Using AI to Rewrite Headlines](https://www.theverge.com/tech/896490/google-replace-news-headlines-in-search-canary-coal-mine-experiment?view_token=eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjI0Q05IV0dlS3EiLCJwIjoiL3RlY2gvODk2NDkwL2dvb2dsZS1yZXBsYWNlLW5ld3MtaGVhZGxpbmVzLWluLXNlYXJjaC1jYW5hcnktY29hbC1taW5lLWV4cGVyaW1lbnQiLCJleHAiOjE3NzQ0NzIwOTAsImlhdCI6MTc3NDA0MDA5MH0.3exwHWG6qdR5YeFLjzS1qvUy3tgfASQhbFZDTbHrkKE&utm_medium=gift-link)</li>
+<li>[[Daring Fireball] Perhaps Bluesky’s Revelation of an 11-Month Ago $100 Million Investment Was, in Fact, an Act of Transparency](https://bsky.app/profile/flooey.org/post/3mhiznh4d7c2j)</li>
+<li>[[Daring Fireball] Bluesky Raised $100M a Year Ago but for Some Reason Only Disclosed It Now](https://bsky.social/about/blog/03-19-2026-series-b)</li>
+<li>[[Daring Fireball] Quiche Browser](https://quiche.industries/browser/)</li>
+<li>[[Daring Fireball] StopTheMadness Pro and StopTheScript Extensions for Safari](https://mastodon.social/@lapcatsoftware/116252960395480568)</li>
+<h4>RSS:阮一峰周刊</h4>
+<li>[[阮一峰周刊] 科技爱好者周刊（第 389 期）：未来如何招聘程序员](http://www.ruanyifeng.com/blog/2026/03/weekly-issue-389.html)</li>
+<h4>RSS:Simon Willison</h4>
+<li>[[Simon Willison] Quoting Kimi.ai @Kimi_Moonshot](https://simonwillison.net/2026/Mar/20/cursor-on-kimi/#atom-everything)</li>
+<li>[[Simon Willison] Thoughts on OpenAI acquiring Astral and uv/ruff/ty](https://simonwillison.net/2026/Mar/19/openai-acquiring-astral/#atom-everything)</li>
+<h4>华尔街见闻</h4>
+<li><a href="https://wallstreetcn.com/articles/3768040" target="_blank">美国临时豁免滞留海上伊朗石油制裁，财长称可迅速供油1.4亿桶，美超亿油储释放首批4500万桶</a></li>
+<li><a href="https://wallstreetcn.com/articles/3768042" target="_blank">华尔街见闻早餐FM-Radio | 2026年3月21日</a></li>
+<li><a href="https://wallstreetcn.com/livenews/3074382" target="_blank">美国允许出售目前滞留海上的伊朗石油，贝森特：可迅速提供约1.4亿桶石油</a></li>
+<li><a href="https://wallstreetcn.com/articles/3767994" target="_blank">中东局势叠加美联储加息预期，美股连跌四周，全球债市遭遇“血洗”，黄金创43年最大单周跌幅</a></li>
+<li><a href="https://wallstreetcn.com/articles/3768039" target="_blank">特朗普称考虑逐步减少对伊朗的军事行动，美股盘后转涨</a></li>
+<h4>Polymarket</h4>
+<li><a href="https://polymarket.com/event/democratic-presidential-nominee-2028" target="_blank">Democratic Presidential Nominee 2028</a></li>
+<li><a href="https://polymarket.com/event/republican-presidential-nominee-2028" target="_blank">Republican Presidential Nominee 2028</a> (Will J.D. Vance win the 2028 Republican presidential nomination?: Yes 37%)</li>
+<li><a href="https://polymarket.com/event/presidential-election-winner-2028" target="_blank">Presidential Election Winner 2028</a></li>
+<li><a href="https://polymarket.com/event/venezuela-leader-end-of-2026" target="_blank">Venezuela leader end of 2026?</a> (Will María Corina Machado be the leader of Venezuela end of 2026?: Yes 14%)</li>
+<li><a href="https://polymarket.com/event/what-price-will-bitcoin-hit-in-march-2026" target="_blank">What price will Bitcoin hit in March?</a></li></div>
+            </section>
+            
+        
+
+        <footer>
+            <p>Generated by Daily News V2 | <a href="history.html">历史归档</a></p>
+        </footer>
+    </div>
+</body>
+</html>
