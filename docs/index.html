@@ -4,141 +4,196 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>阿宁日报</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <style>
 :root {
-  --bg: #101010; --card: #181818; --border: #252525;
-  --text: #d4d4d4; --text2: #888; --text3: #555;
-  --accent: #34d399; --accent2: #059669; --warn: #f59e0b;
-  --radius: 10px;
+  --bg: #000; --bg2: #1c1c1e; --bg3: #2c2c2e; --bg4: #3a3a3c;
+  --text: #f5f5f7; --text2: #a1a1a6; --text3: #6e6e73;
+  --blue: #0a84ff; --green: #30d158; --orange: #ff9f0a;
+  --r: 16px; --r2: 12px;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: -apple-system, "PingFang SC", "SF Pro Text", "Helvetica Neue", sans-serif; background: var(--bg); color: var(--text); line-height: 1.75; -webkit-font-smoothing: antialiased; }
-.wrap { max-width: 640px; margin: 0 auto; padding: 32px 20px 60px; }
+html { font-size: 17px; }
+body {
+  font-family: -apple-system, "SF Pro Display", "PingFang SC", "Helvetica Neue", sans-serif;
+  background: var(--bg); color: var(--text); line-height: 1.65;
+  -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: 100%;
+}
+.wrap { max-width: 700px; margin: 0 auto; padding: 60px 24px 80px; }
 
 /* header */
-.header { margin-bottom: 28px; }
-.header h1 { font-size: 20px; font-weight: 700; color: #fff; letter-spacing: -0.3px; }
-.header .date { font-size: 13px; color: var(--text3); margin-top: 2px; }
+.header { margin-bottom: 40px; }
+.header h1 { font-size: 34px; font-weight: 800; letter-spacing: -0.5px; color: var(--text); }
+.header .sub { font-size: 15px; color: var(--text3); margin-top: 6px; font-weight: 400; }
 
 /* date nav */
-.nav { display: flex; gap: 6px; margin-bottom: 32px; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding-bottom: 4px; }
+.nav { display: flex; gap: 8px; margin-bottom: 44px; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding: 2px 0; }
 .nav::-webkit-scrollbar { display: none; }
-.nav button { background: transparent; border: 1px solid var(--border); color: var(--text3); padding: 5px 12px; border-radius: 20px; cursor: pointer; font-size: 12px; white-space: nowrap; transition: all .15s; }
-.nav button:hover { border-color: var(--text2); color: var(--text2); }
-.nav button.on { background: var(--accent2); border-color: var(--accent2); color: #fff; }
+.nav button {
+  background: var(--bg2); border: none; color: var(--text3); padding: 8px 18px;
+  border-radius: 980px; cursor: pointer; font-size: 15px; font-weight: 500;
+  white-space: nowrap; transition: all .2s ease;
+  font-family: inherit;
+}
+.nav button:hover { background: var(--bg3); color: var(--text2); }
+.nav button.on { background: var(--text); color: var(--bg); font-weight: 600; }
+
+/* section title */
+.sec-title { font-size: 13px; font-weight: 600; color: var(--text3); text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 16px; }
 
 /* main theme */
-.theme { font-size: 15px; color: var(--text2); line-height: 1.9; margin-bottom: 36px; padding: 16px 20px; background: var(--card); border-radius: var(--radius); border-left: 3px solid var(--accent2); }
+.theme {
+  font-size: 17px; color: var(--text2); line-height: 1.8; margin-bottom: 48px;
+  padding: 24px 28px; background: var(--bg2); border-radius: var(--r);
+}
+.theme b { color: var(--text); }
 
 /* items */
-.items { display: flex; flex-direction: column; gap: 2px; }
-.item { padding: 16px 20px; background: var(--card); transition: background .15s; }
-.item:first-child { border-radius: var(--radius) var(--radius) 0 0; }
-.item:last-child { border-radius: 0 0 var(--radius) var(--radius); }
-.item:only-child { border-radius: var(--radius); }
-.item:hover { background: #1e1e1e; }
-.item-top { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
-.item-top .icon { font-size: 13px; flex-shrink: 0; }
-.item-top a { color: #fff; text-decoration: none; font-weight: 600; font-size: 15px; flex: 1; }
-.item-top a:hover { color: var(--accent); }
-.item-top .tag { font-size: 11px; color: var(--text3); background: var(--bg); padding: 2px 8px; border-radius: 10px; flex-shrink: 0; }
-.fields { margin-left: 23px; }
-.fields p { font-size: 13px; color: var(--text2); margin-bottom: 3px; line-height: 1.7; }
-.fields .lbl { color: var(--accent); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 6px; }
+.items { margin-bottom: 48px; }
+.item {
+  padding: 24px 0; border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.item:last-child { border-bottom: none; }
+.item-head { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px; }
+.item-head .icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+.item-head .right { flex: 1; min-width: 0; }
+.item-head a {
+  color: var(--text); text-decoration: none; font-size: 19px; font-weight: 600;
+  letter-spacing: -0.2px; display: block; line-height: 1.4;
+}
+.item-head a:hover { color: var(--blue); }
+.item-head .src { font-size: 13px; color: var(--text3); margin-top: 4px; }
+.detail { margin-left: 34px; display: grid; gap: 10px; }
+.detail-row { display: flex; gap: 12px; font-size: 15px; line-height: 1.7; }
+.detail-row .lbl {
+  flex-shrink: 0; width: 48px; text-align: right;
+  font-size: 12px; font-weight: 600; color: var(--blue);
+  padding-top: 3px; letter-spacing: 0.3px;
+}
+.detail-row .val { color: var(--text2); flex: 1; }
 
 /* commentary */
-.comment { margin-top: 36px; padding: 20px; background: var(--card); border-radius: var(--radius); }
-.comment h3 { font-size: 14px; color: var(--accent); margin-bottom: 12px; font-weight: 600; }
-.comment p { font-size: 14px; color: var(--text2); margin-bottom: 10px; line-height: 1.85; }
-.comment b { color: var(--text); font-weight: 600; }
+.comment { margin-bottom: 40px; }
+.comment-body {
+  padding: 24px 28px; background: var(--bg2); border-radius: var(--r);
+}
+.comment-body p { font-size: 16px; color: var(--text2); margin-bottom: 14px; line-height: 1.85; }
+.comment-body p:last-child { margin-bottom: 0; }
+.comment-body b { color: var(--text); font-weight: 600; }
 
 /* watchpoints */
-.watch { margin-top: 20px; padding: 16px 20px; background: var(--card); border-radius: var(--radius); }
-.watch h3 { font-size: 14px; color: var(--warn); margin-bottom: 10px; font-weight: 600; }
-.watch-item { font-size: 13px; color: var(--text2); margin-bottom: 6px; line-height: 1.6; }
+.watch-body { padding: 20px 24px; background: var(--bg2); border-radius: var(--r); }
+.watch-item {
+  font-size: 15px; color: var(--text2); padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04); line-height: 1.7;
+}
+.watch-item:last-child { border-bottom: none; }
 
-.empty { text-align: center; color: var(--text3); padding: 80px 0; font-size: 14px; }
+.empty { text-align: center; color: var(--text3); padding: 100px 0; font-size: 17px; }
 
 @media (max-width: 480px) {
-  .wrap { padding: 20px 14px 40px; }
-  .item { padding: 14px 16px; }
-  .item-top a { font-size: 14px; }
-  .item-top .tag { display: none; }
+  html { font-size: 16px; }
+  .wrap { padding: 44px 18px 60px; }
+  .header h1 { font-size: 28px; }
+  .header { margin-bottom: 28px; }
+  .nav { margin-bottom: 32px; }
+  .nav button { padding: 7px 14px; font-size: 14px; }
+  .theme { padding: 20px 22px; font-size: 16px; margin-bottom: 36px; }
+  .item { padding: 20px 0; }
+  .item-head a { font-size: 17px; }
+  .detail { margin-left: 0; margin-top: 12px; }
+  .detail-row .lbl { width: 42px; }
+  .comment-body, .watch-body { padding: 20px 18px; }
 }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="header"><h1>阿宁日报</h1><div class="date" id="dateDisplay"></div></div>
+  <div class="header">
+    <h1>阿宁日报</h1>
+    <div class="sub" id="dateSub"></div>
+  </div>
   <div class="nav" id="nav"></div>
   <div id="content"><div class="empty">加载中...</div></div>
 </div>
 <script>
-const IC = {"Hacker News":"🔶","Polymarket":"📊","GitHub Trending":"🐙","华尔街见闻":"💹","X (Twitter)":"𝕏"};
-let D = [];
+const IC={"Hacker News":"🔶","Polymarket":"📊","GitHub Trending":"🐙","华尔街见闻":"💹","X (Twitter)":"𝕏"};
+const WEEK=["日","一","二","三","四","五","六"];
+let D=[];
 
-function e(s) { return s ? s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;") : ""; }
-function mb(s) { return s ? e(s).replace(/\*\*(.+?)\*\*/g,"<b>$1</b>") : ""; }
-function fmtDate(d) { const p = d.split("-"); return p[0]+"年"+parseInt(p[1])+"月"+parseInt(p[2])+"日"; }
+function e(s){return s?s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"):""}
+function mb(s){return s?e(s).replace(/\*\*(.+?)\*\*/g,"<b>$1</b>"):""}
+function fmtDate(d){const p=d.split("-"),dt=new Date(d);return p[0]+"年"+parseInt(p[1])+"月"+parseInt(p[2])+"日 周"+WEEK[dt.getDay()]}
 
-function render(i) {
-  document.querySelectorAll(".nav button").forEach((b,j) => b.classList.toggle("on", j===i));
-  const d = D[i];
-  if (!d) { document.getElementById("content").innerHTML = '<div class="empty">暂无数据</div>'; return; }
-  document.getElementById("dateDisplay").textContent = fmtDate(d.date);
+function render(i){
+  document.querySelectorAll(".nav button").forEach((b,j)=>b.classList.toggle("on",j===i));
+  const d=D[i];
+  if(!d){document.getElementById("content").innerHTML='<div class="empty">暂无数据</div>';return}
+  document.getElementById("dateSub").textContent=fmtDate(d.date);
 
-  let h = "";
-  if (d.main_theme) h += '<div class="theme">' + mb(d.main_theme) + "</div>";
+  let h="";
 
-  if (d.items && d.items.length) {
-    h += '<div class="items">';
-    for (const it of d.items) {
-      h += '<div class="item"><div class="item-top">';
-      h += '<span class="icon">' + (IC[it.source]||"📡") + "</span>";
-      h += '<a href="' + e(it.url||"#") + '" target="_blank">' + e(it.title) + "</a>";
-      h += '<span class="tag">' + e(it.source) + "</span>";
-      h += "</div><div class='fields'>";
-      if (it.conclusion) h += "<p><span class='lbl'>结论</span>" + e(it.conclusion) + "</p>";
-      if (it.signal) h += "<p><span class='lbl'>信号</span>" + e(it.signal) + "</p>";
-      if (it.why) h += "<p><span class='lbl'>重要性</span>" + e(it.why) + "</p>";
-      if (it.watch) h += "<p><span class='lbl'>观察点</span>" + e(it.watch) + "</p>";
-      h += "</div></div>";
+  if(d.main_theme){
+    h+='<div class="sec-title">今日主线</div>';
+    h+='<div class="theme">'+mb(d.main_theme)+"</div>";
+  }
+
+  if(d.items&&d.items.length){
+    h+='<div class="sec-title">精选 '+d.items.length+' 条</div>';
+    h+='<div class="items">';
+    for(const it of d.items){
+      h+='<div class="item"><div class="item-head">';
+      h+='<span class="icon">'+(IC[it.source]||"📡")+"</span>";
+      h+='<div class="right">';
+      h+='<a href="'+e(it.url||"#")+'" target="_blank">'+e(it.title)+"</a>";
+      h+='<div class="src">'+e(it.source)+"</div>";
+      h+="</div></div>";
+      h+='<div class="detail">';
+      if(it.conclusion)h+='<div class="detail-row"><span class="lbl">结论</span><span class="val">'+e(it.conclusion)+"</span></div>";
+      if(it.signal)h+='<div class="detail-row"><span class="lbl">信号</span><span class="val">'+e(it.signal)+"</span></div>";
+      if(it.why)h+='<div class="detail-row"><span class="lbl">重要性</span><span class="val">'+e(it.why)+"</span></div>";
+      if(it.watch)h+='<div class="detail-row"><span class="lbl">观察点</span><span class="val">'+e(it.watch)+"</span></div>";
+      h+="</div></div>";
     }
-    h += "</div>";
+    h+="</div>";
   }
 
-  if (d.commentary) {
-    h += '<div class="comment"><h3>✍️ 阿宁点评</h3>';
-    for (const p of d.commentary.split("\n\n")) { if (p.trim()) h += "<p>" + mb(p.trim()) + "</p>"; }
-    h += "</div>";
+  if(d.commentary){
+    h+='<div class="comment">';
+    h+='<div class="sec-title">阿宁点评</div>';
+    h+='<div class="comment-body">';
+    for(const p of d.commentary.split("\n\n")){if(p.trim())h+="<p>"+mb(p.trim())+"</p>"}
+    h+="</div></div>";
   }
 
-  if (d.watchpoint_reviews && d.watchpoint_reviews.length) {
-    h += '<div class="watch"><h3>🔍 观察点回顾</h3>';
-    for (const w of d.watchpoint_reviews) {
-      h += '<div class="watch-item">' + e(w.status_label) + " " + e(w.watch);
-      if (w.review) h += " — " + e(w.review);
-      h += "</div>";
+  if(d.watchpoint_reviews&&d.watchpoint_reviews.length){
+    h+='<div class="sec-title">观察点回顾</div>';
+    h+='<div class="watch-body">';
+    for(const w of d.watchpoint_reviews){
+      h+='<div class="watch-item">'+e(w.status_label)+" "+e(w.watch);
+      if(w.review)h+=" — "+e(w.review);
+      h+="</div>";
     }
-    h += "</div>";
+    h+="</div>";
   }
 
-  document.getElementById("content").innerHTML = h;
+  document.getElementById("content").innerHTML=h;
 }
 
-fetch("data.json?" + Date.now()).then(r => r.json()).then(data => {
-  D = data;
-  const nav = document.getElementById("nav");
-  data.forEach((d, i) => {
-    const b = document.createElement("button");
-    b.textContent = d.date.slice(5);
-    b.onclick = () => render(i);
+fetch("data.json?"+Date.now()).then(r=>r.json()).then(data=>{
+  D=data;
+  const nav=document.getElementById("nav");
+  data.forEach((d,i)=>{
+    const b=document.createElement("button");
+    b.textContent=d.date.slice(5);
+    b.onclick=()=>render(i);
     nav.appendChild(b);
   });
-  if (data.length) render(0);
-  else document.getElementById("content").innerHTML = '<div class="empty">暂无数据</div>';
-}).catch(() => {
-  document.getElementById("content").innerHTML = '<div class="empty">加载失败</div>';
+  if(data.length)render(0);
+  else document.getElementById("content").innerHTML='<div class="empty">暂无数据</div>';
+}).catch(()=>{
+  document.getElementById("content").innerHTML='<div class="empty">加载失败</div>';
 });
 </script>
 </body>
