@@ -5,77 +5,119 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>阿宁日报</title>
 <style>
+:root {
+  --bg: #101010; --card: #181818; --border: #252525;
+  --text: #d4d4d4; --text2: #888; --text3: #555;
+  --accent: #34d399; --accent2: #059669; --warn: #f59e0b;
+  --radius: 10px;
+}
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: -apple-system, "PingFang SC", "Helvetica Neue", sans-serif; background: #0a0a0a; color: #e0e0e0; line-height: 1.7; }
-.container { max-width: 680px; margin: 0 auto; padding: 20px 16px; }
-.day-nav { display: flex; gap: 8px; margin-bottom: 24px; overflow-x: auto; padding-bottom: 8px; }
-.day-btn { background: #1a1a1a; border: 1px solid #333; color: #999; padding: 6px 14px; border-radius: 6px; cursor: pointer; font-size: 13px; white-space: nowrap; }
-.day-btn.active { background: #1e3a2f; border-color: #10b981; color: #10b981; }
-.theme { color: #999; font-size: 15px; margin-bottom: 28px; line-height: 1.8; }
-.item { margin-bottom: 24px; }
-.item-header { display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px; }
-.item-icon { font-size: 14px; }
-.item-title a { color: #e0e0e0; text-decoration: none; font-weight: 600; font-size: 16px; }
-.item-title a:hover { color: #10b981; }
-.item-source { font-size: 12px; color: #666; background: #1a1a1a; padding: 2px 8px; border-radius: 4px; }
-.item-body { margin-left: 24px; }
-.item-body p { font-size: 14px; color: #aaa; margin-bottom: 4px; }
-.item-body .label { color: #10b981; font-size: 12px; font-weight: 600; margin-right: 6px; }
-.commentary { margin-top: 32px; padding-top: 24px; border-top: 1px solid #222; }
-.commentary h3 { color: #10b981; font-size: 15px; margin-bottom: 12px; }
-.commentary p { color: #bbb; font-size: 14px; margin-bottom: 10px; line-height: 1.8; }
-.watchpoints { margin-top: 24px; padding-top: 20px; border-top: 1px solid #222; }
-.watchpoints h3 { color: #f59e0b; font-size: 15px; margin-bottom: 12px; }
-.wp-item { font-size: 14px; color: #aaa; margin-bottom: 8px; }
-.empty { text-align: center; color: #666; padding: 60px 0; }
+body { font-family: -apple-system, "PingFang SC", "SF Pro Text", "Helvetica Neue", sans-serif; background: var(--bg); color: var(--text); line-height: 1.75; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 640px; margin: 0 auto; padding: 32px 20px 60px; }
+
+/* header */
+.header { margin-bottom: 28px; }
+.header h1 { font-size: 20px; font-weight: 700; color: #fff; letter-spacing: -0.3px; }
+.header .date { font-size: 13px; color: var(--text3); margin-top: 2px; }
+
+/* date nav */
+.nav { display: flex; gap: 6px; margin-bottom: 32px; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding-bottom: 4px; }
+.nav::-webkit-scrollbar { display: none; }
+.nav button { background: transparent; border: 1px solid var(--border); color: var(--text3); padding: 5px 12px; border-radius: 20px; cursor: pointer; font-size: 12px; white-space: nowrap; transition: all .15s; }
+.nav button:hover { border-color: var(--text2); color: var(--text2); }
+.nav button.on { background: var(--accent2); border-color: var(--accent2); color: #fff; }
+
+/* main theme */
+.theme { font-size: 15px; color: var(--text2); line-height: 1.9; margin-bottom: 36px; padding: 16px 20px; background: var(--card); border-radius: var(--radius); border-left: 3px solid var(--accent2); }
+
+/* items */
+.items { display: flex; flex-direction: column; gap: 2px; }
+.item { padding: 16px 20px; background: var(--card); transition: background .15s; }
+.item:first-child { border-radius: var(--radius) var(--radius) 0 0; }
+.item:last-child { border-radius: 0 0 var(--radius) var(--radius); }
+.item:only-child { border-radius: var(--radius); }
+.item:hover { background: #1e1e1e; }
+.item-top { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+.item-top .icon { font-size: 13px; flex-shrink: 0; }
+.item-top a { color: #fff; text-decoration: none; font-weight: 600; font-size: 15px; flex: 1; }
+.item-top a:hover { color: var(--accent); }
+.item-top .tag { font-size: 11px; color: var(--text3); background: var(--bg); padding: 2px 8px; border-radius: 10px; flex-shrink: 0; }
+.fields { margin-left: 23px; }
+.fields p { font-size: 13px; color: var(--text2); margin-bottom: 3px; line-height: 1.7; }
+.fields .lbl { color: var(--accent); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 6px; }
+
+/* commentary */
+.comment { margin-top: 36px; padding: 20px; background: var(--card); border-radius: var(--radius); }
+.comment h3 { font-size: 14px; color: var(--accent); margin-bottom: 12px; font-weight: 600; }
+.comment p { font-size: 14px; color: var(--text2); margin-bottom: 10px; line-height: 1.85; }
+.comment b { color: var(--text); font-weight: 600; }
+
+/* watchpoints */
+.watch { margin-top: 20px; padding: 16px 20px; background: var(--card); border-radius: var(--radius); }
+.watch h3 { font-size: 14px; color: var(--warn); margin-bottom: 10px; font-weight: 600; }
+.watch-item { font-size: 13px; color: var(--text2); margin-bottom: 6px; line-height: 1.6; }
+
+.empty { text-align: center; color: var(--text3); padding: 80px 0; font-size: 14px; }
+
+@media (max-width: 480px) {
+  .wrap { padding: 20px 14px 40px; }
+  .item { padding: 14px 16px; }
+  .item-top a { font-size: 14px; }
+  .item-top .tag { display: none; }
+}
 </style>
 </head>
 <body>
-<div class="container">
-  <div class="day-nav" id="nav"></div>
+<div class="wrap">
+  <div class="header"><h1>阿宁日报</h1><div class="date" id="dateDisplay"></div></div>
+  <div class="nav" id="nav"></div>
   <div id="content"><div class="empty">加载中...</div></div>
 </div>
 <script>
-const ICONS = {"Hacker News":"🔶","Polymarket":"📊","GitHub Trending":"🐙","华尔街见闻":"💹","X (Twitter)":"𝕏"};
-let DATA = [];
+const IC = {"Hacker News":"🔶","Polymarket":"📊","GitHub Trending":"🐙","华尔街见闻":"💹","X (Twitter)":"𝕏"};
+let D = [];
 
-function icon(source) { return ICONS[source] || "📡"; }
-function esc(s) { return s ? s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;") : ""; }
-function mdBold(s) { return s ? esc(s).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>") : ""; }
+function e(s) { return s ? s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;") : ""; }
+function mb(s) { return s ? e(s).replace(/\*\*(.+?)\*\*/g,"<b>$1</b>") : ""; }
+function fmtDate(d) { const p = d.split("-"); return p[0]+"年"+parseInt(p[1])+"月"+parseInt(p[2])+"日"; }
 
-function render(idx) {
-  document.querySelectorAll(".day-btn").forEach((b,i) => b.classList.toggle("active", i===idx));
-  const d = DATA[idx];
+function render(i) {
+  document.querySelectorAll(".nav button").forEach((b,j) => b.classList.toggle("on", j===i));
+  const d = D[i];
   if (!d) { document.getElementById("content").innerHTML = '<div class="empty">暂无数据</div>'; return; }
+  document.getElementById("dateDisplay").textContent = fmtDate(d.date);
 
   let h = "";
-  if (d.main_theme) h += '<div class="theme">' + mdBold(d.main_theme) + "</div>";
+  if (d.main_theme) h += '<div class="theme">' + mb(d.main_theme) + "</div>";
 
-  for (const item of (d.items||[])) {
-    const src = item.source || "";
-    h += '<div class="item"><div class="item-header">';
-    h += '<span class="item-icon">' + icon(src) + "</span>";
-    h += '<span class="item-title"><a href="' + esc(item.url||"#") + '" target="_blank">' + esc(item.title) + "</a></span>";
-    h += '<span class="item-source">' + esc(src) + "</span>";
-    h += "</div><div class='item-body'>";
-    if (item.conclusion) h += "<p><span class='label'>结论</span>" + esc(item.conclusion) + "</p>";
-    if (item.signal) h += "<p><span class='label'>信号</span>" + esc(item.signal) + "</p>";
-    if (item.why) h += "<p><span class='label'>重要性</span>" + esc(item.why) + "</p>";
-    if (item.watch) h += "<p><span class='label'>观察点</span>" + esc(item.watch) + "</p>";
-    h += "</div></div>";
+  if (d.items && d.items.length) {
+    h += '<div class="items">';
+    for (const it of d.items) {
+      h += '<div class="item"><div class="item-top">';
+      h += '<span class="icon">' + (IC[it.source]||"📡") + "</span>";
+      h += '<a href="' + e(it.url||"#") + '" target="_blank">' + e(it.title) + "</a>";
+      h += '<span class="tag">' + e(it.source) + "</span>";
+      h += "</div><div class='fields'>";
+      if (it.conclusion) h += "<p><span class='lbl'>结论</span>" + e(it.conclusion) + "</p>";
+      if (it.signal) h += "<p><span class='lbl'>信号</span>" + e(it.signal) + "</p>";
+      if (it.why) h += "<p><span class='lbl'>重要性</span>" + e(it.why) + "</p>";
+      if (it.watch) h += "<p><span class='lbl'>观察点</span>" + e(it.watch) + "</p>";
+      h += "</div></div>";
+    }
+    h += "</div>";
   }
 
   if (d.commentary) {
-    h += '<div class="commentary"><h3>✍️ 阿宁点评</h3>';
-    for (const p of d.commentary.split("\n\n")) { if (p.trim()) h += "<p>" + mdBold(p.trim()) + "</p>"; }
+    h += '<div class="comment"><h3>✍️ 阿宁点评</h3>';
+    for (const p of d.commentary.split("\n\n")) { if (p.trim()) h += "<p>" + mb(p.trim()) + "</p>"; }
     h += "</div>";
   }
 
   if (d.watchpoint_reviews && d.watchpoint_reviews.length) {
-    h += '<div class="watchpoints"><h3>🔍 观察点回顾</h3>';
-    for (const wp of d.watchpoint_reviews) {
-      h += '<div class="wp-item">' + esc(wp.status_label) + " " + esc(wp.watch);
-      if (wp.review) h += " — " + esc(wp.review);
+    h += '<div class="watch"><h3>🔍 观察点回顾</h3>';
+    for (const w of d.watchpoint_reviews) {
+      h += '<div class="watch-item">' + e(w.status_label) + " " + e(w.watch);
+      if (w.review) h += " — " + e(w.review);
       h += "</div>";
     }
     h += "</div>";
@@ -85,14 +127,13 @@ function render(idx) {
 }
 
 fetch("data.json?" + Date.now()).then(r => r.json()).then(data => {
-  DATA = data;
+  D = data;
   const nav = document.getElementById("nav");
   data.forEach((d, i) => {
-    const btn = document.createElement("button");
-    btn.className = "day-btn";
-    btn.textContent = d.date.slice(5);
-    btn.onclick = () => render(i);
-    nav.appendChild(btn);
+    const b = document.createElement("button");
+    b.textContent = d.date.slice(5);
+    b.onclick = () => render(i);
+    nav.appendChild(b);
   });
   if (data.length) render(0);
   else document.getElementById("content").innerHTML = '<div class="empty">暂无数据</div>';
