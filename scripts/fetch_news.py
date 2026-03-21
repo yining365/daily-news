@@ -930,7 +930,7 @@ def _make_short_title(item):
 
 
 def send_telegram(date, main_theme, items, commentary, watchpoint_reviews):
-    parts = [f"<b>📰 阿宁日报 {_tg_escape(date)}</b>", ""]
+    parts = []
 
     for item in items[:5]:
         source = item.get("source", "")
