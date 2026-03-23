@@ -16,8 +16,10 @@ from src.config import OUTPUT_DIR, AI_BASE_URL, AI_API_KEY, AI_MODEL, SITE_META,
 
 # 服务器模式：读本地 X 缓存而非 API
 X_CACHE_FILE = os.getenv("X_CACHE_FILE", "")
-TG_BOT_TOKEN = os.getenv("TG_BOT_TOKEN", "")
-TG_CHAT_ID = os.getenv("TG_CHAT_ID", "")
+
+# 微信 bot 推送
+WX_BOT_TOKEN = os.getenv("WX_BOT_TOKEN", "")
+WX_BOT_TO = os.getenv("WX_BOT_TO", "")
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"
@@ -882,14 +884,14 @@ def main():
     sys.stderr.write(f"Output: {data_path}\n")
     print(f"Daily brief saved: {data_path}")
 
-    # Step 6: Telegram 推送
-    if TG_BOT_TOKEN and TG_CHAT_ID:
-        sys.stderr.write("Step 6: 发送 Telegram...\n")
+    # Step 6: 微信 bot 推送
+    if WX_BOT_TOKEN and WX_BOT_TO:
+        sys.stderr.write("Step 6: 发送微信 bot...\n")
         try:
-            send_telegram(today, main_theme, analyzed_items, commentary, watchpoint_reviews)
-            sys.stderr.write("  Telegram sent.\n")
+            send_wechat(today, main_theme, analyzed_items, commentary, watchpoint_reviews)
+            sys.stderr.write("  WeChat sent.\n")
         except Exception as e:
-            sys.stderr.write(f"  Telegram failed: {e}\n")
+            sys.stderr.write(f"  WeChat failed: {e}\n")
 
 
 DATA_JSON = os.path.join(OUTPUT_DIR, "data.json")
@@ -938,19 +940,6 @@ def save_daily_json(date, items, main_theme, commentary, watchpoint_reviews):
     return DATA_JSON
 
 
-def _tg_escape(text):
-    for ch in ("&", "<", ">"):
-        text = text.replace(ch, {"&": "&amp;", "<": "&lt;", ">": "&gt;"}[ch])
-    return text
-
-
-def _md_to_tg_html(text):
-    text = _tg_escape(text)
-    text = re.sub(r'\*\*(.+?)\*\*', r'<b>\1</b>', text)
-    text = re.sub(r'\*(.+?)\*', r'<i>\1</i>', text)
-    return text
-
-
 def _make_short_title(item):
     conclusion = item.get("conclusion", "")
     if conclusion:
@@ -962,11 +951,16 @@ def _make_short_title(item):
     return title[:60]
 
 
-def send_telegram(date, main_theme, items, commentary, watchpoint_reviews):
-    parts = []
+def _clean_md(text):
+    return re.sub(r'\*\*(.+?)\*\*', r'\1', text)
+
+
+def send_wechat(date, main_theme, items, commentary, watchpoint_reviews):
+    parts = [f"📰 阿宁日报 {date}", ""]
 
     if main_theme:
-        parts.append(_md_to_tg_html(main_theme.strip()))
+        first_para = main_theme.strip().split("\n\n")[0]
+        parts.append(_clean_md(first_para[:200]))
         parts.append("")
 
     for item in items[:5]:
@@ -974,36 +968,35 @@ def send_telegram(date, main_theme, items, commentary, watchpoint_reviews):
         icon = {"Hacker News": "🔶", "Polymarket": "📊", "GitHub Trending": "🐙",
                 "华尔街见闻": "💹", "X (Twitter)": "𝕏"}.get(source, "📡")
         title = _make_short_title(item)
-        url = item.get("url", "")
         conclusion = item.get("conclusion", "")
-        if url:
-            parts.append(f"{icon} <a href=\"{_tg_escape(url)}\">{_tg_escape(title)}</a>")
-        else:
-            parts.append(f"{icon} {_tg_escape(title)}")
+        parts.append(f"{icon} {title}")
         if conclusion:
-            short = conclusion[:120] + ("..." if len(conclusion) > 120 else "")
-            parts.append(f"   {_tg_escape(short)}")
+            short = conclusion[:100] + ("..." if len(conclusion) > 100 else "")
+            parts.append(f"  {short}")
         parts.append("")
 
-    parts.append(f"<a href=\"https://yining365.github.io/daily-news/\">→ 完整版</a>")
+    parts.append("→ 完整版 https://yining365.github.io/daily-news/")
 
     message = "\n".join(parts)
-    if len(message) > 4000:
-        message = message[:3990] + "\n..."
+    if len(message) > 2000:
+        message = message[:1990] + "\n..."
 
-    import urllib.request, urllib.parse
-    url = f"https://api.telegram.org/bot{TG_BOT_TOKEN}/sendMessage"
-    payload = urllib.parse.urlencode({
-        "chat_id": TG_CHAT_ID,
-        "text": message,
-        "parse_mode": "HTML",
-        "disable_web_page_preview": "true",
-    }).encode("utf-8")
-    req = urllib.request.Request(url, data=payload, method="POST")
+    import urllib.request
+    url = "https://ilinkai.weixin.qq.com/ilink/bot/sendmessage"
+    body = json.dumps({
+        "msg": {
+            "to_user_id": WX_BOT_TO,
+            "item_list": [{"type": 1, "text_item": {"text": message}}],
+        },
+        "base_info": {},
+    }, ensure_ascii=False).encode("utf-8")
+    req = urllib.request.Request(url, data=body, method="POST", headers={
+        "Content-Type": "application/json",
+        "Authorization": f"Bearer {WX_BOT_TOKEN}",
+        "AuthorizationType": "ilink_bot_token",
+    })
     with urllib.request.urlopen(req, timeout=20) as resp:
-        result = json.loads(resp.read().decode("utf-8"))
-        if not result.get("ok"):
-            raise RuntimeError(f"Telegram API error: {result}")
+        resp.read()
 
 
 if __name__ == "__main__":
