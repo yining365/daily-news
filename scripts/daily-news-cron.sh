@@ -1,6 +1,6 @@
 #!/bin/bash
 # 阿宁日报 V3 — 服务器 cron 脚本
-# 整合 X 情报 + Polymarket + 其他源 → AI 分析 → 微信 bot + GitHub Pages
+# 整合 X 情报 + Polymarket + 其他源 → AI 分析 → Telegram + GitHub Pages
 
 set -euo pipefail
 
@@ -18,12 +18,14 @@ export AI_BASE_URL="http://74.48.170.132:8317/v1"
 export AI_API_KEY="changeme"
 export AI_MODEL="gpt-5.4"
 
-# 微信 bot 配置
-WX_ACCOUNT_FILE="/root/.openclaw/openclaw-weixin/accounts/ceb58d946a51-im-bot.json"
-if [ -f "$WX_ACCOUNT_FILE" ]; then
-    export WX_BOT_TOKEN=$(python3 -c "import json;d=json.load(open('$WX_ACCOUNT_FILE'));print(d['token'])")
-    export WX_BOT_TO=$(python3 -c "import json;d=json.load(open('$WX_ACCOUNT_FILE'));print(d['userId'])")
+# Telegram 配置（从 env 文件读取）
+if [ -f "$ENV_FILE" ]; then
+    set -a
+    . "$ENV_FILE"
+    set +a
 fi
+export TG_BOT_TOKEN="${TELEGRAM_BOT_TOKEN:-}"
+export TG_CHAT_ID="${TG_CHAT_ID:--5273648726}"
 
 export TZ="Asia/Shanghai"
 
