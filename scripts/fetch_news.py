@@ -975,19 +975,21 @@ def send_wechat(date, main_theme, items, commentary, watchpoint_reviews):
             parts.append(f"  {short}")
         parts.append("")
 
-    parts.append("→ 完整版")
-    parts.append("yining365.github.io/daily-news")
-
     message = "\n".join(parts)
     if len(message) > 2000:
         message = message[:1990] + "\n..."
 
+    _wx_send_text(message)
+    _wx_send_text("https://yining365.github.io/daily-news/")
+
+
+def _wx_send_text(text):
     import urllib.request
     url = "https://ilinkai.weixin.qq.com/ilink/bot/sendmessage"
     body = json.dumps({
         "msg": {
             "to_user_id": WX_BOT_TO,
-            "item_list": [{"type": 1, "text_item": {"text": message}}],
+            "item_list": [{"type": 1, "text_item": {"text": text}}],
         },
         "base_info": {},
     }, ensure_ascii=False).encode("utf-8")
