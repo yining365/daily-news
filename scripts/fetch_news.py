@@ -975,7 +975,8 @@ def send_wechat(date, main_theme, items, commentary, watchpoint_reviews):
             parts.append(f"  {short}")
         parts.append("")
 
-    parts.append("→ 完整版 https://yining365.github.io/daily-news/")
+    parts.append("→ 完整版")
+    parts.append("yining365.github.io/daily-news")
 
     message = "\n".join(parts)
     if len(message) > 2000:
