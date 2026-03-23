@@ -312,7 +312,7 @@
     "title": "@simonw: Dan says he's got Qwen 3.5 397B-A17B ... running on an M3 Mac at ~5.7 tokens per second using only 5.5 GB of active memory",
     "watch": "盯两件事：一是后续是否出现更多 300B+ MoE 在消费级设备上的复现；二是终端厂商会不会开始把 SSD 带宽而不是仅 GPU TOPS 当成 AI 卖点。",
     "source": "X (Twitter)",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-03-21",
@@ -501,7 +501,7 @@
     "title": "离线设备开始挑战120B模型",
     "watch": "盯后续是否出现围绕 **120B** 级别离线部署的更多开发工具、基准测试和企业方案，而不只是单台设备展示。",
     "source": "Hacker News",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-03-22",
@@ -515,6 +515,41 @@
     "title": "Cursor 的500亿美元估值究竟买的是什么",
     "watch": "盯市场接下来如何讨论“套壳”与估值的关系：如果争议升温但使用率和付费不掉，应用层定价权会被进一步确认。",
     "source": "RSS:阮一峰周刊",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-23",
+    "title": "xAI 要把更多电力搬到数据中心附近",
+    "watch": "盯其他头部模型公司是否跟进披露自建电力、就地发电或长期电力采购协议。",
+    "source": "X (Twitter)",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-23",
+    "title": "Cloudflare 将 archive.today 标记为“僵尸网络指挥控制”，1.1.1.2 不再解析",
+    "watch": "盯其他公共 DNS、浏览器安全列表和托管服务商是否同步采取类似动作。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-23",
+    "title": "Claude 代码全链路优化框架冲到 97,900 星",
+    "watch": "盯主流 IDE 和模型厂商是否把记忆、安全、研究优先开发这些能力内建，而不是继续依赖社区拼装。",
+    "source": "GitHub Trending",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-23",
+    "title": "一篇推荐 RSS 阅读器的文章竟然加载 37MB",
+    "watch": "盯浏览器、内容平台和广告拦截工具是否围绕“轻量内容页”出现新一轮产品动作。",
+    "source": "RSS:Daring Fireball",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-23",
+    "title": "下周关键日程：特朗普对伊朗发出 48 小时通牒",
+    "watch": "盯通牒到期前后的油价、避险资产表现，以及中国互联网与硬件财报电话会对需求和成本的表述。",
+    "source": "华尔街见闻",
     "status": "open"
   }
 ]
