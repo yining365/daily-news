@@ -123,7 +123,7 @@
     "title": "Show HN: Three new Kitten TTS models – smallest less than 25MB",
     "watch": "看下周是否出现更多基于这类小 TTS 的嵌入式产品和浏览器端 demo，而不是又一个云语音 API 封装。",
     "source": "Hacker News",
-    "status": "open"
+    "status": "invalidated"
   },
   {
     "date": "2026-03-20",
@@ -585,6 +585,41 @@
     "title": "亚马逊酝酿重返智能手机",
     "watch": "盯它是否会走深度补贴、运营商合作，或把 Prime、购物、语音助手做成强绑定；如果只是“再出一台手机”，意义不大，如果是“再造一个 AI 入口”，行业格局就不一样了。",
     "source": "RSS:Daring Fireball",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-24",
+    "title": "阿波罗限制私募信贷基金赎回",
+    "watch": "盯同类私募信贷产品是否出现更多赎回限制，以及后续公开市场上 BDC、信用 ETF 和高收益债利差是否同步走阔。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-24",
+    "title": "美国与道达尔能源接近 10 亿美元协议终止海上风电项目",
+    "watch": "盯美国后续是否出现更多新能源项目取消、赔偿或重新议价案例；一旦从海上风电扩散到输电、储能或氢能，市场会把它视为制度性风险而非个案。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-24",
+    "title": "Anthropic 一周收集近 8.1 万份 AI 用户反馈",
+    "watch": "盯 Anthropic 后续是否把这批反馈具体转化为新的安全策略、默认工作流或企业功能；一旦出现产品层面的快速兑现，这 8.1 万份反馈就不是研究，而是经营资产。",
+    "source": "X (Twitter)",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-24",
+    "title": "市场给万斯 2028 年共和党提名定价 37%",
+    "watch": "盯同一市场里其他共和党人份额是否继续向万斯集中，以及贸易、移民、国防相关资产是否出现更早的事件驱动定价。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-24",
+    "title": "字节跳动开源“超级代理”框架，已获 39,200 星",
+    "watch": "盯后续是否有云厂商、模型厂商或开发工具链直接兼容这类框架；一旦出现原生集成，agent 基础设施会像数据库和容器一样迅速下沉成默认层。",
+    "source": "GitHub Trending",
     "status": "open"
   }
 ]
