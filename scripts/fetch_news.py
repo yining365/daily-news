@@ -350,6 +350,43 @@ def fetch_rss(limit=10):
     return items[:limit]
 
 
+def fetch_reddit(limit=10):
+    """抓取 Reddit AI 相关子版块热门帖"""
+    items = []
+    subs = ["LocalLLaMA", "ChatGPT", "MachineLearning"]
+    for sub in subs:
+        try:
+            resp = requests.get(
+                f"https://www.reddit.com/r/{sub}/hot.json?limit=10",
+                headers={"User-Agent": "morning-brief/1.0"},
+                timeout=10,
+            )
+            data = resp.json()
+            for post in data.get("data", {}).get("children", []):
+                d = post.get("data", {})
+                if d.get("stickied"):
+                    continue
+                score = d.get("score", 0)
+                if score < 50:
+                    continue
+                title = d.get("title", "")
+                url = d.get("url", "")
+                if url.startswith("/r/"):
+                    url = f"https://www.reddit.com{url}"
+                selftext = (d.get("selftext", "") or "")[:200]
+                items.append({
+                    "source": f"Reddit:r/{sub}",
+                    "title": title,
+                    "url": url,
+                    "score": f"{score} upvotes",
+                    "summary": selftext,
+                })
+        except Exception as e:
+            sys.stderr.write(f"[Reddit:r/{sub}] Error: {e}\n")
+    items.sort(key=lambda x: int(x.get("score", "0").split()[0]), reverse=True)
+    return items[:limit]
+
+
 # ============================================================================
 # AI 编辑层
 # ============================================================================
@@ -403,15 +440,16 @@ def _format_items_text(all_items):
     return items_text
 
 
-FEW_SHOT_GOOD = """### [12] Will there be a US recession in 2025?
-结论：市场给衰退定价 38%，比上月 22% 跳升——不是恐慌，是关税冲击被消化后的"慢衰退"共识。
-信号：Polymarket Yes 38%（$12.3M 交易量），同期降息 3 次以上的合约从 45% 降到 31%。
-为什么重要：过 40% 是心理拐点，企业开始推迟招聘和资本开支。
+FEW_SHOT_GOOD = """### [12] 板块: 宏观地缘
+美国衰退定价跳到 38%
+结论：不是恐慌，是关税冲击消化完后的"慢衰退"共识，企业开始推迟招聘。
+信号：Polymarket Yes 38%（$12.3M），降息 3 次以上的合约从 45% 降到 31%。
+为什么重要：过 40% 企业就开始砍预算，你定投的纳指和标普要做好回撤准备。
 观察点：盯 4 月非农和初领失业金，连续两周 > 25 万则衰退定价可能破 50%。"""
 
 FEW_SHOT_BAD = """### 不合格的分析（不要写成这样）
-结论：OpenAI 发布了 GPT-5。  ← L1 事实，不是判断
-信号：这是一个重大进展。  ← 没有数字
+结论：OpenAI 发布了 GPT-5。  ← 陈述事实不是判断
+信号：这是一个重大进展。  ← 没数字
 为什么重要：AI 将改变世界。  ← 正确但无用
 观察点：值得持续关注。  ← 废话"""
 
@@ -440,98 +478,117 @@ def _recent_titles_block():
 def ai_round1_filter_and_analyze(all_items):
     items_text = _format_items_text(all_items)
 
-    prompt = f"""你是阿宁日报的编辑。从以下 {len(all_items)} 条原始信息中，选出 5 条最有价值的，并为每条写深度分析。
+    prompt = f"""你是阿宁日报的编辑。从以下 {len(all_items)} 条原始信息中，按板块选出最有价值的条目。
 
-## 你的工作不是摘要，是判断
+## 读者画像
 
-你的读者是一个每天花 5 分钟看日报的科技/金融从业者。他刷 X 和 HN 已经知道今天的大新闻了。他需要你告诉他的是：
+阿宁，30 岁，广州，母婴电商创业者（抖音+小红书+微信社群），同时是：
+- AI 重度用户：每天用 Claude/Cursor/各种 agent 工具干活
+- 指数投资者：定投纳指、标普、沪深 300，持有黄金
+- 关注健康优化（补剂、睡眠）
 
-1. **他可能漏掉的**——表面不显眼但信号很强的信息
-2. **他知道但没想透的**——大新闻背后的二阶、三阶效应
-3. **跨领域的连接**——A 领域发生的事对 B 领域意味着什么
+他刷 X 和 HN 已经知道大新闻了。他要你告诉他的是：漏掉了什么、没想透什么、不同领域之间有什么连接。
 
-## 准入标准（满足至少一个才入选）
-1. **改变判断** — 看完之后观点和之前不一样
-2. **量化不确定性** — 有具体数字/定价/增速，不是"可能会..."
-3. **意外连接** — 把看似无关的事串成一条线
-4. **时间窗口** — 今天看有价值，下周看就没有了
+## 6 个板块（每个板块选 0-2 条，没有就跳过）
 
-## 绝对不要选的
-- 所有人都在聊的共识新闻（刷 5 分钟 X 就知道的）
-- 没有量化数据的泛泛而谈
-- 产品发布公告（除非它改变了行业格局的判断）
-- 融资新闻（除非金额或估值本身是信号）
+1. **AI工程** — prompt 技巧、agent 架构、MCP、开源工具、本地模型
+2. **AI行业** — 模型发布、产品更新、融资、重大合作
+3. **商业/电商** — 电商运营、流量玩法、平台规则、商业模式
+4. **宏观/金融** — 市场异动、地缘政治、通胀、利率、预测市场
+5. **开发者/开源** — GitHub 热门项目、开发工具、技术趋势
+6. **其他值得看的** — 健康、科学、不属于以上但确实重要的
 
-## 源多样性要求（重要！）
-每个源最多选 1 条。确保覆盖至少 4 个不同的源。分布参考：
-- Hacker News: 0-1 条
-- Polymarket: 0-1 条
-- GitHub Trending: 0-1 条
-- 华尔街见闻: 0-1 条
-- X (Twitter): 1-2 条（如果有数据）
-- RSS 博客: 0-1 条（如果有数据）
+## 两层结构
 
-## 分析格式
-对每条选中的信息，输出：
+**第一梯队**（5-6 条，详细分析）：
 ```
-### [原始序号] 中文标题（必须翻译成中文，不保留英文原标题）
-结论：一句话判断，有立场。不超过 2 句。
-信号：原始数据中已有的数字（不要编造原始数据中没有的数字）。1-2 句。
-为什么重要：连接到更大的趋势，1-2 句。
-观察点：接下来盯什么，具体到事件/数据/时间点。1 句。
+### [原始序号] 板块: 板块名
+中文标题
+结论：一句话判断。说人话，别端着。
+信号：原始数据里的数字。不要编造。
+为什么重要：跟阿宁有什么关系，1-2 句。
+观察点：接下来盯什么，具体到事件/数据/时间。
 来源：源名称
 链接：URL
 ```
 
-## 合格的分析长这样（学习这个标准）
+**第二梯队**（3-5 条，一句话速览）：
+```
+## 速览
+- [原始序号] 板块名 | 中文标题 — 一句话说清楚为什么值得知道。来源：源名称 | 链接：URL
+```
+
+## 写作风格——说人话
+
+- 像聪明朋友在微信上跟你说，不像分析师写报告
+- "这事说白了就是……" 比 "这一事件的深层含义在于……" 好
+- 有态度，敢下判断，别两边讨好
+- 结论要短，一句话能说清就不要两句
+
+## 准入标准
+1. 改变判断——看完想法不一样了
+2. 有数字——不是"可能会"，是"已经到了多少"
+3. 跨领域连接——A 的事对 B 意味着什么
+4. 时效性——今天看有用，下周就没用了
+
+## 不要选的
+- 刷 5 分钟 X 就知道的共识新闻
+- 没数据的泛泛而谈
+- 产品发布公告（除非改变格局）
+- 融资新闻（除非金额本身是信号）
+
+## 合格示例
 {FEW_SHOT_GOOD}
 
-## 不合格的分析长这样（避免这些）
+## 不合格示例
 {FEW_SHOT_BAD}
+
+## 源多样性（重要！）
+每个源最多 2 条。覆盖至少 4 个不同源。
 
 ## 原始数据
 {items_text}
 
 {_recent_titles_block()}
 
-选 5 条，宁缺毋滥。每条分析至少 3 句话，要有真正的洞察。"""
+宁缺毋滥。第一梯队 5-6 条，第二梯队 3-5 条。标题必须中文。"""
 
     messages = [
-        {"role": "system", "content": "你是一个顶级信息分析师。规则：1) 每句话有信息增量，废话删掉；2) 只引用原始数据中已有的数字，绝不编造数据；3) 每个字段 1-2 句话，简洁有力；4) 分析像对冲基金晨会纪要，不像新闻摘要；5) 所有标题必须用中文，英文标题要翻译成简洁的中文标题。"},
+        {"role": "system", "content": "你是阿宁的信息助理。说人话，别端着。规则：1) 每句话有信息量，废话删掉；2) 只用原始数据里的数字，不编造；3) 写得像朋友聊天，不像写报告；4) 所有标题用中文。"},
         {"role": "user", "content": prompt},
     ]
-    return call_ai(messages, temperature=0.3)
+    return call_ai(messages, temperature=0.4)
 
 
 def ai_round2_synthesize(round1_output, all_items):
-    prompt = f"""基于以下已筛选分析的条目，完成两件事：
+    prompt = f"""基于以下已筛选的条目，写两部分。
 
-## 1. 今日主线（3-5 句话）
+## 1. 今日主线（3-5 句）
 
-把今天的 7-8 条信息串成一个连贯的叙事。不是"今天有 AI 新闻、有金融新闻"这样的分类列表，而是找到跨领域的共同方向。
+把今天这些信息串成一个故事。不是"今天 AI 有新闻、金融有动向"这种分类清单，而是找到它们之间的共同方向。
 
-好的今日主线像这样：
-"关税冲击正在从预期变成现实。Polymarket 给衰退定价 38%，GitHub 上基础设施项目占据 Trending（企业在降本），华尔街见闻连续 3 条涉及供应链调整。市场不是在恐慌，是在重新定价'慢增长'——这比恐慌更持久。"
+好的：
+"关税冲击从预期变成了现实。Polymarket 衰退定价 38%，GitHub 上全是降本工具，华尔街见闻连着 3 条供应链调整。说白了市场不是在慌，是在认真重新算账——这比慌更难对付。"
 
-不好的像这样：
-"今天科技领域有多个重要进展，金融市场也有新动向，开源社区保持活跃。" ← 废话，删了没人会少知道任何东西。
+差的：
+"今天科技领域有多个重要进展，金融市场也有新动向。" ← 废话
 
-每 1-2 句话分一段。
+每 1-2 句分一段，方便手机阅读。
 
-## 2. 阿宁点评（2-3 段，有态度）
+## 2. 阿宁点评
 
-你是阿宁，一个有独立判断力的编辑，不是播报员。写三段：
+你是阿宁，一个有主见的人，不是播音员。写三段：
 
-**今天真正值得看的：** 从选中的条目里挑 2-3 条你认为最被低估的，说清楚为什么你的读者应该花时间看。
+**今天值得花时间看的：** 挑 2-3 条最被低估的，说清楚为什么。写得像跟朋友说"这条你别错过，因为……"
 
-**噪音：** 大家都在聊但其实没信息增量的东西。敢点名、敢说"这条你可以跳过"。
+**可以跳过的：** 大家都在聊但没啥新信息的。敢点名，别怂。
 
-**接下来一周盯什么：** 给出 2-3 个具体的观察点——某个日期、某个数据、某个人的决定。不是"持续关注 AI 发展"这种废话。
+**下周盯这几个：** 2-3 个具体的事——某个日期、某个数据、某个人的决定。不要"持续关注 AI 发展"这种废话。尽量跟阿宁的业务挂钩（电商、AI 工具、投资）。
 
 ## 已筛选分析
 {round1_output}
 
-请直接输出，不要用 ``` 包裹：
+直接输出，不用 ``` 包裹：
 ## 今日主线
 （内容）
 
@@ -539,7 +596,7 @@ def ai_round2_synthesize(round1_output, all_items):
 （内容）"""
 
     messages = [
-        {"role": "system", "content": '你是阿宁。你的点评有三个特征：1) 有立场——不说"两方面都有道理"；2) 有细节——不说"值得关注"，说盯什么数据在什么时间点；3) 敢得罪人——敢说某条热门新闻是噪音。你的文字紧凑、有力，没有一个字是多余的。'},
+        {"role": "system", "content": '你是阿宁，30 岁，做母婴电商也搞 AI。说话直接、有态度，像跟哥们聊天。三个原则：1) 有立场，不和稀泥；2) 说具体的，"盯下周四的 CPI"比"关注通胀"有用一万倍；3) 敢说某条热门新闻是噪音。'},
         {"role": "user", "content": prompt},
     ]
     return call_ai(messages, temperature=0.5)
@@ -586,6 +643,7 @@ def parse_round1_items(round1_text, all_items=None):
 
     items = []
     current = {}
+    in_quick = False  # 是否在"速览"区域
 
     def extract_value(line):
         for sep in ["：", ":"]:
@@ -593,22 +651,66 @@ def parse_round1_items(round1_text, all_items=None):
                 return line.split(sep, 1)[1].strip()
         return line.strip()
 
+    def resolve_source(title_line):
+        idx_match = re.match(r'\[(\d+)\]', title_line)
+        source, url = "", ""
+        if idx_match and all_items:
+            idx = int(idx_match.group(1))
+            if 0 <= idx < len(all_items):
+                source = all_items[idx].get("source", "")
+                url = all_items[idx].get("url", "")
+        return source, url
+
     for line in text.split("\n"):
         line = line.strip()
+
+        # 检测"速览"分界
+        if re.match(r'^##\s*速览', line):
+            if current and current.get("title"):
+                items.append(current)
+                current = {}
+            in_quick = True
+            continue
+
+        if in_quick:
+            # 速览格式: - [序号] 板块名 | 中文标题 — 一句话
+            m = re.match(r'^-\s*\[(\d+)\]\s*(.+?)\s*[|｜]\s*(.+?)\s*[—–-]\s*(.+?)(?:\s*来源[：:](.+?))?(?:\s*[|｜]\s*链接[：:](.+))?$', line)
+            if m:
+                idx = int(m.group(1))
+                category = m.group(2).strip()
+                title = m.group(3).strip()
+                summary = m.group(4).strip()
+                source, url = "", ""
+                if all_items and 0 <= idx < len(all_items):
+                    source = all_items[idx].get("source", "")
+                    url = all_items[idx].get("url", "")
+                if m.group(5):
+                    source = source or m.group(5).strip()
+                if m.group(6):
+                    url = url or m.group(6).strip()
+                items.append({
+                    "title": title, "source": source, "url": url,
+                    "category": category, "tier": 2,
+                    "conclusion": summary,
+                })
+            continue
+
+        # 第一梯队格式
         if line.startswith("### "):
             if current and current.get("title"):
                 items.append(current)
-            title = line.replace("### ", "").strip()
-            # 从标题的 [序号] 回溯原始 item 的 source
-            idx_match = re.match(r'\[(\d+)\]', title)
-            original_source = ""
-            original_url = ""
-            if idx_match and all_items:
-                idx = int(idx_match.group(1))
-                if 0 <= idx < len(all_items):
-                    original_source = all_items[idx].get("source", "")
-                    original_url = all_items[idx].get("url", "")
-            current = {"title": title, "source": original_source, "url": original_url}
+            header = line.replace("### ", "").strip()
+            source, url = resolve_source(header)
+            # 提取板块
+            category = ""
+            cat_match = re.search(r'板块[：:]\s*(\S+)', header)
+            if cat_match:
+                category = cat_match.group(1)
+            current = {"source": source, "url": url, "category": category, "tier": 1}
+        elif not current.get("title") and line and not line.startswith(("结论", "信号", "为什么", "观察点", "来源", "链接")):
+            # 标题行（板块行之后的第一个非字段行）
+            if current.get("tier") == 1 and "category" in current:
+                current["title"] = re.sub(r'^\s*\[\d+\]\s*', '', line).strip()
         elif line.startswith("结论"):
             current["conclusion"] = extract_value(line)
         elif line.startswith("信号"):
@@ -618,13 +720,12 @@ def parse_round1_items(round1_text, all_items=None):
         elif line.startswith("观察点"):
             current["watch"] = extract_value(line)
         elif line.startswith("来源"):
-            # AI 返回的来源只做备选，不覆盖原始 source
             if not current.get("source"):
                 current["source"] = extract_value(line)
         elif line.startswith("链接"):
-            # AI 返回的链接只做备选，不覆盖原始 url
             if not current.get("url"):
                 current["url"] = extract_value(line)
+
     if current and current.get("title"):
         items.append(current)
     return items
@@ -819,9 +920,10 @@ def main():
         ("华尔街见闻", fetch_wallstreetcn),
         ("X", fetch_x_from_cache if X_CACHE_FILE else fetch_x_timeline),
         ("RSS", fetch_rss),
+        ("Reddit", fetch_reddit),
     ]
 
-    with concurrent.futures.ThreadPoolExecutor(max_workers=6) as executor:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=7) as executor:
         future_map = {executor.submit(fn): name for name, fn in fetchers}
         for future in concurrent.futures.as_completed(future_map):
             name = future_map[future]
@@ -910,6 +1012,8 @@ def save_daily_json(date, items, main_theme, commentary, watchpoint_reviews):
                 "signal": item.get("signal", ""),
                 "why": item.get("why", ""),
                 "watch": item.get("watch", ""),
+                "category": item.get("category", ""),
+                "tier": item.get("tier", 1),
             }
             for item in items
         ],
@@ -970,20 +1074,38 @@ def send_telegram(date, main_theme, items, commentary, watchpoint_reviews):
         parts.append(_md_to_tg_html(main_theme.strip()))
         parts.append("")
 
-    for item in items[:5]:
+    tier1 = [i for i in items if i.get("tier", 1) == 1]
+    tier2 = [i for i in items if i.get("tier") == 2]
+
+    for item in tier1[:6]:
+        cat = item.get("category", "")
         source = item.get("source", "")
         icon = {"Hacker News": "🔶", "Polymarket": "📊", "GitHub Trending": "🐙",
                 "华尔街见闻": "💹", "X (Twitter)": "𝕏"}.get(source, "📡")
         title = _make_short_title(item)
         url = item.get("url", "")
         conclusion = item.get("conclusion", "")
+        tag = f"[{cat}] " if cat else ""
         if url:
-            parts.append(f"{icon} <a href=\"{_tg_escape(url)}\">{_tg_escape(title)}</a>")
+            parts.append(f"{icon} {_tg_escape(tag)}<a href=\"{_tg_escape(url)}\">{_tg_escape(title)}</a>")
         else:
-            parts.append(f"{icon} {_tg_escape(title)}")
+            parts.append(f"{icon} {_tg_escape(tag)}{_tg_escape(title)}")
         if conclusion:
             short = conclusion[:120] + ("..." if len(conclusion) > 120 else "")
             parts.append(f"   {_tg_escape(short)}")
+        parts.append("")
+
+    if tier2:
+        parts.append("<b>⚡ 速览</b>")
+        for item in tier2[:5]:
+            cat = item.get("category", "")
+            title = _make_short_title(item)
+            url = item.get("url", "")
+            tag = f"{cat} | " if cat else ""
+            if url:
+                parts.append(f"· {_tg_escape(tag)}<a href=\"{_tg_escape(url)}\">{_tg_escape(title)}</a>")
+            else:
+                parts.append(f"· {_tg_escape(tag)}{_tg_escape(title)}")
         parts.append("")
 
     parts.append(f"<a href=\"https://yining365.github.io/daily-news/\">→ 完整版</a>")

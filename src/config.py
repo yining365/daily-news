@@ -21,6 +21,9 @@ RSS_FEEDS = [
     {"name": "Daring Fireball", "url": "https://daringfireball.net/feeds/main", "category": "Apple/科技"},
     {"name": "Simon Willison", "url": "https://simonwillison.net/atom/everything/", "category": "AI/LLM"},
     {"name": "阮一峰周刊", "url": "https://www.ruanyifeng.com/blog/atom.xml", "category": "中文科技"},
+    {"name": "TechCrunch", "url": "https://techcrunch.com/feed/", "category": "科技动态"},
+    {"name": "OpenAI Blog", "url": "https://openai.com/index/rss.xml", "category": "AI"},
+    {"name": "Anthropic Blog", "url": "https://www.anthropic.com/feed.xml", "category": "AI"},
 ]
 
 # V2: 6 个高信噪比源
