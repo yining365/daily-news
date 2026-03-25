@@ -209,21 +209,24 @@ function render(i){
   const d=D[i];
   if(!d){$("content").innerHTML='<div class="empty">暂无数据</div>';return}
 
-  $("dateDisp").textContent=fmtFull(d.date);
-  $("weekday").textContent=weekday(d.date);
+  const isWeekly=d.type==="weekly";
+  $("dateDisp").textContent=isWeekly?("📅 本周回顾"):fmtFull(d.date);
+  $("weekday").textContent=isWeekly?(d.date_range||""):weekday(d.date);
 
   let h='<div class="fade">';
 
   // theme
   if(d.main_theme){
-    h+='<div class="section"><div class="sec-label">今日主线</div><div class="theme-block">';
+    const themeLabel=isWeekly?"本周回顾":"今日主线";
+    h+='<div class="section"><div class="sec-label">'+themeLabel+'</div><div class="theme-block">';
     for(const p of d.main_theme.split(/\n\n+/)){if(p.trim())h+="<p>"+b(p.trim())+"</p>"}
     h+="</div></div>";
   }
 
   // items
   if(d.items&&d.items.length){
-    h+='<div class="section"><div class="sec-label">精选 '+d.items.length+" 条</div>";
+    const itemsLabel=isWeekly?"本周 "+d.items.length+" 条":"精选 "+d.items.length+" 条";
+    h+='<div class="section"><div class="sec-label">'+itemsLabel+"</div>";
     d.items.forEach((it,idx)=>{
       const src=SRC[it.source]||{c:"#9a9aa0"};
       const n=String(idx+1).padStart(2,"0");
@@ -292,7 +295,7 @@ fetch("data.json?"+Date.now()).then(r=>r.json()).then(data=>{
   else{
     data.forEach((d,i)=>{
       const btn=document.createElement("button");
-      btn.textContent=fmtShort(d.date)+" "+weekday(d.date);
+      btn.textContent=d.type==="weekly"?"📅 周报":fmtShort(d.date)+" "+weekday(d.date);
       btn.onclick=()=>render(i);
       nav.appendChild(btn);
     });

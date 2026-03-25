@@ -46,8 +46,8 @@ mkdir -p "$(dirname "$LOG_FILE")"
     # 安装依赖
     pip install -q -r requirements.txt 2>/dev/null || true
 
-    # 运行日报
-    python3 scripts/fetch_news.py
+    # 运行日报（传入 weekly 参数则跑周报）
+    python3 scripts/fetch_news.py ${1:-}
     rc=$?
 
     # 推送 HTML 到 GitHub Pages

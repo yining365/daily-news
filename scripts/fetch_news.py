@@ -1111,7 +1111,10 @@ def send_telegram(date, main_theme, items, commentary, watchpoint_reviews):
     message = "\n".join(parts)
     if len(message) > 4000:
         message = message[:3990] + "\n..."
+    _send_tg_message(message)
 
+
+def _send_tg_message(message):
     import urllib.request, urllib.parse
     url = f"https://api.telegram.org/bot{TG_BOT_TOKEN}/sendMessage"
     payload = urllib.parse.urlencode({
@@ -1127,5 +1130,161 @@ def send_telegram(date, main_theme, items, commentary, watchpoint_reviews):
             raise RuntimeError(f"Telegram API error: {result}")
 
 
+# ============================================================================
+# 周报
+# ============================================================================
+
+def weekly_summary():
+    beijing_tz = timezone(timedelta(hours=8))
+    today = datetime.now(beijing_tz)
+    today_str = today.strftime("%Y-%m-%d")
+    sys.stderr.write(f"=== 阿宁周报 === {today_str} ===\n")
+
+    # 读取本周数据（周一~周五）
+    data = []
+    if os.path.exists(DATA_JSON):
+        try:
+            data = json.loads(open(DATA_JSON, encoding="utf-8").read())
+        except Exception:
+            pass
+
+    # 取最近 7 天的日报（排除周报本身）
+    cutoff = (today - timedelta(days=7)).strftime("%Y-%m-%d")
+    week_entries = [d for d in data if d.get("date", "") >= cutoff and d.get("type") != "weekly"]
+
+    if not week_entries:
+        sys.stderr.write("No daily entries found for this week.\n")
+        sys.exit(1)
+
+    # 收集所有 items 和主线
+    all_items_text = ""
+    for entry in week_entries:
+        date = entry.get("date", "")
+        all_items_text += f"\n## {date}\n"
+        if entry.get("main_theme"):
+            all_items_text += f"主线：{entry['main_theme'][:200]}\n"
+        for it in entry.get("items", []):
+            cat = it.get("category", "")
+            title = it.get("title", "")
+            conclusion = it.get("conclusion", "")
+            all_items_text += f"- [{cat}] {title} — {conclusion}\n"
+
+    date_range_start = week_entries[-1].get("date", "")
+    date_range_end = week_entries[0].get("date", "")
+    range_label = f"{date_range_start.split('-', 1)[1].replace('-', '/')} ~ {date_range_end.split('-', 1)[1].replace('-', '/')}"
+
+    sys.stderr.write(f"Week range: {range_label}, {len(week_entries)} days\n")
+
+    # AI 生成周报
+    prompt = f"""回顾这一周（{range_label}）的阿宁日报，挑出 5 条最值得记住的。
+
+选择标准：
+- 哪些判断被验证了，或者被推翻了
+- 哪些趋势在加速，回头看更清楚了
+- 哪些你当时没在意但现在回头看很重要
+- 对阿宁（母婴电商创业者 + AI 用户 + 指数投资者）下周有什么影响
+
+## 输出格式
+
+### 本周回顾
+（2-3 段总结，像周末跟朋友复盘这一周。说人话，有态度。）
+
+### 本周 5 条
+1. **标题** — 一句话说清楚为什么值得记住
+2. ...
+3. ...
+4. ...
+5. ...
+
+## 本周日报内容
+{all_items_text}"""
+
+    messages = [
+        {"role": "system", "content": "你是阿宁，周末复盘这一周。说话直接，像跟朋友聊天。不要写成总结报告，要写成\"这周我想明白了几件事\"。"},
+        {"role": "user", "content": prompt},
+    ]
+
+    sys.stderr.write("Generating weekly summary...\n")
+    output = call_ai(messages, temperature=0.5)
+
+    if not output:
+        sys.stderr.write("AI failed for weekly summary.\n")
+        sys.exit(1)
+
+    # 解析
+    review_text = ""
+    top5 = []
+    current_section = None
+    for line in output.split("\n"):
+        stripped = line.strip()
+        if "本周回顾" in stripped and stripped.startswith("#"):
+            current_section = "review"
+            continue
+        elif "本周" in stripped and "5" in stripped and stripped.startswith("#"):
+            current_section = "top5"
+            continue
+
+        if current_section == "review":
+            review_text += line + "\n"
+        elif current_section == "top5":
+            m = re.match(r'^\d+\.\s*\*\*(.+?)\*\*\s*[—–-]\s*(.+)', stripped)
+            if m:
+                top5.append({"title": m.group(1).strip(), "conclusion": m.group(2).strip()})
+            elif re.match(r'^\d+\.\s*(.+?)\s*[—–-]\s*(.+)', stripped):
+                m2 = re.match(r'^\d+\.\s*(.+?)\s*[—–-]\s*(.+)', stripped)
+                top5.append({"title": m2.group(1).strip(), "conclusion": m2.group(2).strip()})
+
+    review_text = review_text.strip()
+    sys.stderr.write(f"Parsed: review={len(review_text)} chars, top5={len(top5)} items\n")
+
+    # 保存到 data.json
+    entry = {
+        "date": today_str,
+        "type": "weekly",
+        "date_range": range_label,
+        "main_theme": review_text,
+        "commentary": "",
+        "items": [
+            {"title": it["title"], "conclusion": it["conclusion"], "source": "", "url": "",
+             "signal": "", "why": "", "watch": "", "category": "", "tier": 1}
+            for it in top5
+        ],
+        "watchpoint_reviews": [],
+    }
+
+    data = [d for d in data if not (d.get("date") == today_str and d.get("type") == "weekly")]
+    data.insert(0, entry)
+    data = data[:90]
+    open(DATA_JSON, "w", encoding="utf-8").write(json.dumps(data, ensure_ascii=False, indent=2))
+    sys.stderr.write(f"Saved weekly to {DATA_JSON}\n")
+
+    # Telegram 推送
+    if TG_BOT_TOKEN and TG_CHAT_ID:
+        sys.stderr.write("Sending Telegram...\n")
+        parts = [f"<b>📅 阿宁周报 · {_tg_escape(range_label)}</b>", ""]
+        if review_text:
+            parts.append(_md_to_tg_html(review_text))
+            parts.append("")
+        if top5:
+            parts.append("<b>🔑 本周 5 条</b>")
+            for i, it in enumerate(top5[:5], 1):
+                parts.append(f"{i}. <b>{_tg_escape(it['title'])}</b> — {_tg_escape(it['conclusion'])}")
+            parts.append("")
+        parts.append(f"<a href=\"https://yining365.github.io/daily-news/\">→ 完整版</a>")
+        message = "\n".join(parts)
+        if len(message) > 4000:
+            message = message[:3990] + "\n..."
+        try:
+            _send_tg_message(message)
+            sys.stderr.write("Telegram sent.\n")
+        except Exception as e:
+            sys.stderr.write(f"Telegram failed: {e}\n")
+
+    sys.stderr.write("Weekly summary done.\n")
+
+
 if __name__ == "__main__":
-    main()
+    if len(sys.argv) > 1 and sys.argv[1] == "weekly":
+        weekly_summary()
+    else:
+        main()
