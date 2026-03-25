@@ -1068,6 +1068,11 @@ def _make_short_title(item):
 
 
 def send_telegram(date, main_theme, items, commentary, watchpoint_reviews):
+    CATEGORY_ICONS = {
+        "AI工程": "🤖", "AI行业": "📡", "商业/电商": "🛒",
+        "宏观/金融": "🌍", "开发者/开源": "⚙️", "其他值得看的": "💡",
+    }
+
     parts = []
 
     if main_theme:
@@ -1077,35 +1082,42 @@ def send_telegram(date, main_theme, items, commentary, watchpoint_reviews):
     tier1 = [i for i in items if i.get("tier", 1) == 1]
     tier2 = [i for i in items if i.get("tier") == 2]
 
+    # 按板块分组
+    from collections import OrderedDict
+    groups = OrderedDict()
     for item in tier1[:6]:
-        cat = item.get("category", "")
-        source = item.get("source", "")
-        icon = {"Hacker News": "🔶", "Polymarket": "📊", "GitHub Trending": "🐙",
-                "华尔街见闻": "💹", "X (Twitter)": "𝕏"}.get(source, "📡")
-        title = _make_short_title(item)
-        url = item.get("url", "")
-        conclusion = item.get("conclusion", "")
-        tag = f"[{cat}] " if cat else ""
-        if url:
-            parts.append(f"{icon} {_tg_escape(tag)}<a href=\"{_tg_escape(url)}\">{_tg_escape(title)}</a>")
-        else:
-            parts.append(f"{icon} {_tg_escape(tag)}{_tg_escape(title)}")
-        if conclusion:
-            short = conclusion[:120] + ("..." if len(conclusion) > 120 else "")
-            parts.append(f"   {_tg_escape(short)}")
+        cat = item.get("category", "其他")
+        groups.setdefault(cat, []).append(item)
+
+    for cat, cat_items in groups.items():
+        icon = CATEGORY_ICONS.get(cat, "📌")
+        parts.append(f"<b>{icon} {_tg_escape(cat)}</b>")
+        for item in cat_items:
+            title = re.sub(r'^\s*\[\d+\]\s*', '', item.get("title", ""))
+            title = re.sub(r'^@\w+:\s*', '', title)[:50]
+            url = item.get("url", "")
+            conclusion = item.get("conclusion", "")
+            # 标题带链接
+            if url:
+                line = f"· <a href=\"{_tg_escape(url)}\">{_tg_escape(title)}</a>"
+            else:
+                line = f"· {_tg_escape(title)}"
+            # 结论用 " — " 接在后面，不重复标题
+            if conclusion and conclusion[:10] != title[:10]:
+                short = conclusion[:80] + ("…" if len(conclusion) > 80 else "")
+                line += f"\n  {_tg_escape(short)}"
+            parts.append(line)
         parts.append("")
 
     if tier2:
         parts.append("<b>⚡ 速览</b>")
         for item in tier2[:5]:
-            cat = item.get("category", "")
             title = _make_short_title(item)
             url = item.get("url", "")
-            tag = f"{cat} | " if cat else ""
             if url:
-                parts.append(f"· {_tg_escape(tag)}<a href=\"{_tg_escape(url)}\">{_tg_escape(title)}</a>")
+                parts.append(f"· <a href=\"{_tg_escape(url)}\">{_tg_escape(title)}</a>")
             else:
-                parts.append(f"· {_tg_escape(tag)}{_tg_escape(title)}")
+                parts.append(f"· {_tg_escape(title)}")
         parts.append("")
 
     parts.append(f"<a href=\"https://yining365.github.io/daily-news/\">→ 完整版</a>")
