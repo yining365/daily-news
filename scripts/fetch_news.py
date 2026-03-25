@@ -498,9 +498,8 @@ def ai_round1_filter_and_analyze(all_items):
 5. **开发者/开源** — GitHub 热门项目、开发工具、技术趋势
 6. **其他值得看的** — 健康、科学、不属于以上但确实重要的
 
-## 两层结构
+## 输出格式（8-10 条，每条都详细分析）
 
-**第一梯队**（5-6 条，详细分析）：
 ```
 ### [原始序号] 板块: 板块名
 中文标题
@@ -510,12 +509,6 @@ def ai_round1_filter_and_analyze(all_items):
 观察点：接下来盯什么，具体到事件/数据/时间。
 来源：源名称
 链接：URL
-```
-
-**第二梯队**（3-5 条，一句话速览）：
-```
-## 速览
-- [原始序号] 板块名 | 中文标题 — 一句话说清楚为什么值得知道。来源：源名称 | 链接：URL
 ```
 
 ## 写作风格——说人话
@@ -551,7 +544,7 @@ def ai_round1_filter_and_analyze(all_items):
 
 {_recent_titles_block()}
 
-宁缺毋滥。第一梯队 5-6 条，第二梯队 3-5 条。标题必须中文。"""
+宁缺毋滥。8-10 条，每条都详细分析。标题必须中文。"""
 
     messages = [
         {"role": "system", "content": "你是阿宁的信息助理。说人话，别端着。规则：1) 每句话有信息量，废话删掉；2) 只用原始数据里的数字，不编造；3) 写得像朋友聊天，不像写报告；4) 所有标题用中文。"},
@@ -1107,17 +1100,6 @@ def send_telegram(date, main_theme, items, commentary, watchpoint_reviews):
                 short = conclusion[:80] + ("…" if len(conclusion) > 80 else "")
                 line += f"\n  {_tg_escape(short)}"
             parts.append(line)
-        parts.append("")
-
-    if tier2:
-        parts.append("<b>⚡ 速览</b>")
-        for item in tier2[:5]:
-            title = _make_short_title(item)
-            url = item.get("url", "")
-            if url:
-                parts.append(f"· <a href=\"{_tg_escape(url)}\">{_tg_escape(title)}</a>")
-            else:
-                parts.append(f"· {_tg_escape(title)}")
         parts.append("")
 
     parts.append(f"<a href=\"https://yining365.github.io/daily-news/\">→ 完整版</a>")
