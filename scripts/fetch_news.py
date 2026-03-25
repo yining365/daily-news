@@ -409,7 +409,7 @@ def call_ai(messages, temperature=0.7):
                 "temperature": temperature,
                 "max_tokens": 4096,
             },
-            timeout=120,
+            timeout=300,
         )
         resp.raise_for_status()
         return resp.json()["choices"][0]["message"]["content"]
