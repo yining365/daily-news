@@ -1167,7 +1167,8 @@ def weekly_summary():
             cat = it.get("category", "")
             title = it.get("title", "")
             conclusion = it.get("conclusion", "")
-            all_items_text += f"- [{cat}] {title} — {conclusion}\n"
+            url = it.get("url", "")
+            all_items_text += f"- [{cat}] {title} — {conclusion} | {url}\n"
 
     date_range_start = week_entries[-1].get("date", "")
     date_range_end = week_entries[0].get("date", "")
@@ -1190,11 +1191,14 @@ def weekly_summary():
 （2-3 段总结，像周末跟朋友复盘这一周。说人话，有态度。）
 
 ### 本周 5 条
-1. **标题** — 一句话说清楚为什么值得记住
+1. **标题** | 链接URL
 2. ...
 3. ...
 4. ...
 5. ...
+
+### 下周判断
+（2 句话。对阿宁下周最重要的判断，具体到事件/数据/时间。）
 
 ## 本周日报内容
 {all_items_text}"""
@@ -1214,6 +1218,7 @@ def weekly_summary():
     # 解析
     review_text = ""
     top5 = []
+    verdict = ""
     current_section = None
     for line in output.split("\n"):
         stripped = line.strip()
@@ -1223,19 +1228,25 @@ def weekly_summary():
         elif "本周" in stripped and "5" in stripped and stripped.startswith("#"):
             current_section = "top5"
             continue
+        elif "下周判断" in stripped and stripped.startswith("#"):
+            current_section = "verdict"
+            continue
 
         if current_section == "review":
             review_text += line + "\n"
         elif current_section == "top5":
-            m = re.match(r'^\d+\.\s*\*\*(.+?)\*\*\s*[—–-]\s*(.+)', stripped)
+            # 格式: 1. **标题** | URL  或  1. 标题 | URL
+            m = re.match(r'^\d+\.\s*\*\*(.+?)\*\*\s*[|｜]\s*(\S+)', stripped)
+            if not m:
+                m = re.match(r'^\d+\.\s*(.+?)\s*[|｜]\s*(\S+)', stripped)
             if m:
-                top5.append({"title": m.group(1).strip(), "conclusion": m.group(2).strip()})
-            elif re.match(r'^\d+\.\s*(.+?)\s*[—–-]\s*(.+)', stripped):
-                m2 = re.match(r'^\d+\.\s*(.+?)\s*[—–-]\s*(.+)', stripped)
-                top5.append({"title": m2.group(1).strip(), "conclusion": m2.group(2).strip()})
+                top5.append({"title": m.group(1).strip(), "url": m.group(2).strip()})
+        elif current_section == "verdict":
+            verdict += line + "\n"
 
     review_text = review_text.strip()
-    sys.stderr.write(f"Parsed: review={len(review_text)} chars, top5={len(top5)} items\n")
+    verdict = verdict.strip()
+    sys.stderr.write(f"Parsed: review={len(review_text)} chars, top5={len(top5)} items, verdict={len(verdict)} chars\n")
 
     # 保存到 data.json
     entry = {
@@ -1243,9 +1254,9 @@ def weekly_summary():
         "type": "weekly",
         "date_range": range_label,
         "main_theme": review_text,
-        "commentary": "",
+        "commentary": verdict,
         "items": [
-            {"title": it["title"], "conclusion": it["conclusion"], "source": "", "url": "",
+            {"title": it["title"], "conclusion": "", "source": "", "url": it.get("url", ""),
              "signal": "", "why": "", "watch": "", "category": "", "tier": 1}
             for it in top5
         ],
@@ -1268,7 +1279,15 @@ def weekly_summary():
         if top5:
             parts.append("<b>🔑 本周 5 条</b>")
             for i, it in enumerate(top5[:5], 1):
-                parts.append(f"{i}. <b>{_tg_escape(it['title'])}</b> — {_tg_escape(it['conclusion'])}")
+                url = it.get("url", "")
+                title = _tg_escape(it["title"])
+                if url:
+                    parts.append(f"{i}. <a href=\"{_tg_escape(url)}\">{title}</a>")
+                else:
+                    parts.append(f"{i}. {title}")
+            parts.append("")
+        if verdict:
+            parts.append(f"💡 {_md_to_tg_html(verdict)}")
             parts.append("")
         parts.append(f"<a href=\"https://yining365.github.io/daily-news/\">→ 完整版</a>")
         message = "\n".join(parts)
