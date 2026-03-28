@@ -1,0 +1,1010 @@
+[
+  {
+    "date": "2026-03-20",
+    "title": "Google details new 24-hour process to sideload unverified Android apps",
+    "watch": "盯这套规则是否扩展到更多“未验证”场景，以及开发者是否转向浏览器端交付。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-20",
+    "title": "Astral to Join OpenAI",
+    "watch": "盯 Astral 核心项目是否保持中立治理，以及 OpenAI 是否把这些工具深度嵌入 Codex / API 工作流。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-20",
+    "title": "Republican Presidential Nominee 2028",
+    "watch": "盯该合约是否站上或跌破 **40%**，那会是“早期领先”与“党内共识”之间的心理分界。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-20",
+    "title": "Will Crude Oil (CL) hit__ by end of March?",
+    "watch": "盯月底前合约概率是否继续向 **$110** 档位迁移，这比现货单日波动更能反映市场是否在重新定价冲突升级。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-20",
+    "title": "宇树科技IPO获受理，2025年度营收同比暴增335.4%",
+    "watch": "盯招股书后续披露的毛利率、客户结构和海外收入占比，这三项决定它是短期主题还是平台型公司。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-20",
+    "title": "小鹏汽车首次实现季度盈利！第四季度营收增长38%；净利润3.8亿元，全年交付量翻倍增长｜财报见闻",
+    "watch": "盯下一季盈利是否延续，以及同业是否出现跟随性的利润拐点。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-20",
+    "title": "@AnthropicAI: Nearly 81,000 people responded in one week—the largest qualitative study of its kind.",
+    "watch": "盯 Anthropic 是否把这种 Interviewer 机制常态化，以及是否开始围绕不同主题持续发布结构化结果。",
+    "source": "X (Twitter)",
+    "status": "verified"
+  },
+  {
+    "date": "2026-03-20",
+    "title": "jarrodwatts/claude-hud: A Claude Code plugin that shows what's happening - context usage, active tools, running agents, and todo progress",
+    "watch": "盯主流 AI IDE 是否原生加入类似视图；如果内置，说明可观测性已从插件需求升级为标配能力。",
+    "source": "GitHub Trending",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-20",
+    "title": "Netanyahu out by...?",
+    "watch": "盯“6月30日前”这条腿是否从 14% 快速抬升；一旦短端上跳，说明风险从长期贴现切换成事件驱动。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-20",
+    "title": "What price will Bitcoin hit in 2026?",
+    "watch": "盯 $160,000 合约能否从 10% 站上双位数中枢；上不去，说明市场仍把 2026 视为去泡沫而非再扩张。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-20",
+    "title": "Full Disclosure: A Third (and Fourth) Azure Sign-In Log Bypass Found",
+    "watch": "盯微软后续是否给出统一修补框架，而不是逐个 bypass 打补丁；前者是架构修复，后者是继续暴露。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-20",
+    "title": "NanoGPT Slowrun: 10x Data Efficiency with Infinite Compute",
+    "watch": "盯后续是否有公开复现实验，尤其是在不同数据规模上能否接近“10x”；不能迁移，就只是特例。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-20",
+    "title": "shareAI-lab/learn-claude-code: Bash is all you need - A nano claude code–like 「agent harness」, built from 0 to 1",
+    "watch": "盯未来一周同类项目是否继续冲榜；如果 agent harness 类仓库连续放量，说明开发者市场已从“尝鲜”切到“基础设施竞赛”。",
+    "source": "GitHub Trending",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-20",
+    "title": "Autoresearching Apple's \"LLM in a Flash\" to run Qwen 397B locally",
+    "watch": "盯后续是否出现可复现的延迟、内存占用和功耗数据；没有这些，397B 只是 demo，不能变成产品判断。",
+    "source": "RSS:Simon Willison",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-20",
+    "title": "@Khazix0918: 小米官宣 MiMo，新模型 Hunter Alpha 真身是 MiMo-V2-Pro",
+    "watch": "盯其工具调用成功率是否有后续公开评测；Agent 模型最终拼的是调用稳定性，不是单次对话惊艳。",
+    "source": "X (Twitter)",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-20",
+    "title": "@OpenAI: GPT-5.4 mini is available today in ChatGPT, Codex, and the API. And it’s 2x faster than GPT-5 mini.",
+    "watch": "盯接下来一周各家 coding agent 是否默认切到 5.4 mini；如果切换快，说明行业优先级已经从“最强模型”变成“最快可用模型”。",
+    "source": "X (Twitter)",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-20",
+    "title": "Snowflake Cortex AI Escapes Sandbox and Executes Malware",
+    "watch": "盯 Snowflake 后续是否公布架构级修复，而不只是规则层补丁。",
+    "source": "RSS:Simon Willison",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-20",
+    "title": "Show HN: Three new Kitten TTS models – smallest less than 25MB",
+    "watch": "看下周是否出现更多基于这类小 TTS 的嵌入式产品和浏览器端 demo，而不是又一个云语音 API 封装。",
+    "source": "Hacker News",
+    "status": "invalidated"
+  },
+  {
+    "date": "2026-03-20",
+    "title": "Push events into a running session with channels",
+    "watch": "盯开发者是否开始要求 session replay、权限边界、事件日志和失败补偿；这些会比模型 benchmark 更快决定 agent 的商用落地。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-20",
+    "title": "opendataloader-project/opendataloader-pdf: PDF Parser for AI-ready data",
+    "watch": "看它后续是继续做开源组件，还是长出 evaluation、标注闭环和企业连接器；后者才是真正可收费的部分。",
+    "source": "GitHub Trending",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-20",
+    "title": "newton-physics/newton: An open-source, GPU-accelerated physics simulation engine",
+    "watch": "盯是否有机器人团队开始把它接进训练 pipeline，以及是否出现与 NVIDIA Warp 之外的生态兼容。",
+    "source": "GitHub Trending",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-20",
+    "title": "Venezuela leader end of 2026?",
+    "watch": "盯制裁政策和反对派组织能力是否出现可验证变化，否则这个 14% 很难大幅重估。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-20",
+    "title": "Brazil Presidential Election",
+    "watch": "盯民调变化之外，更要看财政与通胀数据是否改变“现任可守住中间选民”的交易逻辑。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-20",
+    "title": "@MistralAI: strategic partnership with NVIDIA to co-develop frontier open-source AI models",
+    "watch": "盯双方后续是否公布具体模型、许可证和部署路径；没有这些，合作还是 PR，有这些才是生态重组。",
+    "source": "X (Twitter)",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-20",
+    "title": "@Perplexity_AI: Perplexity Computer now connects to your health apps, wearable devices, lab results, and medical records.",
+    "watch": "盯后续是否出现 HIPAA、医院系统、保险或药企级别的合作，以及是否开放更明确的数据导出、审计和权限管理。",
+    "source": "X (Twitter)",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-20",
+    "title": "3M's PFAS exit killed the supply chain for two-phase immersion cooling in DCs",
+    "watch": "盯 3M 之后是否有替代冷却液供应落地，以及云厂商和机房运营商是否在财报或技术路线里淡化 two-phase。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-20",
+    "title": "langchain-ai/open-swe: An Open-Source Asynchronous Coding Agent",
+    "watch": "盯它后续是否出现 issue/PR 自动闭环、仓库级任务队列和企业权限集成，这决定它是 demo 热度还是基础设施雏形。",
+    "source": "GitHub Trending",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-20",
+    "title": "Brazil Presidential Election",
+    "watch": "盯后续民调是否把价格推回 50% 上方，或交易量继续放大；一旦两者同时发生，说明国际资金开始重新给巴西风险贴现。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-20",
+    "title": "“内存暴涨”的100天，千元机被迫死亡",
+    "watch": "盯安卓品牌后续是否集中取消千元档 SKU，或者把“存储配置不升反降”作为隐性涨价手段。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-20",
+    "title": "超60亿美元出售沐瞳科技，字节七年游戏征途划下休止符",
+    "watch": "盯字节后续资金和组织是否继续向 AI、云、企业软件倾斜；如果是连续动作，这笔交易就不是个案，而是战略转向。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-20",
+    "title": "Will Trump acquire Greenland before 2027?",
+    "watch": "盯白宫、北约和丹麦方向的公开表态是否从“玩笑/姿态”升级到“谈判/施压”，一旦语义变化，**9%** 这种低位赔率会很敏感。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-20",
+    "title": "ArXiv Declares Independence from Cornell",
+    "watch": "盯它后续治理结构和资金安排是否公开；如果独立后伴随更强的平台化动作，影响的不只是 academia，而是整个 AI 信息流。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-20",
+    "title": "obra/superpowers: An agentic skills framework & software development methodology that works.",
+    "watch": "盯这类仓库后续是否从“文档/框架”进一步演化成平台、托管服务或企业版；一旦商业化跟上，说明 workflow layer 开始独立成赛道。",
+    "source": "GitHub Trending",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-20",
+    "title": "赤峰黄金：2025年净利润30.82亿元，同比增长74.7%",
+    "watch": "盯后续同类矿企财报是否同步出现高增速；如果不是个例，黄金板块会从事件驱动转成盈利驱动。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-20",
+    "title": "报道：三星与谷歌、微软就存储芯片长协展开谈判，预付款超100亿美元",
+    "watch": "盯三星后续是否披露长协、预付款或资本开支指引变化，这会比单季出货更早反映 AI 需求强度。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-20",
+    "title": "Democratic Presidential Nominee 2028",
+    "watch": "盯后续是否出现更多远期期限且高交易量的政策/提名合约；如果是，预测市场会进一步侵蚀传统民调和 sell-side 叙事权。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-20",
+    "title": "4Chan mocks £520k fine for UK online safety breaches",
+    "watch": "盯英国后续是否提高处罚上限或转向支付、分发、云服务等外围基础设施施压；只罚平台本身，约束力有限。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-20",
+    "title": "TauricResearch/TradingAgents: TradingAgents: Multi-Agents LLM Financial Trading Framework",
+    "watch": "盯它后续是否接入真实券商 API、风控模块和审计日志；没有这三层，热度再高也只是研究玩具。",
+    "source": "GitHub Trending",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-20",
+    "title": "@cursor_ai: Composer 2 is now available in Cursor.",
+    "watch": "盯后续是否出现关于 Composer 2 的使用时长、任务完成率或企业渗透数据；只有工作流粘性数据，才能证明它不是一次性话题热度。",
+    "source": "X (Twitter)",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-20",
+    "title": "IEA：恢复来自海湾地区的石油和天然气供应可能需要六个月时间",
+    "watch": "盯海湾原油与天然气实际出货恢复节奏，以及未来一个财报季里高能耗行业对成本指引的调整。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-20",
+    "title": "OpenBSD: PF queues break the 4 Gbps barrier",
+    "watch": "看后续是否出现更多基准测试、真实生产案例，以及其他BSD/Linux网络项目是否跟进公布同量级吞吐数据。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-20",
+    "title": "louis-e/arnis: Generate any location from the real world in Minecraft with a high level of detail.",
+    "watch": "盯它后续是否加入更精细的语义层、道路/建筑属性映射，或者被机器人、GIS、仿真团队直接 fork 到非游戏场景。",
+    "source": "GitHub Trending",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-20",
+    "title": "Will the Iranian regime fall by March 31?",
+    "watch": "盯这个市场在 March 31 临近前的成交放量和赔率跳变，看是否领先于原油与避险资产波动。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-20",
+    "title": "@vercel: Your users are on Slack, Discord, Teams, WhatsApp, Telegram, GitHub, Linear, and more. Your agents should be too.",
+    "watch": "看后续是否出现基于这类跨平台框架的企业级 agent 爆款，以及 GitHub、Linear、Teams 这类高价值工作入口的调用数据是否先起量。",
+    "source": "X (Twitter)",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-21",
+    "title": "@simonw: Dan says he's got Qwen 3.5 397B-A17B ... running on an M3 Mac at ~5.7 tokens per second using only 5.5 GB of active memory",
+    "watch": "盯两件事：一是后续是否出现更多 300B+ MoE 在消费级设备上的复现；二是终端厂商会不会开始把 SSD 带宽而不是仅 GPU TOPS 当成 AI 卖点。",
+    "source": "X (Twitter)",
+    "status": "verified"
+  },
+  {
+    "date": "2026-03-21",
+    "title": "美国临时豁免滞留海上伊朗石油制裁，财长称可迅速供油1.4亿桶，美超亿油储释放首批4500万桶",
+    "watch": "盯后续是否有更多关于实际放行节奏、装船量和额外储备释放的表述；若只是口头安抚而无实物流出，油价会重新交易地缘风险。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-21",
+    "title": "vas3k/TaxHacker: Self-hosted AI accounting app ... | 1,983 stars",
+    "watch": "看它后续是否接入更多会计系统、支持多地区税务规则，尤其是 self-hosted 能否成为中小企业采购 AI 的默认形态。",
+    "source": "GitHub Trending",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-21",
+    "title": "Bluesky Raised $100M a Year Ago but for Some Reason Only Disclosed It Now",
+    "watch": "盯后续是否公布更完整的融资条款、董事会安排和资金用途；如果继续模糊处理，AT 协议生态的“开放”叙事会受损。",
+    "source": "RSS:Daring Fireball",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-21",
+    "title": "Delve – Fake Compliance as a Service",
+    "watch": "盯大客户和监管方会不会把采购标准从证书转向持续监测、真实控制验证和技术遥测；一旦发生，安全与合规预算会重新分配。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-21",
+    "title": "全球债市大跌！美联储10月加息概率升至50%，美债重挫、英债08年来首破5%",
+    "watch": "盯后续油价、美国通胀预期和英美长债收益率是否继续共振上行，若“50%”继续抬升，风险资产会被迫重估。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-21",
+    "title": "@satyanadella: We’ve trained a multimodal AI model to turn routine pathology slides into spatial proteomics",
+    "watch": "盯是否进入企业产品化与临床验证节点；一旦出现真实世界验证数据或监管路径披露，这条线的估值锚会立刻改变。",
+    "source": "X (Twitter)",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-21",
+    "title": "France's aircraft carrier located in real time by Le Monde through fitness app",
+    "watch": "盯法国、欧盟和主要运动/健康App是否推出新的默认隐私限制；一旦默认公开改为默认私密，整个位置数据生态的商业模式都要重算。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-21",
+    "title": "openrocket/openrocket: Model-rocketry aerodynamics and trajectory simulation software | 2,238 stars",
+    "watch": "盯这类项目是否被更多高校、创企和零部件厂商纳入正式流程；一旦开源仿真进入产业链，传统闭源工程软件的议价能力会被持续侵蚀。",
+    "source": "GitHub Trending",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-21",
+    "title": "New \"Stranger Things\" episode released by...? | 定价: New \"Stranger Things\" episode released by December 31? : Yes 8% | 交易量: $29.3M",
+    "watch": "盯官方预告、定档和宣发投放节奏；如果后续概率从8%快速抬升，通常意味着制作或发行端出现了实质性确认。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-21",
+    "title": "被裁定2022年收购前误导推特投资者，马斯克要赔逾20亿美元",
+    "watch": "盯后续是否出现上诉、和解框架或新增诉讼，以及任何与X、xAI、特斯拉相关的再融资条款变化。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-21",
+    "title": "Russia x Ukraine ceasefire by March 31, 2026?",
+    "watch": "盯月底前任何实质性谈判节点，以及欧洲能源与防务资产是否先于新闻出现相对收益切换。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-21",
+    "title": "OpenCode – Open source AI coding agent",
+    "watch": "盯它是否快速接入更多仓库、任务队列或审计能力；如果社区开始围绕代理可观测性和权限控制做插件，说明竞争进入企业化阶段。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-21",
+    "title": "Turbo Pascal 3.02A, deconstructed",
+    "watch": "盯这类项目是否开始输出可执行测试、符号信息或反编译对齐结果；一旦可机器消费，商业价值会明显上升。",
+    "source": "RSS:Simon Willison",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-21",
+    "title": "@satyanadella: Great to see our new image model from our Superintelligence team rolling out in Copilot and coming soon to Foundry for enterprise customers.",
+    "watch": "盯 Foundry 上线后的企业定价、可调用范围以及是否与 Copilot 工作流深度绑定；一旦绑定，独立图像模型厂商的获客成本会继续上升。",
+    "source": "X (Twitter)",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-21",
+    "title": "马斯克出手引爆行情：200亿中国光伏订单，究竟买的是什么？",
+    "watch": "盯后续是否出现配套的 **储能、逆变器、变压器、长期 PPA** 订单；如果只有光伏没有配储，这笔订单的真实含金量要打折。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-21",
+    "title": "We rewrote our Rust WASM parser in TypeScript and it got faster",
+    "watch": "盯更多团队是否公开类似迁移案例；如果这种案例从 parser 扩展到 linter、formatter、editor tooling，WASM 在应用层会从“默认选项”退回“特种选项”。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-21",
+    "title": "Presidential Election Winner 2028",
+    "watch": "盯后续成交量是否继续向更远期限扩散，以及候选人一旦正式入场后，赔率调整是否先于传统民调。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-21",
+    "title": "Turbo Pascal 3.02A, deconstructed",
+    "watch": "盯类似方法是否从单个历史版本扩展到企业遗留系统、二进制分析和自动测试生成；一旦落地到商业工具，维护市场会比生成市场更先出现金流。",
+    "source": "RSS:Simon Willison",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-21",
+    "title": "@sama: I have so much gratitude to people who wrote extremely complex software character-by-character...",
+    "watch": "盯头部 AI 公司接下来的人才和收购动作；如果继续加码编译器、运行时、infra 和开发者工具，这条情绪信号就会变成资本配置。",
+    "source": "X (Twitter)",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-21",
+    "title": "中东局势叠加美联储加息预期，美股连跌四周，全球债市遭遇“血洗”，黄金创43年最大单周跌幅",
+    "watch": "盯下周长端美债收益率和黄金是否继续同跌；如果延续，市场交易的就不是事件，而是融资条件收紧。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-21",
+    "title": "Next Prime Minister of Hungary",
+    "watch": "盯该市场后续是否出现更明确的候选人定价；一旦从“有量无价差”转向“有量有方向”，区域资产会更快跟。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-21",
+    "title": "Our commitment to Windows quality",
+    "watch": "盯后续是否出现更具体的更新节奏、回滚机制和遥测披露；如果只有口号没有流程改造，这波“质量叙事”持续不了。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-21",
+    "title": "@satyanadella: Great to see our new image model from our Superintelligence team rolling out in Copilot and coming soon to Foundry for enterprise customers.",
+    "watch": "盯 Foundry 上线后的定价和权限边界；如果默认打包进现有企业合同，独立图像AI公司的获客成本会再上一个台阶。",
+    "source": "X (Twitter)",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-21",
+    "title": "obra/superpowers: An agentic skills framework & software development methodology that works.",
+    "watch": "盯它是否从“高星项目”继续演化成被 IDE、代码托管或企业开发平台原生集成；一旦进入主工作流，agent 开发会开始标准化。",
+    "source": "GitHub Trending",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-22",
+    "title": "美光2027年每股收益看向100美元",
+    "watch": "盯美光下一次指引里对 **2027 年**盈利框架的表述，以及市场是否开始上修 **54 美元**这条共识线。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-22",
+    "title": "市场只给美伊3月底停火8%概率",
+    "watch": "盯 **3 月 31 日**前是否出现正式停火框架；若没有，市场焦点会迅速切到 **4 月 30 日 34%** 这档概率是否继续上修。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-22",
+    "title": "离线设备开始挑战120B模型",
+    "watch": "盯后续是否出现围绕 **120B** 级别离线部署的更多开发工具、基准测试和企业方案，而不只是单台设备展示。",
+    "source": "Hacker News",
+    "status": "verified"
+  },
+  {
+    "date": "2026-03-22",
+    "title": "“自动赚钱”AI 仓库爆红",
+    "watch": "盯这类“赚钱自动化”项目是否继续霸榜，以及 GitHub 和支付/流量平台是否开始更快介入限制。",
+    "source": "GitHub Trending",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-22",
+    "title": "Cursor 的500亿美元估值究竟买的是什么",
+    "watch": "盯市场接下来如何讨论“套壳”与估值的关系：如果争议升温但使用率和付费不掉，应用层定价权会被进一步确认。",
+    "source": "RSS:阮一峰周刊",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-23",
+    "title": "xAI 要把更多电力搬到数据中心附近",
+    "watch": "盯其他头部模型公司是否跟进披露自建电力、就地发电或长期电力采购协议。",
+    "source": "X (Twitter)",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-23",
+    "title": "Cloudflare 将 archive.today 标记为“僵尸网络指挥控制”，1.1.1.2 不再解析",
+    "watch": "盯其他公共 DNS、浏览器安全列表和托管服务商是否同步采取类似动作。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-23",
+    "title": "Claude 代码全链路优化框架冲到 97,900 星",
+    "watch": "盯主流 IDE 和模型厂商是否把记忆、安全、研究优先开发这些能力内建，而不是继续依赖社区拼装。",
+    "source": "GitHub Trending",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-23",
+    "title": "一篇推荐 RSS 阅读器的文章竟然加载 37MB",
+    "watch": "盯浏览器、内容平台和广告拦截工具是否围绕“轻量内容页”出现新一轮产品动作。",
+    "source": "RSS:Daring Fireball",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-23",
+    "title": "下周关键日程：特朗普对伊朗发出 48 小时通牒",
+    "watch": "盯通牒到期前后的油价、避险资产表现，以及中国互联网与硬件财报电话会对需求和成本的表述。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-23",
+    "title": "沃尔玛：ChatGPT 结账转化比官网差 3 倍",
+    "watch": "盯后续零售商是否开始公开“聊天导购 + 网页结账”的分层数据，而不是再讲泛泛的 AI 购物故事。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-23",
+    "title": "美伊停火定价出现期限分化",
+    "watch": "盯 3 月 31 日前是否出现第三方斡旋、公开谈判窗口或制裁口径变化；若没有，4 月 30 日这档定价会成为下一轮重估核心。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-23",
+    "title": "化肥危机可能在 6 至 9 个月后传导到食品价格",
+    "watch": "盯未来几个季度的化肥出口政策、尿素和氨相关报价，以及主要粮食进口国的补贴和储备动作。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-23",
+    "title": "全自动渗透测试代理系统冲上热门",
+    "watch": "盯这类代理是否开始集成浏览器、终端和云资产扫描链路；一旦闭环，防守侧的告警噪音会先于真正的事故上升。",
+    "source": "GitHub Trending",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-23",
+    "title": "亚马逊酝酿重返智能手机",
+    "watch": "盯它是否会走深度补贴、运营商合作，或把 Prime、购物、语音助手做成强绑定；如果只是“再出一台手机”，意义不大，如果是“再造一个 AI 入口”，行业格局就不一样了。",
+    "source": "RSS:Daring Fireball",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-24",
+    "title": "阿波罗限制私募信贷基金赎回",
+    "watch": "盯同类私募信贷产品是否出现更多赎回限制，以及后续公开市场上 BDC、信用 ETF 和高收益债利差是否同步走阔。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-24",
+    "title": "美国与道达尔能源接近 10 亿美元协议终止海上风电项目",
+    "watch": "盯美国后续是否出现更多新能源项目取消、赔偿或重新议价案例；一旦从海上风电扩散到输电、储能或氢能，市场会把它视为制度性风险而非个案。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-24",
+    "title": "Anthropic 一周收集近 8.1 万份 AI 用户反馈",
+    "watch": "盯 Anthropic 后续是否把这批反馈具体转化为新的安全策略、默认工作流或企业功能；一旦出现产品层面的快速兑现，这 8.1 万份反馈就不是研究，而是经营资产。",
+    "source": "X (Twitter)",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-24",
+    "title": "市场给万斯 2028 年共和党提名定价 37%",
+    "watch": "盯同一市场里其他共和党人份额是否继续向万斯集中，以及贸易、移民、国防相关资产是否出现更早的事件驱动定价。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-24",
+    "title": "字节跳动开源“超级代理”框架，已获 39,200 星",
+    "watch": "盯后续是否有云厂商、模型厂商或开发工具链直接兼容这类框架；一旦出现原生集成，agent 基础设施会像数据库和容器一样迅速下沉成默认层。",
+    "source": "GitHub Trending",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-25",
+    "title": "稳定币“生息”或遭限制，Circle 单日暴跌近 20%",
+    "watch": "盯美国法案最终措辞是否明确限制“生息”范围，以及其他稳定币相关股票和链上稳定币增速是否继续脱钩。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-25",
+    "title": "LiteLLM 供应链投毒：一次安装就能外泄整套开发者凭证",
+    "watch": "盯是否出现更多针对 AI 中间件、agent 框架和插件系统的供应链攻击，以及 PyPI/NPM 是否跟进更强的包发布与签名约束。",
+    "source": "X (Twitter)",
+    "status": "verified"
+  },
+  {
+    "date": "2026-03-25",
+    "title": "原油到 3 月底摸 100 美元，市场只给 27% 概率",
+    "watch": "盯油轮通行、LNG 合同履约和现货价是否出现连续异常；如果 100 美元合约概率快速上修，风险就会从事件交易转向宏观交易。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-25",
+    "title": "GPT-5.4 Pro 解出前沿数学开放问题",
+    "watch": "盯后续是否公布更完整的验证、同行复核和问题难度对比；单次突破不等于稳定能力，但连续复现会重估整个科研软件链。",
+    "source": "Hacker News",
+    "status": "verified"
+  },
+  {
+    "date": "2026-03-25",
+    "title": "多智能体交易框架拿下 40,815 星，AI 正在渗入投机工作流",
+    "watch": "盯这类框架是否继续向实盘接口、风控模块和回测基础设施延伸；一旦从 demo 走向 brokerage integration，监管和平台限制会立刻跟上。",
+    "source": "GitHub Trending",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-25",
+    "title": "把“找文件”做到毫秒级，agent 才真的能跑起来",
+    "watch": "盯这种“毫秒级检索”会不会从代码库扩到知识库、客服资料、商品素材库；如果能扩，你的社群话术库、商品卖点库也能被 agent 直接调用。",
+    "source": "X (Twitter)",
+    "status": "verified"
+  },
+  {
+    "date": "2026-03-25",
+    "title": "视频开始像文本一样被搜索了",
+    "watch": "盯两件事：一是视频 embedding 成本能不能压下来，二是检索能不能接进你现有素材库，而不是只能 demo。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-25",
+    "title": "Sora 单独做 App，收了",
+    "watch": "盯 OpenAI 后面是不是把视频能力塞回更大的桌面/创作入口；如果是，未来比的就不是“谁会生成”，而是“谁最顺手”。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-25",
+    "title": "Kleiner Perkins 一把募了 35 亿美元，钱还在往 AI 里灌",
+    "watch": "盯接下来拿到钱的方向是不是更偏 agent、企业应用、机器人；如果后期钱多、退出慢，估值泡沫和价格战会一起出现。",
+    "source": "RSS:TechCrunch",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-25",
+    "title": "市场给“美军今年进入伊朗”定到 62%",
+    "watch": "盯 3 月 31 日这个短期限合约和年内合约的差值会不会继续拉大；如果短期概率往上跳，市场波动通常会先于新闻标题。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-25",
+    "title": "中东占全球 70% 原油，霍尔木兹一旦卡住，先疼的是亚洲",
+    "watch": "盯霍尔木兹有没有实质性受阻，以及亚洲进口国的应急动作会不会升级；一旦从口头风险变成运输风险，市场反应会快很多。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-25",
+    "title": "Claude Code 生态开始长成“插件市场”",
+    "watch": "盯 Anthropic 会不会把这类能力官方化；如果官方开始做目录、分发、权限管理，Claude Code 的护城河会明显变深。",
+    "source": "GitHub Trending",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-25",
+    "title": "Mac 本地跑大模型，瓶颈开始从显存变成调度",
+    "watch": "盯后续有没有更完整的 benchmark、支持更多模型、以及社区是否开始把“SSD 分层调度”当默认能力，而不是实验项目。",
+    "source": "Hacker News",
+    "status": "verified"
+  },
+  {
+    "date": "2026-03-25",
+    "title": "CPU 荒来了，AI 成本不只看 GPU",
+    "watch": "盯云厂商 CPU 实例报价、品牌机/工作站到货周期、还有国产替代方案是不是开始吃到单子。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-25",
+    "title": "泡泡玛特收入狂飙，股价却先给一巴掌",
+    "watch": "盯后面市场会不会继续追问复购、库存、海外增长和新品接力；如果回答不好，爆款品牌会集体被重估。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-25",
+    "title": "Meta 被判赔 3.75 亿美元，平台责任开始有真价码",
+    "watch": "盯其他州和其他平台会不会被跟进起诉；一旦出现连锁判例，抖音、小红书、Meta 系平台都会往更严的风控收。",
+    "source": "RSS:TechCrunch",
+    "status": "verified"
+  },
+  {
+    "date": "2026-03-25",
+    "title": "“过去 30 天研究代理”开始成型",
+    "watch": "盯它会不会接更多工作流入口，比如知识库、飞书、Notion、Slack；能不能从“总结”再往前走到“直接出决策备忘录”。",
+    "source": "GitHub Trending",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-25",
+    "title": "记忆层开始单独长成一门生意",
+    "watch": "盯两件事——它后面有没有被更多 agent 框架直接接入；以及记忆读写是不是开始从“聊天记录”升级到“任务状态、素材库、客户偏好”这种可复用结构。",
+    "source": "GitHub Trending",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-25",
+    "title": "Claude 生态开始往“调度层”卷了",
+    "watch": "盯它有没有跑出稳定的真实场景模板，比如“研究→写脚本→生成素材→分发”；如果大家开始分享可复用 workflow，而不是只晒 demo，这条线就成了。",
+    "source": "GitHub Trending",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-25",
+    "title": "Mistral 拉上 NVIDIA，开源阵营不想只当陪跑",
+    "watch": "盯后续有没有真正落地的新模型、推理栈或者企业方案出来；只喊“战略合作”没用，关键看有没有跑出可部署的成品。",
+    "source": "X (Twitter)",
+    "status": "verified"
+  },
+  {
+    "date": "2026-03-25",
+    "title": "AI 助手开始吃进你的健康全量数据",
+    "watch": "盯两件事——有没有更多可穿戴和医院/检验接口接入；以及隐私权限怎么设计。健康 AI 最大的分水岭不是功能，而是你敢不敢把数据给它。",
+    "source": "X (Twitter)",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-25",
+    "title": "小米赚了 392 亿，价格战里先活下来的人更重要",
+    "watch": "盯后续有没有更明确的利润结构和业务拆分出来；如果高利润不是一次性因素，而是经营质量提升，那消费电子和生态链品牌会继续抢预算、抢流量、抢用户时长。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-25",
+    "title": "A 股在炒电力和算力，港股在抢互联网弹性",
+    "watch": "盯美团这种平台股能不能连续走强；如果只是一天脉冲，意义不大。还要看“电力+算力硬件”的强势能不能延续，这代表市场仍在押 AI 基建链。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-25",
+    "title": "市场押注内塔尼亚胡 2026 年前下台，但不是马上",
+    "watch": "盯两个窗口——6 月 30 日前的定价有没有明显上修，以及跟原油、黄金是否同步波动。如果人事风险升、但油价不跟，那说明市场在把它当政治噪音而不是供应冲击。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-25",
+    "title": "老牌前端库重写后小了 88%，网页速度依然是硬通货",
+    "watch": "盯它正式版落地后的兼容性和迁移成本；如果“更小”不牺牲功能，前端栈会继续往瘦身走。对电商来说，能少一层 JS 就少一层转化损耗。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-25",
+    "title": "邮件营销的“土办法”还没死，甚至更适合 AI 批量化",
+    "watch": "盯它对模板、变量、批量生成和不同邮件客户端兼容的支持。如果后面开始跟 AI 写作、CRM、自动化发送接起来，邮件这条老链路会重新变得很香。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-25",
+    "title": "不用摄像头，WiFi 也开始能看姿态和体征了",
+    "watch": "盯三件事——精度、误报率、隐私争议。只要精度还不稳，它就还是玩具；一旦精度够用，它会直接碰撞智能家居、看护设备和健康硬件。",
+    "source": "GitHub Trending",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-25",
+    "title": "会“跟着你长大”的代理框架，说明大家开始从“做一个 agent”转向“养一个 agent”",
+    "watch": "盯它后面有没有把 memory、tool use、workflow persistence 做成默认能力；如果 stars 从 12,743 继续冲，而且开始出现电商、研究、内容生产的现成模板，这类框架会很快进入实战层。",
+    "source": "GitHub Trending",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-25",
+    "title": "安全扫描老工具继续上榜，说明“先能跑”这套思路开始失灵",
+    "watch": "盯它在 code repositories、containers、Kubernetes、clouds、secrets、SBOM 这些场景的集成是不是继续被更多 agent 项目默认接入；如果主流 agent 仓库开始把这类扫描写进安装文档，行业风向就变了。",
+    "source": "GitHub Trending",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-25",
+    "title": "想做垂直 SaaS，先去一线打工，这比 100 次用户访谈都狠",
+    "watch": "盯这种“先入行、再做软件”的叙事会不会在 HN 和独立开发圈继续变多；如果越来越多垂直 SaaS 创始人开始先做行业从业者，说明市场已经从“通用工具红利”切到“深行业 know-how 红利”。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-25",
+    "title": "苹果想做企业版“全家桶”，盯上的是中小商家的操作系统入口",
+    "watch": "盯它后续有没有继续往支付、客服、营销、门店、身份管理这些商家高频环节延伸；如果只是设备管理，威胁一般；如果开始碰经营链路，那就是在抢 SaaS 的饭碗。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-25",
+    "title": "Mistral 做 Forge，本质是在卖“企业专属模型”这件事",
+    "watch": "盯它后面有没有公布企业落地案例，尤其是知识 grounding、专有数据接入、部署方式这些细节；如果客户愿意把 proprietary knowledge 真往里灌，说明这条线不是讲故事。",
+    "source": "X (Twitter)",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-25",
+    "title": "病理切片直接推空间蛋白组，这不是 AI 看图，是在改医学工作流",
+    "watch": "盯后续有没有论文、医院合作、临床验证，尤其是 time 和 cost 到底能降多少；如果只停留在演示层，意义有限；如果开始进真实病理流程，影响会很大。",
+    "source": "X (Twitter)",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-25",
+    "title": "Neuralink 说在恢复失语者的表达能力，这比“脑机接口很酷”重要得多",
+    "watch": "盯它有没有继续披露具体恢复效果、适用人群、持续时间和临床进展；如果只有口号，没有数据，热度再高也只是叙事。",
+    "source": "X (Twitter)",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-25",
+    "title": "匈牙利下一次议会选举，市场给 TISZA 66%，欧洲政治换挡还没完",
+    "watch": "盯 Yes 66% 是继续抬升还是回落，以及交易量是否明显放大；如果价格和交易量一起上，说明市场把它当成更大的欧洲政治再定价前哨。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-25",
+    "title": "委内瑞拉反对派领袖到 2026 年底接班，市场只给 13%",
+    "watch": "盯 13% 有没有因为外交动作、制裁变化、国内抗议升级而出现连续上修；如果价格不动、量在增，说明更多人在拿真金白银否定“社媒叙事”。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-25",
+    "title": "Arm 直接喊 AGI CPU，说明芯片叙事开始从“拼 GPU”转向“全栈重估”",
+    "watch": "盯它后续是不是拿出明确的开发者方案、推理场景和生态合作；如果只是喊概念，热一阵就过去；如果开始有云厂商、设备厂商跟进，AI infra 的估值逻辑会继续扩散。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-26",
+    "title": "Claude 代码流量，已经先涌向“没人维护的小仓库”",
+    "watch": "盯两件事：一是这类 **<2 stars** 长尾仓库会不会开始暴露更多安全和维护问题；二是 Claude/Cursor 这类工具后面会不会把“生成”往“托管、更新、回滚”延伸，不然 90% 的长尾代码最后会变成债。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-26",
+    "title": "老用户反而不爱“全自动代理”",
+    "watch": "接下来盯 Anthropic 后续有没有把“长期用户”进一步拆成任务类型，比如写代码、写文案、做研究分别有多大差异。如果高价值任务都在往“人盯流程、AI跑局部”收敛，那 agent 产品会从“全自动”改成“半自动工作台”。",
+    "source": "X (Twitter)",
+    "status": "verified"
+  },
+  {
+    "date": "2026-03-26",
+    "title": "Cursor 开始讲自己怎么训练了",
+    "watch": "盯后续有没有更多团队跟进公开训练细节，尤其是代码类产品。如果只有少数公司敢讲，说明这个赛道会从“比功能”转向“比飞轮”。你选主力工具时，应该优先飞轮清楚的。",
+    "source": "X (Twitter)",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-26",
+    "title": "重仓金铜的基金，一个月亏了 13 亿美元",
+    "watch": "盯金价和油价是不是继续出现“消息刺激上涨、随后快速回吐”的节奏。如果这种来回洗还在持续，说明市场更像交易拥挤和流动性，不是在交易长期趋势。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-26",
+    "title": "油价的分歧，已经被压缩成“40 或 150”",
+    "watch": "盯原油是否继续往“尾部情景”交易，而不是围绕均值震荡。尤其要看霍尔木兹、伊朗相关事件有没有继续把预期往极端推。只要市场还在押极端，不适合把风险预算打满。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-26",
+    "title": "Claude Code 开始长“潜意识”了",
+    "watch": "盯这类“subconscious / memory / profile”项目会不会从代码助手扩展到通用 agent。如果开始接 CRM、知识库、文件系统，那说明“会记人”的 AI 要从玩具变成生产工具了。",
+    "source": "GitHub Trending",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-26",
+    "title": "“自动网上赚钱”项目，已经拿到 2.5 万星",
+    "watch": "盯平台接下来对批量生成内容、低质带货、账号矩阵的治理动作。如果规则开始收紧，你更该把 AI 用在选题、客服、素材复用、用户分层，不要用在粗暴灌量。",
+    "source": "GitHub Trending",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-26",
+    "title": "欧盟还想扫描你的私信和照片",
+    "watch": "盯欧盟这件事是否推进到更具体的执行口径：扫描范围是仅限已知违法内容，还是扩大到更泛的“风险识别”；以及端到端加密会不会被实际削弱。只要落地，全球平台都会跟着改。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-26",
+    "title": "钠离子电池把“便宜但不行”的印象打碎了",
+    "watch": "盯两件事：一是量产，不是实验室；二是循环寿命和低温表现有没有后续公开数据。只要这两个补上，钠离子的故事就会从“新闻”变成“产业变量”。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-27",
+    "title": "Cursor 把云端 agent 搬进你自己机房了",
+    "watch": "接下来盯两件事：一是别家会不会跟进“自带 agent、私有部署”这条线；二是 Cursor 后面会不会继续放出权限管理、审计日志、MCP/工具白名单这类企业必需品。",
+    "source": "X (Twitter)",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-27",
+    "title": "SQLite 直接吃 S3，冷启动 JOIN 也能压到 250ms 内",
+    "watch": "重点看两个指标：一是 JOIN 在真实多表场景是不是还能稳住 “sub-250ms”；二是写入、并发和权限控制能不能补上，不然就还是个 demo 神器。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-27",
+    "title": "用 AI 一天重写老系统，年省 50 万美元",
+    "watch": "别只盯“重写成功”，要盯三件更硬的事：一是有没有稳定回归测试；二是重写后维护成本是不是真降；三是这类案例会不会从内部工具扩到订单、定价、客服规则引擎这些业务核心。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-27",
+    "title": "金融研究 agent 已经卷到 18965 星了",
+    "watch": "盯它后面有没有接入更稳定的数据源、回测、引用溯源和可审计输出；没有这些，星再多也只是会说人话的研究玩具。",
+    "source": "GitHub Trending",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-27",
+    "title": "开源版 Salesforce 拿到 41249 星，说明 CRM 不再只是大公司的重软件",
+    "watch": "别只看星数，重点盯它能不能接常用营销栈、消息系统、自动化流程，以及中文社区和部署难度。如果只是“像 Salesforce”，但落不了地，对你没用。",
+    "source": "GitHub Trending",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-27",
+    "title": "市场不信 3 月底停火，但开始押 4 月能谈成",
+    "watch": "接下来就盯两个时间点：March 31 和 April 30。若 4 月合约继续往上走，而油价不再跟，那说明市场开始把冲突当“谈判噪音”；反过来，如果 4 月概率掉、油再冲，风险资产会更难受。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-27",
+    "title": "2028 民主党提名盘干到 9.186 亿美元，预测市场已经不是小众玩具了",
+    "watch": "后面盯两类变化：一是更多非金融事件会不会继续被高流动性合约承接；二是媒体和创作者会不会越来越用这些价格当标题和立论依据。那时“信息源”和“赌场”就更难分了。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-27",
+    "title": "这个 OCR 模型专啃复杂表格、表单和手写字",
+    "watch": "盯它三点：中文效果、版式还原、以及和你现有表格/知识库流程怎么接。OCR 工具最怕 demo 好看，落地一塌糊涂。",
+    "source": "GitHub Trending",
+    "status": "open"
+  },
+  {
+    "date": "2026-03-27",
+    "title": "Netflix 又涨价了，标准无广告涨到 19.99 美元",
+    "watch": "接下来盯两个信号：一是用户流失有没有明显放大；二是同行会不会跟。若涨价后留存没坏，说明 2026 年消费者对“高频强需求订阅”还没到极限。",
+    "source": "RSS:TechCrunch",
+    "status": "open"
+  }
+]

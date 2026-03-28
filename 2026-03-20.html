@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026-03-20 每日信息编辑部 - 阿宁日报</title>
+    <style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+    line-height: 1.7;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+/* Header */
+header {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+header h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #f8fafc;
+}
+header time {
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+.tagline {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-top: 0.3rem;
+}
+
+/* 今日主线 */
+.main-theme {
+    background: rgba(59, 130, 246, 0.08);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+.main-theme h2 {
+    font-size: 1.1rem;
+    color: #60a5fa;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+.theme-content p {
+    color: #cbd5e1;
+    margin-bottom: 0.8rem;
+    line-height: 1.9;
+    text-align: justify;
+}
+.theme-content strong {
+    color: #93c5fd;
+    font-weight: 600;
+}
+hr {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    margin: 1rem 0;
+}
+
+/* 条目 */
+.items-section h2 {
+    font-size: 1.2rem;
+    color: #f8fafc;
+    margin-bottom: 1.5rem;
+}
+.items-section .count {
+    font-size: 0.85rem;
+    color: #64748b;
+    font-weight: 400;
+}
+
+.brief-item {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.2rem;
+    transition: border-color 0.2s;
+}
+.brief-item:hover {
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+.item-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+.item-number {
+    font-size: 0.75rem;
+    color: #64748b;
+    font-weight: 600;
+    font-family: monospace;
+}
+.source-badge {
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.06);
+    color: #94a3b8;
+}
+
+.item-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+.item-title a {
+    color: #f1f5f9;
+    text-decoration: none;
+}
+.item-title a:hover {
+    color: #60a5fa;
+}
+.item-title a:visited {
+    color: #94a3b8;
+}
+
+.item-analysis {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.analysis-row {
+    display: flex;
+    gap: 0.8rem;
+    align-items: baseline;
+}
+.analysis-row .label {
+    font-size: 0.75rem;
+    color: #64748b;
+    min-width: 3.5rem;
+    font-weight: 500;
+    flex-shrink: 0;
+}
+.analysis-row p {
+    font-size: 0.9rem;
+    color: #cbd5e1;
+}
+.analysis-row.watch .label {
+    color: #d97706;
+}
+.analysis-row.watch p {
+    color: #e5a23c;
+}
+
+/* 观察点回顾 */
+.watchpoints {
+    background: rgba(16, 185, 129, 0.06);
+    border: 1px solid rgba(16, 185, 129, 0.15);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+.watchpoints h2 {
+    font-size: 1.1rem;
+    color: #10b981;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+.watchpoints .count {
+    font-size: 0.85rem;
+    color: #64748b;
+    font-weight: 400;
+}
+.wp-item {
+    padding: 1rem;
+    margin-bottom: 0.8rem;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.03);
+    border-left: 3px solid #64748b;
+}
+.wp-item.wp-verified { border-left-color: #10b981; }
+.wp-item.wp-invalidated { border-left-color: #ef4444; }
+.wp-item.wp-progress { border-left-color: #f59e0b; }
+.wp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+.wp-status { font-size: 0.85rem; }
+.wp-date { font-size: 0.75rem; color: #64748b; }
+.wp-watch {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin-bottom: 0.4rem;
+    font-style: italic;
+}
+.wp-review {
+    font-size: 0.9rem;
+    color: #e2e8f0;
+}
+
+/* 阿宁点评 */
+.commentary {
+    background: rgba(139, 92, 246, 0.06);
+    border: 1px solid rgba(139, 92, 246, 0.15);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 2.5rem;
+}
+.commentary h2 {
+    font-size: 1.1rem;
+    color: #a78bfa;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+.commentary-content p {
+    color: #cbd5e1;
+    margin-bottom: 1.2rem;
+    line-height: 1.9;
+    text-align: justify;
+}
+.commentary-content h3,
+.commentary-content h4 {
+    color: #c4b5fd;
+    margin: 1.5rem 0 0.6rem;
+    font-size: 0.95rem;
+}
+.commentary-content strong {
+    color: #e2e8f0;
+    font-weight: 600;
+}
+
+/* 降级 */
+.degraded {
+    margin-top: 1.5rem;
+}
+.degraded-notice {
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    color: #fbbf24;
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+}
+.degraded-content h3 {
+    color: #f8fafc;
+    margin: 1.5rem 0 0.8rem;
+    font-size: 1rem;
+}
+.degraded-content h4 {
+    color: #cbd5e1;
+    margin: 1rem 0 0.5rem;
+    font-size: 0.95rem;
+}
+.degraded-content li {
+    margin: 0.3rem 0 0.3rem 1.5rem;
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+.degraded-content a {
+    color: #60a5fa;
+    text-decoration: none;
+}
+.degraded-content a:hover {
+    text-decoration: underline;
+}
+
+/* Empty */
+.empty {
+    text-align: center;
+    padding: 4rem 0;
+    color: #64748b;
+    font-size: 1.1rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    font-size: 0.8rem;
+    color: #475569;
+}
+footer a { color: #64748b; text-decoration: none; }
+footer a:hover { color: #94a3b8; }
+
+/* 响应式 */
+@media (max-width: 640px) {
+    .container { padding: 1rem; }
+    header h1 { font-size: 1.4rem; }
+    .header-top { flex-direction: column; gap: 0.3rem; }
+    .brief-item { padding: 1.2rem; }
+    .item-title { font-size: 0.95rem; }
+    .analysis-row { flex-direction: column; gap: 0.2rem; }
+    .analysis-row .label { min-width: auto; }
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-top">
+                <h1>阿宁日报</h1>
+                <time>2026年3月20日 周五</time>
+            </div>
+            <p class="tagline">每日信息编辑部</p>
+        </header>
+
+        
+            <section class="main-theme">
+                <h2>今日主线</h2>
+                <div class="theme-content"><p>中东火药桶正在同时测试能源市场、政治定价和流动性结构的极限。Polymarket 给油价破百定价 67%，但 SPR 见底让美国失去对冲工具——贝森特的绝望不是修辞，是政策选项的物理消失。同一时刻，内塔尼亚胡 4 月下台概率仅 6%，说明市场押注"可控升级"，但 48% 的年内概率又承认消耗战不可持续。这种"短期稳、中期崩"的期限结构，与 A 股散户 43% 的撤退幅度形成镜像：专业资金和散户同步离场，流动性真空正在形成。</p>
+<p>AI 基础设施层完成最后一块拼图。OpenAI 收购 Astral 不是买工具，是买断 Python 生态的默认入口——从 uv 到 ruff 到 ty，数百万开发者的依赖路径被收编。GitHub Trending 上 Superpowers 方法论 10 万星标验证了新范式：人机协作的工作流可规模化，传统软件工程 KPI 正在失效。这是"模型→应用→基础设施"垂直整合的闭环，云厂商沦为裸金属供应商的风险从警告变成时间表。</p>
+<hr></div>
+            </section>
+            
+
+        
+
+        <section class="items-section">
+            <h2>今日精选 <span class="count">7 条</span></h2>
+            
+            <article class="brief-item">
+                <div class="item-header">
+                    <span class="item-number">01</span>
+                    <span class="source-badge">Hacker News</span>
+                </div>
+                <h3 class="item-title"><a href="https://astral.sh/blog/openai" target="_blank">Astral to Join OpenAI</a></h3>
+                <div class="item-analysis">
+                    <div class="analysis-row">
+                        <span class="label">结论</span>
+                        <p></p>
+                    </div>
+                    <div class="analysis-row">
+                        <span class="label">信号</span>
+                        <p></p>
+                    </div>
+                    <div class="analysis-row">
+                        <span class="label">重要性</span>
+                        <p></p>
+                    </div>
+                    <div class="analysis-row watch">
+                        <span class="label">观察点</span>
+                        <p></p>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="brief-item">
+                <div class="item-header">
+                    <span class="item-number">02</span>
+                    <span class="source-badge">Hacker News</span>
+                </div>
+                <h3 class="item-title"><a href="https://arstechnica.com/gadgets/2026/03/google-details-new-24-hour-process-to-sideload-unverified-android-apps/" target="_blank">Google details new 24-hour process to sideload unverified Android apps</a></h3>
+                <div class="item-analysis">
+                    <div class="analysis-row">
+                        <span class="label">结论</span>
+                        <p></p>
+                    </div>
+                    <div class="analysis-row">
+                        <span class="label">信号</span>
+                        <p></p>
+                    </div>
+                    <div class="analysis-row">
+                        <span class="label">重要性</span>
+                        <p></p>
+                    </div>
+                    <div class="analysis-row watch">
+                        <span class="label">观察点</span>
+                        <p></p>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="brief-item">
+                <div class="item-header">
+                    <span class="item-number">03</span>
+                    <span class="source-badge">Polymarket</span>
+                </div>
+                <h3 class="item-title"><a href="https://polymarket.com/event/will-crude-oil-cl-hit-by-end-of-march" target="_blank">Will Crude Oil (CL) hit__ by end of March?</a></h3>
+                <div class="item-analysis">
+                    <div class="analysis-row">
+                        <span class="label">结论</span>
+                        <p></p>
+                    </div>
+                    <div class="analysis-row">
+                        <span class="label">信号</span>
+                        <p></p>
+                    </div>
+                    <div class="analysis-row">
+                        <span class="label">重要性</span>
+                        <p></p>
+                    </div>
+                    <div class="analysis-row watch">
+                        <span class="label">观察点</span>
+                        <p></p>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="brief-item">
+                <div class="item-header">
+                    <span class="item-number">04</span>
+                    <span class="source-badge">Polymarket</span>
+                </div>
+                <h3 class="item-title"><a href="https://polymarket.com/event/netanyahu-out-before-2027" target="_blank">Netanyahu out by...?</a></h3>
+                <div class="item-analysis">
+                    <div class="analysis-row">
+                        <span class="label">结论</span>
+                        <p></p>
+                    </div>
+                    <div class="analysis-row">
+                        <span class="label">信号</span>
+                        <p></p>
+                    </div>
+                    <div class="analysis-row">
+                        <span class="label">重要性</span>
+                        <p></p>
+                    </div>
+                    <div class="analysis-row watch">
+                        <span class="label">观察点</span>
+                        <p></p>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="brief-item">
+                <div class="item-header">
+                    <span class="item-number">05</span>
+                    <span class="source-badge">华尔街见闻</span>
+                </div>
+                <h3 class="item-title"><a href="https://wallstreetcn.com/articles/3767998" target="_blank">绝望的贝森特！美国能动用的战略油储已所剩无几！</a></h3>
+                <div class="item-analysis">
+                    <div class="analysis-row">
+                        <span class="label">结论</span>
+                        <p></p>
+                    </div>
+                    <div class="analysis-row">
+                        <span class="label">信号</span>
+                        <p></p>
+                    </div>
+                    <div class="analysis-row">
+                        <span class="label">重要性</span>
+                        <p></p>
+                    </div>
+                    <div class="analysis-row watch">
+                        <span class="label">观察点</span>
+                        <p></p>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="brief-item">
+                <div class="item-header">
+                    <span class="item-number">06</span>
+                    <span class="source-badge">华尔街见闻</span>
+                </div>
+                <h3 class="item-title"><a href="https://wallstreetcn.com/articles/3767996" target="_blank">抛售风暴降临！多头基金净卖出创新高，散户流入自冲突以来暴跌43%</a></h3>
+                <div class="item-analysis">
+                    <div class="analysis-row">
+                        <span class="label">结论</span>
+                        <p></p>
+                    </div>
+                    <div class="analysis-row">
+                        <span class="label">信号</span>
+                        <p></p>
+                    </div>
+                    <div class="analysis-row">
+                        <span class="label">重要性</span>
+                        <p></p>
+                    </div>
+                    <div class="analysis-row watch">
+                        <span class="label">观察点</span>
+                        <p></p>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="brief-item">
+                <div class="item-header">
+                    <span class="item-number">07</span>
+                    <span class="source-badge">GitHub Trending</span>
+                </div>
+                <h3 class="item-title"><a href="https://github.com/obra/superpowers" target="_blank">obra/superpowers: An agentic skills framework & software development methodology that works</a></h3>
+                <div class="item-analysis">
+                    <div class="analysis-row">
+                        <span class="label">结论</span>
+                        <p></p>
+                    </div>
+                    <div class="analysis-row">
+                        <span class="label">信号</span>
+                        <p></p>
+                    </div>
+                    <div class="analysis-row">
+                        <span class="label">重要性</span>
+                        <p></p>
+                    </div>
+                    <div class="analysis-row watch">
+                        <span class="label">观察点</span>
+                        <p></p>
+                    </div>
+                </div>
+            </article>
+            
+        </section>
+
+        
+        
+            <section class="commentary">
+                <h2>阿宁点评</h2>
+                <div class="commentary-content"><p><strong>今天真正值得看的：</strong></p>
+<p>[33] Astral 收购和 [65] Superpowers 方法论必须放在一起读。前者是基础设施层的"硬锁死"——OpenAI 控制 Python 工具链，等于控制开发者的默认依赖路径；后者是工作流层的"软革命"——10 万星标证明"AI 原生开发方法论"已被社区验证。两条信息的交集：当 OpenAI 的模型 + Astral 的工具链 + Superpowers 的方法论形成闭环，"不会这套的程序员"将被重新定义。这不是渐进替代，是门槛的突然抬高。盯 6 个月内 uv CLI 是否默认嵌入 OpenAI API 配置，这比任何模型发布都更能说明权力转移的完成度。</p>
+<p>[55] 油价的 Polymarket 定价结构被严重误读。67% 破百概率不是"看涨"，是"可控战争"的共识——$110 和 $120 合约的陡峭价差（26% vs 14%）说明交易员押注卡塔尔 LNG 中断，而非霍尔木兹海峡关闭。但 SPR 见底（[4]）让"可控"假设变得危险：美国失去最后缓冲，沙特配合度成为唯一变量。若 3 月 31 日期权到期前 $110/$120 价差收敛，说明尾部风险被重新定价，波动率将爆炸。</p>
+<p><strong>噪音：</strong></p>
+<p>[20] Google 的 24 小时侧载等待期被过度解读为"欧盟 DMA 的胜利"。事实是防御性合规的教科书案例——用时间摩擦替代价格墙，沉没成本锁定用户，Epic 的转化率若低于 5% 则策略奏效。但这条信息的真正价值在 6 个月后：欧盟委员会是否认定为"不合理障碍"。现在讨论是浪费时间，数据不存在。</p>
+<p>[14] 的"抛售风暴"标题是典型噪音包装。多头基金净卖出创新高 + 散户流入暴跌 43% 确实重要，但"风暴"一词预设了方向性判断，而流动性真空的方向是不确定的——可能是加速下跌，也可能是逼空反弹。去掉形容词，只看数据：连续两周散户净流入为负才是临界点，现在只过了一周。</p>
+<p><strong>接下来一周盯什么：</strong></p>
+<li><strong>3 月 31 日</strong>：Polymarket 油价合约到期，盯 $110/$120 价差变化。若收敛至 10 个百分点以内，海峡关闭风险被定价，能源股波动率需重新校准。</li>
+<li><strong>4 月 15 日</strong>：以色列独立日，内塔尼亚胡政治概率的"传统安全事件窗口"。若 4 月 30 日前下台概率反而跳升（当前 6%），说明战时团结效应失效，中东局势进入新阶段。</li>
+<li><strong>每周四</strong>：JPMorgan/Nomura 美股散户净流入数据。连续两周为负即触发流动性危机预警，同时盯 VIX 期货曲线是否出现近月升水——这是波动率反馈循环启动的信号。</li></div>
+            </section>
+            
+
+        <footer>
+            <p>Generated by Daily News V2 | <a href="history.html">历史归档</a></p>
+        </footer>
+    </div>
+</body>
+</html>

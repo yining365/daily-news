@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026-02-05 全网新闻聚合 - News Aggregator</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --glow-start: #0A1929;
+            --glow-end: #1A3A52;
+            --text-primary: #E3F2FD;
+            --accent-color: #42A5F5;
+            --secondary-color: #B0BEC5;
+            --bg-gradient: linear-gradient(135deg, #0A1929 0%, #1A3A52 100%);
+            --title-color: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- 顶部导航栏 -->
+        <header class="top-bar">
+            <div class="top-bar-left">
+                <span class="brand-icon">📰</span>
+                <div class="brand-text">
+                    <h1>News Aggregator</h1>
+                    <span class="brand-date">2026年2月5日 周四</span>
+                </div>
+            </div>
+            <div class="top-bar-right">
+                <div class="history-trigger" id="historyTrigger">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    <div class="history-dropdown" id="historyDropdown">
+                        <div class="history-dropdown-header">历史记录</div>
+                        <a href="2026-02-05.html" class="history-item">2月5日 周四</a><a href="2026-02-04.html" class="history-item">2月4日 周三</a><a href="2026-01-22.html" class="history-item">1月22日 周四</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        
+            <div class="daily-summary">
+                <div class="summary-content">
+                    <span class="summary-icon">💡</span>
+                    <p>今日共追踪到 <strong>40</strong> 条前沿资讯，覆盖 AI_DAILY, CHINA, X_SOCIAL, GLOBAL 等领域。</p>
+                </div>
+            </div>
+            
+
+        <!-- 分类快速导航 -->
+        <nav class="category-nav">
+            <a href="#ai_daily" class="nav-pill">🤖 AI 日报 <span>10</span></a><a href="#china" class="nav-pill">🇨🇳 科技 <span>10</span></a><a href="#x_social" class="nav-pill">🐦 X 动态 <span>10</span></a><a href="#global" class="nav-pill">🌍 全网热点 <span>10</span></a>
+        </nav>
+
+        <main class="main-content">
+            
+            <section class="scenario-section" id="ai_daily">
+                <div class="section-header">
+                    <h2 class="section-title">🤖 AI 日报</h2>
+                    <span class="section-count">10 条</span>
+                </div>
+                <div class="cards-grid">
+            <a href="https://36kr.com/p/3669183047590535" target="_blank" class="card card-top">
+                <span class="rank-badge">TOP 1</span>
+                <h3 class="card-title">刚刚，全球首个完全开放科学文献综述AI，登上Nature</h3>
+                <p class="card-summary">全球首个完全开放的科学文献综述AI登上Nature，具有重要的学术价值与实际应用潜力。</p>
+                <div class="card-meta"></div>
+            </a>
+            
+            <a href="https://www.aibase.com/zh/news/25260" target="_blank" class="card card-top">
+                <span class="rank-badge">TOP 2</span>
+                <h3 class="card-title">AI+制造</h3>
+                <p class="card-summary">AI与制造业的深度融合，推动生产效率与智能化水平的大幅提升。</p>
+                <div class="card-meta"></div>
+            </a>
+            
+            <a href="https://github.com/masoncl/review-prompts" target="_blank" class="card card-top">
+                <span class="rank-badge">TOP 3</span>
+                <h3 class="card-title">🛠️ AI审查提示</h3>
+                <p class="card-summary">AI审查提示工具的发布，为内容创作提供更智能的校对与修改方案。</p>
+                <div class="card-meta"></div>
+            </a>
+            
+            <a href="https://36kr.com/p/3669663867233158" target="_blank" class="card">
+                
+                <h3 class="card-title">不跳舞的人形机器人，正尝试真正干活</h3>
+                <p class="card-summary">具身智能机器人正在突破传统形态限制，尝试进入实际工作场景。</p>
+                <div class="card-meta"></div>
+            </a>
+            
+            <a href="https://www.jiqizhixin.com/articles/2026-02-04-3" target="_blank" class="card">
+                
+                <h3 class="card-title">智能体操作系统</h3>
+                <p class="card-summary">新发布的智能体操作系统，推动AI智能体在复杂环境中的独立操作与协调。</p>
+                <div class="card-meta"></div>
+            </a>
+            
+            <a href="https://huggingface.co/collections/Qwen/qwen3-coder-next" target="_blank" class="card">
+                
+                <h3 class="card-title">Qwen3-Coder-Next</h3>
+                <p class="card-summary">Qwen3-Coder-Next的推出为编程开发领域带来新的AI解决方案。</p>
+                <div class="card-meta"></div>
+            </a>
+            
+            <a href="https://36kr.com/p/3669651292971656" target="_blank" class="card">
+                
+                <h3 class="card-title">3年，估值翻70倍：具身智能资本局</h3>
+                <p class="card-summary">具身智能领域资本投入显著增长，带动相关企业估值大幅上涨。</p>
+                <div class="card-meta"></div>
+            </a>
+            
+            <a href="https://x.com/DeepLearningAI/status/2018836901944266983" target="_blank" class="card">
+                
+                <h3 class="card-title">GLM-Image</h3>
+                <p class="card-summary">GLM-Image为图像生成AI模型带来了新的突破，提升了生成效果与应用场景。</p>
+                <div class="card-meta"></div>
+            </a>
+            
+            <a href="https://github.com/pedramamini/Maestro" target="_blank" class="card">
+                
+                <h3 class="card-title">🛠️ 代理编排中心</h3>
+                <p class="card-summary">代理编排中心的推出有助于AI代理在多任务中协调操作，提高效率。</p>
+                <div class="card-meta"></div>
+            </a>
+            
+            <a href="https://36kr.com/p/3668924203705222" target="_blank" class="card">
+                
+                <h3 class="card-title">Nature重磅：图灵预言的AGI早已实现，人类却不敢承认</h3>
+                <p class="card-summary">AGI的实现早已超出预期，然而对于这一技术突破的认知与承认仍然滞后。</p>
+                <div class="card-meta"></div>
+            </a>
+            </div>
+            </section>
+            
+            <section class="scenario-section" id="china">
+                <div class="section-header">
+                    <h2 class="section-title">🇨🇳 科技</h2>
+                    <span class="section-count">10 条</span>
+                </div>
+                <div class="cards-grid">
+            <a href="https://view.inews.qq.com/a/20260204A07FGQ00" target="_blank" class="card card-top">
+                <span class="rank-badge">TOP 1</span>
+                <h3 class="card-title">习近平同美国总统特朗普通电话</h3>
+                
+                <div class="card-meta"></div>
+            </a>
+            
+            <a href="https://view.inews.qq.com/a/20260204A069UC00" target="_blank" class="card card-top">
+                <span class="rank-badge">TOP 2</span>
+                <h3 class="card-title">周新民、罗琦、刘仓理，全国人大代表资格终止</h3>
+                
+                <div class="card-meta"></div>
+            </a>
+            
+            <a href="https://view.inews.qq.com/a/20260204A06C3U00" target="_blank" class="card card-top">
+                <span class="rank-badge">TOP 3</span>
+                <h3 class="card-title">人民日报：公考围岗，必须打击</h3>
+                
+                <div class="card-meta"></div>
+            </a>
+            
+            <a href="https://view.inews.qq.com/a/20260204A05MRV00" target="_blank" class="card">
+                
+                <h3 class="card-title">美伊谈判，一波三折</h3>
+                
+                <div class="card-meta"></div>
+            </a>
+            
+            <a href="https://view.inews.qq.com/a/20260204A06RL800" target="_blank" class="card">
+                
+                <h3 class="card-title">2026年学位警报再响！多地紧急部署中小学扩增渡峰</h3>
+                
+                <div class="card-meta"></div>
+            </a>
+            
+            <a href="https://view.inews.qq.com/a/20260204A05I7600" target="_blank" class="card">
+                
+                <h3 class="card-title">恒大物业竞购升温：两个买家浮出水面</h3>
+                
+                <div class="card-meta"></div>
+            </a>
+            
+            <a href="https://view.inews.qq.com/a/20260204A06BI700" target="_blank" class="card">
+                
+                <h3 class="card-title">数字人民币的关键一步</h3>
+                
+                <div class="card-meta"></div>
+            </a>
+            
+            <a href="https://view.inews.qq.com/a/20260204V06PV200" target="_blank" class="card">
+                
+                <h3 class="card-title">比尔·盖茨称后悔认识爱泼斯坦，首次回应涉性病指控：从未上岛</h3>
+                
+                <div class="card-meta"></div>
+            </a>
+            
+            <a href="https://view.inews.qq.com/a/20260205A01FZJ00" target="_blank" class="card">
+                
+                <h3 class="card-title">AMD大跌17%带崩芯片股，黄金5000美元得而复失，原油拉升3%</h3>
+                
+                <div class="card-meta"></div>
+            </a>
+            
+            <a href="https://view.inews.qq.com/a/20260204A063F500" target="_blank" class="card">
+                
+                <h3 class="card-title">楼市交付难基本解决，房地产最重的担子已卸下</h3>
+                
+                <div class="card-meta"></div>
+            </a>
+            </div>
+            </section>
+            
+            <section class="scenario-section" id="x_social">
+                <div class="section-header">
+                    <h2 class="section-title">🐦 X 动态</h2>
+                    <span class="section-count">10 条</span>
+                </div>
+                <div class="cards-grid">
+            <a href="https://twitter.com/Khazix0918/status/2018892087744397692" target="_blank" class="card card-top">
+                <span class="rank-badge">TOP 1</span>
+                <h3 class="card-title">OpenClaw一战封神，给大家分享6种官方不会告诉你的神级技巧。</h3>
+                
+                <div class="card-meta"><span class="card-heat">🔥 414 likes</span></div>
+            </a>
+            
+            <a href="https://twitter.com/FuSheng_0306/status/2019092335120744769" target="_blank" class="card card-top">
+                <span class="rank-badge">TOP 2</span>
+                <h3 class="card-title">AI反向顾人类干活的网站出现了，帮AI吃个意面都能拿50美刀</h3>
+                
+                <div class="card-meta"><span class="card-heat">🔥 292 likes</span></div>
+            </a>
+            
+            <a href="https://twitter.com/Khazix0918/status/2018187496899883369" target="_blank" class="card card-top">
+                <span class="rank-badge">TOP 3</span>
+                <h3 class="card-title">有手就行，5分钟教会你在QQ上玩转全网爆火的Clawdbot</h3>
+                
+                <div class="card-meta"><span class="card-heat">🔥 270 likes</span></div>
+            </a>
+            
+            <a href="https://twitter.com/Khazix0918/status/2017866283640099254" target="_blank" class="card">
+                
+                <h3 class="card-title">最近的Vibe Coding的啊哈时刻，来自于作为纯粹的小白，终于用OpenCode创建了自己的第一个飞书机器人</h3>
+                
+                <div class="card-meta"><span class="card-heat">🔥 129 likes</span></div>
+            </a>
+            
+            <a href="https://twitter.com/op7418/status/2019006506885435674" target="_blank" class="card">
+                
+                <h3 class="card-title">Clawdbot 新版官方支持了飞书连接</h3>
+                
+                <div class="card-meta"><span class="card-heat">🔥 114 likes</span></div>
+            </a>
+            
+            <a href="https://twitter.com/lxfater/status/2018962780079140942" target="_blank" class="card">
+                
+                <h3 class="card-title">第一批被AI控制的人类牛马已经出现</h3>
+                
+                <div class="card-meta"><span class="card-heat">🔥 73 likes</span></div>
+            </a>
+            
+            <a href="https://twitter.com/lxfater/status/2019005018326896959" target="_blank" class="card">
+                
+                <h3 class="card-title">68w人打开并阅读这篇文章了，可惜没有加CTA</h3>
+                
+                <div class="card-meta"><span class="card-heat">🔥 45 likes</span></div>
+            </a>
+            
+            <a href="https://twitter.com/oran_ge/status/2019201553475989575" target="_blank" class="card">
+                
+                <h3 class="card-title">Claude Cowork 发布，天工推出对标 Skywork 桌面版</h3>
+                
+                <div class="card-meta"><span class="card-heat">🔥 45 likes</span></div>
+            </a>
+            
+            <a href="https://twitter.com/Cydiar404/status/2017434367329767430" target="_blank" class="card">
+                
+                <h3 class="card-title">感谢 Ocean Base 邀请，CelHive 底层驱动的新产品发布</h3>
+                
+                <div class="card-meta"><span class="card-heat">🔥 32 likes</span></div>
+            </a>
+            
+            <a href="https://twitter.com/FuSheng_0306/status/2019078764718932344" target="_blank" class="card">
+                
+                <h3 class="card-title">人形机器人撞倒老人的事故，安全性这道坎两三年内很难彻底跨过去</h3>
+                
+                <div class="card-meta"><span class="card-heat">🔥 31 likes</span></div>
+            </a>
+            </div>
+            </section>
+            
+            <section class="scenario-section" id="global">
+                <div class="section-header">
+                    <h2 class="section-title">🌍 全网热点</h2>
+                    <span class="section-count">10 条</span>
+                </div>
+                <div class="cards-grid">
+            <a href="https://s.weibo.com/weibo?q=微博之夜出图&Refer=top" target="_blank" class="card card-top">
+                <span class="rank-badge">TOP 1</span>
+                <h3 class="card-title">微博之夜出图</h3>
+                
+                <div class="card-meta"><span class="card-heat">🔥 1120162</span></div>
+            </a>
+            
+            <a href="https://s.weibo.com/weibo?q=立陶宛承认对中国犯了巨大错误&Refer=top" target="_blank" class="card card-top">
+                <span class="rank-badge">TOP 2</span>
+                <h3 class="card-title">立陶宛承认对中国犯了巨大错误</h3>
+                
+                <div class="card-meta"><span class="card-heat">🔥 807955</span></div>
+            </a>
+            
+            <a href="https://s.weibo.com/weibo?q=冰雪春天&Refer=top" target="_blank" class="card card-top">
+                <span class="rank-badge">TOP 3</span>
+                <h3 class="card-title">冰雪春天</h3>
+                
+                <div class="card-meta"><span class="card-heat">🔥 652579</span></div>
+            </a>
+            
+            <a href="https://s.weibo.com/weibo?q=网购娃娃菜中毒反转再反转&Refer=top" target="_blank" class="card">
+                
+                <h3 class="card-title">网购娃娃菜中毒反转再反转</h3>
+                
+                <div class="card-meta"><span class="card-heat">🔥 609960</span></div>
+            </a>
+            
+            <a href="https://s.weibo.com/weibo?q=谢娜宣布明年开演唱会&Refer=top" target="_blank" class="card">
+                
+                <h3 class="card-title">谢娜宣布明年开演唱会</h3>
+                
+                <div class="card-meta"><span class="card-heat">🔥 573384</span></div>
+            </a>
+            
+            <a href="https://s.weibo.com/weibo?q=成何体统&Refer=top" target="_blank" class="card">
+                
+                <h3 class="card-title">成何体统</h3>
+                
+                <div class="card-meta"><span class="card-heat">🔥 351597</span></div>
+            </a>
+            
+            <a href="https://s.weibo.com/weibo?q=北京wbg春季赛大名单&Refer=top" target="_blank" class="card">
+                
+                <h3 class="card-title">北京wbg春季赛大名单</h3>
+                
+                <div class="card-meta"><span class="card-heat">🔥 350067</span></div>
+            </a>
+            
+            <a href="https://s.weibo.com/weibo?q=女子摆拍自家孩子险些被拐&Refer=top" target="_blank" class="card">
+                
+                <h3 class="card-title">女子摆拍自家孩子险些被拐</h3>
+                
+                <div class="card-meta"><span class="card-heat">🔥 313345</span></div>
+            </a>
+            
+            <a href="https://s.weibo.com/weibo?q=追觅CEO称几年后成为世界首富&Refer=top" target="_blank" class="card">
+                
+                <h3 class="card-title">追觅CEO称几年后成为世界首富</h3>
+                
+                <div class="card-meta"><span class="card-heat">🔥 238845</span></div>
+            </a>
+            
+            <a href="https://s.weibo.com/weibo?q=王楚钦怒斥不文明观赛观众&Refer=top" target="_blank" class="card">
+                
+                <h3 class="card-title">王楚钦怒斥不文明观赛观众</h3>
+                
+                <div class="card-meta"><span class="card-heat">🔥 217342</span></div>
+            </a>
+            </div>
+            </section>
+            
+        </main>
+
+        <footer class="main-footer">
+            <p>Generated by News Aggregator Skill</p>
+        </footer>
+    </div>
+
+    <script>
+    // History dropdown toggle
+    (function() {
+        var trigger = document.getElementById('historyTrigger');
+        var dropdown = document.getElementById('historyDropdown');
+        trigger.addEventListener('click', function(e) {
+            e.stopPropagation();
+            dropdown.classList.toggle('show');
+        });
+        document.addEventListener('click', function() {
+            dropdown.classList.remove('show');
+        });
+        dropdown.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    })();
+
+    // Smooth scroll for nav pills
+    document.querySelectorAll('.nav-pill').forEach(function(pill) {
+        pill.addEventListener('click', function(e) {
+            e.preventDefault();
+            var target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+
+    // Active nav pill on scroll
+    (function() {
+        var sections = document.querySelectorAll('.scenario-section');
+        var pills = document.querySelectorAll('.nav-pill');
+        window.addEventListener('scroll', function() {
+            var scrollPos = window.scrollY + 120;
+            sections.forEach(function(section, i) {
+                if (section.offsetTop <= scrollPos && section.offsetTop + section.offsetHeight > scrollPos) {
+                    pills.forEach(function(p) { p.classList.remove('active'); });
+                    if (pills[i]) pills[i].classList.add('active');
+                }
+            });
+        });
+    })();
+
+    // Keyboard Navigation
+    document.addEventListener('keydown', function(e) {
+        if (['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
+
+        var cards = Array.from(document.querySelectorAll('.card'));
+        if (!cards.length) return;
+
+        var activeIndex = cards.findIndex(function(c) { return c === document.activeElement || c.classList.contains('active-card'); });
+
+        if (e.key === 'j' || e.key === 'J' || e.key === 'ArrowDown') {
+             activeIndex = (activeIndex + 1) % cards.length;
+             e.preventDefault();
+        } else if (e.key === 'k' || e.key === 'K' || e.key === 'ArrowUp') {
+             if (activeIndex === -1) activeIndex = 0;
+             else activeIndex = (activeIndex - 1 + cards.length) % cards.length;
+             e.preventDefault();
+        } else if (e.key === 'Enter') {
+             if (activeIndex >= 0) {
+                var link = cards[activeIndex].closest('a') || cards[activeIndex].querySelector('a');
+                if(link) window.open(link.href, '_blank');
+             }
+             return;
+        } else {
+             return;
+        }
+
+        cards.forEach(function(c) { c.classList.remove('active-card'); });
+        if (activeIndex >= 0) {
+            cards[activeIndex].classList.add('active-card');
+            cards[activeIndex].focus();
+            cards[activeIndex].scrollIntoView({behavior: 'smooth', block: 'center'});
+        }
+    });
+    </script>
+</body>
+</html>
