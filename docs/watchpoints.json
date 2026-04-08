@@ -1152,7 +1152,7 @@
     "title": "团队版多 agent 开始跑出来了，单兵 prompt 已经不够用了",
     "watch": "盯两个东西：一是这类项目是不是继续留在 Trending，二是 Claude Code 官方会不会自己下场做团队协作、任务分派、审计日志。如果官方跟进，说明“个人 Copilot”真要升级成“团队操作系统”了。",
     "source": "GitHub Trending",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-04-01",
@@ -1250,7 +1250,7 @@
     "title": "开源语音不只是“能用了”，而是在抢交互入口",
     "watch": "盯它后面是不是继续往低延迟、情绪表达、部署成本和多语言兼容上卷；如果开源方案开始大规模进客服和内容生产，真人口播和传统录制的成本结构会被继续压。",
     "source": "GitHub Trending",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-04-02",
@@ -1327,7 +1327,7 @@
     "title": "OpenAI 这轮钱不是“又融一笔”，是把别人先甩开一段",
     "watch": "盯后续有没有更明确的算力扩张动作，以及竞争对手会不会跟进更大的资本动作；如果接下来又看到上游长期资源锁定新闻，这个估值就不是情绪，是执行力。",
     "source": "X (Twitter)",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-04-06",
@@ -1390,6 +1390,69 @@
     "title": "Perplexity“无痕模式”被起诉，这不是公关问题，是 agent 时代的信任税",
     "watch": "盯后续有没有更具体的技术细节、平台回应和整改方案；也顺手检查你在用的浏览器 agent、云端笔记、AI 搜索工具，哪些真的值得碰业务数据，哪些只能拿来做公开信息任务。",
     "source": "RSS:Daring Fireball",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-08",
+    "title": "Anthropic 不只是火，是已经在印钞了",
+    "watch": "盯 Anthropic 后面是否继续披露 run-rate 变化，以及和 Google/Broadcom 的算力合作有没有更具体的交付节奏。",
+    "source": "X (Twitter)",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-08",
+    "title": "代码会贬值，思路文件会升值",
+    "watch": "盯后面是不是会出现更多公开的 idea file 模板，以及这些模板会不会开始替代教程、课程、甚至一部分 SaaS 演示。",
+    "source": "X (Twitter)",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-08",
+    "title": "Google 也在补 agent 编排这块短板",
+    "watch": "盯 Scion 后续有没有被接到主流 agent 框架里，以及社区会不会拿它做标准化 benchmark，而不只是一个 demo。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-08",
+    "title": "本地 AI 不再是极客玩具了",
+    "watch": "盯这个仓库后续展示的 on-device use cases 有没有从“能跑”变成“真能用”，尤其是多模态、离线推理、移动端工作流这几条。",
+    "source": "GitHub Trending",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-08",
+    "title": "AI SEO 开始从“写一篇”变成“跑一条产线”",
+    "watch": "盯它后面有没有出现面向垂类行业的 fork，尤其是电商、医疗、教育这种强需求场景。",
+    "source": "GitHub Trending",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-08",
+    "title": "Cloudflare 把后量子安全排到 2029，不算远了",
+    "watch": "盯 Cloudflare 后续会不会把更多默认安全能力直接切到 post-quantum，以及上下游服务商是否开始跟进兼容。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-08",
+    "title": "市场没押内塔尼亚胡马上下台",
+    "watch": "盯这个合约里 June 30 的价格有没有明显抬升，以及和停火、油价、金价是不是同步变化。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-08",
+    "title": "比特币高位故事，市场其实没怎么信",
+    "watch": "盯这些高价档位的定价有没有突然抬升，以及是否伴随美股科技股一起转热。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-08",
+    "title": "黑石在私募信贷危机里募到百亿美元，说明大钱在等捡漏",
+    "watch": "盯后面私募信贷市场是不是还有更多资产折价、重组、违约相关信号，以及其他大机构会不会跟着募同类基金。",
+    "source": "华尔街见闻",
     "status": "open"
   }
 ]
