@@ -1670,7 +1670,7 @@
     "title": "OpenAI 语音模式用的其实是更老、更弱的模型",
     "watch": "盯 OpenAI 后面会不会把语音模式的底层模型说清楚，或者做统一；只要语音和文本继续分模型，工作流就别混用。",
     "source": "X (Twitter)",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-04-14",
@@ -1726,7 +1726,7 @@
     "title": "OpenAI 把 Pro 档拉到 100 美元，说明重度用户真愿意掏钱",
     "watch": "盯两个东西：一是这个 100 美元档会不会继续塞代码、agent、自动化能力；二是竞品会不会跟着把高端档拉开。如果都往上走，说明 AI 工具行业开始像 SaaS，不像流量产品了。",
     "source": "X (Twitter)",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-04-15",
@@ -1768,6 +1768,69 @@
     "title": "假 Ledger 应用在 Mac App Store 骗走 950 万美元，受害者有 50 多人",
     "watch": "盯两个动作：一是平台会不会加强金融类应用审核；二是钱包、交易、密码管理这类高风险工具，是否会重新回到“只认官网直装”的习惯。对你个人资产管理，宁可麻烦一点，也别把信任外包给商店。",
     "source": "RSS:Daring Fireball",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-16",
+    "title": "把浏览器自动化做成“可复现”，比再堆一个 agent 更值钱",
+    "watch": "盯这个项目后面有没有把“录制—回放—校验”做完整；如果只会跑 demo，没有失败重试和状态校验，离商用还远。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-16",
+    "title": "Agent 开始认真卷“省 token”，不是只卷更聪明",
+    "watch": "盯它后面有没有公开更完整的任务表现；如果只是省 token，但任务成功率掉得厉害，那就只是便宜，不是进步。",
+    "source": "GitHub Trending",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-16",
+    "title": "文件识别这种脏活，也开始被 AI 基础设施化了",
+    "watch": "盯它会不会被更多数据清洗、RAG、文档解析链路默认接入；一旦进了主流 ingestion pipeline，这类“底层小工具”会变成隐形标准件。",
+    "source": "GitHub Trending",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-16",
+    "title": "OpenAI 开始把模型按行业分级卖，不再只卖“通用大脑”",
+    "watch": "盯 OpenAI 后面会不会继续放出更多垂直 SKU；如果网络安全之后，法务、医疗、金融也开始单独分 tier，说明行业化收费已经跑通。",
+    "source": "X (Twitter)",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-16",
+    "title": "语音模型开始卷“可控性”，不是只卷像不像人",
+    "watch": "盯 Audio Tags 会不会很快出现在更多工作流工具里；如果能稳定接进剪辑、脚本生成、A/B 测试链路，短视频生产效率会再抬一截。",
+    "source": "X (Twitter)",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-16",
+    "title": "Google 的“平台信任”正在变成经营风险",
+    "watch": "盯 EFF 后续披露和平台政策变化；如果类似案例继续冒出来，本地优先、私有部署、最小化留存会从加分项变成必选项。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-16",
+    "title": "财政部在香港发 155 亿元人民币国债，离岸人民币流动性要看紧了",
+    "watch": "盯这次发行后的认购和市场反应；如果后续还有更密集的人民币资产投放，说明“离岸人民币资产池”正在被继续做大。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-16",
+    "title": "谷歌手里藏着一张 SpaceX 的大票，市场可能没算够",
+    "watch": "盯 SpaceX 的流动性事件，比如 IPO、二级转让估值、Google 后续披露；一旦市场开始单独给这部分资产估值，Google 的叙事会变。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-16",
+    "title": "Cal.com 转闭源，开源 SaaS 的“终局问题”越来越摆上台面",
+    "watch": "盯用户和开发者的迁移速度；如果同类替代品开始吃到这一波情绪红利，说明“可替代性”比品牌更重要。",
+    "source": "Hacker News",
     "status": "open"
   }
 ]
