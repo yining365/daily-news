@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>阿宁日报</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0d1117;--s1:#161b22;--s2:#1e242c;
+  --border:rgba(255,255,255,.08);--border2:rgba(255,255,255,.04);
+  --t1:#f0f3f6;--t2:#9aa3ae;--t3:#5a636e;
+  --gold:#d4a72c;--gold-dim:rgba(212,167,44,.15);
+  --blue:#58a6ff;--green:#3fb950;--red:#f85149;
+  --r:12px;
+}
+html{font-size:16px;scroll-behavior:smooth}
+body{
+  font-family:-apple-system,"SF Pro Text","PingFang SC","Helvetica Neue",sans-serif;
+  background:var(--bg);color:var(--t1);line-height:1.7;
+  -webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%;
+}
+
+/* top accent bar */
+body::before{content:'';display:block;height:3px;background:linear-gradient(90deg,var(--gold) 0%,rgba(212,167,44,.3) 60%,transparent 100%)}
+
+.container{max-width:680px;margin:0 auto;padding:48px 24px 100px}
+
+/* ── Masthead ── */
+.masthead{margin-bottom:44px;padding-bottom:28px;border-bottom:1px solid var(--border)}
+.brand{font-size:12px;font-weight:700;color:var(--gold);letter-spacing:3px;text-transform:uppercase;margin-bottom:10px}
+.date-display{font-size:28px;font-weight:700;color:var(--t1);letter-spacing:-.5px;line-height:1.2}
+.weekday{font-size:15px;color:var(--t3);margin-top:4px}
+
+/* ── Date nav ── */
+.date-nav{display:flex;gap:6px;margin-bottom:44px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.date-nav::-webkit-scrollbar{display:none}
+.date-nav button{
+  background:none;border:1px solid var(--border);color:var(--t3);
+  padding:6px 14px;border-radius:8px;cursor:pointer;font-size:13px;
+  font-weight:500;white-space:nowrap;transition:all .2s;font-family:inherit;
+}
+.date-nav button:hover{border-color:var(--t3);color:var(--t2)}
+.date-nav button.on{background:var(--t1);border-color:var(--t1);color:var(--bg);font-weight:600}
+
+/* ── Section ── */
+.section{margin-bottom:52px}
+.sec-label{
+  font-size:11px;font-weight:700;color:var(--t3);
+  letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px;
+}
+
+/* ── Theme ── */
+.theme-block{border-left:3px solid var(--gold);padding-left:24px}
+.theme-block p{font-size:15px;color:var(--t2);line-height:1.85;margin-bottom:14px}
+.theme-block p:first-child{font-size:17px;color:var(--t1);line-height:1.8}
+.theme-block p:last-child{margin-bottom:0}
+.theme-block b{color:var(--t1);font-weight:600}
+
+/* ── Stories ── */
+.story{padding:28px 0;border-bottom:1px solid var(--border)}
+.story:first-child{padding-top:0}
+.story:last-child{border-bottom:none}
+
+.story-top{display:flex;align-items:flex-start;gap:16px}
+.story-num{
+  font-size:36px;font-weight:200;color:var(--gold);opacity:.65;
+  line-height:1;flex-shrink:0;width:40px;font-variant-numeric:tabular-nums;
+}
+.story-body{flex:1;min-width:0}
+
+.story-meta{display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap}
+.story-src{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:12px;font-weight:500;color:var(--t3);
+}
+.story-src .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.story-cat{
+  font-size:11px;font-weight:600;padding:2px 8px;border-radius:4px;
+  background:var(--gold-dim);color:var(--gold);letter-spacing:.3px;
+}
+
+.story-title{
+  display:block;font-size:18px;font-weight:600;color:var(--t1);
+  text-decoration:none;line-height:1.45;letter-spacing:-.2px;margin-bottom:10px;
+}
+.story-title:hover{color:var(--blue)}
+
+.story-tldr{font-size:14px;color:var(--t2);line-height:1.75}
+
+/* expand */
+.story-more{margin-top:14px;border:0;padding:0}
+.story-more summary{
+  font-size:12px;font-weight:600;color:var(--gold);cursor:pointer;
+  list-style:none;display:inline-flex;align-items:center;gap:4px;
+  padding:4px 0;user-select:none;letter-spacing:.3px;
+}
+.story-more summary::-webkit-details-marker{display:none}
+.story-more summary::before{content:'▸';font-size:10px;transition:transform .2s}
+.story-more[open] summary::before{transform:rotate(90deg)}
+
+.analysis{margin-top:12px;padding:16px 20px;background:var(--s1);border-radius:var(--r);display:grid;gap:10px}
+.a-row{display:flex;gap:12px;font-size:13px;line-height:1.7}
+.a-lbl{
+  flex-shrink:0;width:48px;text-align:right;
+  font-size:11px;font-weight:600;color:var(--gold);padding-top:2px;letter-spacing:.3px;
+}
+.a-val{color:var(--t2);flex:1}
+
+/* ── Commentary ── */
+.c-sec{margin-bottom:28px}
+.c-sec:last-child{margin-bottom:0}
+.c-head{font-size:15px;font-weight:700;color:var(--t1);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.tag{
+  font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;
+  letter-spacing:.5px;text-transform:uppercase;
+}
+.tag-s{background:rgba(52,199,89,.12);color:var(--green)}
+.tag-n{background:rgba(255,105,97,.1);color:var(--red)}
+.tag-w{background:rgba(91,160,245,.12);color:var(--blue)}
+
+.c-body p{font-size:15px;color:var(--t2);line-height:1.85;margin-bottom:14px}
+.c-body p:last-child{margin-bottom:0}
+.c-body b{color:var(--t1);font-weight:600}
+
+/* ── Watchpoints ── */
+.wp{padding:16px 20px;background:var(--s1);border-radius:var(--r);margin-bottom:8px}
+.wp:last-child{margin-bottom:0}
+.wp-status{font-size:13px;font-weight:600;margin-bottom:6px}
+.wp-text{font-size:14px;color:var(--t2);line-height:1.7}
+.wp-review{font-size:13px;color:var(--t3);line-height:1.7;margin-top:8px;padding-top:8px;border-top:1px solid var(--border2)}
+
+.empty{text-align:center;color:var(--t3);padding:120px 0;font-size:15px}
+
+/* fade */
+.fade{animation:fadeIn .3s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── Mobile ── */
+@media(max-width:640px){
+  .container{padding:36px 20px 80px}
+  .masthead{margin-bottom:32px;padding-bottom:22px}
+  .date-display{font-size:24px}
+  .date-nav{margin-bottom:32px}
+  .section{margin-bottom:40px}
+  .story{padding:24px 0}
+  .story-num{font-size:28px;width:32px}
+  .story-top{gap:12px}
+  .story-title{font-size:17px}
+  .theme-block{padding-left:18px}
+  .theme-block p:first-child{font-size:16px}
+  .analysis{padding:14px 16px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="masthead">
+    <div class="brand">阿宁日报</div>
+    <div class="date-display" id="dateDisp"></div>
+    <div class="weekday" id="weekday"></div>
+  </div>
+  <div class="date-nav" id="nav"></div>
+  <div id="content"><div class="empty">加载中…</div></div>
+</div>
+<script>
+const SRC={
+  "Hacker News":{c:"#ff6600"},"Polymarket":{c:"#4a9eff"},
+  "GitHub Trending":{c:"#8b5cf6"},"华尔街见闻":{c:"#34c759"},
+  "X (Twitter)":{c:"#9a9aa0"}
+};
+const WK=["周日","周一","周二","周三","周四","周五","周六"];
+let D=[];
+
+function $(s){return document.getElementById(s)}
+function e(s){return s?s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"):""}
+function b(s){return s?e(s).replace(/\*\*(.+?)\*\*/g,"<b>$1</b>"):""}
+
+function fmtShort(d){const p=d.split("-");return parseInt(p[1])+"/"+parseInt(p[2])}
+function fmtFull(d){const p=d.split("-");return p[0]+"年"+parseInt(p[1])+"月"+parseInt(p[2])+"日"}
+function weekday(d){return WK[new Date(d+"T00:00:00").getDay()]}
+
+// parse commentary into sections by **header** markers
+function parseCmt(text){
+  if(!text)return[];
+  const out=[];let cur=null;
+  for(let blk of text.split(/\n\n+/)){
+    blk=blk.trim();if(!blk)continue;
+    const m=blk.match(/^\*\*(.+?)\*\*\s*([\s\S]*)$/);
+    if(m){
+      const title=m[1].replace(/[:：]\s*$/,"");
+      let tag="s",tl="信号";
+      if(/噪音/.test(title)){tag="n";tl="噪音"}
+      else if(/接下来|盯什么/.test(title)){tag="w";tl="关注"}
+      cur={title,tag,tl,ps:[]};out.push(cur);
+      const rest=m[2].trim();if(rest)cur.ps.push(rest);
+    }else{
+      if(!cur){cur={title:"",tag:"",tl:"",ps:[]};out.push(cur)}
+      cur.ps.push(blk);
+    }
+  }
+  return out;
+}
+
+function render(i){
+  document.querySelectorAll(".date-nav button").forEach((b,j)=>b.classList.toggle("on",j===i));
+  const d=D[i];
+  if(!d){$("content").innerHTML='<div class="empty">暂无数据</div>';return}
+
+  const isWeekly=d.type==="weekly";
+  $("dateDisp").textContent=isWeekly?("📅 本周回顾"):fmtFull(d.date);
+  $("weekday").textContent=isWeekly?(d.date_range||""):weekday(d.date);
+
+  let h='<div class="fade">';
+
+  // theme
+  if(d.main_theme){
+    const themeLabel=isWeekly?"本周回顾":"今日主线";
+    h+='<div class="section"><div class="sec-label">'+themeLabel+'</div><div class="theme-block">';
+    for(const p of d.main_theme.split(/\n\n+/)){if(p.trim())h+="<p>"+b(p.trim())+"</p>"}
+    h+="</div></div>";
+  }
+
+  // items
+  if(d.items&&d.items.length){
+    const itemsLabel=isWeekly?"本周 "+d.items.length+" 条":"精选 "+d.items.length+" 条";
+    h+='<div class="section"><div class="sec-label">'+itemsLabel+"</div>";
+    d.items.forEach((it,idx)=>{
+      const src=SRC[it.source]||{c:"#9a9aa0"};
+      const n=String(idx+1).padStart(2,"0");
+      h+='<div class="story"><div class="story-top">';
+      h+='<div class="story-num">'+n+"</div>";
+      h+='<div class="story-body">';
+      h+='<div class="story-meta">';
+      if(it.category)h+='<span class="story-cat">'+e(it.category)+'</span>';
+      h+='<div class="story-src"><span class="dot" style="background:'+src.c+'"></span>'+e(it.source)+"</div>";
+      h+="</div>";
+      h+='<a class="story-title" href="'+e(it.url||"#")+'" target="_blank">'+e(it.title)+"</a>";
+      if(it.conclusion)h+='<div class="story-tldr">'+e(it.conclusion)+"</div>";
+
+      const has=it.signal||it.why||it.watch;
+      if(has){
+        h+='<details class="story-more"><summary>深入分析</summary><div class="analysis">';
+        if(it.signal)h+='<div class="a-row"><span class="a-lbl">信号</span><span class="a-val">'+e(it.signal)+"</span></div>";
+        if(it.why)h+='<div class="a-row"><span class="a-lbl">重要性</span><span class="a-val">'+e(it.why)+"</span></div>";
+        if(it.watch)h+='<div class="a-row"><span class="a-lbl">观察点</span><span class="a-val">'+e(it.watch)+"</span></div>";
+        h+="</div></details>";
+      }
+      h+="</div></div></div>";
+    });
+    h+="</div>";
+  }
+
+  // commentary
+  if(d.commentary){
+    h+='<div class="section"><div class="sec-label">阿宁点评</div>';
+    const secs=parseCmt(d.commentary);
+    for(const s of secs){
+      h+='<div class="c-sec">';
+      if(s.title){
+        h+='<div class="c-head">';
+        if(s.tl)h+='<span class="tag tag-'+s.tag+'">'+e(s.tl)+"</span>";
+        h+=e(s.title)+"</div>";
+      }
+      h+='<div class="c-body">';
+      for(const p of s.ps)h+="<p>"+b(p)+"</p>";
+      h+="</div></div>";
+    }
+    h+="</div>";
+  }
+
+  // watchpoints
+  if(d.watchpoint_reviews&&d.watchpoint_reviews.length){
+    h+='<div class="section"><div class="sec-label">观察点回顾</div>';
+    for(const w of d.watchpoint_reviews){
+      h+='<div class="wp">';
+      h+='<div class="wp-status">'+e(w.status_label)+"</div>";
+      h+='<div class="wp-text">'+e(w.watch)+"</div>";
+      if(w.review)h+='<div class="wp-review">'+e(w.review)+"</div>";
+      h+="</div>";
+    }
+    h+="</div>";
+  }
+
+  h+="</div>";
+  $("content").innerHTML=h;
+}
+
+fetch("data.json?"+Date.now()).then(r=>r.json()).then(data=>{
+  D=data;
+  const nav=$("nav");
+  if(data.length<=1){nav.style.display="none"}
+  else{
+    data.forEach((d,i)=>{
+      const btn=document.createElement("button");
+      btn.textContent=d.type==="weekly"?"📅 周报":fmtShort(d.date)+" "+weekday(d.date);
+      btn.onclick=()=>render(i);
+      nav.appendChild(btn);
+    });
+  }
+  if(data.length)render(0);
+  else $("content").innerHTML='<div class="empty">暂无数据</div>';
+}).catch(()=>{$("content").innerHTML='<div class="empty">加载失败</div>'});
+</script>
+</body>
+</html>
