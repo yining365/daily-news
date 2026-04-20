@@ -1,5 +1,156 @@
 [
   {
+    "date": "2026-04-20",
+    "main_theme": "今天最核心的一条，不是“AI 又更强了”，而是整个市场都在往同一个方向收敛：谁能把数据、流程、权限、成本和供应链一起控住，谁才配拿走下一阶段的利润。模型能力当然还在进步，但真正拉开差距的，已经从“会不会生成”转到“能不能稳定接企业数据、能不能低风险上线、能不能在外部冲击下继续跑”。\n\n你看今天这些条目，逻辑是连着的：Claude 4.6 到 4.7 的体验差异，背后可能不是模型智商跳变，而是 system prompt 这种“隐形产品经理”在改规则；本地 AI 栈和 paperless 这类私有文档底座一起冒头，说明团队开始明白，先把自己的知识资产收回来，比再追一个新模型实在得多。另一头，TTS 和 STT 快速基础设施化，意味着内容生产、直播复盘、客服质检这些“最后一公里”开始能自动化，但 Notion 公共页面邮箱泄露又提醒你：数据一旦没管住，效率工具分分钟变风险放大器。\n\n更底层一点，今天连宏观线都在强化同一个判断：AI 不是漂在云上的故事，它要吃内存、吃硬件、吃地缘稳定，所谓中东局势影响存储芯片，不是危言耸听，而是可能直接传导到云成本、设备价格和交期；Polymarket 押 2028 共和党路线延续，本质上也是市场在提前给“高波动、重产业政策、供应链更碎片化”的未来贴价格。我的判断很直接：接下来别再迷信“最强模型”，优先押注三件事——私有数据可控、工作流可复用、供应链冲击下还能交付，这三条比参数表重要一万倍。",
+    "commentary": "**今天值得花时间看的：**  \n第一条，Simon Willison 那篇 system prompt 变化分析，你别错过。很多人还在拿“模型变笨/变强”当结论，其实产品真实表现经常是系统层在拧螺丝；你要是做 AI 工作流、客服机器人、内容辅助，接下来不盯 system prompt 更新，跟闭着眼开车差不多。  \n第二条，本地 AI 栈和 paperless 这两个方向要一起看，不要拆开看。前者解决“数据别全喂平台”，后者解决“你公司到底有没有干净、可搜索、可调用的知识库”，这俩一打通，电商团队的选品资料、售后 SOP、达人报价、平台规则才能真变成生产资料，不然 RAG 和 agent 都是拿垃圾喂垃圾。  \n第三条，Mistral 的开源 TTS 加 xAI 的 STT API，这不是“语音赛道好热闹”，而是内容和运营的单位成本要继续下杀。对做母婴电商的人，这意味着直播录音自动转文字、客服录音自动质检、同一条卖点批量生成普通话/粤语/英语版本，马上能摸到 ROI，不是 PPT 里的未来。\n\n**可以跳过的：**  \n如果今天有人还在大聊“某模型又刷新榜单”“某 API 又更聪明了”，大部分都可以先划走，噪音居多。你真正该关心的不是榜单分数，而是切模型后任务完成率有没有涨、出错率有没有降、成本有没有下来；没这三条，吹得再响都是营销。  \n另外，2028 共和党候选人这条别当娱乐新闻刷，但也别过度沉迷人物八卦。值得看的是“政策连续性被提前定价”这个信号，不值得看的是谁发了什么狠话、评论区谁又高潮了，那些对你的仓位和业务决策基本没用。\n\n**下周盯这几个：**  \n第一，立刻排个 30 分钟，把你团队所有公开 Notion 页面过一遍，尤其是招商页、品牌资料包、代理手册、历史活动页，先查有没有编辑邮箱暴露，再看搜索引擎缓存还在不在。这个不是“有空再说”，而是今天就该做，因为一旦被人抓名单，后面钓鱼和撞库会很烦。  \n第二，下周盯 Anthropic 和 Cursor/Perplexity 这类上层产品有没有继续出现“没怎么官宣，但体验明显变了”的情况，特别是长文本、代码、多轮任务这三类。你如果在团队里已经把 Claude/Cursor 接进工作流，最好自己做一个固定测试清单，每周同一批任务跑一次，别被“感觉更强了”这种错觉带着走。  \n第三，盯内存和服务器链条的报价、交期新闻，别只看油价标题。你要买本地设备、上新一轮 AI 工具、或者准备扩客服和内容生产自动化，硬件成本和云价一旦被中东局势往上推，预算会很快失真；投资上也一样，下周要看的是硬件链有没有先动，不是媒体又喊了几遍地缘风险。",
+    "items": [
+      {
+        "title": "别只盯模型分数，系统提示词才是“真实产品经理”",
+        "source": "RSS:Simon Willison",
+        "url": "https://simonwillison.net/2026/Apr/18/opus-system-prompt/#atom-everything",
+        "conclusion": "这事说白了就是，Claude 从 4.6 到 4.7，很多体验差异不一定来自“模型变聪明”，而是来自 Anthropic 在系统层偷偷拧螺丝。",
+        "signal": "版本直接点名是 **4.6** 和 **4.7**。来源作者还专门追踪了 system prompt 的变化。",
+        "why": "你天天用 Claude/Cursor 干活，如果结果忽然更稳或更飘，别第一反应怪自己 prompt 写差了，先怀疑底层规则变了。对做 AI 工作流的人来说，system prompt 更新日志，已经跟 API changelog 一样重要。",
+        "watch": "接下来盯两件事：一是 Anthropic 后续版本是否继续公开 system prompt 变化；二是 Cursor、Perplexity 这类上层产品切模型后，任务完成率是不是跟着跳，而不是只换个“更强模型”的说法。",
+        "category": "AI工程",
+        "tier": 1
+      },
+      {
+        "title": "本地 AI 控制权，开始从口号变成工具",
+        "source": "GitHub Trending",
+        "url": "https://github.com/thunderbird/thunderbolt",
+        "conclusion": "如果你不想把公司资料、客户对话、运营 SOP 全喂给别人，自己可控的 AI 栈会越来越值钱。",
+        "signal": "GitHub **2,200 stars**；项目卖点写得很直白：**Choose your models / Own your data / Eliminate vendor lock-in**。",
+        "why": "你做母婴电商，素材、客服、选品、社群话术都属于高价值私域数据。本地或可控部署，不只是“安全感”，而是防平台锁死、防成本被动上涨。",
+        "watch": "盯这个方向会不会继续长出两类配套：一类是本地文档/知识库接入，另一类是多模型切换和权限管理。真能跑起来，才算从极客玩具变成团队工具。",
+        "category": "AI工程",
+        "tier": 1
+      },
+      {
+        "title": "开源语音合成，已经够你做多语种内容了",
+        "source": "X (Twitter)",
+        "url": "https://x.com/MistralAI/status/2037183026539483288",
+        "conclusion": "TTS 这条线正在快速商品化，门槛掉下来以后，拼的不是“能不能说”，而是“说得像不像真人、能不能控情绪”。",
+        "signal": "支持 **9 languages**，热度 **4588**；Mistral 还强调是 **open-weight**、**ultra-fast**、**low latency**。",
+        "why": "你做抖音、小红书、微信社群，语音素材会越来越便宜。以后同一条内容，完全可以拆成普通话、粤语、英语甚至不同语气版本去测转化，不用每次真人重录。",
+        "watch": "重点盯两件事：一是中文和方言的真实效果，二是授权范围。开源权重如果能商用，很多中小团队会直接跳过传统配音外包。",
+        "category": "AI行业",
+        "tier": 1
+      },
+      {
+        "title": "语音转文字也开始卷成“基础设施”",
+        "source": "X (Twitter)",
+        "url": "https://x.com/xai/status/2045297699352924504",
+        "conclusion": "当 STT 都打到 **25 languages**，语音内容的生产和整理会像 OCR 一样，慢慢变成默认能力。",
+        "signal": "xAI 发布 Speech to Text API，支持 **25 languages**，热度 **1795**。",
+        "why": "你有短视频、直播、社群，最大的隐形浪费就是语音内容没被结构化。STT 价格继续往下走，直播复盘、客服质检、达人口播拆文案，都会变成自动流水线。",
+        "watch": "盯价格战是不是继续扩大到中文场景；更关键的是多说话人识别准不准。如果多人直播和群聊录音能稳，社群运营和销售复盘都会直接受益。",
+        "category": "AI行业",
+        "tier": 1
+      },
+      {
+        "title": "Notion 公共页面别再乱开了，编辑邮箱都可能漏",
+        "source": "Hacker News",
+        "url": "https://twitter.com/weezerOSINT/status/2045849358462222720",
+        "conclusion": "很多团队把 Notion 当官网、帮助中心、招商页在用，但公共协作工具一旦泄信息，漏的不是文档，是你的人和关系网。",
+        "signal": "Hacker News **310 points**；问题描述非常明确：**all editors of any public page** 的邮箱地址会被泄露。",
+        "why": "你如果用 Notion 放品牌资料、招募文档、代理商手册、KOL 对接页，这种泄露会直接暴露团队成员、外包、合作方邮箱。对电商团队来说，这就是钓鱼、撞库、精准诈骗的名单。",
+        "watch": "立刻检查所有公开 Notion 页面，尤其是历史活动页、合作页、媒体包。后面盯 Notion 官方修复动作，以及搜索引擎缓存和第三方镜像有没有继续暴露老数据。",
+        "category": "商业/电商",
+        "tier": 1
+      },
+      {
+        "title": "别只盯油价，中东更阴的雷在存储芯片",
+        "source": "Hacker News",
+        "url": "https://warontherocks.com/cogs-of-war/the-bromine-chokepoint-how-strife-in-the-middle-east-could-halt-production-of-the-worlds-memory-chips/",
+        "conclusion": "伊朗和周边局势如果继续搅，受伤的不只是原油，内存链条可能先被卡脖子。",
+        "signal": "Hacker News **132 points**；标题直接点名 **Bromine Chokepoint**，说的是可能“halt production of the world’s memory chips”。",
+        "why": "这跟你每天用 AI 的关系比想象中大。AI 算力不只是 GPU，内存和整机供给一旦卡住，云服务成本、本地设备价格、交付周期都会跟着难看。你定投的纳指里，很多公司也吃这条链。",
+        "watch": "盯两类信号：一是霍尔木兹相关运输限制有没有升级；二是内存、服务器、AI 终端的交期和报价有没有同步走高。真传导起来，会先打在硬件，不会先打在嘴上。",
+        "category": "宏观/金融",
+        "tier": 1
+      },
+      {
+        "title": "私有文档管理，可能比你再接一个新模型更有用",
+        "source": "GitHub Trending",
+        "url": "https://github.com/paperless-ngx/paperless-ngx",
+        "conclusion": "很多团队不是缺模型，是缺一套能把纸质、图片、PDF、合同、SOP 整成可搜索资产的底座。",
+        "signal": "GitHub **38,851 stars**。",
+        "why": "你做电商，供应链合同、达人报价、平台规则、售后话术、选品资料，本来就散在微信、邮箱、截图和 PDF 里。paperless 这种东西一旦搭好，后面接任何 RAG、agent 才有意义，不然都是垃圾进垃圾出。",
+        "watch": "盯它跟 OCR、标签、自动归档、API 的集成能力。如果能把扫描、分类、搜索打通，再接 Claude/Cursor 做“运营知识问答”，你团队效率会比单纯换模型更稳。",
+        "category": "开发者/开源",
+        "tier": 1
+      },
+      {
+        "title": "2028 共和党候选人，市场已经在提前定价“路线延续”",
+        "source": "Polymarket",
+        "url": "https://polymarket.com/event/republican-presidential-nominee-2028",
+        "conclusion": "这不是八卦盘，**39%** 说明市场已经开始押一件事：特朗普之后，共和党路线未必会大拐弯。",
+        "signal": "Polymarket 上 J.D. Vance 获得 **2028** 共和党总统候选人提名的定价是 **Yes 39%**，交易量 **$569.7M**。",
+        "why": "你投纳指和标普，真正该关心的是政策风格会不会延续到企业税、监管、关税和地缘姿态。**$569.7M** 这种量，不是散户玩票，是很多人已经拿真钱押“政策连续性”。",
+        "watch": "盯 Vance 定价是不是继续上穿，和特朗普阵营的公开站台有没有同步增强。要是这条线继续走强，市场会更早把“高波动、高对抗、重产业政策”写进长期估值。",
+        "category": "宏观/金融",
+        "tier": 1
+      }
+    ],
+    "watchpoint_reviews": [
+      {
+        "watch": "盯这个仓库后续展示的 on-device use cases 有没有从“能跑”变成“真能用”，尤其是多模态、离线推理、移动端工作流这几条。",
+        "status_label": "⏳ 进展中",
+        "review": "Vitalik 公开了自己的 self-sovereign / local / private LLM 配置，HN 也出现了基于 Gemma 4 在浏览器里跑 Prompt-to-Excalidraw 的 demo，说明本地/端侧工作流还在往“真用起来”推进。",
+        "date": "2026-04-08"
+      },
+      {
+        "watch": "盯两件事：一是 Gemma 4 的中文、长上下文、工具调用真实表现；二是 Cursor、Ollama、手机端推理工具会不会快速把它接进去。真接进日常工具，下载量才会变成生产力。",
+        "status_label": "⏳ 进展中",
+        "review": "HN 上已经出现 Gemma 4 E2B in-browser 的实际工具 demo，说明它确实开始被接进具体工作流，而不只是停在下载数字。",
+        "date": "2026-04-13"
+      },
+      {
+        "watch": "盯它后面有没有开发者生态、API 价格战、以及中文和方言效果的真实反馈。语音一旦从“能用”跨到“稳定可商用”，会先影响客服和短内容生产。",
+        "status_label": "⏳ 进展中",
+        "review": "Mistral 今天直接发布了 Voxtral TTS，主打 9 语言、低延迟、可表达性强，这条产品线本身已经落地，不再只是趋势判断。",
+        "date": "2026-04-13"
+      },
+      {
+        "watch": "盯后面有没有更具体的状态管理、失败恢复、权限控制方案出来；只要这些细节开始公开，说明 agent 真在往生产环境落。",
+        "status_label": "⏳ 进展中",
+        "review": "Perplexity 宣布让 Claude Opus 4.7 成为 Computer 的默认 orchestration model，还推出了能联动本地文件、原生 App 和浏览器的 Personal Computer，说明长时 agent 已经在真实产品里跑起来了。",
+        "date": "2026-04-14"
+      },
+      {
+        "watch": "盯 OpenAI 后面会不会继续放出更多垂直 SKU；如果网络安全之后，法务、医疗、金融也开始单独分 tier，说明行业化收费已经跑通。",
+        "status_label": "✅ 验证",
+        "review": "OpenAI 今天发布了面向 biology / drug discovery / translational medicine 的 GPT-Rosalind，这就是很典型的垂直行业 SKU。",
+        "date": "2026-04-16"
+      },
+      {
+        "watch": "盯 Audio Tags 会不会很快出现在更多工作流工具里；如果能稳定接进剪辑、脚本生成、A/B 测试链路，短视频生产效率会再抬一截。",
+        "status_label": "✅ 验证",
+        "review": "Google 的 Gemini 3.1 Flash TTS 直接把“most expressive and steerable”“granular control”当卖点，Mistral 的 Voxtral TTS 也在强调表达力和低延迟。",
+        "date": "2026-04-16"
+      },
+      {
+        "watch": "盯 EFF 后续披露和平台政策变化；如果类似案例继续冒出来，本地优先、私有部署、最小化留存会从加分项变成必选项。",
+        "status_label": "⏳ 进展中",
+        "review": "今天 HN 又冒出 Vercel 安全事件、Notion 泄露公开页面编辑者邮箱，加上 Vitalik 公开强调本地/私有/自托管 LLM 配置，说明“少留云端、能本地就本地”的需求在继续变强。",
+        "date": "2026-04-16"
+      },
+      {
+        "watch": "盯后续有没有更多关于 GB200 集群利用率、稳定性、供货节奏的公开信息；如果“提前上线”不是个别点状事件，而是大厂普遍开始兑现，那上游算力链还没走完。",
+        "status_label": "✅ 验证",
+        "review": "Satya 明说威斯康星 Fairwater 数据中心提前上线，单集群汇聚几十万张 GB200。",
+        "date": "2026-04-17"
+      },
+      {
+        "watch": "盯它后面有没有把隐私权限、端侧处理、记忆机制做好；如果只有“全程监听”没有本地和权限控制，这类产品就很难从极客玩具变成日常工具。",
+        "status_label": "⏳ 进展中",
+        "review": "Perplexity 的 Personal Computer 已经把本地文件、原生 App、浏览器串起来做 secure orchestration，微软也把 Copilot 往 Word 里“像同事一样直接改文档、留评论”推进。",
+        "date": "2026-04-17"
+      }
+    ]
+  },
+  {
     "date": "2026-04-18",
     "type": "weekly",
     "date_range": "04/13 ~ 04/17",
