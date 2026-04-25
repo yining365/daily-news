@@ -27,6 +27,11 @@ fi
 export TG_BOT_TOKEN="${TELEGRAM_BOT_TOKEN:-}"
 export TG_CHAT_ID="${TG_CHAT_ID:--5273648726}"
 
+# 周报改走当前微信私聊，不再发 Telegram
+export WEEKLY_OPENCLAW_CHANNEL="openclaw-weixin"
+export WEEKLY_OPENCLAW_ACCOUNT_ID="6e0eb7a5339e-im-bot"
+export WEEKLY_OPENCLAW_TARGET="o9cq809CjdduOJdE5_4OlKbDZEDo@im.wechat"
+
 export TZ="Asia/Shanghai"
 
 mkdir -p "$(dirname "$LOG_FILE")"

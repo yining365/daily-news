@@ -19,6 +19,9 @@ X_CACHE_FILE = os.getenv("X_CACHE_FILE", "")
 
 TG_BOT_TOKEN = os.getenv("TG_BOT_TOKEN", "")
 TG_CHAT_ID = os.getenv("TG_CHAT_ID", "")
+WEEKLY_OPENCLAW_CHANNEL = os.getenv("WEEKLY_OPENCLAW_CHANNEL", "")
+WEEKLY_OPENCLAW_ACCOUNT_ID = os.getenv("WEEKLY_OPENCLAW_ACCOUNT_ID", "")
+WEEKLY_OPENCLAW_TARGET = os.getenv("WEEKLY_OPENCLAW_TARGET", "")
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"
@@ -1130,6 +1133,19 @@ def _send_tg_message(message):
             raise RuntimeError(f"Telegram API error: {result}")
 
 
+
+def _send_openclaw_message(channel, account_id, target, message):
+    import subprocess
+    cmd = [
+        "openclaw", "message", "send",
+        "--channel", channel,
+        "--target", target,
+        "--message", message,
+    ]
+    if account_id:
+        cmd.extend(["--account", account_id])
+    subprocess.run(cmd, check=True, timeout=30)
+
 # ============================================================================
 # 周报
 # ============================================================================
@@ -1269,28 +1285,54 @@ def weekly_summary():
     open(DATA_JSON, "w", encoding="utf-8").write(json.dumps(data, ensure_ascii=False, indent=2))
     sys.stderr.write(f"Saved weekly to {DATA_JSON}\n")
 
-    # Telegram 推送
-    if TG_BOT_TOKEN and TG_CHAT_ID:
+    # 周报推送：优先发到指定 OpenClaw 会话；配置后不再发 Telegram
+    html_parts = [f"<b>📅 阿宁周报 · {_tg_escape(range_label)}</b>", ""]
+    plain_parts = [f"📅 阿宁周报 · {range_label}", ""]
+    if review_text:
+        html_parts.append(_md_to_tg_html(review_text))
+        html_parts.append("")
+        plain_parts.append(review_text)
+        plain_parts.append("")
+    if top5:
+        html_parts.append("<b>🔑 本周 5 条</b>")
+        plain_parts.append("🔑 本周 5 条")
+        for i, it in enumerate(top5[:5], 1):
+            url = it.get("url", "")
+            title = _tg_escape(it["title"])
+            if url:
+                html_parts.append(f'{i}. <a href="{_tg_escape(url)}">{title}</a>')
+                plain_parts.append(f"{i}. {it['title']}\n{url}")
+            else:
+                html_parts.append(f"{i}. {title}")
+                plain_parts.append(f"{i}. {it['title']}")
+        html_parts.append("")
+        plain_parts.append("")
+    if verdict:
+        html_parts.append(f"💡 {_md_to_tg_html(verdict)}")
+        html_parts.append("")
+        plain_parts.append(f"💡 {verdict}")
+        plain_parts.append("")
+    html_parts.append('<a href="https://yining365.github.io/daily-news/">→ 完整版</a>')
+    plain_parts.append("完整版：https://yining365.github.io/daily-news/")
+
+    if WEEKLY_OPENCLAW_CHANNEL and WEEKLY_OPENCLAW_TARGET:
+        sys.stderr.write("Sending weekly via OpenClaw...\n")
+        message = "\n".join(plain_parts)
+        if len(message) > 4000:
+            message = message[:3990] + "\n..."
+        try:
+            _send_openclaw_message(
+                WEEKLY_OPENCLAW_CHANNEL,
+                WEEKLY_OPENCLAW_ACCOUNT_ID,
+                WEEKLY_OPENCLAW_TARGET,
+                message,
+            )
+            sys.stderr.write("OpenClaw weekly sent.\n")
+        except Exception as e:
+            sys.stderr.write(f"OpenClaw weekly failed: {e}\n")
+    elif TG_BOT_TOKEN and TG_CHAT_ID:
         sys.stderr.write("Sending Telegram...\n")
-        parts = [f"<b>📅 阿宁周报 · {_tg_escape(range_label)}</b>", ""]
-        if review_text:
-            parts.append(_md_to_tg_html(review_text))
-            parts.append("")
-        if top5:
-            parts.append("<b>🔑 本周 5 条</b>")
-            for i, it in enumerate(top5[:5], 1):
-                url = it.get("url", "")
-                title = _tg_escape(it["title"])
-                if url:
-                    parts.append(f"{i}. <a href=\"{_tg_escape(url)}\">{title}</a>")
-                else:
-                    parts.append(f"{i}. {title}")
-            parts.append("")
-        if verdict:
-            parts.append(f"💡 {_md_to_tg_html(verdict)}")
-            parts.append("")
-        parts.append(f"<a href=\"https://yining365.github.io/daily-news/\">→ 完整版</a>")
-        message = "\n".join(parts)
+        message = "\n".join(html_parts)
         if len(message) > 4000:
             message = message[:3990] + "\n..."
         try:
