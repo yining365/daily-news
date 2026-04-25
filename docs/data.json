@@ -1,68 +1,165 @@
 [
   {
     "date": "2026-04-25",
-    "type": "weekly",
-    "date_range": "04/20 ~ 04/21",
-    "main_theme": "这周我想明白了几件事。第一，AI 现在最重要的变化，不是又出了哪个更聪明的模型，而是大厂开始把未来几年的算力、云、数据、权限全锁死。亚马逊和 Anthropic 这个 50 亿美元投资 + 1000 亿美元云支出承诺，说白了就是提前包场。以后 AI 产品好不好用，可能先不看榜单，看谁不断供、谁成本低、谁能稳定跑。\n\n第二，对我这种做母婴电商的人来说，AI 的机会反而更落地了：多 agent、语音生成、语音转文字、本地 AI、私有文档管理，这些都不是“炫技”了，是可以直接进客服、内容、选品、培训、SOP 的工具。但同时风险也变得更近了，Notion、Atlassian、Vercel 这些事都在提醒一句话：别随手把公司资料、客户信息、供应链关系喂给工具。\n\n第三，投资这边我会更谨慎一点。中东这条线不能只盯油价，航运、通胀、存储芯片供应链都可能被扰动。对指数投资者来说，短线不一定要乱动，但下周要盯的是：科技股的算力资本开支还能不能被市场继续买单，以及地缘风险会不会重新推高通胀预期。",
-    "commentary": "下周我会重点看两件事：第一，亚马逊、微软这类 AI 基建投入，会不会继续被市场当成“护城河”买单，而不是被当成资本开支压力砸估值。第二，母婴电商这边要开始收口权限，尤其是 Notion、SaaS、AI 客服、文档工具，下周先查一遍哪些页面公开、哪些数据被默认拿去训练。",
+    "main_theme": "今天最核心的线索，不是“AI 又卷模型”，而是 AI 正在从聊天框往真实工作流里钻：浏览器、代码库、API、数据后台、本地命令行，全都在补同一件事——让 agent 能接真实系统、跑真实流程、承担真实责任。模型能力当然还重要，但今天这些信号更像是在说：下一轮效率差距，不在谁会问 AI，而在谁能把 AI 嵌进自己的业务链路。\n\nBrowser Harness 指向的是“AI 替人操作网页后台”，claude-context 指向的是“代码 agent 少瞎猜”，PostHog 指向的是“小团队别让数据散成一地鸡毛”，阮一峰说的第二次 API 开放浪潮，本质是平台开始给 agent 留门。再加上 DeepSeek V4 把价格锚往下砸、Google 可能重金押 Anthropic，说明模型层一边在降成本，一边在抢企业入口；真正值钱的，会是能把低成本模型、稳定上下文、平台 API、业务数据串起来的人。\n\n我的判断很直接：接下来别再把“用了哪个模型”当核心竞争力，那玩意儿很快会变成水电煤。下周开始就该盘自己的流程：选品、上架、客服、评论分析、社群触达、复盘，哪一步能接 API、哪一步能让浏览器 agent 跑、哪一步能用 DeepSeek 这种低价模型批处理，先把一条闭环自动化出来，比追十个新模型发布更值钱。",
+    "commentary": "**今天值得花时间看的：**  \n第一条是 Browser Harness，这个别错过。因为电商运营最烦的不是写方案，是每天在一堆后台里点来点去：看订单、改素材、导数据、发消息、查违规、回客服；如果浏览器 agent 能扛住登录态、弹窗、文件上传、异常重试，那它吃掉的不是“AI 玩具市场”，是助理和运营的重复劳动。\n\n第二条是 DeepSeek V4，别只把它当国产模型新闻看，它真正狠的是继续砸 API 成本。客服总结、商品文案、评论聚类、社群内容改写，这些高频任务不需要每次都上最贵模型，谁能用便宜模型跑稳定批处理，谁的小团队毛利就会更舒服。\n\n第三条是 PostHog。很多小团队死在“数据不贵，但决策太慢”：抖音一个后台，小红书一个后台，微信一个后台，广告又一个后台，最后复盘全靠感觉；PostHog 这种全家桶如果能把行为、实验、错误、反馈放一起，价值不是省 SaaS 钱，是减少老板和运营互相拍脑袋。\n\n**可以跳过的：**  \n“Google 投 Anthropic”这条大家会聊很多，但今天能落地的信息其实没那么多，除非后面明确看到 Claude 深接 Google Cloud、Workspace 或企业分发，否则现在更多是巨头站队新闻。你知道它重要就行，不用刷十篇解读，真正影响你的是 Claude 价格、稳定性、团队版能力有没有变化。\n\n半导体 18 连涨也别被情绪带着冲。这个新闻的有效信息就一句：热得有点过了，定投纳指的人别把半导体当免死金牌；至于各种“AI 永远涨”“芯片无敌”的小作文，基本是行情涨出来的信仰，不是新逻辑。\n\n**下周盯这几个：**  \n第一，盯 4 月 30 日前后的美伊和平交易变化，尤其 Polymarket 上 April 30、May 31、June 30 三个合约概率怎么动。June 30 如果继续从 54% 往上走，油价、通胀预期、黄金避险逻辑都要重新算，持有美股指数和黄金的人别装看不见。\n\n第二，盯 DeepSeek V4 的 API 价格、上下文长度、函数调用和中文电商任务表现。我的建议是直接拿你自己的商品评论、客服聊天、社群内容做 50 条测试，不要看榜单吹牛；如果稳定，就把非核心推理任务迁一部分过去。\n\n第三，盯抖音、小红书、微信、支付、物流、CRM 有没有更明确的 API/MCP 开放动作。谁先给 agent 留门，谁就会先变成自动化运营的主战场；对小团队来说，这比“又一个 AI 写作神器”重要多了。",
     "items": [
       {
-        "title": "亚马逊给 Anthropic 的钱，开始像“绑算力合同”了",
-        "conclusion": "",
-        "source": "",
-        "url": "https://techcrunch.com/2026/04/20/anthropic-takes-5b-from-amazon-and-pledges-100b-in-cloud-spending-in-return/",
-        "signal": "",
-        "why": "",
-        "watch": "",
-        "category": "",
+        "title": "浏览器任务正在变成 agent 的主战场",
+        "source": "Hacker News",
+        "url": "https://github.com/browser-use/browser-harness",
+        "conclusion": "这事说白了就是，让 AI 真正替你点网页、填表、跑流程，而不是只在聊天框里嘴炮。",
+        "signal": "Hacker News 83 points；项目叫 Browser Harness，描述是 “Gives LLM freedom to complete any browser task”。",
+        "why": "阿宁做抖音、小红书、微信社群，很多活不是写代码，是进后台、查订单、改素材、看数据、发消息。浏览器 agent 如果稳定了，电商运营里一堆“人肉后台操作”会先被吃掉。",
+        "watch": "盯它能不能处理登录态、验证码、弹窗、文件上传、异常重试；这些过不了，就只能当 demo，过了才是真工具。",
+        "category": "AI工程",
         "tier": 1
       },
       {
-        "title": "多 agent 已经从概念，变成现成脚手架了",
-        "conclusion": "",
-        "source": "",
-        "url": "https://github.com/openai/openai-agents-python",
-        "signal": "",
-        "why": "",
-        "watch": "",
-        "category": "",
+        "title": "Claude Code 缺的不是模型，是全代码库上下文",
+        "source": "GitHub Trending",
+        "url": "https://github.com/zilliztech/claude-context",
+        "conclusion": "代码 agent 下一步拼的不是“更会写”，而是“少瞎猜”。",
+        "signal": "GitHub 9,023 stars；claude-context 是 “Code search MCP for Claude Code”，目标是让 entire codebase 变成 coding agent 的 context。",
+        "why": "你每天用 Claude/Cursor，最烦的是它改 A 文件却不知道 B 文件的约束。MCP + 代码搜索这条线，会直接影响 agent 能不能接手真实项目，而不是只能写小函数。",
+        "watch": "盯它跟 Claude Code、Cursor、其他 MCP 客户端的适配；重点看大仓库检索速度、引用准确率、是否能避免重复造轮子。",
+        "category": "AI工程",
         "tier": 1
       },
       {
-        "title": "本地 AI 控制权，开始从口号变成工具",
-        "conclusion": "",
-        "source": "",
-        "url": "https://github.com/thunderbird/thunderbolt",
-        "signal": "",
-        "why": "",
-        "watch": "",
-        "category": "",
+        "title": "Google 给 Anthropic 的钱，像是在买“反 OpenAI 保险”",
+        "source": "Hacker News",
+        "url": "https://www.bloomberg.com/news/articles/2026-04-24/google-plans-to-invest-up-to-40-billion-in-anthropic",
+        "conclusion": "Google 计划投 Anthropic，核心不是财务投资，是不想让企业 AI 入口全被 OpenAI 和微软拿走。",
+        "signal": "Google plans to invest up to $40B in Anthropic；Hacker News 339 points。",
+        "why": "阿宁用 Claude 干活，这条线直接关系到 Claude 的算力、价格、稳定性。Google 真把资源砸进去，Anthropic 就不只是“好用但贵”的工具，而是企业 agent 生态的长期玩家。",
+        "watch": "盯 Anthropic 后面是否把 Claude 更深接入 Google Cloud、Workspace、Gemini 生态；如果企业分发渠道打通，Claude Code 和团队版会更有杀伤力。",
+        "category": "AI行业",
         "tier": 1
       },
       {
-        "title": "Vercel 这次事故，给所有“AI 办公工具”泼了盆冷水",
-        "conclusion": "",
-        "source": "",
-        "url": "https://x.com/vercel/status/2045938260124266947",
-        "signal": "",
-        "why": "",
-        "watch": "",
-        "category": "",
+        "title": "DeepSeek V4 的重点不是“国产模型”，是价格锚又被砸了",
+        "source": "RSS:Simon Willison",
+        "url": "https://simonwillison.net/2026/Apr/24/deepseek-v4/#atom-everything",
+        "conclusion": "如果 DeepSeek V4 真做到接近 frontier、价格只有一小部分，闭源模型的高价 API 会继续被迫降毛利。",
+        "signal": "DeepSeek V4；Simon Willison 标题写的是 “almost on the frontier, a fraction of the price”；上个版本是 V3.2 和 V3.2 Speciale。",
+        "why": "你做 AI 工具链和电商自动化，长期成本不是订阅费，是 API 调用费。DeepSeek 这种模型越能打，越适合拿来跑客服总结、商品文案、评论分析、社群内容这种高频任务。",
+        "watch": "盯 API 价格、上下文长度、函数调用、中文电商语料表现；如果稳定性跟上，就可以把非核心推理任务迁过去。",
+        "category": "AI行业",
         "tier": 1
       },
       {
-        "title": "别只盯油价，中东更阴的雷在存储芯片",
-        "conclusion": "",
-        "source": "",
-        "url": "https://warontherocks.com/cogs-of-war/the-bromine-chokepoint-how-strife-in-the-middle-east-could-halt-production-of-the-worlds-memory-chips/",
-        "signal": "",
-        "why": "",
-        "watch": "",
-        "category": "",
+        "title": "PostHog 这种全家桶，适合小团队少买一堆 SaaS",
+        "source": "GitHub Trending",
+        "url": "https://github.com/PostHog/posthog",
+        "conclusion": "电商小团队最该省的不是工具钱，是数据散在各处导致的决策摩擦。",
+        "signal": "GitHub 33,128 stars；PostHog 集成 product analytics、web analytics、session replay、error tracking、feature flags、experimentation、surveys、data warehouse、CDP、AI product assistant。",
+        "why": "你现在做抖音、小红书、微信社群，增长链路已经够碎了。PostHog 这种一体化工具，价值在于把用户行为、实验、错误、反馈放到一个栈里，少一点“我去另一个后台看看”。",
+        "watch": "盯它的自托管成本、数据合规、微信生态接入、广告归因能力；如果这些能接上，才值得替代一堆零散工具。",
+        "category": "商业/电商",
+        "tier": 1
+      },
+      {
+        "title": "“第二次 API 开放浪潮”对电商人很实在：平台开始给 agent 留门",
+        "source": "RSS:阮一峰周刊",
+        "url": "http://www.ruanyifeng.com/blog/2026/04/weekly-issue-394.html",
+        "conclusion": "API 开放不是开发者小圈子的事，它会决定以后谁能把运营流程自动化到更深。",
+        "signal": "阮一峰周刊第 394 期，主题是“第二次 API 开放浪潮”。",
+        "why": "第一波 API 更像给程序员用，第二波更像给 agent 用。对阿宁这种小团队，真正的机会是把选品、上架、客服、复盘、社群触达串成半自动流水线。",
+        "watch": "盯抖音、小红书、微信、支付、物流、CRM 这些平台有没有更开放的 API 或 MCP；谁先开放，谁就更容易被自动化工具吃透。",
+        "category": "商业/电商",
+        "tier": 1
+      },
+      {
+        "title": "美伊和平定价已经不是小概率，油价风险要重新算",
+        "source": "Polymarket",
+        "url": "https://polymarket.com/event/us-x-iran-permanent-peace-deal-by",
+        "conclusion": "市场正在把美伊缓和当成主线交易，不是边角新闻。",
+        "signal": "US x Iran permanent peace deal by April 30, 2026：Yes 10%；by May 31, 2026：Yes 34%；by June 30, 2026：Yes 54%；交易量 $51.5M。",
+        "why": "你持有美股指数和黄金，伊朗线会同时影响油价、通胀预期、风险偏好。和平概率上去，短期可能压油价、抬风险资产，但黄金会少一个避险支撑。",
+        "watch": "盯巴基斯坦调解、美国特使行程、伊朗是否释放更明确谈判口径；Polymarket 里 June 30 合约如果继续上行，油价和黄金都要重新看。",
+        "category": "宏观/金融",
+        "tier": 1
+      },
+      {
+        "title": "半导体连涨到这份上，别把定投当免死金牌",
+        "source": "华尔街见闻",
+        "url": "https://wallstreetcn.com/articles/3770867",
+        "conclusion": "半导体现在不是“强”，是已经热到容易踩踏。",
+        "signal": "费城半导体指数创纪录连涨 18 天；华尔街见闻标题写“超买”。",
+        "why": "你定投纳指，半导体权重绕不开。AI 叙事再硬，价格短期也会过热，尤其英伟达、芯片链一旦回调，纳指会跟着挨打。",
+        "watch": "盯费城半导体指数是否结束连涨、英伟达是否继续创新高、资金是否从芯片切到软件或防御板块；如果半导体先跌，纳指通常不会完全没事。",
+        "category": "宏观/金融",
+        "tier": 1
+      },
+      {
+        "title": "Simon 的 llm 继续小步快跑，本地 AI 工作流更值得搭",
+        "source": "RSS:Simon Willison",
+        "url": "https://simonwillison.net/2026/Apr/24/llm/#atom-everything",
+        "conclusion": "别只盯大模型发布，真正提高效率的是把模型接进日常命令行和脚本。",
+        "signal": "llm 0.31；发布时间 2026 Apr 24。",
+        "why": "你是 AI 重度用户，很多任务没必要开网页：批量总结商品评论、清洗社群聊天、生成选题、跑 prompt 对比，都适合放进 CLI。llm 这种工具的价值是让模型变成“系统能力”，不是一个网站。",
+        "watch": "盯 llm 0.31 的插件生态、模型适配、结构化输出、批处理能力；如果 DeepSeek V4、Claude、OpenAI 都能顺滑切换，它就能当你的本地 AI 中控。",
+        "category": "开发者/开源",
         "tier": 1
       }
     ],
-    "watchpoint_reviews": []
+    "watchpoint_reviews": [
+      {
+        "watch": "盯它后面有没有开发者生态、API 价格战、以及中文和方言效果的真实反馈。语音一旦从“能用”跨到“稳定可商用”，会先影响客服和短内容生产。",
+        "status_label": "⏳ 进展中",
+        "review": "Mistral 发布 Voxtral TTS，明确打出 open-weight、9 种语言、方言捕捉、低延迟。原观察点里要盯的“开发者生态、价格战、中文和方言真实反馈”还没完全落地，但方向已经继续推进。",
+        "date": "2026-04-13"
+      },
+      {
+        "watch": "盯后面有没有更具体的状态管理、失败恢复、权限控制方案出来；只要这些细节开始公开，说明 agent 真在往生产环境落。",
+        "status_label": "⏳ 进展中",
+        "review": "OpenAI 发布 GPT-5.5，主打复杂目标理解、工具使用、自我检查和把任务推进到完成，说明“长任务 agent”已经成为头部模型的正面战场。不过今天还没看到状态管理、失败恢复、权限控制这些生产细节完全摊开。",
+        "date": "2026-04-14"
+      },
+      {
+        "watch": "盯 Cursor 后面会不会把这套 multi-agent 能力从 CUDA kernel 扩到更常见的 Web 后端、数据管道、推荐系统；如果接下来出现“在真实生产仓库里持续维护”的案例，比一次性 benchmark 更重要。",
+        "status_label": "⏳ 进展中",
+        "review": "Sam Altman 提到和 NVIDIA 做了 Codex 全公司 rollout，Cursor 也宣布和 SpaceX 合作改进 Composer。原来要盯的是能不能进入真实生产组织；今天的信息说明这条线已经从 demo 往大公司工作流里走，但还没看到长期维护真实仓库的完整案例。",
+        "date": "2026-04-17"
+      },
+      {
+        "watch": "盯它后面有没有把隐私权限、端侧处理、记忆机制做好；如果只有“全程监听”没有本地和权限控制，这类产品就很难从极客玩具变成日常工具。",
+        "status_label": "⏳ 进展中",
+        "review": "xAI 发布 Grok Voice Think Fast 1.0，强调复杂多步语音工作流、噪声环境和快速响应。语音 agent 的能力继续往日常操作靠近，但原观察点里最关键的隐私权限、端侧处理、记忆机制还没有被验证。",
+        "date": "2026-04-17"
+      },
+      {
+        "watch": "盯这个方向会不会继续长出两类配套：一类是本地文档/知识库接入，另一类是多模型切换和权限管理。真能跑起来，才算从极客玩具变成团队工具。",
+        "status_label": "✅ 验证",
+        "review": "Vitalik 公开自己的 self-sovereign / local / private / secure LLM setup，说明本地、私有、可控 AI 已经不只是理念，而是被高阶用户真正搭起来用。原判断“本地 AI 控制权从口号变工具”方向对了。",
+        "date": "2026-04-20"
+      },
+      {
+        "watch": "重点盯两件事：一是中文和方言的真实效果，二是授权范围。开源权重如果能商用，很多中小团队会直接跳过传统配音外包。",
+        "status_label": "⏳ 进展中",
+        "review": "Mistral 的 Voxtral TTS 继续把 open-weight、多语言、低延迟、方言能力往前推。它强化了“开源语音合成可用性提升”的判断，但中文效果和授权边界仍需要继续看。",
+        "date": "2026-04-20"
+      },
+      {
+        "watch": "盯 Anthropic 后续是否继续把更多核心能力优先放在 AWS 生态；如果“投资+返还云支出”这种结构变成行业标配，独立模型公司议价权会继续变弱。",
+        "status_label": "⏳ 进展中",
+        "review": "今天 HN 出现“Google plans to invest up to $40B in Anthropic”，说明 Anthropic 这类模型公司继续被巨头资本和云资源深度绑定。但这次是 Google，不是 AWS，所以不能说“Anthropic 核心能力继续优先 AWS”已验证，只能说大模型公司对 hyperscaler 的依赖更明显了。",
+        "date": "2026-04-21"
+      },
+      {
+        "watch": "盯接下来各家是否跟进披露类似“单集群规模”；如果微软真把“数十万 GB200”稳定跑起来，Azure 系模型和企业工作流产品会先吃到红利。",
+        "status_label": "⏳ 进展中",
+        "review": "Satya Nadella 宣布微软将在澳大利亚投入 A$25B 扩 AI 和云容量，同时 GPT-5.5 接入 GitHub Copilot、M365 Copilot、Copilot Studio 和 Foundry。原观察点说要盯各家是否继续披露大规模算力投入；今天微软确实继续加码，但还不是“单集群规模”级别的披露。",
+        "date": "2026-04-21"
+      },
+      {
+        "watch": "盯这个框架后面是否补齐工具调用、记忆、人工接管这些企业必需件；如果生态插件跟上，很多中小团队会直接跳过“自己造 agent 框架”这一步。",
+        "status_label": "⏳ 进展中",
+        "review": "微软宣布 Copilot Agent Mode broad rollout，OpenAI 也把 GPT-5.5 定位成 powering agents。agent 脚手架正在进入主流办公和开发产品，但工具调用、记忆、人工接管等企业必需件是否完整成熟，还需要继续看。",
+        "date": "2026-04-21"
+      }
+    ]
   },
   {
     "date": "2026-04-21",
