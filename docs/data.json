@@ -1,5 +1,185 @@
 [
   {
+    "date": "2026-04-27",
+    "main_theme": "今天最核心的一条线，不是“AI agent 又进化了”，而是 AI 正在从聊天工具，变成能接任务、碰系统、动交易的执行层。Cursor 的 `/multitask`、Claude 练砍价交易、CUA 做 computer-use 基础设施，本质都在指向同一件事：AI 不再只负责给建议，而是开始替人把活干完。\n\n但只要 AI 开始真干活，问题马上从“聪不聪明”切到“能不能控住风险”。Cursor 并发派活会遇到多文件改崩、测试修不回来的问题；agent 接订单、库存、CRM，会遇到删库、乱改价、乱发券的问题；Claude 如果未来能替用户谈判下单，商家的商品信息、售后规则、价格体系就必须变成机器可读、可校验、可回滚的资产。\n\n所以今天这批信息真正串起来，是一条很清楚的产业升级线：AI 从“生成内容”走向“执行业务”，赢家不是 prompt 写得花的人，而是把流程、权限、数据、商品、交易都整理成可复用系统的人。对做电商和 AI 工具的人来说，接下来别再沉迷“哪个模型最强”，要盯三个字：可托管——这个 agent 能不能长期稳定替你跑一段真实业务。",
+    "commentary": "**今天值得花时间看的：**\n\nCursor 这个 `/multitask` 真别只当产品更新看，它其实是 AI 编程范式变了。以前是你盯着一个助手一问一答，现在是你把任务拆出去，让几个 subagent 同时干；如果这东西在真实项目里能扛住多文件改动、测试修复、重构，那小团队做后台、落地页、数据脚本的效率会直接上一个台阶。\n\nAgent 删库这个也特别值得看，甚至比很多“新模型发布”更重要。因为大家现在一兴奋就想把 AI 接进订单、库存、客服、社群，但我跟你说，没沙箱、没只读、没审批、没回滚的 agent，别让它碰生产库；这不是保守，这是做生意的人最基本的命门意识。\n\n还有 Claude 练“砍价和交易”这条，跟电商太近了。未来用户可能不是逛你直播间，也不是翻你详情页，而是跟自己的 agent 说：“帮我买一款适合 10 个月宝宝的纸尿裤，别临期，价格合适，售后靠谱。”那时候你的商品标题、规格、价格、评价、退换货规则，能不能被 agent 正确读取，比你海报做得多漂亮更关键。\n\n**可以跳过的：**\n\n湾区房子要 Anthropic 股权这个，能看，但别上头。它说明 AI 私人股权已经外溢到现实资产，这个信号有意思；但大部分人拿它当“AI 财富神话”转发，其实没啥可操作性，别被这种故事骗得以为自己也该去追高 AI 概念。\n\nGoogle 算力底牌这条也别被标题带偏。它重要，但不新鲜，Google 有 TPU、有数据中心、有钱烧，这个市场早就知道；真正要看的不是“Google 很强”，而是它后面会不会把 TPU 更开放给开发者、Gemma 会不会变成企业默认选项，不然今天这条更多是背景板。\n\n**下周盯这几个：**\n\n第一，盯 Cursor 3 的 `/multitask` 真实翻车案例，尤其看 GitHub、X、HN 上有没有人晒大型项目里的多文件改动结果。别看官方 demo，要看它能不能自己开分支、跑测试、修失败、最后合并得干净。\n\n第二，盯 Anthropic 的 Project Deal 有没有下一步产品化动作，重点看三件事：能不能接真实商家、能不能接支付、能不能处理售后。只要它从办公室实验走到真实交易，母婴电商这类高信任、高复购类目就要提前准备“给 agent 看的商品说明书”。\n\n第三，盯各类 agent 工具下周有没有补权限能力：默认沙箱、只读模式、审批流、操作日志、回滚机制。我的判断很直接：2026 年能在企业里活下来的 agent，不一定是最聪明的，但一定是最不容易闯祸的。",
+    "items": [
+      {
+        "title": "Cursor 开始把“排队写代码”改成“并发派活”",
+        "source": "X (Twitter)",
+        "url": "https://x.com/cursor_ai/status/2047764651363180839",
+        "conclusion": "这事说白了就是，AI 编程从“一个聪明助手”往“小团队流水线”走了。",
+        "signal": "Cursor 3；`/multitask`；热度 2361。",
+        "why": "你现在用 Cursor/Claude 写代码，最大的卡点不是模型不会，而是任务一个个排队。并发 subagents 真跑顺了，做电商后台、数据脚本、落地页改版，会更像同时派几个实习生干活。",
+        "watch": "盯 Cursor 3 里 `/multitask` 对真实项目的翻车率，尤其是多文件改动、测试修复、重构这三类任务。",
+        "category": "AI工程",
+        "tier": 1
+      },
+      {
+        "title": "AI agent 删库不是笑话，是权限设计没跟上",
+        "source": "Hacker News",
+        "url": "https://twitter.com/lifeof_jer/status/2048103471019434248",
+        "conclusion": "agent 能干活以后，第一批事故一定出在“给了它不该有的权限”。",
+        "signal": "Hacker News 426 points。",
+        "why": "你要是把 agent 接进订单、库存、CRM、社群工具，别先想效率，先想它能不能删库、乱发券、乱改价格。AI 自动化不是插件问题，是生产权限问题。",
+        "watch": "接下来盯各类 agent 工具有没有默认沙箱、只读模式、审批流、回滚机制；没有这些的，别让它碰生产库。",
+        "category": "AI工程",
+        "tier": 1
+      },
+      {
+        "title": "Google 的算力底牌，比大家嘴上说的更硬",
+        "source": "Hacker News",
+        "url": "https://www.ft.com/content/2429f0f0-b685-4747-b425-bf8001a2e94c",
+        "conclusion": "别只盯模型榜，Google 真正的护城河是它手里那堆算力。",
+        "signal": "Google 控制约 25% 全球 AI compute；约 3.8M TPUs 和 1.3M GPUs；Hacker News 27 points。",
+        "why": "这会影响两个判断：第一，Gemini/Gemma 不一定短期赢口碑，但长期训练能力很强；第二，AI 股投资别只看应用层，算力集中度才是大平台定价权。",
+        "watch": "盯 Google 后续是否把 TPU 能力更多开放给外部开发者，以及 Gemma 生态有没有从“好用”变成“默认选择”。",
+        "category": "AI行业",
+        "tier": 1
+      },
+      {
+        "title": "Claude 已经在练“替人砍价和交易”",
+        "source": "X (Twitter)",
+        "url": "https://x.com/AnthropicAI/status/2047728360818696302",
+        "conclusion": "电商 agent 的关键不是会聊天，是会替用户完成谈判、下单、交易。",
+        "signal": "Anthropic 在 San Francisco office 做 Project Deal；Claude 负责 buying、selling、negotiating；热度 6218。",
+        "why": "这跟母婴电商很近。以后用户可能不是进直播间慢慢看，而是让 agent 说“帮我买适合宝宝的纸尿裤，预算内，别买临期”，你的商品信息、价格、评价、售后规则都要能被 agent 读懂。",
+        "watch": "盯 Anthropic 会不会把 Project Deal 里的谈判能力产品化，特别是是否开放给真实商家、是否能接支付和售后。",
+        "category": "商业/电商",
+        "tier": 1
+      },
+      {
+        "title": "Amazon 播客策略变了：内容不只是获客，是直接变现",
+        "source": "RSS:TechCrunch",
+        "url": "https://techcrunch.com/2026/04/26/amazons-new-podcast-strategy-monetize-everything/",
+        "conclusion": "Amazon 在把播客从“听众生意”改成“全链路变现生意”。",
+        "signal": "TechCrunch 称 Amazon podcasting business 在过去 six months 发生转变。",
+        "why": "这对小红书、抖音、社群也一样：内容平台的下一步不是单纯涨粉，而是把内容、广告、会员、交易都揉在一起。你做母婴内容，别只算播放量，要算每条内容后面能不能导购、复购、进群。",
+        "watch": "盯 Amazon 后续会不会把播客和购物、订阅、广告库存进一步打通；国内平台通常会抄这种“内容即货架”的玩法。",
+        "category": "商业/电商",
+        "tier": 1
+      },
+      {
+        "title": "以色列政治风险还没被市场当成短线危机",
+        "source": "Polymarket",
+        "url": "https://polymarket.com/event/netanyahu-out-before-2027",
+        "conclusion": "市场觉得 Netanyahu 今年马上下台概率低，但 2026 年前变天概率不低。",
+        "signal": "Netanyahu out by end of 2026：Yes 44%；Netanyahu out by June 30：Yes 6%；交易量 $118.7M。",
+        "why": "你持有黄金，又定投美股，地缘风险不能只看今天有没有打起来。中东政治如果拖成长期不稳定，黄金强、油价波动、美股风险偏好都会被影响。",
+        "watch": "盯 June 30 前的 6% 有没有突然上跳；如果短期下台概率快速抬升，说明市场开始交易突发政治断点。",
+        "category": "宏观/金融",
+        "tier": 1
+      },
+      {
+        "title": "Agent Skills 火了，提示词正在变成“可复用工作流资产”",
+        "source": "GitHub Trending",
+        "url": "https://github.com/mattpocock/skills",
+        "conclusion": "以后厉害的不是“会写 prompt”，而是有一套能复用、能迁移的 skills。",
+        "signal": "mattpocock/skills，23,712 stars。",
+        "why": "你每天用 Claude/Cursor，最值得沉淀的不是单次对话，而是选品分析、竞品拆解、客服质检、社群文案、代码审查这些固定流程。skills 仓库火，说明大家开始把 AI 使用经验工程化。",
+        "watch": "盯这些 skills 是否开始出现行业模板，比如电商运营、内容生产、数据分析；能直接改成你团队 SOP 的，优先抄。",
+        "category": "开发者/开源",
+        "tier": 1
+      },
+      {
+        "title": "Computer-use agent 的基础设施开始补齐",
+        "source": "GitHub Trending",
+        "url": "https://github.com/trycua/cua",
+        "conclusion": "让 AI 操作电脑这事，正在从 demo 变成可训练、可评估、可部署的工程问题。",
+        "signal": "trycua/cua，14,385 stars；支持 macOS、Linux、Windows；包含 sandboxes、SDKs、benchmarks。",
+        "why": "电商运营很多活不是 API 能解决的，比如后台点点点、导表、查物流、改素材。computer-use agent 一旦稳定，小团队能自动化掉一堆“人肉运营”。",
+        "watch": "盯 CUA 的 benchmark 有没有覆盖真实桌面任务，尤其是浏览器后台、多窗口、验证码/登录态、文件上传这些脏活。",
+        "category": "开发者/开源",
+        "tier": 1
+      },
+      {
+        "title": "湾区房子开始收 Anthropic 股权，AI 财富泡沫已经外溢",
+        "source": "RSS:TechCrunch",
+        "url": "https://techcrunch.com/2026/04/26/to-buy-this-bay-area-home-youll-need-anthropic-equity/",
+        "conclusion": "当房产交易都开始盯 AI 公司股权，说明泡沫不只在二级市场。",
+        "signal": "Mill Valley 13-acre property；TechCrunch 标题称“To buy this Bay Area home, you’ll need Anthropic equity”。",
+        "why": "这不是八卦。AI 公司股权正在被当成硬通货，人才、房产、消费都会被重新定价。你看 AI 行业机会时，也要意识到：最疯狂的价格信号，往往先出现在工资、租房、房产这些地方。",
+        "watch": "盯 Anthropic、OpenAI、xAI 这类未上市股权是否继续被拿来做大额交易抵价；如果多起来，说明私人市场估值已经影响现实资产。",
+        "category": "其他值得看的",
+        "tier": 1
+      }
+    ],
+    "watchpoint_reviews": [
+      {
+        "watch": "盯它后面有没有开发者生态、API 价格战、以及中文和方言效果的真实反馈。语音一旦从“能用”跨到“稳定可商用”，会先影响客服和短内容生产。",
+        "status_label": "✅ 验证",
+        "review": "Mistral 今天发布 Voxtral TTS，明确是 open-weight，支持 9 种语言、方言捕捉、低延迟和情绪表达。之前说要盯 Mistral 后续语音生态和商用稳定性，这条线确实继续往“可用、可集成”推进了。",
+        "date": "2026-04-13"
+      },
+      {
+        "watch": "盯后面有没有更具体的状态管理、失败恢复、权限控制方案出来；只要这些细节开始公开，说明 agent 真在往生产环境落。",
+        "status_label": "⏳ 进展中",
+        "review": "OpenAI 发布 GPT-5.5，主打复杂目标理解、工具使用、自检和把任务推进到完成；Anthropic 也用 Claude 做员工间买卖谈判实验。方向上验证了“agent 赛点转向真实执行”，但状态管理、失败恢复、权限控制这些生产细节还没有完全摊开。",
+        "date": "2026-04-14"
+      },
+      {
+        "watch": "盯它后面有没有公开更完整的任务表现；如果只是省 token，但任务成功率掉得厉害，那就只是便宜，不是进步。",
+        "status_label": "⏳ 进展中",
+        "review": "OpenAI 强调 GPT-5.5 的 full-stack inference improvements，让 Pro 级模型更快、更实用。它不是直接说“省 token”，但确实说明前沿模型开始同时卷能力和推理效率；还需要看真实任务成功率和成本账。",
+        "date": "2026-04-16"
+      },
+      {
+        "watch": "盯 Cursor 后面会不会把这套 multi-agent 能力从 CUDA kernel 扩到更常见的 Web 后端、数据管道、推荐系统；如果接下来出现“在真实生产仓库里持续维护”的案例，比一次性 benchmark 更重要。",
+        "status_label": "✅ 验证",
+        "review": "Cursor 推出 `/multitask`，可以用异步 subagents 并行处理请求，不再只是排队等一个 agent 做完。之前说要盯 Cursor 是否把 multi-agent 能力产品化，现在已经从 benchmark/演示走进主界面功能了。",
+        "date": "2026-04-17"
+      },
+      {
+        "watch": "盯两件事：一是它在真实代码库里的稳定性，不是 demo；二是社区会不会很快补上工具调用、记忆、编辑器集成。开源模型真正的门槛不在模型本身，在配套。",
+        "status_label": "⏳ 进展中",
+        "review": "Perplexity 接入 Moonshot 的 Kimi K2.6，并称其为新的 state-of-the-art open-weight model；同时 HN 上出现“SWE-bench Verified 不再衡量前沿 coding 能力”的讨论。开源/开放权重模型继续逼近前沿，但今天还没有看到它在真实代码库、编辑器集成和工具调用上的完整验证。",
+        "date": "2026-04-17"
+      },
+      {
+        "watch": "盯它后面有没有把隐私权限、端侧处理、记忆机制做好；如果只有“全程监听”没有本地和权限控制，这类产品就很难从极客玩具变成日常工具。",
+        "status_label": "⏳ 进展中",
+        "review": "xAI 发布 Grok Voice Think Fast 1.0，强调复杂多步工作流、低延迟语音响应和噪声环境表现。语音入口继续靠近实时助手，但隐私权限、端侧处理和记忆机制这些关键问题还没有明确答案。",
+        "date": "2026-04-17"
+      },
+      {
+        "watch": "重点盯两件事：一是中文和方言的真实效果，二是授权范围。开源权重如果能商用，很多中小团队会直接跳过传统配音外包。",
+        "status_label": "✅ 验证",
+        "review": "Mistral 的 Voxtral TTS 明确走 open-weight、多语言、低延迟路线，和之前判断的“开源语音足够支撑多语种内容生产”一致。下一步仍要看授权范围、中文和方言实测，但趋势已经更清楚。",
+        "date": "2026-04-20"
+      },
+      {
+        "watch": "盯接下来各家是否跟进披露类似“单集群规模”；如果微软真把“数十万 GB200”稳定跑起来，Azure 系模型和企业工作流产品会先吃到红利。",
+        "status_label": "⏳ 进展中",
+        "review": "GPT-5.5 今天同步滚进 GitHub Copilot、M365 Copilot、Copilot Studio 和 Foundry，说明微软确实在把新模型能力快速分发进企业工作流。它验证了 Azure/微软产品线会先吃到前沿模型红利，但今天没有新增“单集群规模”级别的算力披露。",
+        "date": "2026-04-21"
+      },
+      {
+        "watch": "盯这个框架后面是否补齐工具调用、记忆、人工接管这些企业必需件；如果生态插件跟上，很多中小团队会直接跳过“自己造 agent 框架”这一步。",
+        "status_label": "✅ 验证",
+        "review": "Cursor 的 `/multitask` 直接把 async subagents 做成产品功能，说明多 agent 不再只是框架层概念，而是在日常 coding 工具里落地。之前说中小团队会跳过自造 agent 框架，这个方向被进一步验证。",
+        "date": "2026-04-21"
+      },
+      {
+        "watch": "盯它能不能处理登录态、验证码、弹窗、文件上传、异常重试；这些过不了，就只能当 demo，过了才是真工具。",
+        "status_label": "⏳ 进展中",
+        "review": "Perplexity 把 GPT-5.5 作为 Computer 的默认 orchestration model，说明“电脑/浏览器操作型 agent”继续升温。只是今天还没看到它对登录态、验证码、弹窗、文件上传、异常重试这些硬问题的完整结果。",
+        "date": "2026-04-25"
+      },
+      {
+        "watch": "盯巴基斯坦调解、美国特使行程、伊朗是否释放更明确谈判口径；Polymarket 里 June 30 合约如果继续上行，油价和黄金都要重新看。",
+        "status_label": "⏳ 进展中",
+        "review": "特朗普称“伊朗战争很快会结束，并且我们会胜利”，属于更明确的政治口径信号。它支持继续盯和平/降级交易，但还缺油价、黄金和预测市场合约的同步确认，不能直接算验证完成。",
+        "date": "2026-04-25"
+      },
+      {
+        "watch": "盯 llm 0.31 的插件生态、模型适配、结构化输出、批处理能力；如果 DeepSeek V4、Claude、OpenAI 都能顺滑切换，它就能当你的本地 AI 中控。",
+        "status_label": "⏳ 进展中",
+        "review": "Vitalik 分享了自己的 self-sovereign / local / private / secure LLM setup，说明本地、私有、可控的 AI 工作流仍在被高端用户认真搭建。今天不是 llm 项目本身更新，但“本地 AI 中控”的需求方向继续增强。",
+        "date": "2026-04-25"
+      }
+    ]
+  },
+  {
     "date": "2026-04-25",
     "main_theme": "今天最核心的线索，不是“AI 又卷模型”，而是 AI 正在从聊天框往真实工作流里钻：浏览器、代码库、API、数据后台、本地命令行，全都在补同一件事——让 agent 能接真实系统、跑真实流程、承担真实责任。模型能力当然还重要，但今天这些信号更像是在说：下一轮效率差距，不在谁会问 AI，而在谁能把 AI 嵌进自己的业务链路。\n\nBrowser Harness 指向的是“AI 替人操作网页后台”，claude-context 指向的是“代码 agent 少瞎猜”，PostHog 指向的是“小团队别让数据散成一地鸡毛”，阮一峰说的第二次 API 开放浪潮，本质是平台开始给 agent 留门。再加上 DeepSeek V4 把价格锚往下砸、Google 可能重金押 Anthropic，说明模型层一边在降成本，一边在抢企业入口；真正值钱的，会是能把低成本模型、稳定上下文、平台 API、业务数据串起来的人。\n\n我的判断很直接：接下来别再把“用了哪个模型”当核心竞争力，那玩意儿很快会变成水电煤。下周开始就该盘自己的流程：选品、上架、客服、评论分析、社群触达、复盘，哪一步能接 API、哪一步能让浏览器 agent 跑、哪一步能用 DeepSeek 这种低价模型批处理，先把一条闭环自动化出来，比追十个新模型发布更值钱。",
     "commentary": "**今天值得花时间看的：**  \n第一条是 Browser Harness，这个别错过。因为电商运营最烦的不是写方案，是每天在一堆后台里点来点去：看订单、改素材、导数据、发消息、查违规、回客服；如果浏览器 agent 能扛住登录态、弹窗、文件上传、异常重试，那它吃掉的不是“AI 玩具市场”，是助理和运营的重复劳动。\n\n第二条是 DeepSeek V4，别只把它当国产模型新闻看，它真正狠的是继续砸 API 成本。客服总结、商品文案、评论聚类、社群内容改写，这些高频任务不需要每次都上最贵模型，谁能用便宜模型跑稳定批处理，谁的小团队毛利就会更舒服。\n\n第三条是 PostHog。很多小团队死在“数据不贵，但决策太慢”：抖音一个后台，小红书一个后台，微信一个后台，广告又一个后台，最后复盘全靠感觉；PostHog 这种全家桶如果能把行为、实验、错误、反馈放一起，价值不是省 SaaS 钱，是减少老板和运营互相拍脑袋。\n\n**可以跳过的：**  \n“Google 投 Anthropic”这条大家会聊很多，但今天能落地的信息其实没那么多，除非后面明确看到 Claude 深接 Google Cloud、Workspace 或企业分发，否则现在更多是巨头站队新闻。你知道它重要就行，不用刷十篇解读，真正影响你的是 Claude 价格、稳定性、团队版能力有没有变化。\n\n半导体 18 连涨也别被情绪带着冲。这个新闻的有效信息就一句：热得有点过了，定投纳指的人别把半导体当免死金牌；至于各种“AI 永远涨”“芯片无敌”的小作文，基本是行情涨出来的信仰，不是新逻辑。\n\n**下周盯这几个：**  \n第一，盯 4 月 30 日前后的美伊和平交易变化，尤其 Polymarket 上 April 30、May 31、June 30 三个合约概率怎么动。June 30 如果继续从 54% 往上走，油价、通胀预期、黄金避险逻辑都要重新算，持有美股指数和黄金的人别装看不见。\n\n第二，盯 DeepSeek V4 的 API 价格、上下文长度、函数调用和中文电商任务表现。我的建议是直接拿你自己的商品评论、客服聊天、社群内容做 50 条测试，不要看榜单吹牛；如果稳定，就把非核心推理任务迁一部分过去。\n\n第三，盯抖音、小红书、微信、支付、物流、CRM 有没有更明确的 API/MCP 开放动作。谁先给 agent 留门，谁就会先变成自动化运营的主战场；对小团队来说，这比“又一个 AI 写作神器”重要多了。",

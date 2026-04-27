@@ -1,131 +1,5 @@
 [
   {
-    "date": "2026-03-26",
-    "title": "Claude 代码流量，已经先涌向“没人维护的小仓库”",
-    "watch": "盯两件事：一是这类 **<2 stars** 长尾仓库会不会开始暴露更多安全和维护问题；二是 Claude/Cursor 这类工具后面会不会把“生成”往“托管、更新、回滚”延伸，不然 90% 的长尾代码最后会变成债。",
-    "source": "Hacker News",
-    "status": "open"
-  },
-  {
-    "date": "2026-03-26",
-    "title": "老用户反而不爱“全自动代理”",
-    "watch": "接下来盯 Anthropic 后续有没有把“长期用户”进一步拆成任务类型，比如写代码、写文案、做研究分别有多大差异。如果高价值任务都在往“人盯流程、AI跑局部”收敛，那 agent 产品会从“全自动”改成“半自动工作台”。",
-    "source": "X (Twitter)",
-    "status": "verified"
-  },
-  {
-    "date": "2026-03-26",
-    "title": "Cursor 开始讲自己怎么训练了",
-    "watch": "盯后续有没有更多团队跟进公开训练细节，尤其是代码类产品。如果只有少数公司敢讲，说明这个赛道会从“比功能”转向“比飞轮”。你选主力工具时，应该优先飞轮清楚的。",
-    "source": "X (Twitter)",
-    "status": "verified"
-  },
-  {
-    "date": "2026-03-26",
-    "title": "重仓金铜的基金，一个月亏了 13 亿美元",
-    "watch": "盯金价和油价是不是继续出现“消息刺激上涨、随后快速回吐”的节奏。如果这种来回洗还在持续，说明市场更像交易拥挤和流动性，不是在交易长期趋势。",
-    "source": "华尔街见闻",
-    "status": "open"
-  },
-  {
-    "date": "2026-03-26",
-    "title": "油价的分歧，已经被压缩成“40 或 150”",
-    "watch": "盯原油是否继续往“尾部情景”交易，而不是围绕均值震荡。尤其要看霍尔木兹、伊朗相关事件有没有继续把预期往极端推。只要市场还在押极端，不适合把风险预算打满。",
-    "source": "华尔街见闻",
-    "status": "verified"
-  },
-  {
-    "date": "2026-03-26",
-    "title": "Claude Code 开始长“潜意识”了",
-    "watch": "盯这类“subconscious / memory / profile”项目会不会从代码助手扩展到通用 agent。如果开始接 CRM、知识库、文件系统，那说明“会记人”的 AI 要从玩具变成生产工具了。",
-    "source": "GitHub Trending",
-    "status": "open"
-  },
-  {
-    "date": "2026-03-26",
-    "title": "“自动网上赚钱”项目，已经拿到 2.5 万星",
-    "watch": "盯平台接下来对批量生成内容、低质带货、账号矩阵的治理动作。如果规则开始收紧，你更该把 AI 用在选题、客服、素材复用、用户分层，不要用在粗暴灌量。",
-    "source": "GitHub Trending",
-    "status": "open"
-  },
-  {
-    "date": "2026-03-26",
-    "title": "欧盟还想扫描你的私信和照片",
-    "watch": "盯欧盟这件事是否推进到更具体的执行口径：扫描范围是仅限已知违法内容，还是扩大到更泛的“风险识别”；以及端到端加密会不会被实际削弱。只要落地，全球平台都会跟着改。",
-    "source": "Hacker News",
-    "status": "open"
-  },
-  {
-    "date": "2026-03-26",
-    "title": "钠离子电池把“便宜但不行”的印象打碎了",
-    "watch": "盯两件事：一是量产，不是实验室；二是循环寿命和低温表现有没有后续公开数据。只要这两个补上，钠离子的故事就会从“新闻”变成“产业变量”。",
-    "source": "Hacker News",
-    "status": "open"
-  },
-  {
-    "date": "2026-03-27",
-    "title": "Cursor 把云端 agent 搬进你自己机房了",
-    "watch": "接下来盯两件事：一是别家会不会跟进“自带 agent、私有部署”这条线；二是 Cursor 后面会不会继续放出权限管理、审计日志、MCP/工具白名单这类企业必需品。",
-    "source": "X (Twitter)",
-    "status": "verified"
-  },
-  {
-    "date": "2026-03-27",
-    "title": "SQLite 直接吃 S3，冷启动 JOIN 也能压到 250ms 内",
-    "watch": "重点看两个指标：一是 JOIN 在真实多表场景是不是还能稳住 “sub-250ms”；二是写入、并发和权限控制能不能补上，不然就还是个 demo 神器。",
-    "source": "Hacker News",
-    "status": "open"
-  },
-  {
-    "date": "2026-03-27",
-    "title": "用 AI 一天重写老系统，年省 50 万美元",
-    "watch": "别只盯“重写成功”，要盯三件更硬的事：一是有没有稳定回归测试；二是重写后维护成本是不是真降；三是这类案例会不会从内部工具扩到订单、定价、客服规则引擎这些业务核心。",
-    "source": "Hacker News",
-    "status": "open"
-  },
-  {
-    "date": "2026-03-27",
-    "title": "金融研究 agent 已经卷到 18965 星了",
-    "watch": "盯它后面有没有接入更稳定的数据源、回测、引用溯源和可审计输出；没有这些，星再多也只是会说人话的研究玩具。",
-    "source": "GitHub Trending",
-    "status": "open"
-  },
-  {
-    "date": "2026-03-27",
-    "title": "开源版 Salesforce 拿到 41249 星，说明 CRM 不再只是大公司的重软件",
-    "watch": "别只看星数，重点盯它能不能接常用营销栈、消息系统、自动化流程，以及中文社区和部署难度。如果只是“像 Salesforce”，但落不了地，对你没用。",
-    "source": "GitHub Trending",
-    "status": "open"
-  },
-  {
-    "date": "2026-03-27",
-    "title": "市场不信 3 月底停火，但开始押 4 月能谈成",
-    "watch": "接下来就盯两个时间点：March 31 和 April 30。若 4 月合约继续往上走，而油价不再跟，那说明市场开始把冲突当“谈判噪音”；反过来，如果 4 月概率掉、油再冲，风险资产会更难受。",
-    "source": "Polymarket",
-    "status": "open"
-  },
-  {
-    "date": "2026-03-27",
-    "title": "2028 民主党提名盘干到 9.186 亿美元，预测市场已经不是小众玩具了",
-    "watch": "后面盯两类变化：一是更多非金融事件会不会继续被高流动性合约承接；二是媒体和创作者会不会越来越用这些价格当标题和立论依据。那时“信息源”和“赌场”就更难分了。",
-    "source": "Polymarket",
-    "status": "open"
-  },
-  {
-    "date": "2026-03-27",
-    "title": "这个 OCR 模型专啃复杂表格、表单和手写字",
-    "watch": "盯它三点：中文效果、版式还原、以及和你现有表格/知识库流程怎么接。OCR 工具最怕 demo 好看，落地一塌糊涂。",
-    "source": "GitHub Trending",
-    "status": "open"
-  },
-  {
-    "date": "2026-03-27",
-    "title": "Netflix 又涨价了，标准无广告涨到 19.99 美元",
-    "watch": "接下来盯两个信号：一是用户流失有没有明显放大；二是同行会不会跟。若涨价后留存没坏，说明 2026 年消费者对“高频强需求订阅”还没到极限。",
-    "source": "RSS:TechCrunch",
-    "status": "open"
-  },
-  {
     "date": "2026-03-30",
     "title": "模型迭代进入“5小时一更”",
     "watch": "盯 Cursor 后面会不会给更细的 checkpoint 说明、回滚能力、固定版本选项；如果只快更不做变更日志，企业用起来会越来越像踩滑板。",
@@ -753,7 +627,7 @@
     "title": "Mistral 把 TTS 做到 9 种语言，语音这条线也开始“开源平权”",
     "watch": "盯它后面有没有开发者生态、API 价格战、以及中文和方言效果的真实反馈。语音一旦从“能用”跨到“稳定可商用”，会先影响客服和短内容生产。",
     "source": "X (Twitter)",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-04-14",
@@ -956,7 +830,7 @@
     "title": "多智能体开始吃下“硬核优化”活，不只是写业务代码了",
     "watch": "盯 Cursor 后面会不会把这套 multi-agent 能力从 CUDA kernel 扩到更常见的 Web 后端、数据管道、推荐系统；如果接下来出现“在真实生产仓库里持续维护”的案例，比一次性 benchmark 更重要。",
     "source": "X (Twitter)",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-04-17",
@@ -1040,7 +914,7 @@
     "title": "开源语音合成，已经够你做多语种内容了",
     "watch": "重点盯两件事：一是中文和方言的真实效果，二是授权范围。开源权重如果能商用，很多中小团队会直接跳过传统配音外包。",
     "source": "X (Twitter)",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-04-20",
@@ -1096,7 +970,7 @@
     "title": "多 agent 已经从概念，变成现成脚手架了",
     "watch": "盯这个框架后面是否补齐工具调用、记忆、人工接管这些企业必需件；如果生态插件跟上，很多中小团队会直接跳过“自己造 agent 框架”这一步。",
     "source": "GitHub Trending",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-04-21",
@@ -1201,6 +1075,69 @@
     "title": "Simon 的 llm 继续小步快跑，本地 AI 工作流更值得搭",
     "watch": "盯 llm 0.31 的插件生态、模型适配、结构化输出、批处理能力；如果 DeepSeek V4、Claude、OpenAI 都能顺滑切换，它就能当你的本地 AI 中控。",
     "source": "RSS:Simon Willison",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-27",
+    "title": "Cursor 开始把“排队写代码”改成“并发派活”",
+    "watch": "盯 Cursor 3 里 `/multitask` 对真实项目的翻车率，尤其是多文件改动、测试修复、重构这三类任务。",
+    "source": "X (Twitter)",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-27",
+    "title": "AI agent 删库不是笑话，是权限设计没跟上",
+    "watch": "接下来盯各类 agent 工具有没有默认沙箱、只读模式、审批流、回滚机制；没有这些的，别让它碰生产库。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-27",
+    "title": "Google 的算力底牌，比大家嘴上说的更硬",
+    "watch": "盯 Google 后续是否把 TPU 能力更多开放给外部开发者，以及 Gemma 生态有没有从“好用”变成“默认选择”。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-27",
+    "title": "Claude 已经在练“替人砍价和交易”",
+    "watch": "盯 Anthropic 会不会把 Project Deal 里的谈判能力产品化，特别是是否开放给真实商家、是否能接支付和售后。",
+    "source": "X (Twitter)",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-27",
+    "title": "Amazon 播客策略变了：内容不只是获客，是直接变现",
+    "watch": "盯 Amazon 后续会不会把播客和购物、订阅、广告库存进一步打通；国内平台通常会抄这种“内容即货架”的玩法。",
+    "source": "RSS:TechCrunch",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-27",
+    "title": "以色列政治风险还没被市场当成短线危机",
+    "watch": "盯 June 30 前的 6% 有没有突然上跳；如果短期下台概率快速抬升，说明市场开始交易突发政治断点。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-27",
+    "title": "Agent Skills 火了，提示词正在变成“可复用工作流资产”",
+    "watch": "盯这些 skills 是否开始出现行业模板，比如电商运营、内容生产、数据分析；能直接改成你团队 SOP 的，优先抄。",
+    "source": "GitHub Trending",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-27",
+    "title": "Computer-use agent 的基础设施开始补齐",
+    "watch": "盯 CUA 的 benchmark 有没有覆盖真实桌面任务，尤其是浏览器后台、多窗口、验证码/登录态、文件上传这些脏活。",
+    "source": "GitHub Trending",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-27",
+    "title": "湾区房子开始收 Anthropic 股权，AI 财富泡沫已经外溢",
+    "watch": "盯 Anthropic、OpenAI、xAI 这类未上市股权是否继续被拿来做大额交易抵价；如果多起来，说明私人市场估值已经影响现实资产。",
+    "source": "RSS:TechCrunch",
     "status": "open"
   }
 ]
