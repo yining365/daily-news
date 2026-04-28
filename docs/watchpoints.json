@@ -1139,5 +1139,75 @@
     "watch": "盯 Anthropic、OpenAI、xAI 这类未上市股权是否继续被拿来做大额交易抵价；如果多起来，说明私人市场估值已经影响现实资产。",
     "source": "RSS:TechCrunch",
     "status": "open"
+  },
+  {
+    "date": "2026-04-28",
+    "title": "代码助手开始按用量收钱了",
+    "watch": "盯 GitHub Copilot 的用量口径：是按请求、token、模型档位，还是 agent 执行次数计费；这会影响你要不要把部分 coding workflow 转到本地模型或开源 agent。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-28",
+    "title": "代码库知识图谱要变成标配了",
+    "watch": "盯它能不能吃大型 repo、能不能接 Cursor/Claude Code、能不能持续增量更新；如果能，适合拿来做你电商后台和数据脚本的“项目大脑”。",
+    "source": "GitHub Trending",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-28",
+    "title": "开源权重模型继续挤进主流产品",
+    "watch": "盯 Perplexity Pro/Max 里 Kimi K2.6 的默认可见度；如果它开始被放进推荐位，说明国外产品也愿意把中国模型放到前台。",
+    "source": "X (Twitter)",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-28",
+    "title": "语音模型开始卷“快”和“多语言”",
+    "watch": "盯它的中文和粤语效果，尤其是情绪表达和方言稳定性；如果能自然说粤语，广州本地母婴号可以直接做差异化。",
+    "source": "X (Twitter)",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-28",
+    "title": "社媒诈骗已经是电商信任成本",
+    "watch": "盯 FTC 后续按平台拆分的数据；你自己这边要盯客服冒充、群内假链接、付款路径跳转这几类风险。",
+    "source": "RSS:TechCrunch",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-28",
+    "title": "宁德时代配股，港股融资窗口还开着",
+    "watch": "盯配售完成后的股价承接，如果折价后还能稳住，说明机构资金对中国核心制造资产还没撤。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-28",
+    "title": "美国右派接班人交易已经很热",
+    "watch": "盯共和党内部民调和大型捐赠人流向；如果 Vance 的提名定价继续抬，市场会更早给关税和科技监管重新定价。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-28",
+    "title": "微软也把语音 AI 开源牌打出来了",
+    "watch": "盯 VibeVoice 的商用许可、中文效果、长音频稳定性；如果许可友好，可以试着接到短视频批量生产链路里。",
+    "source": "GitHub Trending",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-28",
+    "title": "AI 劳务平台的数据泄露很吓人",
+    "watch": "盯 Mercor 后续是否披露泄露范围和补救方式；你自己要盘一遍哪些 AI 工具上传过客户素材、语音、订单截图。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-28",
+    "title": "基因疗法开始打到听力损失",
+    "watch": "盯 FDA 后续适应症范围、治疗对象年龄、以及保险覆盖情况；如果从罕见病走向更常见疾病，健康消费市场会被重新教育。",
+    "source": "Hacker News",
+    "status": "open"
   }
 ]

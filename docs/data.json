@@ -1,5 +1,184 @@
 [
   {
+    "date": "2026-04-28",
+    "main_theme": "今天最核心的线，不是 AI 又发了几个模型，而是 AI 正在从“无限试用的玩具”变成“要进成本表、进工作流、进风控清单的生产系统”。Copilot 开始按用量计费，说明代码助手这门生意已经不想再靠固定订阅补贴重度用户；GitNexus 这种代码库知识图谱冒出来，则说明下一阶段拼的不是模型喊得多强，而是谁能让 agent 稳定读懂真实项目。\n\n这条线在语音和开源模型上也很明显：Kimi K2.6 进 Perplexity，Voxtral TTS、微软 VibeVoice 开源，背后都是一个方向——AI 能力会越来越便宜、越来越可替换，但真正值钱的是谁能把它嵌进内容、电商、客服、开发流程里。与此同时，Mercor 数据泄露和社媒诈骗暴涨在提醒另一面：AI 和社媒成交越深入，信任、隐私、账单可控性就越不再是“合规部门的事”，而是直接影响转化和利润的经营成本。\n\n金融这边也不是孤立的：宁德时代在港股配股，说明核心资产还拿得到钱；Vance 2028 交易升温，说明市场已经提前给未来关税、产业政策和科技监管下注。我的判断很简单：接下来别再追“哪个模型最炸”，要把注意力放到三张表——AI 工具的单位成本表、客户数据的风险表、能真正改善现金流的业务流程表。",
+    "commentary": "**今天值得花时间看的：** 第一条一定是 Copilot 按用量收费，这事很多人会当成 GitHub 调价新闻，我觉得低估了。它真正的含义是：以后 AI 编程不是“每月几十刀随便造”，而是每个 agent 任务、每段上下文、每次大模型调用都可能变成成本项；小团队如果不提前设预算、限模型档位、分本地和云端任务，月底账单能把人干懵。\n\n第二条看 GitNexus，别嫌它只是个 GitHub Trending 项目。现在用 Cursor、Claude Code 最大的问题不是不会写代码，是它老忘项目结构、乱改依赖、看不懂历史包袱；如果代码库知识图谱真能本地跑、能增量更新、能接进现有 IDE，那它就是中小团队的“技术记忆层”，比单纯换个更贵模型实用。\n\n第三条我会盯社媒诈骗和 Mercor 数据泄露，尤其做电商的人别装看不见。用户被骗 21 亿美元不是海外八卦，它会变成所有社媒成交的信任税；母婴这类高信任品类，客服身份、防骗提示、付款路径、群内链接管理，都得当成转化组件做，不是出了事再发公告。\n\n**可以跳过的：** Vance 2028 提名交易这条，知道有这个变量就行，今天没必要深挖到每个赔率波动。2028 太远，Polymarket 很热闹，但对这周的电商经营、AI 工具选型、仓位调整帮助有限；它是长期背景噪音，不是今天要拍板的事。\n\n还有“某某语音模型很强”“某某开源模型上架”这种标题党，也别被带着嗨。真正要看的是中文效果、商用许可、长音频稳定性、延迟、成本，尤其是能不能接进你的短视频批量生产和客服链路；不看这些，只看 demo，基本等于看烟花。\n\n**下周盯这几个：** 第一，盯 GitHub Copilot usage-based billing 的具体计费口径：按 token、请求、模型档位，还是 agent 执行次数算。这个一出来，就能决定团队要不要把简单代码补全、本地脚本、批量重构分流到开源模型，别等账单来了才骂街。\n\n第二，盯 VibeVoice 和 Voxtral TTS 的商用许可、中文/粤语实测，以及长音频有没有爆音、断句怪、情绪假。要是许可友好、粤语自然，我会优先拿它测母婴短视频配音、社群语音答疑、直播切片二创，这种能直接省人力。\n\n第三，盯宁德时代配售完成后的港股承接，尤其是折价配股后股价能不能稳住。能稳，说明外资和长钱对中国核心制造还愿意掏钱；稳不住，那就别急着把“港股反弹”理解成全面重估，很多票还是情绪钱在跑。",
+    "items": [
+      {
+        "title": "代码助手开始按用量收钱了",
+        "source": "Hacker News",
+        "url": "https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/",
+        "conclusion": "这事说白了就是，AI 编程从“订阅爽用”进入“算账干活”。",
+        "signal": "GitHub Copilot is moving to usage-based billing；Hacker News 532 points。",
+        "why": "你每天用 Cursor、Claude Code、各种 agent，接下来成本不再是固定月费，而是跟任务量、上下文、模型档位绑死。创业团队最怕不是贵，是账单不可预测。",
+        "watch": "盯 GitHub Copilot 的用量口径：是按请求、token、模型档位，还是 agent 执行次数计费；这会影响你要不要把部分 coding workflow 转到本地模型或开源 agent。",
+        "category": "AI工程",
+        "tier": 1
+      },
+      {
+        "title": "代码库知识图谱要变成标配了",
+        "source": "GitHub Trending",
+        "url": "https://github.com/abhigyanpatwari/GitNexus",
+        "conclusion": "以后 agent 写代码，先读懂仓库结构，比单纯换更强模型更重要。",
+        "signal": "GitNexus 31,544 stars；Zero-Server Code Intelligence Engine；client-side knowledge graph；Graph RAG Agent。",
+        "why": "你这种高频用 AI 写代码的人，痛点不是“模型不会写函数”，而是它经常不知道项目全貌。浏览器本地跑知识图谱，等于把代码库上下文变成可查询资产，还少一点隐私顾虑。",
+        "watch": "盯它能不能吃大型 repo、能不能接 Cursor/Claude Code、能不能持续增量更新；如果能，适合拿来做你电商后台和数据脚本的“项目大脑”。",
+        "category": "AI工程",
+        "tier": 1
+      },
+      {
+        "title": "开源权重模型继续挤进主流产品",
+        "source": "X (Twitter)",
+        "url": "https://x.com/Perplexity_AI/status/2047145172337836139",
+        "conclusion": "Kimi K2.6 进 Perplexity，不是多一个模型选项，是开源权重模型开始吃掉高端订阅入口。",
+        "signal": "Kimi K2.6；state-of-the-art open-weight model；available for Pro and Max subscribers。",
+        "why": "你用 AI 做内容、客服、选品分析时，不一定非得押 OpenAI/Anthropic。开源权重模型进搜索问答产品，说明“够强、够便宜、可替换”的路线还在加速。",
+        "watch": "盯 Perplexity Pro/Max 里 Kimi K2.6 的默认可见度；如果它开始被放进推荐位，说明国外产品也愿意把中国模型放到前台。",
+        "category": "AI行业",
+        "tier": 1
+      },
+      {
+        "title": "语音模型开始卷“快”和“多语言”",
+        "source": "X (Twitter)",
+        "url": "https://x.com/MistralAI/status/2037183026539483288",
+        "conclusion": "文本生成卷完，下一波会卷语音内容生产，短视频和客服都要被影响。",
+        "signal": "Voxtral TTS；open-weight；supports 9 languages；very low latency。",
+        "why": "母婴电商天然吃“信任感”和“陪伴感”，语音比文字更容易做亲近。开源权重、多语言、低延迟一旦成熟，直播切片、带货配音、社群语音答疑都会降成本。",
+        "watch": "盯它的中文和粤语效果，尤其是情绪表达和方言稳定性；如果能自然说粤语，广州本地母婴号可以直接做差异化。",
+        "category": "AI行业",
+        "tier": 1
+      },
+      {
+        "title": "社媒诈骗已经是电商信任成本",
+        "source": "RSS:TechCrunch",
+        "url": "https://techcrunch.com/2026/04/27/consumers-lost-2-1-billion-to-social-media-scams-in-2025-ftc-reports/",
+        "conclusion": "社交平台成交越多，用户被骗越多，商家要把“防骗说明”当转化组件。",
+        "signal": "Consumers lost $2.1B to social media scams in 2025；losses increased eightfold。",
+        "why": "你做抖音、小红书、微信社群，用户不是只怕买贵，更怕被假客服、假链接、假福利骗。信任链路做不好，复购和私域转化会被平台诈骗环境拖累。",
+        "watch": "盯 FTC 后续按平台拆分的数据；你自己这边要盯客服冒充、群内假链接、付款路径跳转这几类风险。",
+        "category": "商业/电商",
+        "tier": 1
+      },
+      {
+        "title": "宁德时代配股，港股融资窗口还开着",
+        "source": "华尔街见闻",
+        "url": "https://wallstreetcn.com/livenews/3095296",
+        "conclusion": "新能源龙头愿意在这个位置融钱，说明好公司不等最便宜的钱，先把弹药装满。",
+        "signal": "拟配售 6238.5万股；配售价每股 628.2港元。",
+        "why": "这对你看中国资产有参考：不是所有中概和港股科技都只靠情绪反弹，真正有全球议价权的公司还能直接从市场拿钱。沪深 300 里这种权重产业链，也会受资金面和估值重估影响。",
+        "watch": "盯配售完成后的股价承接，如果折价后还能稳住，说明机构资金对中国核心制造资产还没撤。",
+        "category": "宏观/金融",
+        "tier": 1
+      },
+      {
+        "title": "美国右派接班人交易已经很热",
+        "source": "Polymarket",
+        "url": "https://polymarket.com/event/republican-presidential-nominee-2028",
+        "conclusion": "市场在提前下注后特朗普时代，Vance 不是边缘变量了。",
+        "signal": "J.D. Vance win the 2028 Republican presidential nomination：Yes 39%；交易量 $588.7M。",
+        "why": "这跟你投纳指、标普有关，因为美国政策风险不只看现任总统，还看下一任共和党路线会不会继续关税、产业补贴、反全球化。长期定投可以不择时，但不能假装政治风险不存在。",
+        "watch": "盯共和党内部民调和大型捐赠人流向；如果 Vance 的提名定价继续抬，市场会更早给关税和科技监管重新定价。",
+        "category": "宏观/金融",
+        "tier": 1
+      },
+      {
+        "title": "微软也把语音 AI 开源牌打出来了",
+        "source": "GitHub Trending",
+        "url": "https://github.com/microsoft/VibeVoice",
+        "conclusion": "语音生成会像文本模型一样，从“平台能力”变成“开发者组件”。",
+        "signal": "microsoft/VibeVoice；Open-Source Frontier Voice AI；43,106 stars。",
+        "why": "你做内容电商，未来不是只找达人录音，而是能批量生成不同人设、不同语气的讲解音频。真正的门槛会从“有没有语音模型”变成“脚本、风格、转化测试谁做得细”。",
+        "watch": "盯 VibeVoice 的商用许可、中文效果、长音频稳定性；如果许可友好，可以试着接到短视频批量生产链路里。",
+        "category": "开发者/开源",
+        "tier": 1
+      },
+      {
+        "title": "AI 劳务平台的数据泄露很吓人",
+        "source": "Hacker News",
+        "url": "https://app.oravys.com/blog/mercor-breach-2026",
+        "conclusion": "AI 训练数据不是抽象资产，里面有真人声音、身份和工作记录，泄露一次就很难补救。",
+        "signal": "4TB of voice samples；40k AI contractors；Hacker News 431 points。",
+        "why": "你以后如果用外包标注、语音客服、达人素材库，数据合同不能只写“保密”两个字。母婴赛道尤其敏感，用户语音、宝宝信息、健康咨询都不能随便进第三方工具。",
+        "watch": "盯 Mercor 后续是否披露泄露范围和补救方式；你自己要盘一遍哪些 AI 工具上传过客户素材、语音、订单截图。",
+        "category": "其他值得看的",
+        "tier": 1
+      },
+      {
+        "title": "基因疗法开始打到听力损失",
+        "source": "Hacker News",
+        "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-ever-gene-therapy-treatment-genetic-hearing-loss-under-national-priority-voucher",
+        "conclusion": "医疗 AI 之外，真正改命的生物技术也在推进，别只盯大模型。",
+        "signal": "FDA approves first gene therapy for treatment of genetic hearing loss；Hacker News 210 points。",
+        "why": "你关注健康优化，补剂和睡眠是日常层面，基因疗法是医疗范式变化。母婴人群也会关心儿童遗传病筛查，这类进展会慢慢影响高端体检、早筛和家庭健康消费。",
+        "watch": "盯 FDA 后续适应症范围、治疗对象年龄、以及保险覆盖情况；如果从罕见病走向更常见疾病，健康消费市场会被重新教育。",
+        "category": "其他值得看的",
+        "tier": 1
+      }
+    ],
+    "watchpoint_reviews": [
+      {
+        "watch": "盯后面有没有更具体的状态管理、失败恢复、权限控制方案出来；只要这些细节开始公开，说明 agent 真在往生产环境落。",
+        "status_label": "⏳ 进展中",
+        "review": "OpenAI 发布 GPT-5.5，明确强调“理解复杂目标、使用工具、检查自己的工作、把更多任务做到完成”，这和之前判断的 agent 赛点从单次问答转向长任务执行是一致的。但今天还没看到状态管理、失败恢复、权限控制这些生产级细节。",
+        "date": "2026-04-14"
+      },
+      {
+        "watch": "盯它后面有没有公开更完整的任务表现；如果只是省 token，但任务成功率掉得厉害，那就只是便宜，不是进步。",
+        "status_label": "⏳ 进展中",
+        "review": "OpenAI 说 GPT-5.5 Pro 通过 full-stack inference improvements 变得更快、更实用，说明成本和速度优化确实在成为核心卖点。现在还缺真实任务成功率数据，所以只能算进展，不能算完全验证。",
+        "date": "2026-04-16"
+      },
+      {
+        "watch": "盯两件事：一是它在真实代码库里的稳定性，不是 demo；二是社区会不会很快补上工具调用、记忆、编辑器集成。开源模型真正的门槛不在模型本身，在配套。",
+        "status_label": "⏳ 进展中",
+        "review": "今天有“OSS Agent topped the TerminalBench on Gemini-3-flash-preview”的信号，说明开源/开放 agent 工具链在真实开发类 benchmark 上继续推进。它更验证了原判断里的“门槛在配套”，但还不是开源 coding 模型本身在真实代码库里稳定可用的最终证据。",
+        "date": "2026-04-17"
+      },
+      {
+        "watch": "接下来盯两件事：一是 Anthropic 后续版本是否继续公开 system prompt 变化；二是 Cursor、Perplexity 这类上层产品切模型后，任务完成率是不是跟着跳，而不是只换个“更强模型”的说法。",
+        "status_label": "⏳ 进展中",
+        "review": "GPT-5.5 已经同步滚进 GitHub Copilot、M365 Copilot、Copilot Studio 和 Foundry，接下来正好进入“上层产品换模型后，任务完成率是否真的变好”的观察窗口。今天只有发布和集成消息，还没有产品侧效果数据。",
+        "date": "2026-04-20"
+      },
+      {
+        "watch": "马上查团队里所有接过 Google Workspace 的 AI 工具；尤其盯管理员后台里 OAuth 授权列表，看看有没有“没人记得是谁装的，但权限很大”的应用。",
+        "status_label": "⏳ 进展中",
+        "review": "Vercel 今天说明，和 GitHub、Microsoft、npm、Socket Security 排查后，确认没有 Vercel 发布的 npm 包被篡改，供应链暂无被污染证据。这缓解了 npm 供应链层面的担忧，但没有推翻原来对 OAuth / Workspace 权限审计的提醒。",
+        "date": "2026-04-21"
+      },
+      {
+        "watch": "盯巴基斯坦调解、美国特使行程、伊朗是否释放更明确谈判口径；Polymarket 里 June 30 合约如果继续上行，油价和黄金都要重新看。",
+        "status_label": "⏳ 进展中",
+        "review": "特朗普称“伊朗战争很快会结束，并且我们会胜利”，属于继续推动“冲突可能收尾”的 headline。它和原观察方向相关，但还需要看实际谈判、油价、黄金和预测市场是否同步反应，不能只按一句话下结论。",
+        "date": "2026-04-25"
+      },
+      {
+        "watch": "盯 llm 0.31 的插件生态、模型适配、结构化输出、批处理能力；如果 DeepSeek V4、Claude、OpenAI 都能顺滑切换，它就能当你的本地 AI 中控。",
+        "status_label": "⏳ 进展中",
+        "review": "Vitalik 发布自己的 self-sovereign / local / private / secure LLM setup，是本地、私有 AI 工作流继续被高信誉用户认真采用的信号。它支持“本地 AI 中控值得搭”的方向，但今天没有直接更新 `llm` 这个项目本身。",
+        "date": "2026-04-25"
+      },
+      {
+        "watch": "盯 Cursor 3 里 `/multitask` 对真实项目的翻车率，尤其是多文件改动、测试修复、重构这三类任务。",
+        "status_label": "⏳ 进展中",
+        "review": "Cursor 正式介绍新版 Cursor 3 的 `/multitask`，可以用 async subagents 并行处理请求，而不是继续排队。这验证了“并发派活”方向已经落地，但原观察重点是多文件改动、测试修复、重构里的翻车率，今天还没有结果。",
+        "date": "2026-04-27"
+      },
+      {
+        "watch": "盯 Anthropic 会不会把 Project Deal 里的谈判能力产品化，特别是是否开放给真实商家、是否能接支付和售后。",
+        "status_label": "⏳ 进展中",
+        "review": "Anthropic 公开 Project Deal：在旧金山办公室搭了一个员工 marketplace，让 Claude 代表同事买卖和谈判。这正好延续了“Claude 练交易/谈判”的判断，但还没看到产品化、真实商家接入、支付和售后闭环。",
+        "date": "2026-04-27"
+      },
+      {
+        "watch": "盯 CUA 的 benchmark 有没有覆盖真实桌面任务，尤其是浏览器后台、多窗口、验证码/登录态、文件上传这些脏活。",
+        "status_label": "⏳ 进展中",
+        "review": "GPT-5.5 被描述为面向真实工作和 agent，能用工具、检查工作并完成更复杂任务；xAI 也发布 Grok Voice Think Fast，强调复杂多步工作流和现实噪声环境。这说明 agent 执行能力继续往真实任务靠，但还没看到浏览器后台、多窗口、验证码、文件上传等脏活 benchmark 的明确结果。",
+        "date": "2026-04-27"
+      }
+    ]
+  },
+  {
     "date": "2026-04-27",
     "main_theme": "今天最核心的一条线，不是“AI agent 又进化了”，而是 AI 正在从聊天工具，变成能接任务、碰系统、动交易的执行层。Cursor 的 `/multitask`、Claude 练砍价交易、CUA 做 computer-use 基础设施，本质都在指向同一件事：AI 不再只负责给建议，而是开始替人把活干完。\n\n但只要 AI 开始真干活，问题马上从“聪不聪明”切到“能不能控住风险”。Cursor 并发派活会遇到多文件改崩、测试修不回来的问题；agent 接订单、库存、CRM，会遇到删库、乱改价、乱发券的问题；Claude 如果未来能替用户谈判下单，商家的商品信息、售后规则、价格体系就必须变成机器可读、可校验、可回滚的资产。\n\n所以今天这批信息真正串起来，是一条很清楚的产业升级线：AI 从“生成内容”走向“执行业务”，赢家不是 prompt 写得花的人，而是把流程、权限、数据、商品、交易都整理成可复用系统的人。对做电商和 AI 工具的人来说，接下来别再沉迷“哪个模型最强”，要盯三个字：可托管——这个 agent 能不能长期稳定替你跑一段真实业务。",
     "commentary": "**今天值得花时间看的：**\n\nCursor 这个 `/multitask` 真别只当产品更新看，它其实是 AI 编程范式变了。以前是你盯着一个助手一问一答，现在是你把任务拆出去，让几个 subagent 同时干；如果这东西在真实项目里能扛住多文件改动、测试修复、重构，那小团队做后台、落地页、数据脚本的效率会直接上一个台阶。\n\nAgent 删库这个也特别值得看，甚至比很多“新模型发布”更重要。因为大家现在一兴奋就想把 AI 接进订单、库存、客服、社群，但我跟你说，没沙箱、没只读、没审批、没回滚的 agent，别让它碰生产库；这不是保守，这是做生意的人最基本的命门意识。\n\n还有 Claude 练“砍价和交易”这条，跟电商太近了。未来用户可能不是逛你直播间，也不是翻你详情页，而是跟自己的 agent 说：“帮我买一款适合 10 个月宝宝的纸尿裤，别临期，价格合适，售后靠谱。”那时候你的商品标题、规格、价格、评价、退换货规则，能不能被 agent 正确读取，比你海报做得多漂亮更关键。\n\n**可以跳过的：**\n\n湾区房子要 Anthropic 股权这个，能看，但别上头。它说明 AI 私人股权已经外溢到现实资产，这个信号有意思；但大部分人拿它当“AI 财富神话”转发，其实没啥可操作性，别被这种故事骗得以为自己也该去追高 AI 概念。\n\nGoogle 算力底牌这条也别被标题带偏。它重要，但不新鲜，Google 有 TPU、有数据中心、有钱烧，这个市场早就知道；真正要看的不是“Google 很强”，而是它后面会不会把 TPU 更开放给开发者、Gemma 会不会变成企业默认选项，不然今天这条更多是背景板。\n\n**下周盯这几个：**\n\n第一，盯 Cursor 3 的 `/multitask` 真实翻车案例，尤其看 GitHub、X、HN 上有没有人晒大型项目里的多文件改动结果。别看官方 demo，要看它能不能自己开分支、跑测试、修失败、最后合并得干净。\n\n第二，盯 Anthropic 的 Project Deal 有没有下一步产品化动作，重点看三件事：能不能接真实商家、能不能接支付、能不能处理售后。只要它从办公室实验走到真实交易，母婴电商这类高信任、高复购类目就要提前准备“给 agent 看的商品说明书”。\n\n第三，盯各类 agent 工具下周有没有补权限能力：默认沙箱、只读模式、审批流、操作日志、回滚机制。我的判断很直接：2026 年能在企业里活下来的 agent，不一定是最聪明的，但一定是最不容易闯祸的。",
