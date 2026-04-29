@@ -1,5 +1,150 @@
 [
   {
+    "date": "2026-04-29",
+    "main_theme": "今天最核心的线索不是“AI 又变强了”，而是 AI 正在从模型竞赛，进入基础设施和分发渠道重排。谁能把模型接得更稳、跑得更便宜、接入真实业务流量，谁就开始拿到下一轮红利。\n\nDeepSeek 转通用 API、Claude Code 需要配置和监控层、pip 26.1 加 lockfiles，本质都在补同一件事：让 AI 工程从“能跑一次”变成“能长期稳定生产”。OpenAI 上 Amazon Bedrock、ChatGPT 广告归因闭环，则说明模型不再只是技术产品，而是在被云厂商和流量平台拆成企业软件、电商推荐、广告转化里的基础组件。\n\n另一边，希捷 2027 年产能几乎卖光、布伦特破 110、美伊和平概率卡在 May 31 和 June 30 两个节点，提醒市场别只看前台应用，后台资源和宏观成本也在重新定价。AI 要吃算力、吃存储、吃电、吃稳定 API；油价一旦站稳 110，通胀预期和利率预期又会反过来压成长股估值。\n\n我的判断很简单：接下来别再问“哪个模型最强”，要问“哪个入口有真实流量、哪个中间层能省钱、哪个基础设施会被反复调用”。做电商的，提前准备 AI 可读内容和商品问答；做 AI 工具的，优先做路由、监控、成本控制；做投资的，别只盯英伟达，存储、云分发、油价这三条线都要一起看。",
+    "commentary": "**今天值得花时间看的：**  \nChatGPT 广告归因闭环这条，你别错过。对母婴电商来说，这不是“ChatGPT 要不要打广告”的八卦，而是用户以后问“宝宝湿疹怎么办”“待产包买哪些”时，答案位可能变成新货架；一旦它能追踪点击、跳转、成交，小红书和抖音之外会多一个预算黑洞。\n\nDeepSeek 转通用 API 和 Claude Code 运维层也值得看，而且要放一起看。前者解决“我怎么便宜稳定地调各种模型”，后者解决“agent 进项目后怎么复用配置、监控消耗、别乱烧钱”，这俩比单个炫技 demo 实在多了，因为它们直接决定 AI 能不能进入日常生产。\n\n还有希捷 2027 年产能几乎卖光，这条很多人会低估。AI 基建不是只有 GPU，日志、视频、语音、训练数据、agent 轨迹全都要存储；如果硬盘产能都被提前锁到 2027，这说明大客户不是短线炒概念，是在真金白银买未来两年的数据吞吐。\n\n**可以跳过的：**  \n“OpenAI 上 Amazon Bedrock，微软独占感少了”这条可以看结论，别陷进去刷一堆 CEO 访谈。方向很明确：OpenAI 要多云分发，AWS 要补模型货架，这不神秘，真正有用的信息只有后面的价格、限流、权限和企业 SLA，现在聊太多都是云厂商站队文学。\n\n美伊和平概率这条也别被标题带着跑。May 31 是 30%，June 30 是 44%，重点不是“和平快来了”，而是市场在买“拖而不炸”；如果没有新框架协议，只是概率盘上下跳，那就是情绪噪音，不值得你为了它频繁调仓。\n\n**下周盯这几个：**  \n第一，盯布伦特原油能不能连续站稳 110 美元上方，不是盘中刺一下，是至少几个交易日收在上面。站稳了，纳指和标普的估值压力会更实，黄金也别想当然认为一定顺风，因为实际利率预期可能一起动。\n\n第二，盯 ChatGPT 商品推荐里有没有更明确的赞助标识、跳转参数、归因合作，尤其是母婴高商业价值词，比如“婴儿湿疹霜”“待产包清单”“宝宝辅食机”。如果这些词开始出现广告链路，就要马上整理自家商品页、FAQ、测评内容，让 AI 能读懂、能引用、能推荐。\n\n第三，盯 Claude Code 模板/监控类项目有没有开始支持成本统计、任务回放、权限控制。只要这几项出来，就不是玩具插件了，是团队级 agent 中控台；到时候你用 AI 写代码、做运营自动化、跑素材生产，效率会明显差一截。",
+    "items": [
+      {
+        "title": "DeepSeek 转通用 API，说明“模型套利”还没结束",
+        "source": "GitHub Trending",
+        "url": "https://github.com/CJackHwang/ds2api",
+        "conclusion": "这事说白了就是，大家嘴上追最强模型，手上还是在拼成本、兼容和账号调度。",
+        "signal": "GitHub 2,330 stars；支持 multi-account rotation、Vercel Serverless、Docker；兼容 Google、Claude、OpenAI API formats。",
+        "why": "你每天用 Claude、Cursor、各种 agent，真正卡你的不一定是模型能力，而是接口、额度、价格和稳定性。这个项目火，说明一堆开发者在做“多模型路由”和“降本中间层”。",
+        "watch": "盯它后面会不会被更多 agent 框架接入；尤其看 OpenAI / Claude / DeepSeek 格式兼容有没有继续扩。",
+        "category": "AI工程",
+        "tier": 1
+      },
+      {
+        "title": "Claude Code 开始需要“运维层”，不是装个插件就完事",
+        "source": "GitHub Trending",
+        "url": "https://github.com/davila7/claude-code-templates",
+        "conclusion": "代码 agent 进入日常生产后，配置、模板、监控会比单次 prompt 更值钱。",
+        "signal": "GitHub 26,162 stars；项目定位是 CLI tool for configuring and monitoring Claude Code。",
+        "why": "你这种高频 AI 用户，最容易遇到的问题不是“能不能写代码”，而是不同项目怎么复用配置、怎么知道 agent 在干嘛、怎么别把钱烧没。这个方向像是 Claude Code 的“中控台”。",
+        "watch": "盯它会不会从模板工具变成监控工具；如果开始支持成本统计、任务回放、权限控制，就值得认真接进工作流。",
+        "category": "AI工程",
+        "tier": 1
+      },
+      {
+        "title": "OpenAI 上 Amazon Bedrock，微软独占感又少了一层",
+        "source": "Hacker News",
+        "url": "https://stratechery.com/2026/an-interview-with-openai-ceo-sam-altman-and-aws-ceo-matt-garman-about-bedrock-managed-agents/",
+        "conclusion": "OpenAI 不想只做微软生态里的模型供应商，AWS 这条分发管道太大，必须进。",
+        "signal": "Hacker News 174 points；标题明确是 OpenAI models coming to Amazon Bedrock。",
+        "why": "这对你用 AI 工具的影响很直接：以后很多企业软件、SaaS、agent 平台可能默认从 AWS 调 OpenAI，而不是只走 Azure 或 OpenAI 自家 API。模型能力会越来越像云服务组件。",
+        "watch": "盯 Bedrock 里 OpenAI 模型的价格、限流、企业权限；如果比 OpenAI API 更稳，很多 B 端 agent 会往 AWS 迁。",
+        "category": "AI行业",
+        "tier": 1
+      },
+      {
+        "title": "希捷 2027 年产能几乎卖光，AI 不只吃 GPU，也吃硬盘",
+        "source": "华尔街见闻",
+        "url": "https://wallstreetcn.com/articles/3771186",
+        "conclusion": "AI 基建的瓶颈在扩散，存储开始从“便宜配件”变成硬约束。",
+        "signal": "2027 年产能几乎卖光。",
+        "why": "你看 AI 股票别只盯英伟达，训练、推理、日志、视频、语音、agent 轨迹都会吃存储。硬盘巨头订单打到 2027，说明这轮不是短期补库存。",
+        "watch": "盯希捷、西数后续财报里的产能承诺和客户预付款；如果“几乎卖光”继续延长，AI 基建行情会从 GPU 扩到存储链。",
+        "category": "AI行业",
+        "tier": 1
+      },
+      {
+        "title": "ChatGPT 广告归因闭环来了，AI 搜索会抢电商种草预算",
+        "source": "Hacker News",
+        "url": "https://www.buchodi.com/how-chatgpt-serves-ads-heres-the-full-attribution-loop/",
+        "conclusion": "别把 ChatGPT 当纯工具看，它正在变成新的流量入口，而且能追到转化。",
+        "signal": "Hacker News 90 points；标题是 ChatGPT serves ads. Here's the full attribution loop。",
+        "why": "你做母婴电商，最该关心的不是“ChatGPT 有没有广告”，而是用户问“宝宝湿疹用什么”“待产包怎么买”时，推荐链路会不会被广告和归因重写。小红书种草、抖音投放之外，AI 问答可能变成新货架。",
+        "watch": "盯 ChatGPT 里商品推荐是否出现明确赞助标识、跳转参数、归因合作；一旦母婴类词开始商业化，就要提前布局 AI 可读内容。",
+        "category": "商业/电商",
+        "tier": 1
+      },
+      {
+        "title": "美伊和平交易给到 44%，油价风险还没彻底解除",
+        "source": "Polymarket",
+        "url": "https://polymarket.com/event/us-x-iran-permanent-peace-deal-by",
+        "conclusion": "市场不是在赌马上和平，而是在赌拖到 June 30 前能不能谈成。",
+        "signal": "US x Iran permanent peace deal by May 31, 2026：Yes 30%；by June 30, 2026：Yes 44%；交易量 $61.3M。",
+        "why": "你持有美股指数和黄金，这个变量会同时打到油价、通胀预期、利率预期和风险偏好。30% 到 44% 这个斜率说明市场觉得“多拖一个月，机会明显变大”。",
+        "watch": "盯 May 31, 2026 前有没有正式框架；如果没有，但 June 30, 2026 的 Yes 还往上走，说明市场在买“拖而不炸”。",
+        "category": "宏观/金融",
+        "tier": 1
+      },
+      {
+        "title": "布伦特破 110，不是油价新闻，是通胀预期新闻",
+        "source": "华尔街见闻",
+        "url": "https://wallstreetcn.com/articles/3771185",
+        "conclusion": "油价到这个位置，美股最怕的不是能源贵，是降息空间被挤掉。",
+        "signal": "三周以来第一次，布伦特原油价格突破 110 美元。",
+        "why": "你定投纳指、标普，油价上去会让市场重新担心通胀，成长股估值最敏感。黄金也会被夹在“避险”和“实际利率”之间，不一定简单跟涨。",
+        "watch": "盯布伦特能不能稳在 110 美元上方；如果只是冲一下，影响有限，如果连续站住，美股估值压力会更实。",
+        "category": "宏观/金融",
+        "tier": 1
+      },
+      {
+        "title": "pip 26.1 加 lockfiles，Python 依赖终于往“可复现”补课",
+        "source": "RSS:Simon Willison",
+        "url": "https://simonwillison.net/2026/Apr/28/pip-261/#atom-everything",
+        "conclusion": "Python 生态最烦人的依赖漂移，开始被官方工具正面处理了。",
+        "signal": "pip 26.1；新增 lockfiles 和 dependency cooldowns。",
+        "why": "你用 Cursor/Claude 改代码时，环境不稳定会直接放大 agent 出错率。lockfile 这类东西越标准，AI 写代码、跑测试、部署的失败率越低。",
+        "watch": "盯主流项目会不会把 pip 26.1 的 lockfile 纳入默认流程；如果 CI、Docker、agent 模板都跟进，这就是 Python AI 工程的基础设施升级。",
+        "category": "开发者/开源",
+        "tier": 1
+      }
+    ],
+    "watchpoint_reviews": [
+      {
+        "watch": "接下来盯两件事：一是 Anthropic 后续版本是否继续公开 system prompt 变化；二是 Cursor、Perplexity 这类上层产品切模型后，任务完成率是不是跟着跳，而不是只换个“更强模型”的说法。",
+        "status_label": "✅ 验证",
+        "review": "HN 出现“Claude system prompt bug wastes user money and bricks managed agents”，说明 system prompt 不是幕后小配置，而是会直接影响成本、可用性和 agent 行为的产品核心。之前判断“系统提示词才是真实产品经理”是对的。",
+        "date": "2026-04-20"
+      },
+      {
+        "watch": "马上查团队里所有接过 Google Workspace 的 AI 工具；尤其盯管理员后台里 OAuth 授权列表，看看有没有“没人记得是谁装的，但权限很大”的应用。",
+        "status_label": "⏳ 进展中",
+        "review": "Vercel 称与 GitHub、Microsoft、npm、SocketSecurity 核查后，没有证据显示 Vercel 发布的 npm 包被篡改，供应链风险暂时收窄。原观察点的安全提醒还没被推翻，但这次事件的破坏范围看起来比最坏情况小。",
+        "date": "2026-04-21"
+      },
+      {
+        "watch": "盯 Cursor 3 里 `/multitask` 对真实项目的翻车率，尤其是多文件改动、测试修复、重构这三类任务。",
+        "status_label": "⏳ 进展中",
+        "review": "Cursor 正式介绍新版 `/multitask`，可以用异步 subagents 并行处理请求，而不是继续排队。这验证了“并发派活”方向正在落地，但真实项目里的多文件改动、测试修复、重构翻车率还没看到结果。",
+        "date": "2026-04-27"
+      },
+      {
+        "watch": "盯 Anthropic 会不会把 Project Deal 里的谈判能力产品化，特别是是否开放给真实商家、是否能接支付和售后。",
+        "status_label": "⏳ 进展中",
+        "review": "Anthropic 发布 Project Deal 研究，让 Claude 代表员工买卖和谈判，和原观察点完全对上。现在还停在研究/办公室市场实验，是否产品化、接入真实商家、支付和售后还没确认。",
+        "date": "2026-04-27"
+      },
+      {
+        "watch": "盯 CUA 的 benchmark 有没有覆盖真实桌面任务，尤其是浏览器后台、多窗口、验证码/登录态、文件上传这些脏活。",
+        "status_label": "⏳ 进展中",
+        "review": "Perplexity 表示 GPT-5.5 正在成为 Computer 的默认 orchestration model，同时 HN 上也出现“后台驱动 macOS app、不抢鼠标”的工具。这说明 computer-use agent 的底层执行能力继续补，但还没看到覆盖登录态、验证码、多窗口、文件上传等真实脏活的 benchmark。",
+        "date": "2026-04-27"
+      },
+      {
+        "watch": "盯 Perplexity Pro/Max 里 Kimi K2.6 的默认可见度；如果它开始被放进推荐位，说明国外产品也愿意把中国模型放到前台。",
+        "status_label": "✅ 验证",
+        "review": "Perplexity 已把 Moonshot 的 Kimi K2.6 提供给 Pro 和 Max 用户。原来要盯的是国外产品是否愿意把中国开源权重模型放到前台，现在这一步已经发生了。",
+        "date": "2026-04-28"
+      },
+      {
+        "watch": "盯它的中文和粤语效果，尤其是情绪表达和方言稳定性；如果能自然说粤语，广州本地母婴号可以直接做差异化。",
+        "status_label": "⏳ 进展中",
+        "review": "xAI 发布 Grok Voice Think Fast 1.0，主打复杂多步工作流、低延迟、高准确率和抗噪声，正好对应“语音模型开始卷快”的方向。但今天没有中文、粤语、情绪表达和方言稳定性的信息，所以还不能算完全验证。",
+        "date": "2026-04-28"
+      },
+      {
+        "watch": "盯 VibeVoice 的商用许可、中文效果、长音频稳定性；如果许可友好，可以试着接到短视频批量生产链路里。",
+        "status_label": "⏳ 进展中",
+        "review": "HN 上 VibeVoice 再次被讨论，说明开源语音模型的关注度还在。原观察点要盯的是商用许可、中文效果、长音频稳定性；今天只有热度信号，还没有关键指标结果。",
+        "date": "2026-04-28"
+      }
+    ]
+  },
+  {
     "date": "2026-04-28",
     "main_theme": "今天最核心的线，不是 AI 又发了几个模型，而是 AI 正在从“无限试用的玩具”变成“要进成本表、进工作流、进风控清单的生产系统”。Copilot 开始按用量计费，说明代码助手这门生意已经不想再靠固定订阅补贴重度用户；GitNexus 这种代码库知识图谱冒出来，则说明下一阶段拼的不是模型喊得多强，而是谁能让 agent 稳定读懂真实项目。\n\n这条线在语音和开源模型上也很明显：Kimi K2.6 进 Perplexity，Voxtral TTS、微软 VibeVoice 开源，背后都是一个方向——AI 能力会越来越便宜、越来越可替换，但真正值钱的是谁能把它嵌进内容、电商、客服、开发流程里。与此同时，Mercor 数据泄露和社媒诈骗暴涨在提醒另一面：AI 和社媒成交越深入，信任、隐私、账单可控性就越不再是“合规部门的事”，而是直接影响转化和利润的经营成本。\n\n金融这边也不是孤立的：宁德时代在港股配股，说明核心资产还拿得到钱；Vance 2028 交易升温，说明市场已经提前给未来关税、产业政策和科技监管下注。我的判断很简单：接下来别再追“哪个模型最炸”，要把注意力放到三张表——AI 工具的单位成本表、客户数据的风险表、能真正改善现金流的业务流程表。",
     "commentary": "**今天值得花时间看的：** 第一条一定是 Copilot 按用量收费，这事很多人会当成 GitHub 调价新闻，我觉得低估了。它真正的含义是：以后 AI 编程不是“每月几十刀随便造”，而是每个 agent 任务、每段上下文、每次大模型调用都可能变成成本项；小团队如果不提前设预算、限模型档位、分本地和云端任务，月底账单能把人干懵。\n\n第二条看 GitNexus，别嫌它只是个 GitHub Trending 项目。现在用 Cursor、Claude Code 最大的问题不是不会写代码，是它老忘项目结构、乱改依赖、看不懂历史包袱；如果代码库知识图谱真能本地跑、能增量更新、能接进现有 IDE，那它就是中小团队的“技术记忆层”，比单纯换个更贵模型实用。\n\n第三条我会盯社媒诈骗和 Mercor 数据泄露，尤其做电商的人别装看不见。用户被骗 21 亿美元不是海外八卦，它会变成所有社媒成交的信任税；母婴这类高信任品类，客服身份、防骗提示、付款路径、群内链接管理，都得当成转化组件做，不是出了事再发公告。\n\n**可以跳过的：** Vance 2028 提名交易这条，知道有这个变量就行，今天没必要深挖到每个赔率波动。2028 太远，Polymarket 很热闹，但对这周的电商经营、AI 工具选型、仓位调整帮助有限；它是长期背景噪音，不是今天要拍板的事。\n\n还有“某某语音模型很强”“某某开源模型上架”这种标题党，也别被带着嗨。真正要看的是中文效果、商用许可、长音频稳定性、延迟、成本，尤其是能不能接进你的短视频批量生产和客服链路；不看这些，只看 demo，基本等于看烟花。\n\n**下周盯这几个：** 第一，盯 GitHub Copilot usage-based billing 的具体计费口径：按 token、请求、模型档位，还是 agent 执行次数算。这个一出来，就能决定团队要不要把简单代码补全、本地脚本、批量重构分流到开源模型，别等账单来了才骂街。\n\n第二，盯 VibeVoice 和 Voxtral TTS 的商用许可、中文/粤语实测，以及长音频有没有爆音、断句怪、情绪假。要是许可友好、粤语自然，我会优先拿它测母婴短视频配音、社群语音答疑、直播切片二创，这种能直接省人力。\n\n第三，盯宁德时代配售完成后的港股承接，尤其是折价配股后股价能不能稳住。能稳，说明外资和长钱对中国核心制造还愿意掏钱；稳不住，那就别急着把“港股反弹”理解成全面重估，很多票还是情绪钱在跑。",

@@ -900,7 +900,7 @@
     "title": "别只盯模型分数，系统提示词才是“真实产品经理”",
     "watch": "接下来盯两件事：一是 Anthropic 后续版本是否继续公开 system prompt 变化；二是 Cursor、Perplexity 这类上层产品切模型后，任务完成率是不是跟着跳，而不是只换个“更强模型”的说法。",
     "source": "RSS:Simon Willison",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-04-20",
@@ -1159,7 +1159,7 @@
     "title": "开源权重模型继续挤进主流产品",
     "watch": "盯 Perplexity Pro/Max 里 Kimi K2.6 的默认可见度；如果它开始被放进推荐位，说明国外产品也愿意把中国模型放到前台。",
     "source": "X (Twitter)",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-04-28",
@@ -1208,6 +1208,62 @@
     "title": "基因疗法开始打到听力损失",
     "watch": "盯 FDA 后续适应症范围、治疗对象年龄、以及保险覆盖情况；如果从罕见病走向更常见疾病，健康消费市场会被重新教育。",
     "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-29",
+    "title": "DeepSeek 转通用 API，说明“模型套利”还没结束",
+    "watch": "盯它后面会不会被更多 agent 框架接入；尤其看 OpenAI / Claude / DeepSeek 格式兼容有没有继续扩。",
+    "source": "GitHub Trending",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-29",
+    "title": "Claude Code 开始需要“运维层”，不是装个插件就完事",
+    "watch": "盯它会不会从模板工具变成监控工具；如果开始支持成本统计、任务回放、权限控制，就值得认真接进工作流。",
+    "source": "GitHub Trending",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-29",
+    "title": "OpenAI 上 Amazon Bedrock，微软独占感又少了一层",
+    "watch": "盯 Bedrock 里 OpenAI 模型的价格、限流、企业权限；如果比 OpenAI API 更稳，很多 B 端 agent 会往 AWS 迁。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-29",
+    "title": "希捷 2027 年产能几乎卖光，AI 不只吃 GPU，也吃硬盘",
+    "watch": "盯希捷、西数后续财报里的产能承诺和客户预付款；如果“几乎卖光”继续延长，AI 基建行情会从 GPU 扩到存储链。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-29",
+    "title": "ChatGPT 广告归因闭环来了，AI 搜索会抢电商种草预算",
+    "watch": "盯 ChatGPT 里商品推荐是否出现明确赞助标识、跳转参数、归因合作；一旦母婴类词开始商业化，就要提前布局 AI 可读内容。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-29",
+    "title": "美伊和平交易给到 44%，油价风险还没彻底解除",
+    "watch": "盯 May 31, 2026 前有没有正式框架；如果没有，但 June 30, 2026 的 Yes 还往上走，说明市场在买“拖而不炸”。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-29",
+    "title": "布伦特破 110，不是油价新闻，是通胀预期新闻",
+    "watch": "盯布伦特能不能稳在 110 美元上方；如果只是冲一下，影响有限，如果连续站住，美股估值压力会更实。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-29",
+    "title": "pip 26.1 加 lockfiles，Python 依赖终于往“可复现”补课",
+    "watch": "盯主流项目会不会把 pip 26.1 的 lockfile 纳入默认流程；如果 CI、Docker、agent 模板都跟进，这就是 Python AI 工程的基础设施升级。",
+    "source": "RSS:Simon Willison",
     "status": "open"
   }
 ]
