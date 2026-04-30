@@ -1,68 +1,5 @@
 [
   {
-    "date": "2026-03-30",
-    "title": "模型迭代进入“5小时一更”",
-    "watch": "盯 Cursor 后面会不会给更细的 checkpoint 说明、回滚能力、固定版本选项；如果只快更不做变更日志，企业用起来会越来越像踩滑板。",
-    "source": "X (Twitter)",
-    "status": "open"
-  },
-  {
-    "date": "2026-03-30",
-    "title": "Claude Code 每 10 分钟给你来一次 reset --hard",
-    "watch": "盯 Anthropic 会不会把默认执行环境改成 branch/sandbox 隔离；如果没有，自己先把高权限仓库和 agent 跑批环境分开。",
-    "source": "Hacker News",
-    "status": "open"
-  },
-  {
-    "date": "2026-03-30",
-    "title": "给 Claude Code 补记忆，已经卷到 42557 星",
-    "watch": "盯两件事：一是记忆召回准不准，二是记忆污染会不会越来越重。后面如果官方把 memory 做进主工作流，这类插件很可能从“增强项”变“标配”。",
-    "source": "GitHub Trending",
-    "status": "open"
-  },
-  {
-    "date": "2026-03-30",
-    "title": "开源语音开始够用了：9 种语言、低延迟、情绪表达",
-    "watch": "重点盯中文自然度、方言效果、长句稳定性，以及平台对 AI 配音内容的识别和限流规则；真正决定能不能上量的，不是 demo，而是合规和转化。",
-    "source": "X (Twitter)",
-    "status": "verified"
-  },
-  {
-    "date": "2026-03-30",
-    "title": "一张图实时换脸，85000 星说明门槛真塌了",
-    "watch": "盯平台会不会上线更强的真人认证、AI 内容打标、直播风控；如果后面开始集中清理“伪真人带货”，说明这个问题已经从技术玩具变成平台级治理问题。",
-    "source": "GitHub Trending",
-    "status": "open"
-  },
-  {
-    "date": "2026-03-30",
-    "title": "油价冲到 100 美元，市场已经基本认了",
-    "watch": "盯 $110 合约会不会从 23% 快速抬升；如果是，那就不是短期脉冲，而是市场开始押更长的供应扰动。",
-    "source": "Polymarket",
-    "status": "open"
-  },
-  {
-    "date": "2026-03-30",
-    "title": "“月底不打，今年大概率会打”成了市场主线",
-    "watch": "盯 12% 和 76% 这两个价格差会不会继续拉大；如果短期概率继续掉、全年概率继续升，说明市场在强化“持久战”而不是“闪电战”剧本。",
-    "source": "Polymarket",
-    "status": "open"
-  },
-  {
-    "date": "2026-03-30",
-    "title": "4 月 13 日当周，联储主席人选听证会可能开打",
-    "watch": "盯听证会前后美债、黄金和科技股谁先反应；如果先动的是长期资产，不是因为当月数据，而是市场开始提前交易新框架。",
-    "source": "华尔街见闻",
-    "status": "open"
-  },
-  {
-    "date": "2026-03-30",
-    "title": "Mac 跑大模型，开始不靠大内存硬扛了",
-    "watch": "盯这条路线会不会从“能跑”变成“能稳定干活”，包括 SSD 读写瓶颈、首 token 速度、长任务稳定性；一旦这些过线，本地 agent 会开始抢云端份额。",
-    "source": "X (Twitter)",
-    "status": "open"
-  },
-  {
     "date": "2026-03-31",
     "title": "把 Cursor agent 搬回你自己机房，才是真正能进业务的那一步",
     "watch": "接下来盯两件事：一是还有哪些 agent 产品跟进 “on your infrastructure”；二是它能不能继续接你现有的内部工具、数据库、审批流。如果后面 MCP/内部工具接入一起补齐，agent 才会从写代码扩到运营、客服、内容、投放。",
@@ -851,7 +788,7 @@
     "title": "Cloudflare 想把“邮箱”变成 agent 的标准接口",
     "watch": "盯它后面会不会跟文档、工单、支付、身份验证打通；单独一个“邮件 for agents”不稀奇，能不能闭环执行才是关键。",
     "source": "Hacker News",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-04-17",
@@ -984,7 +921,7 @@
     "title": "Vercel 这次事故，给所有“AI 办公工具”泼了盆冷水",
     "watch": "马上查团队里所有接过 Google Workspace 的 AI 工具；尤其盯管理员后台里 OAuth 授权列表，看看有没有“没人记得是谁装的，但权限很大”的应用。",
     "source": "X (Twitter)",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-04-21",
@@ -1089,7 +1026,7 @@
     "title": "AI agent 删库不是笑话，是权限设计没跟上",
     "watch": "接下来盯各类 agent 工具有没有默认沙箱、只读模式、审批流、回滚机制；没有这些的，别让它碰生产库。",
     "source": "Hacker News",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-04-27",
@@ -1166,7 +1103,7 @@
     "title": "语音模型开始卷“快”和“多语言”",
     "watch": "盯它的中文和粤语效果，尤其是情绪表达和方言稳定性；如果能自然说粤语，广州本地母婴号可以直接做差异化。",
     "source": "X (Twitter)",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-04-28",
@@ -1264,6 +1201,76 @@
     "title": "pip 26.1 加 lockfiles，Python 依赖终于往“可复现”补课",
     "watch": "盯主流项目会不会把 pip 26.1 的 lockfile 纳入默认流程；如果 CI、Docker、agent 模板都跟进，这就是 Python AI 工程的基础设施升级。",
     "source": "RSS:Simon Willison",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-30",
+    "title": "本地私有 LLM 又被 Vitalik 带回桌面",
+    "watch": "盯本地模型工具链有没有开始默认支持 Claude/Cursor 这类工作流的替代方案，尤其是本地检索、本地 agent、本地语音输入。",
+    "source": "X (Twitter)",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-30",
+    "title": "AI 表格插件能把财务数据带出去",
+    "watch": "盯 Google Sheets、Notion、飞书、多维表格里的 AI 插件权限说明，尤其是“是否能读取整张表”“是否会调用外部 URL”“是否默认联网”。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-30",
+    "title": "GPU 租赁价格 6 周涨 114%，算力开始像大宗商品",
+    "watch": "盯 Claude、OpenAI、Cursor、国内模型服务有没有涨价、限额、排队；尤其看“高峰期降速”和“高级模型调用次数”有没有变紧。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-30",
+    "title": "Anthropic 想按 900B 美元估值融 50B 美元",
+    "watch": "盯 Anthropic 是不是把 Claude Code、企业知识库、工作流 agent 打包进更贵的订阅；估值越高，越需要从重度用户身上收钱。",
+    "source": "RSS:TechCrunch",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-30",
+    "title": "马里兰州先禁了超市“监控式定价”",
+    "watch": "盯平台规则里有没有开始限制“千人千价”“会员差异价”“基于设备或历史行为调价”；这会直接影响私域和小红书种草后的成交策略。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-30",
+    "title": "美联储分歧开始压掉降息幻想",
+    "watch": "盯下一次美联储票委表态，看“反对降息”是不是从三大票委扩散；如果 2027 年加息预期继续被交易，纳指会更难靠估值扩张涨。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-30",
+    "title": "美伊永久和平交易只有 40%，油价风险还没走",
+    "watch": "盯 Polymarket 上 June 30, 2026 合约有没有从 40% 往下掉；如果掉，说明市场在重新给油价和地缘冲突加风险溢价。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-30",
+    "title": "以色列政治风险还在，但不是短线换人剧本",
+    "watch": "盯 June 30 合约是不是从 6% 抬头；如果短线下台概率上升，说明局势可能从“可控冲突”切到“政治危机”。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-30",
+    "title": "Warp 把终端变成 agent 开发环境",
+    "watch": "盯 Warp 有没有把 agent、shell、代码库上下文、部署命令连成闭环；如果能稳定处理线上小任务，它会从开发工具变成轻量运维工具。",
+    "source": "GitHub Trending",
+    "status": "open"
+  },
+  {
+    "date": "2026-04-30",
+    "title": "LLM 股票分析工具开始“白嫖化”",
+    "watch": "盯它的数据源质量和回测透明度；如果只有新闻总结和 LLM 判断，没有稳定可验证的历史表现，就只能当看盘助手，别当投资系统。",
+    "source": "GitHub Trending",
     "status": "open"
   }
 ]

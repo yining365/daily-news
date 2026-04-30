@@ -1,5 +1,190 @@
 [
   {
+    "date": "2026-04-30",
+    "main_theme": "今天最核心的线索，不是 AI 又变强了，而是 AI 正在从“爽用期”进入“算账期”：算数据边界、算算力成本、算商业化压力，也算监管会不会突然拍你一巴掌。以前大家默认云端模型、插件、agent 越接越多就越先进；现在反过来了，越核心的工作流，越要问一句：它到底读了我什么、发去了哪里、每跑一次要花多少钱。\n\nVitalik 把本地私有 LLM 拉回桌面，Ramp 的 Sheets AI 泄露财务数据，GPU 租赁 6 周涨 114%，Anthropic 想按 900B 美元估值融钱，这几条其实是一件事：AI 能力越接近真实业务，数据、成本和定价权就越变成硬约束。你做电商，最敏感的不是“文案写得好不好”，而是毛利表、投流 ROI、达人报价、客户分层、供应链价格这些东西，一旦被 AI 插件乱读乱传，泄露的是你的生意底牌。\n\n再往外看，马里兰禁“监控式定价”、美联储压掉降息幻想、美伊和平概率只有 40%，也都在提醒一件事：效率红利还在，但外部环境没那么宽松了。接下来别迷信“哪个模型最强”，要盯三个指标：能不能私有化或至少控权限，能不能稳定低成本跑工作流，能不能在监管和高利率环境下真给业务省钱、赚钱。",
+    "commentary": "**今天值得花时间看的：**  \n第一条我会看 Vitalik 讲本地私有 LLM，这不是程序员情怀，是老板该听的风险提示。你把选品、投流、人群包、私域话术全丢给云端 agent，短期看是提效，长期看可能是在给别人训练你的生意地图；母婴这种毛利、信任、复购都敏感的品类，数据边界就是护城河。\n\n第二条别错过 Ramp Sheets AI 泄露财务数据。很多人觉得“AI 表格插件”是小工具，我跟你说，这玩意比聊天机器人危险，因为它直接趴在财务表、客户表、广告表上吃数据；下周就该让团队查一遍飞书、多维表格、Notion、Google Sheets 里开了哪些 AI 插件，尤其看有没有默认联网、整表读取、外部 URL 调用。\n\n第三条是 GPU 租赁价格 6 周涨 114%。这条很多人会当成“算力公司利好”，但对普通业务方更现实的含义是：AI 工具免费爽用的阶段快过去了，Claude、Cursor、视频生成、客服质检、批量素材生成，后面都有可能通过涨价、限额、降速来收钱。\n\n**可以跳过的：**  \nAnthropic 900B 美元估值这条，热闹是热闹，但今天对你操作层面的新增信息不多。知道 Claude 以后大概率更贵、更企业化就够了，别被“史诗级融资”这种标题带着兴奋，资本要的是回报，最后很可能从重度用户、企业账号、API 调用和 agent 套餐里收回来。\n\nLLM 股票分析工具开源爆火，也别太上头。它适合当新闻聚合器、提醒器，不适合当投资系统；只要没有透明回测、稳定数据源和可验证收益，所谓“AI 决策仪表盘”大概率就是把你包装得更像专业投资者，然后诱惑你多交易。\n\n以色列 Netanyahu 短线下台概率 6% 这条，也别过度解读。它有宏观背景价值，但今天不是交易主线，除非 June 30 合约突然明显抬头，否则它更多是油价和避险资产的背景噪音。\n\n**下周盯这几个：**  \n第一，盯 Claude、Cursor、OpenAI 的调用限制和价格页，尤其是高级模型次数、企业版打包、Claude Code 或 agent 功能有没有变成更贵套餐。别等到账单炸了才优化工作流，电商团队现在就该把“必须用顶级模型”和“便宜模型能跑”的任务分层。\n\n第二，盯你自己团队用的表格和协作文档权限：飞书多维表格、Notion、Google Sheets、各类 AI 插件，下周直接拉清单。重点查三件事：能不能读取整张表、会不会联网请求、有没有外部链接或插件权限；财务表、投流表、达人报价表，能不接 AI 就先别接。\n\n第三，盯 Polymarket 上美伊 June 30 永久和平协议概率，现在是 40%。如果它往 30% 附近掉，油价和通胀预期就可能重新压美股估值，你的纳指、标普定投别脑子一热加速；黄金如果回调，反而可以按纪律看有没有分批机会。",
+    "items": [
+      {
+        "title": "本地私有 LLM 又被 Vitalik 带回桌面",
+        "source": "X (Twitter)",
+        "url": "https://x.com/VitalikButerin/status/2039577760935657677",
+        "conclusion": "这事说白了就是，越核心的 AI 工作流，越不能全押云端。",
+        "signal": "X 热度 5004；标题里明确是 “self-sovereign / local / private / secure LLM setup, April 2026”。",
+        "why": "你现在用 Claude、Cursor、各种 agent 干活，很多内容其实是商业机密：选品、投流、社群话术、供应链价格。Vitalik 这种人开始公开讲本地私有 LLM，不是怀旧，是在提醒“AI 能力越强，数据边界越值钱”。",
+        "watch": "盯本地模型工具链有没有开始默认支持 Claude/Cursor 这类工作流的替代方案，尤其是本地检索、本地 agent、本地语音输入。",
+        "category": "AI工程",
+        "tier": 1
+      },
+      {
+        "title": "AI 表格插件能把财务数据带出去",
+        "source": "Hacker News",
+        "url": "https://www.promptarmor.com/resources/ramps-sheets-ai-exfiltrates-financials",
+        "conclusion": "别把 AI 接进财务表、客户表、投流表，除非你知道它到底会把什么发出去。",
+        "signal": "Hacker News 101 points；标题是 “Ramp's Sheets AI Exfiltrates Financials”。",
+        "why": "你做电商最敏感的不是代码，是毛利、投流 ROI、达人报价、私域转化表。AI 表格工具一旦被提示注入或权限设计坑了，泄露的就是你真正的生意。",
+        "watch": "盯 Google Sheets、Notion、飞书、多维表格里的 AI 插件权限说明，尤其是“是否能读取整张表”“是否会调用外部 URL”“是否默认联网”。",
+        "category": "AI工程",
+        "tier": 1
+      },
+      {
+        "title": "GPU 租赁价格 6 周涨 114%，算力开始像大宗商品",
+        "source": "华尔街见闻",
+        "url": "https://wallstreetcn.com/member/articles/3771203",
+        "conclusion": "别只盯模型发布，真正的瓶颈又回到“谁拿得到便宜算力”。",
+        "signal": "GPU 租赁价格 6 周涨 114%；标题说“算力租赁业绩超预期爆发”。",
+        "why": "这会影响你用 AI 的真实成本。今天是 API 价格，明天就是 agent 跑工作流、批量生成内容、视频素材、客服质检的成本一起涨。",
+        "watch": "盯 Claude、OpenAI、Cursor、国内模型服务有没有涨价、限额、排队；尤其看“高峰期降速”和“高级模型调用次数”有没有变紧。",
+        "category": "AI行业",
+        "tier": 1
+      },
+      {
+        "title": "Anthropic 想按 900B 美元估值融 50B 美元",
+        "source": "RSS:TechCrunch",
+        "url": "https://techcrunch.com/2026/04/29/sources-anthropic-could-raise-a-new-50b-round-at-a-valuation-of-900b/",
+        "conclusion": "Claude 不是在融钱，是在给整个 AI 应用层重新定价。",
+        "signal": "TechCrunch 称 Anthropic 可能融资 50B 美元；估值区间 850B 到 900B 美元。",
+        "why": "你是 Claude 重度用户，这说明 Claude 背后的资本预期已经高到离谱。好处是产品会继续猛卷；坏处是以后企业版、API、agent 工具大概率会更狠地商业化。",
+        "watch": "盯 Anthropic 是不是把 Claude Code、企业知识库、工作流 agent 打包进更贵的订阅；估值越高，越需要从重度用户身上收钱。",
+        "category": "AI行业",
+        "tier": 1
+      },
+      {
+        "title": "马里兰州先禁了超市“监控式定价”",
+        "source": "Hacker News",
+        "url": "https://www.theguardian.com/technology/2026/apr/29/maryland-grocery-stores-ban-surveillance-pricing",
+        "conclusion": "个性化定价这条路，线下零售已经先撞监管墙了。",
+        "signal": "Hacker News 242 points；标题是 “Maryland becomes first state to ban surveillance pricing in grocery stores”。",
+        "why": "电商也在同一条路上：按用户画像、购买力、浏览行为动态给价。母婴品类更敏感，因为用户对“被算计”特别反感，监管和舆论都容易炸。",
+        "watch": "盯平台规则里有没有开始限制“千人千价”“会员差异价”“基于设备或历史行为调价”；这会直接影响私域和小红书种草后的成交策略。",
+        "category": "商业/电商",
+        "tier": 1
+      },
+      {
+        "title": "美联储分歧开始压掉降息幻想",
+        "source": "华尔街见闻",
+        "url": "https://wallstreetcn.com/articles/3771321",
+        "conclusion": "市场不是在等降息，而是在重新接受“利率可能更久更高”。",
+        "signal": "三大票委反对降息；利率市场预期 2027 年美联储“加息”。",
+        "why": "你定投纳指、标普、沪深 300，还持有黄金。高利率预期回头，会压成长股估值，也会影响黄金的短线弹性。",
+        "watch": "盯下一次美联储票委表态，看“反对降息”是不是从三大票委扩散；如果 2027 年加息预期继续被交易，纳指会更难靠估值扩张涨。",
+        "category": "宏观/金融",
+        "tier": 1
+      },
+      {
+        "title": "美伊永久和平交易只有 40%，油价风险还没走",
+        "source": "Polymarket",
+        "url": "https://polymarket.com/event/us-x-iran-permanent-peace-deal-by",
+        "conclusion": "市场不是相信和平，只是在赌“别马上炸”。",
+        "signal": "美伊永久和平协议在 May 31, 2026 前达成：Yes 24%；在 June 30, 2026 前达成：Yes 40%；交易量 63.8M 美元。",
+        "why": "油价如果继续顶着，通胀预期就不容易下来，美股降息逻辑会被卡住。你看纳指不能只看 AI，能源和利率会一起拖估值。",
+        "watch": "盯 Polymarket 上 June 30, 2026 合约有没有从 40% 往下掉；如果掉，说明市场在重新给油价和地缘冲突加风险溢价。",
+        "category": "宏观/金融",
+        "tier": 1
+      },
+      {
+        "title": "以色列政治风险还在，但不是短线换人剧本",
+        "source": "Polymarket",
+        "url": "https://polymarket.com/event/netanyahu-out-before-2027",
+        "conclusion": "Netanyahu 的风险是中期，不是马上下台。",
+        "signal": "Netanyahu out by end of 2026：Yes 44%；Netanyahu out by June 30：Yes 6%；交易量 119.7M 美元。",
+        "why": "这对油价、黄金、美元避险都有影响。市场现在的意思很清楚：短线别指望靠换人降温，但中期不确定性很高。",
+        "watch": "盯 June 30 合约是不是从 6% 抬头；如果短线下台概率上升，说明局势可能从“可控冲突”切到“政治危机”。",
+        "category": "宏观/金融",
+        "tier": 1
+      },
+      {
+        "title": "Warp 把终端变成 agent 开发环境",
+        "source": "GitHub Trending",
+        "url": "https://github.com/warpdotdev/warp",
+        "conclusion": "命令行不是快被淘汰，是正在变成 agent 的操作台。",
+        "signal": "GitHub 43,924 stars；项目描述是 “agentic development environment, born out of the terminal”。",
+        "why": "你用 Cursor 写代码，下一步不是“编辑器更聪明”，而是终端、浏览器、数据库、部署全都被 agent 接管。谁先把终端工作流跑顺，谁就能把重复技术活自动化。",
+        "watch": "盯 Warp 有没有把 agent、shell、代码库上下文、部署命令连成闭环；如果能稳定处理线上小任务，它会从开发工具变成轻量运维工具。",
+        "category": "开发者/开源",
+        "tier": 1
+      },
+      {
+        "title": "LLM 股票分析工具开始“白嫖化”",
+        "source": "GitHub Trending",
+        "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+        "conclusion": "散户投研工具会越来越便宜，但更容易让人产生“我有系统”的错觉。",
+        "signal": "GitHub 32,757 stars；项目覆盖 A/H/美股；描述里写了多数据源行情、实时新闻、LLM 决策仪表盘、多渠道推送、零成本定时运行。",
+        "why": "你做指数定投，最怕被这种工具带去频繁交易。它适合做信息聚合和提醒，不适合替代资产配置纪律。",
+        "watch": "盯它的数据源质量和回测透明度；如果只有新闻总结和 LLM 判断，没有稳定可验证的历史表现，就只能当看盘助手，别当投资系统。",
+        "category": "开发者/开源",
+        "tier": 1
+      }
+    ],
+    "watchpoint_reviews": [
+      {
+        "watch": "盯它后面会不会跟文档、工单、支付、身份验证打通；单独一个“邮件 for agents”不稀奇，能不能闭环执行才是关键。",
+        "status_label": "✅ 验证",
+        "review": "微软已经把 Agent Mode 放进 Outlook，Copilot 可以处理收件箱、日程、邮件分流和改会议时间。原来盯的是“邮件 for agents 能不能闭环执行”，今天的信息说明这条线不只是 Cloudflare 的想法，已经进入主流办公入口。",
+        "date": "2026-04-17"
+      },
+      {
+        "watch": "马上查团队里所有接过 Google Workspace 的 AI 工具；尤其盯管理员后台里 OAuth 授权列表，看看有没有“没人记得是谁装的，但权限很大”的应用。",
+        "status_label": "✅ 验证",
+        "review": "HN 上出现 “Ramp's Sheets AI Exfiltrates Financials”，再次说明接入办公/表格/财务系统的 AI 工具，权限和数据外泄风险是真问题。之前提醒检查 Google Workspace、OAuth 授权列表，这个方向是对的。",
+        "date": "2026-04-21"
+      },
+      {
+        "watch": "盯它能不能处理登录态、验证码、弹窗、文件上传、异常重试；这些过不了，就只能当 demo，过了才是真工具。",
+        "status_label": "⏳ 进展中",
+        "review": "Perplexity 提到 GPT-5.5 正在作为 Computer 的默认 orchestration model 推出，说明 computer-use / browser-use 继续往产品化走。但今天还没有看到登录态、验证码、文件上传、异常重试这些“脏活”是否真过关。",
+        "date": "2026-04-25"
+      },
+      {
+        "watch": "盯 llm 0.31 的插件生态、模型适配、结构化输出、批处理能力；如果 DeepSeek V4、Claude、OpenAI 都能顺滑切换，它就能当你的本地 AI 中控。",
+        "status_label": "⏳ 进展中",
+        "review": "Vitalik 发了自己的 self-sovereign / local / private / secure LLM setup，说明“本地、私有、可控”的 AI 工作流仍在被高质量用户认真搭建。不是 Simon 的 llm 本身更新，但方向上强化了本地 AI 中控这条判断。",
+        "date": "2026-04-25"
+      },
+      {
+        "watch": "盯 Cursor 3 里 `/multitask` 对真实项目的翻车率，尤其是多文件改动、测试修复、重构这三类任务。",
+        "status_label": "⏳ 进展中",
+        "review": "Cursor 正式介绍 `/multitask`，可以让异步 subagents 并发处理请求，而不是排队。原判断“并发派活会成为 Cursor 3 的重点”被确认，但真实项目里的翻车率还没看到结果。",
+        "date": "2026-04-27"
+      },
+      {
+        "watch": "接下来盯各类 agent 工具有没有默认沙箱、只读模式、审批流、回滚机制；没有这些的，别让它碰生产库。",
+        "status_label": "✅ 验证",
+        "review": "Ramp Sheets AI 被曝可外泄财务数据，这和“agent/AI 工具一旦权限过大就会出事”的判断一致。今天不是删库案例，但本质还是权限边界、审批和数据隔离没跟上。",
+        "date": "2026-04-27"
+      },
+      {
+        "watch": "盯 Anthropic 会不会把 Project Deal 里的谈判能力产品化，特别是是否开放给真实商家、是否能接支付和售后。",
+        "status_label": "⏳ 进展中",
+        "review": "Anthropic 发布 Project Deal，让 Claude 代表员工买卖和谈判，这正是“替人谈判/交易”的方向。现在还停留在办公室 marketplace 研究阶段，尚未证明会接入真实商家、支付和售后。",
+        "date": "2026-04-27"
+      },
+      {
+        "watch": "盯 CUA 的 benchmark 有没有覆盖真实桌面任务，尤其是浏览器后台、多窗口、验证码/登录态、文件上传这些脏活。",
+        "status_label": "⏳ 进展中",
+        "review": "Perplexity 把 GPT-5.5 用作 Computer 的默认 orchestration model，说明 computer-use 产品在补“调度层”和执行层。可惜今天仍没看到真实桌面任务 benchmark，尤其是多窗口、登录态、验证码、文件上传这些关键脏活。",
+        "date": "2026-04-27"
+      },
+      {
+        "watch": "盯 GitHub Copilot 的用量口径：是按请求、token、模型档位，还是 agent 执行次数计费；这会影响你要不要把部分 coding workflow 转到本地模型或开源 agent。",
+        "status_label": "⏳ 进展中",
+        "review": "Sam Altman 说 “codex with the $20 plan is a really good deal”，HN 里也出现因 `HERMES.md` 导致请求被路由到额外用量计费的讨论。代码助手的计费口径和隐藏用量成本正在变成显性问题，但还不是 GitHub Copilot 的明确新规则。",
+        "date": "2026-04-28"
+      },
+      {
+        "watch": "盯它的中文和粤语效果，尤其是情绪表达和方言稳定性；如果能自然说粤语，广州本地母婴号可以直接做差异化。",
+        "status_label": "✅ 验证",
+        "review": "xAI 发布 Grok Voice Think Fast 1.0，主打复杂多步工作流、快速响应、抗噪和高准确率，还拿 Tau Voice Bench 第一。原来判断“语音模型开始卷快和真实场景稳定性”是对的；但中文、粤语表现今天还没信息。",
+        "date": "2026-04-28"
+      },
+      {
+        "watch": "盯它会不会从模板工具变成监控工具；如果开始支持成本统计、任务回放、权限控制，就值得认真接进工作流。",
+        "status_label": "⏳ 进展中",
+        "review": "HN 上关于 Claude Code 插件、提示压缩、额外用量计费的讨论，说明代码 agent 的成本、路由和行为可解释性越来越重要。原来盯的成本统计、任务回放、权限控制还没完整出现，但“需要运维层”的问题更明显了。",
+        "date": "2026-04-29"
+      }
+    ]
+  },
+  {
     "date": "2026-04-29",
     "main_theme": "今天最核心的线索不是“AI 又变强了”，而是 AI 正在从模型竞赛，进入基础设施和分发渠道重排。谁能把模型接得更稳、跑得更便宜、接入真实业务流量，谁就开始拿到下一轮红利。\n\nDeepSeek 转通用 API、Claude Code 需要配置和监控层、pip 26.1 加 lockfiles，本质都在补同一件事：让 AI 工程从“能跑一次”变成“能长期稳定生产”。OpenAI 上 Amazon Bedrock、ChatGPT 广告归因闭环，则说明模型不再只是技术产品，而是在被云厂商和流量平台拆成企业软件、电商推荐、广告转化里的基础组件。\n\n另一边，希捷 2027 年产能几乎卖光、布伦特破 110、美伊和平概率卡在 May 31 和 June 30 两个节点，提醒市场别只看前台应用，后台资源和宏观成本也在重新定价。AI 要吃算力、吃存储、吃电、吃稳定 API；油价一旦站稳 110，通胀预期和利率预期又会反过来压成长股估值。\n\n我的判断很简单：接下来别再问“哪个模型最强”，要问“哪个入口有真实流量、哪个中间层能省钱、哪个基础设施会被反复调用”。做电商的，提前准备 AI 可读内容和商品问答；做 AI 工具的，优先做路由、监控、成本控制；做投资的，别只盯英伟达，存储、云分发、油价这三条线都要一起看。",
     "commentary": "**今天值得花时间看的：**  \nChatGPT 广告归因闭环这条，你别错过。对母婴电商来说，这不是“ChatGPT 要不要打广告”的八卦，而是用户以后问“宝宝湿疹怎么办”“待产包买哪些”时，答案位可能变成新货架；一旦它能追踪点击、跳转、成交，小红书和抖音之外会多一个预算黑洞。\n\nDeepSeek 转通用 API 和 Claude Code 运维层也值得看，而且要放一起看。前者解决“我怎么便宜稳定地调各种模型”，后者解决“agent 进项目后怎么复用配置、监控消耗、别乱烧钱”，这俩比单个炫技 demo 实在多了，因为它们直接决定 AI 能不能进入日常生产。\n\n还有希捷 2027 年产能几乎卖光，这条很多人会低估。AI 基建不是只有 GPU，日志、视频、语音、训练数据、agent 轨迹全都要存储；如果硬盘产能都被提前锁到 2027，这说明大客户不是短线炒概念，是在真金白银买未来两年的数据吞吐。\n\n**可以跳过的：**  \n“OpenAI 上 Amazon Bedrock，微软独占感少了”这条可以看结论，别陷进去刷一堆 CEO 访谈。方向很明确：OpenAI 要多云分发，AWS 要补模型货架，这不神秘，真正有用的信息只有后面的价格、限流、权限和企业 SLA，现在聊太多都是云厂商站队文学。\n\n美伊和平概率这条也别被标题带着跑。May 31 是 30%，June 30 是 44%，重点不是“和平快来了”，而是市场在买“拖而不炸”；如果没有新框架协议，只是概率盘上下跳，那就是情绪噪音，不值得你为了它频繁调仓。\n\n**下周盯这几个：**  \n第一，盯布伦特原油能不能连续站稳 110 美元上方，不是盘中刺一下，是至少几个交易日收在上面。站稳了，纳指和标普的估值压力会更实，黄金也别想当然认为一定顺风，因为实际利率预期可能一起动。\n\n第二，盯 ChatGPT 商品推荐里有没有更明确的赞助标识、跳转参数、归因合作，尤其是母婴高商业价值词，比如“婴儿湿疹霜”“待产包清单”“宝宝辅食机”。如果这些词开始出现广告链路，就要马上整理自家商品页、FAQ、测评内容，让 AI 能读懂、能引用、能推荐。\n\n第三，盯 Claude Code 模板/监控类项目有没有开始支持成本统计、任务回放、权限控制。只要这几项出来，就不是玩具插件了，是团队级 agent 中控台；到时候你用 AI 写代码、做运营自动化、跑素材生产，效率会明显差一截。",
