@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026-01-22 全网新闻聚合 - News Aggregator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --glow-start: #0A1929;
+            --glow-end: #1A3A52;
+            --text-primary: #E3F2FD;
+            --accent-color: #42A5F5;
+            --secondary-color: #B0BEC5;
+            --bg-gradient: linear-gradient(135deg, #0A1929 0%, #1A3A52 100%);
+        }
+        
+        /* 快速导航 */
+        .quick-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            background: rgba(15, 23, 42, 0.95);
+            padding: 1rem;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .quick-nav-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .quick-nav-item:hover {
+            background: var(--accent-color);
+            color: #fff;
+        }
+        .quick-nav-item span {
+            background: rgba(0,0,0,0.2);
+            padding: 2px 6px;
+            border-radius: 8px;
+            font-size: 0.75rem;
+        }
+        
+        /* 场景区块 */
+        .scenario-section {
+            margin-bottom: 4rem;
+            scroll-margin-top: 80px;
+        }
+        .scenario-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--accent-color);
+            flex-wrap: wrap;
+        }
+        .scenario-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+        }
+        .scenario-count {
+            background: var(--accent-color);
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+        .scenario-desc {
+            opacity: 0.6;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <header class="main-header">
+            <div class="header-content">
+                <div class="logo-area">
+                    <div class="logo-icon">🤖</div>
+                    <div class="logo-text">
+                        <h1>News Aggregator</h1>
+                        <p class="subtitle">全网新闻聚合</p>
+                    </div>
+                </div>
+                <div class="date-display">
+                    <span class="date-icon">📅</span>
+                    <span>1月22日 周四</span>
+                </div>
+            </div>
+        </header>
+
+        
+            <div class="daily-summary">
+                <div class="summary-content">
+                    <span class="summary-icon">💡</span>
+                    <p>今日共追踪到 <strong>0</strong> 条前沿资讯，覆盖  等领域。</p>
+                </div>
+            </div>
+            
+
+
+
+        <main class="main-content">
+            
+            <section class="scenario-section" id="china">
+                <div class="scenario-header">
+                    <h2 class="scenario-name">🇨🇳 科技</h2>
+                    <span class="scenario-count">0 条</span>
+                    <span class="scenario-desc">国内大厂与创投：36Kr + 腾讯新闻</span>
+                </div>
+                <div class="empty-tab">暂无内容，请稍候再试。</div>
+            </section>
+            
+            <section class="scenario-section" id="x_social">
+                <div class="scenario-header">
+                    <h2 class="scenario-name">🐦 X 动态</h2>
+                    <span class="scenario-count">0 条</span>
+                    <span class="scenario-desc">X (Twitter) 每日精选</span>
+                </div>
+                <div class="empty-tab">暂无内容，请稍候再试。</div>
+            </section>
+            
+            <section class="scenario-section" id="ai">
+                <div class="scenario-header">
+                    <h2 class="scenario-name">🔥 AI 热点</h2>
+                    <span class="scenario-count">0 条</span>
+                    <span class="scenario-desc">硅谷前沿：Hacker News + Product Hunt</span>
+                </div>
+                <div class="empty-tab">暂无内容，请稍候再试。</div>
+            </section>
+            
+            <section class="scenario-section" id="github">
+                <div class="scenario-header">
+                    <h2 class="scenario-name">🐙 开源精选</h2>
+                    <span class="scenario-count">0 条</span>
+                    <span class="scenario-desc">GitHub Trending 热门项目</span>
+                </div>
+                <div class="empty-tab">暂无内容，请稍候再试。</div>
+            </section>
+            
+            <section class="scenario-section" id="global">
+                <div class="scenario-header">
+                    <h2 class="scenario-name">🌍 全网</h2>
+                    <span class="scenario-count">0 条</span>
+                    <span class="scenario-desc">Global Tech & Startup News</span>
+                </div>
+                <div class="empty-tab">暂无内容，请稍候再试。</div>
+            </section>
+            
+        </main>
+
+        <footer class="main-footer">
+            <p>Generated by News Aggregator Skill • <a href="index.html">History</a></p>
+        </footer>
+    </div>
+    
+    <script>
+    // Keyboard Navigation
+    document.addEventListener('keydown', function(e) {
+        if (['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
+
+        const cards = Array.from(document.querySelectorAll('.card'));
+        if (!cards.length) return;
+        
+        let activeIndex = cards.findIndex(c => c === document.activeElement || c.classList.contains('active-card'));
+        
+        if (e.key === 'j' || e.key === 'J' || e.key === 'ArrowDown') {
+             activeIndex = (activeIndex + 1) % cards.length;
+             e.preventDefault();
+        } else if (e.key === 'k' || e.key === 'K' || e.key === 'ArrowUp') {
+             if (activeIndex === -1) activeIndex = 0;
+             else activeIndex = (activeIndex - 1 + cards.length) % cards.length;
+             e.preventDefault();
+        } else if (e.key === 'Enter') {
+             if (activeIndex >= 0) {
+                const link = cards[activeIndex].querySelector('a');
+                if(link) window.open(link.href, '_blank');
+             }
+             return;
+        } else {
+             return;
+        }
+        
+        cards.forEach(c => c.classList.remove('active-card'));
+        if (activeIndex >= 0) {
+            cards[activeIndex].classList.add('active-card');
+            cards[activeIndex].focus();
+            cards[activeIndex].scrollIntoView({behavior: 'smooth', block: 'center'});
+        }
+    });
+    </script>
+</body>
+</html>
