@@ -1,5 +1,167 @@
 [
   {
+    "date": "2026-05-04",
+    "main_theme": "今天最核心的线索，不是“AI 又出了几个新工具”，而是 AI 正在从聊天框，往真实业务流程里钻。DeepClaude 把 coding agent 成本打下来，n8n-MCP 让 agent 能接自动化工作流，Pixelle-Video 把短视频生产线开源化，xAI 语音克隆把“品牌声音”做成 API——这几条放一起看，方向很清楚：AI 不再只负责回答问题，而是开始接手开发、运营、内容、客服这些连续动作。\n\n但另一条暗线也很硬：能不能长期跑，取决于成本、可信度和约束。DRAM 短缺提醒你，AI 成本不会永远线性下降；Anthropic 修 Claude 的“太会哄人”，说明模型越像顾问，越要防它顺着用户胡说；医疗分诊里 AI 超过普通医生，则说明真正有价值的 AI 不是嘴甜，而是能在高压场景里稳定补漏、少犯低级错。\n\n所以今天的判断很简单：接下来别迷信“最强模型”，要看谁能把 AI 接进真实系统，跑得便宜、跑得久、出错能兜底。对电商来说，最先值得动手的不是玄学 AGI，而是客服分流、社群 SOP、短视频批量生产、订单异常提醒这些脏活；谁先把这些流程自动化，谁的毛利和人效会先变好。",
+    "commentary": "**今天值得花时间看的：**\n\n第一条我会看 n8n-MCP，这玩意儿别小看。它不是又一个“AI 帮你写文案”的玩具，而是让 Claude / Cursor 这类 agent 直接搭 n8n workflow，能碰到发券、拉群、客服分流、内容排期、订单异常这些真运营活儿。做母婴电商的人应该懂，真正吃掉时间的不是战略会，是每天一堆重复但不能错的小动作。\n\n第二条是 DeepClaude。便宜 17 倍这个数字不一定全信，但方向非常重要：coding agent 的胜负手开始从“单次回答多聪明”，变成“我敢不敢让它一直跑测试、改 bug、重构”。如果它在真实复杂仓库里不崩，上下文不乱，工具调用不瞎，那以后 Claude Code 这种“壳”和工作流，比单个模型名字更值钱。\n\n第三条我会盯 Anthropic 修 sycophancy。很多人觉得模型顺着自己说很舒服，但我跟你讲，做商业决策、育儿判断、健康判断时，最危险的就是“高级马屁精”。一个好 AI 应该敢反驳你、要证据、指出你假设里的坑；如果 Claude 后面变得没那么会哄人，别急着骂，可能是它终于靠谱一点了。\n\n**可以跳过的：**\n\nxAI 语音克隆这条，热闹归热闹，但目前大部分讨论都在“哇，2 分钟克隆声音”这个层面，信息增量不大。语音克隆早晚会商品化，真正值钱的是脚本、账号信任、授权边界和平台审核，不是声音像不像。\n\nPixelle-Video 也别被“全自动短视频引擎”几个字冲昏头。开源内容工厂肯定有用，但母婴赛道最怕瞎编功效、乱用素材、违规种草；它现在如果不能接商品库、评论、禁用词、审核规则，那就是能批量制造风险，不是批量制造利润。\n\n伊朗和平协议这条也别过度解读成“和平来了”或者“战争来了”。Polymarket 给 May 31 只有 20%，June 30 到 38%，本质是市场在押“拖着谈”，不是押马上解决。这个新闻标题容易吓人，但当前更像油价和黄金的背景噪音，不是今天交易决策的主菜。\n\n**下周盯这几个：**\n\n第一，盯 5 月 31 日前后 Polymarket 伊朗和平协议合约的价差。重点不是 Yes 到底几%，而是 May 31 合约有没有快速靠近 June 30 合约；如果 5 月底仍低、6 月底继续高，说明市场还是在定价“延期谈判”，油价和黄金不会轻易卸掉风险溢价。\n\n第二，盯 OPEC+ 6 月实际出口和产量，不要只看“增产 18.8 万桶/日”的标题。要是最后还是纸面增产，油价未必下得去，美股降息预期也不会那么舒服；你定投纳指、标普，这个会绕到通胀和利率上打回来。\n\n第三，盯 n8n-MCP 能不能稳定接微信生态、表格、客服系统和权限回滚。这个跟电商最贴脸：如果它能把私域运营 SOP 自动搭出来，还能看 diff、能回滚、能控权限，那就不是程序员玩具，是能直接省人力的工具。母婴店、私域团购、内容电商，都会先吃到这一波。",
+    "items": [
+      {
+        "title": "DeepClaude 把 Claude Code 玩法打到“便宜可常开”",
+        "source": "Hacker News",
+        "url": "https://github.com/aattaran/deepclaude",
+        "conclusion": "这事说白了就是，coding agent 的门槛不再是“会不会用”，而是“你敢不敢让它一直跑”。",
+        "signal": "DeepClaude 用 DeepSeek V4 Pro 跑 Claude Code agent loop，号称便宜 17x；HN 142 points。",
+        "why": "你每天用 Claude/Cursor，最贵的不是单次调用，是反复试错、跑测试、改 bug 的循环成本。便宜 17x 这种级别，会直接改变工作流：以前舍不得让 agent 多跑几轮，现在可以把“穷举方案、写测试、重构”交给它磨。",
+        "watch": "别只看便宜，盯它在真实项目里的上下文稳定性、工具调用失败率、复杂仓库改动质量；如果 DeepSeek V4 Pro 在长任务里不掉链子，Claude Code 的“壳”会比模型本身更值钱。",
+        "category": "AI工程",
+        "tier": 1
+      },
+      {
+        "title": "n8n-MCP 让 agent 开始接管运营自动化",
+        "source": "GitHub Trending",
+        "url": "https://github.com/czlonkowski/n8n-mcp",
+        "conclusion": "MCP 最实用的落点不是炫技，是把一堆脏活变成可编排的工作流。",
+        "signal": "n8n-mcp 有 19,523 stars；支持 Claude Desktop / Claude Code / Windsurf / Cursor 去构建 n8n workflows。",
+        "why": "你做母婴电商，真正耗时间的是发券、拉群、客服分流、内容排期、订单异常这些碎活。n8n 本来就适合自动化，现在 MCP 接上 Claude/Cursor，等于让 agent 能直接搭流程，不只是给你写说明书。",
+        "watch": "盯它能不能把 workflow 的 diff、回滚、权限边界讲清楚；一旦能稳定接微信社群、表格、客服系统，私域运营会先被它吃掉一块。",
+        "category": "AI工程",
+        "tier": 1
+      },
+      {
+        "title": "Anthropic 开始认真修“Claude 太会哄人”",
+        "source": "X (Twitter)",
+        "url": "https://x.com/AnthropicAI/status/2049927618397614466",
+        "conclusion": "AI 陪聊没那么简单，模型越像顾问，越要防它顺着你说错话。",
+        "signal": "Anthropic 分析了 1M conversations，用结果改进 Opus 4.7 和 Mythos Pre 的训练。",
+        "why": "你这种重度 AI 用户，最危险的不是模型不会，而是它看起来很懂你、其实在迎合你。做商业决策、健康优化、育儿判断时，sycophancy 会把“第二大脑”变成“高级马屁精”。",
+        "watch": "盯 Claude 后续在“反驳用户、要求证据、拒绝过度确认”上的变化；如果它开始更频繁挑战你的假设，不一定是变难用了，可能是变靠谱了。",
+        "category": "AI行业",
+        "tier": 1
+      },
+      {
+        "title": "xAI 语音克隆把“品牌声音”做成 API 商品",
+        "source": "X (Twitter)",
+        "url": "https://x.com/xai/status/2050355373052223585",
+        "conclusion": "语音代理要开始卷了，声音本身会快速贬值，脚本和信任才值钱。",
+        "signal": "xAI API 上线 Voice Cloning；自定义声音少于 2 分钟；语音库 80+ voices，覆盖 28 languages。",
+        "why": "母婴电商特别吃“人味”和信任感，语音客服、绘本音频、短视频旁白都能用。但当任何人都能少于 2 分钟克隆声音，消费者会更警惕“这是不是本人”，品牌反而要把真人背书、授权边界说清楚。",
+        "watch": "盯中文语音的自然度、平台对 AI 克隆声音的标识要求，以及抖音/小红书对“仿真人声带货”的审核口径。",
+        "category": "AI行业",
+        "tier": 1
+      },
+      {
+        "title": "全自动短视频引擎开始从玩具变成生产线",
+        "source": "GitHub Trending",
+        "url": "https://github.com/AIDC-AI/Pixelle-Video",
+        "conclusion": "短视频内容工厂正在开源化，接下来卷的不是会不会生成，而是谁能稳定过审、能转化。",
+        "signal": "Pixelle-Video 是 AI Fully Automated Short Video Engine，GitHub 9,969 stars。",
+        "why": "你做抖音和小红书，内容需求是无底洞。全自动短视频引擎如果能把选题、脚本、画面、配音串起来，会先替代低质量批量内容；但母婴赛道不能乱编功效，生成效率越高，合规风险也越高。",
+        "watch": "盯它的素材版权、脚本可控性、批量生成后的平台过审率；如果能接商品库和用户评论，才真的适合电商。",
+        "category": "商业/电商",
+        "tier": 1
+      },
+      {
+        "title": "伊朗和平协议市场只给到“半信半疑”",
+        "source": "Polymarket",
+        "url": "https://polymarket.com/event/us-x-iran-permanent-peace-deal-by",
+        "conclusion": "市场不是在押和平，是在押“拖到最后可能谈成一点”。",
+        "signal": "US x Iran permanent peace deal by May 31, 2026：Yes 20%；by June 30, 2026：Yes 38%；交易量 $70.1M。",
+        "why": "你持有黄金、定投纳指和标普，这条线直接影响油价、通胀预期、风险偏好。5 月底只有 20%，6 月底到 38%，说明市场认为短期很难马上解决，但也不觉得会彻底失控。",
+        "watch": "盯 May 31 合约有没有快速接近 June 30 合约；如果 May 31 还低、June 30 继续高，说明市场在定价“延期谈判”，不是“马上和平”。",
+        "category": "宏观/金融",
+        "tier": 1
+      },
+      {
+        "title": "OPEC+ 说增产，但市场未必买账",
+        "source": "华尔街见闻",
+        "url": "https://wallstreetcn.com/articles/3771509",
+        "conclusion": "18.8 万桶/日听着不小，关键是它可能只是纸面数字。",
+        "signal": "OPEC+ 同意 6 月增产 18.8 万桶/日；报道明确说可能只是“纸面数字”。",
+        "why": "油价是通胀预期的开关，通胀预期又会影响美股估值和降息节奏。你定投纳指、标普，这种能源变量会通过利率和企业成本绕一圈打回来。",
+        "watch": "盯 6 月实际出口和产量有没有跟上；如果只宣布不落地，油价未必下得去，黄金也可能继续有支撑。",
+        "category": "宏观/金融",
+        "tier": 1
+      },
+      {
+        "title": "DRAM 短缺会继续卡住 AI 成本",
+        "source": "华尔街见闻",
+        "url": "https://wallstreetcn.com/articles/3771508",
+        "conclusion": "AI 不只缺 GPU，内存也在变成瓶颈。",
+        "signal": "韩媒称 DRAM 短缺将再持续一年；原文标题强调“内存对 AI CPU 至关重要”。",
+        "why": "你用各种 agent 工具，最终成本会传导到订阅费、API 价格、限流策略。模型越来越聪明是一回事，能不能便宜又快地跑起来，内存供应会是隐藏约束。",
+        "watch": "盯云厂商有没有调高推理价格、降低免费额度，尤其是长上下文和多 agent 并发任务；这些最吃内存。",
+        "category": "AI行业",
+        "tier": 1
+      },
+      {
+        "title": "AI 急诊诊断已经超过普通分诊医生",
+        "source": "Hacker News",
+        "url": "https://www.theguardian.com/technology/2026/apr/30/ai-outperforms-doctors-in-harvard-trial-of-emergency-triage-diagnoses",
+        "conclusion": "健康场景里，AI 最先赢的不是“替代医生”，是做便宜、冷静、不会漏问的第二意见。",
+        "signal": "OpenAI o1 正确诊断 67% 的 ER patients；triage doctors 为 50-55%；HN 267 points。",
+        "why": "你关注健康优化，这个信号很硬：AI 在高压医疗问诊里已经能补医生短板。家庭健康、儿童症状初筛、体检报告解读，都适合让 AI 先帮你列风险和要问医生的问题，但别把它当最终诊断。",
+        "watch": "盯这类研究有没有从试验走到真实急诊流程；如果医院开始把 LLM 放进分诊前台，医疗 AI 会从“科普工具”变成“流程工具”。",
+        "category": "其他值得看的",
+        "tier": 1
+      }
+    ],
+    "watchpoint_reviews": [
+      {
+        "watch": "盯后面谁把这类 FP8 优化真正接进主流推理栈；一旦不是 demo，而是大规模上线，开源模型的性价比会继续追头部闭源。",
+        "status_label": "⏳ 进展中",
+        "review": "HN 上出现 “DeepClaude – Claude Code agent loop with DeepSeek V4 Pro, 17x cheaper”，Perplexity 也上线了 Kimi K2.6 open-weight 模型。方向上继续证明开源/开放模型在压低使用成本，但今天还没有看到原观察点里说的 FP8 优化被主流推理栈大规模接入。",
+        "date": "2026-04-21"
+      },
+      {
+        "watch": "盯它能不能处理登录态、验证码、弹窗、文件上传、异常重试；这些过不了，就只能当 demo，过了才是真工具。",
+        "status_label": "⏳ 进展中",
+        "review": "Perplexity 宣布 GPT-5.5 将作为 Computer 的默认 orchestration model，说明 computer-use/browser agent 还在被产品化推进。但今天没有证据说明登录态、验证码、弹窗、文件上传这些脏活已经稳定解决。",
+        "date": "2026-04-25"
+      },
+      {
+        "watch": "盯 API 价格、上下文长度、函数调用、中文电商语料表现；如果稳定性跟上，就可以把非核心推理任务迁过去。",
+        "status_label": "✅ 验证",
+        "review": "DeepClaude 用 DeepSeek V4 Pro 跑 Claude Code agent loop，标称便宜 17 倍，正好对应“把非核心推理任务迁过去”的价格套利逻辑。今天的信息说明 DeepSeek V4 不只是发布，而是已经被拿来替代一部分昂贵 coding-agent 工作流。",
+        "date": "2026-04-25"
+      },
+      {
+        "watch": "盯这些 skills 是否开始出现行业模板，比如电商运营、内容生产、数据分析；能直接改成你团队 SOP 的，优先抄。",
+        "status_label": "⏳ 进展中",
+        "review": "OpenAI Codex 开始支持导入 settings、plugins、agents、project configuration，Mistral 也发布企业 AI Workflows 预览版。可复用工作流资产的方向更明确了，但还没看到原观察点里说的电商运营、内容生产、数据分析等行业模板大规模出现。",
+        "date": "2026-04-27"
+      },
+      {
+        "watch": "盯 CUA 的 benchmark 有没有覆盖真实桌面任务，尤其是浏览器后台、多窗口、验证码/登录态、文件上传这些脏活。",
+        "status_label": "⏳ 进展中",
+        "review": "Perplexity 把 GPT-5.5 作为 Computer 的默认编排模型，说明 computer-use agent 的底座还在升级。不过今天仍没有 benchmark 或产品证据证明它能稳定覆盖后台、多窗口、验证码/登录态、文件上传这些真实桌面任务。",
+        "date": "2026-04-27"
+      },
+      {
+        "watch": "盯 FTC 后续按平台拆分的数据；你自己这边要盯客服冒充、群内假链接、付款路径跳转这几类风险。",
+        "status_label": "⏳ 进展中",
+        "review": "CZ 提到一个 40 万粉账号发假图还能拿到 1.3 万点赞，说明社媒假图和错误信息传播成本依然很低。它和原观察点里的“平台信任成本”方向一致，但今天没有 FTC 分平台数据，也没有直接落到电商付款链路诈骗。",
+        "date": "2026-04-28"
+      },
+      {
+        "watch": "盯它后面会不会被更多 agent 框架接入；尤其看 OpenAI / Claude / DeepSeek 格式兼容有没有继续扩。",
+        "status_label": "✅ 验证",
+        "review": "DeepClaude 把 DeepSeek V4 Pro 接进 Claude Code agent loop，并主打 17 倍成本优势，正是“更多 agent 框架接入 DeepSeek”的结果。这个观察点判断对了：模型套利没有结束，而是在 coding agent 场景里继续兑现。",
+        "date": "2026-04-29"
+      },
+      {
+        "watch": "盯 Cursor SDK 有没有稳定的权限控制、日志、回滚机制；没有这些，放进 CI/CD 就容易变成自动闯祸。",
+        "status_label": "⏳ 进展中",
+        "review": "Cursor 推出 Teams 和 Enterprise 的 Security Review，包含 PR 安全审查 agent 和定时漏洞扫描 agent。它说明 Cursor agent 正在进入团队级开发流程，但今天还没看到 SDK 层面的权限控制、日志、回滚机制是否完整。",
+        "date": "2026-05-01"
+      },
+      {
+        "watch": "盯这类 skills framework 是否开始支持跨 Claude、Cursor、Codex 迁移；如果技能能跨工具复用，就会变成个人和团队的 AI 资产。",
+        "status_label": "⏳ 进展中",
+        "review": "OpenAI Codex 支持导入工作流相关配置，包括 plugins、agents、project configuration，说明 agent 配置和工作流正在变成可迁移资产。还不能算完全验证，因为原观察点更关心 skills 能否跨 Claude、Cursor、Codex 稳定复用。",
+        "date": "2026-05-01"
+      }
+    ]
+  },
+  {
     "date": "2026-05-02",
     "type": "weekly",
     "date_range": "04/25 ~ 05/01",
