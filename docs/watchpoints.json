@@ -1103,7 +1103,7 @@
     "title": "xAI 语音克隆把“品牌声音”做成 API 商品",
     "watch": "盯中文语音的自然度、平台对 AI 克隆声音的标识要求，以及抖音/小红书对“仿真人声带货”的审核口径。",
     "source": "X (Twitter)",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-05-04",
@@ -1138,6 +1138,69 @@
     "title": "AI 急诊诊断已经超过普通分诊医生",
     "watch": "盯这类研究有没有从试验走到真实急诊流程；如果医院开始把 LLM 放进分诊前台，医疗 AI 会从“科普工具”变成“流程工具”。",
     "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-05",
+    "title": "企业 AI 的坑不在模型，在编排层",
+    "watch": "盯 Mistral Workflows 后面会不会接 Claude Code、Codex、内部知识库和审批流；如果只支持自家模型，价值会打折。",
+    "source": "X (Twitter)",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-05",
+    "title": "长任务 agent 开始补“记忆断片”",
+    "watch": "盯它能不能接网页、表格、飞书/Notion、微信社群导出数据；只会索引代码就偏窄，能索引运营数据才有用。",
+    "source": "GitHub Trending",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-05",
+    "title": "Palantir 的财报在说：AI 预算真开始进企业账本了",
+    "watch": "盯 Palantir 下一份财报里增长能不能继续靠商业客户，而不是只靠政府订单；如果商业客户继续买单，说明 AI 软件预算还没见顶。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-05",
+    "title": "Sierra 的估值说明客服 agent 还没被打穿价格",
+    "watch": "盯它后面有没有公开客户留存、客单提升、工单解决率；如果只讲融资不讲业务指标，就说明估值跑太快。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-05",
+    "title": "GameStop 想吞 eBay，二手电商要变天",
+    "watch": "盯 eBay 董事会怎么回应，以及 GameStop 有没有拿出融资方案；没有钱的要约就是流量操作，有钱才是行业信号。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-05",
+    "title": "共和党下一轮核心定价已经压到 Vance 身上",
+    "watch": "盯这个合约 Yes 会不会持续上破 39%；如果继续走高，市场会提前交易“特朗普路线延续”。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-05",
+    "title": "中东风险已经重新打到油价和美股",
+    "watch": "盯布油涨幅能不能守住 6% 附近的冲击；如果油价继续上冲，市场会重新怀疑降息节奏。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-05",
+    "title": "小模型开始能做“可见输出”，本地 AI 更实用了",
+    "watch": "盯它在本地量化版本里的稳定性，尤其是生成 SVG 时会不会语法炸掉；小模型最怕“看着会，实际不可用”。",
+    "source": "RSS:Simon Willison",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-05",
+    "title": "Claude 周边生态开始长出“多 agent 操作系统”",
+    "watch": "盯它是真有生产案例，还是 stars 虚火；重点看 issue、更新频率、Claude Code / Codex 集成是否真的能跑复杂任务。",
+    "source": "GitHub Trending",
     "status": "open"
   }
 ]
