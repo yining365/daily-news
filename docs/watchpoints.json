@@ -1096,7 +1096,7 @@
     "title": "Anthropic 开始认真修“Claude 太会哄人”",
     "watch": "盯 Claude 后续在“反驳用户、要求证据、拒绝过度确认”上的变化；如果它开始更频繁挑战你的假设，不一定是变难用了，可能是变靠谱了。",
     "source": "X (Twitter)",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-05-04",
@@ -1201,6 +1201,69 @@
     "title": "Claude 周边生态开始长出“多 agent 操作系统”",
     "watch": "盯它是真有生产案例，还是 stars 虚火；重点看 issue、更新频率、Claude Code / Codex 集成是否真的能跑复杂任务。",
     "source": "GitHub Trending",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-06",
+    "title": "别让电脑操作型智能体乱烧钱",
+    "watch": "盯你自己工作流里哪些步骤还在靠浏览器点击；只要有 API 或结构化导出，就先改掉，不然 agent 跑得越多亏得越多。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-06",
+    "title": "上下文压缩开始变成刚需",
+    "watch": "盯 Cursor、Claude Code 这类工具会不会内置类似“工具输出沙盒/上下文瘦身”；如果没有，可以先把这个思路加进你的 CLAUDE.md 或项目规则里。",
+    "source": "GitHub Trending",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-06",
+    "title": "AI 服务器不是只吃 GPU，CPU 也要重新定价",
+    "watch": "盯下半年 AMD 给 Meta 出货后，市场有没有把“AI 服务器 CPU”单独拿出来定价；如果财报里继续提 1:1，这条线就不是短炒。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-06",
+    "title": "苹果为没交付的 AI 买单",
+    "watch": "盯苹果之后发布 AI 功能时会不会改话术，从“coming soon”变成“已上线可用”；这会影响整个消费电子和 SaaS 的 AI 营销边界。",
+    "source": "RSS:Daring Fireball",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-06",
+    "title": "苹果钱包可能变成私域入口",
+    "watch": "盯 iOS 27 这个按钮到底开放给谁：普通用户、商家后台，还是开发者 API；如果能批量生成 pass，就可以测试“孕期阶段权益卡”“宝宝月龄提醒卡”。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-06",
+    "title": "Coinbase 裁员不是币圈小事，是 AI 砍组织的信号",
+    "watch": "盯接下来 SaaS、交易所、电商平台的裁员理由里，AI 出现频率会不会继续上升；如果 14% 这种比例变常见，说明组织设计要重写。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-06",
+    "title": "伊朗战争账单已经不是小摩擦",
+    "watch": "盯美国后续是否追加军费、霍尔木兹相关航运是否恢复稳定；如果成本继续被官方口径更新，黄金和能源波动会更敏感。",
+    "source": "RSS:Daring Fireball",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-06",
+    "title": "市场没押伊朗油岛失控，但尾部风险还在",
+    "watch": "盯 June 30 合约是否从 10% 往上走；如果同时霍尔木兹相关合约交易量放大，说明市场开始重新给油价风险加价。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-06",
+    "title": "代码安全也开始交给常驻智能体",
+    "watch": "盯它能不能抓住真实业务漏洞，比如权限绕过、接口泄露、支付回调校验；如果只会报依赖 CVE，价值就有限。",
+    "source": "X (Twitter)",
     "status": "open"
   }
 ]

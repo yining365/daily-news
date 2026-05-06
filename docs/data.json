@@ -1,5 +1,161 @@
 [
   {
+    "date": "2026-05-06",
+    "main_theme": "今天最核心的线索，不是“AI 又进步了”，而是 AI 正在从炫技阶段进入算账阶段：谁能少烧 token、少烧人、少烧 GPU，谁才有资格继续扩张。Computer Use 比结构化 API 贵 45 倍、上下文压缩能把 tool output 减 98%、Cursor 把安全审查做成常驻 agent，本质都在说同一件事：AI 工程的胜负手，已经从“能不能做”变成“能不能稳定、便宜、可控地做”。\n\n这条线往外扩，就是组织和产业链都在重新定价。Coinbase 裁 14% 不是币圈八卦，而是 AI 开始直接改组织结构；AMD 说服务器 CPU 市场增速超 35%、CPU/GPU 比例推向 1:1，说明 AI 基建也不再只是英伟达一个人的故事；苹果因为没交付 AI 功能赔 2.5 亿美元，则是在给所有卖 AI 概念的公司敲钟：别再把 demo 当产品卖，用户和监管都会开始追账。\n\n对做电商和 AI 工具的人来说，下一步别追“最像人的 agent”，要追“最便宜、最稳、最能接真实业务数据的工作流”。订单、库存、会员、客服、内容生产这些环节，能走 API 就别让智能体看屏幕点按钮；能压缩上下文就别把一堆日志塞给模型；能用 Apple Wallet 这种系统入口做复购触达，就别只困死在微信私域里。",
+    "commentary": "**今天值得花时间看的：**\n\n第一条我会看 Computer Use 贵 45 倍这事，这条特别容易被低估。很多人现在一上来就想做“浏览器智能体”，让 AI 模拟人点后台、搬数据、发消息，听着很酷，实际就是拿钱烧烟花；母婴电商这种订单、库存、会员标签、客服记录，全都应该先接 API、表格、数据库，别让 agent 去“看屏幕猜按钮”。\n\n第二条是上下文压缩，context-mode 这种东西没那么性感，但很值钱。你每天用 Cursor、Claude Code，真正拖慢你的不是模型笨，而是你把无关报错、历史文件、工具输出全塞进去，模型被垃圾上下文带偏；谁能把上下文管理做好，谁就能把 AI 编程从“偶尔灵”变成“天天能用”。\n\n第三条是 Apple Wallet 的 Create a Pass。这个如果 iOS 27 真开放给商家或开发者 API，那对私域是个新口子，尤其母婴行业特别适合做“孕周提醒卡”“宝宝月龄权益卡”“奶粉复购券”“疫苗/体检提醒卡”；用户不打开小程序，也可能在系统钱包里看到你，这比群里天天发广告高级多了。\n\n**可以跳过的：**\n\n苹果 AI 和解这条，热闹归热闹，但别被“苹果赔 2.5 亿美元”这个数字带跑偏。真正有用的信息不是赔了多少钱，而是以后 AI 功能宣传会更谨慎；如果你只是看个大厂翻车爽文，那没必要花太久。\n\nCoinbase 裁员也别按币圈新闻看，币价涨跌那部分是噪音。重点只有一个：AI 提效已经从“不多招人”变成“直接砍岗位”，尤其客服、内容、运营助理这种岗位，会先被重新评估；创业团队现在最蠢的动作，就是没把 SOP 和工具链跑顺就急着扩人。\n\n中东这两条也别天天刷战况，容易把自己刷焦虑。真正要盯的不是谁放了狠话，而是两个硬指标：美国军费是否继续追加、Kharg Island 到 6 月 30 日失控概率有没有从 10% 往上跳；没跳之前，很多地缘标题都是情绪噪音。\n\n**下周盯这几个：**\n\n1. **5 月 13 日前，把你自己的 AI 工作流盘一遍：哪些步骤还在靠浏览器点击。**  \n   只要是查订单、导库存、贴标签、拉客服记录、生成报表，优先找 API、CSV 导出、数据库连接；如果还让 agent 开网页点来点去，跑得越多亏得越多。\n\n2. **下周盯 Cursor / Claude Code 有没有跟进上下文压缩或工具输出沙盒。**  \n   如果它们没内置，你就自己在项目规则里写死：长日志先摘要、报错只保留关键栈、工具输出不要全量塞回模型；这事不花哨，但能直接省钱、省时间、省返工。\n\n3. **盯 Polymarket 上 Kharg Island “by June 30” 合约，下周如果从 10% 拉到 15%-20%，就别硬加美股风险仓。**  \n   这个不是让你去赌战争，是拿它当油价和避险情绪的温度计；如果概率上行同时黄金走强、油价抬头，那说明市场开始重新给中东尾部风险定价。",
+    "items": [
+      {
+        "title": "别让电脑操作型智能体乱烧钱",
+        "source": "Hacker News",
+        "url": "https://reflex.dev/blog/computer-use-is-45x-more-expensive-than-structured-apis/",
+        "conclusion": "这事说白了就是，能走接口就别让智能体“看屏幕点按钮”。",
+        "signal": "Computer Use 比 structured APIs 贵 45x；HN 304 points。",
+        "why": "你做抖音、小红书、微信社群自动化时，很多任务看起来适合“浏览器智能体”，但真实成本可能被吃掉。订单、库存、私域标签、客服记录这些东西，优先接 API、表格、数据库，别上来就用电脑操作。",
+        "watch": "盯你自己工作流里哪些步骤还在靠浏览器点击；只要有 API 或结构化导出，就先改掉，不然 agent 跑得越多亏得越多。",
+        "category": "AI工程",
+        "tier": 1
+      },
+      {
+        "title": "上下文压缩开始变成刚需",
+        "source": "GitHub Trending",
+        "url": "https://github.com/mksglu/context-mode",
+        "conclusion": "AI 编程接下来拼的不是“会不会写代码”，是能不能少塞垃圾上下文。",
+        "signal": "context-mode 号称 tool output 减少 98%；支持 14 platforms；GitHub 13,028 stars。",
+        "why": "你每天用 Claude/Cursor，最贵的不是模型本身，是反复把无关日志、报错、文件内容塞进上下文。这个方向能直接降低成本，也能减少 agent 被噪音带偏。",
+        "watch": "盯 Cursor、Claude Code 这类工具会不会内置类似“工具输出沙盒/上下文瘦身”；如果没有，可以先把这个思路加进你的 CLAUDE.md 或项目规则里。",
+        "category": "AI工程",
+        "tier": 1
+      },
+      {
+        "title": "AI 服务器不是只吃 GPU，CPU 也要重新定价",
+        "source": "华尔街见闻",
+        "url": "https://wallstreetcn.com/articles/3771601",
+        "conclusion": "别只盯英伟达，AI 基建的第二层行情已经打到服务器 CPU 了。",
+        "signal": "AMD 电话会称服务器 CPU 市场增速将超 35%；CPU 比例推向 1:1；预计下半年出货 Meta 芯片。",
+        "why": "你定投纳指和标普，表面看是“芯片股涨”，里面结构在变：GPU 之外，CPU、内存、网络、供电都在被 AI 拉着涨。只看英伟达容易漏掉产业链轮动。",
+        "watch": "盯下半年 AMD 给 Meta 出货后，市场有没有把“AI 服务器 CPU”单独拿出来定价；如果财报里继续提 1:1，这条线就不是短炒。",
+        "category": "AI行业",
+        "tier": 1
+      },
+      {
+        "title": "苹果为没交付的 AI 买单",
+        "source": "RSS:Daring Fireball",
+        "url": "https://9to5mac.com/2026/05/05/apple-reaches-250m-settlement-over-siri-delays-users-could-get-up-to-95-per-device/",
+        "conclusion": "AI 功能不能再靠 PPT 预售了，苹果都被罚到肉疼。",
+        "signal": "Apple 就广告承诺但未交付的 AI 功能达成 $250 Million 和解；用户每台设备最高可得 $95。",
+        "why": "这对所有卖 AI 功能的公司都是提醒：宣传“智能客服、智能导购、自动运营”时，最好别把 demo 说成已交付能力。你做母婴电商，如果以后卖 AI 服务或 AI 会员权益，文案要更克制。",
+        "watch": "盯苹果之后发布 AI 功能时会不会改话术，从“coming soon”变成“已上线可用”；这会影响整个消费电子和 SaaS 的 AI 营销边界。",
+        "category": "AI行业",
+        "tier": 1
+      },
+      {
+        "title": "苹果钱包可能变成私域入口",
+        "source": "Hacker News",
+        "url": "https://walletwallet.alen.ro/blog/ios-27-wallet-create-pass/",
+        "conclusion": "如果 iOS 27 真把“创建卡券”做顺，私域不只是在微信里了。",
+        "signal": "iOS 27 增加 “Create a Pass” button 到 Apple Wallet；HN 377 points。",
+        "why": "母婴电商最值钱的是复购和会员触达。Apple Wallet 如果让品牌更容易发会员卡、售后卡、权益卡，用户不打开小程序也能看到提醒，这对私域运营是新入口。",
+        "watch": "盯 iOS 27 这个按钮到底开放给谁：普通用户、商家后台，还是开发者 API；如果能批量生成 pass，就可以测试“孕期阶段权益卡”“宝宝月龄提醒卡”。",
+        "category": "商业/电商",
+        "tier": 1
+      },
+      {
+        "title": "Coinbase 裁员不是币圈小事，是 AI 砍组织的信号",
+        "source": "华尔街见闻",
+        "url": "https://wallstreetcn.com/articles/3771605",
+        "conclusion": "AI 提效已经从“少招人”走到“直接裁人”。",
+        "signal": "Coinbase 裁员 14%；CEO 称 AI 正带来深刻变革。",
+        "why": "你创业团队别急着扩人，尤其是客服、内容、运营助理这类岗位。现在更划算的打法是：一个人加一套 agent 工作流，先把 SOP 跑满，再决定要不要招。",
+        "watch": "盯接下来 SaaS、交易所、电商平台的裁员理由里，AI 出现频率会不会继续上升；如果 14% 这种比例变常见，说明组织设计要重写。",
+        "category": "商业/电商",
+        "tier": 1
+      },
+      {
+        "title": "伊朗战争账单已经不是小摩擦",
+        "source": "RSS:Daring Fireball",
+        "url": "https://politicalwire.com/2026/04/29/iran-war-has-cost-25-billion-so-far/",
+        "conclusion": "中东风险还没结束，只是市场暂时不想看。",
+        "signal": "Pentagon 估算 Iran War 目前成本 $25 Billion。",
+        "why": "你持有纳指、标普和黄金，这种账单会同时牵动油价、财政赤字、军工股和避险资产。美股新高不代表风险消失，只是暂时被芯片行情盖住了。",
+        "watch": "盯美国后续是否追加军费、霍尔木兹相关航运是否恢复稳定；如果成本继续被官方口径更新，黄金和能源波动会更敏感。",
+        "category": "宏观/金融",
+        "tier": 1
+      },
+      {
+        "title": "市场没押伊朗油岛失控，但尾部风险还在",
+        "source": "Polymarket",
+        "url": "https://polymarket.com/event/kharg-island-no-longer-under-iranian-control-by-march-31",
+        "conclusion": "预测市场没在定价全面失控，但它承认“油路出事”不是零概率。",
+        "signal": "Kharg Island no longer under Iranian control by June 30：Yes 10%；by May 31：Yes 6%；交易量 $40.7M。",
+        "why": "Kharg Island 这种点一旦出事，影响的是能源运输和风险偏好，不是单纯地缘新闻。你有黄金和美股仓位，这类低概率事件会决定短期波动方向。",
+        "watch": "盯 June 30 合约是否从 10% 往上走；如果同时霍尔木兹相关合约交易量放大，说明市场开始重新给油价风险加价。",
+        "category": "宏观/金融",
+        "tier": 1
+      },
+      {
+        "title": "代码安全也开始交给常驻智能体",
+        "source": "X (Twitter)",
+        "url": "https://x.com/cursor_ai/status/2049926283061035254",
+        "conclusion": "Cursor 这步不是小功能，是把安全审查变成“默认后台工人”。",
+        "signal": "Cursor Security Review 面向 Teams 和 Enterprise；提供 2 types of always-on agents；热度 1821。",
+        "why": "你用 Cursor 写业务代码，最怕的是 agent 写得快但埋坑。PR 漏洞检查和定时扫描变成常驻 agent 后，小团队可以少依赖专职安全人，但前提是别盲信它。",
+        "watch": "盯它能不能抓住真实业务漏洞，比如权限绕过、接口泄露、支付回调校验；如果只会报依赖 CVE，价值就有限。",
+        "category": "开发者/开源",
+        "tier": 1
+      }
+    ],
+    "watchpoint_reviews": [
+      {
+        "watch": "盯抖音、小红书、微信、支付、物流、CRM 这些平台有没有更开放的 API 或 MCP；谁先开放，谁就更容易被自动化工具吃透。",
+        "status_label": "⏳ 进展中",
+        "review": "HN 出现“Computer Use is 45x more expensive than structured APIs”，等于再次说明：让 agent 操作网页不如给它结构化 API。原观察点里“谁先开放 API/MCP，谁更容易被自动化工具吃透”的方向没错，但今天还没有看到抖音、小红书、微信等平台真正开放的新动作。",
+        "date": "2026-04-25"
+      },
+      {
+        "watch": "盯 Google 后续是否把 TPU 能力更多开放给外部开发者，以及 Gemma 生态有没有从“好用”变成“默认选择”。",
+        "status_label": "⏳ 进展中",
+        "review": "HN 提到 “Accelerating Gemma 4”，说明 Google 还在继续优化 Gemma 推理效率。它支持“Gemma 生态在变强”的判断，但还没到“默认选择”的程度，也没有看到 TPU 更大范围开放的新证据。",
+        "date": "2026-04-27"
+      },
+      {
+        "watch": "盯 Cursor SDK 有没有稳定的权限控制、日志、回滚机制；没有这些，放进 CI/CD 就容易变成自动闯祸。",
+        "status_label": "⏳ 进展中",
+        "review": "Cursor 推出 Teams / Enterprise 的 Security Review，让 always-on agents 自动检查 PR 漏洞和定期扫描代码库。这说明 Cursor agent 正在进入企业开发流程，但原观察点关心的权限控制、日志、回滚机制今天仍没明确交代。",
+        "date": "2026-05-01"
+      },
+      {
+        "watch": "盯这类 skills framework 是否开始支持跨 Claude、Cursor、Codex 迁移；如果技能能跨工具复用，就会变成个人和团队的 AI 资产。",
+        "status_label": "⏳ 进展中",
+        "review": "OpenAI 宣布 Codex 可以导入 settings、plugins、agents、project configuration，说明工作流资产开始具备迁移价值。它验证了“不是单个 prompt，而是整套配置/技能/流程更值钱”的趋势，但目前看更像导入 Codex，还不是跨 Claude、Cursor、Codex 的真正通用标准。",
+        "date": "2026-05-01"
+      },
+      {
+        "watch": "盯 Claude 后续在“反驳用户、要求证据、拒绝过度确认”上的变化；如果它开始更频繁挑战你的假设，不一定是变难用了，可能是变靠谱了。",
+        "status_label": "✅ 验证",
+        "review": "Anthropic 公布分析 100 万条 Claude 对话，专门研究用户如何寻求建议、Claude 何时滑向 sycophancy，并把结果用于改进 Opus 4.7 和 Mythos Pre。原判断说 Anthropic 会认真修“太会顺着用户说”的问题，这次已经直接验证。",
+        "date": "2026-05-04"
+      },
+      {
+        "watch": "盯 Mistral Workflows 后面会不会接 Claude Code、Codex、内部知识库和审批流；如果只支持自家模型，价值会打折。",
+        "status_label": "⏳ 进展中",
+        "review": "Mistral 发布 Workflows public preview，明确说企业不缺模型，缺的是可靠跑进生产的 orchestration layer。这和原判断高度一致；但观察点里要求继续盯它能否接 Claude Code、Codex、内部知识库和审批流，今天还没看到完整答案。",
+        "date": "2026-05-05"
+      },
+      {
+        "watch": "盯它能不能接网页、表格、飞书/Notion、微信社群导出数据；只会索引代码就偏窄，能索引运营数据才有用。",
+        "status_label": "⏳ 进展中",
+        "review": "HN 上出现 Airbyte Agents，方向是给 agent 提供跨多个数据源的上下文。它符合原观察点里“agent 不能只索引代码，还要接网页、表格、运营数据”的方向，但具体能否覆盖飞书/Notion/微信社群等真实运营数据，还需要继续看。",
+        "date": "2026-05-05"
+      },
+      {
+        "watch": "盯布油涨幅能不能守住 6% 附近的冲击；如果油价继续上冲，市场会重新怀疑降息节奏。",
+        "status_label": "⏳ 进展中",
+        "review": "特朗普称美国将启动 “Project Freedom” 护送滞留船只离开霍尔木兹海峡，同时又提到委内瑞拉有大量石油流出。霍尔木兹相关动作说明中东运输风险仍在，原观察点的风险方向没错；但今天没有给出布油是否继续守住涨幅的价格结果。",
+        "date": "2026-05-05"
+      }
+    ]
+  },
+  {
     "date": "2026-05-05",
     "main_theme": "今天最核心的线，不是“AI 又多了几个工具”，而是企业 AI 正在从“模型炫技”进入“流程接管”。Mistral 推 Workflows、ruflo 做多 agent 编排、cocoindex 补长任务记忆，本质都在解决同一个问题：AI 不再只是回答问题，而是要稳定地接住一整段业务链路。\n\nPalantir 财报和 Sierra 估值，是这条线的商业验证：企业已经愿意为“能嵌进流程、能省人、能提转化”的 AI 付真金白银。客服 agent、内部审批流、知识库、选品监控、内容生产，这些不是未来概念，已经开始从“试试看”变成“进预算”。\n\n另一边，GameStop 想吞 eBay、中东风险推油价、Vance 合约升温，说明市场也在重新给“入口、成本、政治路线”定价。我的判断很简单：接下来别再追“哪个模型最强”，要追“谁掌握工作流入口、谁能吃到企业预算、谁能把成本结构打下来”。",
     "commentary": "**今天值得花时间看的：**\n\n第一条我会看 Mistral Workflows。别被“又一个 AI 产品发布”骗了，这条真正有价值的地方是它想抢企业 AI 的控制台：任务怎么拆、权限怎么管、失败怎么回滚、模型怎么切换，这些才是企业敢不敢把 AI 放进真实流程的关键。\n\n第二条是 cocoindex。这个东西听起来不性感，但特别实用，因为长周期 agent 最大的问题不是不会说话，是它记不住、接不上、不能持续盯数据；做母婴电商的话，竞品价格、达人素材、评论差评、私域反馈，都需要这种“持续索引”的底层能力。\n\n第三条是 Sierra 融资和估值。很多人还把客服 AI 当“省几个客服工资”，这个理解太浅了；真正值钱的是客服入口变成销售、售后、留资、复购、用户洞察的一体化机器，这对电商比单纯降本更要命。\n\n**可以跳过的：**\n\nGameStop 收购 eBay 这条，热闹归热闹，但现在先别上头。没有明确融资方案之前，它更像一次流量型报价，真正要看的是 eBay 董事会回应和钱从哪来，不然就是“嘴上并购”。\n\nruflo 的 4 万多 stars 也别无脑兴奋。GitHub star 很容易虚火，尤其 multi-agent、swarm、RAG 这些词现在太好蹭了；我只看它有没有真实生产案例、issue 里是不是一堆跑不起来、Claude Code/Codex 集成是不是能扛复杂任务。\n\nGranite 4.1 3B 生成 SVG 这条也别吹太大。方向是对的，小模型做本地低成本工具很重要，但如果 SVG 语法经常炸、稍复杂就变形，那对运营生产还是玩具，不是生产力。\n\n**下周盯这几个：**\n\n第一，盯 5 月 12 日美国 4 月 CPI。油价如果因为中东风险继续顶着，CPI 数据再不友好，美股降息交易会很难受；你手里如果有纳指、标普，别只看 AI 财报，通胀预期一抬估值就会被压。\n\n第二，盯布油能不能站稳这次 6% 冲击后的高位，尤其是 5 月 11 日到 5 月 13 日这几个交易日。油价如果继续往上拱，电商端也别觉得没关系，物流、包装、供应链预期都会慢慢传导过来。\n\n第三，盯 eBay 董事会对 GameStop 要约的正式回应，以及 GameStop 有没有给出融资细节。这事如果真推进，二手交易入口会被重新定价，母婴里的闲置推车、安全座椅、玩具、绘本这些存量流转，平台可能会重新重视。",
