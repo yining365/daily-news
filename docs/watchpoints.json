@@ -1314,5 +1314,68 @@
     "watch": "盯 May 31, 2026 和 June 30, 2026 两个合约的价差，如果后者继续明显高于前者，说明市场押的是“拖到最后谈成”。",
     "source": "Polymarket",
     "status": "open"
+  },
+  {
+    "date": "2026-05-08",
+    "title": "扩散模型从“等一会儿”变成“马上出图”",
+    "watch": "盯它在 ComfyUI 生态里的兼容节点和实际画质反馈，尤其是复杂提示词、多人物、文字元素这些最容易翻车的场景。",
+    "source": "aihot:tip",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-08",
+    "title": "长上下文模型正在被“路由器化”",
+    "watch": "盯 OpenRouter 上这个模型的价格、限流和稳定性；如果 100 万上下文能稳定跑，长文档分析和代码库问答就可以从“挑模型”变成“挑路由策略”。",
+    "source": "aihot:ai-products",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-08",
+    "title": "OpenAI 把网络安全模型先给“可信用户”",
+    "watch": "盯 OpenAI 后续是否把 GPT-5.5-Cyber 放进普通 API；如果一直只走 Trusted Access，安全能力会变成平台级护城河。",
+    "source": "aihot:ai-models",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-08",
+    "title": "中国开始给 AI 硬件分“智商等级”",
+    "watch": "盯第一批通过测试的手机、眼镜、耳机厂商；谁先拿到 L3/L4，谁才是真的 AI 终端，不是语音助手换皮。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-08",
+    "title": "AI 短剧版权开始进刑案了",
+    "watch": "盯这个案子有没有二审，以及平台后续会不会要求 AI 短剧、AI 图片、AI 音乐上传时补版权链路。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-08",
+    "title": "AI 医疗的关键不是会诊，是会问问题",
+    "watch": "盯 Google/Fitbit 后续是否把症状检查接进真实产品；重点看它能不能用睡眠、心率、活动数据做连续判断。",
+    "source": "aihot:paper",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-08",
+    "title": "高盛把 A 股优先级抬到 H 股前面",
+    "watch": "盯沪深 300 能不能靠近 5300 点，以及外资是不是继续从港股科技转向 A 股核心资产。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-08",
+    "title": "英伟达继续自己养 AI 需求",
+    "watch": "盯后续还有没有更多英伟达参与的数据中心融资；如果“卖铲子的人”越来越多帮矿工买铲子，市场会开始重新审视 AI capex 质量。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-08",
+    "title": "美联储主席人选已经是大交易盘了",
+    "watch": "盯这个合约的候选人赔率变化，尤其是和特朗普、鲍威尔冲突新闻同步跳动的时候；黄金和长债收益率会先反应。",
+    "source": "Polymarket",
+    "status": "open"
   }
 ]
