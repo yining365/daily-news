@@ -900,7 +900,7 @@
     "title": "GPU 租赁价格 6 周涨 114%，算力开始像大宗商品",
     "watch": "盯 Claude、OpenAI、Cursor、国内模型服务有没有涨价、限额、排队；尤其看“高峰期降速”和“高级模型调用次数”有没有变紧。",
     "source": "华尔街见闻",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-04-30",
@@ -1145,7 +1145,7 @@
     "title": "上下文压缩开始变成刚需",
     "watch": "盯 Cursor、Claude Code 这类工具会不会内置类似“工具输出沙盒/上下文瘦身”；如果没有，可以先把这个思路加进你的 CLAUDE.md 或项目规则里。",
     "source": "GitHub Trending",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-05-06",
@@ -1249,6 +1249,69 @@
     "date": "2026-05-07",
     "title": "以色列政治风险还没被市场忽略",
     "watch": "盯这个合约的 Yes 是否继续上行，以及它和原油、黄金是否同向反应；如果政治风险升温但油价不动，可能说明市场更担心避险，不是供给。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-08",
+    "title": "Anthropic 开始借 xAI 的算力了",
+    "watch": "盯 Claude 接下来是否减少高峰期降速、是否把更重的任务开放给普通用户。",
+    "source": "X (Twitter)",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-08",
+    "title": "Perplexity 自建推理引擎，搜索 AI 开始卷成本",
+    "watch": "盯 Perplexity 后面有没有更激进的套餐、API 价格或企业版更新。",
+    "source": "X (Twitter)",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-08",
+    "title": "Agent 不是多写 prompt，是要写流程控制",
+    "watch": "盯 Cursor、Claude Code、开源 agent 工具会不会把 control flow 做成默认能力，而不是继续让用户手写长提示词。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-08",
+    "title": "Chrome 的“端侧 AI 不传数据”说法被撤了",
+    "watch": "盯 Chrome 后续隐私说明、企业策略开关、以及是否明确哪些 AI 功能会把数据发到 Google servers。",
+    "source": "Hacker News",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-08",
+    "title": "Agent skills 开始变成新工作流资产",
+    "watch": "盯这个项目的 skills 结构，看看是否适合把你自己的电商 SOP 改造成可复用技能。",
+    "source": "GitHub Trending",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-08",
+    "title": "开源版 CapCut 出现，短视频工具又要降价",
+    "watch": "盯它是否补齐字幕、模板、批量导出、移动端适配；这些才决定能不能进真实电商工作流。",
+    "source": "GitHub Trending",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-08",
+    "title": "Kalshi 估值冲到 220 亿美元，预测市场真成资产了",
+    "watch": "盯 Kalshi 是否继续扩品类，尤其是美联储、选举、通胀相关合约。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-08",
+    "title": "CoreWeave 营收很猛，但市场开始看利润质量",
+    "watch": "盯它下次财报里的亏损、客户集中度、推理业务收入表述。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-08",
+    "title": "市场在给美伊和平重新定价",
+    "watch": "盯 May 31, 2026 和 June 30, 2026 两个合约的价差，如果后者继续明显高于前者，说明市场押的是“拖到最后谈成”。",
     "source": "Polymarket",
     "status": "open"
   }

@@ -1,5 +1,167 @@
 [
   {
+    "date": "2026-05-08",
+    "main_theme": "今天最核心的一条，不是“AI 又更聪明了”，而是 AI 行业开始从拼模型参数，转向拼三件更硬的东西：算力供给、推理成本、工作流控制。Anthropic 借 xAI 的 Colossus 算力，Perplexity 自建推理引擎，CoreWeave 高增长却被市场砸，放在一起看就是一句话：AI 已经进入“谁能稳定、便宜、长期跑”的阶段。\n\n这条线往下落到产品层，就是 agent 不再靠神 prompt，而是靠流程控制和可复用 skills。你看 agent control flow、agent-skills、开源版 CapCut 这些东西，本质都不是炫技，而是在把“人会干的活”拆成可复制的流程：生成、检查、修正、导出、复用；这对电商团队特别关键，因为小红书标题、短视频粗剪、商品卖点、客服质检，本来就是 SOP 密集型工作。\n\n金融市场也在讲同一个故事：资本不再只为“想象空间”买单，而是开始问现金流、成本和可交易性。Kalshi 估值冲到 220 亿美元，说明事件预期本身正在资产化；CoreWeave 营收翻倍还大跌，说明 AI 基建也逃不过利润质量审判；美伊和平概率被市场重新定价，提醒你别只看冲突标题，真正有用的是价格在押什么。\n\n我的判断很直接：接下来别追“最炸的新模型”，要追“能不能降本、能不能进工作流、能不能保护数据”。做电商的人，下一个效率差距不在谁会写 prompt，而在谁先把选品、内容、剪辑、客服这些环节做成可复用的 agent 技能包。",
+    "commentary": "**今天值得花时间看的：**\n\n第一条我会看 agent-skills，不是因为 GitHub 星星多，而是因为它很像未来团队资产的雏形。你别再把“小红书标题公式”“爆款脚本结构”“客服安抚话术”散落在飞书文档里了，应该沉淀成 skills，让新人和 AI 都能调，这才是真正省人。\n\n第二条是 Chrome 撤掉“端侧 AI 不传数据”的说法，这条很多人会当隐私八卦，我觉得非常重要。做母婴电商的，客户数据、私域聊天、投放素材、供应链报价，这些东西别随手丢进浏览器 AI 功能里试；“on-device”这几个字以后不能当免死金牌，必须看清楚有没有传到 Google servers。\n\n第三条是 Perplexity 自建推理引擎。AI 搜索这门生意，表面拼答案质量，最后一定拼成本和延迟；如果它真把推理成本打下来，后面电商选品、竞品监控、素材调研这类工具都会被迫降价，这对小团队是好事。\n\n**可以跳过的：**\n\nAnthropic 借 xAI 算力这条，标题很热闹，但普通用户别过度脑补“马斯克和 Claude 联手改写 AI 格局”。它真正有用的信息就一个：Claude 可能缓解高峰期卡顿和限制；至于两家公司是不是从竞争变合作，别上头，AI 圈租算力就是租命，没那么浪漫。\n\nKalshi 220 亿美元估值也别当成“预测市场马上统治金融”的爽文来看。值不值得看？值得；但今天大部分讨论都是估值情绪，没有太多新交易信号，真正该看的不是融资新闻，而是它后面会不会扩美联储、通胀、选举这些高频合约。\n\n开源版 CapCut 也别急着吹“剪映要完”。它现在最关键不是能不能打开浏览器剪视频，而是字幕、模板、批量导出、移动端适配能不能补齐；没这些，进不了真实电商内容流水线，只能当技术 demo。\n\n**下周盯这几个：**\n\n1. **5 月 11 日周一，自己测 Claude 高峰期表现。**  \n   晚上 9 点到 11 点丢几个重任务：长文改写、表格分析、代码修改，看有没有明显少排队、少降速、少断上下文。Anthropic 借算力这事，对我们有用没用，就看日常体验有没有改善。\n\n2. **5 月 13 日周三，盯 Perplexity 有没有套餐、API、企业版价格动作。**  \n   如果它自建 ROSE 推理引擎后开始降价或者放量，那电商团队的竞品监控、内容调研工具成本会被往下打；这比“又发了个 AI 搜索功能”重要多了。\n\n3. **5 月 15 日周五，查 Chrome AI 隐私说明和企业策略开关。**  \n   尤其看三件事：哪些功能会把数据发到 Google servers、企业管理员能不能关、默认是否开启。要是说不清楚，我建议母婴、电商、私域团队先别把客户资料喂进去，别拿自己的数据给大厂试功能。",
+    "items": [
+      {
+        "title": "Anthropic 开始借 xAI 的算力了",
+        "source": "X (Twitter)",
+        "url": "https://x.com/xai/status/2052060350770515978",
+        "conclusion": "这事说白了就是 Claude 的瓶颈不只在模型，已经卡到算力供给了。",
+        "signal": "X 热度 18690；Anthropic 将获得 Colossus 1 的额外容量。",
+        "why": "你每天用 Claude，如果后面速度、排队、上下文稳定性变好，背后可能不是模型升级，而是算力外援。更关键的是，AI 公司之间开始“竞品也能互相租命根子”，行业边界没以前那么硬了。",
+        "watch": "盯 Claude 接下来是否减少高峰期降速、是否把更重的任务开放给普通用户。",
+        "category": "AI行业",
+        "tier": 1
+      },
+      {
+        "title": "Perplexity 自建推理引擎，搜索 AI 开始卷成本",
+        "source": "X (Twitter)",
+        "url": "https://x.com/Perplexity_AI/status/2052041903970148647",
+        "conclusion": "Perplexity 不只是做搜索壳子了，它在往“推理成本公司”走。",
+        "signal": "X 热度 723；ROSE 支持从 embeddings 到 trillion-parameter LLMs。",
+        "why": "AI 搜索这种产品，回答质量大家都能追，真正拉开差距的是延迟和成本。你做电商内容、选品、竞品监控，如果这类工具越来越便宜，背后就是推理层在降本。",
+        "watch": "盯 Perplexity 后面有没有更激进的套餐、API 价格或企业版更新。",
+        "category": "AI行业",
+        "tier": 1
+      },
+      {
+        "title": "Agent 不是多写 prompt，是要写流程控制",
+        "source": "Hacker News",
+        "url": "https://bsuh.bearblog.dev/agents-need-control-flow/",
+        "conclusion": "别再迷信神 prompt 了，靠谱 agent 得像程序一样有分支、循环、检查点。",
+        "signal": "Hacker News 309 points。",
+        "why": "你用 Cursor、Claude 做长任务时，很多翻车不是模型不聪明，是流程没被管住。比如写商品页、改脚本、跑数据，应该拆成“生成—检查—修正—确认”，而不是一口气丢给模型。",
+        "watch": "盯 Cursor、Claude Code、开源 agent 工具会不会把 control flow 做成默认能力，而不是继续让用户手写长提示词。",
+        "category": "AI工程",
+        "tier": 1
+      },
+      {
+        "title": "Chrome 的“端侧 AI 不传数据”说法被撤了",
+        "source": "Hacker News",
+        "url": "https://old.reddit.com/r/chrome/comments/1t5qayz/chrome_removes_claim_of_ondevice_al_not_sending/",
+        "conclusion": "看到“on-device AI”先别安心，浏览器厂商的隐私边界还没说清。",
+        "signal": "Hacker News 455 points。",
+        "why": "你会把客户、投放、供应链资料丢进浏览器里的 AI 功能，这类改文案很敏感。对母婴电商来说，用户数据和私域内容不是拿来试功能的。",
+        "watch": "盯 Chrome 后续隐私说明、企业策略开关、以及是否明确哪些 AI 功能会把数据发到 Google servers。",
+        "category": "其他值得看的",
+        "tier": 1
+      },
+      {
+        "title": "Agent skills 开始变成新工作流资产",
+        "source": "GitHub Trending",
+        "url": "https://github.com/addyosmani/agent-skills",
+        "conclusion": "以后厉害的不是单个 prompt，而是一套能复用的 agent 技能包。",
+        "signal": "GitHub 32,984 stars。",
+        "why": "你团队里很多活都能沉淀成 skills：小红书标题改写、抖音脚本拆镜、商品卖点提炼、客服话术质检。沉淀成技能后，新人和 agent 都能直接调用，效率比复制 prompt 稳。",
+        "watch": "盯这个项目的 skills 结构，看看是否适合把你自己的电商 SOP 改造成可复用技能。",
+        "category": "AI工程",
+        "tier": 1
+      },
+      {
+        "title": "开源版 CapCut 出现，短视频工具又要降价",
+        "source": "GitHub Trending",
+        "url": "https://github.com/Augani/openreel-video",
+        "conclusion": "内容生产工具继续开源化，剪辑这层的收费空间会被挤。",
+        "signal": "GitHub 1,699 stars；100% browser-based。",
+        "why": "你做抖音和小红书，视频剪辑是高频成本。浏览器内、不开云上传、没水印的开源工具，对小团队很实用，尤其适合处理素材、粗剪、批量模板。",
+        "watch": "盯它是否补齐字幕、模板、批量导出、移动端适配；这些才决定能不能进真实电商工作流。",
+        "category": "商业/电商",
+        "tier": 1
+      },
+      {
+        "title": "Kalshi 估值冲到 220 亿美元，预测市场真成资产了",
+        "source": "华尔街见闻",
+        "url": "https://wallstreetcn.com/articles/3771794",
+        "conclusion": "预测市场不再是 crypto 圈玩具，已经被资本当成下一代金融入口定价。",
+        "signal": "不到 1 年估值涨 400%；新一轮募资估值达 220 亿美元。",
+        "why": "你看 Polymarket 不是为了吃瓜，而是为了提前看市场怎么给政治、利率、地缘风险定价。Kalshi 估值这么打，说明“事件合约”会越来越主流，未来可能影响金融媒体、券商、甚至普通投资决策。",
+        "watch": "盯 Kalshi 是否继续扩品类，尤其是美联储、选举、通胀相关合约。",
+        "category": "宏观/金融",
+        "tier": 1
+      },
+      {
+        "title": "CoreWeave 营收很猛，但市场开始看利润质量",
+        "source": "华尔街见闻",
+        "url": "https://wallstreetcn.com/articles/3771786",
+        "conclusion": "AI 云不是“营收涨就无脑买”了，资本开始追问亏损和指引。",
+        "signal": "Q1 营收同比增长 112%；Q2 指引不及预期；绩后大跌。",
+        "why": "你定投纳指，AI 基建股的估值会影响指数情绪。CoreWeave 这种公司如果高增长还被砸，说明市场开始从“AI 缺算力”切到“算力生意到底赚不赚钱”。",
+        "watch": "盯它下次财报里的亏损、客户集中度、推理业务收入表述。",
+        "category": "AI行业",
+        "tier": 1
+      },
+      {
+        "title": "市场在给美伊和平重新定价",
+        "source": "Polymarket",
+        "url": "https://polymarket.com/event/us-x-iran-permanent-peace-deal-by",
+        "conclusion": "中东风险不是单边升级，市场已经认真押“协议窗口”了。",
+        "signal": "US x Iran permanent peace deal by May 31, 2026：Yes 34%；by June 30, 2026：Yes 54%；交易量 $86.9M。",
+        "why": "油价、黄金、美股风险偏好都吃这条线。你持有黄金，又定投美股，别只看冲突新闻，也要看和平概率怎么变。",
+        "watch": "盯 May 31, 2026 和 June 30, 2026 两个合约的价差，如果后者继续明显高于前者，说明市场押的是“拖到最后谈成”。",
+        "category": "宏观/金融",
+        "tier": 1
+      }
+    ],
+    "watchpoint_reviews": [
+      {
+        "watch": "盯 Anthropic 后面是否把 Claude 更深接入 Google Cloud、Workspace、Gemini 生态；如果企业分发渠道打通，Claude Code 和团队版会更有杀伤力。",
+        "status_label": "⏳ 进展中",
+        "review": "今天不是 Google 生态接入，而是 xAI/SpaceXAI 给 Anthropic 提供 Colossus 1 算力。原判断里“Claude 会不会更深绑 Google”还没验证，反而说明 Anthropic 当前更急的是算力补给，而且不只靠 Google。",
+        "date": "2026-04-25"
+      },
+      {
+        "watch": "盯它会不会从模板工具变成监控工具；如果开始支持成本统计、任务回放、权限控制，就值得认真接进工作流。",
+        "status_label": "⏳ 进展中",
+        "review": "Cursor 3.3 已经能展示 agent 的上下文使用拆解，用来诊断 rules、skills、MCP、subagents 的上下文问题。这不是 Claude Code 本体，也还不是成本统计、回放、权限控制，但“代码 agent 需要可观测性/运维层”这个方向在兑现。",
+        "date": "2026-04-29"
+      },
+      {
+        "watch": "盯 Claude、OpenAI、Cursor、国内模型服务有没有涨价、限额、排队；尤其看“高峰期降速”和“高级模型调用次数”有没有变紧。",
+        "status_label": "✅ 验证",
+        "review": "xAI/SpaceXAI 把 Colossus 1 算力提供给 Anthropic，用来给 Claude 增加容量；Perplexity 也在自建 ROSE 推理引擎优化服务成本。算力已经不是后台资源，而是在模型公司之间被直接交易、调度和优化的核心资产。",
+        "date": "2026-04-30"
+      },
+      {
+        "watch": "盯 PyTorch Lightning 后续披露影响范围、恶意依赖链、是否有 token 泄露；你自己的项目也该固定依赖版本，别全靠最新包。",
+        "status_label": "⏳ 进展中",
+        "review": "今天 Vercel 联合 GitHub、Microsoft、npm、SocketSecurity 澄清其 npm 包未被篡改，同时 HN 上“Maybe you shouldn't install new software for a bit”继续发酵。没有新的 PyTorch Lightning 影响范围结果，但软件供应链风险仍在扩大讨论，原来的依赖锁定提醒没有过时。",
+        "date": "2026-05-01"
+      },
+      {
+        "watch": "盯这类 skills framework 是否开始支持跨 Claude、Cursor、Codex 迁移；如果技能能跨工具复用，就会变成个人和团队的 AI 资产。",
+        "status_label": "⏳ 进展中",
+        "review": "Cursor 3.3 的上下文统计已经把 rules、skills、MCP、subagents 放在同一个诊断视角里，说明 skills 正在进入真实 agent 工程配置层。还没看到跨 Claude、Cursor、Codex 的稳定迁移，所以只能算进展中。",
+        "date": "2026-05-01"
+      },
+      {
+        "watch": "盯它能不能把 workflow 的 diff、回滚、权限边界讲清楚；一旦能稳定接微信社群、表格、客服系统，私域运营会先被它吃掉一块。",
+        "status_label": "⏳ 进展中",
+        "review": "Mistral 发布 Workflows public preview，明确把它定位成企业 AI 的 orchestration layer；HN 上“Agents need control flow, not more prompts”也在强化同一个判断。原来盯的 workflow diff、回滚、权限边界还没看到明确结果，但“agent 要靠流程编排落地”这点更确定了。",
+        "date": "2026-05-04"
+      },
+      {
+        "watch": "盯它能不能接网页、表格、飞书/Notion、微信社群导出数据；只会索引代码就偏窄，能索引运营数据才有用。",
+        "status_label": "⏳ 进展中",
+        "review": "Google DeepMind 和 EVE Online 合作，把游戏世界当作测试 agents 的 memory、continual learning、long-term planning 沙盒。它还不是网页、表格、Notion、微信运营数据的真实工作流接入，但长任务记忆和规划能力正在被系统性测试。",
+        "date": "2026-05-05"
+      },
+      {
+        "watch": "盯 Cursor、Claude Code 这类工具会不会内置类似“工具输出沙盒/上下文瘦身”；如果没有，可以先把这个思路加进你的 CLAUDE.md 或项目规则里。",
+        "status_label": "✅ 验证",
+        "review": "Cursor 3.3 新增 agent context usage breakdown，直接让用户看上下文被 rules、skills、MCP、subagents 怎么消耗。原来判断“上下文问题会变成工具内置能力”是对的，虽然现在先给的是诊断，不是完整自动压缩。",
+        "date": "2026-05-06"
+      },
+      {
+        "watch": "盯模型公司有没有公开展示“AI 帮 AI 做训练、评测、数据生成、工具调用优化”的闭环，不要只看聊天能力。",
+        "status_label": "⏳ 进展中",
+        "review": "Jack Clark 公开说他现在认为 2028 年底前出现 recursive self-improvement 的概率有 60%；HN 也出现 AlphaEvolve 这类 Gemini-powered coding agent 跨领域扩展的讨论。递归自我改进还没发生，但“AI 帮 AI 做训练、评测、工具优化”的时间表确实被更多一线人士提前了。",
+        "date": "2026-05-07"
+      }
+    ]
+  },
+  {
     "date": "2026-05-07",
     "main_theme": "今天最核心的线索，不是 AI 又变强了，而是 AI 开始从“帮你干活”走向“替你动资产、动权限、动预算”。Cloudflare 让 agent 能开账号、买域名、部署项目，这已经不是写代码效率问题了，是谁有权花钱、上线、配置基础设施的问题。\n\n这条线往下看，几件事是连在一起的：AI coding 越强，越暴露真正瓶颈不是代码，而是需求定义和验收判断；本地 deep research 能跑私密资料，说明企业开始把 AI 接进自己的数据池；Scrapling 这类爬虫工具继续进化，意味着电商里的价格、素材、评价、上新节奏会被更快扒光。另一边，Arm 的 AI CPU 需求被重新定价，美债 4.4% 压着风险资产，说明 AI 不是“免费生产力魔法”，它背后吃的是越来越贵的算力和资金成本。\n\n所以今天的判断很明确：接下来别再迷信“哪个模型最强”，要盯“谁能把权限、数据、流程、成本管住”。做电商也一样，AI 工具不是拿来炫技的，是拿来重做 SOP 的；谁先把选品、竞品监控、客服反馈、素材迭代拆成可交给 agent 的流程，谁就先拿到经营杠杆。",
     "commentary": "**今天值得花时间看的：**\n\n第一条我会看 Cloudflare 这个 agent 开账号、买域名、部署的事，这条被很多人低估了。因为它不是“AI 又会写网站了”，而是 agent 开始碰真实账单和真实资产了，创业团队以后最容易爆雷的不是代码错，是 AI 顺手给你买了一堆服务、配错权限、上线脏东西。\n\n第二条是“代码不是瓶颈，需求和判断才是”。这话对做电商的人特别扎心：你让 AI 写脚本、做页面、抓数据都不难，难的是你到底要抓什么、用什么标准判断好坏、最后谁验收。团队里如果一个需求反复返工，别先骂模型，先看看是不是老板自己没说清楚。\n\n第三条是本地 deep research。这个我觉得比很多大模型发布会更实用，因为母婴行业有大量不适合乱丢云端的数据：用户咨询、社群聊天、差评原因、供应链资料、成分表、竞品卖点。能在本地做检索和总结，价值不是省几十块订阅费，而是把私域数据变成自己的资料库。\n\n**可以跳过的：**\n\nJack Clark 说 2028 年前递归自我改进有 60% 概率，这条可以看，但别被吓得一惊一乍。它是大方向信号，不是明天你店铺就要被 AGI 干翻；真正该做的不是转发焦虑，而是把你的工作流整理成 AI 接得住的格式。\n\n“AI 又要改变世界”这类二手解读也可以跳过，基本都是拿这条话术炒情绪。你就记住一句：别赌某个模型永远领先，赌自己的流程能随时换模型、换工具、换供应商。\n\n宏观里中东风险也别每天刷到魔怔。Netanyahu 2026 年前下台合约有 1.2 亿美元交易量，这说明市场在押政治风险，但对你来说不是天天盯新闻直播，而是看它有没有传导到黄金、油价和美债避险。\n\n**下周盯这几个：**\n\n1. **下周一开盘先看 10 年期美债收益率还在不在 4.4% 附近。** 如果美股继续涨、收益率也压不下来，那就是风险资产在硬扛高资金成本，纳指和 AI 股别追太猛；如果收益率明显下去，成长股才更容易喘口气。\n\n2. **下周盯 Cloudflare 有没有继续把 agent 权限做成产品化流程。** 重点不是“能不能部署”，而是有没有审批、预算上限、回滚、日志追踪；如果这些出来了，说明 agent 真要进入公司生产环境，不再只是程序员玩具。\n\n3. **下周把自己店里的竞品监控 SOP 拉一版出来。** 至少定三个字段：竞品价格带、爆款素材结构、差评高频词；Scrapling 这类工具一成熟，同行也会这么盯你，所以别再幻想信息差，真正的护城河是更新速度和供应链反应。",
