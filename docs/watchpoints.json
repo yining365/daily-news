@@ -1089,7 +1089,7 @@
     "title": "Agent 不是多写 prompt，是要写流程控制",
     "watch": "盯 Cursor、Claude Code、开源 agent 工具会不会把 control flow 做成默认能力，而不是继续让用户手写长提示词。",
     "source": "Hacker News",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-05-08",
@@ -1250,6 +1250,76 @@
     "title": "一年前的 o1 在急诊诊断已经压过医生",
     "watch": "盯医院是否把这类模型接入分诊流程；真正的分水岭不是论文分数，而是急诊系统敢不敢让 AI 参与第一轮判断。",
     "source": "aihot:tip",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-12",
+    "title": "FrontierMath 题库塌了一块，模型分数要重算",
+    "watch": "盯 EpochAI 后面发布的修正后分数，重点看那些靠数学榜单出圈的模型排名会不会大洗牌。",
+    "source": "aihot:paper",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-12",
+    "title": "Anthropic 把金融 agent 工作流打包成模板了",
+    "watch": "盯这个模板库后续有没有被真实金融团队 fork、改造、接进内部数据源；MCP 连接器数量继续涨，就说明生态在成型。",
+    "source": "aihot:ai-products",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-12",
+    "title": "腾讯混元 Hy3 押注复杂 agent，不再只卷榜单",
+    "watch": "盯 Hy3 在真实多文件代码修改、长链路网页操作、工具调用里的表现；别只看官方样例。",
+    "source": "aihot:ai-models",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-12",
+    "title": "中国移动做 MoMA，AI 中转层开始国家队化",
+    "watch": "盯 MoMA 是否开放给个人开发者、是否支持统一计费、是否提供企业级 SLA；如果这些补齐，国内模型调用入口会重新洗牌。",
+    "source": "aihot:ai-products",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-12",
+    "title": "Cerebras IPO 太热，AI 芯片风险偏好又回来了",
+    "watch": "盯最终发行价和上市首日表现；如果高开后还能扛住，AI 硬件链的风险偏好会继续扩散。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-12",
+    "title": "美伊僵着，市场却一边买风险一边买避险",
+    "watch": "盯原油和白银能不能继续同步走强；如果它们继续涨，而纳指也新高，市场其实是在给“高估值 + 高地缘风险”定价。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-12",
+    "title": "Replit 让 10 个 agent 并行干活，代码生产方式要变",
+    "watch": "盯它的合并质量，尤其是冲突处理、测试通过率、回滚能力；并行没用，能安全合并才有用。",
+    "source": "aihot:ai-products",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-12",
+    "title": "AI 论文学习库到 3.3 万星，系统补课需求很硬",
+    "watch": "盯这个库是否持续更新到新模型论文；如果只停留在经典论文，它适合补基础，不适合追前沿。",
+    "source": "aihot:tip",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-12",
+    "title": "ChatGPT 5.5 Pro 数学能力如果属实，教育压力会很快外溢",
+    "watch": "盯是否有独立复现、完整推理过程、论文级审稿反馈；没有复现前，把它当强信号，不当铁事实。",
+    "source": "aihot:tip",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-12",
+    "title": "Rigetti 营收翻了三倍，但量子商业化还没到收获期",
+    "watch": "盯它后续能不能把营收增长变成亏损收窄；如果只涨营收不降亏损，行情更像叙事交易。",
+    "source": "华尔街见闻",
     "status": "open"
   }
 ]
