@@ -781,7 +781,7 @@
     "title": "Codex CLI 加 `/goal`，agent 开始记“我要干嘛”",
     "watch": "盯 `/goal` 后面会不会支持多目标、目标状态、失败恢复；如果只是文本提醒，价值有限，如果能驱动执行计划，就会变成 agent 标配。",
     "source": "RSS:Simon Willison",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-05-01",
@@ -816,7 +816,7 @@
     "title": "PyTorch Lightning 依赖里发现 Shai-Hulud 恶意软件",
     "watch": "盯 PyTorch Lightning 后续披露影响范围、恶意依赖链、是否有 token 泄露；你自己的项目也该固定依赖版本，别全靠最新包。",
     "source": "Hacker News",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-05-01",
@@ -1320,6 +1320,76 @@
     "title": "Rigetti 营收翻了三倍，但量子商业化还没到收获期",
     "watch": "盯它后续能不能把营收增长变成亏损收窄；如果只涨营收不降亏损，行情更像叙事交易。",
     "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-13",
+    "title": "中文标题：AI 编程最贵的坑不是模型，是你乱塞上下文",
+    "watch": "接下来盯 Cursor、Claude Code、Codex 有没有默认做“上下文裁剪/缓存/文件级检索”，谁先把这事产品化，谁就能明显降成本。",
+    "source": "aihot:tip",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-13",
+    "title": "中文标题：长任务 agent 的核心不是会聊，是能暂停、恢复、不丢状态",
+    "watch": "盯 ADK 后续有没有把“人工审批节点”“失败重试”“跨工具权限”做成标准组件，这会决定它是 demo 还是生产工具。",
+    "source": "aihot:tip",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-13",
+    "title": "中文标题：Claude 进法律行业，重点不是律师，是 MCP 正在变成企业入口",
+    "watch": "盯这些法律 MCP 有没有真实事务所案例，以及 Anthropic 会不会把同一套打法复制到金融、医疗、会计。",
+    "source": "aihot:ai-products",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-13",
+    "title": "中文标题：图像编辑模型开始拼效率，35 亿参数打大模型",
+    "watch": "盯它在真实复杂指令里的表现，尤其是文字保持、人物一致性、局部编辑这几项，榜单第一不等于能进生产。",
+    "source": "aihot:ai-models",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-13",
+    "title": "中文标题：美债风险又回来了，市场开始重新想“加息”",
+    "watch": "盯美国通胀数据和 10 年美债收益率，重点看收益率是不是持续往 5% 靠，而不是一天两天的噪音。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-13",
+    "title": "中文标题：芯片股终于被砸，AI 交易开始怕利率和拥挤",
+    "watch": "盯费城半导体指数后续能不能收复这次跌幅；如果英伟达、博通、美光一起弱，说明不是个股问题，是整个 AI 硬件交易在降温。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-13",
+    "title": "中文标题：美伊和平交易没那么乐观，油价风险还没退",
+    "watch": "盯 5 月底前有没有实质性谈判文本或停火框架；如果没有，6 月底合约的 **34%** 很可能继续摇摆，油和黄金也会跟着动。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-13",
+    "title": "中文标题：npm 又被投毒，这次麻烦在于 2FA 也没挡住",
+    "watch": "盯 npm、GitHub Actions 后续是否强制收紧 token 权限；你自己的项目要看 lockfile 变更、CI 权限、发布 token 有没有最小化。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-13",
+    "title": "中文标题：AI 制药拿到 21 亿美元，健康才是 AI 最硬的长期主线",
+    "watch": "盯 Isomorphic 有没有公开临床阶段进展；AI 制药最关键不是融资，而是候选药物能不能过真实人体数据。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-13",
+    "title": "中文标题：AI 代写种草笔记被判赔，内容自动化开始碰红线",
+    "watch": "盯后续平台规则会不会要求 AI 内容标识，以及法院是否继续把“诱导用户发布虚假体验”算到工具提供者头上。",
+    "source": "aihot:industry",
     "status": "open"
   }
 ]
