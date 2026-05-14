@@ -1,68 +1,5 @@
 [
   {
-    "date": "2026-04-13",
-    "title": "Anthropic 悄悄把缓存 TTL 降了，做 agent 的成本模型得重算",
-    "watch": "盯 Anthropic 后续有没有把缓存策略写进更明确的 SLA；你自己的 agent 流程里，区分“必须热缓存”的步骤和“可以冷启动”的步骤，不然一升级就被动挨打。",
-    "source": "Hacker News",
-    "status": "open"
-  },
-  {
-    "date": "2026-04-13",
-    "title": "主流 AI agent 基准正在被“做题家”打穿",
-    "watch": "以后看 agent 评测，优先盯三件事：有没有隐藏测试集、有没有真实环境约束、有没有失败案例复盘。谁只给平均分、不讲失败方式，基本都不够看。",
-    "source": "Hacker News",
-    "status": "verified"
-  },
-  {
-    "date": "2026-04-13",
-    "title": "Gemma 4 第一周 1000 万下载，轻量模型真的开始抢活了",
-    "watch": "盯两件事：一是 Gemma 4 的中文、长上下文、工具调用真实表现；二是 Cursor、Ollama、手机端推理工具会不会快速把它接进去。真接进日常工具，下载量才会变成生产力。",
-    "source": "X (Twitter)",
-    "status": "open"
-  },
-  {
-    "date": "2026-04-13",
-    "title": "以色列政局的预测市场，已经在押“今年不走、明年有戏”",
-    "watch": "盯两个窗口：一是 6 月 30 日前这个 6% 有没有快速上修；二是相关油运、地区冲突、美国表态是否把“拖着走”改成“突然升级”。一旦短期赔率连续抬升，资产波动会更直接。",
-    "source": "Polymarket",
-    "status": "open"
-  },
-  {
-    "date": "2026-04-13",
-    "title": "匈牙利变天，欧尔班 16 年连任被终结",
-    "watch": "盯新政府对欧盟关系、财政纪律、对华态度有没有明显转向；如果后续欧洲其他国家也出现类似摆动，市场会重新定价“欧洲不可改革”的老叙事。",
-    "source": "华尔街见闻",
-    "status": "open"
-  },
-  {
-    "date": "2026-04-13",
-    "title": "开源 TTS 继续卷，VoxCPM 把“多语种+克隆”直接开源了",
-    "watch": "别只盯“像不像真人”，重点看三件事：中文稳定性、声音一致性、批量生成速度。谁先把这三件事做顺，谁就能吃掉大量低成本内容生产场景。",
-    "source": "GitHub Trending",
-    "status": "open"
-  },
-  {
-    "date": "2026-04-13",
-    "title": "RustFS 打出 2.3 倍 MinIO 的牌，AI 基础存储开始卷真性能",
-    "watch": "盯它对 S3 兼容、迁移成本、和 Ceph/MinIO 共存这几块的真实口碑。如果不是 benchmark 好看，而是真能平滑替换，很多 AI 工作流底层会开始换栈。",
-    "source": "GitHub Trending",
-    "status": "open"
-  },
-  {
-    "date": "2026-04-13",
-    "title": "苹果一次测 4 种智能眼镜设计，说明终端形态还没收敛",
-    "watch": "盯苹果后续是不是从“4 种设计”收敛到 1 条明确路线，以及会不会把本地 AI、摄像头、语音交互打包成核心卖点。没收敛前，生态机会比硬件销量更值得看。",
-    "source": "RSS:TechCrunch",
-    "status": "open"
-  },
-  {
-    "date": "2026-04-13",
-    "title": "Mistral 把 TTS 做到 9 种语言，语音这条线也开始“开源平权”",
-    "watch": "盯它后面有没有开发者生态、API 价格战、以及中文和方言效果的真实反馈。语音一旦从“能用”跨到“稳定可商用”，会先影响客服和短内容生产。",
-    "source": "X (Twitter)",
-    "status": "verified"
-  },
-  {
     "date": "2026-04-14",
     "title": "给 Claude Code 补“长期记忆”，已经不是小众折腾了",
     "watch": "盯官方工具是不是把类似能力直接内置，尤其是 Claude Code / Cursor 后面还要不要你手动维护上下文；如果原生支持了，这类插件会很快分层。",
@@ -725,7 +662,7 @@
     "title": "Anthropic 想按 900B 美元估值融 50B 美元",
     "watch": "盯 Anthropic 是不是把 Claude Code、企业知识库、工作流 agent 打包进更贵的订阅；估值越高，越需要从重度用户身上收钱。",
     "source": "RSS:TechCrunch",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-04-30",
@@ -1075,7 +1012,7 @@
     "title": "Anthropic 开始借 xAI 的算力了",
     "watch": "盯 Claude 接下来是否减少高峰期降速、是否把更重的任务开放给普通用户。",
     "source": "X (Twitter)",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-05-08",
@@ -1390,6 +1327,69 @@
     "title": "中文标题：AI 代写种草笔记被判赔，内容自动化开始碰红线",
     "watch": "盯后续平台规则会不会要求 AI 内容标识，以及法院是否继续把“诱导用户发布虚假体验”算到工具提供者头上。",
     "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-14",
+    "title": "AI 安全评测开始从“会不会答题”变成“能不能真打穿”",
+    "watch": "盯 ExploitGym 后续有没有变成模型发布时的常规安全榜；如果大厂开始公开报这个分数，说明“攻击型 agent 能力”要进入主流评测了。",
+    "source": "aihot:paper",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-14",
+    "title": "多 agent 检索别急着上向量库，Postgres 还能再榨一轮",
+    "watch": "盯这个项目后续有没有被做成 Postgres 扩展里的常用件；如果能稳定跑生产，多 agent RAG 架构可以少一层服务。",
+    "source": "aihot:tip",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-14",
+    "title": "Claude Code 给额度，不是福利，是在抢你的默认开发入口",
+    "watch": "盯 **7 月 13 日** 后额度会不会回落；如果不回落，说明这不是临时促销，是 Anthropic 在重新定价开发者工作流。",
+    "source": "aihot:ai-products",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-14",
+    "title": "企业买单这件事上，Anthropic 第一次压过 OpenAI",
+    "watch": "盯 Ramp 下一次 AI 指数里 Anthropic 能不能继续压住 OpenAI；如果差距扩大，B2B AI 的估值锚可能要重算。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-14",
+    "title": "Anthropic 估值传到 9000 亿，AI 融资又开始脱离地心引力",
+    "watch": "盯本月底交易是否真落地，尤其是估值是否仍超过 **9000 亿美元**、融资是否至少 **300 亿美元**。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-14",
+    "title": "美国 PPI 到 6%，市场又被迫想“加息”这件事",
+    "watch": "盯下一组美国通胀数据和美联储表态；如果“加息概率冲破 **50%**”不是一日游，纳指高估值会先被重新定价。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-14",
+    "title": "30 年美债标售破 5%，长端利率在警告股市别太嗨",
+    "watch": "盯下一次 **30 年期**美债标售；如果 **5.0%** 附近继续压不下来，科技股创新高的质量就要打折。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-14",
+    "title": "搜索广告已经成诈骗入口，别再默认 Google 第一条可信",
+    "watch": "盯浏览器和搜索工具会不会默认弱化广告结果；如果 Kagi 这类无广告搜索继续被开发者圈推，原因不只是体验，是安全。",
+    "source": "RSS:Daring Fireball",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-14",
+    "title": "人形机器人跑满 8 小时，蓝领“护城河”没想象中厚",
+    "watch": "盯后续有没有更多 **8 小时**级别的连续作业演示，尤其是非展示环境里的稳定性；能不能从视频走到真实客户场景，是分水岭。",
+    "source": "aihot:tip",
     "status": "open"
   }
 ]
