@@ -1,75 +1,5 @@
 [
   {
-    "date": "2026-04-14",
-    "title": "给 Claude Code 补“长期记忆”，已经不是小众折腾了",
-    "watch": "盯官方工具是不是把类似能力直接内置，尤其是 Claude Code / Cursor 后面还要不要你手动维护上下文；如果原生支持了，这类插件会很快分层。",
-    "source": "GitHub Trending",
-    "status": "open"
-  },
-  {
-    "date": "2026-04-14",
-    "title": "一份 CLAUDE.md 拿下 24,857 星，说明 prompt 已经变成项目基础设施",
-    "watch": "盯 CLAUDE.md / AGENTS.md 这类文件会不会变成 repo 标配；一旦主流模板开始默认带这类文件，说明“上下文工程”正式标准化了。",
-    "source": "GitHub Trending",
-    "status": "open"
-  },
-  {
-    "date": "2026-04-14",
-    "title": "有人买下 30 个 WordPress 插件，再统一埋后门",
-    "watch": "马上查自己和合作方的插件清单，尤其盯“最近被收购、维护者突然变更、更新频率异常”的插件；后面再看到“插件被卖掉”这种新闻，别当八卦看。",
-    "source": "Hacker News",
-    "status": "open"
-  },
-  {
-    "date": "2026-04-14",
-    "title": "GitHub 在推 Stacked PR，说明 AI 写代码的瓶颈已经不是生成，是审核",
-    "watch": "盯 Cursor、Claude Code、Codex 这类工具，后面会不会直接输出分层 PR；一旦原生支持，团队接受 AI 代码的门槛会明显下降。",
-    "source": "Hacker News",
-    "status": "open"
-  },
-  {
-    "date": "2026-04-14",
-    "title": "OpenAI 语音模式用的其实是更老、更弱的模型",
-    "watch": "盯 OpenAI 后面会不会把语音模式的底层模型说清楚，或者做统一；只要语音和文本继续分模型，工作流就别混用。",
-    "source": "X (Twitter)",
-    "status": "verified"
-  },
-  {
-    "date": "2026-04-14",
-    "title": "Perplexity 已经开始连银行账户、信用卡和贷款",
-    "watch": "盯它是停在“可视化”，还是会继续走到预算建议、异常提醒、自动执行；只要从 read 走向 act，竞争就不是搜索，而是金融操作系统。",
-    "source": "X (Twitter)",
-    "status": "open"
-  },
-  {
-    "date": "2026-04-14",
-    "title": "美联储把月度购债规模砍到 250 亿美元，幅度接近四成",
-    "watch": "盯后续是否还有同方向动作；如果只是一次性调整，市场会很快消化，如果连续出现，风险资产会继续按“流动性改善”去交易。",
-    "source": "华尔街见闻",
-    "status": "open"
-  },
-  {
-    "date": "2026-04-14",
-    "title": "美国成屋销售掉到 9 个月低点，但独栋房缺口还在 1000 万套以上",
-    "watch": "盯后面住房相关数据是不是继续“成交弱、缺口大”这个组合；只要这个结构不变，市场就很难轻松交易“快速降通胀”。",
-    "source": "华尔街见闻",
-    "status": "open"
-  },
-  {
-    "date": "2026-04-14",
-    "title": "Polymarket 对比特币 2026 年冲高并不激进",
-    "watch": "盯这三档是不是一起抬升，而不是只动最近的一档；如果 140,000、160,000、180,000 同步走高，才更像全面 risk-on。",
-    "source": "Polymarket",
-    "status": "open"
-  },
-  {
-    "date": "2026-04-14",
-    "title": "Anthropic 开始认真讲“托管长时 Agent”，说明赛点变了",
-    "watch": "盯后面有没有更具体的状态管理、失败恢复、权限控制方案出来；只要这些细节开始公开，说明 agent 真在往生产环境落。",
-    "source": "X (Twitter)",
-    "status": "open"
-  },
-  {
     "date": "2026-04-15",
     "title": "Cursor 3 开始把“多 agent 并行”做成日常操作",
     "watch": "盯 Cursor 后面会不会继续补“任务编排、共享上下文、结果合并”这三件事；如果只是能分屏，价值有限；如果能稳定把多步骤串起来，工作流就真的变了。",
@@ -984,7 +914,7 @@
     "title": "AI 自我改进的时间表被提前了",
     "watch": "盯模型公司有没有公开展示“AI 帮 AI 做训练、评测、数据生成、工具调用优化”的闭环，不要只看聊天能力。",
     "source": "X (Twitter)",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-05-07",
@@ -1222,7 +1152,7 @@
     "title": "Cerebras IPO 太热，AI 芯片风险偏好又回来了",
     "watch": "盯最终发行价和上市首日表现；如果高开后还能扛住，AI 硬件链的风险偏好会继续扩散。",
     "source": "aihot:industry",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-05-12",
@@ -1299,14 +1229,14 @@
     "title": "中文标题：芯片股终于被砸，AI 交易开始怕利率和拥挤",
     "watch": "盯费城半导体指数后续能不能收复这次跌幅；如果英伟达、博通、美光一起弱，说明不是个股问题，是整个 AI 硬件交易在降温。",
     "source": "华尔街见闻",
-    "status": "open"
+    "status": "invalidated"
   },
   {
     "date": "2026-05-13",
     "title": "中文标题：美伊和平交易没那么乐观，油价风险还没退",
     "watch": "盯 5 月底前有没有实质性谈判文本或停火框架；如果没有，6 月底合约的 **34%** 很可能继续摇摆，油和黄金也会跟着动。",
     "source": "Polymarket",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-05-13",
@@ -1334,7 +1264,7 @@
     "title": "AI 安全评测开始从“会不会答题”变成“能不能真打穿”",
     "watch": "盯 ExploitGym 后续有没有变成模型发布时的常规安全榜；如果大厂开始公开报这个分数，说明“攻击型 agent 能力”要进入主流评测了。",
     "source": "aihot:paper",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-05-14",
@@ -1390,6 +1320,69 @@
     "title": "人形机器人跑满 8 小时，蓝领“护城河”没想象中厚",
     "watch": "盯后续有没有更多 **8 小时**级别的连续作业演示，尤其是非展示环境里的稳定性；能不能从视频走到真实客户场景，是分水岭。",
     "source": "aihot:tip",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-15",
+    "title": "腾讯开源 Agent Memory，重点是把上下文从“越塞越长”改成“该卸载就卸载”",
+    "watch": "盯 TencentDB Agent Memory 后面有没有接入主流 agent 框架，尤其是能不能直接服务代码库任务、研究任务这种长链路。",
+    "source": "aihot:tip",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-15",
+    "title": "Claude Code 后台会话开始能细调了，agent 会越来越像可配置的工作进程",
+    "watch": "盯 Claude Code 后续会不会把这些后台会话能力接到 hooks、CI、权限隔离里；一旦接上，agent 就能更自然地进你的开发流水线。",
+    "source": "aihot:ai-products",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-15",
+    "title": "OpenEvidence 已经成美国医生的影子 AI，医院反而是后知道的",
+    "watch": "盯 Mount Sinai 这类医院后续是封禁、采购，还是自建替代品；这会决定医疗 AI 是走 shadow AI 还是合规平台路线。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-15",
+    "title": "Mythos 五天打出 macOS 内核漏洞链，AI 安全已经从写报告变成真动手了",
+    "watch": "盯 Apple 后续补丁和安全社区复现情况；如果类似工具开始常态化公开，开发环境沙箱会变成刚需，不是加分项。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-15",
+    "title": "AI 硬件选对就是 1999 年以来最强单月，选错连指数都跑不赢",
+    "watch": "盯下一轮机构持仓里 AI 硬件、软件、云服务的再平衡；如果资金继续只追硬件，软件股反弹可能会很弱。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-15",
+    "title": "福特被当成数据中心储能股炒了，AI 基建外溢到老工业公司",
+    "watch": "盯还有哪些传统工业公司被市场贴上数据中心供电、储能、冷却标签；这种交易如果扩散，说明 AI 泡沫进入外延阶段。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-15",
+    "title": "Granite 多语言嵌入模型开源，RAG 的免费底座又多一个可用选项",
+    "watch": "盯它在中文、代码、长文档检索里的真实效果；如果多语言质量够稳，可以替换一部分闭源 embedding API。",
+    "source": "aihot:ai-models",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-15",
+    "title": "Unsloth 的 Qwen3.6 GGUF 跑到单卡 140 token/s，本地模型又往实用近了一步",
+    "watch": "盯 GGUF 版本的稳定性、工具调用能力和长上下文表现；只快不稳，对开发工作流还是没用。",
+    "source": "aihot:tip",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-15",
+    "title": "视频模型开始补“电影语言”，不是只靠堆更大模型",
+    "watch": "盯这套视频描述流程会不会被开源或产品化；如果进入主流视频模型训练，短视频和广告素材生成质量会明显上一个台阶。",
+    "source": "aihot:paper",
     "status": "open"
   }
 ]
