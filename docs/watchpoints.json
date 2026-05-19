@@ -1244,5 +1244,68 @@
     "watch": "盯 NHS 后续是否把这事写进正式采购规则；如果公共医疗系统开始集体后退，医疗 AI 的开源生态会被明显压一头。",
     "source": "RSS:Simon Willison",
     "status": "open"
+  },
+  {
+    "date": "2026-05-19",
+    "title": "Anthropic 买的是“API 生成层”，不是普通开发工具",
+    "watch": "盯 Anthropic 会不会把 Stainless 变成 Claude Code / MCP / 企业 API 接入的默认层；如果它封闭化，第三方工具链会被挤压。",
+    "source": "RSS:TechCrunch",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-19",
+    "title": "腾讯 Ardot 把“设计稿到代码”往团队组件库里塞",
+    "watch": "盯它生成的代码是不是能直接进工程仓库；如果只是静态页面导出，那还是营销工具，不是生产工具。",
+    "source": "aihot:ai-products",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-19",
+    "title": "阿里 HappyHorse 把视频模型包装成云上工作流",
+    "watch": "盯 Model Studio 里 HappyHorse 是否开放 API、是否支持批量生成和素材一致性；这决定它是玩具还是生产管线。",
+    "source": "aihot:ai-products",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-19",
+    "title": "SEC 推股票代币化，可能绕开上市公司同意",
+    "watch": "盯 SEC 正式方案里两点：是否允许无需上市公司同意，以及代币化股票的托管和清算责任落谁身上。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-19",
+    "title": "海外投资者美债浮亏已经压到 1421 亿美元",
+    "watch": "盯海外投资者后续是继续持有还是减仓美债；如果浮亏变成卖压，黄金和科技股都会受影响。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-19",
+    "title": "市场给霍尔木兹级别尾部风险标了价",
+    "watch": "盯这个合约是不是从 10% 往上跳；如果油价新闻和这个概率同步上行，说明市场开始给供应中断定价。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-19",
+    "title": "伊朗政权崩盘没被市场当主线",
+    "watch": "盯这个 6% 是否和 Kharg Island 风险一起上行；如果前者不动、后者动，就是能源设施风险，不是政权风险。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-19",
+    "title": "纽约公立医疗系统泄露了指纹和医疗数据",
+    "watch": "盯这次泄露是否涉及第三方供应商；如果是供应链入口出事，说明医疗 AI 和数据平台的合规风险会继续放大。",
+    "source": "RSS:TechCrunch",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-19",
+    "title": "苹果的 4 万亿美元叙事，卡在下一任 CEO 身上",
+    "watch": "盯 Cook/Ternus 交接信号，以及 iOS 后续 AI 功能是不是还停在写作、壁纸、自然语言指令这类轻功能。",
+    "source": "RSS:Daring Fireball",
+    "status": "open"
   }
 ]
