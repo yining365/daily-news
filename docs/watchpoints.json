@@ -865,7 +865,7 @@
     "title": "美联储主席人选已经是大交易盘了",
     "watch": "盯这个合约的候选人赔率变化，尤其是和特朗普、鲍威尔冲突新闻同步跳动的时候；黄金和长债收益率会先反应。",
     "source": "Polymarket",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-05-11",
@@ -1026,7 +1026,7 @@
     "title": "中文标题：美债风险又回来了，市场开始重新想“加息”",
     "watch": "盯美国通胀数据和 10 年美债收益率，重点看收益率是不是持续往 5% 靠，而不是一天两天的噪音。",
     "source": "华尔街见闻",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-05-13",
@@ -1103,7 +1103,7 @@
     "title": "美国 PPI 到 6%，市场又被迫想“加息”这件事",
     "watch": "盯下一组美国通胀数据和美联储表态；如果“加息概率冲破 **50%**”不是一日游，纳指高估值会先被重新定价。",
     "source": "华尔街见闻",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-05-14",
@@ -1159,7 +1159,7 @@
     "title": "AI 硬件选对就是 1999 年以来最强单月，选错连指数都跑不赢",
     "watch": "盯下一轮机构持仓里 AI 硬件、软件、云服务的再平衡；如果资金继续只追硬件，软件股反弹可能会很弱。",
     "source": "华尔街见闻",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-05-15",
@@ -1229,7 +1229,7 @@
     "title": "日债 10 年到 2.8%，这不是日本自己的小事",
     "watch": "盯 10 年期日债收益率能不能稳在 2.8% 附近；如果继续上行，AI 牛市的估值逻辑会被迫重新算账。",
     "source": "华尔街见闻",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-05-18",
@@ -1306,6 +1306,69 @@
     "title": "苹果的 4 万亿美元叙事，卡在下一任 CEO 身上",
     "watch": "盯 Cook/Ternus 交接信号，以及 iOS 后续 AI 功能是不是还停在写作、壁纸、自然语言指令这类轻功能。",
     "source": "RSS:Daring Fireball",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-20",
+    "title": "谷歌 AI 用量已经不是“追赶”，是开始压规模了",
+    "watch": "盯 Gemini App 月活能不能继续涨，以及 Google 后面会不会把 Workspace、Search、Android 的流量继续导进 Gemini。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-20",
+    "title": "微软 Copilot 的付费转化可能比市场想得差",
+    "watch": "盯微软后面怎么改 Copilot 定价、打包方式，以及企业客户续费时会不会砍席位。",
+    "source": "aihot:tip",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-20",
+    "title": "Google AI Ultra 降价，是在抢重度用户时间",
+    "watch": "盯 100 美元档的真实限额、是否覆盖 Gemini Omni / Flow / Spark，以及 Claude、ChatGPT 有没有跟进新档位。",
+    "source": "aihot:ai-products",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-20",
+    "title": "Claude 托管代理开始补企业最怕的安全洞",
+    "watch": "盯 Claude Managed Agents 后面有没有权限审计、网络隔离、凭证管理这些生产必需品。",
+    "source": "aihot:ai-products",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-20",
+    "title": "Forge 说明小模型 agent 不是没戏，缺的是护栏",
+    "watch": "盯 Forge 后续有没有完整 benchmark，尤其是多步骤任务完成率、工具调用失败率、上下文压缩效果。",
+    "source": "aihot:tip",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-20",
+    "title": "NVIDIA 把长视频生成往低比特成本打",
+    "watch": "盯 LongLive 2.0 在真实长视频任务里的画质损失、显存占用，以及能不能接入主流视频模型。",
+    "source": "aihot:tip",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-20",
+    "title": "人类话术能骗 AI，这不是玄学，是实验结果",
+    "watch": "盯主流模型会不会把这类“说服型攻击”纳入安全 eval，尤其是浏览网页和读邮件的 agent。",
+    "source": "aihot:paper",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-20",
+    "title": "市场开始给美联储“加息”定价，不是小事",
+    "watch": "盯后面美联储官员讲话和通胀数据，市场是在短期吓一跳，还是开始重写利率路径。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-20",
+    "title": "半导体回撤接近技术性洗牌，抄底别太急",
+    "watch": "盯芯片股和软件股是否继续分化，以及半导体指数能不能止住七日级别的跌势。",
+    "source": "华尔街见闻",
     "status": "open"
   }
 ]
