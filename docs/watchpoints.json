@@ -1,68 +1,5 @@
 [
   {
-    "date": "2026-04-21",
-    "title": "亚马逊给 Anthropic 的钱，开始像“绑算力合同”了",
-    "watch": "盯 Anthropic 后续是否继续把更多核心能力优先放在 AWS 生态；如果“投资+返还云支出”这种结构变成行业标配，独立模型公司议价权会继续变弱。",
-    "source": "RSS:TechCrunch",
-    "status": "open"
-  },
-  {
-    "date": "2026-04-21",
-    "title": "微软把算力军备竞赛又往前推了一截",
-    "watch": "盯接下来各家是否跟进披露类似“单集群规模”；如果微软真把“数十万 GB200”稳定跑起来，Azure 系模型和企业工作流产品会先吃到红利。",
-    "source": "X (Twitter)",
-    "status": "open"
-  },
-  {
-    "date": "2026-04-21",
-    "title": "多 agent 已经从概念，变成现成脚手架了",
-    "watch": "盯这个框架后面是否补齐工具调用、记忆、人工接管这些企业必需件；如果生态插件跟上，很多中小团队会直接跳过“自己造 agent 框架”这一步。",
-    "source": "GitHub Trending",
-    "status": "verified"
-  },
-  {
-    "date": "2026-04-21",
-    "title": "算力成本这件事，正在被开源一点点往下打",
-    "watch": "盯后面谁把这类 FP8 优化真正接进主流推理栈；一旦不是 demo，而是大规模上线，开源模型的性价比会继续追头部闭源。",
-    "source": "GitHub Trending",
-    "status": "open"
-  },
-  {
-    "date": "2026-04-21",
-    "title": "Vercel 这次事故，给所有“AI 办公工具”泼了盆冷水",
-    "watch": "马上查团队里所有接过 Google Workspace 的 AI 工具；尤其盯管理员后台里 OAuth 授权列表，看看有没有“没人记得是谁装的，但权限很大”的应用。",
-    "source": "X (Twitter)",
-    "status": "verified"
-  },
-  {
-    "date": "2026-04-21",
-    "title": "Atlassian 默认拿数据训练 AI，这类“默认开启”以后会越来越多",
-    "watch": "盯 Atlassian 后续是否提供更清晰的关闭路径、组织级开关和审计记录；也顺手检查你在用的其他 SaaS，是不是也把“训练 AI”埋进默认设置里。",
-    "source": "Hacker News",
-    "status": "open"
-  },
-  {
-    "date": "2026-04-21",
-    "title": "音乐平台已经被 AI 内容冲到快一半了",
-    "watch": "盯平台会不会开始强化 AI 内容标记、限流或版权审核；一旦这些机制成熟，纯批量 AI 内容的流量红利会迅速收窄。",
-    "source": "Hacker News",
-    "status": "open"
-  },
-  {
-    "date": "2026-04-21",
-    "title": "市场不信内塔尼亚胡马上下台，但开始押注“这届撑不到 2027”",
-    "watch": "盯接下来几周以色列国内政治压力有没有实质升级；如果短期下台概率从 **6%** 往上跳，说明局势从“长期消耗”切向“短期失控”。",
-    "source": "Polymarket",
-    "status": "open"
-  },
-  {
-    "date": "2026-04-21",
-    "title": "美国在海上封锁这件事，执行力没市场想得那么硬",
-    "watch": "盯霍尔木兹海峡后续是否继续有船只通行、扣留、放行的反复消息；如果“突破封锁”的数量继续增加，说明威慑在下降，价格波动会更难做。",
-    "source": "华尔街见闻",
-    "status": "open"
-  },
-  {
     "date": "2026-04-25",
     "title": "浏览器任务正在变成 agent 的主战场",
     "watch": "盯它能不能处理登录态、验证码、弹窗、文件上传、异常重试；这些过不了，就只能当 demo，过了才是真工具。",
@@ -1257,7 +1194,7 @@
     "title": "谷歌 AI 用量已经不是“追赶”，是开始压规模了",
     "watch": "盯 Gemini App 月活能不能继续涨，以及 Google 后面会不会把 Workspace、Search、Android 的流量继续导进 Gemini。",
     "source": "aihot:industry",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-05-20",
@@ -1278,7 +1215,7 @@
     "title": "Claude 托管代理开始补企业最怕的安全洞",
     "watch": "盯 Claude Managed Agents 后面有没有权限审计、网络隔离、凭证管理这些生产必需品。",
     "source": "aihot:ai-products",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-05-20",
@@ -1348,7 +1285,7 @@
     "title": "油价先把中东风险吐回去了",
     "watch": "盯美伊谈判有没有继续推进；如果油价反弹，说明市场开始重新买地缘风险。",
     "source": "华尔街见闻",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-05-21",
@@ -1383,6 +1320,69 @@
     "title": "欧盟开始给“高风险 AI”划线了",
     "watch": "盯公众咨询后的正式分类指南，重点看哪些 agent 场景会被纳入高风险 AI 系统。",
     "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-22",
+    "title": "Claude Code 开始把多智能体编排做成确定性工具",
+    "watch": "盯 `Workflow` 什么时候从默认关闭变成默认可用；再看 `/code-review` 的 PR 内联评论能不能稳定抓代码正确性问题，而不是只挑风格毛病。",
+    "source": "aihot:ai-products",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-22",
+    "title": "Opus 在安全场景里已经不是 demo，是生产流水线",
+    "watch": "盯 Wiz 这类案例会不会从“发现漏洞”走到“自动修复并开 PR”；如果 Opus 能把误报率继续压住，企业安全预算会更愿意给 AI agent。",
+    "source": "aihot:ai-products",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-22",
+    "title": "Anthropic 可能先跑通 AI 实验室盈利模型",
+    "watch": "盯第二季度最后披露的营收和运营利润是否接近 109 亿美元、5.59 亿美元；如果兑现，Anthropic 会变成 OpenAI、Google、Meta 的估值锚。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-22",
+    "title": "Intuit 裁员不是省钱，是给 AI 腾位置",
+    "watch": "盯 Intuit 接下来 AI 产品收入有没有补上这 3000 多人的组织调整成本；如果没有，说明“AI 重组”可能只是包装裁员。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-22",
+    "title": "Rubin 机架卖到 780 万美元，AI 算力通胀还没结束",
+    "watch": "盯云厂商会不会把 Rubin 成本转嫁到 API 价格；如果推理价格没降，AI 应用公司的毛利会被继续挤。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-22",
+    "title": "美伊和平协议被市场当成六月事件，不是五月事件",
+    "watch": "盯 5 月 31 日前合约是否明显靠近 18% 之外；如果六月合约继续在 40% 附近，油价和黄金可能都维持事件驱动波动。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-22",
+    "title": "腾讯开源翻译模型，真正有用的是小模型版本",
+    "watch": "盯 1.8B 版本在真实长文档、代码注释、金融文本里的表现；如果稳定，很多“调用闭源翻译 API”的流程可以本地化。",
+    "source": "aihot:ai-models",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-22",
+    "title": "Datasette Agent 把数据库查询变成可插拔 AI 界面",
+    "watch": "盯插件生态，尤其是图表、SQL 审查、权限控制；如果这些补齐，它会从玩具变成轻量 BI 替代品。",
+    "source": "aihot:ai-products",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-22",
+    "title": "礼来减肥药三期结果已经逼近手术级别",
+    "watch": "盯最高剂量的副作用、停药后反弹、获批节奏；28.3% 很猛，但能不能长期维持才决定真实价值。",
+    "source": "华尔街见闻",
     "status": "open"
   }
 ]
