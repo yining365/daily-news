@@ -1384,5 +1384,61 @@
     "watch": "盯最高剂量的副作用、停药后反弹、获批节奏；28.3% 很猛，但能不能长期维持才决定真实价值。",
     "source": "华尔街见闻",
     "status": "open"
+  },
+  {
+    "date": "2026-05-25",
+    "title": "AI 助手已经成了供应链攻击入口",
+    "watch": "盯 npm、PyPI、Crates.io 后续是否公布完整包名和攻击链；更要盯 Cursor/Claude Code 这类工具会不会默认加依赖审计、锁权限、隔离密钥读取。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-25",
+    "title": "OpenClaw 把“快”和“锁依赖”放在同一个版本里",
+    "watch": "盯它后面是否把依赖锁、模型启动路径、Windows 更新安全做成默认配置；如果默认不开，实际保护力会打折。",
+    "source": "aihot:ai-products",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-25",
+    "title": "DeepSeek 永久打 75% 折，模型价格战进入长期化",
+    "watch": "盯其他模型厂会不会跟永久折扣；如果只是限时促销，影响有限，如果也变成永久价，AI 应用的单位经济模型会重算。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-25",
+    "title": "Datasette 继续往稳定版逼近，SQLite 工具链还没过气",
+    "watch": "盯 Datasette 到 1.0 前是否继续强化插件、权限、agent 接入；如果这些补齐，它会变成很适合个人 AI 操作系统的数据层。",
+    "source": "RSS:Simon Willison",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-25",
+    "title": "伊朗 Kharg Island 失控概率只有 8%，但油价尾部风险还没归零",
+    "watch": "盯 Kharg Island 相关合约是否从 8% 往上走；如果油价和黄金一起涨，而美股期货转弱，就说明市场开始重新定价冲突风险。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-25",
+    "title": "内塔尼亚胡下台概率到 44%，中东风险不是只看伊朗",
+    "watch": "盯这个合约是否突破 44% 后继续上行；如果同时美伊协议概率不涨，说明市场在押“谈判不等于风险消失”。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-25",
+    "title": "美伊协议风声一出，油价跌，黄金反而涨",
+    "watch": "盯油价下跌后，黄金能不能继续走高；如果能，说明黄金交易逻辑已经从中东避险切到利率和货币信用。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-25",
+    "title": "这周真正该盯的是 PCE、PMI 和中概财报",
+    "watch": "盯 PCE 是否改变降息预期；盯中国 PMI 是否支持沪深 300 修复；盯拼多多、小米财报后市场是买增长还是杀估值。",
+    "source": "华尔街见闻",
+    "status": "open"
   }
 ]
