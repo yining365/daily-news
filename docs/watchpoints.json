@@ -1,68 +1,5 @@
 [
   {
-    "date": "2026-04-25",
-    "title": "浏览器任务正在变成 agent 的主战场",
-    "watch": "盯它能不能处理登录态、验证码、弹窗、文件上传、异常重试；这些过不了，就只能当 demo，过了才是真工具。",
-    "source": "Hacker News",
-    "status": "open"
-  },
-  {
-    "date": "2026-04-25",
-    "title": "Claude Code 缺的不是模型，是全代码库上下文",
-    "watch": "盯它跟 Claude Code、Cursor、其他 MCP 客户端的适配；重点看大仓库检索速度、引用准确率、是否能避免重复造轮子。",
-    "source": "GitHub Trending",
-    "status": "open"
-  },
-  {
-    "date": "2026-04-25",
-    "title": "Google 给 Anthropic 的钱，像是在买“反 OpenAI 保险”",
-    "watch": "盯 Anthropic 后面是否把 Claude 更深接入 Google Cloud、Workspace、Gemini 生态；如果企业分发渠道打通，Claude Code 和团队版会更有杀伤力。",
-    "source": "Hacker News",
-    "status": "open"
-  },
-  {
-    "date": "2026-04-25",
-    "title": "DeepSeek V4 的重点不是“国产模型”，是价格锚又被砸了",
-    "watch": "盯 API 价格、上下文长度、函数调用、中文电商语料表现；如果稳定性跟上，就可以把非核心推理任务迁过去。",
-    "source": "RSS:Simon Willison",
-    "status": "verified"
-  },
-  {
-    "date": "2026-04-25",
-    "title": "PostHog 这种全家桶，适合小团队少买一堆 SaaS",
-    "watch": "盯它的自托管成本、数据合规、微信生态接入、广告归因能力；如果这些能接上，才值得替代一堆零散工具。",
-    "source": "GitHub Trending",
-    "status": "open"
-  },
-  {
-    "date": "2026-04-25",
-    "title": "“第二次 API 开放浪潮”对电商人很实在：平台开始给 agent 留门",
-    "watch": "盯抖音、小红书、微信、支付、物流、CRM 这些平台有没有更开放的 API 或 MCP；谁先开放，谁就更容易被自动化工具吃透。",
-    "source": "RSS:阮一峰周刊",
-    "status": "open"
-  },
-  {
-    "date": "2026-04-25",
-    "title": "美伊和平定价已经不是小概率，油价风险要重新算",
-    "watch": "盯巴基斯坦调解、美国特使行程、伊朗是否释放更明确谈判口径；Polymarket 里 June 30 合约如果继续上行，油价和黄金都要重新看。",
-    "source": "Polymarket",
-    "status": "open"
-  },
-  {
-    "date": "2026-04-25",
-    "title": "半导体连涨到这份上，别把定投当免死金牌",
-    "watch": "盯费城半导体指数是否结束连涨、英伟达是否继续创新高、资金是否从芯片切到软件或防御板块；如果半导体先跌，纳指通常不会完全没事。",
-    "source": "华尔街见闻",
-    "status": "open"
-  },
-  {
-    "date": "2026-04-25",
-    "title": "Simon 的 llm 继续小步快跑，本地 AI 工作流更值得搭",
-    "watch": "盯 llm 0.31 的插件生态、模型适配、结构化输出、批处理能力；如果 DeepSeek V4、Claude、OpenAI 都能顺滑切换，它就能当你的本地 AI 中控。",
-    "source": "RSS:Simon Willison",
-    "status": "open"
-  },
-  {
     "date": "2026-04-27",
     "title": "Cursor 开始把“排队写代码”改成“并发派活”",
     "watch": "盯 Cursor 3 里 `/multitask` 对真实项目的翻车率，尤其是多文件改动、测试修复、重构这三类任务。",
@@ -844,7 +781,7 @@
     "title": "美伊僵着，市场却一边买风险一边买避险",
     "watch": "盯原油和白银能不能继续同步走强；如果它们继续涨，而纳指也新高，市场其实是在给“高估值 + 高地缘风险”定价。",
     "source": "华尔街见闻",
-    "status": "open"
+    "status": "invalidated"
   },
   {
     "date": "2026-05-12",
@@ -1432,12 +1369,68 @@
     "title": "美伊协议风声一出，油价跌，黄金反而涨",
     "watch": "盯油价下跌后，黄金能不能继续走高；如果能，说明黄金交易逻辑已经从中东避险切到利率和货币信用。",
     "source": "华尔街见闻",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-05-25",
     "title": "这周真正该盯的是 PCE、PMI 和中概财报",
     "watch": "盯 PCE 是否改变降息预期；盯中国 PMI 是否支持沪深 300 修复；盯拼多多、小米财报后市场是买增长还是杀估值。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-26",
+    "title": "OpenAI 可能把上下文直接拉到 150 万 token",
+    "watch": "盯 OpenAI Codex 后端日志后续有没有更多 iris-alpha 痕迹，以及下月是否真的发布。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-26",
+    "title": "苹果可能拿 Google 1.2T 模型救 Siri",
+    "watch": "盯下一代 Siri 到底哪些功能由这个 1.2T 模型驱动，以及苹果会不会把它包装成自研能力。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-26",
+    "title": "1.58-bit 端侧模型开始接华为昇腾生态",
+    "watch": "盯 BitCPM-CANN 的实际推理速度、内存占用，以及它在昇腾环境外能不能顺手跑。",
+    "source": "aihot:ai-models",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-26",
+    "title": "Qwen3.7-Max 自动开隐式缓存，prompt 写法要变了",
+    "watch": "盯阿里后续有没有公布隐式缓存的命中规则、价格差异、延迟变化。",
+    "source": "aihot:ai-products",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-26",
+    "title": "Datasette-agent 继续往“数据库 agent”方向走",
+    "watch": "盯 datasette-agent 后续怎么处理权限、工具调用日志、SQL 查询限制。",
+    "source": "RSS:Simon Willison",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-26",
+    "title": "美伊永久和平协议定价已经不低了",
+    "watch": "盯 May 31, 2026 和 June 30, 2026 两个合约价差，如果 58% 继续上行，说明市场在把“协议落地”当基准情景。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-26",
+    "title": "宏观空头挤压风险到了 10 年高位",
+    "watch": "盯高盛后续是否继续提示挤压风险，以及股债汇是不是同时出现反向急拉。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-26",
+    "title": "资源出口管制开始从钴锂蔓延到铝土矿",
+    "watch": "盯几内亚 6 月具体管制内容，是配额、禁令，还是加工本地化要求。",
     "source": "华尔街见闻",
     "status": "open"
   }
