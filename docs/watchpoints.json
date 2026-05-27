@@ -1187,7 +1187,7 @@
     "title": "半导体回撤接近技术性洗牌，抄底别太急",
     "watch": "盯芯片股和软件股是否继续分化，以及半导体指数能不能止住七日级别的跌势。",
     "source": "华尔街见闻",
-    "status": "open"
+    "status": "invalidated"
   },
   {
     "date": "2026-05-21",
@@ -1432,6 +1432,76 @@
     "title": "资源出口管制开始从钴锂蔓延到铝土矿",
     "watch": "盯几内亚 6 月具体管制内容，是配额、禁令，还是加工本地化要求。",
     "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-27",
+    "title": "Claude 的安全边界开始像云安全了，不再只是 prompt 问题",
+    "watch": "盯 Claude Code、Cursor、Replit 这类工具接下来会不会把沙箱、网络出口、文件权限做成默认配置，而不是让用户自己补安全洞。",
+    "source": "aihot:tip",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-27",
+    "title": "KPop 把 agent 训练里的“训练和推理不一致”当成主问题来打",
+    "watch": "盯 SWE-bench Verified 上后续是否继续由 MoE + agent RL 方法刷分，尤其是这些方法能不能迁移到真实 repo 的多轮修改。",
+    "source": "aihot:paper",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-27",
+    "title": "OpenRouter 的融资不是重点，token 流量才是重点",
+    "watch": "盯它接下来是否拿到更多企业生产流量，以及 25 万亿 token 后面还能不能继续涨；如果涨不动，说明应用层增速开始见顶。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-27",
+    "title": "Uber 四个月烧完全年 AI 预算，企业 AI 开始从信仰充值转向算账",
+    "watch": "盯后续还有没有大公司公开提 AI 预算超支；如果越来越多，模型 API 降价和企业私有化部署会更快。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-27",
+    "title": "台积电 3 纳米涨价，AI 算力通胀还没完",
+    "watch": "盯台积电下半年 15% 是否落地，以及明年 10% 是否继续加；如果都落地，AI 应用公司降价空间会被重新定价。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-27",
+    "title": "韩国半导体涨到触发熔断，AI 交易进入高热区",
+    "watch": "盯 SK 海力士和美光后续是否继续由 HBM 预期带动；如果半导体指数涨、但下游 AI 应用不涨，说明利润还在硬件端。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-27",
+    "title": "MiniCPM5-1B 把端侧模型继续往“真能用”推了一步",
+    "watch": "盯 MiniCPM5-1B 的真实端侧速度、内存占用和工具调用能力；如果浏览器里能稳定跑，很多轻量自动化就不用走云端了。",
+    "source": "aihot:ai-models",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-27",
+    "title": "SenseNova-U1 开源全训练代码，重点不是模型，是多模态训练流水线",
+    "watch": "盯这个代码库后续有没有社区复现结果，以及 8B 和 A3B MoE 哪个更适合低成本微调。",
+    "source": "aihot:tip",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-27",
+    "title": "SynthID 覆盖超千亿内容，AI 水印开始从技术方案变成行业协议",
+    "watch": "盯 OpenAI、ElevenLabs、Kakao 集成 SynthID 后，水印是否覆盖文本、音频、视频；如果只覆盖部分模态，造假空间还很大。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-27",
+    "title": "AlphaProof Nexus 攻克老数学题，AI 科学能力又往前踩了一脚",
+    "watch": "盯这 2 道题的证明是否被数学社区正式验证，以及 AlphaProof Nexus 的方法会不会迁移到代码验证、形式化证明工具里。",
+    "source": "aihot:ai-models",
     "status": "open"
   }
 ]
