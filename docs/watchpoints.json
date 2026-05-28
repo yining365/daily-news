@@ -1,68 +1,5 @@
 [
   {
-    "date": "2026-04-27",
-    "title": "Cursor 开始把“排队写代码”改成“并发派活”",
-    "watch": "盯 Cursor 3 里 `/multitask` 对真实项目的翻车率，尤其是多文件改动、测试修复、重构这三类任务。",
-    "source": "X (Twitter)",
-    "status": "open"
-  },
-  {
-    "date": "2026-04-27",
-    "title": "AI agent 删库不是笑话，是权限设计没跟上",
-    "watch": "接下来盯各类 agent 工具有没有默认沙箱、只读模式、审批流、回滚机制；没有这些的，别让它碰生产库。",
-    "source": "Hacker News",
-    "status": "verified"
-  },
-  {
-    "date": "2026-04-27",
-    "title": "Google 的算力底牌，比大家嘴上说的更硬",
-    "watch": "盯 Google 后续是否把 TPU 能力更多开放给外部开发者，以及 Gemma 生态有没有从“好用”变成“默认选择”。",
-    "source": "Hacker News",
-    "status": "open"
-  },
-  {
-    "date": "2026-04-27",
-    "title": "Claude 已经在练“替人砍价和交易”",
-    "watch": "盯 Anthropic 会不会把 Project Deal 里的谈判能力产品化，特别是是否开放给真实商家、是否能接支付和售后。",
-    "source": "X (Twitter)",
-    "status": "open"
-  },
-  {
-    "date": "2026-04-27",
-    "title": "Amazon 播客策略变了：内容不只是获客，是直接变现",
-    "watch": "盯 Amazon 后续会不会把播客和购物、订阅、广告库存进一步打通；国内平台通常会抄这种“内容即货架”的玩法。",
-    "source": "RSS:TechCrunch",
-    "status": "open"
-  },
-  {
-    "date": "2026-04-27",
-    "title": "以色列政治风险还没被市场当成短线危机",
-    "watch": "盯 June 30 前的 6% 有没有突然上跳；如果短期下台概率快速抬升，说明市场开始交易突发政治断点。",
-    "source": "Polymarket",
-    "status": "open"
-  },
-  {
-    "date": "2026-04-27",
-    "title": "Agent Skills 火了，提示词正在变成“可复用工作流资产”",
-    "watch": "盯这些 skills 是否开始出现行业模板，比如电商运营、内容生产、数据分析；能直接改成你团队 SOP 的，优先抄。",
-    "source": "GitHub Trending",
-    "status": "open"
-  },
-  {
-    "date": "2026-04-27",
-    "title": "Computer-use agent 的基础设施开始补齐",
-    "watch": "盯 CUA 的 benchmark 有没有覆盖真实桌面任务，尤其是浏览器后台、多窗口、验证码/登录态、文件上传这些脏活。",
-    "source": "GitHub Trending",
-    "status": "open"
-  },
-  {
-    "date": "2026-04-27",
-    "title": "湾区房子开始收 Anthropic 股权，AI 财富泡沫已经外溢",
-    "watch": "盯 Anthropic、OpenAI、xAI 这类未上市股权是否继续被拿来做大额交易抵价；如果多起来，说明私人市场估值已经影响现实资产。",
-    "source": "RSS:TechCrunch",
-    "status": "open"
-  },
-  {
     "date": "2026-04-28",
     "title": "代码助手开始按用量收钱了",
     "watch": "盯 GitHub Copilot 的用量口径：是按请求、token、模型档位，还是 agent 执行次数计费；这会影响你要不要把部分 coding workflow 转到本地模型或开源 agent。",
@@ -1474,7 +1411,7 @@
     "title": "韩国半导体涨到触发熔断，AI 交易进入高热区",
     "watch": "盯 SK 海力士和美光后续是否继续由 HBM 预期带动；如果半导体指数涨、但下游 AI 应用不涨，说明利润还在硬件端。",
     "source": "华尔街见闻",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-05-27",
@@ -1502,6 +1439,76 @@
     "title": "AlphaProof Nexus 攻克老数学题，AI 科学能力又往前踩了一脚",
     "watch": "盯这 2 道题的证明是否被数学社区正式验证，以及 AlphaProof Nexus 的方法会不会迁移到代码验证、形式化证明工具里。",
     "source": "aihot:ai-models",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-28",
+    "title": "企业 IT 智能体还没到能放心托管的水平",
+    "watch": "盯 ITBench-AA 后续榜单，尤其看有没有模型稳定越过 50%，以及是否开始拆分 SRE、权限、回滚、告警这几类任务。",
+    "source": "aihot:paper",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-28",
+    "title": "编码智能体在学术圈还远没普及",
+    "watch": "盯下一轮类似调查里“常规使用 coding agent”的比例，如果从 20% 往上明显走，说明 agent 开始从极客工具变成办公基础设施。",
+    "source": "aihot:paper",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-28",
+    "title": "Perplexity 把分词器这种“小东西”也卷起来了",
+    "watch": "盯这个 tokenizer 的 GitHub 实测反馈，重点看中文、多语言、长文本批处理场景里是不是也有 5-6 倍改善。",
+    "source": "aihot:ai-products",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-28",
+    "title": "开源视频生成开始打实时工作流了",
+    "watch": "盯 repo 的真实复现成本，特别是 B200 之外的显卡能不能跑，以及 7 秒这个速度在复杂 prompt 下会不会掉。",
+    "source": "aihot:ai-products",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-28",
+    "title": "Cognition 估值已经按“下一代软件公司”在打了",
+    "watch": "盯 Cognition 后续有没有公布企业留存、单客户用量、错误率；如果只有使用量 10 倍，没有生产指标，那估值里泡沫也不小。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-28",
+    "title": "字节可能在认真摆脱通用 GPU 依赖",
+    "watch": "盯高通或字节有没有正式确认，以及这批 ASIC 是训练、推理，还是端侧/数据中心混用；用途不同，对 GPU 供应链冲击完全不一样。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-28",
+    "title": "Snowflake 花 60 亿美元买 AWS，说明数据云也被 AI 算力绑架了",
+    "watch": "盯 Snowflake 后续财报里的 AI 收入增速和云成本占比，如果收入没跟上 60 亿美元采购承诺，市场会反过来砍估值。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-28",
+    "title": "高盛把标普目标抬到 8000，市场已经在奖励“别怂”",
+    "watch": "盯接下来美股财报季里 AI 资本开支和盈利兑现，如果指数冲着 8000 去但盈利没跟上，回撤会来得很快。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-28",
+    "title": "伊朗关闭领空概率不高，但尾部风险还在",
+    "watch": "盯 May 31 前伊朗领空、霍尔木兹海峡、原油日内波动；如果 Yes 从 13% 快速上跳，黄金仓位就不是摆设了。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-05-28",
+    "title": "Polymarket 也开始有“内幕交易”味了",
+    "watch": "盯这个案子的判决和 Polymarket 后续合规动作；如果监管开始认定某些事件合约存在内幕交易，预测市场的数据可用性会被重新定价。",
+    "source": "RSS:TechCrunch",
     "status": "open"
   }
 ]
