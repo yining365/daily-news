@@ -1,5 +1,70 @@
 [
   {
+    "date": "2026-05-30",
+    "type": "weekly",
+    "date_range": "05/25 ~ 05/29",
+    "main_theme": "这周我想明白了几件事。\n\n第一，AI 这条线真的已经从“模型谁更聪明”，切到“谁能把系统跑稳、把成本压住、把权限管住”。周一 DeepSeek 永久 75% 折扣还像是价格战，到了周三 Uber 四个月烧完全年 AI 预算、台积电 3nm 涨价，周四 Snowflake 60 亿美元 AWS 采购，周五 Anthropic 融资锁 TPU、Glean 靠“省预算”卖货，线就串起来了：AI 不是免费魔法，是一套越来越贵、越来越重的基础设施。\n\n第二，agent 这周也被泼了点冷水，但这是好事。ITBench-AA 说明企业 SRE 场景还不能放心托管，Claude 的安全边界开始像云安全，Polar、KPop、Claude Code 又在解决长链路训练和多 agent 执行。也就是说，agent 没死，反而更像真的要进生产了——只是从 demo 变成生产系统，中间隔着安全、权限、训练、调度和成本。\n\n第三，对我这种“AI 用户 + 指数投资者”来说，下周不能只看谁发新模型。AI 应用能不能赚钱、算力成本会不会继续胀、市场是不是已经太兴奋，反而更重要。尤其单票杠杆 ETF、韩国半导体熔断、高盛上调标普目标，这些都在提醒：AI 主线还强，但交易温度也真的不低了。",
+    "commentary": "下周我最想盯两个东西：PCE / PMI 这类宏观数据会不会继续给美股估值松绑，以及 AI 相关公司财报里有没有更多“收入增长但云账单更猛”的信号。\n\n如果数据不砸盘，AI 交易大概率还会继续挤空头；但如果半导体、云成本、杠杆 ETF 继续过热，我会更倾向于拿稳指数，不追单票。",
+    "items": [
+      {
+        "title": "DeepSeek 永久打 75% 折，模型价格战进入长期化",
+        "conclusion": "",
+        "source": "",
+        "url": "https://www.bloomberg.com/news/articles/2026-05-23/deepseek-to-make-permanent-75-discount-on-flagship-ai-model",
+        "signal": "",
+        "why": "",
+        "watch": "",
+        "category": "",
+        "tier": 1
+      },
+      {
+        "title": "Uber 四个月烧完全年 AI 预算，企业 AI 开始从信仰充值转向算账",
+        "conclusion": "",
+        "source": "",
+        "url": "https://www.ithome.com/0/955/563.htm",
+        "signal": "",
+        "why": "",
+        "watch": "",
+        "category": "",
+        "tier": 1
+      },
+      {
+        "title": "企业 IT 智能体还没到能放心托管的水平",
+        "conclusion": "",
+        "source": "",
+        "url": "https://huggingface.co/blog/ibm-research/itbench-aa",
+        "signal": "",
+        "why": "",
+        "watch": "",
+        "category": "",
+        "tier": 1
+      },
+      {
+        "title": "Anthropic 的关键不是估值，是拿钱锁 TPU",
+        "conclusion": "",
+        "source": "",
+        "url": "https://wallstreetcn.com/articles/3773397",
+        "signal": "",
+        "why": "",
+        "watch": "",
+        "category": "",
+        "tier": 1
+      },
+      {
+        "title": "高盛把标普目标抬到 8000，市场已经在奖励“别怂”",
+        "conclusion": "",
+        "source": "",
+        "url": "https://wallstreetcn.com/member/articles/3773282",
+        "signal": "",
+        "why": "",
+        "watch": "",
+        "category": "",
+        "tier": 1
+      }
+    ],
+    "watchpoint_reviews": []
+  },
+  {
     "date": "2026-05-29",
     "main_theme": "今天最核心的线索不是“AI 又变强了”，而是 AI 正在从模型炫技，进入一场更硬的工程化和成本战：谁能把 agent 跑得更稳、把算力拿得更便宜、把企业账本算得更清楚，谁才有真正的定价权。Polar 把 agent 训练卡在 API 边界，Claude Code 把多 agent 并行产品化，Glean 年收入冲过 3 亿美元，这几件事放一起看，方向很明确：AI 的价值不再靠发布会，而是靠执行链路、组织效率和 CFO 能看懂的省钱效果。\n\n更底层一点，AI 产业正在分成两条战线：上游抢算力，下游抢工作流。Anthropic 融 360 亿美元去锁 Google TPU，说明顶级模型公司已经把“稳定、便宜、规模化算力”当成命门；SGLang + AMD 则在试图告诉市场，推理侧不能永远只有英伟达一条路。与此同时，llm-anthropic 把 Opus 4.8 接进 CLI，Claude Code 开始让模型自己调度子 agent，这些都在把 AI 从“网页聊天框”推进到开发者真实生产环境里。\n\n我的判断很简单：接下来别再只问“哪个模型最强”，这个问题已经有点幼稚了。更该盯三件事：agent 能不能在真实 repo 里稳定完成任务，企业 AI 能不能持续卖出“降本”账，算力链能不能从英伟达单线叙事变成 Google TPU、AMD 推理一起分蛋糕。投资上，AI 主线还没结束，但单票杠杆 ETF 一个月半翻倍这种信号已经很刺眼了，长期拿纳指可以，短线追两倍单票就是去牌桌上当流动性。",
     "commentary": "**今天值得花时间看的：**\n\n第一条我会看 Polar，不是因为跑分暴涨 594.74% 这个数字多性感，而是它切的位置很聪明：不要求你重写 agent 框架，只在 API 边界优化执行轨迹。这个东西如果真接进 Codex CLI、Claude Code、Qwen Code，那就不是论文玩具，而是每天写代码的人都能感受到的生产力杠杆。\n\n第二条是 Glean 年收入过 3 亿美元。很多人看企业 AI 还在盯“回答准不准”，但真正买单的是 CFO：能不能少招人、少买系统、少浪费内部搜索时间。Glean 如果还能在微软、Google 夹击下继续增长，那说明企业 AI 不是只能被巨头打包卖，垂直公司还有活路。\n\n第三条是 SGLang + AMD 跑 DeepSeek-R1。别小看这条，市场现在把英伟达当默认答案，但推理成本一旦被 AMD + 开源框架打下来，云厂商就有了压价筹码。对投资来说，这不是“AMD 马上掀翻英伟达”，而是 AI 硬件利润分配可能开始松动。\n\n**可以跳过的：**\n\n单纯围着 Anthropic 估值吵，可以跳过。重点不是它值多少钱，重点是它用 360 亿美元信贷和芯片融资去锁 Google TPU，这叫算力融资战，不是普通一级市场故事。\n\n还有“AI 单票杠杆 ETF 爆火，所以赶紧追 AI 股”这种解读也可以扔了。一个半月规模翻倍，尤其“两倍海力士”这种产品做大全球老大，说明短线资金已经开始上头；这对长期投资者的意义不是跟着冲，而是提醒你接下来 AI 权重股的日内波动会更疯。\n\n内塔尼亚胡下台合约这条，别当八卦看，但也别过度解读成马上变天。Polymarket 给到 2026 年前下台 Yes 56%，说明交易员开始把以色列政治重组放进油价、黄金和风险偏好里定价；但它现在还只是预期市场信号，不是基本面落锤。\n\n**下周盯这几个：**\n\n第一，盯 6 月 3 日美国 JOLTS 和 6 月 5 日非农。AI 股现在估值不便宜，利率预期一变，纳指这种长久期资产最敏感；如果就业数据继续硬，美债收益率压不下来，AI 主线也会被估值压力砍一刀。\n\n第二，盯 Claude Code 动态工作流在真实 repo 里的反馈，尤其是子 agent 是否重复劳动、是否污染上下文、验证环节能不能抓住测试之外的问题。发布博客没用，能不能在复杂工程里少返工，才决定它是不是开发者工具的下一阶段。\n\n第三，盯 Anthropic 和 Google TPU 绑定有没有更多细节，以及 SGLang/AMD 后续有没有真实 TCO、吞吐、延迟数据。说白了，下周我不关心谁又发了一个“最强模型”，我关心谁能把推理成本打下来、把 agent 跑稳定、把钱真正省出来。",
