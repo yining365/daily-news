@@ -1,5 +1,155 @@
 [
   {
+    "date": "2026-06-01",
+    "main_theme": "今天最核心的线，不是“AI 又多了几个玩法”，而是 AI 正在从模型炫技，进入“系统约束、成本约束、分发约束”三重现实检验。Claude 的产品级隔离、Python ASGI 跑进浏览器、二手 V100 跑本地 LLM，本质都在回答同一个问题：AI 真要变成生产力，不是看 demo 多丝滑，而是看它能不能安全、便宜、稳定地长期跑。\n\n这条线往商业端走，就是 Meta 把 AI 塞进 Instagram、Facebook、WhatsApp 订阅里，而不是再造一个独立 AI App；往硬件端走，就是 MLCC 这种非 GPU 部件开始变成 AI 服务器成本瓶颈；往真实世界走，就是特斯拉 FSD 如果 6000 公里零干预能被复现，市场就要重新给“AI 不只会聊天”定价。说白了，AI 的胜负手正在从“谁模型最强”，切到“谁能把权限、成本、入口、供应链、真实场景全部拧成闭环”。\n\n金融这边也不是另一条线，而是在给这套 AI 叙事上压力测试：美伊永久和平只有 27%，Kharg Island 这种石油命门合约有大额交易，说明油价和通胀风险没死；1660 亿退税托不住消费，则说明美股不能只靠 AI 龙头单腿跳。我的判断很简单：接下来别追“AI 概念热度”，要盯三类东西——能降部署成本的工具、能卡供应链利润的环节、以及宏观风险会不会把 AI 估值重新打折。",
+    "commentary": "**今天值得花时间看的：**\n\nClaude 的“产品级隔离”这条你别错过。很多人还在研究 prompt 怎么写得更像咒语，但真进生产之后，关键不是“让模型听话”，而是“就算它犯蠢，也只能在笼子里犯蠢”。权限边界、工具隔离、文件系统隔离、浏览器隔离，这些才是 agent 能不能进公司的门槛。\n\nPyodide + service worker + Python ASGI 跑浏览器，也值得看。它不是那种程序员自嗨 demo，而是可能把一批内部小工具、数据看板、轻量 AI workflow 从“还得部署个后端”变成“浏览器本地跑”。如果你做个人工具或团队效率工具，这条比很多大模型发布会更实用。\n\nMLCC 成 AI 服务器第三大成本项，这条也别漏。现在市场还喜欢盯英伟达，但真正赚钱的地方会沿着瓶颈扩散：电容、存储、电源、散热、机柜、电力，谁交期紧、谁涨价硬，谁就有定价权。指数投资也一样，别以为买纳指就是纯买 GPU，AI capex 的利润分配会越来越复杂。\n\n**可以跳过的：**\n\n“美伊停火/和平气氛缓和”这种标题可以少看。Polymarket 给永久和平才 27%，这说明市场根本没信长期解决，只是在押短期别炸。真正要看的是 Kharg Island、伊朗空域、油运节点这些瓶颈资产有没有异动，新闻口水没啥价值。\n\n特斯拉 FSD 横穿加拿大也别急着当成终局证据。6000 多公里零干预很猛，但单次路线不能直接等于规模化安全，尤其要看复杂城市、恶劣天气、接管定义和第三方复现。它值得盯，但不值得无脑吹。\n\nMeta 加社交订阅这条，别只当普通产品新闻看。真正的点是：AI 很可能不会以“一个新 App”收费，而是被塞进你每天已经打开的入口里收费。独立 AI 工具如果没有硬核 workflow，后面会被平台型分发碾压。\n\n**下周盯这几个：**\n\n第一，盯 6 月 10 日美国 5 月 CPI，尤其是核心 CPI 环比。这个数如果压不下来，油价风险又没完全解除，纳指这种高估值资产会很难受；AI 再强，也怕利率预期反向抽一巴掌。\n\n第二，盯 6 月 11 日美国 PPI，重点看服务项和能源链条有没有反弹。CPI 是市场情绪，PPI 更像企业成本压力，如果 MLCC、能源、运输这些一起紧，AI 服务器毛利和云厂 capex 都要被重新算账。\n\n第三，盯下周五前 Polymarket 上美伊永久和平合约和 Kharg Island 合约的方向。永久和平如果还卡在 27% 附近，说明停火新闻就是噪音；如果 Kharg Island、Iran airspace、ceasefire 相关合约交易量一起放大，那就别装没看见，黄金和油价风险要重新摆上桌。",
+    "items": [
+      {
+        "title": "Claude 的“产品级隔离”比 prompt 技巧更值得抄",
+        "source": "RSS:Simon Willison",
+        "url": "https://simonwillison.net/2026/May/30/how-we-contain-claude/#atom-everything",
+        "conclusion": "这事说白了就是，agent 真要进生产，靠“请你不要乱来”没用，得靠系统边界关住它。",
+        "signal": "原文发布时间是 2026/May/30，主题是“How we contain Claude across products”。",
+        "why": "阿宁每天用 Claude/Cursor/agent 干活，真正的坑不是模型不会写代码，而是它拿到权限后误操作、串数据、越界调用工具。Anthropic 这篇的价值在于提醒你：agent 架构要先设计“能碰什么、不能碰什么”，再谈聪不聪明。",
+        "watch": "盯 Anthropic 后续有没有把 containment 做成可复用接口，尤其是工具调用、文件系统、浏览器、代码执行这几块。",
+        "category": "AI工程",
+        "tier": 1
+      },
+      {
+        "title": "Python ASGI 跑进浏览器，后端小工具可能不用服务器了",
+        "source": "RSS:Simon Willison",
+        "url": "https://simonwillison.net/2026/May/30/pyodide-asgi-browser/#atom-everything",
+        "conclusion": "这不是炫技，是真可能把一批个人工具从“部署服务”变成“丢给浏览器跑”。",
+        "signal": "原文发布时间是 2026/May/30，技术组合是 Pyodide + service worker + Python ASGI apps。",
+        "why": "你如果做内部小工具、数据看板、AI 辅助脚本，这类方案能省掉一堆后端部署和鉴权麻烦。跟本地 AI 结合也顺：浏览器端跑 UI 和轻逻辑，本地/远端模型只负责推理。",
+        "watch": "盯它能不能稳定处理持久化、文件访问、跨域、离线缓存；这些不解决，就还只是 demo。",
+        "category": "开发者/开源",
+        "tier": 1
+      },
+      {
+        "title": "200 英镑 V100：本地 LLM 的性价比窗口还没关",
+        "source": "aihot:tip",
+        "url": "https://blog.tymscar.com/posts/v100localllm",
+        "conclusion": "如果你愿意折腾硬件，二手数据中心 GPU 仍然是本地模型玩家的便宜入口。",
+        "signal": "200 英镑买入数据中心级 GPU，用在游戏电脑里跑本地大语言模型。",
+        "why": "阿宁这种重度 AI 用户，完全云端会被订阅费、限流、隐私卡脖子。本地模型不一定替代 Claude，但很适合跑私密文本、批处理、低成本 agent 子任务。",
+        "watch": "盯二手 V100 这类卡的驱动、供电、散热、显存可用性；别只看卡价，真正坑通常在电源、机箱和兼容性。",
+        "category": "AI工程",
+        "tier": 1
+      },
+      {
+        "title": "特斯拉 FSD 横穿加拿大，自动驾驶又到了该重新定价的时候",
+        "source": "aihot:industry",
+        "url": "https://www.ithome.com/0/957/718.htm",
+        "conclusion": "6000 多公里零干预如果能复现，自动驾驶就不只是“辅助驾驶叙事”了。",
+        "signal": "FSD V14.3.3；4 天 21 小时；3760 英里；6051 公里；全程零人工干预。",
+        "why": "这事跟 AI 投资有关，不只是汽车新闻。端到端模型、视觉、推理、边缘部署如果在真实道路闭环跑通，会反过来强化“AI 不只会聊天”的估值逻辑。",
+        "watch": "盯独立复现，不要只看单次路线；重点看复杂城市路段、恶劣天气、接管定义、监管是否认可。",
+        "category": "AI行业",
+        "tier": 1
+      },
+      {
+        "title": "美伊永久和平只给 27%，油价风险没消失",
+        "source": "Polymarket",
+        "url": "https://polymarket.com/event/us-x-iran-permanent-peace-deal-by",
+        "conclusion": "市场不是在押和平，是在押“暂时别爆”，这俩差很多。",
+        "signal": "US x Iran permanent peace deal by June 30, 2026：Yes 27%；交易量 $234.2M。",
+        "why": "阿宁持有黄金，也定投美股。中东风险没真正消掉时，黄金的避险逻辑还在，纳指和标普则怕油价、通胀和风险偏好一起反噬。",
+        "watch": "盯 June 30, 2026 这个合约价格有没有持续上穿 27%；如果不涨，说明停火新闻只是情绪缓和，不是风险解除。",
+        "category": "宏观/金融",
+        "tier": 1
+      },
+      {
+        "title": "Kharg Island 合约有 $49.1M，市场在盯伊朗石油命门",
+        "source": "Polymarket",
+        "url": "https://polymarket.com/event/kharg-island-no-longer-under-iranian-control-by-march-31",
+        "conclusion": "别只看“停火继续没继续”，真正会打到资产价格的是能源出口节点。",
+        "signal": "Kharg Island no longer under Iranian control by...? 交易量 $49.1M。",
+        "why": "Kharg Island 这种点位一旦出事，影响的是油、通胀预期、降息路径，最后会传导到纳指估值。你看宏观别只看 CPI 标题，地缘里的“瓶颈资产”更要命。",
+        "watch": "盯 Kharg Island、Iran airspace、ceasefire 这几类合约的交易量和方向是否一起异动；一起动，说明市场开始交易升级风险。",
+        "category": "宏观/金融",
+        "tier": 1
+      },
+      {
+        "title": "1660 亿退税都托不住消费，美股不能只靠 AI 单腿跳",
+        "source": "华尔街见闻",
+        "url": "https://wallstreetcn.com/member/articles/3773507",
+        "conclusion": "美国经济的底盘如果变弱，AI 股再强也会被“消费不行”拖估值。",
+        "signal": "1660 亿退税；标题判断是“AI 独木撑不住美国经济”。",
+        "why": "阿宁定投纳指和标普，最近最容易忽略的是：指数上涨可能越来越集中在 AI 链条，消费端却没同步撑住。集中度越高，回撤时越像一根柱子倒下来。",
+        "watch": "盯美国消费数据和 AI 龙头财报能不能继续一起强；如果消费弱、AI 资本开支也放缓，指数会很难看。",
+        "category": "宏观/金融",
+        "tier": 1
+      },
+      {
+        "title": "MLCC 成 AI 服务器第三大成本项，瓶颈交易从 GPU 外溢了",
+        "source": "华尔街见闻",
+        "url": "https://wallstreetcn.com/articles/3773499",
+        "conclusion": "AI 硬件行情已经不是只买 GPU，资金开始找“谁卡脖子谁涨价”。",
+        "signal": "MLCC 已成 AI 服务器“第三大成本项”。",
+        "why": "这对阿宁的指数投资有用：纳指里 AI 权重高，但利润不一定只留在芯片龙头，可能往电容、存储、散热、电力这些环节扩散。也意味着 AI capex 的成本压力会越来越真实。",
+        "watch": "盯服务器 BOM 里非 GPU 项目的涨价和交期，尤其是 MLCC、存储、电源、散热；如果这些继续紧，AI 毛利会被重新算账。",
+        "category": "宏观/金融",
+        "tier": 1
+      },
+      {
+        "title": "Meta 给社交产品加订阅，AI 可能变成“功能包”而不是独立 App",
+        "source": "RSS:Daring Fireball",
+        "url": "https://techcrunch.com/2026/05/27/meta-officially-launches-instagram-facebook-and-whatsapp-subscriptions-with-more-to-come-including-ai-plans/",
+        "conclusion": "大厂不会只卖聊天机器人，它们更想把 AI 塞进你每天已经打开的产品里收费。",
+        "signal": "Instagram、Facebook、WhatsApp subscriptions；TechCrunch 发布时间 2026/05/27；原文提到 more to come including AI plans。",
+        "why": "这对 AI 产品格局很关键。用户未必愿意再多付一个 AI App，但可能愿意给 WhatsApp、Instagram 里的“好用功能”付费；独立 AI 工具会被平台型入口挤压。",
+        "watch": "盯 Meta 的 AI plans 到底是单独订阅，还是混进社交订阅；后者更危险，因为分发成本低太多。",
+        "category": "AI行业",
+        "tier": 1
+      }
+    ],
+    "watchpoint_reviews": [
+      {
+        "watch": "盯 5 月 31 日前合约是否明显靠近 18% 之外；如果六月合约继续在 40% 附近，油价和黄金可能都维持事件驱动波动。",
+        "status_label": "✅ 验证",
+        "review": "今天已经是 6 月 1 日，周末消息仍是“美伊忙着改条件”，不是协议在 5 月底前落地。之前判断“五月不是主事件窗口、六月才是关键”方向对了。",
+        "date": "2026-05-22"
+      },
+      {
+        "watch": "盯 Datasette 到 1.0 前是否继续强化插件、权限、agent 接入；如果这些补齐，它会变成很适合个人 AI 操作系统的数据层。",
+        "status_label": "⏳ 进展中",
+        "review": "Simon Willison 今天发布了 `datasette 1.0a32`，说明 Datasette 仍在向 1.0 推进。原观察点说要盯 1.0 前的插件、权限、agent 接入；这次只能确认版本继续前进，还不能确认这些能力都补齐了。",
+        "date": "2026-05-25"
+      },
+      {
+        "watch": "盯 PCE 是否改变降息预期；盯中国 PMI 是否支持沪深 300 修复；盯拼多多、小米财报后市场是买增长还是杀估值。",
+        "status_label": "⏳ 进展中",
+        "review": "今天信息里已经出现“5月PMI：临界点考验”，说明 PMI 确实成了本周宏观定价的核心变量之一。但目前还看不出它是否足以支撑沪深 300 修复，只能算观察点进入验证窗口。",
+        "date": "2026-05-25"
+      },
+      {
+        "watch": "盯下一代 Siri 到底哪些功能由这个 1.2T 模型驱动，以及苹果会不会把它包装成自研能力。",
+        "status_label": "⏳ 进展中",
+        "review": "今天消息称苹果 WWDC 将推 AI 升级，且“Gemini 蒸馏模型本地运行，技术栈外部依赖显著”。这明显支持“苹果 AI 正在借 Google/Gemini 能力补课”的方向，但还没看到下一代 Siri 的具体功能和苹果会如何包装归因。",
+        "date": "2026-05-26"
+      },
+      {
+        "watch": "盯 Claude Code、Cursor、Replit 这类工具接下来会不会把沙箱、网络出口、文件权限做成默认配置，而不是让用户自己补安全洞。",
+        "status_label": "⏳ 进展中",
+        "review": "Simon Willison 今天提到“How we contain Claude across products”，说明 Claude 相关安全讨论已经进入产品隔离、权限和运行边界层面。原判断方向对，但还需要继续看 Claude Code、Cursor、Replit 这类工具是否把沙箱、网络出口、文件权限做成默认配置。",
+        "date": "2026-05-27"
+      },
+      {
+        "watch": "盯单票 ETF 规模是否继续翻倍；如果继续扩张，AI 相关股票的日内波动会越来越不像基本面交易。",
+        "status_label": "⏳ 进展中",
+        "review": "今天华尔街见闻标题里出现“人们满脑子都是杠杆，没有恐惧”，继续印证 AI 相关交易情绪偏亢奋。原观察点要盯单票杠杆 ETF 规模是否继续扩张；今天还没有规模数据，所以只能算风险氛围进一步确认。",
+        "date": "2026-05-29"
+      },
+      {
+        "watch": "盯云厂商会不会把 Rubin 成本转嫁到 API 价格；如果推理价格没降，AI 应用公司的毛利会被继续挤。",
+        "status_label": "⏳ 进展中",
+        "review": "今天高盛加入“AI瓶颈交易”，把 MLCC 称为 AI 服务器“第三大成本项”，说明算力成本压力不只在 GPU，也在向服务器零部件扩散。原观察点更具体地盯云厂商是否把 Rubin 成本转嫁到 API 价格；这一点还没看到结果。",
+        "date": "2026-05-22"
+      }
+    ]
+  },
+  {
     "date": "2026-05-30",
     "type": "weekly",
     "date_range": "05/25 ~ 05/29",
