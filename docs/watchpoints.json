@@ -1068,7 +1068,7 @@
     "title": "把一本书变成 AI Skill，比收藏读书笔记有用",
     "watch": "盯 Claude Skill 生态有没有出现更多高质量模板；尤其是健康、投资、写作这类可复用流程，谁先模板化谁就省时间。",
     "source": "aihot:tip",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-06-03",
@@ -1327,6 +1327,62 @@
     "title": "北海道农民用 Codex，这比很多 AI Demo 真",
     "watch": "盯这种案例有没有从个人折腾变成模板化方案；比如农业传感器、LINE 机器人、Codex 自动化能不能复用。",
     "source": "aihot:tip",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-09",
+    "title": "智能体不是“更会聊”，是开始替你跑完整任务了",
+    "watch": "盯这类实验有没有从搜索任务扩展到编码、数据分析、投研整理；尤其看有没有公开任务集和失败案例，不然容易变成漂亮 Demo。",
+    "source": "aihot:paper",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-09",
+    "title": "GitHub Skills 的 Teach 技能，其实是在补 agent 的“长期记忆”",
+    "watch": "盯 Teach 能不能在真实 repo 里学会团队约定，比如测试方式、命名习惯、发布流程；如果只能整理知识点，就没那么值钱。",
+    "source": "aihot:tip",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-09",
+    "title": "小米这个 1T MoE 速度信号，比“又发模型”更重要",
+    "watch": "盯它有没有公开延迟、上下文长度、真实任务质量和并发数据；只看 tokens/s 容易被“空跑速度”骗。",
+    "source": "aihot:ai-models",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-09",
+    "title": "Meta 裁白领、训蓝领，AI 基建缺的不是 PPT，是工人",
+    "watch": "盯 Meta、微软、谷歌后续有没有继续把招聘从软件岗转向数据中心建设岗；这比发布会口号更能说明 AI 投资还在不在加速。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-09",
+    "title": "美股熊市信号到 70%，现在不是无脑加仓区",
+    "watch": "盯科技股反弹是不是只靠芯片股撑着；如果广度没跟上，再涨也可能只是高拥挤反抽。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-09",
+    "title": "美伊永久和平只定到 18%，油价和黄金别按“缓和剧本”交易",
+    "watch": "盯 Polymarket 这个合约的 Yes 价格有没有持续上行；如果只是新闻驱动跳一下又回落，说明市场还是不买账。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-09",
+    "title": "Qwen3-VL 跑到 Android 端侧，这比云端 Demo 更接近真产品",
+    "watch": "盯实际帧率、内存占用、耗电和量化后效果；端侧模型最怕教程能跑，产品不能用。",
+    "source": "aihot:tip",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-09",
+    "title": "微信 AI 给小程序开了两种入口，国内 agent 入口战要变味了",
+    "watch": "盯自动模式审核、权限边界、失败责任怎么定；如果平台能读源码并操作页面，开发者省事，但合规和安全压力会很大。",
+    "source": "aihot:ai-products",
     "status": "open"
   }
 ]
