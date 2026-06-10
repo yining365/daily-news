@@ -1012,7 +1012,7 @@
     "title": "模型路由开始从“自动”变成“可控预算旋钮”",
     "watch": "盯 OpenRouter 后续有没有按任务类型给默认档位，比如 coding、search、writing 分开推荐；如果 Cursor、Replit 这类工具也跟进，说明模型路由会变成基础设施。",
     "source": "aihot:ai-products",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-06-02",
@@ -1187,7 +1187,7 @@
     "title": "AI 算力交易从芯片扩到电力和融资结构",
     "watch": "盯 OpenAI 的算力融资平台怎么落地，以及谷歌是不是继续减少对博通依赖；如果大客户开始自研或换供应商，AI 硬件链会重新分配利润。",
     "source": "华尔街见闻",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-06-04",
@@ -1334,7 +1334,7 @@
     "title": "智能体不是“更会聊”，是开始替你跑完整任务了",
     "watch": "盯这类实验有没有从搜索任务扩展到编码、数据分析、投研整理；尤其看有没有公开任务集和失败案例，不然容易变成漂亮 Demo。",
     "source": "aihot:paper",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-06-09",
@@ -1383,6 +1383,69 @@
     "title": "微信 AI 给小程序开了两种入口，国内 agent 入口战要变味了",
     "watch": "盯自动模式审核、权限边界、失败责任怎么定；如果平台能读源码并操作页面，开发者省事，但合规和安全压力会很大。",
     "source": "aihot:ai-products",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-10",
+    "title": "一份产品文档直接喂出双端应用，agent 的输入正在从 prompt 变成“资料包”",
+    "watch": "盯后续有没有公开视频、代码仓库、失败案例；尤其看它在真实后端、真实权限、真实脏数据下还能不能保持约 4 小时级别交付。",
+    "source": "aihot:tip",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-10",
+    "title": "Token 成本开始进菜单栏，AI 编程终于有了“电表”",
+    "watch": "盯它是否支持 Cursor、Codex，以及能不能按项目、模型、任务类型拆成本；如果能按 PR 或 feature 归因，就真有用了。",
+    "source": "aihot:tip",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-10",
+    "title": "德国法院把 AI 概览算成 Google 自己说的话，这刀砍到搜索商业模式了",
+    "watch": "盯 Google 是否调整欧洲 AI Overviews 的展示方式；更关键是看 OpenAI、Perplexity、Claude 的搜索回答会不会更保守、更强调来源。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-10",
+    "title": "中国准备砸 2 万亿元建 AI 基建，算力战开始走“高铁模式”",
+    "watch": "盯具体资金怎么分：中央财政、地方平台、运营商、云厂商各占多少；如果开始落到数据中心订单和电力配套，才是能进财报的信号。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-10",
+    "title": "美股过山车背后有 750 亿美元抽水，别只怪科技股情绪差",
+    "watch": "盯美债收益率、美元流动性、科技股是否继续跑输大盘；如果流动性压力没缓解，逢跌加仓要慢一点。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-10",
+    "title": "SpaceX 上市 15 天后指数基金可能吃掉 30% 流通股，被动资金会制造新拥挤",
+    "watch": "盯 SpaceX 是否真的上市、纳入哪些指数、自由流通股比例怎么定；如果 30% 流通股被指数基金吃掉，主动资金的边际定价会更极端。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-10",
+    "title": "Cohere 开源 30B 编码模型，重点不是大，是“只激活 3B”",
+    "watch": "盯它在真实 repo 修改、单测修复、长上下文代码理解上的表现；Coding Index 33.4 只是入场券，能不能接 Cursor/Aider 工作流才关键。",
+    "source": "aihot:ai-models",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-10",
+    "title": "Gemma 4 12B 走无编码器多模态，端侧多模态又近了一步",
+    "watch": "盯开源权重、量化版本、Ollama/LM Studio/vLLM 支持；如果社区能把音频输入跑顺，它会变成本地语音 agent 的好底座。",
+    "source": "aihot:ai-models",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-10",
+    "title": "语音智能体开始测代码切换，真正的多语言助手不能只会翻译",
+    "watch": "盯后续有没有中文-英语、粤语-普通话-英语的代码切换数据集；这类数据出来，才会真正影响国内办公语音 agent 的可用性。",
+    "source": "aihot:paper",
     "status": "open"
   }
 ]
