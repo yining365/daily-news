@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026-02-04 全网新闻聚合 - News Aggregator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --glow-start: #0A1929;
+            --glow-end: #1A3A52;
+            --text-primary: #E3F2FD;
+            --accent-color: #42A5F5;
+            --secondary-color: #B0BEC5;
+            --bg-gradient: linear-gradient(135deg, #0A1929 0%, #1A3A52 100%);
+        }
+        
+        /* 快速导航 */
+        a.card {
+            display: block;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 16px 20px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s ease;
+        }
+        a.card:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+        .card-title {
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 500;
+            line-height: 1.5;
+            margin-bottom: 8px;
+        }
+        .card-summary {
+            color: #888;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            margin-bottom: 8px;
+        }
+        .card-meta {
+            color: #666;
+            font-size: 0.8rem;
+        }
+        .heat { color: #ff6b6b; }
+
+        .quick-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            background: rgba(15, 23, 42, 0.95);
+            padding: 1rem;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .quick-nav-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .quick-nav-item:hover {
+            background: var(--accent-color);
+            color: #fff;
+        }
+        .quick-nav-item span {
+            background: rgba(0,0,0,0.2);
+            padding: 2px 6px;
+            border-radius: 8px;
+            font-size: 0.75rem;
+        }
+        
+        /* 场景区块 */
+        .scenario-section {
+            margin-bottom: 4rem;
+            scroll-margin-top: 80px;
+        }
+        .scenario-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--accent-color);
+            flex-wrap: wrap;
+        }
+        .scenario-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+        }
+        .scenario-count {
+            background: var(--accent-color);
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+        .scenario-desc {
+            opacity: 0.6;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <header class="main-header">
+            <div class="header-content">
+                <div class="logo-area">
+                    <div class="logo-icon">🤖</div>
+                    <div class="logo-text">
+                        <h1>News Aggregator</h1>
+                        <p class="subtitle">全网新闻聚合</p>
+                    </div>
+                </div>
+                <div class="date-display">
+                    <span class="date-icon">📅</span>
+                    <span>2月4日 周三</span>
+                </div>
+            </div>
+        </header>
+
+
+
+        
+            <div class="daily-summary">
+                <div class="summary-content">
+                    <span class="summary-icon">💡</span>
+                    <p>今日共追踪到 <strong>40</strong> 条前沿资讯，覆盖 AI_DAILY, CHINA, X_SOCIAL, GLOBAL 等领域。</p>
+                </div>
+            </div>
+            
+
+
+
+        <main class="main-content">
+            
+            <section class="scenario-section" id="ai_daily">
+                <h2 class="scenario-name">🤖 AI 日报</h2>
+                <div class="cards-grid">
+            <a href="https://www.aibase.com/zh/news/25219" target="_blank" class="card">
+                <h3 class="card-title">GLM-5模型(AI资讯)</h3>
+                <p class="card-summary">GLM-5模型的发布，提升了自然语言处理技术的能力和应用广度。</p>
+                <div class="card-meta"></div>
+            </a>
+            
+            <a href="https://newshacker.me/story?id=46866165" target="_blank" class="card">
+                <h3 class="card-title">AI时代学编程(AI资讯)</h3>
+                <p class="card-summary">AI时代对编程技能的需求变化，如何适应未来编程趋势。</p>
+                <div class="card-meta"></div>
+            </a>
+            
+            <a href="https://36kr.com/p/3668677251998338" target="_blank" class="card">
+                <h3 class="card-title">徐井宏详解AI趋势：1%的人可能通吃2/3的财富</h3>
+                <p class="card-summary">徐井宏深入分析了AI对财富分配的潜在影响。</p>
+                <div class="card-meta"></div>
+            </a>
+            
+            <a href="https://pro.jiqizhixin.com/reference/49b8ef1c-9334-4651-b7b9-5f5535db1845" target="_blank" class="card">
+                <h3 class="card-title">Demis Hassabis 年初对话：构建「世界模型」是走向 AGI 的必然选择吗？</h3>
+                <p class="card-summary">Demis Hassabis讨论了构建世界模型在AGI发展中的关键角色。</p>
+                <div class="card-meta"></div>
+            </a>
+            
+            <a href="https://rentahuman.ai/" target="_blank" class="card">
+                <h3 class="card-title">Rentahuman——人工智能的实体空间层</h3>
+                <p class="card-summary">Rentahuman 提供了将AI技术应用于实体空间的创新案例。</p>
+                <div class="card-meta"></div>
+            </a>
+            
+            <a href="https://36kr.com/p/3668741159035524" target="_blank" class="card">
+                <h3 class="card-title">大厂AI“这一仗”：“元宝”被封、腾讯10亿红包“打水漂”？</h3>
+                <p class="card-summary">探讨了AI行业中的竞争与资本运作，及其对市场的影响。</p>
+                <div class="card-meta"></div>
+            </a>
+            
+            <a href="https://36kr.com/p/3668736645161605" target="_blank" class="card">
+                <h3 class="card-title">AI帮人类一晚上狂赚49.3万美元</h3>
+                <p class="card-summary">通过AI工具，某公司在短短一夜间赚得巨额收入。</p>
+                <div class="card-meta"></div>
+            </a>
+            
+            <a href="https://36kr.com/p/3668725163188865" target="_blank" class="card">
+                <h3 class="card-title">从数据成功到人工智能成功：极简人工智能治理</h3>
+                <p class="card-summary">分析了AI治理的简化路径和实践经验。</p>
+                <div class="card-meta"></div>
+            </a>
+            
+            <a href="https://36kr.com/p/3668658730820487" target="_blank" class="card">
+                <h3 class="card-title">NeurIPS论文假开源，较真AI研究员开锤了</h3>
+                <p class="card-summary">关于NeurIPS会议上假开源论文的争议与AI伦理问题。</p>
+                <div class="card-meta"></div>
+            </a>
+            
+            <a href="https://pro.jiqizhixin.com/reference/cc2ae953-c978-4a47-9cc8-a8bbe1531b26" target="_blank" class="card">
+                <h3 class="card-title">2025 到底是 LLM 的「什么年」？</h3>
+                <p class="card-summary">对2025年LLM（大规模语言模型）的发展前景进行预测与讨论。</p>
+                <div class="card-meta"></div>
+            </a>
+            </div>
+            </section>
+            
+            <section class="scenario-section" id="china">
+                <h2 class="scenario-name">🇨🇳 科技</h2>
+                <div class="cards-grid">
+            <a href="https://view.inews.qq.com/a/20260203A06CXZ00" target="_blank" class="card">
+                <h3 class="card-title">中央一号文件来了，今年有哪些“新表述”</h3>
+                
+                <div class="card-meta"></div>
+            </a>
+            
+            <a href="https://view.inews.qq.com/a/20260204A02C5700" target="_blank" class="card">
+                <h3 class="card-title">美媒：特朗普政府同意与伊朗在阿曼举行谈判</h3>
+                
+                <div class="card-meta"></div>
+            </a>
+            
+            <a href="https://view.inews.qq.com/a/20260203A07G8Y00" target="_blank" class="card">
+                <h3 class="card-title">警方通报“夫妻网购娃娃菜中毒”：2人涉敲诈勒索罪被采取刑事强制措施</h3>
+                
+                <div class="card-meta"></div>
+            </a>
+            
+            <a href="https://view.inews.qq.com/a/20260203A070PB00" target="_blank" class="card">
+                <h3 class="card-title">新疆：拟追授贺娇龙同志记大功奖励</h3>
+                
+                <div class="card-meta"></div>
+            </a>
+            
+            <a href="https://view.inews.qq.com/a/20260203A066XG00" target="_blank" class="card">
+                <h3 class="card-title">美军继续从全球向伊朗周边抽调兵力</h3>
+                
+                <div class="card-meta"></div>
+            </a>
+            
+            <a href="https://view.inews.qq.com/a/20260203A06B7D00" target="_blank" class="card">
+                <h3 class="card-title">网络直播手术暴露女患者隐私部位，陕西中医药大学附属医院致歉</h3>
+                
+                <div class="card-meta"></div>
+            </a>
+            
+            <a href="https://view.inews.qq.com/a/20260203A06QQV00" target="_blank" class="card">
+                <h3 class="card-title">江苏中小学春秋假今年春季学期起实施，各放3天</h3>
+                
+                <div class="card-meta"></div>
+            </a>
+            
+            <a href="https://view.inews.qq.com/a/20260203A05ZZ600" target="_blank" class="card">
+                <h3 class="card-title">多个经济大省下调2026年GDP增速目标</h3>
+                
+                <div class="card-meta"></div>
+            </a>
+            
+            <a href="https://view.inews.qq.com/a/20260203A05EK600" target="_blank" class="card">
+                <h3 class="card-title">国内成品油价“二连涨”，加满一箱油多花8元左右</h3>
+                
+                <div class="card-meta"></div>
+            </a>
+            
+            <a href="https://view.inews.qq.com/a/20260203A01O0S00" target="_blank" class="card">
+                <h3 class="card-title">市占率仅4.3%，君乐宝带着77%负债率“豪赌”港股</h3>
+                
+                <div class="card-meta"></div>
+            </a>
+            </div>
+            </section>
+            
+            <section class="scenario-section" id="x_social">
+                <h2 class="scenario-name">🐦 X 动态</h2>
+                <div class="cards-grid">
+            <a href="https://twitter.com/Fincantieri/status/2015824480291926076" target="_blank" class="card">
+                <h3 class="card-title">The launch ceremony of the Italian Navy’s new Major Hydro-Oceanographic Ship N.I.O.M, named Quirinale, took place today at our integrated shipyard in Riva Trigoso. Designed for scientific mapping and </h3>
+                
+                <div class="card-meta"><span class="heat">🔥 4163 likes</span></div>
+            </a>
+            
+            <a href="https://twitter.com/SMBDealGuy/status/1777688418610303410" target="_blank" class="card">
+                <h3 class="card-title">📖 Want to find an off-market SMB acquisition?
+
+I put together a 52- page guide called the Business Buyers toolkit which arms SMB searchers with the tools to get this done! 
+
+*Must be following*
+
+Like &a</h3>
+                
+                <div class="card-meta"><span class="heat">🔥 1208 likes</span></div>
+            </a>
+            
+            <a href="https://twitter.com/DonHuffines/status/2018712853113409593" target="_blank" class="card">
+                <h3 class="card-title">Election Day is ONE MONTH away. 
+
+Who’s ready to get a real MAGA Trump Republican in the Comptroller’s office?</h3>
+                
+                <div class="card-meta"><span class="heat">🔥 339 likes</span></div>
+            </a>
+            
+            <a href="https://twitter.com/Khazix0918/status/2018187496899883369" target="_blank" class="card">
+                <h3 class="card-title">有手就行，5分钟教会你在QQ上玩转全网爆火的Clawdbot。</h3>
+                
+                <div class="card-meta"><span class="heat">🔥 266 likes</span></div>
+            </a>
+            
+            <a href="https://twitter.com/dotey/status/2018863908153385290" target="_blank" class="card">
+                <h3 class="card-title">品味 + 工程思维：AI 时代最难被替代的两件事</h3>
+                
+                <div class="card-meta"><span class="heat">🔥 258 likes</span></div>
+            </a>
+            
+            <a href="https://twitter.com/Khazix0918/status/2018892087744397692" target="_blank" class="card">
+                <h3 class="card-title">OpenClaw一战封神，给大家分享6种官方不会告诉你的神级技巧。</h3>
+                
+                <div class="card-meta"><span class="heat">🔥 228 likes</span></div>
+            </a>
+            
+            <a href="https://twitter.com/lxfater/status/2018905450411081789" target="_blank" class="card">
+                <h3 class="card-title">兄弟们，给下面的帖子点赞，让我看看你们的大火箭🤣 https://t.co/8rrNYQeYrk</h3>
+                
+                <div class="card-meta"><span class="heat">🔥 152 likes</span></div>
+            </a>
+            
+            <a href="https://twitter.com/dotey/status/2018807420643115030" target="_blank" class="card">
+                <h3 class="card-title">我一直是反对 Spec Driven 的😂</h3>
+                
+                <div class="card-meta"><span class="heat">🔥 93 likes</span></div>
+            </a>
+            
+            <a href="https://twitter.com/FuSheng_0306/status/2018901516690837974" target="_blank" class="card">
+                <h3 class="card-title">16岁，高中生，从郑州坐了6小时硬座到北京，接触AI不到半年，已经能给学校做网站了。他说他每天晚上兴奋到睡不着觉，满脑子都是想法，却又因为无法落地而感到迷茫。
+他问我，年轻人应该如何规划未来？
+我觉得这个年纪迷茫太正常了，但能做到这个程度已经甩开99%的同龄人了。其实没有一个人的伟大是被规划出来的，所有顶级的蓝图都是在行走中边磨边画的，现在要做的就是踏踏实实做好手头的事，看到感兴趣的全力以赴。</h3>
+                
+                <div class="card-meta"><span class="heat">🔥 79 likes</span></div>
+            </a>
+            
+            <a href="https://twitter.com/FuSheng_0306/status/2018967988905636138" target="_blank" class="card">
+                <h3 class="card-title">Openclaw开发者Peter Steinberger：你很快就不需要App了
+有一说一现在的App确实非常臃肿，页面里全是各种复杂的菜单、会员、广告。Openclaw创始人预测的未来里，用户只用做一件事：说出你的需求，Agent就能现场为你造出一个专属工具。
+这就是我说的：所有的产品都值得用大模型重做一遍。 但重做不是简单的加个对话框，是把核心逻辑变成按需生成，这才是真正的AI Native。</h3>
+                
+                <div class="card-meta"><span class="heat">🔥 70 likes</span></div>
+            </a>
+            </div>
+            </section>
+            
+            <section class="scenario-section" id="global">
+                <h2 class="scenario-name">🌍 全网热点</h2>
+                <div class="cards-grid">
+            <a href="https://s.weibo.com/weibo?q=%E6%A0%A1%E9%95%BF%E4%B8%8E%E7%A6%BB%E5%BC%82%E5%A5%B3%E6%95%99%E5%B8%88%E6%81%8B%E7%88%B1%E8%A2%AB%E5%AE%9A%E5%B8%88%E5%BE%B7%E4%B8%8D%E5%90%88%E6%A0%BC&Refer=top" target="_blank" class="card">
+                <h3 class="card-title">校长与离异女教师恋爱被定师德不合格</h3>
+                
+                <div class="card-meta"><span class="heat">🔥 1110967</span></div>
+            </a>
+            
+            <a href="https://s.weibo.com/weibo?q=%E5%AE%98%E5%91%98%E8%90%BD%E9%A9%AC%E5%AF%BC%E8%87%B416%E4%BA%BF%E9%A1%B9%E7%9B%AE%E7%83%82%E5%B0%BE&Refer=top" target="_blank" class="card">
+                <h3 class="card-title">官员落马导致16亿项目烂尾</h3>
+                
+                <div class="card-meta"><span class="heat">🔥 780137</span></div>
+            </a>
+            
+            <a href="https://s.weibo.com/weibo?q=%E5%8D%8E%E9%BE%99%E4%B8%80%E5%8F%B7%E6%9C%89%E6%96%B0%E8%BF%9B%E5%B1%95&Refer=top" target="_blank" class="card">
+                <h3 class="card-title">华龙一号有新进展</h3>
+                
+                <div class="card-meta"><span class="heat">🔥 638725</span></div>
+            </a>
+            
+            <a href="https://s.weibo.com/weibo?q=%E9%9B%B7%E4%BD%B3%E9%9F%B3%E5%96%8A%E4%BD%A0%E6%9D%A5%E4%BA%AC%E4%B8%9C%E8%B6%85%E5%B8%825%E6%8A%98%E4%B9%B0%E5%B9%B4%E7%A4%BC&Refer=top" target="_blank" class="card">
+                <h3 class="card-title">雷佳音喊你来京东超市5折买年礼</h3>
+                
+                <div class="card-meta"><span class="heat">🔥 348521</span></div>
+            </a>
+            
+            <a href="https://s.weibo.com/weibo?q=%E6%84%8F%E5%A4%A7%E5%88%A9%E5%A4%B1%E8%81%94%E5%8D%9A%E5%A3%AB%E7%96%91%E4%BC%BC%E8%A2%AB%E7%9C%8B%E5%88%B0%E4%B9%B0%E5%92%96%E5%95%A1&Refer=top" target="_blank" class="card">
+                <h3 class="card-title">意大利失联博士疑似被看到买咖啡</h3>
+                
+                <div class="card-meta"><span class="heat">🔥 185280</span></div>
+            </a>
+            
+            <a href="https://s.weibo.com/weibo?q=%E7%AB%8B%E6%98%A5&Refer=top" target="_blank" class="card">
+                <h3 class="card-title">立春</h3>
+                
+                <div class="card-meta"><span class="heat">🔥 183445</span></div>
+            </a>
+            
+            <a href="https://s.weibo.com/weibo?q=%E7%88%B1%E5%90%83%E8%BD%A6%E5%8E%98%E5%AD%90%E7%9A%84%E4%BA%BA%E5%A4%A9%E5%A1%8C%E4%BA%86&Refer=top" target="_blank" class="card">
+                <h3 class="card-title">爱吃车厘子的人天塌了</h3>
+                
+                <div class="card-meta"><span class="heat">🔥 182542</span></div>
+            </a>
+            
+            <a href="https://s.weibo.com/weibo?q=%E9%9C%B8%E7%8E%8B%E8%8C%B6%E5%A7%AC%E5%A4%A9%E9%A9%AC%E9%A9%B0%E9%AA%8B%20%E9%AA%90%E9%AA%A5%E4%B9%98%E9%A3%8E&Refer=top" target="_blank" class="card">
+                <h3 class="card-title">霸王茶姬天马驰骋 骐骥乘风</h3>
+                
+                <div class="card-meta"><span class="heat">🔥 180885</span></div>
+            </a>
+            
+            <a href="https://s.weibo.com/weibo?q=%E7%8C%AB%E4%B8%80%E5%90%83%E7%8E%89%E7%B1%B3%E5%B0%B1%E4%BC%9A%E5%8F%98%E5%BE%97%E7%8C%A5%E7%90%90&Refer=top" target="_blank" class="card">
+                <h3 class="card-title">猫一吃玉米就会变得猥琐</h3>
+                
+                <div class="card-meta"><span class="heat">🔥 180444</span></div>
+            </a>
+            
+            <a href="https://s.weibo.com/weibo?q=%E5%A4%A7%E4%BA%8C%E5%A5%B3%E7%94%9F%E5%A4%B1%E8%B8%AA8%E5%B9%B4%E7%88%B6%E4%BA%B2%E6%82%AC%E8%B5%8F10%E4%B8%87%E5%AF%BB%E5%A5%B3&Refer=top" target="_blank" class="card">
+                <h3 class="card-title">大二女生失踪8年父亲悬赏10万寻女</h3>
+                
+                <div class="card-meta"><span class="heat">🔥 178117</span></div>
+            </a>
+            </div>
+            </section>
+            
+        </main>
+
+        <footer class="main-footer">
+            <p>Generated by News Aggregator Skill • <a href="index.html">History</a></p>
+        </footer>
+    </div>
+    
+    <script>
+    // Keyboard Navigation
+    document.addEventListener('keydown', function(e) {
+        if (['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
+
+        const cards = Array.from(document.querySelectorAll('.card'));
+        if (!cards.length) return;
+        
+        let activeIndex = cards.findIndex(c => c === document.activeElement || c.classList.contains('active-card'));
+        
+        if (e.key === 'j' || e.key === 'J' || e.key === 'ArrowDown') {
+             activeIndex = (activeIndex + 1) % cards.length;
+             e.preventDefault();
+        } else if (e.key === 'k' || e.key === 'K' || e.key === 'ArrowUp') {
+             if (activeIndex === -1) activeIndex = 0;
+             else activeIndex = (activeIndex - 1 + cards.length) % cards.length;
+             e.preventDefault();
+        } else if (e.key === 'Enter') {
+             if (activeIndex >= 0) {
+                const link = cards[activeIndex].querySelector('a');
+                if(link) window.open(link.href, '_blank');
+             }
+             return;
+        } else {
+             return;
+        }
+        
+        cards.forEach(c => c.classList.remove('active-card'));
+        if (activeIndex >= 0) {
+            cards[activeIndex].classList.add('active-card');
+            cards[activeIndex].focus();
+            cards[activeIndex].scrollIntoView({behavior: 'smooth', block: 'center'});
+        }
+    });
+    </script>
+</body>
+</html>
