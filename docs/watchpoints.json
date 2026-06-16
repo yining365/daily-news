@@ -1321,5 +1321,68 @@
     "watch": "盯英国是否把“under 16”写进正式法案，以及平台用什么方式验龄；验龄方案会牵出隐私、设备系统、App Store 审核一串连锁反应。",
     "source": "RSS:TechCrunch",
     "status": "open"
+  },
+  {
+    "date": "2026-06-16",
+    "title": "投机解码开始从“小修小补”变成默认推理引擎",
+    "watch": "盯 SGLang 后续版本里 Spec V2 的默认开启范围，以及 DFlash 有没有被 vLLM、llama.cpp 这类推理栈跟进。",
+    "source": "aihot:ai-models",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-16",
+    "title": "MiniMax M3 的重点不是开源，是长上下文成本继续塌",
+    "watch": "盯 M3 在真实长上下文代码任务里的表现，尤其是多文件修改、仓库级检索、长对话不丢指令这几类场景。",
+    "source": "aihot:ai-models",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-16",
+    "title": "Kimi K2.7 Code 高速版在赌“速度比单次价格更重要”",
+    "watch": "盯它在 Cursor、Claude Code 类工作流里的体感延迟，尤其是长上下文下能不能维持 180 Token/s。",
+    "source": "aihot:ai-products",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-16",
+    "title": "Flash-KMeans 把老算法也卷进 GPU 系统优化",
+    "watch": "盯它是否能接入常见 embedding pipeline，以及在真实向量库重聚类、去重、分桶任务里是不是也有这个量级优势。",
+    "source": "aihot:ai-products",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-16",
+    "title": "Salesforce 买 Fin，是企业客服 agent 开始明码标价了",
+    "watch": "盯 Salesforce 会不会把 Fin 深度塞进 Service Cloud，以及收购后是否继续支持 WhatsApp、Slack 这些跨渠道入口。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-16",
+    "title": "AI 裁员已经不是故事，是组织预算真的在动刀",
+    "watch": "盯接下来科技公司财报电话会里，“AI 提效”和“headcount”是不是继续一起出现。",
+    "source": "aihot:tip",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-16",
+    "title": "英伟达发债 250 亿美元，AI 基建从股权故事变成债务周期",
+    "watch": "盯英伟达这笔钱最终流向，是扩产、供应链预付款，还是回购和财务优化；这决定它是增长信号还是周期顶部信号。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-16",
+    "title": "美伊协议细节出来后，油价交易进入第二阶段",
+    "watch": "盯 19 日协议文本，以及霍尔木兹海峡重开后的航运恢复情况，别只看油价当天涨跌。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-16",
+    "title": "内塔尼亚胡下台定价升到 66%，中东政治风险还没结束",
+    "watch": "盯 Netanyahu out by end of 2026 这个合约是不是继续上行，以及它和美伊协议签署后的油价、黄金走势是否背离。",
+    "source": "Polymarket",
+    "status": "open"
   }
 ]
