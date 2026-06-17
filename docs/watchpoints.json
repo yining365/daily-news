@@ -851,7 +851,7 @@
     "title": "DeepSeek 如果真按这个价融资，国产模型战要换牌桌了",
     "watch": "盯融资是否正式落地、腾讯和宁德时代是否出现在最终名单；如果产业资本真进来，重点看 DeepSeek 接下来是不是往企业私有化和端侧场景走。",
     "source": "aihot:industry",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-06-04",
@@ -1271,7 +1271,7 @@
     "title": "美国直接叫停 Anthropic 两个模型，模型访问不再只是产品问题",
     "watch": "盯 Anthropic 后续有没有恢复 Fable 5 / Mythos 5，或者把能力拆成“安全版”；也盯 OpenAI、Google 是否跟进类似访问分级。",
     "source": "RSS:Simon Willison",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-06-15",
@@ -1383,6 +1383,76 @@
     "title": "内塔尼亚胡下台定价升到 66%，中东政治风险还没结束",
     "watch": "盯 Netanyahu out by end of 2026 这个合约是不是继续上行，以及它和美伊协议签署后的油价、黄金走势是否背离。",
     "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-17",
+    "title": "会写代码的人，用 Claude Code 反而更占便宜",
+    "watch": "盯 Anthropic 后续会不会把 Claude Code 产品往“人类做规划、模型做执行”这个分工继续推，比如更强的 plan/review 模式。",
+    "source": "aihot:paper",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-17",
+    "title": "Midjourney 的草稿模式，本质是在砍试错成本",
+    "watch": "盯其他图像/视频工具会不会跟进类似草稿模式；如果大家都这么做，创意工具的计费重点会从“生成次数”转到“高质量渲染”。",
+    "source": "aihot:ai-products",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-17",
+    "title": "企业 AI 订阅里，Anthropic 已经压过 OpenAI",
+    "watch": "盯 OpenAI 企业订阅份额会不会继续掉；如果 Claude 拉开差距，Cursor、Copilot 这类工具的默认模型策略也会跟着变。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-17",
+    "title": "SpaceX 用股票买 Cursor，AI 编程入口被巨头抢成战略资产",
+    "watch": "盯 Cursor 被收购后模型接入有没有变化，尤其是 Claude、OpenAI、xAI 之间的默认排序和价格策略。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-17",
+    "title": "微软砍掉甲骨文云谈判，AI 算力交易开始被市场挑刺",
+    "watch": "盯微软、甲骨文、英伟达相关财报里的云合同和资本开支口径，尤其是有没有继续出现大额订单取消或延期。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-17",
+    "title": "高盛并购额破万亿美元，风险偏好不是冷，是换地方热",
+    "watch": "盯接下来大额并购集中在哪些行业；如果 AI、能源、半导体继续占大头，说明主线没断，只是在换玩法。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-17",
+    "title": "Google 推 OKF，agent 上下文开始抢“文件格式标准”",
+    "watch": "盯 OKF 会不会被 Cursor、Copilot、Claude Code 或企业知识库采用；如果只有 Google 自己用，就只是包装，如果多家接入，才是标准苗头。",
+    "source": "aihot:ai-products",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-17",
+    "title": "Meta 工程组织被质疑，不只是大厂八卦",
+    "watch": "盯 Meta 后续是否继续拆团队、压层级，尤其是 AI 工具是否被用来替代中间协调岗位。",
+    "source": "aihot:tip",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-17",
+    "title": "AI 可能先杀掉自助书，而不是严肃非虚构",
+    "watch": "盯出版数据里自助、商业、健康三个类别的销量变化；如果健康类也开始跟跌，说明 AI 正在吃掉个人优化建议市场。",
+    "source": "aihot:tip",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-17",
+    "title": "AI 检测已经变成一门玄学收费生意",
+    "watch": "盯高校会不会从“查 AIGC 率”转向“查过程证据”，比如草稿、引用、版本记录；这才是更靠谱的治理方向。",
+    "source": "aihot:tip",
     "status": "open"
   }
 ]
