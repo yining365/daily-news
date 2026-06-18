@@ -1,61 +1,5 @@
 [
   {
-    "date": "2026-05-18",
-    "title": "中转站不只是便宜，可能会偷偷改你的工具调用",
-    "watch": "盯这个项目后续是否支持更多中转站检测；尤其看 AC-1 这类“工具调用被改写”能不能做成 CI 里的自动测试。",
-    "source": "aihot:tip",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-18",
-    "title": "GBrain 把 agent 记忆从 RAG 往“长期脑子”推了一步",
-    "watch": "盯它跟 OpenClaw、Hermes 这类 agent 工具怎么接；重点看 8 层记忆里哪些能落地，哪些只是概念分层。",
-    "source": "aihot:tip",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-18",
-    "title": "Cerebras 这笔钱说明，AI 基建开始往物理世界扩散",
-    "watch": "盯 Cerebras 之后有没有新的大客户或上市动作；如果 $2.5B 不是孤例，说明非英伟达路线还没死。",
-    "source": "RSS:TechCrunch",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-18",
-    "title": "市场在给内塔尼亚胡“下台风险”定价",
-    "watch": "盯 end of 2026 这个合约有没有上破 50%；如果突破，说明市场不只是押短期冲突，而是在押以色列内部政治重排。",
-    "source": "Polymarket",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-18",
-    "title": "美伊“永久和平”短期没戏，但市场押后面会谈出点东西",
-    "watch": "盯 June 30, 2026 合约是不是继续往上；如果 26% 快速下去，油价和黄金的波动可能会更难看。",
-    "source": "Polymarket",
-    "status": "verified"
-  },
-  {
-    "date": "2026-05-18",
-    "title": "日债 10 年到 2.8%，这不是日本自己的小事",
-    "watch": "盯 10 年期日债收益率能不能稳在 2.8% 附近；如果继续上行，AI 牛市的估值逻辑会被迫重新算账。",
-    "source": "华尔街见闻",
-    "status": "verified"
-  },
-  {
-    "date": "2026-05-18",
-    "title": "中东升温已经打到亚太股市和黄金了",
-    "watch": "盯油价和韩国股指后续反应；如果韩国这种高 beta 市场继续跌，说明风险偏好不是局部受伤。",
-    "source": "华尔街见闻",
-    "status": "invalidated"
-  },
-  {
-    "date": "2026-05-18",
-    "title": "NHS 从开源后退，公共系统也在重新选择“可控”",
-    "watch": "盯 NHS 后续是否把这事写进正式采购规则；如果公共医疗系统开始集体后退，医疗 AI 的开源生态会被明显压一头。",
-    "source": "RSS:Simon Willison",
-    "status": "open"
-  },
-  {
     "date": "2026-05-19",
     "title": "Anthropic 买的是“API 生成层”，不是普通开发工具",
     "watch": "盯 Anthropic 会不会把 Stainless 变成 Claude Code / MCP / 企业 API 接入的默认层；如果它封闭化，第三方工具链会被挤压。",
@@ -1453,6 +1397,69 @@
     "title": "AI 检测已经变成一门玄学收费生意",
     "watch": "盯高校会不会从“查 AIGC 率”转向“查过程证据”，比如草稿、引用、版本记录；这才是更靠谱的治理方向。",
     "source": "aihot:tip",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-18",
+    "title": "技能也要“省 token”了，省下来的就是调用次数和延迟",
+    "watch": "盯它会不会被 Claude Code、Cursor、Vercel Eve 这类 agent 框架吸收；如果大家都开始做 skill registry，prompt 工程会变成“能力包工程”。",
+    "source": "aihot:tip",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-18",
+    "title": "TPU 上跑超大 MoE，关键不在模型，在把数据搬运藏起来",
+    "watch": "盯 SGLang-JAX 后面是否支持更多 MoE 模型，以及 TPU 推理是否从 Google 生态外溢到更多开源部署方案。",
+    "source": "aihot:paper",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-18",
+    "title": "OpenAI 的收入很大，但亏损更像一家云厂而不是软件公司",
+    "watch": "盯下一份股东披露里，收入成本和向微软支付的金额有没有下降；如果没有，订阅涨价和额度收紧会继续来。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-18",
+    "title": "Google 推 ARD，是想把“agent 找工具”这件事标准化",
+    "watch": "盯 Cloudflare、Vercel、Anthropic、GitHub 会不会支持 ARD；谁先把 catalog 做成事实入口，谁就握住 agent 工具分发。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-18",
+    "title": "沃什首秀偏鹰，重点不是加不加息，是美联储沟通方式变了",
+    "watch": "盯后续 FOMC 声明会不会继续瘦身，以及五个特别工作组释放的政策信号；如果点阵图影响力下降，市场会更依赖通胀数据和主席问答。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-18",
+    "title": "美国最大商业原油储存枢纽库存跌到警戒线，油价别只盯中东",
+    "watch": "盯美国商业原油库存、战略储备相关表态，以及油价反弹会不会重新推高通胀预期。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-18",
+    "title": "GitHub 开放仓库级多语言数据集，Copilot 的上下文会更懂“真实协作”",
+    "watch": "盯 GitHub Copilot 后续是否把 Issue、PR 语境更深地塞进上下文；如果效果好，Cursor、Claude Code 也会跟。",
+    "source": "aihot:ai-products",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-18",
+    "title": "Claude Code 开始让配置进入提示词，自动化空间变大了",
+    "watch": "盯后续配置项是否覆盖权限、模型、工具调用和项目级规则；一旦稳定，就可以沉淀成自己的 Claude Code 启动模板。",
+    "source": "aihot:ai-products",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-18",
+    "title": "8 个 Codex 智能体控制 8 台机器人，科研自动化开始碰物理世界了",
+    "watch": "盯它后续能不能从演示走向可复现实验流程；如果能，科研、制造、医药实验都会被 agent 重新切一遍。",
+    "source": "aihot:paper",
     "status": "open"
   }
 ]
