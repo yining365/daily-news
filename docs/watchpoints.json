@@ -1,68 +1,5 @@
 [
   {
-    "date": "2026-05-19",
-    "title": "Anthropic 买的是“API 生成层”，不是普通开发工具",
-    "watch": "盯 Anthropic 会不会把 Stainless 变成 Claude Code / MCP / 企业 API 接入的默认层；如果它封闭化，第三方工具链会被挤压。",
-    "source": "RSS:TechCrunch",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-19",
-    "title": "腾讯 Ardot 把“设计稿到代码”往团队组件库里塞",
-    "watch": "盯它生成的代码是不是能直接进工程仓库；如果只是静态页面导出，那还是营销工具，不是生产工具。",
-    "source": "aihot:ai-products",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-19",
-    "title": "阿里 HappyHorse 把视频模型包装成云上工作流",
-    "watch": "盯 Model Studio 里 HappyHorse 是否开放 API、是否支持批量生成和素材一致性；这决定它是玩具还是生产管线。",
-    "source": "aihot:ai-products",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-19",
-    "title": "SEC 推股票代币化，可能绕开上市公司同意",
-    "watch": "盯 SEC 正式方案里两点：是否允许无需上市公司同意，以及代币化股票的托管和清算责任落谁身上。",
-    "source": "华尔街见闻",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-19",
-    "title": "海外投资者美债浮亏已经压到 1421 亿美元",
-    "watch": "盯海外投资者后续是继续持有还是减仓美债；如果浮亏变成卖压，黄金和科技股都会受影响。",
-    "source": "华尔街见闻",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-19",
-    "title": "市场给霍尔木兹级别尾部风险标了价",
-    "watch": "盯这个合约是不是从 10% 往上跳；如果油价新闻和这个概率同步上行，说明市场开始给供应中断定价。",
-    "source": "Polymarket",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-19",
-    "title": "伊朗政权崩盘没被市场当主线",
-    "watch": "盯这个 6% 是否和 Kharg Island 风险一起上行；如果前者不动、后者动，就是能源设施风险，不是政权风险。",
-    "source": "Polymarket",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-19",
-    "title": "纽约公立医疗系统泄露了指纹和医疗数据",
-    "watch": "盯这次泄露是否涉及第三方供应商；如果是供应链入口出事，说明医疗 AI 和数据平台的合规风险会继续放大。",
-    "source": "RSS:TechCrunch",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-19",
-    "title": "苹果的 4 万亿美元叙事，卡在下一任 CEO 身上",
-    "watch": "盯 Cook/Ternus 交接信号，以及 iOS 后续 AI 功能是不是还停在写作、壁纸、自然语言指令这类轻功能。",
-    "source": "RSS:Daring Fireball",
-    "status": "open"
-  },
-  {
     "date": "2026-05-20",
     "title": "谷歌 AI 用量已经不是“追赶”，是开始压规模了",
     "watch": "盯 Gemini App 月活能不能继续涨，以及 Google 后面会不会把 Workspace、Search、Android 的流量继续导进 Gemini。",
@@ -1236,7 +1173,7 @@
     "title": "美伊协议让油价重挫 4%，市场在交易“中东风险溢价塌了”",
     "watch": "盯油价能不能守住这次跌幅；如果霍尔木兹海峡开放兑现，市场会继续把通胀和避险交易往回打。",
     "source": "华尔街见闻",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-06-15",
@@ -1320,7 +1257,7 @@
     "title": "美伊协议细节出来后，油价交易进入第二阶段",
     "watch": "盯 19 日协议文本，以及霍尔木兹海峡重开后的航运恢复情况，别只看油价当天涨跌。",
     "source": "华尔街见闻",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-06-16",
@@ -1459,6 +1396,62 @@
     "date": "2026-06-18",
     "title": "8 个 Codex 智能体控制 8 台机器人，科研自动化开始碰物理世界了",
     "watch": "盯它后续能不能从演示走向可复现实验流程；如果能，科研、制造、医药实验都会被 agent 重新切一遍。",
+    "source": "aihot:paper",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-19",
+    "title": "研究型 agent 最大坑不是答错，是把你的私有资料带出去",
+    "watch": "盯 Claude、OpenAI、Cursor 这类工具会不会把“本地资料不可外传”做成默认权限，而不是靠用户自己写一句“不要泄露”。",
+    "source": "aihot:paper",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-19",
+    "title": "Kimi Work 把 agent 从“一问一答”推向“自己跑一天”",
+    "watch": "盯 24 小时任务里最容易断在哪：插件调用、上下文漂移、还是最后交付不可用；5 折结束后的真实成本也要看。",
+    "source": "aihot:ai-products",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-19",
+    "title": "Meta 一口气锁 1.6 吉瓦，AI 竞争已经是电力竞争",
+    "watch": "盯 Meta 后续资本开支口径，以及 Crusoe 这类能源型数据中心公司是不是继续拿到大客户长约。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-19",
+    "title": "美国给 AI 数据中心开电网快车道，算力瓶颈被政策硬拆",
+    "watch": "盯六大电网运营商 30 天报告里到底还有多少剩余容量，以及数据中心是否被要求承担更高并网费用。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-19",
+    "title": "伊朗预测市场出现 4500 万美元异常交易，别把赔率当真相",
+    "watch": "盯平台会不会回滚、冻结或披露异常账户；如果没有处理，后面中东相关赔率的参考价值要打折。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-19",
+    "title": "预测市场不信比特币明年底摸到 12 万美元",
+    "watch": "盯 Yes 价格能不能从 8% 往上走；如果 AI 股继续创新高但 BTC 远期赔率不动，说明风险偏好分化还在。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-19",
+    "title": "Elastic 买 AI 修 bug 公司，观测平台要直接下场改代码",
+    "watch": "盯 Elastic 会不会把 DeductiveAI 接进现有 observability 产品；如果能从报错到 PR 自动闭环，这类工具会很快进入开发团队预算。",
+    "source": "RSS:TechCrunch",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-19",
+    "title": "o3 Deep Research 给儿童罕见病多找出 4.8% 诊断",
+    "watch": "盯后续有没有更多医院复现 4.8% 这个结果；如果只在单一研究里成立，别过度解读。",
     "source": "aihot:paper",
     "status": "open"
   }
