@@ -1,5 +1,137 @@
 [
   {
+    "date": "2026-06-22",
+    "main_theme": "今天最核心的线索，不是 AI 又多了几个产品，而是 agent 正在从“玩具生产力”走向“高权限基础设施”，所以真正值钱的东西变成了权限隔离、状态管理、成本入口和安全边界。模型越来越便宜、越来越像水电煤，但一旦 agent 能调用账号、读写数据库、连 MCP、本地执行任务，问题就不是“它聪不聪明”，而是“它有没有资格碰这个东西，出错能不能回滚，被打穿会不会连锅端”。\n\nCloudflare 给 agent 开临时账号，sqlite-utils 补 migrations 和嵌套事务，美团 tabbit 把旗舰模型打包免费塞进入口，这三条放一起看很清楚：AI 工具链开始补生产级底座了。另一边 Mythos 这种“攻击型 AI”即便还没复现，也在提醒大家，agent 不是只会帮你写周报，它也可能把漏洞挖掘、权限滥用、插件攻击的时间尺度从几个月压到几小时。\n\n金融这边也在走同一条逻辑：市场不再只吃故事，而是在找可验证的现金流、政策流和供需流。伊朗 60 亿美元资金释放、VC 添加剂淡季不淡、Polymarket 被曝营销污染，分别对应地缘风险能不能降、产业链需求是不是真回暖、预测市场信号还能不能信；所以接下来别追热词，盯三件事：权限怎么管、需求有没有量价验证、市场价格有没有被真实事件确认。",
+    "commentary": "**今天值得花时间看的：**  \nCloudflare 给 agent 开“临时账号”这条别错过，这才是 agent 真进生产环境后的硬需求。以后公司不会允许一个 AI 助手拿着你的长期 API key 到处跑，短命权限、最小权限、审计日志会变成标配，这比又一个“更会聊天”的模型重要多了。\n\nsqlite-utils 4.0rc1 也值得看，别嫌它小。很多个人 agent 项目最后不是死在模型不够强，而是死在状态乱、任务乱、数据迁移乱；migrations 和 nested transactions 这种东西，才是让本地自动化能长期跑的地基。\n\n还有 VC 添加剂这条，我觉得比整车价格战新闻更有信息量。车企嘴上都能讲故事，材料端报价和出货量更诚实；如果 Q3 真量价齐升，新能源链可能不是等整车先反弹，而是材料、化工、电池排产先动。\n\n**可以跳过的：**  \nMythos “数小时攻破 NSA”这条现在别上头，没 demo、没第三方复现、没 NSA 或 Google Project Zero 侧面回应之前，它只能算高风险传闻，不是事实。可以记在安全雷达里，但别拿它当“AI 已经攻破世界”的证据。\n\n美团 tabbit 免费集成 GPT-5.5、Claude Opus 4.8、Gemini 3.5 这些，也先别被名单晃瞎。真正要看的就三件事：是不是真原版、有没有调用上限、限速和质量有没有阉割；如果免费但体验像试吃，那就是获客广告，不是行业格局变化。\n\nPolymarket 上万斯 37%、内塔尼亚胡下台 54%这种盘口，也别单独当聪明钱。平台刚被曝付钱让创作者发假投注视频，说明传播层可能被污染；赔率有用，但必须跟外部事实交叉验证，否则就是把营销当预测。\n\n**下周盯这几个：**  \n第一，盯 6 月 29 日到 7 月 5 日这一周，伊朗那 60 亿美元到底有没有“实际释放”，不是口头说说。只要资金真动，黄金的中东避险溢价就可能被压一截，美股科技风险偏好反而会松。\n\n第二，盯 Cloudflare 这个 temporary accounts 后续文档有没有补齐三件事：最小权限、过期时间、审计日志。只要这三样做实，后面 MCP 服务、浏览器 agent、本地自动化工具大概率都得抄作业。\n\n第三，盯 Polymarket 对 TechCrunch 爆料有没有正式回应，以及 creator 激励规则改不改。阿宁我不是不用预测市场，但以后看盘口必须先问一句：这是交易出来的价格，还是营销喂出来的情绪。",
+    "items": [
+      {
+        "title": "Mythos 这类“攻击型 AI”如果属实，安全行业要重估了",
+        "source": "aihot:industry",
+        "url": "https://x.com/AISafetyMemes/status/2068718552174252477",
+        "conclusion": "这事别当普通模型新闻看，它真正吓人的是把漏洞团队的时间尺度从“月”压到“小时”。",
+        "signal": "数小时内攻破 NSA 几乎所有机密系统；5 天内破解 MacOS；Google Project Zero 做同等攻击需 6 个月。",
+        "why": "阿宁你每天用 agent 干活，别只盯“会不会写代码”，也要盯“会不会自动找洞”。如果攻击能力真到这个级别，公司内部工具、浏览器插件、本地 MCP 服务都得默认不可信。",
+        "watch": "盯 Mythos 有没有可验证 demo、第三方复现、NSA 或 Google Project Zero 相关回应；没有复现前，这条只能按“高风险信号”处理，不能按事实全信。",
+        "category": "AI行业",
+        "tier": 1
+      },
+      {
+        "title": "美团 tabbit 免费塞满旗舰模型，模型入口开始打价格战",
+        "source": "aihot:ai-products",
+        "url": "https://x.com/AYi_AInotes/status/2068637890247016607",
+        "conclusion": "这事说白了就是模型本身越来越像“水电煤”，入口和分发才是生意。",
+        "signal": "免费集成 GPT-5.5、Claude Opus 4.8、Gemini 3.5 Flash、Kimi-2.6、GLM-5.1。",
+        "why": "你现在用 Claude/Cursor/各种 agent，成本和体验都被“谁能拿到便宜模型”影响。美团这种非典型 AI 公司下场，说明顶级模型访问权正在被拿来当获客补贴。",
+        "watch": "别看宣传，盯三件事：是不是真有这些模型、有没有调用上限、输出质量是不是原版；如果免费但限速严重，就只是拉新广告。",
+        "category": "AI行业",
+        "tier": 1
+      },
+      {
+        "title": "Cloudflare 给 agent 开“临时账号”，权限隔离要变成基础设施",
+        "source": "RSS:Simon Willison",
+        "url": "https://simonwillison.net/2026/Jun/21/temporary-cloudflare-accounts/#atom-everything",
+        "conclusion": "agent 真正跑进生产环境后，第一刚需不是更聪明，是别把长期密钥到处乱用。",
+        "signal": "Temporary Cloudflare Accounts for AI agents；发布时间路径为 2026/Jun/21。",
+        "why": "你用 MCP、agent、自动化工具越多，API key 泄露面越大。临时账号这类设计，本质是在给 AI 工具上“短命权限”，比让 agent 拿你的主账号安全太多。",
+        "watch": "盯 Cloudflare 这个能力能不能绑定最小权限、过期时间、审计日志；如果这些都齐，后面 MCP 服务很可能都要学这一套。",
+        "category": "AI工程",
+        "tier": 1
+      },
+      {
+        "title": "sqlite-utils 加迁移和嵌套事务，小工具正在变成 agent 数据层",
+        "source": "RSS:Simon Willison",
+        "url": "https://simonwillison.net/2026/Jun/21/sqlite-utils-40rc1/#atom-everything",
+        "conclusion": "这不是炫技更新，是本地 agent 需要“可迁移、可回滚、能长期保存状态”的信号。",
+        "signal": "sqlite-utils 4.0rc1；新增 migrations 和 nested transactions。",
+        "why": "很多个人 agent 项目最后都死在状态管理：聊天记录、任务队列、抓取结果、向量索引元数据乱成一坨。SQLite 这类轻量数据层升级，对你做本地自动化比换一个炫酷框架更实在。",
+        "watch": "盯 4.0 正式版；尤其看 migrations API 稳不稳、nested transactions 在异常中断时怎么回滚。",
+        "category": "开发者/开源",
+        "tier": 1
+      },
+      {
+        "title": "伊朗谈判一启动，卡塔尔 60 亿美元资金就成了筹码",
+        "source": "华尔街见闻",
+        "url": "https://wallstreetcn.com/livenews/3122349",
+        "conclusion": "中东风险不是简单“打不打”，现在市场在交易的是制裁松动和资金解冻。",
+        "signal": "伊朗总统称，随着谈判启动，卡塔尔将释放 60 亿美元资金。",
+        "why": "你持有黄金，也投美股指数。中东如果从军事升级转向资金解冻，黄金避险溢价会被压，美股科技的风险偏好会回得更快。",
+        "watch": "盯这 60 亿美元是不是实际释放；再看石油制裁豁免草案有没有从“草案”变成正式安排。",
+        "category": "宏观/金融",
+        "tier": 1
+      },
+      {
+        "title": "锂电 VC 添加剂淡季不淡，新能源链条可能先于整车回暖",
+        "source": "华尔街见闻",
+        "url": "https://wallstreetcn.com/member/articles/3774983",
+        "conclusion": "如果 Q3 真量价齐升，新能源不是只看车企价格战，材料端已经先给信号了。",
+        "signal": "VC 添加剂“淡季不淡”；Q3 或量价齐升。",
+        "why": "这对沪深 300 里的新能源链、化工链都有影响。整车销量新闻太吵，材料价格和排产反而更早反映真实需求。",
+        "watch": "盯 Q3 的 VC 添加剂报价和出货量；如果量价都走强，再回头看电池厂排产和储能订单。",
+        "category": "宏观/金融",
+        "tier": 1
+      },
+      {
+        "title": "共和党 2028 定价里，万斯已经不是边缘变量",
+        "source": "Polymarket",
+        "url": "https://polymarket.com/event/republican-presidential-nominee-2028",
+        "conclusion": "市场已经把 J.D. Vance 当成共和党下一轮核心人选，不是“特朗普身边的人”这么简单。",
+        "signal": "J.D. Vance 赢得 2028 共和党总统提名 Yes 37%；交易量 $662.8M。",
+        "why": "这会影响市场对美国政策连续性的预期，尤其是关税、科技监管、财政赤字这些会直接打到纳指和标普估值的东西。",
+        "watch": "盯 Republican Presidential Nominee 2028 这个合约的 Yes 价格；如果继续上行，说明市场在给“特朗普路线延续”加权。",
+        "category": "宏观/金融",
+        "tier": 1
+      },
+      {
+        "title": "市场押内塔尼亚胡 2026 年底前下台，油价和黄金要看政治尾部风险",
+        "source": "Polymarket",
+        "url": "https://polymarket.com/event/netanyahu-out-before-2027",
+        "conclusion": "中东风险不只在伊朗，Israel 内部政治也在被市场定价。",
+        "signal": "Netanyahu out by end of 2026 Yes 54%；交易量 $122.8M。",
+        "why": "你持有黄金，这类政治尾部风险会影响避险资产；但它也可能反过来降低地区升级概率，不能只按“更乱=黄金涨”想。",
+        "watch": "盯这个 Yes 价格有没有持续高于 54%；再结合美伊谈判和制裁豁免消息看，别单独看一条地缘新闻。",
+        "category": "宏观/金融",
+        "tier": 1
+      },
+      {
+        "title": "Polymarket 被曝搞“假投注视频”，预测市场的信号要打折",
+        "source": "RSS:TechCrunch",
+        "url": "https://techcrunch.com/2026/06/21/polymarket-reportedly-paid-creators-to-post-deceptive-videos-about-fake-bets/",
+        "conclusion": "预测市场很好用，但平台自己如果污染传播层，赔率就不能直接当“聪明钱”。",
+        "signal": "TechCrunch 称 Polymarket reportedly paid creators to post deceptive videos about fake bets；相关政治市场交易量已到 $1208.8M、$662.8M。",
+        "why": "你会看预测市场判断地缘、选举、利率预期，但这条提醒很关键：交易量大不等于信息纯，营销造势会影响散户理解。",
+        "watch": "盯 Polymarket 有没有公开回应、是否修改 creator 激励规则；之后看预测市场，优先看流动性、盘口变化和外部事实能不能互相验证。",
+        "category": "宏观/金融",
+        "tier": 1
+      }
+    ],
+    "watchpoint_reviews": [
+      {
+        "watch": "盯科技股反弹是不是只靠芯片股撑着；如果广度没跟上，再涨也可能只是高拥挤反抽。",
+        "status_label": "⏳ 进展中",
+        "review": "今天的信息继续指向“科技惯性”和“K 型分化”，市场风险降级后资金仍主要回到科技主线。原观察点担心反弹广度不够，目前这个担心还没被解除，反而有继续观察价值。",
+        "date": "2026-06-09"
+      },
+      {
+        "watch": "盯 2026 年 6 月 30 日这个合约节点，以及协议里是否真的包含石油出口、霍尔木兹通行、停火监督这些硬条款。",
+        "status_label": "⏳ 进展中",
+        "review": "美伊谈判已经启动，并出现“石油制裁豁免草案已敲定”“卡塔尔释放 60 亿美元资金”等硬条款线索，符合原观察点要求盯的实质内容。但同时还有特朗普威胁、伊朗代表团抗议离场、拒绝合影等冲突信号，所以还不能算最终验证。",
+        "date": "2026-06-15"
+      },
+      {
+        "watch": "盯后续 FOMC 声明会不会继续瘦身，以及五个特别工作组释放的政策信号；如果点阵图影响力下降，市场会更依赖通胀数据和主席问答。",
+        "status_label": "⏳ 进展中",
+        "review": "华尔街已经开始警告“减少前瞻指引 = 增加波动溢价 = 加息”，说明市场确实在重新定价美联储沟通方式变化。原观察点判断重点不只是利率本身，而是沟通框架改变，这个方向目前是对的。",
+        "date": "2026-06-18"
+      },
+      {
+        "watch": "盯平台会不会回滚、冻结或披露异常账户；如果没有处理，后面中东相关赔率的参考价值要打折。",
+        "status_label": "⏳ 进展中",
+        "review": "TechCrunch 报道 Polymarket 曾付费让创作者发布有关“假投注”的误导视频，这进一步削弱了预测市场赔率的可信度。原观察点提醒不要把赔率当真相，这个警告被强化了；但今天还没有看到平台是否回滚、冻结或披露此前伊朗异常账户。",
+        "date": "2026-06-19"
+      }
+    ]
+  },
+  {
     "date": "2026-06-20",
     "type": "weekly",
     "date_range": "06/15 ~ 06/19",
