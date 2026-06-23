@@ -725,7 +725,7 @@
     "title": "美股熊市信号到 70%，现在不是无脑加仓区",
     "watch": "盯科技股反弹是不是只靠芯片股撑着；如果广度没跟上，再涨也可能只是高拥挤反抽。",
     "source": "华尔街见闻",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-06-09",
@@ -781,7 +781,7 @@
     "title": "美股过山车背后有 750 亿美元抽水，别只怪科技股情绪差",
     "watch": "盯美债收益率、美元流动性、科技股是否继续跑输大盘；如果流动性压力没缓解，逢跌加仓要慢一点。",
     "source": "华尔街见闻",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-06-10",
@@ -1320,6 +1320,69 @@
     "title": "Polymarket 被曝搞“假投注视频”，预测市场的信号要打折",
     "watch": "盯 Polymarket 有没有公开回应、是否修改 creator 激励规则；之后看预测市场，优先看流动性、盘口变化和外部事实能不能互相验证。",
     "source": "RSS:TechCrunch",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-23",
+    "title": "编程模型榜单被“抄答案”污染了",
+    "watch": "盯 SWE-bench Pro 后续会不会强制标注“是否可联网、是否可访问 git 历史”。如果榜单不拆开看，模型能力还是会被高估。",
+    "source": "aihot:tip",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-23",
+    "title": "Google 开始评估 agent 会不会“主动发现问题”",
+    "watch": "盯 Jules 或 Google 内部 agent 会不会把这套评估变成公开 benchmark；尤其看它怎么定义“主动发现”而不是事后硬蹭功劳。",
+    "source": "aihot:paper",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-23",
+    "title": "PP-OCRv6 把轻量 OCR 做到能塞进各种 agent 流水线",
+    "watch": "盯它在 Hugging Face 上的推理部署体验，尤其是 tiny 和 small 能不能稳定跑在本地脚本、浏览器或边缘设备里。",
+    "source": "aihot:ai-models",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-23",
+    "title": "0.2B 图像修复模型跑进浏览器，重点不是图像，是本地小模型工作流",
+    "watch": "盯浏览器端图像、OCR、语音这类小模型能不能形成一套稳定模板；一旦模板成熟，Cursor/Claude Code 会变成个人工具工厂。",
+    "source": "RSS:Simon Willison",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-23",
+    "title": "DeepMind 投 A24，AI 影视不是噱头，是抢工作流入口",
+    "watch": "盯 A24 后续有没有公开具体用在剧本、分镜、剪辑、特效还是营销。只说“AI 工具”不值钱，进入哪个环节才值钱。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-23",
+    "title": "微软和雪佛龙签长期天然气电力，AI 基建开始反向绑定能源",
+    "watch": "盯其他云厂会不会跟进签长期燃气电力协议；再盯市场怎么重新定价“云厂商 + 能源公司”的组合。",
+    "source": "RSS:TechCrunch",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-23",
+    "title": "美银从不加息改口到加息，利率风险别装没看见",
+    "watch": "盯美联储官员后续表态和美债收益率反应；如果市场开始接受“加息不是尾部风险”，成长股会先被砍。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-23",
+    "title": "美国临时松开伊朗石油制裁，油价和黄金的剧本变复杂了",
+    "watch": "盯 60 天到期前是否续期，以及伊朗对石油出口和霍尔木兹相关表态有没有反复。这个窗口期很容易被市场提前交易。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-23",
+    "title": "Flock 车牌系统滥用案，说明“AI 监控”的最大漏洞是熟人权限",
+    "watch": "盯 Flock 后续是否加强访问审计、滥用告警、查询理由留痕。没有这些，所谓“安全合规”就是摆设。",
+    "source": "aihot:industry",
     "status": "open"
   }
 ]
