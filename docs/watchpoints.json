@@ -1,61 +1,5 @@
 [
   {
-    "date": "2026-05-25",
-    "title": "AI 助手已经成了供应链攻击入口",
-    "watch": "盯 npm、PyPI、Crates.io 后续是否公布完整包名和攻击链；更要盯 Cursor/Claude Code 这类工具会不会默认加依赖审计、锁权限、隔离密钥读取。",
-    "source": "aihot:industry",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-25",
-    "title": "OpenClaw 把“快”和“锁依赖”放在同一个版本里",
-    "watch": "盯它后面是否把依赖锁、模型启动路径、Windows 更新安全做成默认配置；如果默认不开，实际保护力会打折。",
-    "source": "aihot:ai-products",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-25",
-    "title": "DeepSeek 永久打 75% 折，模型价格战进入长期化",
-    "watch": "盯其他模型厂会不会跟永久折扣；如果只是限时促销，影响有限，如果也变成永久价，AI 应用的单位经济模型会重算。",
-    "source": "aihot:industry",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-25",
-    "title": "Datasette 继续往稳定版逼近，SQLite 工具链还没过气",
-    "watch": "盯 Datasette 到 1.0 前是否继续强化插件、权限、agent 接入；如果这些补齐，它会变成很适合个人 AI 操作系统的数据层。",
-    "source": "RSS:Simon Willison",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-25",
-    "title": "伊朗 Kharg Island 失控概率只有 8%，但油价尾部风险还没归零",
-    "watch": "盯 Kharg Island 相关合约是否从 8% 往上走；如果油价和黄金一起涨，而美股期货转弱，就说明市场开始重新定价冲突风险。",
-    "source": "Polymarket",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-25",
-    "title": "内塔尼亚胡下台概率到 44%，中东风险不是只看伊朗",
-    "watch": "盯这个合约是否突破 44% 后继续上行；如果同时美伊协议概率不涨，说明市场在押“谈判不等于风险消失”。",
-    "source": "Polymarket",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-25",
-    "title": "美伊协议风声一出，油价跌，黄金反而涨",
-    "watch": "盯油价下跌后，黄金能不能继续走高；如果能，说明黄金交易逻辑已经从中东避险切到利率和货币信用。",
-    "source": "华尔街见闻",
-    "status": "verified"
-  },
-  {
-    "date": "2026-05-25",
-    "title": "这周真正该盯的是 PCE、PMI 和中概财报",
-    "watch": "盯 PCE 是否改变降息预期；盯中国 PMI 是否支持沪深 300 修复；盯拼多多、小米财报后市场是买增长还是杀估值。",
-    "source": "华尔街见闻",
-    "status": "open"
-  },
-  {
     "date": "2026-05-26",
     "title": "OpenAI 可能把上下文直接拉到 150 万 token",
     "watch": "盯 OpenAI Codex 后端日志后续有没有更多 iris-alpha 痕迹，以及下月是否真的发布。",
@@ -1054,7 +998,7 @@
     "title": "英伟达发债 250 亿美元，AI 基建从股权故事变成债务周期",
     "watch": "盯英伟达这笔钱最终流向，是扩产、供应链预付款，还是回购和财务优化；这决定它是增长信号还是周期顶部信号。",
     "source": "华尔街见闻",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-06-16",
@@ -1452,6 +1396,69 @@
     "date": "2026-06-24",
     "title": "Menlo 靠 Anthropic 翻身，AI 风投正在变成少数重注游戏",
     "watch": "盯这 30 亿美元会流向模型层、agent 应用层，还是 AI 基建层；钱投到哪，哪条链的估值就会继续被抬。",
+    "source": "RSS:TechCrunch",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-25",
+    "title": "字节的 AI Coding 数据说明：别盯“AI 写了多少代码”，要盯“交付有没有变快”",
+    "watch": "盯字节后续有没有公布“需求交付周期”“线上 bug”“回滚率”这类数据；如果只继续讲代码占比，就说明这套指标还没过硬。",
+    "source": "aihot:tip",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-25",
+    "title": "OpenRouter 的 ZDR 流量快到一半，隐私会变成模型路由的默认配置",
+    "watch": "盯 OpenRouter 后面是不是把 ZDR 做成默认筛选项；也盯 Anthropic、OpenAI、Google 的 API 是否跟进更细的数据留存开关。",
+    "source": "aihot:tip",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-25",
+    "title": "高通杀进 AI 数据中心，英伟达的对手不再只看 GPU 公司",
+    "watch": "盯 Meta 后续数据中心采购有没有继续扩大高通 CPU；再盯微软 HBC 芯片部署是试点还是进入规模化。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-25",
+    "title": "美光财报把“AI 缺内存”这件事砸实了",
+    "watch": "盯美光下一季对 2027 年后供应紧张的说法有没有松动；如果继续紧，AI CapEx 可能还没到顶。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-25",
+    "title": "预测市场只给勒庞 6%，欧洲政治风险现在反而被压得很低",
+    "watch": "盯法国 2027 年选举前的民调差距；如果 Yes 从 6% 往上跳，欧洲风险资产大概率先反应。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-25",
+    "title": "巴西市场押 Lula 继续赢，资源和新兴市场的政策风险别忽略",
+    "watch": "盯 2026 年巴西大选民调和大宗商品价格；如果 Lula 胜率继续上行，市场会重新算财政和监管政策。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-25",
+    "title": "DFlash 的 15 倍吞吐，不是小优化，是推理成本战的新方向",
+    "watch": "盯 DFlash 是否被 vLLM、TensorRT-LLM、SGLang 这类推理框架吸收；只有进主流框架，才算从论文变成生产力。",
+    "source": "aihot:paper",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-25",
+    "title": "NVIDIA 把 MoE 微调包装成一行代码，企业私有模型门槛继续下降",
+    "watch": "盯 NeMo AutoModel 是否支持更多 Hugging Face 主流 MoE 模型；如果社区开始给出稳定 recipe，私有微调会更普及。",
+    "source": "aihot:tip",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-25",
+    "title": "工程岗没被 AI 打爆，反而是大厂里最抗揍的岗位",
+    "watch": "盯下一轮数据里“工程岗占新招聘比例”有没有继续上升；如果工程招聘恢复快于总招聘，说明 AI 工具在增强工程岗位，而不是替代它。",
     "source": "RSS:TechCrunch",
     "status": "open"
   }
