@@ -1,61 +1,5 @@
 [
   {
-    "date": "2026-05-26",
-    "title": "OpenAI 可能把上下文直接拉到 150 万 token",
-    "watch": "盯 OpenAI Codex 后端日志后续有没有更多 iris-alpha 痕迹，以及下月是否真的发布。",
-    "source": "aihot:industry",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-26",
-    "title": "苹果可能拿 Google 1.2T 模型救 Siri",
-    "watch": "盯下一代 Siri 到底哪些功能由这个 1.2T 模型驱动，以及苹果会不会把它包装成自研能力。",
-    "source": "aihot:industry",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-26",
-    "title": "1.58-bit 端侧模型开始接华为昇腾生态",
-    "watch": "盯 BitCPM-CANN 的实际推理速度、内存占用，以及它在昇腾环境外能不能顺手跑。",
-    "source": "aihot:ai-models",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-26",
-    "title": "Qwen3.7-Max 自动开隐式缓存，prompt 写法要变了",
-    "watch": "盯阿里后续有没有公布隐式缓存的命中规则、价格差异、延迟变化。",
-    "source": "aihot:ai-products",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-26",
-    "title": "Datasette-agent 继续往“数据库 agent”方向走",
-    "watch": "盯 datasette-agent 后续怎么处理权限、工具调用日志、SQL 查询限制。",
-    "source": "RSS:Simon Willison",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-26",
-    "title": "美伊永久和平协议定价已经不低了",
-    "watch": "盯 May 31, 2026 和 June 30, 2026 两个合约价差，如果 58% 继续上行，说明市场在把“协议落地”当基准情景。",
-    "source": "Polymarket",
-    "status": "invalidated"
-  },
-  {
-    "date": "2026-05-26",
-    "title": "宏观空头挤压风险到了 10 年高位",
-    "watch": "盯高盛后续是否继续提示挤压风险，以及股债汇是不是同时出现反向急拉。",
-    "source": "华尔街见闻",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-26",
-    "title": "资源出口管制开始从钴锂蔓延到铝土矿",
-    "watch": "盯几内亚 6 月具体管制内容，是配额、禁令，还是加工本地化要求。",
-    "source": "华尔街见闻",
-    "status": "open"
-  },
-  {
     "date": "2026-05-27",
     "title": "Claude 的安全边界开始像云安全了，不再只是 prompt 问题",
     "watch": "盯 Claude Code、Cursor、Replit 这类工具接下来会不会把沙箱、网络出口、文件权限做成默认配置，而不是让用户自己补安全洞。",
@@ -1425,7 +1369,7 @@
     "title": "美光财报把“AI 缺内存”这件事砸实了",
     "watch": "盯美光下一季对 2027 年后供应紧张的说法有没有松动；如果继续紧，AI CapEx 可能还没到顶。",
     "source": "华尔街见闻",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-06-25",
@@ -1460,6 +1404,76 @@
     "title": "工程岗没被 AI 打爆，反而是大厂里最抗揍的岗位",
     "watch": "盯下一轮数据里“工程岗占新招聘比例”有没有继续上升；如果工程招聘恢复快于总招聘，说明 AI 工具在增强工程岗位，而不是替代它。",
     "source": "RSS:TechCrunch",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-26",
+    "title": "Codex 已经不是聊天框，是 OpenAI 内部的主工作台",
+    "watch": "盯 OpenAI 后续有没有把 Codex 的移动端、权限、文件审阅、设备配对继续打通；一旦这些能力稳定，agent 就会从“写代码助手”变成“工作流操作系统”。",
+    "source": "aihot:paper",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-26",
+    "title": "Ornith-1.0 把开源 coding agent 直接拉到全尺寸竞争",
+    "watch": "盯它在真实仓库、多文件修改、测试修复上的表现；如果 31B 或 35B MoE 能稳定跑 agent loop，才算真的有用。",
+    "source": "aihot:ai-models",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-26",
+    "title": "AI 收入已经跑到互联网早期的三倍速",
+    "watch": "盯下一份报告里“实际营收”和“年化运行率”的差距有没有继续拉大；如果差距收敛，说明热钱开始变成真实续费。",
+    "source": "aihot:tip",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-26",
+    "title": "游戏操作数据正在变成机器人训练燃料",
+    "watch": "盯它能不能从 Fortnite 这类游戏迁移到真实机器人或桌面 agent；如果只能在游戏里赢，那估值就是故事。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-26",
+    "title": "Meta 内容审核要从“一半 AI”冲到“九成 AI”",
+    "watch": "盯 Meta 年底前 90% 以上的目标有没有落地，以及后续有没有因为误杀、漏审、监管压力回撤。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-26",
+    "title": "Agent 测试开始从“跑 benchmark”变成“造数字世界”",
+    "watch": "盯它测不测真实任务链：读文档、调用工具、改代码、处理权限、遇到异常是否停手。只测问答没价值。",
+    "source": "RSS:TechCrunch",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-26",
+    "title": "钽成了 AI 供应链里最陡的稀有金属交易",
+    "watch": "盯钽价后续有没有继续沿 AI 订单走强，以及消费电子厂商有没有把材料成本继续转嫁到终端价格。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-26",
+    "title": "苹果涨价 15–25%，AI 硬件成本开始传给消费者",
+    "watch": "盯 iPhone 后续会不会也涨；如果 iPhone 继续不涨，说明苹果还在保最核心销量，成本压力先让 Mac 和 iPad 扛。",
+    "source": "RSS:Daring Fireball",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-26",
+    "title": "市场给 Netanyahu 明年底下台接近五五开",
+    "watch": "盯这个合约会不会越过 50%；如果破 50%，说明市场把“以色列换人”从风险情景变成主线情景。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-26",
+    "title": "AI 第一次把一整卷赫库兰尼姆古卷读出来了",
+    "watch": "盯后续能不能批量读取更多赫库兰尼姆古卷；如果从“首卷”变成“流程化读取”，这就是新学科工具链。",
+    "source": "aihot:paper",
     "status": "open"
   }
 ]
