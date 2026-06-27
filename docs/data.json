@@ -1,5 +1,70 @@
 [
   {
+    "date": "2026-06-27",
+    "type": "weekly",
+    "date_range": "06/22 ~ 06/26",
+    "main_theme": "这周我想明白了几件事。第一，AI 这条线已经不适合再用“模型又强了多少”来理解了，真正的变化是：agent 开始接管真实流程。周一还在讲权限、状态、安全边界，周五就看到 Codex 在 OpenAI 内部 token 占比拉到 99.8%。这不是一个工具变好用，是工作入口在换。\n\n第二，AI 的硬账本开始露出来了。企业不是凭空多出 AI 预算，Oracle 裁员给云和 AI 基建腾钱，美光财报把内存瓶颈坐实，微软和雪佛龙签长期天然气电力，苹果涨价把成本传给消费者。以前市场买的是想象力，现在要问：电从哪来，内存够不够，推理成本谁扛，最后谁买单。\n\n第三，对我这种 AI 用户 + 指数投资者来说，下周最重要的不是追每个新模型，而是盯两件事：AI 是否继续从 demo 进入生产系统，以及 AI 交易是不是开始从“信仰仓位”变成“成本和现金流定价”。这周芯片股那一跌就是提醒，长期趋势没坏，但短期拥挤交易会被市场反复敲打。",
+    "commentary": "下周我会重点盯 AI 基建链的两个硬数据：内存/存储涨价有没有继续扩散到消费电子，以及数据中心电力合同、能源合作有没有更多大厂跟进。  \n\n市场这边，06/24 芯片股近 8% 下跌后，下周要看 AI 权重股是修复还是继续去拥挤仓位；如果叠加利率预期转鹰，指数投资者别轻易把短期回撤当成“无脑加仓信号”。",
+    "items": [
+      {
+        "title": "Codex 已经不是聊天框，是 OpenAI 内部的主工作台",
+        "conclusion": "",
+        "source": "",
+        "url": "https://openai.com/index/how-agents-are-transforming-work",
+        "signal": "",
+        "why": "",
+        "watch": "",
+        "category": "",
+        "tier": 1
+      },
+      {
+        "title": "Cloudflare 给 agent 开“临时账号”，权限隔离要变成基础设施",
+        "conclusion": "",
+        "source": "",
+        "url": "https://simonwillison.net/2026/Jun/21/temporary-cloudflare-accounts/#atom-everything",
+        "signal": "",
+        "why": "",
+        "watch": "",
+        "category": "",
+        "tier": 1
+      },
+      {
+        "title": "美光财报把“AI 缺内存”这件事砸实了",
+        "conclusion": "",
+        "source": "",
+        "url": "https://wallstreetcn.com/articles/3775443",
+        "signal": "",
+        "why": "",
+        "watch": "",
+        "category": "",
+        "tier": 1
+      },
+      {
+        "title": "微软和雪佛龙签长期天然气电力，AI 基建开始反向绑定能源",
+        "conclusion": "",
+        "source": "",
+        "url": "https://techcrunch.com/2026/06/22/microsoft-and-chevron-plan-one-of-the-largest-gas-powered-data-center-projects-in-us/",
+        "signal": "",
+        "why": "",
+        "watch": "",
+        "category": "",
+        "tier": 1
+      },
+      {
+        "title": "编程模型榜单被“抄答案”污染了",
+        "conclusion": "",
+        "source": "",
+        "url": "https://cursor.com/blog/reward-hacking-coding-benchmarks",
+        "signal": "",
+        "why": "",
+        "watch": "",
+        "category": "",
+        "tier": 1
+      }
+    ],
+    "watchpoint_reviews": []
+  },
+  {
     "date": "2026-06-26",
     "main_theme": "今天最核心的线索，不是“AI 又更强了”，而是 AI 正在从模型能力竞赛，进入“接管真实流程”的阶段。Codex 在 OpenAI 内部 token 占比从不到 10% 拉到 99.8%，这不是产品小改版，这是工作入口换代：聊天框退后，agent 工作台站到前台。\n\n你看今天几条其实都在讲同一件事：Codex 吃代码工作流，Ornith-1.0 把开源 coding agent 拉到 397B MoE，Patronus 要给 agent 造数字世界做压力测试，Meta 则直接把内容审核从“一半 AI”推到“九成 AI”。这说明企业现在不缺会演示的 AI，缺的是能长期跑、能接权限、能处理异常、能省人省钱的系统。\n\n另一边，AI 的成本也开始从云机房往现实世界外溢：钽年内涨超 150%，苹果 Mac/iPad 涨价 15–25%，这就是 AI 资本开支把上游材料、存储、硬件价格重新拧了一遍。我的判断很简单：接下来 AI 投资别只盯“谁模型第一”，要盯两类公司——一类是能把 agent 变成默认工作台的入口公司，另一类是能把 AI 成本转嫁出去、还不丢用户的硬件和平台公司。",
     "commentary": "**今天值得花时间看的：**  \nCodex 这条你别错过，因为它比任何发布会都硬。OpenAI 自己内部都把 Codex 用成主工作台了，各部门输出 token 占比干到 99.8%，这说明 agent 的第一个大规模落地点就是“改文件、跑测试、提 PR、审权限”这一套工程流程，不是陪你聊天。\n\nPatronus AI 融资 5000 万美元也值得看，很多人会当成普通融资新闻，我觉得不是。agent 真要进企业，最大问题不是智商，而是“它会不会自信地乱搞”，所以数字世界压力测试以后大概率会变成 AI 时代的 CI/CD，谁能测真实任务链，谁就卡住企业采用前的安全阀。\n\n还有 Meta 审核这条，冷但重要。AI 真正先兑现利润的地方，往往不是酷炫视频生成，而是审核、客服、运营这种脏活累活；Meta 如果年底前真把部分内容 AI 审核比例推到 90% 以上，而且错误率不爆，那这就是大厂财报里 AI 降本的模板。\n\n**可以跳过的：**  \n“AI 收入已经是互联网早期三倍速”这条可以看结论，但别被标题带嗨。1100 亿美元实际营收、1750 亿美元年化运行率当然强，但这类宏大数字现在已经不是增量信息，真正要看的是收入最后落到谁手里，是 OpenAI、Anthropic、微软、苹果这种入口，还是一堆买卡讲故事的中间商。\n\nGeneral Intuition 这轮 3.2 亿美元融资也别急着高潮。游戏操作数据训练机器人这个方向有想象力，但从 Fortnite 到真实机器人，中间隔着物理世界、传感器、延迟、失败成本，不是“数亿小时按键数据”四个字就能抹平；它能迁移到桌面 agent 或真实机器人之前，估值里故事成分很重。\n\n赫库兰尼姆古卷这条很美，也是真的突破，但对投资和工程决策的短线帮助不大。它证明 AI 是科学工具，这个长期判断我认；但今天如果你时间有限，先看 Codex、Meta、Patronus，那些更接近现金流和工作流重构。\n\n**下周盯这几个：**  \n第一，盯 6 月 30 日到 7 月 3 日这几天，OpenAI 有没有继续放 Codex 的产品细节，尤其是移动端、权限管理、文件审阅、设备配对。只要这些继续打通，Codex 就不是 coding assistant，而是往“工作流操作系统”走。\n\n第二，盯 Polymarket 上 “Netanyahu out before 2027” 这个合约会不会破 50%。现在 Yes 是 48%，交易量已经 1.232 亿美元；如果下周站上 50%，我会把它当成中东政治风险重新定价的信号，黄金和油价都得多看一眼。\n\n第三，盯苹果涨价后的渠道反馈，尤其是 Mac、iPad 有没有明显掉单，以及 iPhone 有没有跟涨迹象。Mac/iPad 涨 15–25% 还扛得住，说明消费者在替 AI 硬件成本买单；但如果 iPhone 也开始动价格，那就不是产品线调整了，是通胀压力进核心消费电子。",
