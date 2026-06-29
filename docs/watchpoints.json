@@ -1,201 +1,5 @@
 [
   {
-    "date": "2026-05-27",
-    "title": "Claude 的安全边界开始像云安全了，不再只是 prompt 问题",
-    "watch": "盯 Claude Code、Cursor、Replit 这类工具接下来会不会把沙箱、网络出口、文件权限做成默认配置，而不是让用户自己补安全洞。",
-    "source": "aihot:tip",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-27",
-    "title": "KPop 把 agent 训练里的“训练和推理不一致”当成主问题来打",
-    "watch": "盯 SWE-bench Verified 上后续是否继续由 MoE + agent RL 方法刷分，尤其是这些方法能不能迁移到真实 repo 的多轮修改。",
-    "source": "aihot:paper",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-27",
-    "title": "OpenRouter 的融资不是重点，token 流量才是重点",
-    "watch": "盯它接下来是否拿到更多企业生产流量，以及 25 万亿 token 后面还能不能继续涨；如果涨不动，说明应用层增速开始见顶。",
-    "source": "aihot:industry",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-27",
-    "title": "Uber 四个月烧完全年 AI 预算，企业 AI 开始从信仰充值转向算账",
-    "watch": "盯后续还有没有大公司公开提 AI 预算超支；如果越来越多，模型 API 降价和企业私有化部署会更快。",
-    "source": "aihot:industry",
-    "status": "verified"
-  },
-  {
-    "date": "2026-05-27",
-    "title": "台积电 3 纳米涨价，AI 算力通胀还没完",
-    "watch": "盯台积电下半年 15% 是否落地，以及明年 10% 是否继续加；如果都落地，AI 应用公司降价空间会被重新定价。",
-    "source": "华尔街见闻",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-27",
-    "title": "韩国半导体涨到触发熔断，AI 交易进入高热区",
-    "watch": "盯 SK 海力士和美光后续是否继续由 HBM 预期带动；如果半导体指数涨、但下游 AI 应用不涨，说明利润还在硬件端。",
-    "source": "华尔街见闻",
-    "status": "verified"
-  },
-  {
-    "date": "2026-05-27",
-    "title": "MiniCPM5-1B 把端侧模型继续往“真能用”推了一步",
-    "watch": "盯 MiniCPM5-1B 的真实端侧速度、内存占用和工具调用能力；如果浏览器里能稳定跑，很多轻量自动化就不用走云端了。",
-    "source": "aihot:ai-models",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-27",
-    "title": "SenseNova-U1 开源全训练代码，重点不是模型，是多模态训练流水线",
-    "watch": "盯这个代码库后续有没有社区复现结果，以及 8B 和 A3B MoE 哪个更适合低成本微调。",
-    "source": "aihot:tip",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-27",
-    "title": "SynthID 覆盖超千亿内容，AI 水印开始从技术方案变成行业协议",
-    "watch": "盯 OpenAI、ElevenLabs、Kakao 集成 SynthID 后，水印是否覆盖文本、音频、视频；如果只覆盖部分模态，造假空间还很大。",
-    "source": "aihot:industry",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-27",
-    "title": "AlphaProof Nexus 攻克老数学题，AI 科学能力又往前踩了一脚",
-    "watch": "盯这 2 道题的证明是否被数学社区正式验证，以及 AlphaProof Nexus 的方法会不会迁移到代码验证、形式化证明工具里。",
-    "source": "aihot:ai-models",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-28",
-    "title": "企业 IT 智能体还没到能放心托管的水平",
-    "watch": "盯 ITBench-AA 后续榜单，尤其看有没有模型稳定越过 50%，以及是否开始拆分 SRE、权限、回滚、告警这几类任务。",
-    "source": "aihot:paper",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-28",
-    "title": "编码智能体在学术圈还远没普及",
-    "watch": "盯下一轮类似调查里“常规使用 coding agent”的比例，如果从 20% 往上明显走，说明 agent 开始从极客工具变成办公基础设施。",
-    "source": "aihot:paper",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-28",
-    "title": "Perplexity 把分词器这种“小东西”也卷起来了",
-    "watch": "盯这个 tokenizer 的 GitHub 实测反馈，重点看中文、多语言、长文本批处理场景里是不是也有 5-6 倍改善。",
-    "source": "aihot:ai-products",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-28",
-    "title": "开源视频生成开始打实时工作流了",
-    "watch": "盯 repo 的真实复现成本，特别是 B200 之外的显卡能不能跑，以及 7 秒这个速度在复杂 prompt 下会不会掉。",
-    "source": "aihot:ai-products",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-28",
-    "title": "Cognition 估值已经按“下一代软件公司”在打了",
-    "watch": "盯 Cognition 后续有没有公布企业留存、单客户用量、错误率；如果只有使用量 10 倍，没有生产指标，那估值里泡沫也不小。",
-    "source": "aihot:industry",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-28",
-    "title": "字节可能在认真摆脱通用 GPU 依赖",
-    "watch": "盯高通或字节有没有正式确认，以及这批 ASIC 是训练、推理，还是端侧/数据中心混用；用途不同，对 GPU 供应链冲击完全不一样。",
-    "source": "aihot:industry",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-28",
-    "title": "Snowflake 花 60 亿美元买 AWS，说明数据云也被 AI 算力绑架了",
-    "watch": "盯 Snowflake 后续财报里的 AI 收入增速和云成本占比，如果收入没跟上 60 亿美元采购承诺，市场会反过来砍估值。",
-    "source": "华尔街见闻",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-28",
-    "title": "高盛把标普目标抬到 8000，市场已经在奖励“别怂”",
-    "watch": "盯接下来美股财报季里 AI 资本开支和盈利兑现，如果指数冲着 8000 去但盈利没跟上，回撤会来得很快。",
-    "source": "华尔街见闻",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-28",
-    "title": "伊朗关闭领空概率不高，但尾部风险还在",
-    "watch": "盯 May 31 前伊朗领空、霍尔木兹海峡、原油日内波动；如果 Yes 从 13% 快速上跳，黄金仓位就不是摆设了。",
-    "source": "Polymarket",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-28",
-    "title": "Polymarket 也开始有“内幕交易”味了",
-    "watch": "盯这个案子的判决和 Polymarket 后续合规动作；如果监管开始认定某些事件合约存在内幕交易，预测市场的数据可用性会被重新定价。",
-    "source": "RSS:TechCrunch",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-29",
-    "title": "英伟达 Polar 把 agent 训练从“改框架”变成“卡 API 边界”",
-    "watch": "盯 Polar 是否被 Codex CLI、Claude Code、Qwen Code 生态接进去；如果只是论文跑分，价值有限，如果进了真实开发工具，才是生产力变化。",
-    "source": "aihot:tip",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-29",
-    "title": "Claude Code 开始把“多 agent 并行”产品化",
-    "watch": "盯它在真实 repo 里的失败模式：子 agent 之间是否重复劳动、是否互相污染上下文、验证环节能不能抓住编译和测试之外的问题。",
-    "source": "aihot:ai-products",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-29",
-    "title": "Anthropic 的关键不是估值，是拿钱锁 TPU",
-    "watch": "盯 Anthropic 后续是否继续绑定 Google TPU；如果 TPU 成为 Claude 的核心成本优势，英伟达链和谷歌链的市场叙事会分叉。",
-    "source": "华尔街见闻",
-    "status": "verified"
-  },
-  {
-    "date": "2026-05-29",
-    "title": "Glean 年收入过 3 亿美元，企业 AI 开始靠“省预算”卖货",
-    "watch": "盯它在微软、Google 这些巨头夹击下还能不能继续 tripled；如果能，说明垂直企业 AI 还有独立公司空间。",
-    "source": "RSS:TechCrunch",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-29",
-    "title": "市场已经在押内塔尼亚胡 2026 年前下台",
-    "watch": "盯这个合约是否继续站在 56% 上方；如果概率快速回落，说明市场把地缘缓和重新定价。",
-    "source": "Polymarket",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-29",
-    "title": "单票杠杆 ETF 一个月半翻倍，AI 交易有点上头了",
-    "watch": "盯单票 ETF 规模是否继续翻倍；如果继续扩张，AI 相关股票的日内波动会越来越不像基本面交易。",
-    "source": "华尔街见闻",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-29",
-    "title": "llm-anthropic 已经把 Opus 4.8 接进命令行生态",
-    "watch": "盯 `-o fast` 在真实 coding / research 任务里是不是稳定；如果快但质量掉得明显，就只适合草稿和批处理。",
-    "source": "RSS:Simon Willison",
-    "status": "open"
-  },
-  {
-    "date": "2026-05-29",
-    "title": "SGLang + AMD 在 DeepSeek-R1 推理上补短板",
-    "watch": "盯 SGLang 后续是否给出更多真实吞吐、延迟和总拥有成本数据；只有 benchmark 不够，能不能被云厂商规模部署才关键。",
-    "source": "aihot:paper",
-    "status": "open"
-  },
-  {
     "date": "2026-06-01",
     "title": "Claude 的“产品级隔离”比 prompt 技巧更值得抄",
     "watch": "盯 Anthropic 后续有没有把 containment 做成可复用接口，尤其是工具调用、文件系统、浏览器、代码执行这几块。",
@@ -1320,7 +1124,7 @@
     "title": "芯片股近 8% 一跌，AI 交易开始从“信仰”回到“仓位”",
     "watch": "盯芯片指数能不能止住跌幅，以及美债、美元是否继续同步走强；如果继续这样，纳指反弹也可能只是技术性喘气。",
     "source": "华尔街见闻",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-06-24",
@@ -1474,6 +1278,62 @@
     "title": "AI 第一次把一整卷赫库兰尼姆古卷读出来了",
     "watch": "盯后续能不能批量读取更多赫库兰尼姆古卷；如果从“首卷”变成“流程化读取”，这就是新学科工具链。",
     "source": "aihot:paper",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-29",
+    "title": "本地模型路由开始变成“规则工程”，不是再套一个小模型",
+    "watch": "盯它后续有没有真实任务集上的命中率和误路由数据；尤其看“代码修改、长上下文、数学证明”这几类能不能稳定分到对的模型。",
+    "source": "aihot:ai-products",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-29",
+    "title": "小模型能压推理，但压不住事实知识",
+    "watch": "盯它在非数学、非代码任务上的掉点；如果事实类 benchmark 明显弱，就说明“推理可压缩、知识不可压缩”这条路基本坐实。",
+    "source": "aihot:ai-models",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-29",
+    "title": "对冲基金不是减仓科技股，是在创纪录地跑",
+    "watch": "盯 Mag 7 和半导体能不能止住连续净卖；如果芯片股继续被抛，纳指反弹也可能只是技术反抽。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-29",
+    "title": "“央行中的央行”开始把 AI 当泡沫风险看",
+    "watch": "盯高评级信用利差和科技巨头发债需求；如果利差继续走阔，AI 估值会先被融资成本打折。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-29",
+    "title": "预测市场不信比特币能到 120000",
+    "watch": "盯这个合约的 Yes 有没有从 6% 明显上移；如果 BTC 价格涨但概率不动，说明只是短线行情，不是长期定价改变。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-29",
+    "title": "共和党 2028 现在最有定价权的是 Vance",
+    "watch": "盯这个 38% 是不是继续上行；如果共和党提名盘交易量继续放大，说明机构和大户也在提前买政策尾部风险。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-29",
+    "title": "小众应用泄露护照，比普通密码泄露狠多了",
+    "watch": "以后凡是要求上传证件的服务，先看它是不是必要、有没有替代验证；尤其小众垂直 app，别默认它有大厂级安全能力。",
+    "source": "RSS:Daring Fireball",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-29",
+    "title": "加州开始管流媒体广告音量，小烦恼也能立法",
+    "watch": "看流媒体平台会不会把加州规则做成全美默认；如果只对加州生效，说明合规会继续碎片化，产品设计成本会上升。",
+    "source": "RSS:TechCrunch",
     "status": "open"
   }
 ]
