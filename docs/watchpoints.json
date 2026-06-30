@@ -900,7 +900,7 @@
     "title": "研究型 agent 最大坑不是答错，是把你的私有资料带出去",
     "watch": "盯 Claude、OpenAI、Cursor 这类工具会不会把“本地资料不可外传”做成默认权限，而不是靠用户自己写一句“不要泄露”。",
     "source": "aihot:paper",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-06-19",
@@ -914,7 +914,7 @@
     "title": "Meta 一口气锁 1.6 吉瓦，AI 竞争已经是电力竞争",
     "watch": "盯 Meta 后续资本开支口径，以及 Crusoe 这类能源型数据中心公司是不是继续拿到大客户长约。",
     "source": "华尔街见闻",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-06-19",
@@ -1334,6 +1334,76 @@
     "title": "加州开始管流媒体广告音量，小烦恼也能立法",
     "watch": "看流媒体平台会不会把加州规则做成全美默认；如果只对加州生效，说明合规会继续碎片化，产品设计成本会上升。",
     "source": "RSS:TechCrunch",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-30",
+    "title": "本地 27B 模型已经够干一部分开发活了",
+    "watch": "盯 Qwen 3.6 27B 在 Cursor/Claude Code 替代场景里的真实表现，尤其是长仓库理解、跨文件修改、30 这个速度能不能稳定。",
+    "source": "aihot:tip",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-30",
+    "title": "长上下文加速开始从“模型参数”卷到 KV Cache 结构",
+    "watch": "盯 RedKnot 后续有没有公开 benchmark，尤其是 8 这个测试环境下的吞吐、延迟、显存变化；如果开源，优先看能不能接 vLLM/sglang 这类推理栈。",
+    "source": "aihot:ai-products",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-30",
+    "title": "Agent 记忆往 Markdown 走，比塞黑盒数据库更靠谱",
+    "watch": "盯 EverOS 的真实使用案例：多 agent 共享记忆时会不会冲突，自进化技能会不会把错误经验固化进 Markdown。",
+    "source": "aihot:ai-products",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-30",
+    "title": "美团 LongCat 不是“小厂刷榜”，OpenRouter 用量已经给信号了",
+    "watch": "盯 OpenRouter 上 LongCat 的 10 万亿 tokens 后续增长，以及它在代码、长上下文、agent 调用里的失败率。",
+    "source": "aihot:ai-models",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-30",
+    "title": "Rubin Ultra 砍半，算力路线图没想象中稳",
+    "watch": "盯 NVIDIA 后续对 Rubin Ultra 的正式口径，特别是客户交付时间、GB300 到 Rubin 的过渡节奏。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-30",
+    "title": "韩国内存厂砸 5900 亿美元，说明 AI 瓶颈已经不只在 GPU",
+    "watch": "盯三星、SK 海力士这些产能到底投向 HBM 还是普通 DRAM；如果内存长约继续增加，说明下游已经怕缺货了。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-30",
+    "title": "AI 选目标已经上战场，但错误成本不是“修个 bug”",
+    "watch": "盯 Anthropic 对军用限制的口径有没有改，Palantir 的 Maven Smart System 会不会被国会、媒体或军方审查。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-30",
+    "title": "腾讯跟长鑫签超 200 亿长约，国内存储进入抢货模式",
+    "watch": "盯更多互联网大厂是否跟进签长约，以及长鑫存储相关产业链有没有继续被重估。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-30",
+    "title": "美国高院 5:4 单独保护美联储，市场真正押的是独立性",
+    "watch": "盯沃什相关提名预期，以及后续任何挑战美联储独立性的法院动作；这会直接影响长端利率和科技股估值。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-06-30",
+    "title": "预测市场给内塔尼亚胡 2026 年前下台接近五五开",
+    "watch": "盯这个 48% 是否上破半数，以及以伊停火、以色列国内政治压力有没有新变化。",
+    "source": "Polymarket",
     "status": "open"
   }
 ]
