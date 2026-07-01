@@ -1405,5 +1405,68 @@
     "watch": "盯这个 48% 是否上破半数，以及以伊停火、以色列国内政治压力有没有新变化。",
     "source": "Polymarket",
     "status": "open"
+  },
+  {
+    "date": "2026-07-01",
+    "title": "Claude Sonnet 5 更像“便宜版 Opus”，不是普通迭代",
+    "watch": "盯 Claude Code 里 Sonnet 5 的默认模型切换、工具调用失败率，以及 2026 年 8 月前 Anthropic 会不会把这个价格变成长期策略。",
+    "source": "aihot:ai-models",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-01",
+    "title": "ADK Go 2.0 把多 agent 从“聊天编排”拉回工程编排",
+    "watch": "盯 ADK Go 2.0 后续有没有标准化 tracing、失败重试、人工审批节点示例；这些比 demo 跑通更决定能不能进生产。",
+    "source": "aihot:ai-products",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-01",
+    "title": "让 agent 自动录屏，是开发工作流里很小但很关键的一块",
+    "watch": "盯它能不能接进 Claude Code / Cursor 的任务结束钩子；如果 agent 每次交付都自动附视频，信任成本会降很多。",
+    "source": "aihot:ai-products",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-01",
+    "title": "黑石在日本砸 AI 数据中心，算力开始往“电力和地缘稳定”迁移",
+    "watch": "盯日本后续电力审批、Google/亚马逊在日本的租约，以及 300 亿美元是不是能转成真实上电容量。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-01",
+    "title": "美股和黄金这一季走成了极端跷跷板",
+    "watch": "盯下一季美股还能不能靠 AI 热情继续扩估值；黄金则看美元和美债实际利率有没有继续压制。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-01",
+    "title": "宽基 ETF 缩水到千亿级产品归零，A 股定投情绪很冷",
+    "watch": "盯沪深 300 相关 ETF 的份额变化，而不只是价格；如果价格不涨但份额回流，情绪可能先于指数修复。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-01",
+    "title": "AI 裁员叙事没那么简单，真正分化在“会不会把 AI 花成生产力”",
+    "watch": "盯后续报告里“高 AI 投入公司”的招聘、营收、人均产出有没有继续分化；别只看裁员标题。",
+    "source": "aihot:tip",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-01",
+    "title": "机器人老师一天 200-250 元，具身智能还在吃廉价人类数据",
+    "watch": "盯这类岗位日薪会不会从 200-250 元上调，以及任务是否从分拣积木、叠纸杯升级到真实家庭/工厂场景。",
+    "source": "aihot:tip",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-01",
+    "title": "地理围栏搜查被认定为“搜索”，隐私红线在往开发者这边靠",
+    "watch": "盯 Apple、Google 后续对位置历史、设备侧存储、执法请求的产品改动；这些会直接影响开发者能拿到什么数据。",
+    "source": "RSS:Daring Fireball",
+    "status": "open"
   }
 ]
