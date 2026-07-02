@@ -1,68 +1,5 @@
 [
   {
-    "date": "2026-06-01",
-    "title": "Claude 的“产品级隔离”比 prompt 技巧更值得抄",
-    "watch": "盯 Anthropic 后续有没有把 containment 做成可复用接口，尤其是工具调用、文件系统、浏览器、代码执行这几块。",
-    "source": "RSS:Simon Willison",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-01",
-    "title": "Python ASGI 跑进浏览器，后端小工具可能不用服务器了",
-    "watch": "盯它能不能稳定处理持久化、文件访问、跨域、离线缓存；这些不解决，就还只是 demo。",
-    "source": "RSS:Simon Willison",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-01",
-    "title": "200 英镑 V100：本地 LLM 的性价比窗口还没关",
-    "watch": "盯二手 V100 这类卡的驱动、供电、散热、显存可用性；别只看卡价，真正坑通常在电源、机箱和兼容性。",
-    "source": "aihot:tip",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-01",
-    "title": "特斯拉 FSD 横穿加拿大，自动驾驶又到了该重新定价的时候",
-    "watch": "盯独立复现，不要只看单次路线；重点看复杂城市路段、恶劣天气、接管定义、监管是否认可。",
-    "source": "aihot:industry",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-01",
-    "title": "美伊永久和平只给 27%，油价风险没消失",
-    "watch": "盯 June 30, 2026 这个合约价格有没有持续上穿 27%；如果不涨，说明停火新闻只是情绪缓和，不是风险解除。",
-    "source": "Polymarket",
-    "status": "verified"
-  },
-  {
-    "date": "2026-06-01",
-    "title": "Kharg Island 合约有 $49.1M，市场在盯伊朗石油命门",
-    "watch": "盯 Kharg Island、Iran airspace、ceasefire 这几类合约的交易量和方向是否一起异动；一起动，说明市场开始交易升级风险。",
-    "source": "Polymarket",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-01",
-    "title": "1660 亿退税都托不住消费，美股不能只靠 AI 单腿跳",
-    "watch": "盯美国消费数据和 AI 龙头财报能不能继续一起强；如果消费弱、AI 资本开支也放缓，指数会很难看。",
-    "source": "华尔街见闻",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-01",
-    "title": "MLCC 成 AI 服务器第三大成本项，瓶颈交易从 GPU 外溢了",
-    "watch": "盯服务器 BOM 里非 GPU 项目的涨价和交期，尤其是 MLCC、存储、电源、散热；如果这些继续紧，AI 毛利会被重新算账。",
-    "source": "华尔街见闻",
-    "status": "verified"
-  },
-  {
-    "date": "2026-06-01",
-    "title": "Meta 给社交产品加订阅，AI 可能变成“功能包”而不是独立 App",
-    "watch": "盯 Meta 的 AI plans 到底是单独订阅，还是混进社交订阅；后者更危险，因为分发成本低太多。",
-    "source": "RSS:Daring Fireball",
-    "status": "verified"
-  },
-  {
     "date": "2026-06-02",
     "title": "模型路由开始从“自动”变成“可控预算旋钮”",
     "watch": "盯 OpenRouter 后续有没有按任务类型给默认档位，比如 coding、search、writing 分开推荐；如果 Cursor、Replit 这类工具也跟进，说明模型路由会变成基础设施。",
@@ -921,7 +858,7 @@
     "title": "美国给 AI 数据中心开电网快车道，算力瓶颈被政策硬拆",
     "watch": "盯六大电网运营商 30 天报告里到底还有多少剩余容量，以及数据中心是否被要求承担更高并网费用。",
     "source": "aihot:industry",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-06-19",
@@ -1131,7 +1068,7 @@
     "title": "韩股熔断叠加霍尔木兹油轮密集通过，风险不是单线条",
     "watch": "盯韩股是否继续出现熔断级别波动，以及霍尔木兹航运是否保持近 40 艘这种高频通行状态；一个影响芯片链，一个影响油价和黄金。",
     "source": "华尔街见闻",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-06-24",
@@ -1299,7 +1236,7 @@
     "title": "对冲基金不是减仓科技股，是在创纪录地跑",
     "watch": "盯 Mag 7 和半导体能不能止住连续净卖；如果芯片股继续被抛，纳指反弹也可能只是技术反抽。",
     "source": "华尔街见闻",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-06-29",
@@ -1376,7 +1313,7 @@
     "title": "韩国内存厂砸 5900 亿美元，说明 AI 瓶颈已经不只在 GPU",
     "watch": "盯三星、SK 海力士这些产能到底投向 HBM 还是普通 DRAM；如果内存长约继续增加，说明下游已经怕缺货了。",
     "source": "aihot:industry",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-06-30",
@@ -1467,6 +1404,76 @@
     "title": "地理围栏搜查被认定为“搜索”，隐私红线在往开发者这边靠",
     "watch": "盯 Apple、Google 后续对位置历史、设备侧存储、执法请求的产品改动；这些会直接影响开发者能拿到什么数据。",
     "source": "RSS:Daring Fireball",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-02",
+    "title": "Meta 的 AI 存储瓶颈，其实是在保 GPU 利用率",
+    "watch": "盯 Tectonic 分层存储、BLOB 元数据路径、GPU 利用率这几个关键词，后面开源 infra 和云厂商大概率会抄这条线。",
+    "source": "aihot:tip",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-02",
+    "title": "Claude Code 开始补“后台 agent 等人”的短板",
+    "watch": "盯 Claude Code 后续有没有把 agent_needs_input 接到 IDE、浏览器、桌面通知和 CI 流程里；只在终端里提醒，价值会打折。",
+    "source": "aihot:ai-products",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-02",
+    "title": "NVIDIA 在试探扩散语言模型，不只是又发一个小模型",
+    "watch": "别只看 benchmark，盯它在代码补全、结构化输出、长文本修改这几类任务上有没有真实 demo；这些才跟开发工作流有关。",
+    "source": "aihot:ai-models",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-02",
+    "title": "OpenAI 把顶级模型拆成多个 Pro，说明“一个最强模型打天下”不够用了",
+    "watch": "盯 OpenAI 后续 API 会不会开放这些 Pro 变体的显式选择；如果只在产品里暗箱路由，开发者可控性会很差。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-02",
+    "title": "AWS 砸钱派工程师驻场，说明 AI 落地卡在“客户不会用”",
+    "watch": "盯 AWS 这批驻场项目最后沉淀成什么产品包；如果变成标准化方法论，Azure 和 Google Cloud 很快会跟。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-02",
+    "title": "北美电网开始变成 AI 资本开支的硬天花板",
+    "watch": "盯北美数据中心并网审批、电价合同、云厂商 capex 指引；如果管理层开始频繁谈电力约束，AI 交易的叙事会变硬。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-02",
+    "title": "油价从断供恐慌切到过剩交易，降息叙事会被重新点燃",
+    "watch": "盯欧央行和美联储接下来怎么解释油价下行；如果他们不愿顺着油价讲宽松，市场会失望。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-02",
+    "title": "巴西大选市场已经明显偏向 Lula",
+    "watch": "盯 Lula 这条合约有没有跌破 60%；如果跌破，说明市场开始重新定价巴西政策连续性。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-02",
+    "title": "法国极右翼风险，市场现在没那么信",
+    "watch": "盯这个 8% 是不是持续上行；如果只是新闻热、价格不动，就别被标题党带节奏。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-02",
+    "title": "Bending Spoons 上市首日涨 40%，老软件翻新这门生意还没死",
+    "watch": "盯它后续财报里并购品牌的增长质量；如果只是金融工程，40% 很快会被打回去。",
+    "source": "RSS:TechCrunch",
     "status": "open"
   }
 ]
