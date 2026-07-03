@@ -1,68 +1,5 @@
 [
   {
-    "date": "2026-06-02",
-    "title": "模型路由开始从“自动”变成“可控预算旋钮”",
-    "watch": "盯 OpenRouter 后续有没有按任务类型给默认档位，比如 coding、search、writing 分开推荐；如果 Cursor、Replit 这类工具也跟进，说明模型路由会变成基础设施。",
-    "source": "aihot:ai-products",
-    "status": "verified"
-  },
-  {
-    "date": "2026-06-02",
-    "title": "Cursor Teams 把“第一方模型”和“第三方 API”分账了",
-    "watch": "盯 Cursor 后面会不会继续把 Composer 做成默认入口；如果 Premium 席位成主推，那个人开发者的高强度用法可能会被价格逼着换工具链。",
-    "source": "aihot:ai-products",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-02",
-    "title": "Alphabet 为 AI 基建募 800 亿美元，已经不是“多买点 GPU”了",
-    "watch": "盯 Alphabet 后续资本开支指引和自由现金流变化；如果其他巨头也跟着股权融资，AI 估值逻辑就要从“高利润软件”切到“重资产基础设施”。",
-    "source": "aihot:industry",
-    "status": "verified"
-  },
-  {
-    "date": "2026-06-02",
-    "title": "Runway 去伦敦建世界模型中心，物理 AI 在抢欧洲人才",
-    "watch": "盯 Runway 伦敦研究中心第一批模型或论文；尤其看它有没有从视频生成指标，转向动作预测、仿真一致性这类物理指标。",
-    "source": "aihot:industry",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-02",
-    "title": "美股新高叠加油价暴拉，AI 多头开始吃地缘风险",
-    "watch": "盯美油涨幅能不能回吐，以及中东停火叙事是否继续反复；如果油价涨势持续，美股 AI 票的估值会先被利率预期压一轮。",
-    "source": "华尔街见闻",
-    "status": "verified"
-  },
-  {
-    "date": "2026-06-02",
-    "title": "CME 加密衍生品开始周末交易，币圈更像传统金融了",
-    "watch": "盯后续周末名义成交额能不能继续放大；如果成交从 5000 万美元往上走，CME 周末价格会越来越像机构锚点。",
-    "source": "华尔街见闻",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-02",
-    "title": "OpenBMB 开源 600B+ tokens 数据集，中文模型补了最缺的一块",
-    "watch": "盯 HuggingFace 上基于 UltraData 微调的新模型；尤其看中文长文、代码注释、知识问答有没有明显改善。",
-    "source": "aihot:ai-products",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-02",
-    "title": "NVIDIA 把本地 agent 机器规格打到 128GB 统一内存",
-    "watch": "盯 RTX Spark 的实际售价、功耗和本地模型吞吐；如果开发者社区开始适配 OpenShell，本地 agent 工具链会明显提速。",
-    "source": "aihot:ai-products",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-02",
-    "title": "把一本书变成 AI Skill，比收藏读书笔记有用",
-    "watch": "盯 Claude Skill 生态有没有出现更多高质量模板；尤其是健康、投资、写作这类可复用流程，谁先模板化谁就省时间。",
-    "source": "aihot:tip",
-    "status": "verified"
-  },
-  {
     "date": "2026-06-03",
     "title": "本地电脑使用智能体开始卷小模型了",
     "watch": "盯 Holo3.1 在桌面、网页、移动环境里的实际 demo，尤其是 0.8B 和 4B 能不能稳定完成真实电脑任务。",
@@ -1439,7 +1376,7 @@
     "title": "AWS 砸钱派工程师驻场，说明 AI 落地卡在“客户不会用”",
     "watch": "盯 AWS 这批驻场项目最后沉淀成什么产品包；如果变成标准化方法论，Azure 和 Google Cloud 很快会跟。",
     "source": "aihot:industry",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-07-02",
@@ -1474,6 +1411,69 @@
     "title": "Bending Spoons 上市首日涨 40%，老软件翻新这门生意还没死",
     "watch": "盯它后续财报里并购品牌的增长质量；如果只是金融工程，40% 很快会被打回去。",
     "source": "RSS:TechCrunch",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-03",
+    "title": "别只盯 SEO，Agent 已经能帮你抓业务盲区了",
+    "watch": "盯这类流程能不能沉淀成可复用模板：比如“流量异常排查”“成本异常排查”“投放归因排查”，而不是每次靠灵感临时 prompt。",
+    "source": "aihot:tip",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-03",
+    "title": "Agent 真能干活了，但还不是“替代程序员”那种干活",
+    "watch": "盯 RLI 后续有没有继续公布同一套 240 个任务的结果；如果自动化率涨，但验收标准没变，那比模型发布会更有含金量。",
+    "source": "aihot:tip",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-03",
+    "title": "企业开始给旗舰模型限流，AI 成本焦虑已经进财务室",
+    "watch": "盯 Claude Enterprise、Copilot、Cursor 会不会继续推“按团队/任务/模型”的成本控制；谁先把成本可视化做好，谁更容易进企业。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-03",
+    "title": "韩国要自己堆 AI 算力，主权 AI 不只是口号了",
+    "watch": "盯韩国这笔钱最后是不是正式落地，尤其是 Vera Rubin GPU 模块采购；如果落地，说明下一轮算力需求不只靠美国大厂撑。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-03",
+    "title": "OpenAI 想让美国政府上车，AI 巨头开始往“准国家队”走",
+    "watch": "盯美国政府是否真的接受持股，以及这 5% 会不会和政府采购、国家安全、芯片准入绑定。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-03",
+    "title": "预测市场对比特币没那么亢奋，年底破高位的赔率很冷",
+    "watch": "盯 80000、85000、95000 三档概率怎么动；如果 95000 这一档持续抬升，说明风险偏好真的回来了。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-03",
+    "title": "Copilot 接入开源权重模型，开发工具的模型锁定开始松了",
+    "watch": "盯 Copilot 后面是否继续接入更多开源权重模型；如果模型选择器变成常态，AI 编程工具会从“产品竞争”变成“模型路由竞争”。",
+    "source": "aihot:ai-products",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-03",
+    "title": "Google AI 用电暴涨，AI 成本最后会落到电价和电网",
+    "watch": "盯 Google 后续披露的数据中心电力成本、可再生能源采购和新机房选址；这些比“又发一个模型”更接近真实瓶颈。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-03",
+    "title": "Fitbit 数据有了开源 CLI，健康数据终于更容易自己分析",
+    "watch": "盯它后续是否稳定支持 Fitbit 数据导出，以及 40 种数据类型里哪些能长期无痛拉取；能不能自动化，比界面好不好看更重要。",
+    "source": "aihot:ai-products",
     "status": "open"
   }
 ]
