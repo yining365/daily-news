@@ -1,201 +1,5 @@
 [
   {
-    "date": "2026-06-03",
-    "title": "本地电脑使用智能体开始卷小模型了",
-    "watch": "盯 Holo3.1 在桌面、网页、移动环境里的实际 demo，尤其是 0.8B 和 4B 能不能稳定完成真实电脑任务。",
-    "source": "aihot:ai-models",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-03",
-    "title": "推理模型的下一战是 KV-cache 成本",
-    "watch": "盯它在长上下文、多轮 agent、代码任务里的实际延迟和价格；如果 22% 能换成真实调用成本下降，就不是 PPT 优化。",
-    "source": "aihot:ai-models",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-03",
-    "title": "存储短缺不是短炒，SK 海力士直接看到 2030 年",
-    "watch": "盯 SK 海力士后续资本开支、HBM 订单和 AI PC 需求，关键是“紧张到 2030 年”会不会被同行扩产打穿。",
-    "source": "aihot:industry",
-    "status": "verified"
-  },
-  {
-    "date": "2026-06-03",
-    "title": "Uber 用 AI 用到 4 个月就开始限额",
-    "watch": "盯大厂是否从“鼓励使用 AI”转成“按团队、项目、权限限额”，这会影响 Copilot、Claude、Cursor 这类工具的增长质量。",
-    "source": "RSS:TechCrunch",
-    "status": "verified"
-  },
-  {
-    "date": "2026-06-03",
-    "title": "职位空缺飙到 762 万，降息叙事被戳了一下",
-    "watch": "盯 6 月美联储决议和职位空缺后续修正，如果就业继续硬，市场对降息的乐观会被压回去。",
-    "source": "华尔街见闻",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-03",
-    "title": "内塔尼亚胡下台概率被打到 50%",
-    "watch": "盯美以分歧是否继续公开化，以及这个合约 Yes 是否突破 50%；突破后，市场可能会把中东风险从“冲突事件”重定价成“政权变化”。",
-    "source": "Polymarket",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-03",
-    "title": "金融机构正在把交易数据做成基础模型",
-    "watch": "盯银行、支付公司是否开始公开“交易基础模型”案例，尤其是风控、信用、个性化投顾这些能直接变现的场景。",
-    "source": "aihot:ai-products",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-03",
-    "title": "把 120 刀清理软件做成开源 skill，这比玩具 demo 实用",
-    "watch": "盯这个 skill 是否支持更多跨平台清理规则，以及能不能形成“只读分析—确认—执行”的安全流程。",
-    "source": "aihot:tip",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-03",
-    "title": "印度极端高温单日或致 3400 人死亡",
-    "watch": "盯印度高温是否继续推高死亡、停电和医疗挤兑新闻；对个人来说，夏季训练、睡眠和补水策略要提前调。",
-    "source": "华尔街见闻",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-04",
-    "title": "业务分析智能体已经能替掉大部分临时查数",
-    "watch": "盯 Anthropic 后续有没有公开这套分析栈的模板、权限设计、验证流细节；如果有，直接拿来改成个人投资和工作数据助手。",
-    "source": "aihot:tip",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-04",
-    "title": "AI 攻击者已经从“脚本小子”升级成半自动红队",
-    "watch": "盯 Anthropic、OpenAI、Cursor 这类工具后续怎么做权限隔离、命令确认、敏感文件访问审计；只要 agent 能动终端，就别裸奔。",
-    "source": "aihot:paper",
-    "status": "verified"
-  },
-  {
-    "date": "2026-06-04",
-    "title": "开源语音模型把实时语音智能体门槛打下来了",
-    "watch": "盯 GitHub 权重、商用许可、中文效果、长文本稳定性；如果中文和情绪控制过关，语音笔记、会议复盘、陪跑型健康助手都能做。",
-    "source": "aihot:ai-models",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-04",
-    "title": "物理 AI 开始用“规模化训练”复制大模型路线",
-    "watch": "盯 GraspGen-X 有没有开放模型或商业 SDK；如果“任意末端执行器”能稳定落地，仓储和制造会先吃到红利。",
-    "source": "aihot:paper",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-04",
-    "title": "让 LLM 自己维护知识库，比每次重聊更接近长期记忆",
-    "watch": "盯它怎么处理冲突知识、过期内容、引用来源；如果只会堆文本没用，能自动删旧、标版本才有价值。",
-    "source": "aihot:tip",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-04",
-    "title": "DeepSeek 如果真按这个价融资，国产模型战要换牌桌了",
-    "watch": "盯融资是否正式落地、腾讯和宁德时代是否出现在最终名单；如果产业资本真进来，重点看 DeepSeek 接下来是不是往企业私有化和端侧场景走。",
-    "source": "aihot:industry",
-    "status": "verified"
-  },
-  {
-    "date": "2026-06-04",
-    "title": "Suno 的估值说明音乐生成还没被版权风险吓退",
-    "watch": "盯 Suno 后续怎么处理训练数据、版权分成、商业授权；如果它能把版权问题产品化，AI 内容平台的估值逻辑会被重写。",
-    "source": "aihot:industry",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-04",
-    "title": "AI 算力交易从芯片扩到电力和融资结构",
-    "watch": "盯 OpenAI 的算力融资平台怎么落地，以及谷歌是不是继续减少对博通依赖；如果大客户开始自研或换供应商，AI 硬件链会重新分配利润。",
-    "source": "华尔街见闻",
-    "status": "verified"
-  },
-  {
-    "date": "2026-06-04",
-    "title": "VOO 到万亿美元，指数投资正在变成市场本身",
-    "watch": "盯 VOO 后续资金流和标普权重集中度；如果科技巨头继续吃掉指数权重，你买标普其实是在加仓少数巨头。",
-    "source": "华尔街见闻",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-04",
-    "title": "以色列政治风险不是尾部，市场已经给到高概率",
-    "watch": "盯 2026 年底前以色列政府联盟是否破裂、停火谈判是否反复；如果政治风险继续升，黄金可能比美股更先反应。",
-    "source": "Polymarket",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-05",
-    "title": "智能体评测开始往真实业务流程走了",
-    "watch": "盯 EVA-Bench 后面有没有更多真实企业流程接入，尤其是 ITSM 这种跟开发者日常更近的场景。",
-    "source": "aihot:paper",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-05",
-    "title": "OpenRouter 用实战游戏测模型，静态榜单更不够用了",
-    "watch": "盯 OpenRouter 后续有没有把 Claude、Grok 等模型的胜率、耗时、成本拆开；这会直接影响你怎么配路由和预算。",
-    "source": "aihot:tip",
-    "status": "verified"
-  },
-  {
-    "date": "2026-06-05",
-    "title": "安全模型开始变成企业 agent 的基础件",
-    "watch": "盯它的自定义策略执行效果，特别是长上下文、多模态输入下会不会误杀正常请求。",
-    "source": "aihot:ai-models",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-05",
-    "title": "网页已经不是给人看的了，机器人流量过半",
-    "watch": "盯 Cloudflare Radar 后续几周这个比例会不会继续压过真人，尤其是 AI 抓取和普通爬虫有没有拆分数据。",
-    "source": "aihot:industry",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-05",
-    "title": "DeepSeek 在 OpenRouter 上不是一日热度，是连续占位",
-    "watch": "盯 OpenRouter 排行榜，如果 DeepSeek 继续守住第一，说明开发者侧迁移不是短期尝鲜。",
-    "source": "aihot:industry",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-05",
-    "title": "博通这一下，是 AI 交易在重新算安全边际",
-    "watch": "盯接下来半导体财报里订单、毛利率、AI 收入指引，尤其是“业绩好但股价跌”的情况有没有扩散。",
-    "source": "华尔街见闻",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-05",
-    "title": "Arm 估值已经打到非常贵，指数里隐含的 AI 乐观不低",
-    "watch": "盯 Arm 后续授权收入、AI 服务器相关叙事，以及市盈率有没有继续扩张。",
-    "source": "华尔街见闻",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-05",
-    "title": "伊朗和平协议定价不高，油价风险还没消失",
-    "watch": "盯这个合约 Yes 是否继续上行；如果迟迟压在低位，油价和黄金的风险溢价就别急着当噪音。",
-    "source": "Polymarket",
-    "status": "verified"
-  },
-  {
-    "date": "2026-06-05",
-    "title": "手机被动测心率这条线，比手环更值得盯",
-    "watch": "盯它能不能进 Android 或 Pixel 级系统功能，以及误差在暗光、运动后、不同肤色下会不会稳定。",
-    "source": "aihot:paper",
-    "status": "open"
-  },
-  {
     "date": "2026-06-08",
     "title": "检索智能体开始学“怎么找证据”了",
     "watch": "盯 Harness-1 后面有没有开源权重、训练环境、评测集；如果只是论文故事，价值打折。",
@@ -1390,7 +1194,7 @@
     "title": "油价从断供恐慌切到过剩交易，降息叙事会被重新点燃",
     "watch": "盯欧央行和美联储接下来怎么解释油价下行；如果他们不愿顺着油价讲宽松，市场会失望。",
     "source": "华尔街见闻",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-07-02",
@@ -1432,7 +1236,7 @@
     "title": "企业开始给旗舰模型限流，AI 成本焦虑已经进财务室",
     "watch": "盯 Claude Enterprise、Copilot、Cursor 会不会继续推“按团队/任务/模型”的成本控制；谁先把成本可视化做好，谁更容易进企业。",
     "source": "aihot:industry",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-07-03",
@@ -1474,6 +1278,62 @@
     "title": "Fitbit 数据有了开源 CLI，健康数据终于更容易自己分析",
     "watch": "盯它后续是否稳定支持 Fitbit 数据导出，以及 40 种数据类型里哪些能长期无痛拉取；能不能自动化，比界面好不好看更重要。",
     "source": "aihot:ai-products",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-06",
+    "title": "美团 LongCat-2.0 开源，不是“又一个国产模型”",
+    "watch": "盯它在真实 agent 任务里的表现，尤其是 1M token 上下文会不会只是“能塞进去”，还是能稳定检索、改代码、跨文件推理。",
+    "source": "aihot:ai-models",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-06",
+    "title": "英伟达 Kyber 延到 2028，AI 算力瓶颈又换地方了",
+    "watch": "盯英伟达下一次对 NVL144 / Kyber 的交付口径，以及云厂商有没有把订单节奏往后挪。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-06",
+    "title": "Claude Design 提示词被拆出来，重点不是抄，是看 Anthropic 怎么管输出",
+    "watch": "盯这个仓库后续有没有继续同步 Claude Design 的系统约束，尤其是组件生成、无障碍检查、设计一致性这些部分。",
+    "source": "aihot:tip",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-06",
+    "title": "Simon 用 Claude 写 sqlite-utils，账单只有 $149.25",
+    "watch": "盯 sqlite-utils 4.0 正式版发布后有没有回滚、bug 激增、维护负担上升；这比一次性成本更说明问题。",
+    "source": "RSS:Simon Willison",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-06",
+    "title": "OPEC+ 继续加桶，油价这边在帮美联储",
+    "watch": "盯 8 月配额执行情况，以及油价是否真的跟着增产走弱；如果只是纸面增产，市场会很快反应过来。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-06",
+    "title": "2028 共和党赔率：Vance 已经明显领先",
+    "watch": "盯 Vance 和 Rubio 的价差有没有收窄；如果 Rubio 上来，说明市场在重新押“更传统”的共和党路线。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-06",
+    "title": "500 字节画世界地图，提醒一下：工程能力不是堆 token",
+    "watch": "盯作者有没有放出实现细节和代码；这种小项目最值得看的不是成品，是中间怎么取舍。",
+    "source": "RSS:Simon Willison",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-06",
+    "title": "欧盟 Chat Control 2.0 快速推进，加密聊天可能被迫开洞",
+    "watch": "盯欧洲议会接下来怎么表态，尤其是是否保留“无差别扫描”这条；如果保留，安全通信产品会被迫选边站。",
+    "source": "aihot:industry",
     "status": "open"
   }
 ]
