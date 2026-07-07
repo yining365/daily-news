@@ -1313,7 +1313,7 @@
     "title": "OPEC+ 继续加桶，油价这边在帮美联储",
     "watch": "盯 8 月配额执行情况，以及油价是否真的跟着增产走弱；如果只是纸面增产，市场会很快反应过来。",
     "source": "华尔街见闻",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-07-06",
@@ -1334,6 +1334,62 @@
     "title": "欧盟 Chat Control 2.0 快速推进，加密聊天可能被迫开洞",
     "watch": "盯欧洲议会接下来怎么表态，尤其是是否保留“无差别扫描”这条；如果保留，安全通信产品会被迫选边站。",
     "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-07",
+    "title": "Meta 把算力租到印度，重点不是便宜，是数据主权",
+    "watch": "盯 Meta 后面是不是继续在印度加数据中心，以及其他大厂有没有跟进本地算力租赁。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-07",
+    "title": "腾讯 Hy3 用 Apache 2.0，国产开源模型开始认真抢开发者",
+    "watch": "盯 Hugging Face 上 Hy3 后续有没有 demo、推理代码、量化版本和社区二创；没有生态，许可证再友好也只是摆设。",
+    "source": "RSS:Simon Willison",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-07",
+    "title": "sqlite-utils 到 4.0rc3，小工具稳定性比大框架更值钱",
+    "watch": "盯 4.0 正式版什么时候发，以及 breaking changes；如果 API 稳了，可以把它放进自己的数据处理 agent 模板里。",
+    "source": "RSS:Simon Willison",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-07",
+    "title": "Markdown 在苹果 27 系统里有了官方 UTI，文件流转会少很多脏活",
+    "watch": "盯 27 系统正式版里这个 UTI 是否保留，以及主流编辑器会不会跟进调用。",
+    "source": "RSS:Daring Fireball",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-07",
+    "title": "存储三巨头可能养出了中国对手，AI 供应链没那么稳",
+    "watch": "盯后面三大存储厂商财报里对中国竞争、AI 需求、库存周期的说法；这会影响“卖芯片、买云”这条交易逻辑。",
+    "source": "RSS:Stratechery",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-07",
+    "title": "沙特一次降油价 11 美元，通胀这边又被按了一下",
+    "watch": "盯接下来原油现货价、美国通胀数据、能源股表现；如果油跌但股也跌，市场交易的就不是“降通胀”，而是“需求坏了”。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-07",
+    "title": "以色列政治风险没消失，Netanyahu 下台赔率还有 40%",
+    "watch": "盯以色列国内联盟稳定性、停火谈判、内阁变化；只要下台概率继续抬，油金可能会重新被地缘风险拉动。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-07",
+    "title": "比特币到 95,000 美元的赔率只有 12%，市场没你刷 X 时那么嗨",
+    "watch": "盯 $80,000、$85,000、$95,000 三档赔率有没有同步上移；只涨一档不是牛市重定价，三档一起涨才算。",
+    "source": "Polymarket",
     "status": "open"
   }
 ]
