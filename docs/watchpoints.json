@@ -1,68 +1,5 @@
 [
   {
-    "date": "2026-06-08",
-    "title": "检索智能体开始学“怎么找证据”了",
-    "watch": "盯 Harness-1 后面有没有开源权重、训练环境、评测集；如果只是论文故事，价值打折。",
-    "source": "aihot:ai-models",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-08",
-    "title": "模型价格要看缓存命中率，别只看标价",
-    "watch": "盯 OpenRouter 上 Opus 4.8 的缓存命中率和历史流量变化；如果命中率稳定高，贵模型未必真贵。",
-    "source": "aihot:ai-products",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-08",
-    "title": "ChatGPT 不想当聊天框了，它想当入口",
-    "watch": "盯 Codex 是不是直接进 ChatGPT 主界面；再看 Canva、Booking 这种第三方应用有没有真实可执行动作，不只是展示卡片。",
-    "source": "aihot:industry",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-08",
-    "title": "本源量子拿到 30 亿元，国产硬科技还在被硬投",
-    "watch": "盯本源量子后续是否冲刺 IPO；如果 30 亿元之后还只是融资故事，那二级市场别急着跟概念。",
-    "source": "华尔街见闻",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-08",
-    "title": "纳指暴跌 4.18%，AI 信仰开始被市场要发票了",
-    "watch": "盯 SpaceX IPO 文件里“卖算力”的收入占比；再盯纳指能不能修复 4.18% 这根跌幅。",
-    "source": "华尔街见闻",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-08",
-    "title": "内塔尼亚胡年底前下台，市场已经定到 50%",
-    "watch": "盯这个合约是否从 50% 往上突破；如果同步出现更高交易量，说明市场开始押以色列政治重组。",
-    "source": "Polymarket",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-08",
-    "title": "Symbolica 2.0 值得看，符号计算在回潮",
-    "watch": "盯它后续有没有被 Python/Rust 项目接入；如果只是 HN 热闹，热度会很快散。",
-    "source": "aihot:tip",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-08",
-    "title": "Datasette 开始让 agent 直接改数据了",
-    "watch": "盯 0.1a0 后续是否加入权限、回滚、审计；没有这些，agent 改数据就是事故预备役。",
-    "source": "RSS:Simon Willison",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-08",
-    "title": "北海道农民用 Codex，这比很多 AI Demo 真",
-    "watch": "盯这种案例有没有从个人折腾变成模板化方案；比如农业传感器、LINE 机器人、Codex 自动化能不能复用。",
-    "source": "aihot:tip",
-    "status": "open"
-  },
-  {
     "date": "2026-06-09",
     "title": "智能体不是“更会聊”，是开始替你跑完整任务了",
     "watch": "盯这类实验有没有从搜索任务扩展到编码、数据分析、投研整理；尤其看有没有公开任务集和失败案例，不然容易变成漂亮 Demo。",
@@ -1446,13 +1383,69 @@
     "title": "市场押注美联储 7 月不动，降息交易别太上头",
     "watch": "盯 2026 年 7 月会议前的通胀、就业、原油冲击；如果“不变”赔率继续压着，成长股估值弹性会受限制。",
     "source": "Polymarket",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-07-08",
     "title": "美国自主地面车已经上乌克兰战场，机器人不是 PPT 了",
     "watch": "盯乌克兰战场上自主车辆的损耗率、补给效率、远程控制依赖度；如果能稳定执行物流任务，下一步就是更复杂的战术任务。",
     "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-09",
+    "title": "伊朗 Kharg Island 风险只有 5%，但这是油价尾部雷",
+    "watch": "盯 August 31 前这个合约是不是还卡在 5%；如果开始脱离个位数，说明市场从“嘴炮冲突”切到“能源设施风险”。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-09",
+    "title": "法国大选定价很碎，欧洲资产还没给极端结果打满折",
+    "watch": "盯 Philippe 和 Le Pen 谁先拉开差距；现在 26% 对 25%，市场其实没方向。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-09",
+    "title": "智谱配售不是利好兑现，是市场在重新给中国 AI 公司估值",
+    "watch": "盯配售完成后的股价能不能守住；如果大额配售后还不塌，说明机构真在加中国 AI 风险敞口。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-09",
+    "title": "美国实际利率创逾一年新高，AI 牛市的估值地板在变硬",
+    "watch": "盯实际利率是不是继续维持在逾一年高位；如果油价也继续推通胀预期，科技股会先感到疼。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-09",
+    "title": "Bun 要重写成 Rust，这不是语言洁癖，是基础设施路线切换",
+    "watch": "盯 Bun 后续有没有给出迁移范围、性能数据、兼容性破坏点；没有这些，重写就是风险，不是胜利。",
+    "source": "RSS:Simon Willison",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-09",
+    "title": "sqlite-utils 4.0 加 schema migrations，本地 agent 终于少一个脏活",
+    "watch": "盯 sqlite-utils 4.0 的 migration API 稳不稳，尤其是回滚、重复执行、多人协作时的冲突处理。",
+    "source": "RSS:Simon Willison",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-09",
+    "title": "1973 年的 chatbot 互聊，提醒你别被“会聊天”骗了",
+    "watch": "盯 GPT-Live 这类实时交互产品时，别只看自然度，重点看工具调用、长任务保持、错误恢复。",
+    "source": "RSS:Daring Fireball",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-09",
+    "title": "Mac App Store 之外能绕过图标限制，苹果体验一致性又开裂了",
+    "watch": "盯更多开发者工具会不会选择绕开 Mac App Store；如果本地 AI 应用也这么走，苹果审核对 AI 工具的约束会被削弱。",
+    "source": "RSS:Daring Fireball",
     "status": "open"
   }
 ]
