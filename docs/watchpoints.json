@@ -1,61 +1,5 @@
 [
   {
-    "date": "2026-06-09",
-    "title": "智能体不是“更会聊”，是开始替你跑完整任务了",
-    "watch": "盯这类实验有没有从搜索任务扩展到编码、数据分析、投研整理；尤其看有没有公开任务集和失败案例，不然容易变成漂亮 Demo。",
-    "source": "aihot:paper",
-    "status": "verified"
-  },
-  {
-    "date": "2026-06-09",
-    "title": "GitHub Skills 的 Teach 技能，其实是在补 agent 的“长期记忆”",
-    "watch": "盯 Teach 能不能在真实 repo 里学会团队约定，比如测试方式、命名习惯、发布流程；如果只能整理知识点，就没那么值钱。",
-    "source": "aihot:tip",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-09",
-    "title": "小米这个 1T MoE 速度信号，比“又发模型”更重要",
-    "watch": "盯它有没有公开延迟、上下文长度、真实任务质量和并发数据；只看 tokens/s 容易被“空跑速度”骗。",
-    "source": "aihot:ai-models",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-09",
-    "title": "Meta 裁白领、训蓝领，AI 基建缺的不是 PPT，是工人",
-    "watch": "盯 Meta、微软、谷歌后续有没有继续把招聘从软件岗转向数据中心建设岗；这比发布会口号更能说明 AI 投资还在不在加速。",
-    "source": "华尔街见闻",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-09",
-    "title": "美股熊市信号到 70%，现在不是无脑加仓区",
-    "watch": "盯科技股反弹是不是只靠芯片股撑着；如果广度没跟上，再涨也可能只是高拥挤反抽。",
-    "source": "华尔街见闻",
-    "status": "verified"
-  },
-  {
-    "date": "2026-06-09",
-    "title": "美伊永久和平只定到 18%，油价和黄金别按“缓和剧本”交易",
-    "watch": "盯 Polymarket 这个合约的 Yes 价格有没有持续上行；如果只是新闻驱动跳一下又回落，说明市场还是不买账。",
-    "source": "Polymarket",
-    "status": "verified"
-  },
-  {
-    "date": "2026-06-09",
-    "title": "Qwen3-VL 跑到 Android 端侧，这比云端 Demo 更接近真产品",
-    "watch": "盯实际帧率、内存占用、耗电和量化后效果；端侧模型最怕教程能跑，产品不能用。",
-    "source": "aihot:tip",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-09",
-    "title": "微信 AI 给小程序开了两种入口，国内 agent 入口战要变味了",
-    "watch": "盯自动模式审核、权限边界、失败责任怎么定；如果平台能读源码并操作页面，开发者省事，但合规和安全压力会很大。",
-    "source": "aihot:ai-products",
-    "status": "open"
-  },
-  {
     "date": "2026-06-10",
     "title": "一份产品文档直接喂出双端应用，agent 的输入正在从 prompt 变成“资料包”",
     "watch": "盯后续有没有公开视频、代码仓库、失败案例；尤其看它在真实后端、真实权限、真实脏数据下还能不能保持约 4 小时级别交付。",
@@ -1446,6 +1390,76 @@
     "title": "Mac App Store 之外能绕过图标限制，苹果体验一致性又开裂了",
     "watch": "盯更多开发者工具会不会选择绕开 Mac App Store；如果本地 AI 应用也这么走，苹果审核对 AI 工具的约束会被削弱。",
     "source": "RSS:Daring Fireball",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-10",
+    "title": "低配电脑跑 744B，重点不是炫技，是本地 MoE 的门槛塌了",
+    "watch": "盯这个 repo 后续有没有真实 benchmark，尤其是 token/s、首 token 延迟、上下文长度；如果只“能跑”但慢到不可用，就还是展示项目。",
+    "source": "aihot:ai-products",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-10",
+    "title": "NVIDIA 把 MoE 压到 75.3B，推理成本战又往前拧了一圈",
+    "watch": "盯开源权重和部署框架适配情况，尤其是 vLLM、TensorRT-LLM、Ollama 这类生态什么时候能无痛跑。",
+    "source": "aihot:ai-models",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-10",
+    "title": "ChatGPT Work 不是聊天升级，是 OpenAI 正面抢企业工作流",
+    "watch": "盯它能接哪些企业应用、权限怎么管、失败后怎么回滚；如果权限和审计做不好，公司不会真放它跑“数小时”。",
+    "source": "aihot:ai-models",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-10",
+    "title": "AI 基建要赚回 3 万亿美元，这账现在很难看",
+    "watch": "盯云厂商资本开支、GPU 租赁价格、AI 应用 ARR；如果收入没追上基建投入，AI 交易会从“成长故事”变成“折旧压力”。",
+    "source": "aihot:tip",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-10",
+    "title": "MiniMax 解禁日融资 19 亿美元，这不是扩张，是算力续命",
+    "watch": "盯 MiniMax 后续算力采购、用户付费和现金消耗；如果融资之后还要继续折价融资，说明商业化没接住成本。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-10",
+    "title": "伯南克进 Anthropic 信托，AI 治理开始吸收央行那套风险语言",
+    "watch": "盯 Anthropic 后续是否把 LTBT 权限写进产品发布、模型安全、商业合同；如果只是顾问名单，那价值有限。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-10",
+    "title": "MSCI 中国相对收益跌到 25 年低位，外资回头不是因为乐观，是因为太便宜",
+    "watch": "盯外资流入、人民币、地产政策和 PPI；如果只是估值修复，反弹会快但不一定长。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-10",
+    "title": "LinkedIn 长文超 40% 是 AI 写的，内容平台的信任成本开始爆表",
+    "watch": "盯 LinkedIn、X、Medium 是否开始标注 AI 内容；如果平台不动，第三方“内容验真”和个人信誉系统会冒出来。",
+    "source": "aihot:tip",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-10",
+    "title": "Optimus 供应链被压到每周 1000 台，人形机器人快从 demo 进产能战",
+    "watch": "盯 9 月能不能到 1000 台/周，以及年底是否真的升到 2000-2500 台/周；产能达不到，说明还是工程样机阶段。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-10",
+    "title": "Google 用 100 万亿分钟可穿戴数据训练 SensorFM，健康 AI 终于有底层模型了",
+    "watch": "盯它能不能落到睡眠、心率、活动、恢复评分这些具体任务；还要看数据是否能迁移到 Apple Watch、Garmin、Oura 这类消费设备。",
+    "source": "aihot:ai-models",
     "status": "open"
   }
 ]
