@@ -1,208 +1,5 @@
 [
   {
-    "date": "2026-06-10",
-    "title": "一份产品文档直接喂出双端应用，agent 的输入正在从 prompt 变成“资料包”",
-    "watch": "盯后续有没有公开视频、代码仓库、失败案例；尤其看它在真实后端、真实权限、真实脏数据下还能不能保持约 4 小时级别交付。",
-    "source": "aihot:tip",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-10",
-    "title": "Token 成本开始进菜单栏，AI 编程终于有了“电表”",
-    "watch": "盯它是否支持 Cursor、Codex，以及能不能按项目、模型、任务类型拆成本；如果能按 PR 或 feature 归因，就真有用了。",
-    "source": "aihot:tip",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-10",
-    "title": "德国法院把 AI 概览算成 Google 自己说的话，这刀砍到搜索商业模式了",
-    "watch": "盯 Google 是否调整欧洲 AI Overviews 的展示方式；更关键是看 OpenAI、Perplexity、Claude 的搜索回答会不会更保守、更强调来源。",
-    "source": "aihot:industry",
-    "status": "verified"
-  },
-  {
-    "date": "2026-06-10",
-    "title": "中国准备砸 2 万亿元建 AI 基建，算力战开始走“高铁模式”",
-    "watch": "盯具体资金怎么分：中央财政、地方平台、运营商、云厂商各占多少；如果开始落到数据中心订单和电力配套，才是能进财报的信号。",
-    "source": "aihot:industry",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-10",
-    "title": "美股过山车背后有 750 亿美元抽水，别只怪科技股情绪差",
-    "watch": "盯美债收益率、美元流动性、科技股是否继续跑输大盘；如果流动性压力没缓解，逢跌加仓要慢一点。",
-    "source": "华尔街见闻",
-    "status": "verified"
-  },
-  {
-    "date": "2026-06-10",
-    "title": "SpaceX 上市 15 天后指数基金可能吃掉 30% 流通股，被动资金会制造新拥挤",
-    "watch": "盯 SpaceX 是否真的上市、纳入哪些指数、自由流通股比例怎么定；如果 30% 流通股被指数基金吃掉，主动资金的边际定价会更极端。",
-    "source": "华尔街见闻",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-10",
-    "title": "Cohere 开源 30B 编码模型，重点不是大，是“只激活 3B”",
-    "watch": "盯它在真实 repo 修改、单测修复、长上下文代码理解上的表现；Coding Index 33.4 只是入场券，能不能接 Cursor/Aider 工作流才关键。",
-    "source": "aihot:ai-models",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-10",
-    "title": "Gemma 4 12B 走无编码器多模态，端侧多模态又近了一步",
-    "watch": "盯开源权重、量化版本、Ollama/LM Studio/vLLM 支持；如果社区能把音频输入跑顺，它会变成本地语音 agent 的好底座。",
-    "source": "aihot:ai-models",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-10",
-    "title": "语音智能体开始测代码切换，真正的多语言助手不能只会翻译",
-    "watch": "盯后续有没有中文-英语、粤语-普通话-英语的代码切换数据集；这类数据出来，才会真正影响国内办公语音 agent 的可用性。",
-    "source": "aihot:paper",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-11",
-    "title": "代码审查 agent 开始拼“单位经济账”了",
-    "watch": "盯 `/review` 命令后续会不会变成 Cursor 的默认工作流；如果审查质量继续涨，AI 编程的瓶颈会从“写代码”转到“谁来相信这段代码”。",
-    "source": "aihot:ai-products",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-11",
-    "title": "安全补丁正在变成漏洞提示词",
-    "watch": "盯浏览器、操作系统、云厂商会不会调整补丁披露节奏；也要盯 Replit/Socket 这类包防火墙是否变成开发环境标配。",
-    "source": "aihot:paper",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-11",
-    "title": "DiffusionGemma 真正要打的是推理延迟",
-    "watch": "盯它在真实代码生成、长上下文编辑里的质量；速度快没用，关键是 256 个 token 并行出来后，错误率会不会也并行放大。",
-    "source": "aihot:ai-models",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-11",
-    "title": "Anthropic 的算力融资已经像地产项目了",
-    "watch": "盯 Anthropic 后续模型发布频率和企业收入能不能跟上这笔 350 亿美元级别的算力承诺；如果收入跟不上，算力租赁会变成压力锅。",
-    "source": "aihot:industry",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-11",
-    "title": "甲骨文把 AI 云订单吹成了资本开支黑洞",
-    "watch": "盯甲骨文下次财报的资本开支和 RPO 是否继续同向暴涨；如果订单涨、现金流恶化，市场会重新给云厂商估值打折。",
-    "source": "华尔街见闻",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-11",
-    "title": "美伊和平定价继续往下掉",
-    "watch": "盯这个合约是否跌破 14%，以及原油、黄金是否跟着同步走强；如果概率反弹但油价不跌，说明市场在定价更深的供应风险。",
-    "source": "Polymarket",
-    "status": "invalidated"
-  },
-  {
-    "date": "2026-06-11",
-    "title": "中国 AI 基建开始补“网络短板”",
-    "watch": "盯运营商和地方枢纽节点的招标，尤其是 400Gbps/800Gbps、全光交叉、低时延入算这些关键词是不是开始变成真实订单。",
-    "source": "aihot:industry",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-11",
-    "title": "对冲基金开始用 agent 替分析师",
-    "watch": "盯它这个产品的真实业绩和回撤；如果 agent 研究能跑赢人类分析师，卖方研报和买方初级研究岗会被快速重估。",
-    "source": "aihot:industry",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-11",
-    "title": "国产 GPU 训练代码模型，重点是“全链路”",
-    "watch": "盯 9B/27B 在真实代码补全、仓库级修复、中文工程项目里的表现；如果只会刷榜，那价值有限。",
-    "source": "aihot:ai-models",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-11",
-    "title": "欧盟把 WhatsApp 入口撬开给 AI 助手",
-    "watch": "盯 Meta 会不会上诉，以及第三方 AI 助手接入 WhatsApp 后能拿到哪些权限；权限太窄就是摆设，能读写业务消息才是真入口。",
-    "source": "aihot:industry",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-12",
-    "title": "Spec 驱动开发开始变成 agent 的“工单系统”",
-    "watch": "盯这三个 Skills 能不能接进你现有的 Claude/Cursor 工作流，尤其是最后的 `validate-changes-match-specs`，它决定 agent 是“写得快”还是“真的按需求交付”。",
-    "source": "aihot:tip",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-12",
-    "title": "Codex 开始像后台工人一样定时维护仓库",
-    "watch": "盯这种循环会不会带来两个坑：一是误改代码，二是上下文漂移；如果自动审查和分类器扛不住，这套就只能当玩具。",
-    "source": "aihot:tip",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-12",
-    "title": "腾讯混元开源推理算子，重点是长文本成本被继续压低",
-    "watch": "盯它在真实 agent 场景里的端到端效果，不要只看 Attention 加速；如果 QPM 提升能稳定落到线上，多 agent 并发会更可用。",
-    "source": "aihot:ai-products",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-12",
-    "title": "OpenRouter 用帕累托曲线逼大家算模型性价比",
-    "watch": "盯 OpenRouter 后续加不加真实价格、延迟、上下文长度这些维度；只有基准没有成本，帕累托还不够狠。",
-    "source": "aihot:ai-products",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-12",
-    "title": "Prometheus 这轮融资像是在押注“AI 工程师替代制造业流程”",
-    "watch": "盯它什么时候拿出第一个可验证产品；如果一直只有“人工通用工程师”叙事没有交付，410 亿美元估值就是泡沫温度计。",
-    "source": "aihot:industry",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-12",
-    "title": "Anthropic 开始用奖学金给 Claude 铺线下部署队伍",
-    "watch": "盯 Claude Corps 之后会不会扩到企业和政府场景；如果这套跑通，Anthropic 的护城河就不只是模型能力，还有部署网络。",
-    "source": "aihot:industry",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-12",
-    "title": "高盛把 AI 资本开支看到 2027 年 1.4 万亿美元",
-    "watch": "盯科技巨头下一轮财报里的资本开支指引；只要 2027 年 1.4 万亿美元这个路径没被下修，AI 基建链就还没到散场。",
-    "source": "华尔街见闻",
-    "status": "verified"
-  },
-  {
-    "date": "2026-06-12",
-    "title": "CME 要把黄金和原油期货拉进 7×24 交易",
-    "watch": "盯 7 月底上线后的成交量和点差；如果流动性真起来，黄金的避险交易会更像加密货币那种全天候市场。",
-    "source": "华尔街见闻",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-12",
-    "title": "LLM 在战争模拟里 95% 会用战术核武器",
-    "watch": "盯后续有没有公开具体模型名称与版本；如果没有模型细节，这个 95% 只能当强烈警报，不能当最终结论。",
-    "source": "aihot:paper",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-12",
-    "title": "全自主无人机首次击毙人类士兵，AI 风险从论文进了战场",
-    "watch": "盯各国是否公布自主武器新规则；如果后续确认细节更多，AI 安全监管会从模型内容安全扩大到实体世界行动安全。",
-    "source": "aihot:industry",
-    "status": "open"
-  },
-  {
     "date": "2026-06-15",
     "title": "美国直接叫停 Anthropic 两个模型，模型访问不再只是产品问题",
     "watch": "盯 Anthropic 后续有没有恢复 Fable 5 / Mythos 5，或者把能力拆成“安全版”；也盯 OpenAI、Google 是否跟进类似访问分级。",
@@ -1278,7 +1075,7 @@
     "title": "模型便宜到快免费，贵的是数据系统",
     "watch": "盯各家 API 价格页和 agent 平台的“数据连接器、权限、长期记忆、后台任务”能力，谁先把这些做稳，谁就比单纯换大模型更有用。",
     "source": "aihot:tip",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-07-08",
@@ -1418,7 +1215,7 @@
     "title": "AI 基建要赚回 3 万亿美元，这账现在很难看",
     "watch": "盯云厂商资本开支、GPU 租赁价格、AI 应用 ARR；如果收入没追上基建投入，AI 交易会从“成长故事”变成“折旧压力”。",
     "source": "aihot:tip",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-07-10",
@@ -1460,6 +1257,62 @@
     "title": "Google 用 100 万亿分钟可穿戴数据训练 SensorFM，健康 AI 终于有底层模型了",
     "watch": "盯它能不能落到睡眠、心率、活动、恢复评分这些具体任务；还要看数据是否能迁移到 Apple Watch、Garmin、Oura 这类消费设备。",
     "source": "aihot:ai-models",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-13",
+    "title": "别拿 Grok Build CLI 碰生产仓库",
+    "watch": "盯 xAI 后续是不是发正式技术说明、版本回滚或权限开关；尤其看 `0.2.93` 之后的新版本有没有把上传范围改成显式授权。",
+    "source": "aihot:tip",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-13",
+    "title": "Ploy 把默认模型从 Opus 4.8 切到 GPT-5.6 Sol，不是口嗨，是生产切换",
+    "watch": "盯更多“默认切换”案例，而不是单次测评；尤其看有没有第二批 agent 产品把默认模型从 Anthropic 切到 OpenAI，或者反过来。",
+    "source": "aihot:tip",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-13",
+    "title": "腾讯混元 Hy3 真正有杀伤力的不是 295B，是微信入口",
+    "watch": "别只盯榜单，盯两件事：一是 Hy3 会不会开放更多 agent 场景接口，二是微信生态里有没有出现真正高频、可闭环的 AI 服务，不只是聊天入口。",
+    "source": "aihot:ai-models",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-13",
+    "title": "苹果起诉 OpenAI 挖角 400 人，AI 硬件战开始见血",
+    "watch": "盯两件事：第一，苹果和 OpenAI 的合作会不会继续降温；第二，OpenAI 硬件项目后续有没有延期、团队调整或高管公开回应。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-13",
+    "title": "霍尔木兹海峡这次不是喊单式地缘新闻，是真会打到资产价格",
+    "watch": "盯霍尔木兹通航状态有没有连续反复；如果“无法通行”和“仍对通航开放”这种相互打架的消息继续出现，市场会更容易先交易风险溢价。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-13",
+    "title": "7 月美联储按兵不动是主线，但 22% 的加息概率不能装看不见",
+    "watch": "盯本周美国 CPI 和联储官员表态；如果“通胀黏住”叙事升温，这个 `22%` 很容易继续往上顶。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-13",
+    "title": "Mindwalk 这种工具，解决的是“agent 干了啥你根本说不清”",
+    "watch": "盯它后面会不会补上团队协作和审计能力，比如多人会话对比、失败任务回放、按文件热度统计；这些一旦有了，就不是玩具了。",
+    "source": "aihot:ai-products",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-13",
+    "title": "Mesh LLM 指向的是一件更实际的事：把零散 GPU 拼成能用的私有算力",
+    "watch": "盯两件事：一是稳定性，二是调度成本；如果它能把多机路由和失败回退做顺，家庭实验室和小团队私有 AI 会更像真的。",
+    "source": "aihot:ai-products",
     "status": "open"
   }
 ]
