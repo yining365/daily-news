@@ -1,61 +1,5 @@
 [
   {
-    "date": "2026-06-15",
-    "title": "美国直接叫停 Anthropic 两个模型，模型访问不再只是产品问题",
-    "watch": "盯 Anthropic 后续有没有恢复 Fable 5 / Mythos 5，或者把能力拆成“安全版”；也盯 OpenAI、Google 是否跟进类似访问分级。",
-    "source": "RSS:Simon Willison",
-    "status": "verified"
-  },
-  {
-    "date": "2026-06-15",
-    "title": "OpenAI 拿 1.5 亿美元铺合作伙伴网络，企业 AI 开始走“微软式渠道”",
-    "watch": "盯首批 Elite 合作伙伴是谁，尤其有没有云厂商、咨询公司、垂直 SaaS；这会暴露 OpenAI 真正想先吃哪些行业。",
-    "source": "aihot:industry",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-15",
-    "title": "SpaceX 明年要上 1GW 太空算力，AI 基建开始从地面卷到轨道",
-    "watch": "盯 SpaceX 这个 1GW 计划有没有明确发射节奏、客户名单、通信带宽方案；没有客户就是故事，有客户才是产业链订单。",
-    "source": "华尔街见闻",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-15",
-    "title": "美伊协议让油价重挫 4%，市场在交易“中东风险溢价塌了”",
-    "watch": "盯油价能不能守住这次跌幅；如果霍尔木兹海峡开放兑现，市场会继续把通胀和避险交易往回打。",
-    "source": "华尔街见闻",
-    "status": "verified"
-  },
-  {
-    "date": "2026-06-15",
-    "title": "预测市场给美伊永久和平 92%，这已经不是小道消息级别了",
-    "watch": "盯 2026 年 6 月 30 日这个合约节点，以及协议里是否真的包含石油出口、霍尔木兹通行、停火监督这些硬条款。",
-    "source": "Polymarket",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-15",
-    "title": "内塔尼亚胡 2026 年底前下台定价 62%，以色列政治风险开始被重新定价",
-    "watch": "盯以色列后续是否继续对黎巴嫩、伊朗相关目标动手；只要军事动作压不住，62% 这个定价还会继续动。",
-    "source": "Polymarket",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-15",
-    "title": "Pyodide 314.0 支持把 WASM wheels 发到 PyPI，浏览器里的 Python 更像正经运行时了",
-    "watch": "盯常用 Python 包有没有开始发布 WASM wheels，尤其是数据处理、SQLite、向量检索、可视化这些包。",
-    "source": "RSS:Simon Willison",
-    "status": "open"
-  },
-  {
-    "date": "2026-06-15",
-    "title": "英国可能禁 16 岁以下儿童用社交媒体，未成年人互联网会继续收紧",
-    "watch": "盯英国是否把“under 16”写进正式法案，以及平台用什么方式验龄；验龄方案会牵出隐私、设备系统、App Store 审核一串连锁反应。",
-    "source": "RSS:TechCrunch",
-    "status": "open"
-  },
-  {
     "date": "2026-06-16",
     "title": "投机解码开始从“小修小补”变成默认推理引擎",
     "watch": "盯 SGLang 后续版本里 Spec V2 的默认开启范围，以及 DFlash 有没有被 vLLM、llama.cpp 这类推理栈跟进。",
@@ -1110,14 +1054,14 @@
     "title": "亚马逊再发 250 亿美元债，AI 资本开支开始压到债市",
     "watch": "盯大科技后续发债规模、AI 概念债券价格、以及市场会不会继续要求更高收益率来补偿 AI capex 风险。",
     "source": "华尔街见闻",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-07-08",
     "title": "SpaceX 跌近 7%，算力合同风险开始反噬 AI 概念股",
     "watch": "盯这份 450 亿算力合同的供给方、交付节奏、违约风险；如果更多 AI 公司出现“合同很大但交付不稳”，市场会重新给 AI 基建股定价。",
     "source": "华尔街见闻",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-07-08",
@@ -1439,6 +1383,69 @@
     "title": "Google 又被出版商组团告，训练数据这笔旧账还没完",
     "watch": "盯 Google 对训练数据授权口径有没有变化，也盯出版商诉讼会不会逼出新的付费数据市场。",
     "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-16",
+    "title": "自动化红队已经比人工狠太多了",
+    "watch": "盯 OpenAI 后续的 system card / model card，会不会把自动化红队变成默认发布流程；如果别家也开始公开类似成功率，说明安全门槛被整体抬高了。",
+    "source": "aihot:ai-models",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-16",
+    "title": "Anthropic 又抓到 4 种智能体坏行为",
+    "watch": "盯 Anthropic 接下来有没有把这些偏差映射到具体产品限制，比如工具调用、联网抓取、记忆写入的默认权限是否收紧。",
+    "source": "aihot:paper",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-16",
+    "title": "Claude Code 开始把 MCP 真接进可执行产物了",
+    "watch": "盯第一波被广泛接入的连接器类型：是数据库、工单、文档，还是支付/运维；如果开始出现写操作型 MCP，被接入生产流程的速度会明显加快。",
+    "source": "aihot:ai-products",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-16",
+    "title": "苹果中国版 AI 不是 PPT 了，7 月 8 日已经过备案",
+    "watch": "盯国行 Apple Intelligence 首批开放的是哪些功能，尤其是文本生成、图像理解、系统级助手调用里，阿里能力占比有多高。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-16",
+    "title": "阿里先卡住了一个最容易规模化的入口：实时语音",
+    "watch": "盯后续有没有实际终端接入，不是看论文分数，而是看它是否进入系统助手、通话、会议、车载这些高频场景。",
+    "source": "aihot:ai-models",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-16",
+    "title": "SpaceX 破发，AI 基建资产开始按“信用”而不是“故事”定价",
+    "watch": "盯后续私募二级转让价格和公司债收益率，如果 7.5% 还压不住，说明市场已经把它往高风险信用资产那边看了。",
+    "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-16",
+    "title": "预测市场对比特币 2026 年的预期，已经没那么亢奋了",
+    "watch": "盯这几个价位合约的变化速度，尤其是 80,000 和 95,000 之间的价差有没有继续拉大；如果高位合约继续走弱，说明市场更偏向防守配置。",
+    "source": "Polymarket",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-16",
+    "title": "AI 数据中心已经让美国公众多掏了 230 亿美元电费",
+    "watch": "盯各州公用事业委员会和大型数据中心项目审批，尤其是成本分摊规则会不会改；一旦改，云厂商和模型公司的边际成本会重新定价。",
+    "source": "aihot:tip",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-16",
+    "title": "3 秒声音样本就能骗走 1.5 万美元，这类风险离普通人比想象中近",
+    "watch": "盯平台和运营商会不会默认加入语音来源校验、通话告警或高风险转账确认；如果还是靠用户自己辨认，这类案子只会更多。",
+    "source": "aihot:tip",
     "status": "open"
   }
 ]
