@@ -8,15 +8,15 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 REPO_DIR="$(dirname "$SCRIPT_DIR")"
 LOG_FILE="/var/log/daily-news.log"
 LOCK_FILE="/tmp/daily-news.lock"
-ENV_FILE="/root/.config/openclaw/openclaw.env"
+ENV_FILE="/root/hermes/.env"
 
 # X 缓存路径
-export X_CACHE_FILE="/root/.openclaw/workspace/x_digest_data/x_raw_cache.jsonl"
+export X_CACHE_FILE="/root/hermes/workspace/x_digest_data/x_raw_cache.jsonl"
 
 # AI 配置
-export AI_BASE_URL="http://74.48.170.132:8317/v1"
+export AI_BASE_URL="http://64.186.228.70:8317/v1"
 export AI_API_KEY="changeme"
-export AI_MODEL="gpt-5.4"
+export AI_MODEL="gpt-5.6-luna"
 
 # Telegram 配置（从 env 文件读取）
 if [ -f "$ENV_FILE" ]; then
@@ -25,12 +25,10 @@ if [ -f "$ENV_FILE" ]; then
     set +a
 fi
 export TG_BOT_TOKEN="${TELEGRAM_BOT_TOKEN:-}"
-export TG_CHAT_ID="${TG_CHAT_ID:--5273648726}"
+# 日报内容写入 /tmp/hermes_daily_news.txt，由 Hermes cron 统一投递。
+export TG_CHAT_ID=""
 
 # 周报改走当前微信私聊，不再发 Telegram
-export WEEKLY_OPENCLAW_CHANNEL="openclaw-weixin"
-export WEEKLY_OPENCLAW_ACCOUNT_ID="6e0eb7a5339e-im-bot"
-export WEEKLY_OPENCLAW_TARGET="o9cq809CjdduOJdE5_4OlKbDZEDo@im.wechat"
 
 export TZ="Asia/Shanghai"
 

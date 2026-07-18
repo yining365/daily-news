@@ -19,9 +19,6 @@ X_CACHE_FILE = os.getenv("X_CACHE_FILE", "")
 
 TG_BOT_TOKEN = os.getenv("TG_BOT_TOKEN", "")
 TG_CHAT_ID = os.getenv("TG_CHAT_ID", "")
-WEEKLY_OPENCLAW_CHANNEL = os.getenv("WEEKLY_OPENCLAW_CHANNEL", "")
-WEEKLY_OPENCLAW_ACCOUNT_ID = os.getenv("WEEKLY_OPENCLAW_ACCOUNT_ID", "")
-WEEKLY_OPENCLAW_TARGET = os.getenv("WEEKLY_OPENCLAW_TARGET", "")
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"
@@ -353,41 +350,80 @@ def fetch_rss(limit=10):
     return items[:limit]
 
 
-def fetch_reddit(limit=10):
-    """抓取 Reddit AI 相关子版块热门帖"""
+def fetch_aihot_brief():
+    """从 aihot.virxact.com 拿当天日报，作为外部参考视角喂给 round 1 LLM。
+    返回一段 markdown 文本，失败返回空串。
+    """
+    UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+    try:
+        resp = requests.get("https://aihot.virxact.com/api/public/daily",
+                            headers={"User-Agent": UA}, timeout=15)
+        resp.raise_for_status()
+        d = resp.json()
+        parts = []
+        lead = d.get("lead") or {}
+        if lead.get("title"):
+            parts.append(f"### aihot 今日主线：{lead['title']}")
+        if lead.get("leadParagraph"):
+            lp = lead["leadParagraph"].strip()
+            if len(lp) > 400:
+                lp = lp[:398] + "…"
+            parts.append(lp)
+        for sec in d.get("sections", []):
+            label = sec.get("label", "")
+            its = sec.get("items", [])
+            if not its:
+                continue
+            parts.append(f"\n**{label}**")
+            for it in its[:3]:
+                title = (it.get("title") or "").strip()
+                if title:
+                    parts.append(f"- {title}")
+        flashes = d.get("flashes", []) or []
+        if flashes:
+            parts.append("\n**快讯**")
+            for f in flashes[:5]:
+                t = (f.get("title") or "").strip()
+                if t:
+                    parts.append(f"- {t}")
+        return "\n".join(parts)
+    except Exception as e:
+        sys.stderr.write(f"[aihot_brief] Error: {e}\n")
+        return ""
+
+
+def fetch_aihot(limit=60):
+    """从 aihot.virxact.com 拉过去 24h 的精选 AI 动态。
+    数据已经 LLM 摘要+分类，直接当数据源喂进主筛选池。
+    """
     items = []
-    subs = ["LocalLLaMA", "ChatGPT", "MachineLearning"]
-    for sub in subs:
-        try:
-            resp = requests.get(
-                f"https://www.reddit.com/r/{sub}/hot.json?limit=10",
-                headers={"User-Agent": "morning-brief/1.0"},
-                timeout=10,
-            )
-            data = resp.json()
-            for post in data.get("data", {}).get("children", []):
-                d = post.get("data", {})
-                if d.get("stickied"):
-                    continue
-                score = d.get("score", 0)
-                if score < 50:
-                    continue
-                title = d.get("title", "")
-                url = d.get("url", "")
-                if url.startswith("/r/"):
-                    url = f"https://www.reddit.com{url}"
-                selftext = (d.get("selftext", "") or "")[:200]
-                items.append({
-                    "source": f"Reddit:r/{sub}",
-                    "title": title,
-                    "url": url,
-                    "score": f"{score} upvotes",
-                    "summary": selftext,
-                })
-        except Exception as e:
-            sys.stderr.write(f"[Reddit:r/{sub}] Error: {e}\n")
-    items.sort(key=lambda x: int(x.get("score", "0").split()[0]), reverse=True)
-    return items[:limit]
+    UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+    try:
+        from datetime import datetime, timedelta, timezone
+        since = (datetime.now(timezone.utc) - timedelta(hours=24)).strftime("%Y-%m-%dT%H:%M:%SZ")
+        import urllib.parse
+        url = "https://aihot.virxact.com/api/public/items?" + urllib.parse.urlencode({
+            "mode": "selected",
+            "take": str(min(limit, 100)),
+            "since": since,
+        })
+        resp = requests.get(url, headers={"User-Agent": UA}, timeout=15)
+        resp.raise_for_status()
+        data = resp.json()
+        for it in data.get("items", []):
+            cat = it.get("category") or "ai"
+            title = it.get("title") or ""
+            if not title:
+                continue
+            items.append({
+                "source": f"aihot:{cat}",
+                "title": f"[{cat}] {title}",
+                "url": it.get("url") or "",
+                "summary": it.get("summary") or "",
+            })
+    except Exception as e:
+        sys.stderr.write(f"[aihot] Error: {e}\n")
+    return items
 
 
 # ============================================================================
@@ -421,10 +457,37 @@ def call_ai(messages, temperature=0.7):
         return None
 
 
+def _annotate_cross_source(all_items):
+    """标题相似度粗聚簇：同一事件被多个源报道时，给条目加多源计数。
+    只做信号标注不做合并，最终去留仍由 AI 决定。"""
+    def tokens(title):
+        words = re.findall(r'[a-zA-Z0-9]+', title.lower())
+        han = re.findall(r'[一-鿿]', title)
+        bigrams = {han[i] + han[i + 1] for i in range(len(han) - 1)}
+        return set(words) | bigrams
+
+    token_sets = [tokens(item.get("title", "")) for item in all_items]
+    for i, item in enumerate(all_items):
+        if not token_sets[i]:
+            continue
+        related_sources = {item["source"]}
+        for j, other in enumerate(all_items):
+            if i == j or not token_sets[j]:
+                continue
+            inter = len(token_sets[i] & token_sets[j])
+            union = len(token_sets[i] | token_sets[j])
+            if union and inter / union >= 0.4:
+                related_sources.add(other["source"])
+        if len(related_sources) > 1:
+            item["cross_sources"] = sorted(related_sources)
+
+
 def _format_items_text(all_items):
     items_text = ""
     for i, item in enumerate(all_items):
         line = f"[{i}] [{item['source']}] {item['title']}"
+        if item.get("cross_sources"):
+            line += f" | 多源信号: {len(item['cross_sources'])} 个源在报（{'/'.join(item['cross_sources'])}）"
         if item.get("prices"):
             line += f" | 定价: {item['prices']}"
         if item.get("volume"):
@@ -443,18 +506,55 @@ def _format_items_text(all_items):
     return items_text
 
 
-FEW_SHOT_GOOD = """### [12] 板块: 宏观地缘
+FEW_SHOT_GOOD = """### [12] 行动线: 动钱
 美国衰退定价跳到 38%
 结论：不是恐慌，是关税冲击消化完后的"慢衰退"共识，企业开始推迟招聘。
 信号：Polymarket Yes 38%（$12.3M），降息 3 次以上的合约从 45% 降到 31%。
-为什么重要：过 40% 企业就开始砍预算，你定投的纳指和标普要做好回撤准备。
+so what：不用动仓位，定投规则内照跑；但这周别手痒加机动仓，等非农落地再说。
 观察点：盯 4 月非农和初领失业金，连续两周 > 25 万则衰退定价可能破 50%。"""
 
 FEW_SHOT_BAD = """### 不合格的分析（不要写成这样）
 结论：OpenAI 发布了 GPT-5。  ← 陈述事实不是判断
 信号：这是一个重大进展。  ← 没数字
-为什么重要：AI 将改变世界。  ← 正确但无用
+so what：值得关注 AI 发展。  ← 不是动作，是废话
 观察点：值得持续关注。  ← 废话"""
+
+
+FEEDBACK_FILE = "/root/hermes/workspace/daily-news-feedback.jsonl"
+
+
+def _feedback_block():
+    """读取用户在飞书里的数字反馈（Hermes 记录），喂给筛选 prompt 做校准。"""
+    try:
+        if not os.path.exists(FEEDBACK_FILE):
+            return ""
+        useful, useless = [], []
+        with open(FEEDBACK_FILE, encoding="utf-8") as f:
+            for ln in f:
+                ln = ln.strip()
+                if not ln:
+                    continue
+                try:
+                    rec = json.loads(ln)
+                except Exception:
+                    continue
+                title = (rec.get("title") or "").strip()
+                if not title:
+                    continue
+                if rec.get("score") == 1:
+                    useful.append(title)
+                elif rec.get("score") == 0:
+                    useless.append(title)
+        if not useful and not useless:
+            return ""
+        lines = ["## 用户反馈校准（阿宁对历史条目的真实打分，选条时向「有用」靠拢）"]
+        for t in useful[-8:]:
+            lines.append(f"- 👍 有用：{t}")
+        for t in useless[-8:]:
+            lines.append(f"- 👎 废话：{t}")
+        return "\n".join(lines)
+    except Exception:
+        return ""
 
 
 def _load_recent_titles(days=3):
@@ -478,38 +578,42 @@ def _recent_titles_block():
 {titles_list}"""
 
 
-def ai_round1_filter_and_analyze(all_items):
+def ai_round1_filter_and_analyze(all_items, aihot_brief=""):
+    _annotate_cross_source(all_items)
     items_text = _format_items_text(all_items)
+    if aihot_brief:
+        aihot_ref_block = (
+            "## 外部参考（aihot 今日 AI 日报概览）\n"
+            "下面是另一家 AI 日报站点对今天的判断。仅作视野扩展和查漏，不要照搬它的标题/判断；\n"
+            "你的筛选要独立，但如果它点出的主线你的原始数据里也有，注意别漏掉。\n\n"
+            + aihot_brief
+        )
+    else:
+        aihot_ref_block = ""
 
-    prompt = f"""你是阿宁日报的编辑。从以下 {len(all_items)} 条原始信息中，按板块选出最有价值的条目。
+    prompt = f"""你是阿宁的决策情报员，不是新闻编辑。从以下 {len(all_items)} 条原始信息中，只挑出可能改变阿宁行动的条目。
 
-## 读者画像
+## 第一性原理
 
-阿宁，30 岁，广州，母婴电商创业者（抖音+小红书+微信社群），同时是：
-- AI 重度用户：每天用 Claude/Cursor/各种 agent 工具干活
-- 指数投资者：定投纳指、标普、沪深 300，持有黄金
-- 关注健康优化（补剂、睡眠）
+信息的价值 = 改变行动的概率 × 那个行动的价值。阿宁刷 X 和 HN 已经知道大新闻了，共识新闻对他是零价值。你的唯一任务：找出会让他「做点什么或明确不做什么」的信息。
 
-他刷 X 和 HN 已经知道大新闻了。他要你告诉他的是：漏掉了什么、没想透什么、不同领域之间有什么连接。
+## 阿宁的三条行动线（每条信息必须落到其中一条，落不到就不选）
 
-## 6 个板块（每个板块选 0-2 条，没有就跳过）
+1. **工作流/技巧** — 他每天用 Claude Code/Codex/各种 agent 干活，跑着建站流水线和自动化 cron。什么工具/模型/开发流程的变化值得他迁移或试用？什么 prompt 技巧、agent 用法、窍门值得他今天就学着用？不必非到"换工具"级别，一个能立刻上手的技巧也算。
+2. **动钱** — 他定投纳指、标普、沪深 300，持有黄金，有固定规则（基础额 10000，配比固定）。注意：他另有投资日报专线，这里只报「值得去看专线/警惕情绪化操作」级别的信号，不给操作指令。
+3. **选品池** — 他在做产品工厂（海外小工具站），跑着需求雷达。什么变化会降低某类产品的门槛、打开某个新机会、或杀死某类产品？
 
-1. **AI工程** — prompt 技巧、agent 架构、MCP、开源工具、本地模型
-2. **AI行业** — 模型发布、产品更新、融资、重大合作
-3. **商业/电商** — 电商运营、流量玩法、平台规则、商业模式
-4. **宏观/金融** — 市场异动、地缘政治、通胀、利率、预测市场
-5. **开发者/开源** — GitHub 热门项目、开发工具、技术趋势
-6. **其他值得看的** — 健康、科学、不属于以上但确实重要的
+极少数不落在三条线上但真正重大的（健康、重大范式变化），可标「其他」，一周最多一两次。
 
-## 输出格式（8-10 条，每条都详细分析）
+## 输出格式（0-5 条。今天没有就输出「今日无信号」四个字，不许硬凑）
 
 ```
-### [原始序号] 板块: 板块名
-中文标题
+### [原始序号] 行动线: 工作流技巧/动钱/选品池/其他
+直接写中文标题，不要带"中文标题："前缀
 结论：一句话判断。说人话，别端着。
 信号：原始数据里的数字。不要编造。
-为什么重要：跟阿宁有什么关系，1-2 句。
-观察点：接下来盯什么，具体到事件/数据/时间。
+so what：具体到"建议你做什么/不做什么"。必须是可执行的动作或明确的不动作，落到阿宁的真实工具链、仓位纪律或选品池。写不出具体动作的条目直接放弃。
+观察点：必须写成可判伪的预测——指标 + 阈值 + 期限（如"7 月 25 日前纳指回撤是否超 5%"）。写不成这个格式就留空，不要写"持续关注 X"这类永远不会错的话。
 来源：源名称
 链接：URL
 ```
@@ -521,17 +625,18 @@ def ai_round1_filter_and_analyze(all_items):
 - 有态度，敢下判断，别两边讨好
 - 结论要短，一句话能说清就不要两句
 
-## 准入标准
-1. 改变判断——看完想法不一样了
+## 准入标准（全部满足才能入选）
+1. 能写出具体的 so what——答不出"所以呢"就不选
 2. 有数字——不是"可能会"，是"已经到了多少"
-3. 跨领域连接——A 的事对 B 意味着什么
-4. 时效性——今天看有用，下周就没用了
+3. 时效性——今天知道和下周知道有差别
+4. 多源交叉优先——带"多源信号"标注的条目说明多个独立源同时在报；同一事件只出一条，优先选一手来源（官方公告、当事人原声），转发和二手解读放弃
 
 ## 不要选的
 - 刷 5 分钟 X 就知道的共识新闻
 - 没数据的泛泛而谈
 - 产品发布公告（除非改变格局）
 - 融资新闻（除非金额本身是信号）
+- 纯宏观叙事（投资日报专线已覆盖，除非当天异动大到要提醒他管住手）
 
 ## 合格示例
 {FEW_SHOT_GOOD}
@@ -539,15 +644,16 @@ def ai_round1_filter_and_analyze(all_items):
 ## 不合格示例
 {FEW_SHOT_BAD}
 
-## 源多样性（重要！）
-每个源最多 2 条。覆盖至少 4 个不同源。
+{_feedback_block()}
+
+{aihot_ref_block}
 
 ## 原始数据
 {items_text}
 
 {_recent_titles_block()}
 
-宁缺毋滥。8-10 条，每条都详细分析。标题必须中文。"""
+宁缺毋滥，0 条是合格答案。标题必须中文。"""
 
     messages = [
         {"role": "system", "content": "你是阿宁的信息助理。说人话，别端着。规则：1) 每句话有信息量，废话删掉；2) 只用原始数据里的数字，不编造；3) 写得像朋友聊天，不像写报告；4) 所有标题用中文。"},
@@ -568,7 +674,7 @@ def ai_round2_synthesize(round1_output, all_items):
 好的（照这个水平写，可以更长）：
 "今天最核心的一条，不是"AI 又有新模型"，而是大家都开始从拼概念，转去拼"能不能长期跑、能不能赚钱、能不能接真实数据"。记忆层、agent 调度层、开源企业栈在补基础设施；邮件、前端性能、小程序式工具在补最后一公里；小米利润和港股平台反弹，则是在提醒市场：能活着把效率做出来的公司，估值会重新拿回来。
 
-说白了，市场现在奖赏的不是最会讲故事的人，而是最会把系统拧顺的人。无论你做 AI、电商还是投资，接下来都别再盯"哪个最强"，要盯"哪个能复用、能落地、能形成经营杠杆"。"
+说白了，市场现在奖赏的不是最会讲故事的人，而是最会把系统拧顺的人。无论你做 AI 还是投资，接下来都别再盯"哪个最强"，要盯"哪个能复用、能落地、能形成经营杠杆"。"
 
 差的：
 "今天科技领域有多个重要进展，金融市场也有新动向。" ← 废话
@@ -583,7 +689,7 @@ def ai_round2_synthesize(round1_output, all_items):
 
 **可以跳过的：** 大家都在聊但没啥新信息的。敢点名，别怂。
 
-**下周盯这几个：** 2-3 个具体的事——某个日期、某个数据、某个人的决定。不要"持续关注 AI 发展"这种废话。尽量跟阿宁的业务挂钩（电商、AI 工具、投资）。
+**下周盯这几个：** 2-3 个具体的事——某个日期、某个数据、某个人的决定。不要"持续关注 AI 发展"这种废话。尽量跟阿宁的关注挂钩（AI 工具、投资、宏观）。
 
 ## 已筛选分析
 {round1_output}
@@ -596,7 +702,7 @@ def ai_round2_synthesize(round1_output, all_items):
 （内容）"""
 
     messages = [
-        {"role": "system", "content": '你是阿宁，30 岁，做母婴电商也搞 AI。说话直接、有态度，像跟哥们聊天。三个原则：1) 有立场，不和稀泥；2) 说具体的，"盯下周四的 CPI"比"关注通胀"有用一万倍；3) 敢说某条热门新闻是噪音。'},
+        {"role": "system", "content": '你是阿宁，30 岁，AI 工程师 + 指数投资者。说话直接、有态度，像跟哥们聊天。三个原则：1) 有立场，不和稀泥；2) 说具体的，"盯下周四的 CPI"比"关注通胀"有用一万倍；3) 敢说某条热门新闻是噪音。'},
         {"role": "user", "content": prompt},
     ]
     return call_ai(messages, temperature=0.5)
@@ -635,6 +741,10 @@ def generate_degraded_output(all_items):
 # ============================================================================
 # 解析 AI 输出
 # ============================================================================
+
+def _clean_generated_title(title):
+    return re.sub(r"^\s*(?:中文标题|标题)\s*[：:]\s*", "", title or "").strip()
+
 
 def parse_round1_items(round1_text, all_items=None):
     # 去掉 ``` 代码块包裹
@@ -678,7 +788,7 @@ def parse_round1_items(round1_text, all_items=None):
             if m:
                 idx = int(m.group(1))
                 category = m.group(2).strip()
-                title = m.group(3).strip()
+                title = _clean_generated_title(m.group(3))
                 summary = m.group(4).strip()
                 source, url = "", ""
                 if all_items and 0 <= idx < len(all_items):
@@ -701,22 +811,24 @@ def parse_round1_items(round1_text, all_items=None):
                 items.append(current)
             header = line.replace("### ", "").strip()
             source, url = resolve_source(header)
-            # 提取板块
+            # 提取板块/行动线
             category = ""
-            cat_match = re.search(r'板块[：:]\s*(\S+)', header)
+            cat_match = re.search(r'(?:板块|行动线)[：:]\s*(\S+)', header)
             if cat_match:
                 category = cat_match.group(1)
             current = {"source": source, "url": url, "category": category, "tier": 1}
-        elif not current.get("title") and line and not line.startswith(("结论", "信号", "为什么", "观察点", "来源", "链接")):
+        elif not current.get("title") and line and not line.lower().startswith(("结论", "信号", "为什么", "so what", "so：", "so:", "观察点", "来源", "链接")):
             # 标题行（板块行之后的第一个非字段行）
             if current.get("tier") == 1 and "category" in current:
-                current["title"] = re.sub(r'^\s*\[\d+\]\s*', '', line).strip()
+                current["title"] = _clean_generated_title(re.sub(r'^\s*\[\d+\]\s*', '', line))
         elif line.startswith("结论"):
             current["conclusion"] = extract_value(line)
         elif line.startswith("信号"):
             current["signal"] = extract_value(line)
         elif line.startswith("为什么重要"):
             current["why"] = extract_value(line)
+        elif line.lower().startswith("so what"):
+            current["so_what"] = extract_value(line)
         elif line.startswith("观察点"):
             current["watch"] = extract_value(line)
         elif line.startswith("来源"):
@@ -782,8 +894,16 @@ def save_watchpoints(date, analyzed_items):
         except Exception:
             existing = []
 
+    # 过期机制：open 状态超过 14 天仍无结论的观察点自动关闭，防止 open 池无限膨胀
+    expire_cutoff = (datetime.now(timezone(timedelta(hours=8))) - timedelta(days=14)).strftime("%Y-%m-%d")
+    for wp in existing:
+        if wp.get("status") == "open" and wp.get("date", "") < expire_cutoff:
+            wp["status"] = "expired"
+
     existing_watches = {wp.get("watch", "") for wp in existing}
     for item in analyzed_items:
+        if item.get("tier", 1) != 1:
+            continue
         watch = item.get("watch", "")
         if not watch or watch in existing_watches:
             continue
@@ -831,11 +951,12 @@ def ai_round3_review_watchpoints(open_watchpoints, all_items):
 回顾：1-2 句话说明发生了什么，与原始观察点的预测对比
 ```
 
-规则：
+规则（判定要严，这个结果会进公开的命中率统计）：
 - 只输出有明确结果或明显进展的观察点，没有新信息的跳过
-- "验证"= 观察点预测的事情发生了或趋势确认
-- "推翻"= 观察点预测的方向错了
-- "进展中"= 有相关新信息但尚未最终确认
+- "验证"= 观察点里写的指标确实触发了阈值，且在期限内。必须能指出今天数据里的具体证据
+- "推翻"= 指标在期限内明确走向了反面，或期限已过阈值未触发
+- "进展中"= 有相关新信息但阈值未触发、期限未到。拿不准一律算进展中，不算验证
+- 观察点本身如果写得模糊（没有指标/阈值/期限），不许强行判验证，最多算进展中
 - 如果今天的数据跟所有观察点都无关，输出"无更新"
 """
 
@@ -913,17 +1034,17 @@ def main():
     # Step 1: 并行抓取 5 源
     sys.stderr.write("Step 1: 抓取数据...\n")
     all_items = []
+    # aihot（精选主源）+ 华尔街见闻（金融）+ Polymarket（预测市场）+ RSS（杂源）
+    # X：采集器凭证失效，主人决定暂不接入（2026-07-18）；恢复时把 fetch_x_from_cache 加回来即可
+    # Reddit 已砍：服务器 IP 被 403 封禁（2026-07-18 实测 www/old 端点均不通）
     fetchers = [
-        ("HN", fetch_hackernews),
-        ("Polymarket", fetch_polymarket),
-        ("GitHub", fetch_github),
+        ("aihot", fetch_aihot),
         ("华尔街见闻", fetch_wallstreetcn),
-        ("X", fetch_x_from_cache if X_CACHE_FILE else fetch_x_timeline),
+        ("Polymarket", fetch_polymarket),
         ("RSS", fetch_rss),
-        ("Reddit", fetch_reddit),
     ]
 
-    with concurrent.futures.ThreadPoolExecutor(max_workers=7) as executor:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
         future_map = {executor.submit(fn): name for name, fn in fetchers}
         for future in concurrent.futures.as_completed(future_map):
             name = future_map[future]
@@ -942,25 +1063,32 @@ def main():
 
     # Step 2: AI Round 1
     sys.stderr.write("Step 2: AI Round 1 (筛选+分析)...\n")
-    round1_output = ai_round1_filter_and_analyze(all_items)
+    aihot_brief = fetch_aihot_brief()
+    if aihot_brief:
+        sys.stderr.write(f"  [aihot brief] {len(aihot_brief)} chars\n")
+    round1_output = ai_round1_filter_and_analyze(all_items, aihot_brief=aihot_brief)
 
+    ai_failed = False
     if not round1_output:
         sys.stderr.write("AI Round 1 failed, using degraded output\n")
+        ai_failed = True
         content, commentary = generate_degraded_output(all_items)
         analyzed_items = []
         main_theme = ""
     else:
-        # Step 3: AI Round 2
-        sys.stderr.write("Step 3: AI Round 2 (归纳+点评)...\n")
-        round2_output = ai_round2_synthesize(round1_output, all_items)
-
         analyzed_items = parse_round1_items(round1_output, all_items)
-        if round2_output:
-            main_theme, commentary = parse_round2(round2_output)
+        main_theme = ""
+        commentary = ""
+        if analyzed_items:
+            # Step 3: AI Round 2
+            sys.stderr.write("Step 3: AI Round 2 (归纳+点评)...\n")
+            round2_output = ai_round2_synthesize(round1_output, all_items)
+            if round2_output:
+                main_theme, commentary = parse_round2(round2_output)
+            else:
+                sys.stderr.write("AI Round 2 failed, skipping main theme + commentary\n")
         else:
-            sys.stderr.write("AI Round 2 failed, skipping main theme + commentary\n")
-            main_theme = ""
-            commentary = ""
+            sys.stderr.write("今日无信号，跳过 Round 2\n")
         content = round1_output
 
     sys.stderr.write(f"Selected items: {len(analyzed_items)}\n")
@@ -968,6 +1096,9 @@ def main():
     # Step 4: 观察点追踪
     watchpoint_reviews = []
     open_watchpoints = load_watchpoints()
+    # 只回顾最近的 30 条，避免 open 池过大稀释回顾质量（W 序号需与后续解析共用同一列表）
+    if len(open_watchpoints) > 30:
+        open_watchpoints = sorted(open_watchpoints, key=lambda w: w.get("date", ""), reverse=True)[:30]
     if open_watchpoints and AI_API_KEY:
         sys.stderr.write(f"Step 4: 观察点回顾 ({len(open_watchpoints)} open)...\n")
         review_output = ai_round3_review_watchpoints(open_watchpoints, all_items)
@@ -985,14 +1116,17 @@ def main():
     sys.stderr.write(f"Output: {data_path}\n")
     print(f"Daily brief saved: {data_path}")
 
-    # Step 6: Telegram 推送
-    if TG_BOT_TOKEN and TG_CHAT_ID:
-        sys.stderr.write("Step 6: 发送 Telegram...\n")
+    # Step 6: 写入 Hermes 投递缓存（Telegram 由 Hermes 接管）
+    sys.stderr.write("Step 6: 写入 Hermes 投递缓存...\n")
+    if ai_failed:
+        # AI 挂了不等于今天无信号，宁可不发也不发假的空日报
+        sys.stderr.write("  AI failed — skip Hermes cache to avoid a fake empty daily.\n")
+    else:
         try:
-            send_telegram(today, main_theme, analyzed_items, commentary, watchpoint_reviews)
-            sys.stderr.write("  Telegram sent.\n")
+            write_daily_hermes_cache(today, main_theme, analyzed_items, commentary, watchpoint_reviews, total_count=len(all_items))
+            sys.stderr.write("  Hermes message queued for cron delivery.\n")
         except Exception as e:
-            sys.stderr.write(f"  Telegram failed: {e}\n")
+            sys.stderr.write(f"  Hermes cache write failed: {e}\n")
 
 
 DATA_JSON = os.path.join(OUTPUT_DIR, "data.json")
@@ -1011,6 +1145,7 @@ def save_daily_json(date, items, main_theme, commentary, watchpoint_reviews):
                 "conclusion": item.get("conclusion", ""),
                 "signal": item.get("signal", ""),
                 "why": item.get("why", ""),
+                "so_what": item.get("so_what", ""),
                 "watch": item.get("watch", ""),
                 "category": item.get("category", ""),
                 "tier": item.get("tier", 1),
@@ -1069,7 +1204,7 @@ def _make_short_title(item):
 
 def send_telegram(date, main_theme, items, commentary, watchpoint_reviews):
     CATEGORY_ICONS = {
-        "AI工程": "🤖", "AI行业": "📡", "商业/电商": "🛒",
+        "AI工程": "🤖", "AI行业": "📡",
         "宏观/金融": "🌍", "开发者/开源": "⚙️", "其他值得看的": "💡",
     }
 
@@ -1112,6 +1247,7 @@ def send_telegram(date, main_theme, items, commentary, watchpoint_reviews):
     parts.append(f"<a href=\"https://yining365.github.io/daily-news/\">→ 完整版</a>")
 
     message = "\n".join(parts)
+    message = message.replace("**", "")
     if len(message) > 4000:
         message = message[:3990] + "\n..."
     _send_tg_message(message)
@@ -1134,17 +1270,167 @@ def _send_tg_message(message):
 
 
 
-def _send_openclaw_message(channel, account_id, target, message):
-    import subprocess
-    cmd = [
-        "openclaw", "message", "send",
-        "--channel", channel,
-        "--target", target,
-        "--message", message,
-    ]
-    if account_id:
-        cmd.extend(["--account", account_id])
-    subprocess.run(cmd, check=True, timeout=30)
+
+def _fetch_guangzhou_weather():
+    """广州海珠区今日天气：温度区间、体感、降雨概率。失败返回 None。"""
+    import urllib.request, urllib.parse
+    url = (
+        "https://api.open-meteo.com/v1/forecast?"
+        + urllib.parse.urlencode({
+            "latitude": "23.0833",
+            "longitude": "113.3172",
+            "timezone": "Asia/Shanghai",
+            "current": "apparent_temperature,weather_code",
+            "daily": "temperature_2m_max,temperature_2m_min,precipitation_probability_max",
+            "forecast_days": "1",
+        })
+    )
+    try:
+        with urllib.request.urlopen(url, timeout=10) as resp:
+            payload = json.loads(resp.read().decode("utf-8"))
+    except Exception as e:
+        sys.stderr.write(f"  weather fetch failed: {e}\n")
+        return None
+    try:
+        cur = payload.get("current", {})
+        daily = payload.get("daily", {})
+        tmax = round(daily["temperature_2m_max"][0])
+        tmin = round(daily["temperature_2m_min"][0])
+        feels = round(cur["apparent_temperature"]) if cur.get("apparent_temperature") is not None else None
+        prob = daily.get("precipitation_probability_max", [None])[0]
+        wcode = cur.get("weather_code", 0) or 0
+        # 简化天气符号
+        icon = "☀️"
+        if wcode in (1, 2): icon = "🌤"
+        elif wcode == 3: icon = "☁️"
+        elif 45 <= wcode <= 48: icon = "🌫"
+        elif 51 <= wcode <= 67: icon = "🌧"
+        elif 71 <= wcode <= 77: icon = "🌨"
+        elif 80 <= wcode <= 82: icon = "🌧"
+        elif 95 <= wcode <= 99: icon = "⛈"
+        # 出门建议
+        if prob is None:
+            advice = "降雨概率暂无可靠数据"
+        elif prob >= 70:
+            advice = "带伞，雨概率高"
+        elif prob >= 40:
+            advice = "带把伞稳一点"
+        elif tmax >= 32:
+            advice = "高温，注意防晒补水"
+        elif tmin <= 12:
+            advice = "偏冷，加件外套"
+        else:
+            advice = "天气还行"
+        feels_str = f"体感{feels}℃" if feels is not None else "体感暂无可靠数据"
+        prob_str = f"降雨概率{prob}%" if prob is not None else "降雨概率暂无可靠数据"
+        return f"{icon} 广州天气：{tmin}-{tmax}℃，{feels_str}，{prob_str}。出门建议：{advice}。"
+    except Exception as e:
+        sys.stderr.write(f"  weather parse failed: {e}\n")
+        return None
+
+
+ACTION_LINE_ORDER = [
+    (("工作流", "技巧", "改工作流"), "🔧 工作流/技巧"),
+    (("动钱",), "💰 动钱"),
+    (("选品池",), "📦 选品池"),
+    (("其他",), "🧭 其他"),
+]
+
+
+def _ledger_lines(watchpoint_reviews, limit=3):
+    """预测账本：只报有结果的（验证/推翻），进展中不占版面。"""
+    lines = []
+    for r in watchpoint_reviews or []:
+        if r.get("status") not in ("verified", "invalidated"):
+            continue
+        label = "✅ 说对了" if r["status"] == "verified" else "❌ 说错了"
+        review = (r.get("review") or "").strip()
+        if len(review) > 90:
+            review = review[:88] + "…"
+        lines.append(f"{label}：「{r.get('title', '')}」——{review}")
+        if len(lines) >= limit:
+            break
+    return lines
+
+
+def write_daily_hermes_cache(date, main_theme, items, commentary, watchpoint_reviews, total_count=0):
+    """飞书日报：按行动线分组的 0-5 条（带 so what）+ 预测账本 + 天气 + 反馈脚注。"""
+    tier1 = [i for i in items if i.get("tier", 1) == 1][:5]
+    ledger = _ledger_lines(watchpoint_reviews)
+    weather = _fetch_guangzhou_weather()
+    parts = []
+
+    if not tier1:
+        # 空日报：敢发空，比硬凑可信
+        parts.append(f"📰 阿宁日报｜{date}｜扫描 {total_count} 条，没有值得你改判断的事。")
+        if ledger:
+            parts.append("")
+            parts.append("📌 预测账本：")
+            parts.extend(ledger)
+        if weather:
+            parts.append("")
+            parts.append(weather)
+    else:
+        groups = {}
+        for item in tier1:
+            cat = (item.get("category") or "").strip()
+            header = next((h for aliases, h in ACTION_LINE_ORDER if any(a in cat for a in aliases)), "🧭 其他")
+            groups.setdefault(header, []).append(item)
+
+        n = 0
+        for _aliases, header in ACTION_LINE_ORDER:
+            if header not in groups:
+                continue
+            parts.append(header)
+            for item in groups[header]:
+                n += 1
+                title = re.sub(r"^\s*\[\d+\]\s*", "", item.get("title", ""))
+                title = _clean_generated_title(re.sub(r"^@\w+:\s*", "", title))[:50]
+                conclusion = (item.get("conclusion") or "").strip()
+                first_sent = re.split(r"(?<=[。！？!?])\s*", conclusion, maxsplit=1)[0]
+                if len(first_sent) > 80:
+                    first_sent = first_sent[:78] + "…"
+                if first_sent and first_sent[:10] != title[:10]:
+                    parts.append(f"{n}. {title}：{first_sent}")
+                else:
+                    parts.append(f"{n}. {title}")
+                so_what = (item.get("so_what") or item.get("why") or "").strip()
+                if so_what:
+                    if len(so_what) > 100:
+                        so_what = so_what[:98] + "…"
+                    parts.append(f"so what：{so_what}")
+            parts.append("")
+
+        if ledger:
+            parts.append("📌 预测账本：")
+            parts.extend(ledger)
+            parts.append("")
+
+        if weather:
+            parts.append(weather)
+            parts.append("")
+
+        stats = f"📰 阿宁日报｜{date}"
+        if total_count:
+            stats += f"｜扫描 {total_count} 条 · 入选 {len(tier1)} 条"
+        parts.append(stats)
+        parts.append("→ 完整版：https://yining365.github.io/daily-news/")
+        parts.append("有用回个数字，全是废话回 0")
+
+    message = "\n".join(parts)
+    message = message.replace("**", "")
+    if len(message) > 4000:
+        message = message[:3990] + "\n..."
+
+    # 把消息写到文件，由 Hermes cron 统一投递到微信。
+    out_path = "/tmp/hermes_daily_news.txt"
+    try:
+        with open(out_path, "w", encoding="utf-8") as f:
+            f.write(message)
+        sys.stderr.write(f"  message written: {out_path}\n")
+    except Exception as e:
+        sys.stderr.write(f"  write file failed: {e}\n")
+
 
 # ============================================================================
 # 周报
@@ -1185,6 +1471,9 @@ def weekly_summary():
             conclusion = it.get("conclusion", "")
             url = it.get("url", "")
             all_items_text += f"- [{cat}] {title} — {conclusion} | {url}\n"
+            so_what = (it.get("so_what") or "").strip()
+            if so_what:
+                all_items_text += f"  当时的 so what：{so_what}\n"
 
     date_range_start = week_entries[-1].get("date", "")
     date_range_end = week_entries[0].get("date", "")
@@ -1193,28 +1482,26 @@ def weekly_summary():
     sys.stderr.write(f"Week range: {range_label}, {len(week_entries)} days\n")
 
     # AI 生成周报
-    prompt = f"""回顾这一周（{range_label}）的阿宁日报，挑出 5 条最值得记住的。
+    prompt = f"""回顾这一周（{range_label}）的阿宁日报，写一份复盘，不是再摘要一遍新闻。
 
-选择标准：
-- 哪些判断被验证了，或者被推翻了
-- 哪些趋势在加速，回头看更清楚了
-- 哪些你当时没在意但现在回头看很重要
-- 对阿宁（母婴电商创业者 + AI 用户 + 指数投资者）下周有什么影响
+日报按三条行动线组织（工作流/技巧、动钱、选品池），每条都带 so what（当时建议做什么/不做什么）。复盘的职责：
+
+- 三条行动线各自这周的趋势：分散的条目串起来指向什么方向
+- 检查 so what：哪几条建议这周被后续信息证明是对的/错的/该做但估计还没做的，点名说
+- 哪些当时没在意但回头看很重要
 
 ## 输出格式
 
 ### 本周回顾
-（2-3 段总结，像周末跟朋友复盘这一周。说人话，有态度。）
+（2-3 段，像周末跟朋友复盘。第一段说行动线趋势，第二段核对本周 so what 的成色，敢认错。说人话，有态度。）
 
 ### 本周 5 条
+（本周最值得留档的 5 条，格式如下）
 1. **标题** | 链接URL
 2. ...
-3. ...
-4. ...
-5. ...
 
 ### 下周判断
-（2 句话。对阿宁下周最重要的判断，具体到事件/数据/时间。）
+（2 句话。对阿宁下周最重要的判断，写成可判伪的形式：指标 + 阈值 + 期限。）
 
 ## 本周日报内容
 {all_items_text}"""
@@ -1285,7 +1572,7 @@ def weekly_summary():
     open(DATA_JSON, "w", encoding="utf-8").write(json.dumps(data, ensure_ascii=False, indent=2))
     sys.stderr.write(f"Saved weekly to {DATA_JSON}\n")
 
-    # 周报推送：优先发到指定 OpenClaw 会话；配置后不再发 Telegram
+    # 周报推送：由 Hermes cron 接管，保留旧环境变量作为手动兼容入口
     html_parts = [f"<b>📅 阿宁周报 · {_tg_escape(range_label)}</b>", ""]
     plain_parts = [f"📅 阿宁周报 · {range_label}", ""]
     if review_text:
@@ -1312,25 +1599,38 @@ def weekly_summary():
         html_parts.append("")
         plain_parts.append(f"💡 {verdict}")
         plain_parts.append("")
+    # 预测校准：近 30 天已有结果的观察点命中率
+    try:
+        if os.path.exists(WATCHPOINTS_FILE):
+            all_wp = json.loads(open(WATCHPOINTS_FILE, encoding="utf-8").read())
+            cutoff30 = (today - timedelta(days=30)).strftime("%Y-%m-%d")
+            settled = [wp for wp in all_wp if wp.get("date", "") >= cutoff30 and wp.get("status") in ("verified", "invalidated")]
+            hits = sum(1 for wp in settled if wp["status"] == "verified")
+            if settled:
+                calib = f"🎯 近 30 天预测校准：{len(settled)} 判 {hits} 中（{hits * 100 // len(settled)}%）"
+                html_parts.append(_tg_escape(calib))
+                html_parts.append("")
+                plain_parts.append(calib)
+                plain_parts.append("")
+    except Exception as e:
+        sys.stderr.write(f"calibration failed: {e}\n")
+
     html_parts.append('<a href="https://yining365.github.io/daily-news/">→ 完整版</a>')
     plain_parts.append("完整版：https://yining365.github.io/daily-news/")
+    plain_parts.append("这周日报有几天对你有用？回个数字。")
 
-    if WEEKLY_OPENCLAW_CHANNEL and WEEKLY_OPENCLAW_TARGET:
-        sys.stderr.write("Sending weekly via OpenClaw...\n")
-        message = "\n".join(plain_parts)
-        if len(message) > 4000:
-            message = message[:3990] + "\n..."
-        try:
-            _send_openclaw_message(
-                WEEKLY_OPENCLAW_CHANNEL,
-                WEEKLY_OPENCLAW_ACCOUNT_ID,
-                WEEKLY_OPENCLAW_TARGET,
-                message,
-            )
-            sys.stderr.write("OpenClaw weekly sent.\n")
-        except Exception as e:
-            sys.stderr.write(f"OpenClaw weekly failed: {e}\n")
-    elif TG_BOT_TOKEN and TG_CHAT_ID:
+    weekly_cache = "/tmp/hermes_weekly_news.txt"
+    weekly_message = "\n".join(plain_parts)
+    if len(weekly_message) > 4000:
+        weekly_message = weekly_message[:3990] + "\n..."
+    try:
+        with open(weekly_cache, "w", encoding="utf-8") as f:
+            f.write(weekly_message + "\n")
+        sys.stderr.write(f"Hermes weekly message written: {weekly_cache}\n")
+    except Exception as e:
+        sys.stderr.write(f"Hermes weekly cache write failed: {e}\n")
+
+    if TG_BOT_TOKEN and TG_CHAT_ID:
         sys.stderr.write("Sending Telegram...\n")
         message = "\n".join(html_parts)
         if len(message) > 4000:

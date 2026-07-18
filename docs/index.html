@@ -89,6 +89,7 @@ body::before{content:'';display:block;height:3px;background:linear-gradient(90de
 .story-title:hover{color:var(--blue)}
 
 .story-tldr{font-size:14px;color:var(--t2);line-height:1.75}
+.story-sowhat{font-size:13px;color:var(--t1);line-height:1.7;margin-top:6px;padding:6px 10px;border-left:3px solid #e8a33d;background:rgba(232,163,61,.07);border-radius:0 6px 6px 0}
 
 /* expand */
 .story-more{margin-top:14px;border:0;padding:0}
@@ -239,6 +240,7 @@ function render(i){
       h+="</div>";
       h+='<a class="story-title" href="'+e(it.url||"#")+'" target="_blank">'+e(it.title)+"</a>";
       if(it.conclusion)h+='<div class="story-tldr">'+e(it.conclusion)+"</div>";
+      if(it.so_what)h+='<div class="story-sowhat">so what：'+e(it.so_what)+"</div>";
 
       const has=it.signal||it.why||it.watch;
       if(has){
