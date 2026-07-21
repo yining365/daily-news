@@ -655,28 +655,28 @@
     "title": "美团 LongCat-2.0 开源，不是“又一个国产模型”",
     "watch": "盯它在真实 agent 任务里的表现，尤其是 1M token 上下文会不会只是“能塞进去”，还是能稳定检索、改代码、跨文件推理。",
     "source": "aihot:ai-models",
-    "status": "open"
+    "status": "expired"
   },
   {
     "date": "2026-07-06",
     "title": "英伟达 Kyber 延到 2028，AI 算力瓶颈又换地方了",
     "watch": "盯英伟达下一次对 NVL144 / Kyber 的交付口径，以及云厂商有没有把订单节奏往后挪。",
     "source": "aihot:industry",
-    "status": "open"
+    "status": "expired"
   },
   {
     "date": "2026-07-06",
     "title": "Claude Design 提示词被拆出来，重点不是抄，是看 Anthropic 怎么管输出",
     "watch": "盯这个仓库后续有没有继续同步 Claude Design 的系统约束，尤其是组件生成、无障碍检查、设计一致性这些部分。",
     "source": "aihot:tip",
-    "status": "open"
+    "status": "expired"
   },
   {
     "date": "2026-07-06",
     "title": "Simon 用 Claude 写 sqlite-utils，账单只有 $149.25",
     "watch": "盯 sqlite-utils 4.0 正式版发布后有没有回滚、bug 激增、维护负担上升；这比一次性成本更说明问题。",
     "source": "RSS:Simon Willison",
-    "status": "open"
+    "status": "expired"
   },
   {
     "date": "2026-07-06",
@@ -690,21 +690,21 @@
     "title": "2028 共和党赔率：Vance 已经明显领先",
     "watch": "盯 Vance 和 Rubio 的价差有没有收窄；如果 Rubio 上来，说明市场在重新押“更传统”的共和党路线。",
     "source": "Polymarket",
-    "status": "open"
+    "status": "expired"
   },
   {
     "date": "2026-07-06",
     "title": "500 字节画世界地图，提醒一下：工程能力不是堆 token",
     "watch": "盯作者有没有放出实现细节和代码；这种小项目最值得看的不是成品，是中间怎么取舍。",
     "source": "RSS:Simon Willison",
-    "status": "open"
+    "status": "expired"
   },
   {
     "date": "2026-07-06",
     "title": "欧盟 Chat Control 2.0 快速推进，加密聊天可能被迫开洞",
     "watch": "盯欧洲议会接下来怎么表态，尤其是是否保留“无差别扫描”这条；如果保留，安全通信产品会被迫选边站。",
     "source": "aihot:industry",
-    "status": "open"
+    "status": "expired"
   },
   {
     "date": "2026-07-07",
@@ -1271,6 +1271,13 @@
     "title": "AI 影视制作已经进入重资本竞争，不适合做泛工具",
     "watch": "下一轮选品评审前，是否再出现金额达到 5.87 亿美元级别的同类交易；若出现，继续放弃泛视频工具。",
     "source": "RSS:TechCrunch",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-21",
+    "title": "代理群的树状分工，已经值得放进你的建站流水线试一次",
+    "watch": "7 月 25 日前，用同一个任务跑 4 小时，树状代理的测试通过率是否达到 80%；达不到就不迁移。",
+    "source": "aihot:ai-products",
     "status": "open"
   }
 ]
