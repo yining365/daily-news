@@ -1,131 +1,5 @@
 [
   {
-    "date": "2026-06-22",
-    "title": "Mythos 这类“攻击型 AI”如果属实，安全行业要重估了",
-    "watch": "盯 Mythos 有没有可验证 demo、第三方复现、NSA 或 Google Project Zero 相关回应；没有复现前，这条只能按“高风险信号”处理，不能按事实全信。",
-    "source": "aihot:industry",
-    "status": "expired"
-  },
-  {
-    "date": "2026-06-22",
-    "title": "美团 tabbit 免费塞满旗舰模型，模型入口开始打价格战",
-    "watch": "别看宣传，盯三件事：是不是真有这些模型、有没有调用上限、输出质量是不是原版；如果免费但限速严重，就只是拉新广告。",
-    "source": "aihot:ai-products",
-    "status": "expired"
-  },
-  {
-    "date": "2026-06-22",
-    "title": "Cloudflare 给 agent 开“临时账号”，权限隔离要变成基础设施",
-    "watch": "盯 Cloudflare 这个能力能不能绑定最小权限、过期时间、审计日志；如果这些都齐，后面 MCP 服务很可能都要学这一套。",
-    "source": "RSS:Simon Willison",
-    "status": "expired"
-  },
-  {
-    "date": "2026-06-22",
-    "title": "sqlite-utils 加迁移和嵌套事务，小工具正在变成 agent 数据层",
-    "watch": "盯 4.0 正式版；尤其看 migrations API 稳不稳、nested transactions 在异常中断时怎么回滚。",
-    "source": "RSS:Simon Willison",
-    "status": "expired"
-  },
-  {
-    "date": "2026-06-22",
-    "title": "伊朗谈判一启动，卡塔尔 60 亿美元资金就成了筹码",
-    "watch": "盯这 60 亿美元是不是实际释放；再看石油制裁豁免草案有没有从“草案”变成正式安排。",
-    "source": "华尔街见闻",
-    "status": "expired"
-  },
-  {
-    "date": "2026-06-22",
-    "title": "锂电 VC 添加剂淡季不淡，新能源链条可能先于整车回暖",
-    "watch": "盯 Q3 的 VC 添加剂报价和出货量；如果量价都走强，再回头看电池厂排产和储能订单。",
-    "source": "华尔街见闻",
-    "status": "expired"
-  },
-  {
-    "date": "2026-06-22",
-    "title": "共和党 2028 定价里，万斯已经不是边缘变量",
-    "watch": "盯 Republican Presidential Nominee 2028 这个合约的 Yes 价格；如果继续上行，说明市场在给“特朗普路线延续”加权。",
-    "source": "Polymarket",
-    "status": "expired"
-  },
-  {
-    "date": "2026-06-22",
-    "title": "市场押内塔尼亚胡 2026 年底前下台，油价和黄金要看政治尾部风险",
-    "watch": "盯这个 Yes 价格有没有持续高于 54%；再结合美伊谈判和制裁豁免消息看，别单独看一条地缘新闻。",
-    "source": "Polymarket",
-    "status": "expired"
-  },
-  {
-    "date": "2026-06-22",
-    "title": "Polymarket 被曝搞“假投注视频”，预测市场的信号要打折",
-    "watch": "盯 Polymarket 有没有公开回应、是否修改 creator 激励规则；之后看预测市场，优先看流动性、盘口变化和外部事实能不能互相验证。",
-    "source": "RSS:TechCrunch",
-    "status": "expired"
-  },
-  {
-    "date": "2026-06-23",
-    "title": "编程模型榜单被“抄答案”污染了",
-    "watch": "盯 SWE-bench Pro 后续会不会强制标注“是否可联网、是否可访问 git 历史”。如果榜单不拆开看，模型能力还是会被高估。",
-    "source": "aihot:tip",
-    "status": "expired"
-  },
-  {
-    "date": "2026-06-23",
-    "title": "Google 开始评估 agent 会不会“主动发现问题”",
-    "watch": "盯 Jules 或 Google 内部 agent 会不会把这套评估变成公开 benchmark；尤其看它怎么定义“主动发现”而不是事后硬蹭功劳。",
-    "source": "aihot:paper",
-    "status": "expired"
-  },
-  {
-    "date": "2026-06-23",
-    "title": "PP-OCRv6 把轻量 OCR 做到能塞进各种 agent 流水线",
-    "watch": "盯它在 Hugging Face 上的推理部署体验，尤其是 tiny 和 small 能不能稳定跑在本地脚本、浏览器或边缘设备里。",
-    "source": "aihot:ai-models",
-    "status": "expired"
-  },
-  {
-    "date": "2026-06-23",
-    "title": "0.2B 图像修复模型跑进浏览器，重点不是图像，是本地小模型工作流",
-    "watch": "盯浏览器端图像、OCR、语音这类小模型能不能形成一套稳定模板；一旦模板成熟，Cursor/Claude Code 会变成个人工具工厂。",
-    "source": "RSS:Simon Willison",
-    "status": "expired"
-  },
-  {
-    "date": "2026-06-23",
-    "title": "DeepMind 投 A24，AI 影视不是噱头，是抢工作流入口",
-    "watch": "盯 A24 后续有没有公开具体用在剧本、分镜、剪辑、特效还是营销。只说“AI 工具”不值钱，进入哪个环节才值钱。",
-    "source": "aihot:industry",
-    "status": "expired"
-  },
-  {
-    "date": "2026-06-23",
-    "title": "微软和雪佛龙签长期天然气电力，AI 基建开始反向绑定能源",
-    "watch": "盯其他云厂会不会跟进签长期燃气电力协议；再盯市场怎么重新定价“云厂商 + 能源公司”的组合。",
-    "source": "RSS:TechCrunch",
-    "status": "expired"
-  },
-  {
-    "date": "2026-06-23",
-    "title": "美银从不加息改口到加息，利率风险别装没看见",
-    "watch": "盯美联储官员后续表态和美债收益率反应；如果市场开始接受“加息不是尾部风险”，成长股会先被砍。",
-    "source": "华尔街见闻",
-    "status": "expired"
-  },
-  {
-    "date": "2026-06-23",
-    "title": "美国临时松开伊朗石油制裁，油价和黄金的剧本变复杂了",
-    "watch": "盯 60 天到期前是否续期，以及伊朗对石油出口和霍尔木兹相关表态有没有反复。这个窗口期很容易被市场提前交易。",
-    "source": "华尔街见闻",
-    "status": "expired"
-  },
-  {
-    "date": "2026-06-23",
-    "title": "Flock 车牌系统滥用案，说明“AI 监控”的最大漏洞是熟人权限",
-    "watch": "盯 Flock 后续是否加强访问审计、滥用告警、查询理由留痕。没有这些，所谓“安全合规”就是摆设。",
-    "source": "aihot:industry",
-    "status": "expired"
-  },
-  {
     "date": "2026-06-24",
     "title": "AI 招聘歧视不是小样本翻车，是大规模系统问题",
     "watch": "盯后续企业招聘 SaaS 是否开始公开偏见审计数据，以及监管会不会要求招聘模型给出可解释筛选理由。",
@@ -711,14 +585,14 @@
     "title": "Meta 把算力租到印度，重点不是便宜，是数据主权",
     "watch": "盯 Meta 后面是不是继续在印度加数据中心，以及其他大厂有没有跟进本地算力租赁。",
     "source": "华尔街见闻",
-    "status": "open"
+    "status": "expired"
   },
   {
     "date": "2026-07-07",
     "title": "腾讯 Hy3 用 Apache 2.0，国产开源模型开始认真抢开发者",
     "watch": "盯 Hugging Face 上 Hy3 后续有没有 demo、推理代码、量化版本和社区二创；没有生态，许可证再友好也只是摆设。",
     "source": "RSS:Simon Willison",
-    "status": "open"
+    "status": "expired"
   },
   {
     "date": "2026-07-07",
@@ -732,14 +606,14 @@
     "title": "Markdown 在苹果 27 系统里有了官方 UTI，文件流转会少很多脏活",
     "watch": "盯 27 系统正式版里这个 UTI 是否保留，以及主流编辑器会不会跟进调用。",
     "source": "RSS:Daring Fireball",
-    "status": "open"
+    "status": "expired"
   },
   {
     "date": "2026-07-07",
     "title": "存储三巨头可能养出了中国对手，AI 供应链没那么稳",
     "watch": "盯后面三大存储厂商财报里对中国竞争、AI 需求、库存周期的说法；这会影响“卖芯片、买云”这条交易逻辑。",
     "source": "RSS:Stratechery",
-    "status": "open"
+    "status": "expired"
   },
   {
     "date": "2026-07-07",
@@ -753,14 +627,14 @@
     "title": "以色列政治风险没消失，Netanyahu 下台赔率还有 40%",
     "watch": "盯以色列国内联盟稳定性、停火谈判、内阁变化；只要下台概率继续抬，油金可能会重新被地缘风险拉动。",
     "source": "Polymarket",
-    "status": "open"
+    "status": "expired"
   },
   {
     "date": "2026-07-07",
     "title": "比特币到 95,000 美元的赔率只有 12%，市场没你刷 X 时那么嗨",
     "watch": "盯 $80,000、$85,000、$95,000 三档赔率有没有同步上移；只涨一档不是牛市重定价，三档一起涨才算。",
     "source": "Polymarket",
-    "status": "open"
+    "status": "expired"
   },
   {
     "date": "2026-07-08",
@@ -774,28 +648,28 @@
     "title": "“每天 3.7 万行 AI 代码”不是生产力神话，是代码债预警",
     "watch": "盯 AI coding 工具会不会把“代码审查、重构、删除冗余”放到一等功能，而不是只炫生成速度。",
     "source": "aihot:tip",
-    "status": "open"
+    "status": "expired"
   },
   {
     "date": "2026-07-08",
     "title": "MIRA 把世界模型推到“可玩”，这比视频生成更值得盯",
     "watch": "盯它下一步能不能从“像火箭联盟”扩展到更开放的物理场景，比如碰撞、遮挡、多人策略、长时间一致性。",
     "source": "aihot:ai-products",
-    "status": "open"
+    "status": "expired"
   },
   {
     "date": "2026-07-08",
     "title": "微软在 Copilot 里换自家模型，OpenAI 依赖链开始松了",
     "watch": "盯 Copilot 里哪些场景继续用外部模型，哪些场景切到 MAI；Excel、Outlook 是办公入口，量起来后成本差异会很快放大。",
     "source": "RSS:TechCrunch",
-    "status": "open"
+    "status": "expired"
   },
   {
     "date": "2026-07-08",
     "title": "Discord 误封事件提醒：AI 审核不是“省人”，是换一种风险",
     "watch": "盯 Discord 后续是否公开补偿、申诉机制、人工复核比例；更重要的是看其他平台会不会降低 AI 自动处罚权限。",
     "source": "RSS:TechCrunch",
-    "status": "open"
+    "status": "expired"
   },
   {
     "date": "2026-07-08",
@@ -823,28 +697,28 @@
     "title": "美国自主地面车已经上乌克兰战场，机器人不是 PPT 了",
     "watch": "盯乌克兰战场上自主车辆的损耗率、补给效率、远程控制依赖度；如果能稳定执行物流任务，下一步就是更复杂的战术任务。",
     "source": "aihot:industry",
-    "status": "open"
+    "status": "expired"
   },
   {
     "date": "2026-07-09",
     "title": "伊朗 Kharg Island 风险只有 5%，但这是油价尾部雷",
     "watch": "盯 August 31 前这个合约是不是还卡在 5%；如果开始脱离个位数，说明市场从“嘴炮冲突”切到“能源设施风险”。",
     "source": "Polymarket",
-    "status": "open"
+    "status": "expired"
   },
   {
     "date": "2026-07-09",
     "title": "法国大选定价很碎，欧洲资产还没给极端结果打满折",
     "watch": "盯 Philippe 和 Le Pen 谁先拉开差距；现在 26% 对 25%，市场其实没方向。",
     "source": "Polymarket",
-    "status": "open"
+    "status": "expired"
   },
   {
     "date": "2026-07-09",
     "title": "智谱配售不是利好兑现，是市场在重新给中国 AI 公司估值",
     "watch": "盯配售完成后的股价能不能守住；如果大额配售后还不塌，说明机构真在加中国 AI 风险敞口。",
     "source": "华尔街见闻",
-    "status": "open"
+    "status": "expired"
   },
   {
     "date": "2026-07-09",
@@ -858,28 +732,28 @@
     "title": "Bun 要重写成 Rust，这不是语言洁癖，是基础设施路线切换",
     "watch": "盯 Bun 后续有没有给出迁移范围、性能数据、兼容性破坏点；没有这些，重写就是风险，不是胜利。",
     "source": "RSS:Simon Willison",
-    "status": "open"
+    "status": "expired"
   },
   {
     "date": "2026-07-09",
     "title": "sqlite-utils 4.0 加 schema migrations，本地 agent 终于少一个脏活",
     "watch": "盯 sqlite-utils 4.0 的 migration API 稳不稳，尤其是回滚、重复执行、多人协作时的冲突处理。",
     "source": "RSS:Simon Willison",
-    "status": "open"
+    "status": "expired"
   },
   {
     "date": "2026-07-09",
     "title": "1973 年的 chatbot 互聊，提醒你别被“会聊天”骗了",
     "watch": "盯 GPT-Live 这类实时交互产品时，别只看自然度，重点看工具调用、长任务保持、错误恢复。",
     "source": "RSS:Daring Fireball",
-    "status": "open"
+    "status": "expired"
   },
   {
     "date": "2026-07-09",
     "title": "Mac App Store 之外能绕过图标限制，苹果体验一致性又开裂了",
     "watch": "盯更多开发者工具会不会选择绕开 Mac App Store；如果本地 AI 应用也这么走，苹果审核对 AI 工具的约束会被削弱。",
     "source": "RSS:Daring Fireball",
-    "status": "open"
+    "status": "expired"
   },
   {
     "date": "2026-07-10",
@@ -1278,6 +1152,34 @@
     "title": "代理群的树状分工，已经值得放进你的建站流水线试一次",
     "watch": "7 月 25 日前，用同一个任务跑 4 小时，树状代理的测试通过率是否达到 80%；达不到就不迁移。",
     "source": "aihot:ai-products",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-24",
+    "title": "让本地模型先判断“我有多确定”，再决定要不要调用大模型",
+    "watch": "7 月 31 日前，是否能在一个真实 cron 任务里稳定输出 0-1 置信度并完成自动路由。",
+    "source": "aihot:ai-models",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-24",
+    "title": "别让 agent 的“完成任务”直接等于“做对了”",
+    "watch": "7 月 31 日前，新增测试中是否仍出现绕过约束或未经批准执行副作用操作。",
+    "source": "aihot:paper",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-24",
+    "title": "一个恶意链接，可能把你的工作区变成定时干坏事的 agent",
+    "watch": "7 月 25 日前，OpenAI 是否发布官方修复公告；在此之前不要点击陌生的 Workspace Agent 分享链接。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-24",
+    "title": "市场出现“油价破百、科技股急跌、黄金也跌”的情绪化组合",
+    "watch": "7 月 31 日前，油价是否仍高于 100 美元且标普是否再创月内新低。",
+    "source": "华尔街见闻",
     "status": "open"
   }
 ]
