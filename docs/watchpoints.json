@@ -627,28 +627,28 @@
     "title": "别拿 Grok Build CLI 碰生产仓库",
     "watch": "盯 xAI 后续是不是发正式技术说明、版本回滚或权限开关；尤其看 `0.2.93` 之后的新版本有没有把上传范围改成显式授权。",
     "source": "aihot:tip",
-    "status": "open"
+    "status": "expired"
   },
   {
     "date": "2026-07-13",
     "title": "Ploy 把默认模型从 Opus 4.8 切到 GPT-5.6 Sol，不是口嗨，是生产切换",
     "watch": "盯更多“默认切换”案例，而不是单次测评；尤其看有没有第二批 agent 产品把默认模型从 Anthropic 切到 OpenAI，或者反过来。",
     "source": "aihot:tip",
-    "status": "open"
+    "status": "expired"
   },
   {
     "date": "2026-07-13",
     "title": "腾讯混元 Hy3 真正有杀伤力的不是 295B，是微信入口",
     "watch": "别只盯榜单，盯两件事：一是 Hy3 会不会开放更多 agent 场景接口，二是微信生态里有没有出现真正高频、可闭环的 AI 服务，不只是聊天入口。",
     "source": "aihot:ai-models",
-    "status": "open"
+    "status": "expired"
   },
   {
     "date": "2026-07-13",
     "title": "苹果起诉 OpenAI 挖角 400 人，AI 硬件战开始见血",
     "watch": "盯两件事：第一，苹果和 OpenAI 的合作会不会继续降温；第二，OpenAI 硬件项目后续有没有延期、团队调整或高管公开回应。",
     "source": "aihot:industry",
-    "status": "open"
+    "status": "expired"
   },
   {
     "date": "2026-07-13",
@@ -669,14 +669,14 @@
     "title": "Mindwalk 这种工具，解决的是“agent 干了啥你根本说不清”",
     "watch": "盯它后面会不会补上团队协作和审计能力，比如多人会话对比、失败任务回放、按文件热度统计；这些一旦有了，就不是玩具了。",
     "source": "aihot:ai-products",
-    "status": "open"
+    "status": "expired"
   },
   {
     "date": "2026-07-13",
     "title": "Mesh LLM 指向的是一件更实际的事：把零散 GPU 拼成能用的私有算力",
     "watch": "盯两件事：一是稳定性，二是调度成本；如果它能把多机路由和失败回退做顺，家庭实验室和小团队私有 AI 会更像真的。",
     "source": "aihot:ai-products",
-    "status": "open"
+    "status": "expired"
   },
   {
     "date": "2026-07-14",
@@ -984,6 +984,27 @@
     "title": "8 美元硬件已经能跑本地小模型",
     "watch": "7 月 31 日前，ESP32-S3 本地推理实测是否达到约 9.5 tok/s；达不到就不把这条路线纳入选品池。",
     "source": "aihot:tip",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-28",
+    "title": "2.8T 开源模型终于值得进你的 agent 试验场",
+    "watch": "7 月 31 日前，K3 在 1M token 上下文任务中的交付质量是否达到你现用模型水平。",
+    "source": "aihot:ai-models",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-28",
+    "title": "Google 搜索正在把流量推向长问题页面",
+    "watch": "7 月 31 日前，AI Overviews 出现率是否仍高于 43%，且长对话式查询继续增加。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-28",
+    "title": "半导体一度跌超 5%，现在最容易犯的错是临时改定投规则",
+    "watch": "7 月 31 日前，纳指是否再次回撤超过 5%；若没有，就把这次当波动，不升级成趋势判断。",
+    "source": "华尔街见闻",
     "status": "open"
   }
 ]
