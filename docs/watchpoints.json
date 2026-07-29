@@ -683,21 +683,21 @@
     "title": "别只看每百万 token 单价，tokenizer 已经在偷偷改你的模型账单",
     "watch": "盯两件事：一是 Anthropic 后续 tokenizer 是否继续扩展到更多模型；二是你常用仓库在不同模型下的真实 token 消耗，最好拿同一批文件自己跑一遍。",
     "source": "aihot:tip",
-    "status": "open"
+    "status": "expired"
   },
   {
     "date": "2026-07-14",
     "title": "提示词别写成操作手册，先说结果，少立规矩",
     "watch": "接下来盯两种提示词谁更稳：一种是“按 1/2/3 做”，另一种是“我要这个结果，约束只有这几条”。如果后者在代码修复和多步工具调用里更稳，这套方法就值得全面迁移。",
     "source": "aihot:tip",
-    "status": "open"
+    "status": "expired"
   },
   {
     "date": "2026-07-14",
     "title": "OCR 开始变成便宜又能本地跑的基础能力",
     "watch": "盯两个落地指标：一是复杂版面、多语言、表格场景下的真实误差；二是 6.37 倍提速在你自己的 GPU/CPU 环境里能不能复现。",
     "source": "aihot:ai-models",
-    "status": "open"
+    "status": "expired"
   },
   {
     "date": "2026-07-14",
@@ -711,14 +711,14 @@
     "title": "欧洲开源模型开始不只是“政治正确”，而是在找自己的技术路线",
     "watch": "盯它后续有没有更多英语/德语之外的实际评测，尤其是代码、长上下文、agent 工具调用。如果只是 benchmark 漂亮，意义有限；如果推理吞吐和部署门槛也行，那会影响一批企业私有化选型。",
     "source": "aihot:ai-models",
-    "status": "open"
+    "status": "expired"
   },
   {
     "date": "2026-07-14",
     "title": "美联储本月加息概率冲到接近 50%，市场还没完全醒",
     "watch": "接下来别只盯议息结果，重点看市场会不会把“接近 50%”继续往上推，以及美债收益率和成长股是不是继续反向走。要是概率再抬，仓位再好的科技股也会被统一打折。",
     "source": "华尔街见闻",
-    "status": "open"
+    "status": "expired"
   },
   {
     "date": "2026-07-14",
@@ -732,14 +732,14 @@
     "title": "市场并不相信内塔尼亚胡会很快下台，中东风险还得按“拖”来算",
     "watch": "盯两个东西：一是这个 36% 会不会继续抬升；二是和油价、航运费率是否同步走高。要是政治去留概率和能源价格一起上，那就不是情绪，是持续定价。",
     "source": "Polymarket",
-    "status": "open"
+    "status": "expired"
   },
   {
     "date": "2026-07-14",
     "title": "2028 共和党基本在押万斯，市场提前给“政策延续”报价了",
     "watch": "盯两件事：一是 42% 和 28% 的差距会不会继续拉大；二是相关市场会不会开始把更强硬的贸易与产业政策重新计价。政治赔率一旦脱离“娱乐区间”，资产会先动。",
     "source": "Polymarket",
-    "status": "open"
+    "status": "expired"
   },
   {
     "date": "2026-07-15",
@@ -1005,6 +1005,34 @@
     "title": "半导体一度跌超 5%，现在最容易犯的错是临时改定投规则",
     "watch": "7 月 31 日前，纳指是否再次回撤超过 5%；若没有，就把这次当波动，不升级成趋势判断。",
     "source": "华尔街见闻",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-29",
+    "title": "OpenRouter 的 LangChain 专用包值得先接入一条 cron",
+    "watch": "本周内，现有应用能否在不改造的前提下接入 400+ 模型并自动切换；有一项做不到就不迁移。",
+    "source": "aihot:tip",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-29",
+    "title": "Gemini Managed Agents 的 3.6 Flash 加了环境钩子",
+    "watch": "本周内，3.6 Flash 加环境钩子能否跑通现有 agent 的部署和工具调用；跑不通就不迁移。",
+    "source": "aihot:ai-products",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-29",
+    "title": "自主智能体已经出现真实入侵案例",
+    "watch": "本周内，所有对外 agent 调用是否都能被完整回放；只要还有无法追溯的工具调用，就暂停自动执行。",
+    "source": "aihot:industry",
+    "status": "open"
+  },
+  {
+    "date": "2026-07-29",
+    "title": "开源抠图模型把图片处理工具的门槛压低了",
+    "watch": "本周内，FeyNoBg 是否仍能在四项基准保持最佳、其余差距不超过 2%；实测偏离就撤出选品池。",
+    "source": "aihot:ai-models",
     "status": "open"
   }
 ]
