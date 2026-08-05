@@ -627,7 +627,7 @@
     "title": "代理群的树状分工，已经值得放进你的建站流水线试一次",
     "watch": "7 月 25 日前，用同一个任务跑 4 小时，树状代理的测试通过率是否达到 80%；达不到就不迁移。",
     "source": "aihot:ai-products",
-    "status": "open"
+    "status": "expired"
   },
   {
     "date": "2026-07-24",
@@ -781,6 +781,34 @@
     "title": "Qwen 的开放权重值得放进你的编码模型评测表",
     "watch": "开放权重发布后，模型是否能在同一批代码任务上达到现用模型的通过率；若做不到，就不迁移主流程。",
     "source": "aihot:ai-models",
+    "status": "open"
+  },
+  {
+    "date": "2026-08-05",
+    "title": "把 AI 生成的大 PR 拆成可审查的小栈",
+    "watch": "下一次 AI 生成 diff 超过 1,000 行时，能否拆成 4 个独立可审查的 PR。",
+    "source": "aihot:tip",
+    "status": "open"
+  },
+  {
+    "date": "2026-08-05",
+    "title": "让隔离子代理接管 issue 分诊",
+    "watch": "下个月 Astro 的开放 issue 是否从约 30 个降到 0 个。",
+    "source": "aihot:tip",
+    "status": "open"
+  },
+  {
+    "date": "2026-08-05",
+    "title": "4 GB 显存也能微调 8B 模型",
+    "watch": "一周内，4 GB 显存笔记本 GPU 能否完成一次 8B QLoRA 微调且无需 SSH 或云服务。",
+    "source": "aihot:ai-products",
+    "status": "open"
+  },
+  {
+    "date": "2026-08-05",
+    "title": "普通 Apple 设备能跑 80B 模型",
+    "watch": "一周内，Swiftlet 是否能在 4.3 GB 内存下跑通 80B 版 Qwen。",
+    "source": "aihot:ai-products",
     "status": "open"
   }
 ]
