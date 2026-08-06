@@ -1,61 +1,5 @@
 [
   {
-    "date": "2026-07-06",
-    "title": "美团 LongCat-2.0 开源，不是“又一个国产模型”",
-    "watch": "盯它在真实 agent 任务里的表现，尤其是 1M token 上下文会不会只是“能塞进去”，还是能稳定检索、改代码、跨文件推理。",
-    "source": "aihot:ai-models",
-    "status": "expired"
-  },
-  {
-    "date": "2026-07-06",
-    "title": "英伟达 Kyber 延到 2028，AI 算力瓶颈又换地方了",
-    "watch": "盯英伟达下一次对 NVL144 / Kyber 的交付口径，以及云厂商有没有把订单节奏往后挪。",
-    "source": "aihot:industry",
-    "status": "expired"
-  },
-  {
-    "date": "2026-07-06",
-    "title": "Claude Design 提示词被拆出来，重点不是抄，是看 Anthropic 怎么管输出",
-    "watch": "盯这个仓库后续有没有继续同步 Claude Design 的系统约束，尤其是组件生成、无障碍检查、设计一致性这些部分。",
-    "source": "aihot:tip",
-    "status": "expired"
-  },
-  {
-    "date": "2026-07-06",
-    "title": "Simon 用 Claude 写 sqlite-utils，账单只有 $149.25",
-    "watch": "盯 sqlite-utils 4.0 正式版发布后有没有回滚、bug 激增、维护负担上升；这比一次性成本更说明问题。",
-    "source": "RSS:Simon Willison",
-    "status": "expired"
-  },
-  {
-    "date": "2026-07-06",
-    "title": "OPEC+ 继续加桶，油价这边在帮美联储",
-    "watch": "盯 8 月配额执行情况，以及油价是否真的跟着增产走弱；如果只是纸面增产，市场会很快反应过来。",
-    "source": "华尔街见闻",
-    "status": "verified"
-  },
-  {
-    "date": "2026-07-06",
-    "title": "2028 共和党赔率：Vance 已经明显领先",
-    "watch": "盯 Vance 和 Rubio 的价差有没有收窄；如果 Rubio 上来，说明市场在重新押“更传统”的共和党路线。",
-    "source": "Polymarket",
-    "status": "expired"
-  },
-  {
-    "date": "2026-07-06",
-    "title": "500 字节画世界地图，提醒一下：工程能力不是堆 token",
-    "watch": "盯作者有没有放出实现细节和代码；这种小项目最值得看的不是成品，是中间怎么取舍。",
-    "source": "RSS:Simon Willison",
-    "status": "expired"
-  },
-  {
-    "date": "2026-07-06",
-    "title": "欧盟 Chat Control 2.0 快速推进，加密聊天可能被迫开洞",
-    "watch": "盯欧洲议会接下来怎么表态，尤其是是否保留“无差别扫描”这条；如果保留，安全通信产品会被迫选边站。",
-    "source": "aihot:industry",
-    "status": "expired"
-  },
-  {
     "date": "2026-07-07",
     "title": "Meta 把算力租到印度，重点不是便宜，是数据主权",
     "watch": "盯 Meta 后面是不是继续在印度加数据中心，以及其他大厂有没有跟进本地算力租赁。",
@@ -641,7 +585,7 @@
     "title": "别让 agent 的“完成任务”直接等于“做对了”",
     "watch": "7 月 31 日前，新增测试中是否仍出现绕过约束或未经批准执行副作用操作。",
     "source": "aihot:paper",
-    "status": "open"
+    "status": "verified"
   },
   {
     "date": "2026-07-24",
